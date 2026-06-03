@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wallet Benchmark — Where you lose</title>
+<style>
+  :root{
+    --bg:#0f1115; --panel:#171a21; --panel2:#1d212b; --line:#2a2f3a;
+    --txt:#e6e9ef; --muted:#8b93a7; --accent:#5b8cff; --accentdim:#2a3a6b;
+    --good:#1f8a55; --goodbg:#11271d; --bad:#b5384a; --badbg:#2a1419;
+    --warn:#b07d23; --warnbg:#2a2110; --unknown:#3a4150; --unknownbg:#1b1f28;
+    --valuebg:#162033; --valuetxt:#9fc0ff; --baseline:#3a2a5e;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  a{color:var(--accent)}
+  header{padding:16px 20px;border-bottom:1px solid var(--line);display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+  header h1{font-size:18px;margin:0;font-weight:650}
+  header .sub{color:var(--muted);font-size:12.5px}
+  header .nav{margin-left:auto;display:flex;gap:8px}
+  header .navlink{font-size:13px;text-decoration:none;background:var(--accentdim);border:1px solid var(--accent);color:#cfe0ff;border-radius:7px;padding:5px 11px}
+  header .navlink:hover{background:#33457f}
+
+  .controls{display:flex;gap:18px;flex-wrap:wrap;padding:14px 20px;border-bottom:1px solid var(--line);background:var(--panel)}
+  .ctl{display:flex;flex-direction:column;gap:5px}
+  .ctl > label{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+  select,input[type=text]{background:var(--panel2);color:var(--txt);border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-size:13px}
+  .chips{display:flex;gap:6px;flex-wrap:wrap;max-width:620px}
+  .chip{padding:4px 10px;border:1px solid var(--line);border-radius:20px;background:var(--panel2);cursor:pointer;font-size:12.5px;user-select:none;white-space:nowrap}
+  .chip.on{background:var(--accentdim);border-color:var(--accent);color:#cfe0ff}
+  .chip.base{background:var(--baseline);border-color:#7a5bd0;color:#e3d8ff}
+  .toggles{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+  .btn{background:var(--accentdim);border:1px solid var(--accent);color:#cfe0ff;border-radius:7px;padding:6px 12px;font-size:13px;cursor:pointer}
+  .btn:hover{background:#33457f}
+
+  .summary{display:flex;gap:12px;padding:14px 20px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;min-width:150px}
+  .card .nm{font-weight:600;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+  .card .score{font-size:26px;font-weight:700;margin-top:6px}
+  .card.lose{border-color:#5b2733}.card.lose .score{color:#ef7f8f}
+  .card.win{border-color:#1f5a3c}.card.win .score{color:#5fd39a}
+  .card.mix{border-color:#5a4a1c}.card.mix .score{color:#e7b85c}
+  .card .delta{font-size:12px;color:var(--muted);margin-top:3px}
+
+  .pill{display:inline-block;min-width:30px;padding:3px 9px;border-radius:6px;font-size:12.5px;font-weight:600;border:1px solid transparent;white-space:nowrap}
+  .pill.good{background:var(--goodbg);color:#5fd39a}
+  .pill.bad{background:var(--badbg);color:#ef7f8f}
+  .pill.warn{background:var(--warnbg);color:#e7b85c}
+  .pill.unknown{background:var(--unknownbg);color:var(--muted)}
+  .pill.value{background:var(--valuebg);color:var(--valuetxt);font-weight:500}
+
+  main{padding:6px 20px 60px}
+  .sectionhead{display:flex;align-items:baseline;gap:10px;margin:26px 0 4px}
+  .sectionhead h2{font-size:16px;margin:0;font-weight:650}
+  .sectionhead h2 .ico{margin-right:7px}
+  .sectionhead .lead{color:var(--muted);font-size:12.5px}
+  .sectionhead.lose h2{color:#ef7f8f}
+  .sectionhead.win h2{color:#5fd39a}
+
+  .gaprow{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin-top:9px;display:flex;gap:14px;align-items:flex-start;cursor:pointer}
+  .gaprow:hover{border-color:var(--accent)}
+  .gaprow.lose{border-left:3px solid var(--bad)}
+  .gaprow.win{border-left:3px solid var(--good)}
+  .gaprow .rank{flex:0 0 54px;text-align:center}
+  .gaprow .rank .big{font-size:22px;font-weight:700;line-height:1}
+  .gaprow.lose .rank .big{color:#ef7f8f}
+  .gaprow.win .rank .big{color:#5fd39a}
+  .gaprow .rank .lbl{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-top:3px}
+  .gaprow .mid{flex:1;min-width:0}
+  .gaprow .mname{font-weight:650;font-size:14px}
+  .gaprow .mcat{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-left:8px}
+  .gaprow .mdesc{color:var(--muted);font-size:12.5px;margin-top:3px}
+  .gaprow .who{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px;align-items:center}
+  .gaprow .who .lab{font-size:11.5px;color:var(--muted)}
+  .gaprow .rv{display:inline-flex;align-items:center;gap:5px;background:var(--panel2);border:1px solid var(--line);border-radius:7px;padding:2px 7px;font-size:12px}
+  .gaprow .rv .rn{color:var(--txt)}
+  .gaprow .you{flex:0 0 auto;text-align:right;min-width:96px}
+  .gaprow .you .yl{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
+  .empty{padding:26px;text-align:center;color:var(--muted);background:var(--panel);border:1px dashed var(--line);border-radius:10px;margin-top:9px}
+
+  /* drawer */
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:.15s}
+  .scrim.on{opacity:1;pointer-events:auto}
+  .drawer{position:fixed;top:0;right:0;height:100%;width:440px;max-width:92vw;background:var(--panel);border-left:1px solid var(--line);transform:translateX(100%);transition:.18s;z-index:20;display:flex;flex-direction:column}
+  .drawer.on{transform:none}
+  .drawer .dh{padding:16px 18px;border-bottom:1px solid var(--line)}
+  .drawer .dh .x{float:right;cursor:pointer;color:var(--muted);font-size:20px;line-height:1}
+  .drawer .dh .mlabel{font-size:16px;font-weight:650}
+  .drawer .dh .wlabel{color:var(--muted);font-size:13px;margin-top:2px}
+  .drawer .body{padding:16px 18px;overflow:auto}
+  .sect{margin-top:18px}
+  .sect h4{margin:0 0 7px;font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+  .standrow{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);border-radius:8px;padding:8px 11px;background:var(--panel2);font-size:13px;margin-top:6px}
+  .standrow.base{border-color:#7a5bd0}
+  .standrow .nm{display:flex;align-items:center;gap:7px}
+  .standrow .vs{font-size:11px;color:var(--muted)}
+  .cite{border:1px solid var(--line);border-radius:8px;padding:10px 11px;margin-bottom:9px;background:var(--panel2)}
+  .cite .who2{font-size:11.5px;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px}
+  .cite .ex{color:var(--txt);font-size:12.8px}
+  .cite a{font-size:12.5px;word-break:break-all}
+  .nosrc{color:var(--warn);background:var(--warnbg);border:1px solid #4a3a16;border-radius:8px;padding:9px 11px;font-size:12.5px}
+
+  /* first-run help */
+  details.help{margin:14px 20px 0;background:var(--panel);border:1px solid var(--line);border-radius:10px}
+  details.help > summary{cursor:pointer;list-style:none;padding:12px 16px;font-weight:600;display:flex;align-items:center;gap:8px}
+  details.help > summary::-webkit-details-marker{display:none}
+  details.help > summary .chev{color:var(--muted);transition:.15s;font-size:12px}
+  details.help[open] > summary .chev{transform:rotate(90deg)}
+  details.help > summary .tagn{font-weight:400;color:var(--muted);font-size:12.5px}
+  .help .inner{padding:2px 18px 16px;border-top:1px solid var(--line)}
+  .help h4{margin:16px 0 6px;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--accent)}
+  .help p{margin:6px 0;color:var(--txt)}
+  .help ul{margin:6px 0;padding-left:18px}
+  .help li{margin:4px 0}
+  .help .muted{color:var(--muted)}
+  .help .key{display:inline-block;background:var(--panel2);border:1px solid var(--line);border-radius:5px;padding:1px 7px;font-size:12px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Where You Lose</h1>
+  <span class="sub">Gap report · the metrics where rivals beat your wallet — a data-derived build-next backlog</span>
+  <div class="nav">
+    <a class="navlink" href="index.html">← Matrix</a>
+    <a class="navlink" href="privacy.html">Privacy data-flow →</a>
+  </div>
+</header>
+
+<details class="help" open>
+  <summary><span class="chev">▶</span> How to read this report <span class="tagn">— click to collapse</span></summary>
+  <div class="inner">
+    <p>This flips the comparison matrix into a <b>decision</b>. Pick <b>your wallet</b> and a set of
+       <b>rivals</b>; the page auto-derives the two lists a PM actually needs:</p>
+    <h4>Where you lose</h4>
+    <p>Every metric where <b>at least one rival is better for the user than you</b>, sorted by
+       <b>how many rivals beat you</b>. The big number on the left is "<i>beaten by k of n rivals</i>" —
+       the top of the list is your most-contested gap. This is your <b>what-to-build-next backlog</b>.</p>
+    <h4>Where you uniquely win</h4>
+    <p>Metrics where <b>you beat every selected rival</b> — your defensible positioning. (A tie doesn't
+       count as a win.)</p>
+    <h4>How "better" is decided</h4>
+    <ul>
+      <li>Cells are ranked by the same <b>better/worse-for-the-user</b> polarity as the matrix:
+          <span class="pill good">Good</span> &gt; <span class="pill warn">Partial</span> &gt;
+          <span class="pill bad">Worse</span>. Counts compare numerically (more audits = better,
+          fewer open high-severity flaws = better).</li>
+      <li><span class="pill unknown">— Unknown</span> cells are <b>not ranked</b> — a missing data point is
+          never counted as a win or a loss for either side.</li>
+      <li>Descriptive <span class="pill value">Value</span> metrics (e.g. licence, default transfer mode)
+          have no better/worse order, so they're excluded from win/lose.</li>
+      <li><b>Click any row</b> for the evidence: where you and each rival stand, with the source citations.</li>
+    </ul>
+    <p class="muted">Use <span class="key">Platform</span> to compare a fair peer set, and
+       <b>Copy backlog</b> to paste the gap list straight into a planning doc.</p>
+  </div>
+</details>
+
+<div class="controls">
+  <div class="ctl">
+    <label>Your wallet (baseline)</label>
+    <select id="baseline"></select>
+  </div>
+  <div class="ctl" style="flex:1">
+    <label>Rivals to compare</label>
+    <div class="chips" id="rivalChips"></div>
+  </div>
+  <div class="ctl">
+    <label>Platform</label>
+    <select id="variant">
+      <option value="">All</option>
+      <option value="BROWSER">Browser</option>
+      <option value="MOBILE">Mobile</option>
+      <option value="DESKTOP">Desktop</option>
+    </select>
+  </div>
+  <div class="ctl">
+    <label>Export</label>
+    <div class="toggles">
+      <button class="btn" id="copyMd">Copy backlog</button>
+      <button class="btn" id="csv">Export CSV</button>
+    </div>
+  </div>
+</div>
+
+<div class="summary" id="summary"></div>
+
+<main>
+  <div class="sectionhead lose">
+    <h2><span class="ico">▼</span>Where you lose</h2>
+    <span class="lead" id="loseLead"></span>
+  </div>
+  <div id="loseList"></div>
+
+  <div class="sectionhead win">
+    <h2><span class="ico">▲</span>Where you uniquely win</h2>
+    <span class="lead" id="winLead"></span>
+  </div>
+  <div id="winList"></div>
+</main>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer">
+  <div class="dh">
+    <span class="x" id="dx">×</span>
+    <div class="mlabel" id="dMetric"></div>
+    <div class="wlabel" id="dWallet"></div>
+  </div>
+  <div class="body" id="dBody"></div>
+</aside>
+
+<script>
+const DATA = /*__DATA__*/;
+const {wallets, metrics, cats} = DATA;
+const byId = Object.fromEntries(wallets.map(w=>[w.id,w]));
+const metricByKey = Object.fromEntries(metrics.map(m=>[m.key,m]));
+
+const def = (id)=>byId[id]?id:null;
+let state = {
+  baseline: def('metamask') || wallets[0].id,
+  rivals: ['rabby','rainbow','phantom','okx'].filter(id=>byId[id]),
+  variant: '',
+};
+if(state.rivals.length===0) state.rivals = wallets.map(w=>w.id).filter(id=>id!==state.baseline).slice(0,4);
+
+// ---- matrix-shared cell semantics (kept identical to template.html) -------
+function polarityClass(m, cell){
+  const s = cell.state;
+  if(s==='value') return 'value';
+  if(s==='unknown') return 'unknown';
+  if(s==='partial') return 'warn';
+  if(s==='count'){
+    const n = cell.detail||0;
+    if(m.type==='count_low') return n>0 ? 'bad':'good';
+    return n>0 ? 'good':'unknown';
+  }
+  if(!m.good) return s==='yes'?'good':'bad';
+  return s===m.good ? 'good':'bad';
+}
+function cellText(m, cell){
+  switch(cell.state){
+    case 'yes': return 'Yes';
+    case 'no': return 'No';
+    case 'partial': return 'Partial';
+    case 'unknown': return '—';
+    case 'value': return cell.detail || '—';
+    case 'count': return String(cell.detail);
+  }
+  return '—';
+}
+function pillHtml(m, cell){
+  return `<span class="pill ${polarityClass(m,cell)}">${escapeHtml(cellText(m,cell))}</span>`;
+}
+
+// ---- ranking: ordinal "favourability" for win/lose ------------------------
+// Returns a number (higher = better for the user) or null if not rankable.
+function favRank(m, cell){
+  if(!cell || cell.state==='unknown' || cell.state==='value') return null;
+  if(cell.state==='count'){
+    const n = Number(cell.detail)||0;
+    return m.type==='count_low' ? -n : n;   // fewer-is-better metrics negate
+  }
+  const cls = polarityClass(m, cell);
+  if(cls==='good') return 2;
+  if(cls==='warn') return 1;
+  if(cls==='bad')  return 0;
+  return null;
+}
+// >0 rival better (you lose) · <0 you better · 0 tie · null not comparable
+function compare(m, base, rival){
+  const br = favRank(m, base.cells[m.key]);
+  const rr = favRank(m, rival.cells[m.key]);
+  if(br===null || rr===null) return null;
+  return Math.sign(rr - br);
+}
+
+// ---- selection ------------------------------------------------------------
+function rivalCols(){
+  return state.rivals.filter(r=>r!==state.baseline).map(id=>byId[id]).filter(Boolean)
+    .filter(w=>!state.variant || w.variants.includes(state.variant));
+}
+
+// Build lose / win / mixed gap models for the current selection.
+function computeGaps(){
+  const base = byId[state.baseline];
+  const rivals = rivalCols();
+  const lose=[], win=[];
+  let mixedCount=0, tieOnly=0;
+  metrics.forEach(m=>{
+    const beat=[], behind=[];           // rivals ahead of you / rivals you're ahead of
+    let comparable=0;
+    rivals.forEach(r=>{
+      const c = compare(m, base, r);
+      if(c===null) return;
+      comparable++;
+      if(c>0) beat.push(r);
+      else if(c<0) behind.push(r);
+    });
+    if(comparable===0) return;
+    if(beat.length>0){
+      lose.push({m, beat, behind, comparable});
+      if(behind.length>0) mixedCount++;
+    } else if(behind.length===comparable){
+      win.push({m, behind, comparable});  // ahead of every comparable rival
+    } else {
+      tieOnly++;
+    }
+  });
+  // most-contested gaps first, then by category for stable grouping
+  lose.sort((a,b)=> b.beat.length-a.beat.length || a.m.cat.localeCompare(b.m.cat) || a.m.label.localeCompare(b.m.label));
+  win.sort((a,b)=> b.behind.length-a.behind.length || a.m.cat.localeCompare(b.m.cat) || a.m.label.localeCompare(b.m.label));
+  return {base, rivals, lose, win, mixedCount, tieOnly};
+}
+
+// ---- controls -------------------------------------------------------------
+function renderControls(){
+  const bsel = document.getElementById('baseline');
+  bsel.innerHTML = wallets.map(w=>`<option value="${w.id}" ${w.id===state.baseline?'selected':''}>${escapeHtml(w.name)}</option>`).join('');
+  const chips = document.getElementById('rivalChips');
+  chips.innerHTML = wallets.map(w=>{
+    if(w.id===state.baseline) return `<span class="chip base" title="baseline">${escapeHtml(w.name)} ★</span>`;
+    const on = state.rivals.includes(w.id);
+    const dim = state.variant && !w.variants.includes(state.variant);
+    return `<span class="chip ${on?'on':''}" data-id="${w.id}" style="${dim?'opacity:.4':''}">${escapeHtml(w.name)}</span>`;
+  }).join('');
+  chips.querySelectorAll('.chip[data-id]').forEach(c=>c.onclick=()=>{
+    const id=c.dataset.id;
+    state.rivals = state.rivals.includes(id) ? state.rivals.filter(x=>x!==id) : [...state.rivals,id];
+    render();
+  });
+}
+
+function rvHtml(g, list){
+  return list.map(r=>`<span class="rv"><span class="rn">${escapeHtml(r.name)}</span>${pillHtml(g.m, r.cells[g.m.key])}</span>`).join('');
+}
+
+function render(){
+  renderControls();
+  const g = computeGaps();
+  const base = g.base;
+
+  // summary cards
+  document.getElementById('summary').innerHTML = `
+    <div class="card lose"><div class="nm">You lose</div><div class="score">${g.lose.length}</div>
+      <div class="delta">metric${g.lose.length===1?'':'s'} ≥1 rival beats you on</div></div>
+    <div class="card mix"><div class="nm">Contested</div><div class="score">${g.mixedCount}</div>
+      <div class="delta">you beat some rivals but lose to others</div></div>
+    <div class="card win"><div class="nm">Uniquely win</div><div class="score">${g.win.length}</div>
+      <div class="delta">you beat every selected rival</div></div>
+    <div class="card"><div class="nm">Peer set</div><div class="score">${g.rivals.length}</div>
+      <div class="delta">${escapeHtml(base.name)} ★ vs ${g.rivals.length} rival${g.rivals.length===1?'':'s'}${state.variant?' · '+state.variant.toLowerCase():''}</div></div>`;
+
+  // lose list
+  const loseList = document.getElementById('loseList');
+  document.getElementById('loseLead').textContent =
+    g.rivals.length===0 ? 'pick at least one rival' :
+    g.lose.length ? `${g.lose.length} gap${g.lose.length===1?'':'s'}, most-contested first` : '';
+  if(g.rivals.length===0){
+    loseList.innerHTML = `<div class="empty">Select one or more rivals above to generate the gap report.</div>`;
+  } else if(g.lose.length===0){
+    loseList.innerHTML = `<div class="empty">No gaps — no selected rival beats ${escapeHtml(base.name)} on any ranked metric. 🎉</div>`;
+  } else {
+    loseList.innerHTML = g.lose.map(item=>`
+      <div class="gaprow lose" data-m="${item.m.key}">
+        <div class="rank"><div class="big">${item.beat.length}<span style="font-size:13px;color:var(--muted)">/${item.comparable}</span></div><div class="lbl">beat you</div></div>
+        <div class="mid">
+          <div><span class="mname">${escapeHtml(item.m.label)}</span><span class="mcat">${escapeHtml(item.m.cat)}</span></div>
+          <div class="mdesc">${escapeHtml(item.m.desc)}</div>
+          <div class="who"><span class="lab">Ahead of you:</span>${rvHtml(item, item.beat)}</div>
+        </div>
+        <div class="you"><div class="yl">You ★</div>${pillHtml(item.m, base.cells[item.m.key])}</div>
+      </div>`).join('');
+  }
+
+  // win list
+  const winList = document.getElementById('winList');
+  document.getElementById('winLead').textContent =
+    g.rivals.length===0 ? '' :
+    g.win.length ? `${g.win.length} metric${g.win.length===1?'':'s'} you win outright` : '';
+  if(g.rivals.length===0){
+    winList.innerHTML = '';
+  } else if(g.win.length===0){
+    winList.innerHTML = `<div class="empty">No outright wins against this peer set on ranked metrics.</div>`;
+  } else {
+    winList.innerHTML = g.win.map(item=>`
+      <div class="gaprow win" data-m="${item.m.key}">
+        <div class="rank"><div class="big">${item.behind.length}</div><div class="lbl">you beat</div></div>
+        <div class="mid">
+          <div><span class="mname">${escapeHtml(item.m.label)}</span><span class="mcat">${escapeHtml(item.m.cat)}</span></div>
+          <div class="mdesc">${escapeHtml(item.m.desc)}</div>
+          <div class="who"><span class="lab">You're ahead of:</span>${rvHtml(item, item.behind)}</div>
+        </div>
+        <div class="you"><div class="yl">You ★</div>${pillHtml(item.m, base.cells[item.m.key])}</div>
+      </div>`).join('');
+  }
+
+  document.querySelectorAll('.gaprow[data-m]').forEach(r=>r.onclick=()=>openDrawer(r.dataset.m));
+}
+
+// ---- drawer: full evidence for one metric across the peer set -------------
+function srcBlock(w, m){
+  const c = w.cells[m.key], ref = c.ref;
+  let h = `<div class="cite"><div class="who2">${escapeHtml(w.name)} — ${escapeHtml(cellText(m,c))}</div>`;
+  if(ref && ref.citations && ref.citations.length){
+    ref.citations.slice(0,4).forEach(ct=>{
+      if(ct.explanation) h += `<div class="ex">${escapeHtml(ct.explanation)}</div>`;
+      if(ct.url) h += `<div style="margin-top:5px"><a href="${ct.url}" target="_blank" rel="noopener">${ct.label?escapeHtml(ct.label)+' ↗':ct.url}</a></div>`;
+    });
+  } else if(ref && ref.named){
+    const nm = ref.named==='refTodo' ? 'Unsourced — flagged <code>refTodo</code> (needs a citation).' : `Reference to shared object <code>${escapeHtml(ref.named)}</code>.`;
+    h += `<div class="nosrc">⚠ ${nm}</div>`;
+  } else if(c.state==='unknown'){
+    h += `<div class="nosrc">No data recorded.</div>`;
+  } else {
+    h += `<div class="nosrc">⚠ No citation attached.</div>`;
+  }
+  return h + `</div>`;
+}
+function openDrawer(mkey){
+  const m = metricByKey[mkey];
+  const base = byId[state.baseline];
+  const rivals = rivalCols();
+  document.getElementById('dMetric').textContent = m.label;
+  document.getElementById('dWallet').textContent = `${m.cat} · ${base.name} ★ vs ${rivals.length} rival${rivals.length===1?'':'s'}`;
+
+  let body = `<div class="sect"><h4>What this measures</h4><div>${escapeHtml(m.desc)}</div></div>`;
+
+  // standings: baseline first, then rivals ordered worst-for-you first
+  const ranked = rivals.map(r=>({r, c:compare(m, base, r)}))
+    .sort((a,b)=> (b.c===null?-1:b.c) - (a.c===null?-1:a.c));
+  body += `<div class="sect"><h4>Where each wallet stands</h4>`;
+  body += `<div class="standrow base"><span class="nm">${escapeHtml(base.name)} ★ <span class="vs">your baseline</span></span>${pillHtml(m, base.cells[m.key])}</div>`;
+  ranked.forEach(({r,c})=>{
+    const tag = c===null?'<span class="vs">not comparable</span>' : c>0?'<span class="vs" style="color:#ef7f8f">beats you</span>' : c<0?'<span class="vs" style="color:#5fd39a">behind you</span>':'<span class="vs">ties you</span>';
+    body += `<div class="standrow"><span class="nm">${escapeHtml(r.name)} ${tag}</span>${pillHtml(m, r.cells[m.key])}</div>`;
+  });
+  body += `</div>`;
+
+  // sources for everyone in the peer set
+  body += `<div class="sect"><h4>Sources</h4>`;
+  body += srcBlock(base, m);
+  ranked.forEach(({r})=>{ body += srcBlock(r, m); });
+  body += `</div>`;
+
+  document.getElementById('dBody').innerHTML = body;
+  document.getElementById('drawer').classList.add('on');
+  document.getElementById('scrim').classList.add('on');
+}
+function closeDrawer(){
+  document.getElementById('drawer').classList.remove('on');
+  document.getElementById('scrim').classList.remove('on');
+}
+function escapeHtml(s){return (s==null?'':String(s)).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+
+// ---- exports --------------------------------------------------------------
+function copyMarkdown(){
+  const g = computeGaps();
+  const base = g.base;
+  const peers = g.rivals.map(r=>r.name).join(', ') || '(none)';
+  const L = [];
+  L.push(`# Where ${base.name} loses — build-next backlog`);
+  L.push('');
+  L.push(`_Baseline: **${base.name}** · Rivals: ${peers}${state.variant?` · Platform: ${state.variant}`:''}._`);
+  L.push(`_You lose on ${g.lose.length}, uniquely win on ${g.win.length}, ${g.mixedCount} contested._`);
+  L.push('');
+  L.push(`## Where you lose (most-contested first)`);
+  if(g.lose.length===0){ L.push('_No gaps against this peer set._'); }
+  g.lose.forEach(item=>{
+    const you = cellText(item.m, base.cells[item.m.key]);
+    const ahead = item.beat.map(r=>`${r.name} (${cellText(item.m, r.cells[item.m.key])})`).join(', ');
+    L.push(`- **${item.m.label}** (${item.m.cat}) — beaten by ${item.beat.length}/${item.comparable}. You: ${you}. Ahead: ${ahead}.`);
+  });
+  L.push('');
+  L.push(`## Where you uniquely win`);
+  if(g.win.length===0){ L.push('_No outright wins against this peer set._'); }
+  g.win.forEach(item=>{
+    const you = cellText(item.m, base.cells[item.m.key]);
+    L.push(`- **${item.m.label}** (${item.m.cat}) — you: ${you}. Ahead of ${item.behind.map(r=>r.name).join(', ')}.`);
+  });
+  const md = L.join('\n');
+  navigator.clipboard.writeText(md).then(()=>flash('Backlog copied to clipboard')).catch(()=>{
+    // fallback: drop into a temporary textarea + execCommand
+    const ta=document.createElement('textarea'); ta.value=md; document.body.appendChild(ta); ta.select();
+    try{document.execCommand('copy'); flash('Backlog copied to clipboard');}catch(e){flash('Copy failed — see console'); console.log(md);}
+    ta.remove();
+  });
+}
+function exportCsv(){
+  const g = computeGaps();
+  const base = g.base;
+  const rows = [['Result','Metric','Category','Your value','Rivals ahead','Rival values','Rivals behind']];
+  g.lose.forEach(item=>{
+    rows.push(['Lose', item.m.label, item.m.cat, cellText(item.m, base.cells[item.m.key]),
+      item.beat.map(r=>r.name).join('; '),
+      item.beat.map(r=>cellText(item.m, r.cells[item.m.key])).join('; '),
+      item.behind.map(r=>r.name).join('; ')]);
+  });
+  g.win.forEach(item=>{
+    rows.push(['Win', item.m.label, item.m.cat, cellText(item.m, base.cells[item.m.key]),
+      '', '', item.behind.map(r=>r.name).join('; ')]);
+  });
+  const csv = rows.map(r=>r.map(x=>`"${String(x).replace(/"/g,'""')}"`).join(',')).join('\n');
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));
+  a.download=`where-${base.id}-loses.csv`; a.click();
+}
+function flash(msg){
+  const b=document.getElementById('copyMd'); const old=b.textContent;
+  b.textContent='✓ '+msg; setTimeout(()=>b.textContent=old, 1600);
+}
+
+// ---- wire up --------------------------------------------------------------
+document.getElementById('baseline').onchange=e=>{state.baseline=e.target.value; state.rivals=state.rivals.filter(r=>r!==state.baseline); render();};
+document.getElementById('variant').onchange=e=>{state.variant=e.target.value; render();};
+document.getElementById('copyMd').onclick=copyMarkdown;
+document.getElementById('csv').onclick=exportCsv;
+document.getElementById('dx').onclick=closeDrawer;
+document.getElementById('scrim').onclick=closeDrawer;
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
+
+render();
+</script>
+</body>
+</html>

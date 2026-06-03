@@ -12,16 +12,18 @@ that already exists in `build.py` (matrix) or `build_privacy.py` (Sankey).
   Baseline vs. rivals, citation-backed cells, three-state colouring, diff/hide-unknown toggles, CSV export.
 - **Privacy data-flow (Sankey)** — `privacy.html` (generated from `template_privacy.html` by `build_privacy.py`).
   Action → Recipient → Data collected, coloured by collection policy and recipient risk.
-- **Cross-links + first-run help panels** on both pages.
+- **"Where you lose" gap report** — `gaps.html` (generated from `template_gaps.html` by `build_gaps.py`).
+  Reuses the matrix model via `build.build_payload()`. Per baseline + peer set, auto-derives the metrics
+  where ≥1 rival beats you (sorted by how many do) and the metrics where you beat every rival, with an
+  evidence drawer, Markdown backlog export, and CSV. Ranks by the same better/worse polarity as the matrix;
+  unknowns and descriptive values are excluded.
+- **Cross-links + first-run help panels** on all three pages.
 
 ---
 
 ## 1. Decision-oriented views (highest PM value)
 
-- **"Where you lose" gap report** — *high / low · reuses matrix data.*
-  Auto-generate the list of metrics where the baseline is worse than ≥1 rival, sorted by how many
-  rivals beat you. The core PM artifact: a data-derived "what to build next" backlog. Pair with a
-  "where you uniquely win" list for positioning. **Recommended next.**
+- **"Where you lose" gap report** — ✅ **Built** (`gaps.html`). See "Already built" above.
 - **Third-party exposure graph** — *high / medium · reuses privacy entity-resolver.*
   Force-directed node graph of wallets ↔ shared infra/brokers. Answers "which rivals all depend on
   Pimlico / the same broker?" Natural completion of the privacy work.
@@ -83,7 +85,7 @@ that already exists in `build.py` (matrix) or `build_privacy.py` (Sankey).
 
 ## Top picks (best value-per-hour for this persona)
 
-1. **"Where you lose" gap report** — turns the matrix from a table to read into a decision to act on.
+1. ~~**"Where you lose" gap report**~~ — ✅ built (`gaps.html`); turned the matrix into a decision to act on.
 2. **Shareable URL state** — unlocks sharing.
 3. **Conflict-of-interest trust layer** — uses data nothing else touches.
 
