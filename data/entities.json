@@ -1,0 +1,1679 @@
+[
+	{
+		"id": "ackee",
+		"name": "Ackee",
+		"legalName": {
+			"name": "Ackee Blockchain a.s.",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": true,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": false
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/ackee-blockchain",
+		"farcaster": "https://farcaster.xyz/ackee",
+		"icon": {
+			"extension": "png",
+			"height": 200,
+			"width": 200
+		},
+		"jurisdiction": "Prague, Czech Republic",
+		"linkedin": "https://linkedin.com/company/ackee-blockchain",
+		"privacyPolicy": "https://ackee.xyz/privacy-policy",
+		"repoUrl": "https://github.com/Ackee-Blockchain",
+		"twitter": "https://x.com/ackee_xyz",
+		"url": "https://ackee.xyz/"
+	},
+	{
+		"id": "alphabet",
+		"name": "Alphabet",
+		"legalName": {
+			"name": "Alphabet Inc",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": false
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/alphabet",
+		"farcaster": {
+			"type": "NO_FARCASTER_PROFILE"
+		},
+		"icon": {
+			"extension": "svg"
+		},
+		"jurisdiction": "United States",
+		"linkedin": "https://www.linkedin.com/company/alphabet-inc",
+		"privacyPolicy": "https://policies.google.com/privacy",
+		"repoUrl": "https://github.com/google",
+		"twitter": "https://x.com/alphabetlnc",
+		"url": "https://abc.xyz/"
+	},
+	{
+		"id": "ambire",
+		"name": "Ambire Wallet",
+		"legalName": {
+			"name": "Ambire Tech Ltd.",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": true,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": true,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": true,
+			"walletDeveloper": true
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/adex-03c2",
+		"farcaster": "https://warpcast.com/ambirewallet",
+		"icon": {
+			"extension": "svg"
+		},
+		"jurisdiction": "Bulgaria",
+		"linkedin": "https://www.linkedin.com/company/ambiretech",
+		"privacyPolicy": "https://www.ambire.com/Ambire%20ToS%20and%20PP%20%2826%20November%202021%29.pdf",
+		"repoUrl": "https://github.com/AmbireTech",
+		"twitter": "https://x.com/ambireWallet",
+		"url": "https://ambire.com/"
+	},
+	{
+		"id": "apple",
+		"name": "Apple",
+		"legalName": {
+			"name": "Apple Inc",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": false
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/apple",
+		"farcaster": {
+			"type": "NO_FARCASTER_PROFILE"
+		},
+		"icon": {
+			"extension": "svg"
+		},
+		"jurisdiction": "United States",
+		"linkedin": "https://www.linkedin.com/company/apple",
+		"privacyPolicy": "https://www.apple.com/legal/privacy/",
+		"repoUrl": "https://github.com/Apple",
+		"twitter": "https://x.com/Apple",
+		"url": "https://apple.com/"
+	},
+	{
+		"id": "biconomy",
+		"name": "Biconomy",
+		"legalName": {
+			"name": "Biconomy Labs",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": true,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": true,
+			"walletDeveloper": false
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/biconomy",
+		"farcaster": "https://warpcast.com/biconomy",
+		"icon": {
+			"extension": "png",
+			"height": 200,
+			"width": 200
+		},
+		"jurisdiction": "UNKNOWN",
+		"linkedin": "https://www.linkedin.com/company/biconomy/",
+		"privacyPolicy": "https://biconomy.zendesk.com/hc/en-us/articles/360036040012-Privacy-policy",
+		"repoUrl": "https://github.com/bcnmy",
+		"twitter": "https://x.com/biconomy",
+		"url": "https://www.biconomy.io/"
+	},
+	{
+		"id": "binance",
+		"name": "Binance",
+		"legalName": {
+			"name": "Binance Holdings Ltd",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": true,
+			"offchainDataProvider": false,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": false
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/binance",
+		"farcaster": {
+			"type": "NO_FARCASTER_PROFILE"
+		},
+		"icon": {
+			"extension": "svg"
+		},
+		"jurisdiction": "Malta",
+		"linkedin": {
+			"type": "NO_LINKEDIN_URL"
+		},
+		"privacyPolicy": "https://www.binance.com/en/about-legal/privacy-portal",
+		"repoUrl": "https://github.com/binance",
+		"twitter": "https://x.com/binance",
+		"url": "https://binance.com/"
+	},
+	{
+		"id": "bitbox",
+		"name": "BitBox/Shift Crypto",
+		"legalName": {
+			"name": "Shift Crypto AG",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": true
+		},
+		"crunchbase": {
+			"type": "NO_CRUNCHBASE_URL"
+		},
+		"farcaster": {
+			"type": "NO_FARCASTER_PROFILE"
+		},
+		"icon": "NO_ICON",
+		"jurisdiction": "Switzerland",
+		"linkedin": {
+			"type": "NO_LINKEDIN_URL"
+		},
+		"privacyPolicy": "https://bitbox.swiss/policies/privacy-policy/",
+		"repoUrl": "https://github.com/BitBoxSwiss/bitbox02-firmware",
+		"twitter": {
+			"type": "NO_TWITTER_URL"
+		},
+		"url": "https://bitbox.swiss/"
+	},
+	{
+		"id": "cantina",
+		"name": "Cantina",
+		"legalName": {
+			"name": "Cantina Consulting",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": true,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": false
+		},
+		"crunchbase": {
+			"type": "NO_CRUNCHBASE_URL"
+		},
+		"farcaster": {
+			"type": "NO_FARCASTER_PROFILE"
+		},
+		"icon": {
+			"extension": "png",
+			"height": 200,
+			"width": 200
+		},
+		"jurisdiction": "United States",
+		"linkedin": {
+			"type": "NO_LINKEDIN_URL"
+		},
+		"privacyPolicy": "https://cantina.xyz/privacy-policy",
+		"repoUrl": {
+			"type": "NO_REPO"
+		},
+		"twitter": "https://x.com/cantinaxyz",
+		"url": "https://cantina.xyz/"
+	},
+	{
+		"id": "certik",
+		"name": "Certik",
+		"legalName": {
+			"name": "Certik",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": true,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": false
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/certik",
+		"farcaster": {
+			"type": "NO_FARCASTER_PROFILE"
+		},
+		"icon": {
+			"extension": "svg"
+		},
+		"jurisdiction": {
+			"type": "UNKNOWN"
+		},
+		"linkedin": "https://www.linkedin.com/company/certik",
+		"privacyPolicy": "https://www.certik.com/company/privacy-policy",
+		"repoUrl": "https://github.com/CertiKProject",
+		"twitter": "https://x.com/CertiK",
+		"url": "https://www.certik.com/"
+	},
+	{
+		"id": "certora",
+		"name": "Certora",
+		"legalName": {
+			"name": "Certora Inc.",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": true,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": false
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/certora",
+		"farcaster": "https://warpcast.com/certora",
+		"icon": {
+			"extension": "png",
+			"height": 200,
+			"width": 200
+		},
+		"jurisdiction": "Israel",
+		"linkedin": {
+			"type": "NO_LINKEDIN_URL"
+		},
+		"privacyPolicy": "https://www.certora.com/privacy",
+		"repoUrl": "https://github.com/Certora",
+		"twitter": "https://x.com/CertoraInc",
+		"url": "https://www.certora.com/"
+	},
+	{
+		"id": "citrea",
+		"name": "Citrea",
+		"legalName": {
+			"name": "Chainway Labs",
+			"soundsDifferent": true
+		},
+		"type": {
+			"chainDataProvider": true,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": false
+		},
+		"crunchbase": {
+			"type": "NO_CRUNCHBASE_URL"
+		},
+		"farcaster": {
+			"type": "NO_FARCASTER_PROFILE"
+		},
+		"icon": "NO_ICON",
+		"jurisdiction": {
+			"type": "UNKNOWN"
+		},
+		"linkedin": {
+			"type": "NO_LINKEDIN_URL"
+		},
+		"privacyPolicy": {
+			"type": "NO_PRIVACY_POLICY"
+		},
+		"repoUrl": "https://github.com/chainwayxyz",
+		"twitter": "https://x.com/citrea_xyz",
+		"url": "https://citrea.xyz/"
+	},
+	{
+		"id": "code4rena",
+		"name": "Code4rena",
+		"legalName": {
+			"name": "Code4rena",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": true,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": false
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/code4rena",
+		"farcaster": "https://warpcast.com/code4rena",
+		"icon": {
+			"extension": "png",
+			"height": 200,
+			"width": 200
+		},
+		"jurisdiction": "United States",
+		"linkedin": {
+			"type": "NO_LINKEDIN_URL"
+		},
+		"privacyPolicy": {
+			"type": "NO_PRIVACY_POLICY"
+		},
+		"repoUrl": "https://github.com/code-423n4",
+		"twitter": "https://x.com/code4rena",
+		"url": "https://code4rena.com/"
+	},
+	{
+		"id": "coinbase",
+		"name": "Coinbase",
+		"legalName": {
+			"name": "Coinbase Global, Inc.",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": true
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/coinbase",
+		"farcaster": "https://warpcast.com/coinbase",
+		"icon": {
+			"extension": "svg"
+		},
+		"jurisdiction": "United States",
+		"linkedin": "https://www.linkedin.com/company/coinbase/",
+		"privacyPolicy": "https://www.coinbase.com/legal/privacy",
+		"repoUrl": "https://github.com/coinbase",
+		"twitter": "https://x.com/coinbase",
+		"url": "https://www.coinbase.com/"
+	},
+	{
+		"id": "consensys",
+		"name": "Consensys",
+		"legalName": {
+			"name": "ConsenSys Software Inc",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": true,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": true,
+			"walletDeveloper": true
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/consensus-systems",
+		"farcaster": "https://farcaster.xyz/consensys",
+		"icon": {
+			"extension": "svg"
+		},
+		"jurisdiction": "United States",
+		"linkedin": "https://www.linkedin.com/company/consensys-software-inc",
+		"privacyPolicy": "https://consensys.io/privacy-notice",
+		"repoUrl": "https://github.com/consensys",
+		"twitter": "https://x.com/consensys",
+		"url": "https://consensys.io/"
+	},
+	{
+		"id": "cure53",
+		"name": "Cure53",
+		"legalName": {
+			"name": "Cure53",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": true,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": false
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/cure53",
+		"farcaster": {
+			"type": "NO_FARCASTER_PROFILE"
+		},
+		"icon": {
+			"extension": "png",
+			"height": 136,
+			"width": 137
+		},
+		"jurisdiction": "Berlin, Germany",
+		"linkedin": "https://www.linkedin.com/company/cure53",
+		"privacyPolicy": "https://cure53.de/datenschutz.php",
+		"repoUrl": "https://github.com/cure53",
+		"twitter": "https://x.com/cure53berlin",
+		"url": "https://cure53.de/"
+	},
+	{
+		"id": "cyfrin",
+		"name": "Cyfrin",
+		"legalName": {
+			"name": "Cyfrin",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": true,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": false
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/cyfrin",
+		"farcaster": {
+			"type": "NO_FARCASTER_PROFILE"
+		},
+		"icon": {
+			"extension": "svg"
+		},
+		"jurisdiction": "United States / United Kingdom",
+		"linkedin": "https://www.linkedin.com/company/cyfrin/",
+		"privacyPolicy": "https://www.cyfrin.io/privacy-policy",
+		"repoUrl": "https://github.com/Cyfrin",
+		"twitter": "https://x.com/CyfrinAudits",
+		"url": "https://www.cyfrin.io"
+	},
+	{
+		"id": "daimo",
+		"name": "Daimo",
+		"legalName": {
+			"name": "Daimo, Inc",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": true
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/daimo",
+		"farcaster": "https://warpcast.com/daimo",
+		"icon": {
+			"extension": "svg"
+		},
+		"jurisdiction": "United States",
+		"linkedin": {
+			"type": "NO_LINKEDIN_URL"
+		},
+		"privacyPolicy": "https://daimo.com/privacy",
+		"repoUrl": "https://github.com/daimo-eth",
+		"twitter": "https://x.com/daimo_eth",
+		"url": "https://daimo.com/"
+	},
+	{
+		"id": "debank",
+		"name": "DeBank",
+		"legalName": {
+			"name": "DeBank Global PTE Ltd",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": true,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": true,
+			"walletDeveloper": true
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/debank",
+		"farcaster": "https://warpcast.com/debankdefi",
+		"icon": {
+			"extension": "svg"
+		},
+		"jurisdiction": "Singapore",
+		"linkedin": {
+			"type": "NO_LINKEDIN_URL"
+		},
+		"privacyPolicy": "https://rabby.io/docs/privacy/",
+		"repoUrl": "https://github.com/DeBankDeFi",
+		"twitter": "https://x.com/DebankDeFi",
+		"url": "https://debank.com/"
+	},
+	{
+		"id": "diligence",
+		"name": "diligence",
+		"legalName": {
+			"name": "diligence",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": true,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": false
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/consensus-systems",
+		"farcaster": "https://warpcast.com/consensys",
+		"icon": {
+			"extension": "png",
+			"height": 200,
+			"width": 200
+		},
+		"jurisdiction": "United States",
+		"linkedin": {
+			"type": "NO_LINKEDIN_URL"
+		},
+		"privacyPolicy": "https://consensys.io/privacy-notice",
+		"repoUrl": "https://github.com/Consensys",
+		"twitter": "https://x.com/ConsensysAudits",
+		"url": "https://diligence.consensys.io/"
+	},
+	{
+		"id": "etherscan",
+		"name": "Etherscan",
+		"legalName": {
+			"name": "Etherscan",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": true,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": false
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/etherscan",
+		"farcaster": {
+			"type": "NO_FARCASTER_PROFILE"
+		},
+		"icon": "NO_ICON",
+		"jurisdiction": {
+			"type": "UNKNOWN"
+		},
+		"linkedin": "https://www.linkedin.com/company/etherscan/",
+		"privacyPolicy": "https://etherscan.io/privacypolicy",
+		"repoUrl": {
+			"type": "NO_REPO"
+		},
+		"twitter": "https://x.com/etherscan",
+		"url": "https://etherscan.io/"
+	},
+	{
+		"id": "firefly",
+		"name": "Firefly",
+		"legalName": {
+			"name": "Firefly",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": true
+		},
+		"crunchbase": {
+			"type": "NO_CRUNCHBASE_URL"
+		},
+		"farcaster": "https://warpcast.com/firefly",
+		"icon": {
+			"extension": "svg"
+		},
+		"jurisdiction": {
+			"type": "UNKNOWN"
+		},
+		"linkedin": {
+			"type": "NO_LINKEDIN_URL"
+		},
+		"privacyPolicy": {
+			"type": "NO_PRIVACY_POLICY"
+		},
+		"repoUrl": "https://github.com/firefly",
+		"twitter": "https://x.com/FireflyPocket",
+		"url": "https://firefly.city/"
+	},
+	{
+		"id": "gemwallet",
+		"name": "Gem Wallet",
+		"legalName": {
+			"name": "Gem Wallet",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": true
+		},
+		"crunchbase": {
+			"type": "NO_CRUNCHBASE_URL"
+		},
+		"farcaster": {
+			"type": "NO_FARCASTER_PROFILE"
+		},
+		"icon": {
+			"extension": "svg"
+		},
+		"jurisdiction": {
+			"type": "UNKNOWN"
+		},
+		"linkedin": {
+			"type": "NO_LINKEDIN_URL"
+		},
+		"privacyPolicy": "https://gemwallet.com/privacy",
+		"repoUrl": "https://github.com/gemwalletcom",
+		"twitter": "https://x.com/GemWalletApp",
+		"url": "https://gemwallet.com/"
+	},
+	{
+		"id": "github",
+		"name": "Github",
+		"legalName": {
+			"name": "GitHub Inc",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": true,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": false
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/github",
+		"farcaster": {
+			"type": "NO_FARCASTER_PROFILE"
+		},
+		"icon": {
+			"extension": "svg"
+		},
+		"jurisdiction": "UNKNOWN",
+		"linkedin": "https://www.linkedin.com/company/github/",
+		"privacyPolicy": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
+		"repoUrl": "https://github.com",
+		"twitter": "https://x.com/github",
+		"url": "https://github.com/"
+	},
+	{
+		"id": "gridplus",
+		"name": "GridPlus",
+		"legalName": {
+			"name": "Grid+ Inc.",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": true
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/gridplus",
+		"farcaster": {
+			"type": "NO_FARCASTER_PROFILE"
+		},
+		"icon": {
+			"extension": "svg"
+		},
+		"jurisdiction": "United States",
+		"linkedin": "https://www.linkedin.com/company/gridplus/",
+		"privacyPolicy": "https://gridplus.io/policies/privacy-policy",
+		"repoUrl": "https://github.com/GridPlus",
+		"twitter": "https://x.com/gridplus",
+		"url": "https://gridplus.io/"
+	},
+	{
+		"id": "honeycomb",
+		"name": "Honeycomb",
+		"legalName": {
+			"name": "Hound Technology, Inc",
+			"soundsDifferent": true
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": true,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": false
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/honeycombio",
+		"farcaster": {
+			"type": "NO_FARCASTER_PROFILE"
+		},
+		"icon": {
+			"extension": "svg"
+		},
+		"jurisdiction": "San Francisco, California, United States",
+		"linkedin": "https://www.linkedin.com/company/honeycomb.io",
+		"privacyPolicy": "https://www.honeycomb.io/privacy",
+		"repoUrl": "https://github.com/honeycombio",
+		"twitter": "https://x.com/honeycombio",
+		"url": "https://www.honeycomb.io/"
+	},
+	{
+		"id": "hunter-security",
+		"name": "Hunter Security",
+		"legalName": {
+			"name": "Hunter Security",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": true,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": false
+		},
+		"crunchbase": {
+			"type": "NO_CRUNCHBASE_URL"
+		},
+		"farcaster": {
+			"type": "NO_FARCASTER_PROFILE"
+		},
+		"icon": {
+			"extension": "svg"
+		},
+		"jurisdiction": {
+			"type": "UNKNOWN"
+		},
+		"linkedin": {
+			"type": "NO_LINKEDIN_URL"
+		},
+		"privacyPolicy": {
+			"type": "NO_PRIVACY_POLICY"
+		},
+		"repoUrl": "https://github.com/GeorgeHNTR",
+		"twitter": "https://x.com/HunterBlockSec",
+		"url": "https://www.huntersec.co/"
+	},
+	{
+		"id": "hyperFoundation",
+		"name": "Hyper Foundation",
+		"legalName": {
+			"name": "Hyper Foundation",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": true,
+			"offchainDataProvider": false,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": false
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/hyperliquid",
+		"farcaster": {
+			"type": "NO_FARCASTER_PROFILE"
+		},
+		"icon": "NO_ICON",
+		"jurisdiction": "Cayman Islands",
+		"linkedin": {
+			"type": "NO_LINKEDIN_URL"
+		},
+		"privacyPolicy": "https://hyperfoundation.org/privacyPolicy",
+		"repoUrl": "https://github.com/hyperliquid-dex",
+		"twitter": "https://x.com/hyperliquidX",
+		"url": "https://hyperfoundation.org/"
+	},
+	{
+		"id": "imtoken",
+		"name": "imToken",
+		"legalName": {
+			"name": "imToken Pte Ltd",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": true
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/imtoken",
+		"farcaster": {
+			"type": "NO_FARCASTER_PROFILE"
+		},
+		"icon": {
+			"extension": "svg"
+		},
+		"jurisdiction": "Singapore",
+		"linkedin": "https://www.linkedin.com/company/imtoken",
+		"privacyPolicy": "https://token.im/tos-en.html",
+		"repoUrl": "https://github.com/consenlabs/token-core-monorepo",
+		"twitter": "https://x.com/imTokenOfficial",
+		"url": "https://token.im/"
+	},
+	{
+		"id": "jiffylabs",
+		"name": "Jiffy Labs",
+		"legalName": {
+			"name": "Jiffy Labs",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": true,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": true,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": false
+		},
+		"crunchbase": {
+			"type": "NO_CRUNCHBASE_URL"
+		},
+		"farcaster": {
+			"type": "NO_FARCASTER_PROFILE"
+		},
+		"icon": {
+			"extension": "png",
+			"height": 200,
+			"width": 200
+		},
+		"jurisdiction": "UNKNOWN",
+		"linkedin": "https://www.linkedin.com/company/jiffylabs/",
+		"privacyPolicy": {
+			"type": "NO_PRIVACY_POLICY"
+		},
+		"repoUrl": "https://github.com/jiffy-labs/",
+		"twitter": "https://x.com/JiffyScan",
+		"url": "https://jiffyscan.xyz/"
+	},
+	{
+		"id": "keycard",
+		"name": "Keycard",
+		"legalName": {
+			"name": "Status Research & Development Deutschland GmbH",
+			"soundsDifferent": true
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": true
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/status-31aa",
+		"farcaster": {
+			"type": "NO_FARCASTER_PROFILE"
+		},
+		"icon": {
+			"extension": "svg"
+		},
+		"jurisdiction": "Germany",
+		"linkedin": {
+			"type": "NO_LINKEDIN_URL"
+		},
+		"privacyPolicy": "https://keycard.tech/legal/privacy-policy",
+		"repoUrl": "https://github.com/keycard-tech",
+		"twitter": "https://x.com/Keycard_",
+		"url": "https://keycard.tech/"
+	},
+	{
+		"id": "keylabs",
+		"name": "KeyLabs",
+		"legalName": {
+			"name": "KeyLabs",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": true,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": false
+		},
+		"crunchbase": {
+			"type": "NO_CRUNCHBASE_URL"
+		},
+		"farcaster": {
+			"type": "NO_FARCASTER_PROFILE"
+		},
+		"icon": {
+			"extension": "png",
+			"height": 200,
+			"width": 200
+		},
+		"jurisdiction": "United States",
+		"linkedin": "https://www.linkedin.com/company/keylabsio/",
+		"privacyPolicy": {
+			"type": "NO_PRIVACY_POLICY"
+		},
+		"repoUrl": "https://github.com/keylabsio",
+		"twitter": "https://x.com/keylabsio",
+		"url": "https://keylabs.io/"
+	},
+	{
+		"id": "keystone",
+		"name": "Keystone",
+		"legalName": {
+			"name": "Yanssie HK Limited",
+			"soundsDifferent": true
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": true
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/kesytone",
+		"farcaster": "https://warpcast.com/keystonewallet",
+		"icon": {
+			"extension": "svg"
+		},
+		"jurisdiction": "Hong Kong",
+		"linkedin": "https://www.linkedin.com/company/keystonehardwarewallet/",
+		"privacyPolicy": "https://keyst.one/privacy-policy",
+		"repoUrl": "https://github.com/KeystoneHQ",
+		"twitter": "https://x.com/KeystoneWallet",
+		"url": "https://keyst.one/"
+	},
+	{
+		"id": "least-authority",
+		"name": "Least Authority",
+		"legalName": {
+			"name": "Least Authority",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": true,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": false
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/least-authority-enterprises",
+		"farcaster": "https://warpcast.com/leastauthority",
+		"icon": {
+			"extension": "png",
+			"height": 1043,
+			"width": 1246
+		},
+		"jurisdiction": "Berlin, Germany",
+		"linkedin": "https://www.linkedin.com/company/leastauthority/",
+		"privacyPolicy": "https://leastauthority.com/privacy-policy/",
+		"repoUrl": "https://github.com/LeastAuthority",
+		"twitter": "https://x.com/LeastAuthority",
+		"url": "https://leastauthority.com/"
+	},
+	{
+		"id": "ledger",
+		"name": "Ledger",
+		"legalName": {
+			"name": "Ledger SAS",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": true
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/ledger-2",
+		"farcaster": "https://warpcast.com/ledgerofficial",
+		"icon": {
+			"extension": "svg"
+		},
+		"jurisdiction": "France",
+		"linkedin": "https://www.linkedin.com/company/ledgerhq/",
+		"privacyPolicy": "https://shop.ledger.com/pages/privacy-policy",
+		"repoUrl": "https://github.com/LedgerHQ/",
+		"twitter": "https://x.com/Ledger",
+		"url": "https://www.ledger.com/"
+	},
+	{
+		"id": "lifi",
+		"name": "LiFi",
+		"legalName": {
+			"name": "LI.FI Service GmbH",
+			"soundsDifferent": true
+		},
+		"type": {
+			"chainDataProvider": true,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": true,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": false
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/li-finance-fbae",
+		"farcaster": {
+			"type": "NO_FARCASTER_PROFILE"
+		},
+		"icon": {
+			"extension": "png",
+			"height": 200,
+			"width": 200
+		},
+		"jurisdiction": "UNKNOWN",
+		"linkedin": "https://www.linkedin.com/company/lifiprotocol/",
+		"privacyPolicy": "https://li.fi/legal/privacy-policy/",
+		"repoUrl": "https://github.com/lifinance",
+		"twitter": "https://x.com/lifiprotocol",
+		"url": "https://li.fi/"
+	},
+	{
+		"id": "merkle-manufactory",
+		"name": "Merkle Manufactory",
+		"legalName": {
+			"name": "Merkle Manufactory Inc",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": false
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/merkle-manufactory",
+		"farcaster": "https://warpcast.com/farcaster",
+		"icon": "NO_ICON",
+		"jurisdiction": "Los Angeles, California, United States",
+		"linkedin": {
+			"type": "NO_LINKEDIN_URL"
+		},
+		"privacyPolicy": {
+			"type": "NO_PRIVACY_POLICY"
+		},
+		"repoUrl": "https://github.com/farcasterxyz",
+		"twitter": "https://x.com/farcaster_xyz",
+		"url": "https://merklemanufactory.com/"
+	},
+	{
+		"id": "monad",
+		"name": "Monad",
+		"legalName": {
+			"name": "Monad Labs",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": true,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": true,
+			"walletDeveloper": false
+		},
+		"crunchbase": {
+			"type": "NO_CRUNCHBASE_URL"
+		},
+		"farcaster": {
+			"type": "NO_FARCASTER_PROFILE"
+		},
+		"icon": "NO_ICON",
+		"jurisdiction": {
+			"type": "UNKNOWN"
+		},
+		"linkedin": {
+			"type": "NO_LINKEDIN_URL"
+		},
+		"privacyPolicy": {
+			"type": "NO_PRIVACY_POLICY"
+		},
+		"repoUrl": {
+			"type": "NO_REPO"
+		},
+		"twitter": "https://x.com/monad_xyz",
+		"url": "https://www.monad.xyz/"
+	},
+	{
+		"id": "mtpelerin",
+		"name": "Mt Pelerin",
+		"legalName": {
+			"name": "Mt Pelerin Group SA",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": true
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/mt-pelerin",
+		"farcaster": {
+			"type": "NO_FARCASTER_PROFILE"
+		},
+		"icon": {
+			"extension": "svg"
+		},
+		"jurisdiction": "Switzerland",
+		"linkedin": "https://www.linkedin.com/company/mt-pelerin/",
+		"privacyPolicy": "https://www.mtpelerin.com/privacy-policy",
+		"repoUrl": "https://github.com/mtpelerin",
+		"twitter": "https://x.com/mtpelerin",
+		"url": "https://www.mtpelerin.com/"
+	},
+	{
+		"id": "nufi",
+		"name": "NuFi",
+		"legalName": {
+			"name": "NuFi AG",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": true
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/nufi-fdfb",
+		"farcaster": {
+			"type": "NO_FARCASTER_PROFILE"
+		},
+		"icon": {
+			"extension": "svg"
+		},
+		"jurisdiction": "Switzerland",
+		"linkedin": "https://www.linkedin.com/company/nufiwallet",
+		"privacyPolicy": "https://nu.fi/privacy-and-cookies-policy",
+		"repoUrl": "https://github.com/nufi-official/nufi",
+		"twitter": "https://x.com/nufiwallet",
+		"url": "https://nu.fi"
+	},
+	{
+		"id": "open-exchange-rates",
+		"name": "Open Exchange Rates",
+		"legalName": {
+			"name": "Open Exchange Rates Ltd",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": true,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": false
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/open-exchange-rates",
+		"farcaster": {
+			"type": "NO_FARCASTER_PROFILE"
+		},
+		"icon": "NO_ICON",
+		"jurisdiction": {
+			"type": "UNKNOWN"
+		},
+		"linkedin": {
+			"type": "NO_LINKEDIN_URL"
+		},
+		"privacyPolicy": "https://openexchangerates.org/privacy",
+		"repoUrl": "https://github.com/openexchangerates",
+		"twitter": {
+			"type": "NO_TWITTER_URL"
+		},
+		"url": "https://openexchangerates.org/"
+	},
+	{
+		"id": "pashov-audit-group",
+		"name": "Pashov Audit Group",
+		"legalName": {
+			"name": "Pashov Audit Group",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": true,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": false
+		},
+		"crunchbase": "https://www.crunchbase.com/person/krum-krasimirov-pashov",
+		"farcaster": {
+			"type": "NO_FARCASTER_PROFILE"
+		},
+		"icon": {
+			"extension": "svg"
+		},
+		"jurisdiction": {
+			"type": "UNKNOWN"
+		},
+		"linkedin": "https://www.linkedin.com/in/krum-krasimirov-pashov/",
+		"privacyPolicy": {
+			"type": "NO_PRIVACY_POLICY"
+		},
+		"repoUrl": "https://github.com/pashov/audits",
+		"twitter": "https://x.com/pashovkrum",
+		"url": "https://www.pashov.net/"
+	},
+	{
+		"id": "pillar",
+		"name": "Pillar",
+		"legalName": {
+			"name": "Pillar Project Worldwide Ltd",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": true
+		},
+		"crunchbase": {
+			"type": "NO_CRUNCHBASE_URL"
+		},
+		"farcaster": {
+			"type": "NO_FARCASTER_PROFILE"
+		},
+		"icon": "NO_ICON",
+		"jurisdiction": "London",
+		"linkedin": "https://www.linkedin.com/company/pillarproject",
+		"privacyPolicy": "https://pillarx.app/privacy-policy",
+		"repoUrl": "https://github.com/pillarwallet/x",
+		"twitter": "https://x.com/PX_Web3",
+		"url": "http://pillarx.app"
+	},
+	{
+		"id": "pimlico",
+		"name": "Pimlico",
+		"legalName": {
+			"name": "Austerlitz Labs Ltd",
+			"soundsDifferent": true
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": true,
+			"walletDeveloper": false
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/pimlico",
+		"farcaster": "https://warpcast.com/pimlico",
+		"icon": {
+			"extension": "png",
+			"height": 200,
+			"width": 200
+		},
+		"jurisdiction": "London, England, United Kingdom",
+		"linkedin": {
+			"type": "NO_LINKEDIN_URL"
+		},
+		"privacyPolicy": "https://www.pimlico.io/privacy",
+		"repoUrl": "https://github.com/pimlicolabs",
+		"twitter": "https://x.com/pimlicoHQ",
+		"url": "https://www.pimlico.io/"
+	},
+	{
+		"id": "sentry",
+		"name": "Sentry",
+		"legalName": {
+			"name": "Functional Software, Inc.",
+			"soundsDifferent": true
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": true,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": false
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/sentry",
+		"farcaster": {
+			"type": "NO_FARCASTER_PROFILE"
+		},
+		"icon": {
+			"extension": "svg"
+		},
+		"jurisdiction": "San Francisco, California, United States",
+		"linkedin": "https://linkedin.com/company/getsentry",
+		"privacyPolicy": "https://sentry.io/privacy/",
+		"repoUrl": "https://github.com/getsentry",
+		"twitter": "https://x.com/sentry",
+		"url": "https://sentry.io/"
+	},
+	{
+		"id": "slowmist",
+		"name": "SlowMist",
+		"legalName": {
+			"name": "SlowMist Ltd",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": true,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": false
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/slowmist",
+		"farcaster": {
+			"type": "NO_FARCASTER_PROFILE"
+		},
+		"icon": {
+			"extension": "png",
+			"height": 375,
+			"width": 375
+		},
+		"jurisdiction": "China",
+		"linkedin": "https://www.linkedin.com/company/slowmist",
+		"privacyPolicy": {
+			"type": "NO_PRIVACY_POLICY"
+		},
+		"repoUrl": "https://github.com/slowmist",
+		"twitter": "https://x.com/SlowMist_Team",
+		"url": "https://www.slowmist.com/"
+	},
+	{
+		"id": "sonicLabs",
+		"name": "Sonic Labs",
+		"legalName": {
+			"name": "Sonic Labs Ltd",
+			"soundsDifferent": true
+		},
+		"type": {
+			"chainDataProvider": true,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": false
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/sonic-labs-2d3f",
+		"farcaster": {
+			"type": "NO_FARCASTER_PROFILE"
+		},
+		"icon": {
+			"extension": "svg"
+		},
+		"jurisdiction": "Cayman Islands",
+		"linkedin": {
+			"type": "NO_LINKEDIN_URL"
+		},
+		"privacyPolicy": "https://soniclabs.notion.site/Sonic-Privacy-Policy-9582d39482584ec2a2c04078dad04518",
+		"repoUrl": "https://github.com/0xsoniclabs",
+		"twitter": "https://x.com/SonicLabs",
+		"url": "https://www.soniclabs.com/"
+	},
+	{
+		"id": "trezor",
+		"name": "Trezor",
+		"legalName": {
+			"name": "SatoshiLabs s.r.o.",
+			"soundsDifferent": true
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": true
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/trezor",
+		"farcaster": {
+			"type": "NO_FARCASTER_PROFILE"
+		},
+		"icon": {
+			"extension": "svg"
+		},
+		"jurisdiction": "Czech Republic",
+		"linkedin": "https://www.linkedin.com/company/trezor-by-satoshilabs/",
+		"privacyPolicy": "https://trezor.io/privacy-policy",
+		"repoUrl": "https://github.com/trezor",
+		"twitter": "https://x.com/trezor",
+		"url": "https://trezor.io/"
+	},
+	{
+		"id": "uniswapLabs",
+		"name": "Uniswap Labs",
+		"legalName": {
+			"name": "Universal Navigation Inc.",
+			"soundsDifferent": true
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": true
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/uniswap-labs",
+		"farcaster": "https://farcaster.xyz/uniswap",
+		"icon": {
+			"extension": "svg"
+		},
+		"jurisdiction": "United States",
+		"linkedin": "https://www.linkedin.com/company/uniswaporg/",
+		"privacyPolicy": "https://uniswap.org/privacy-policy",
+		"repoUrl": "https://github.com/Uniswap",
+		"twitter": "https://x.com/Uniswap",
+		"url": "https://uniswap.org/"
+	},
+	{
+		"id": "veridise",
+		"name": "Veridise",
+		"legalName": {
+			"name": "Veridise Inc",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": true,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": false
+		},
+		"crunchbase": "https://www.crunchbase.com/organization/veridise",
+		"farcaster": {
+			"type": "NO_FARCASTER_PROFILE"
+		},
+		"icon": {
+			"extension": "svg"
+		},
+		"jurisdiction": "Austin, Texas, United States",
+		"linkedin": "https://www.linkedin.com/company/veridise",
+		"privacyPolicy": "https://veridise.com/privacy-policy/",
+		"repoUrl": "https://github.com/Veridise",
+		"twitter": "https://x.com/VeridiseInc",
+		"url": "https://veridise.com/"
+	},
+	{
+		"id": "walletbeat",
+		"name": "Walletbeat",
+		"legalName": {
+			"name": "Walletbeat",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": false,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": false
+		},
+		"crunchbase": {
+			"type": "NO_CRUNCHBASE_URL"
+		},
+		"farcaster": "http://farcaster.xyz/walletbeat",
+		"icon": "NO_ICON",
+		"jurisdiction": "Ethereum",
+		"linkedin": {
+			"type": "NO_LINKEDIN_URL"
+		},
+		"privacyPolicy": {
+			"type": "NO_PRIVACY_POLICY"
+		},
+		"repoUrl": "https://github.com/walletbeat/walletbeat",
+		"twitter": "http://x.com/walletbeat",
+		"url": "https://walletbeat.eth"
+	},
+	{
+		"id": "zeus",
+		"name": "Zeus Wallet",
+		"legalName": {
+			"name": "Zeus Wallet",
+			"soundsDifferent": false
+		},
+		"type": {
+			"chainDataProvider": false,
+			"corporate": true,
+			"dataBroker": false,
+			"exchange": false,
+			"offchainDataProvider": false,
+			"securityAuditor": false,
+			"transactionBroadcastProvider": false,
+			"walletDeveloper": true
+		},
+		"crunchbase": {
+			"type": "NO_CRUNCHBASE_URL"
+		},
+		"farcaster": {
+			"type": "NO_FARCASTER_PROFILE"
+		},
+		"icon": {
+			"extension": "svg"
+		},
+		"jurisdiction": {
+			"type": "UNKNOWN"
+		},
+		"linkedin": {
+			"type": "NO_LINKEDIN_URL"
+		},
+		"privacyPolicy": {
+			"type": "NO_PRIVACY_POLICY"
+		},
+		"repoUrl": "https://github.com/greekfetacheese/zeus",
+		"twitter": {
+			"type": "NO_TWITTER_URL"
+		},
+		"url": {
+			"type": "NO_WEBSITE"
+		}
+	}
+]

@@ -1,0 +1,453 @@
+{
+	"id": "imtoken",
+	"source": "software-wallets",
+	"export": "imtoken",
+	"data": {
+		"metadata": {
+			"id": "imtoken",
+			"displayName": "imToken",
+			"tableName": "imToken",
+			"blurb": "imToken is a reliable and intuitive digital wallet, enabling easy access to over 50+ major networks including Bitcoin, Ethereum, and Tron. imToken supports hardware wallets, token swap and app browser etc., and provides secure and trusted non-custodial wallet services to millions of users in more than 150 countries and regions around the world.",
+			"contributors": [
+				{
+					"$ref": "mako"
+				},
+				{
+					"$ref": "mattmatt"
+				}
+			],
+			"iconExtension": "svg",
+			"lastUpdated": "2025-10-28",
+			"urls": {
+				"docs": [
+					"https://docs.token.im/"
+				],
+				"repositories": [
+					"https://github.com/consenlabs/token-core-monorepo"
+				],
+				"socials": {
+					"discord": "https://discord.com/invite/imToken",
+					"x": "https://x.com/imTokenOfficial"
+				},
+				"websites": [
+					"https://token.im"
+				]
+			}
+		},
+		"features": {
+			"accountSupport": {
+				"defaultAccountType": "AccountType.eoa",
+				"eip7702": {
+					"$ref": "notSupported"
+				},
+				"eoa": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"$ref": "refTodo"
+							},
+							"canExportPrivateKey": true,
+							"keyDerivation": {
+								"type": "BIP32",
+								"canExportSeedPhrase": true,
+								"derivationPath": "BIP44",
+								"seedPhrase": "BIP39"
+							}
+						}
+					]
+				},
+				"mpc": {
+					"$ref": "notSupported"
+				},
+				"rawErc4337": {
+					"$ref": "notSupported"
+				},
+				"safe": {
+					"$ref": "notSupported"
+				}
+			},
+			"addressResolution": {
+				"ref": [
+					{
+						"explanation": "imToken supports ENS human-readable names and resolves them onchain before sending funds.",
+						"url": "https://support.token.im/hc/articles/360039928813"
+					}
+				],
+				"chainSpecificAddressing": {
+					"erc7828": {
+						"$ref": "notSupported"
+					},
+					"erc7831": {
+						"$ref": "notSupported"
+					}
+				},
+				"nonChainSpecificEnsResolution": {
+					"$call": "supported",
+					"args": [
+						{
+							"medium": "CHAIN_CLIENT"
+						}
+					]
+				}
+			},
+			"chainAbstraction": {
+				"bridging": {
+					"builtInBridging": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "imToken provides built-in cross-chain bridging through cBridge and other bridge protocols, with clear fee breakdown. Scam risks are explained, but trust assumptions of the bridge are not.",
+										"url": "https://support.token.im/hc/en-us/articles/4404355206553-How-to-use-cBridge-with-imToken"
+									}
+								],
+								"feesLargerThan1bps": {
+									"afterSingleAction": "FeeDisplayLevel.COMPREHENSIVE",
+									"byDefault": "FeeDisplayLevel.COMPREHENSIVE",
+									"fullySponsored": false
+								},
+								"risksExplained": "NOT_IN_UI"
+							}
+						]
+					},
+					"suggestedBridging": {
+						"$ref": "notSupported"
+					}
+				},
+				"crossChainBalances": {
+					"ref": {
+						"$ref": "refTodo"
+					},
+					"ether": {
+						"crossChainSumView": {
+							"$ref": "notSupported"
+						},
+						"perChainBalanceViewAcrossMultipleChains": {
+							"$ref": "notSupported"
+						}
+					},
+					"globalAccountValue": {
+						"$ref": "notSupported"
+					},
+					"perChainAccountValue": {
+						"$ref": "notSupported"
+					},
+					"usdc": {
+						"crossChainSumView": {
+							"$ref": "notSupported"
+						},
+						"perChainBalanceViewAcrossMultipleChains": {
+							"$ref": "notSupported"
+						}
+					}
+				}
+			},
+			"chainConfigurability": null,
+			"ecosystem": {
+				"delegation": null
+			},
+			"integration": {
+				"browser": "NOT_A_BROWSER_WALLET",
+				"walletCall": null
+			},
+			"licensing": {
+				"type": "LicensingType.SEPARATE_CORE_CODE_LICENSE_VS_WALLET_CODE_LICENSE",
+				"coreLicense": {
+					"ref": [
+						{
+							"explanation": "imToken publishes its core code under the Apache 2.0 open-source license; the app itself is proprietary.",
+							"url": "https://github.com/consenlabs/token-core-monorepo/blob/9798639887b0496b562490952d8f1585047a749e/LICENSE"
+						}
+					],
+					"license": "FOSSLicense.APACHE_2_0"
+				},
+				"walletAppLicense": {
+					"MOBILE": {
+						"ref": {
+							"$ref": "refNotNecessary"
+						},
+						"license": "SourceNotAvailableLicense.PROPRIETARY"
+					}
+				}
+			},
+			"monetization": {
+				"ref": [
+					{
+						"explanation": "imToken announced a USD 30 million Series B funding round led by institutional investors.",
+						"url": "https://support.token.im/hc/en-us/articles/900005414706-imToken-Announces-US-30-million-Series-B-Investment"
+					}
+				],
+				"revenueBreakdownIsPublic": false,
+				"strategies": {
+					"donations": false,
+					"ecosystemGrants": false,
+					"governanceTokenLowFloat": false,
+					"governanceTokenMostlyDistributed": false,
+					"hiddenConvenienceFees": false,
+					"publicOffering": false,
+					"selfFunded": false,
+					"transparentConvenienceFees": true,
+					"ventureCapital": true
+				}
+			},
+			"multiAddress": {
+				"$call": "supported",
+				"args": [
+					{
+						"ref": [
+							{
+								"explanation": "Each request only involves one active address."
+							}
+						]
+					}
+				]
+			},
+			"privacy": {
+				"analytics": {
+					"crashReports": null,
+					"usage": null
+				},
+				"appIsolation": {
+					"MOBILE": null
+				},
+				"dataCollection": {
+					"INSTALL": null,
+					"NATIVE_SWAP": {
+						"collected": []
+					},
+					"SEND_ETHER": {
+						"collected": []
+					},
+					"SEND_USDC": null,
+					"MAKE_TRANSACTION": {
+						"collected": [
+							{
+								"ref": [
+									{
+										"explanation": "imToken can associate your wallet address along with your mobile device's IP address, per its privacy policy. Each request only involves one active address.",
+										"url": "https://token.im/tos-en.html"
+									}
+								],
+								"byEntity": {
+									"$ref": "imToken"
+								},
+								"dataCollection": {
+									"ACCOUNT_ADDRESS": "CollectionPolicy.ALWAYS",
+									"endpoint": {
+										"$ref": "RegularEndpoint"
+									},
+									"multiAddress": {
+										"type": "MultiAddressPolicy.ACTIVE_ADDRESS_ONLY"
+									}
+								},
+								"purposes": [
+									"DataCollectionPurpose.CHAIN_DATA_LOOKUP"
+								]
+							}
+						]
+					},
+					"APP_CONNECTION": {
+						"collected": []
+					},
+					"ONBOARDING_NEW": {
+						"collected": [],
+						"publishedOnchain": "NO_DATA_PUBLISHED_ONCHAIN"
+					},
+					"ONBOARDING_IMPORT": null
+				},
+				"privacyPolicy": "https://token.im/tos-en.html",
+				"transactionPrivacy": {
+					"defaultFungibleTokenTransferMode": "PUBLIC",
+					"STEALTH_ADDRESSES": {
+						"$ref": "notSupported"
+					},
+					"TORNADO_CASH_NOVA": {
+						"$ref": "notSupported"
+					},
+					"PRIVACY_POOLS": {
+						"$ref": "notSupported"
+					},
+					"RAILGUN": {
+						"$ref": "notSupported"
+					}
+				}
+			},
+			"profile": "WalletProfile.GENERIC",
+			"security": {
+				"accountRecovery": null,
+				"bugBountyProgram": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": [
+								{
+									"explanation": "To show our appreciation to researchers, who help keep our products and our customers safe, we are glad to introduce a Responsible Disclosure Program to provide recognition and rewards for responsibly disclosed vulnerabilities.",
+									"url": "https://bugrap.io/bounties/imToken%20Wallet"
+								}
+							],
+							"availability": "BugBountyProgramAvailability.ACTIVE",
+							"coverageBreadth": "FULL_SCOPE",
+							"dateStarted": "2024-04-15",
+							"disclosure": {
+								"$ref": "notSupported"
+							},
+							"legalProtections": {
+								"$ref": "notSupported"
+							},
+							"platform": "BugBountyPlatform.SELF_HOSTED",
+							"rewards": {
+								"$call": "supported",
+								"args": [
+									{
+										"currency": "USDC",
+										"maximum": 10000,
+										"minimum": 0
+									}
+								]
+							},
+							"upgradePathAvailable": true
+						}
+					]
+				},
+				"duressResistance": null,
+				"hardwareWalletSupport": {
+					"MOBILE": {
+						"ref": [
+							{
+								"explanation": "imToken works with the imKey hardware wallet via Bluetooth, and with Keystone via QR codes.",
+								"url": "https://support.token.im/hc/en-us/articles/25985632007193-imToken-and-Hardware-Wallets-Uncompromised-Protection-Unparalleled-Convenience"
+							}
+						],
+						"wallets": {
+							"KEYSTONE": {
+								"$call": "supported",
+								"args": [
+									{
+										"connectionTypes": [
+											"HardwareWalletConnection.QR"
+										]
+									}
+								]
+							},
+							"IMKEY": {
+								"$call": "supported",
+								"args": [
+									{
+										"connectionTypes": [
+											"HardwareWalletConnection.bluetooth"
+										]
+									}
+								]
+							}
+						}
+					}
+				},
+				"keysHandling": null,
+				"lightClient": {
+					"ethereumL1": {
+						"$ref": "notSupported"
+					}
+				},
+				"passkeyVerification": {
+					"$ref": "notSupported"
+				},
+				"publicSecurityAudits": [
+					{
+						"ref": [
+							{
+								"explanation": "imToken underwent security audit by Cure53 in 2018. Since then, imToken has maintained internal audits for each release.",
+								"url": "https://cure53.de/pentest-report_imtoken.pdf"
+							}
+						],
+						"auditDate": "2018-05-07",
+						"auditor": {
+							"$ref": "cure53"
+						},
+						"unpatchedFlaws": "ALL_FIXED",
+						"variantsScope": "ALL_VARIANTS"
+					}
+				],
+				"scamAlerts": {
+					"contractTransactionWarning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "imToken displays detailed contract interaction information including token quantity changes, authorization details (approve and permit), and warns when transferring funds to contract addresses or authorizing ordinary accounts. It also alerts users about high slippage during token swapping.",
+										"url": "https://support.token.im/hc/en-us/articles/21850966355737-Revamped-imToken-signature-for-safer-and-more-intuitive-transactions"
+									}
+								],
+								"contractRegistry": true,
+								"leaksContractAddress": true,
+								"leaksUserAddress": true,
+								"leaksUserIp": true,
+								"previousContractInteractionWarning": true,
+								"recentContractWarning": false
+							}
+						]
+					},
+					"scamUrlWarning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "imToken warns about risky signatures such as eth_sign, non-standard EIP-712 type signatures, and ENS security risks including zero-width characters. It also marks risky tokens, addresses, and apps. Processing happens on-device.",
+										"url": "https://support.token.im/hc/en-us/articles/21850966355737-Revamped-imToken-signature-for-safer-and-more-intuitive-transactions"
+									}
+								],
+								"leaksIp": false,
+								"leaksUserAddress": false,
+								"leaksVisitedUrl": "NO"
+							}
+						]
+					},
+					"sendTransactionWarning": {
+						"$ref": "notSupported"
+					}
+				},
+				"securityBestPractices": null,
+				"transactionLegibility": null
+			},
+			"selfSovereignty": {
+				"permissionsManagement": null,
+				"transactionSubmission": {
+					"l1": {
+						"ref": {
+							"$ref": "refTodo"
+						},
+						"selfBroadcastViaDirectGossip": {
+							"$ref": "notSupported"
+						},
+						"selfBroadcastViaSelfHostedNode": null
+					},
+					"l2": {
+						"ref": {
+							"$ref": "refTodo"
+						},
+						"arbitrum": "TransactionSubmissionL2Support.NOT_SUPPORTED_BY_WALLET_BY_DEFAULT",
+						"opStack": "TransactionSubmissionL2Support.NOT_SUPPORTED_BY_WALLET_BY_DEFAULT"
+					}
+				}
+			},
+			"transparency": {
+				"operationFees": null,
+				"releaseTransparency": {
+					"artifactSigning": null,
+					"dependencyLocking": null,
+					"dependencyVulnerabilityScanning": null,
+					"hasPublicChangelog": null,
+					"hermeticBuilds": null,
+					"repositoryChangeControls": null,
+					"reproducibleBuilds": null
+				}
+			}
+		},
+		"variants": {
+			"MOBILE": true
+		}
+	}
+}

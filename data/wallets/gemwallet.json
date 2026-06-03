@@ -1,0 +1,293 @@
+{
+	"id": "gemwallet",
+	"source": "software-wallets",
+	"export": "gemwallet",
+	"data": {
+		"metadata": {
+			"id": "gemwallet",
+			"displayName": "Gem Wallet",
+			"tableName": "Gem Wallet",
+			"blurb": "Gem Wallet is a fully open source multichain mobile wallet with transparent revenue reporting. Built for iOS and Android with a focus on security and user sovereignty.",
+			"contributors": [
+				{
+					"$ref": "h3rman"
+				}
+			],
+			"iconExtension": "svg",
+			"lastUpdated": "2025-10-14",
+			"urls": {
+				"docs": [
+					"https://docs.gemwallet.com/"
+				],
+				"repositories": [
+					"https://github.com/gemwalletcom/gem-ios"
+				],
+				"socials": {
+					"discord": "https://discord.com/invite/4jpxtwT8r6",
+					"instagram": "https://www.instagram.com/GemWalletApp/",
+					"reddit": "https://www.reddit.com/r/gemwallet_official/",
+					"telegram": "https://t.me/gemwallet",
+					"x": "https://x.com/gemwallet",
+					"youtube": "https://www.youtube.com/@gemwallet"
+				},
+				"websites": [
+					"https://gemwallet.com"
+				]
+			}
+		},
+		"features": {
+			"accountSupport": {
+				"defaultAccountType": "AccountType.eoa",
+				"eip7702": {
+					"$ref": "notSupported"
+				},
+				"eoa": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"$ref": "refTodo"
+							},
+							"canExportPrivateKey": true,
+							"keyDerivation": {
+								"type": "BIP32",
+								"canExportSeedPhrase": true,
+								"derivationPath": "BIP44",
+								"seedPhrase": "BIP39"
+							}
+						}
+					]
+				},
+				"mpc": {
+					"$ref": "notSupported"
+				},
+				"rawErc4337": {
+					"$ref": "notSupported"
+				},
+				"safe": {
+					"$ref": "notSupported"
+				}
+			},
+			"addressResolution": {
+				"ref": [
+					{
+						"explanation": "Gem Wallet supports sending to ENS addresses, but users need to verify which chain they are using.",
+						"url": "https://gemwallet.com"
+					}
+				],
+				"chainSpecificAddressing": {
+					"erc7828": {
+						"$ref": "notSupported"
+					},
+					"erc7831": {
+						"$ref": "notSupported"
+					}
+				},
+				"nonChainSpecificEnsResolution": {
+					"$call": "supported",
+					"args": [
+						{
+							"medium": "CHAIN_CLIENT"
+						}
+					]
+				}
+			},
+			"chainAbstraction": null,
+			"chainConfigurability": null,
+			"ecosystem": {
+				"delegation": "EIP_7702_NOT_SUPPORTED"
+			},
+			"integration": {
+				"browser": "NOT_A_BROWSER_WALLET",
+				"walletCall": null
+			},
+			"licensing": {
+				"type": "LicensingType.SINGLE_WALLET_REPO_AND_LICENSE",
+				"walletAppLicense": {
+					"ref": [
+						{
+							"explanation": "Gem Wallet is licensed under the GPL-3.0 license.",
+							"url": "https://github.com/gemwalletcom/gem-ios/blob/ef264f54eacacacba837735ac6ed605c9512f84a/LICENSE"
+						}
+					],
+					"license": "FOSSLicense.GPL_3_0"
+				}
+			},
+			"monetization": {
+				"ref": [
+					{
+						"explanation": "Gem Wallet publishes transparent revenue data on Dune Analytics, showing all revenue sources and breakdowns.",
+						"url": "https://dune.com/gemwallet/gem-wallet"
+					}
+				],
+				"revenueBreakdownIsPublic": true,
+				"strategies": {
+					"donations": false,
+					"ecosystemGrants": false,
+					"governanceTokenLowFloat": false,
+					"governanceTokenMostlyDistributed": false,
+					"hiddenConvenienceFees": false,
+					"publicOffering": false,
+					"selfFunded": true,
+					"transparentConvenienceFees": true,
+					"ventureCapital": false
+				}
+			},
+			"multiAddress": {
+				"$ref": "featureSupported"
+			},
+			"privacy": {
+				"analytics": {
+					"crashReports": null,
+					"usage": null
+				},
+				"appIsolation": null,
+				"dataCollection": null,
+				"privacyPolicy": "https://gemwallet.com/privacy",
+				"transactionPrivacy": {
+					"defaultFungibleTokenTransferMode": "PUBLIC",
+					"STEALTH_ADDRESSES": {
+						"$ref": "notSupported"
+					},
+					"TORNADO_CASH_NOVA": {
+						"$ref": "notSupported"
+					},
+					"PRIVACY_POOLS": {
+						"$ref": "notSupported"
+					},
+					"RAILGUN": {
+						"$ref": "notSupported"
+					}
+				}
+			},
+			"profile": "WalletProfile.GENERIC",
+			"security": {
+				"accountRecovery": null,
+				"bugBountyProgram": null,
+				"duressResistance": null,
+				"hardwareWalletSupport": null,
+				"keysHandling": null,
+				"lightClient": {
+					"ethereumL1": {
+						"$ref": "notSupported"
+					}
+				},
+				"passkeyVerification": {
+					"$ref": "notSupported"
+				},
+				"publicSecurityAudits": null,
+				"scamAlerts": {
+					"contractTransactionWarning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Gem Wallet uses GoPlus and HashDit for security detection, providing malicious contract detection and transaction analysis.",
+										"url": "https://gemwallet.com"
+									}
+								],
+								"contractRegistry": true,
+								"leaksContractAddress": true,
+								"leaksUserAddress": true,
+								"leaksUserIp": true,
+								"previousContractInteractionWarning": false,
+								"recentContractWarning": false
+							}
+						]
+					},
+					"scamUrlWarning": {
+						"$ref": "notSupported"
+					},
+					"sendTransactionWarning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Gem Wallet warns users about outgoing transactions to unknown addresses.",
+										"url": "https://gemwallet.com"
+									}
+								],
+								"leaksRecipient": false,
+								"leaksUserAddress": false,
+								"leaksUserIp": false,
+								"newRecipientWarning": true,
+								"userWhitelist": false
+							}
+						]
+					}
+				},
+				"securityBestPractices": null,
+				"transactionLegibility": null
+			},
+			"selfSovereignty": {
+				"permissionsManagement": null,
+				"transactionSubmission": {
+					"l1": {
+						"ref": {
+							"$ref": "refTodo"
+						},
+						"selfBroadcastViaDirectGossip": null,
+						"selfBroadcastViaSelfHostedNode": null
+					},
+					"l2": {
+						"arbitrum": null,
+						"opStack": null,
+						"ref": {
+							"$ref": "refTodo"
+						}
+					}
+				}
+			},
+			"transparency": {
+				"operationFees": {
+					"builtInErc20Swap": {
+						"$call": "supported",
+						"args": [
+							{
+								"$ref": "comprehensiveFeesShownByDefault"
+							}
+						]
+					},
+					"erc20L1Transfer": {
+						"$call": "supported",
+						"args": [
+							{
+								"$ref": "comprehensiveFeesShownByDefault"
+							}
+						]
+					},
+					"ethL1Transfer": {
+						"$call": "supported",
+						"args": [
+							{
+								"$ref": "comprehensiveFeesShownByDefault"
+							}
+						]
+					},
+					"uniswapUSDCToEtherSwap": {
+						"$call": "supported",
+						"args": [
+							{
+								"$ref": "comprehensiveFeesShownByDefault"
+							}
+						]
+					}
+				},
+				"releaseTransparency": {
+					"artifactSigning": null,
+					"dependencyLocking": null,
+					"dependencyVulnerabilityScanning": null,
+					"hasPublicChangelog": null,
+					"hermeticBuilds": null,
+					"repositoryChangeControls": null,
+					"reproducibleBuilds": null
+				}
+			}
+		},
+		"variants": {
+			"MOBILE": true
+		}
+	}
+}

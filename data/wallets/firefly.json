@@ -1,0 +1,122 @@
+{
+	"id": "firefly",
+	"source": "hardware-wallets",
+	"export": "fireflyWallet",
+	"data": {
+		"metadata": {
+			"id": "firefly",
+			"displayName": "Firefly Wallet",
+			"tableName": "Firefly",
+			"blurb": "Firefly Wallet is a hardware wallet that uses biometrics for user authentication and secure private key management.",
+			"contributors": [
+				{
+					"$ref": "nconsigny"
+				},
+				{
+					"$ref": "mattmatt"
+				}
+			],
+			"hardwareWalletManufactureType": "HardwareWalletManufactureType.DIY",
+			"hardwareWalletModels": [
+				{
+					"id": "firefly-v1",
+					"name": "Firefly V1",
+					"isFlagship": true,
+					"url": "https://firefly.city/"
+				}
+			],
+			"iconExtension": "svg",
+			"lastUpdated": "2025-03-12",
+			"urls": {
+				"websites": [
+					"https://firefly.city/"
+				]
+			}
+		},
+		"features": {
+			"accountSupport": null,
+			"appConnectionSupport": null,
+			"licensing": null,
+			"monetization": {
+				"ref": {
+					"$ref": "refTodo"
+				},
+				"revenueBreakdownIsPublic": false,
+				"strategies": {
+					"donations": null,
+					"ecosystemGrants": null,
+					"governanceTokenLowFloat": null,
+					"governanceTokenMostlyDistributed": null,
+					"hiddenConvenienceFees": null,
+					"publicOffering": null,
+					"selfFunded": null,
+					"transparentConvenienceFees": null,
+					"ventureCapital": null
+				}
+			},
+			"multiAddress": null,
+			"privacy": {
+				"analytics": {
+					"crashReports": null,
+					"usage": null
+				},
+				"dataCollection": null,
+				"hardwarePrivacy": null,
+				"privacyPolicy": "",
+				"transactionPrivacy": null
+			},
+			"profile": "WalletProfile.GENERIC",
+			"security": {
+				"accountRecovery": null,
+				"bugBountyProgram": {
+					"$ref": "notSupported"
+				},
+				"duressResistance": null,
+				"firmware": null,
+				"keysHandling": null,
+				"lightClient": {
+					"ethereumL1": null
+				},
+				"publicSecurityAudits": null,
+				"secureElement": null,
+				"securityBestPractices": null,
+				"supplyChainDIY": null,
+				"supplyChainFactory": null,
+				"transactionLegibility": {
+					"ref": {
+						"$ref": "refTodo"
+					},
+					"dataExtraction": {
+						"$ref": "noDataExtraction"
+					},
+					"detailsDisplayed": null,
+					"erc7730": {
+						"$ref": "notSupported"
+					},
+					"erc8213": null
+				},
+				"userSafety": null
+			},
+			"selfSovereignty": {
+				"interoperability": null
+			},
+			"transparency": {
+				"maintenance": null,
+				"operationFees": null,
+				"releaseTransparency": {
+					"artifactSigning": null,
+					"dependencyLocking": null,
+					"dependencyVulnerabilityScanning": null,
+					"hasPublicChangelog": null,
+					"hermeticBuilds": null,
+					"repositoryChangeControls": null,
+					"reproducibleBuilds": null
+				},
+				"reputation": null
+			}
+		},
+		"variants": {
+			"HARDWARE": true
+		}
+	}
+}

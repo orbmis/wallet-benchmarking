@@ -1,0 +1,271 @@
+{
+	"id": "bitbox",
+	"source": "hardware-wallets",
+	"export": "bitboxWallet",
+	"data": {
+		"metadata": {
+			"id": "bitbox",
+			"displayName": "BitBox",
+			"tableName": "BitBox",
+			"blurb": "BitBox02 is a hardware wallet with fully open-source firmware and a unique secure chip architecture that doesn't require trusting closed-source code.",
+			"contributors": [
+				{
+					"$ref": "patrickalphac"
+				},
+				{
+					"$ref": "mattmatt"
+				}
+			],
+			"hardwareWalletManufactureType": "HardwareWalletManufactureType.FACTORY_MADE",
+			"hardwareWalletModels": [
+				{
+					"id": "bitbox02-multi",
+					"name": "BitBox02 Multi",
+					"isFlagship": true,
+					"url": "https://bitbox.swiss/bitbox02/"
+				}
+			],
+			"iconExtension": "svg",
+			"lastUpdated": "2025-01-07",
+			"urls": {
+				"docs": [
+					"https://bitbox.swiss/dev/"
+				],
+				"repositories": [
+					"https://github.com/BitBoxSwiss/bitbox02-firmware"
+				],
+				"socials": {
+					"facebook": "https://web.facebook.com/BitBoxSwiss",
+					"instagram": "https://www.instagram.com/bitboxswiss/",
+					"linkedin": "https://www.linkedin.com/company/bitbox-swiss/",
+					"reddit": "https://www.reddit.com/r/BitBoxWallet/",
+					"x": "https://x.com/BitBoxSwiss",
+					"youtube": "https://www.youtube.com/@bitboxswiss"
+				},
+				"websites": [
+					"https://bitbox.swiss/"
+				]
+			}
+		},
+		"features": {
+			"accountSupport": null,
+			"appConnectionSupport": {
+				"$call": "supported",
+				"args": [
+					{
+						"ref": [
+							{
+								"explanation": "BitBox blog post explaining WalletConnect integration for secure app connections",
+								"url": "https://blog.bitbox.swiss/en/using-walletconnect-to-securely-connect-to-your-favorite-dapp/"
+							}
+						],
+						"requiresManufacturerConsent": null,
+						"supportedConnections": {
+							"VENDOR_OPEN_SOURCE_APP": true,
+							"RABBY": true
+						}
+					}
+				]
+			},
+			"licensing": {
+				"type": "LicensingType.SINGLE_WALLET_REPO_AND_LICENSE",
+				"walletAppLicense": {
+					"ref": [
+						{
+							"explanation": "BitBox02 firmware is fully open source and verified by WalletScrutiny",
+							"url": "https://github.com/BitBoxSwiss/bitbox02-firmware"
+						}
+					],
+					"license": "FOSSLicense.APACHE_2_0"
+				}
+			},
+			"monetization": {
+				"ref": {
+					"$ref": "refTodo"
+				},
+				"revenueBreakdownIsPublic": false,
+				"strategies": {
+					"donations": null,
+					"ecosystemGrants": null,
+					"governanceTokenLowFloat": null,
+					"governanceTokenMostlyDistributed": null,
+					"hiddenConvenienceFees": null,
+					"publicOffering": null,
+					"selfFunded": null,
+					"transparentConvenienceFees": null,
+					"ventureCapital": null
+				}
+			},
+			"multiAddress": null,
+			"privacy": {
+				"analytics": {
+					"crashReports": null,
+					"usage": null
+				},
+				"dataCollection": {
+					"INSTALL": null,
+					"UNCLASSIFIED": {
+						"collected": [
+							{
+								"ref": [
+									{
+										"explanation": "BitBoxApp sends IP address for update checks and uses BitBox backend servers for Bitcoin address lookups",
+										"url": "https://bitbox.swiss/policies/privacy-policy/"
+									}
+								],
+								"byEntity": {
+									"$ref": "bitbox"
+								},
+								"dataCollection": {
+									"IP_ADDRESS": "CollectionPolicy.BY_DEFAULT",
+									"ACCOUNT_ADDRESS": "CollectionPolicy.BY_DEFAULT",
+									"USER_ACTIONS": "CollectionPolicy.BY_DEFAULT",
+									"endpoint": {
+										"$ref": "RegularEndpoint"
+									}
+								},
+								"purposes": [
+									"DataCollectionPurpose.ANALYTICS"
+								]
+							},
+							{
+								"ref": [
+									{
+										"explanation": "BitBoxApp uses Etherscan to query Ethereum and ERC20 token account information",
+										"url": "https://bitbox.swiss/policies/privacy-policy/"
+									}
+								],
+								"byEntity": {
+									"$ref": "etherscan"
+								},
+								"dataCollection": {
+									"IP_ADDRESS": "CollectionPolicy.BY_DEFAULT",
+									"ACCOUNT_ADDRESS": "CollectionPolicy.BY_DEFAULT",
+									"BALANCE": "CollectionPolicy.BY_DEFAULT",
+									"endpoint": {
+										"$ref": "RegularEndpoint"
+									}
+								},
+								"purposes": [
+									"DataCollectionPurpose.CHAIN_DATA_LOOKUP",
+									"DataCollectionPurpose.ASSET_METADATA"
+								]
+							}
+						]
+					},
+					"ONBOARDING_NEW": {
+						"collected": [],
+						"publishedOnchain": "NO_DATA_PUBLISHED_ONCHAIN"
+					},
+					"ONBOARDING_IMPORT": null,
+					"APP_CONNECTION": "FLOW_NOT_SUPPORTED",
+					"NATIVE_SWAP": "FLOW_NOT_SUPPORTED",
+					"SEND_ETHER": {
+						"collected": []
+					},
+					"SEND_USDC": null,
+					"MAKE_TRANSACTION": {
+						"collected": []
+					}
+				},
+				"hardwarePrivacy": null,
+				"privacyPolicy": "https://bitbox.swiss/policies/privacy-policy/",
+				"transactionPrivacy": null
+			},
+			"profile": "WalletProfile.GENERIC",
+			"security": {
+				"accountRecovery": null,
+				"bugBountyProgram": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": [
+								{
+									"explanation": "At Shift Crypto, we strive towards excellence when it comes to the security and privacy of our products and believe that an open architecture is essential for keeping our users safe. However, even in time-proven security architectures, vulnerabilities can be found. This is why we release our code as open source. If you find a vulnerability, we would like to ask you to follow our bug bounty program for responsible disclosure.",
+									"url": "https://bitbox.swiss/bug-bounty-program/"
+								}
+							],
+							"availability": "BugBountyProgramAvailability.ACTIVE",
+							"coverageBreadth": "FULL_SCOPE",
+							"dateStarted": "2023-06-08",
+							"disclosure": {
+								"$ref": "notSupported"
+							},
+							"legalProtections": {
+								"$ref": "notSupported"
+							},
+							"platform": "BugBountyPlatform.SELF_HOSTED",
+							"rewards": {
+								"$ref": "notSupported"
+							},
+							"upgradePathAvailable": true
+						}
+					]
+				},
+				"duressResistance": null,
+				"firmware": {
+					"type": "FirmwareType.PASS",
+					"customFirmware": null,
+					"firmwareOpenSource": "FirmwareType.PASS",
+					"reproducibleBuilds": "FirmwareType.PASS",
+					"silentUpdateProtection": "FirmwareType.PASS"
+				},
+				"keysHandling": null,
+				"lightClient": {
+					"ethereumL1": null
+				},
+				"publicSecurityAudits": null,
+				"secureElement": null,
+				"securityBestPractices": null,
+				"supplyChainDIY": null,
+				"supplyChainFactory": null,
+				"transactionLegibility": {
+					"ref": [
+						{
+							"explanation": "Independent video demonstration of BitBox02 signing capabilities",
+							"url": "https://youtu.be/-m1jcBFS0dc?t=300"
+						}
+					],
+					"dataExtraction": {
+						"EYES": true,
+						"HASHES": false,
+						"QRCODE": false
+					},
+					"detailsDisplayed": {
+						"chain": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+						"from": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+						"gas": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+						"nonce": "DataDisplayOptions.NOT_IN_UI",
+						"to": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+						"value": "DataDisplayOptions.SHOWN_BY_DEFAULT"
+					},
+					"erc7730": {
+						"$ref": "notSupported"
+					},
+					"erc8213": null
+				},
+				"userSafety": null
+			},
+			"selfSovereignty": {
+				"interoperability": null
+			},
+			"transparency": {
+				"maintenance": null,
+				"operationFees": null,
+				"releaseTransparency": {
+					"artifactSigning": null,
+					"dependencyLocking": null,
+					"dependencyVulnerabilityScanning": null,
+					"hasPublicChangelog": null,
+					"hermeticBuilds": null,
+					"repositoryChangeControls": null,
+					"reproducibleBuilds": null
+				},
+				"reputation": null
+			}
+		},
+		"variants": {
+			"HARDWARE": true
+		}
+	}
+}

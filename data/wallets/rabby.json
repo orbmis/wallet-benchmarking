@@ -1,0 +1,1089 @@
+{
+	"id": "rabby",
+	"source": "software-wallets",
+	"export": "rabby",
+	"data": {
+		"metadata": {
+			"id": "rabby",
+			"displayName": "Rabby",
+			"tableName": "Rabby",
+			"blurb": "Rabby is a user-friendly Ethereum wallet focusing on smooth UX and security. It features an intuitive transaction preview feature and works on many chains.",
+			"contributors": [
+				{
+					"$ref": "polymutex"
+				},
+				{
+					"$ref": "nconsigny"
+				},
+				{
+					"$ref": "mattmatt"
+				}
+			],
+			"iconExtension": "svg",
+			"lastUpdated": "2026-05-06",
+			"urls": {
+				"docs": [
+					"https://rabbykit.rabby.io/"
+				],
+				"extensions": [
+					"https://chromewebstore.google.com/detail/rabby-wallet/acmacodkjbdgmoleebolmdjonilkdbch"
+				],
+				"repositories": [
+					"https://github.com/RabbyHub/Rabby"
+				],
+				"socials": {
+					"discord": "https://discord.com/invite/seFBCWmUre",
+					"x": "https://x.com/Rabby_io"
+				},
+				"websites": [
+					"https://rabby.io"
+				]
+			}
+		},
+		"features": {
+			"accountSupport": {
+				"defaultAccountType": "AccountType.eoa",
+				"eip7702": {
+					"$call": "notSupportedWithRef",
+					"args": [
+						{
+							"ref": "https://github.com/RabbyHub/Rabby/blob/fa9d0988e944f67e70da67d852cf3041d3b162da/src/background/controller/provider/controller.ts#L402-L407"
+						}
+					]
+				},
+				"eoa": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"$ref": "refTodo"
+							},
+							"canExportPrivateKey": true,
+							"keyDerivation": {
+								"type": "BIP32",
+								"canExportSeedPhrase": true,
+								"derivationPath": "BIP44",
+								"seedPhrase": "BIP39"
+							}
+						}
+					]
+				},
+				"mpc": {
+					"$ref": "notSupported"
+				},
+				"rawErc4337": {
+					"$ref": "notSupported"
+				},
+				"safe": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"$ref": "refTodo"
+							},
+							"canDeployNew": false,
+							"controllingSharesInSelfCustodyByDefault": "YES",
+							"keyRotationTransactionGeneration": "TransactionGenerationCapability.USING_OPEN_SOURCE_STANDALONE_APP",
+							"supportedOwners": "ANY_NUMBER_OF_SIGNERS",
+							"supportsAddingOrRemovingSigners": true,
+							"supportsKeyRotationWithoutModules": true,
+							"tokenTransferTransactionGeneration": "TransactionGenerationCapability.USING_OPEN_SOURCE_STANDALONE_APP"
+						}
+					]
+				}
+			},
+			"addressResolution": {
+				"ref": [
+					{
+						"explanation": "Rabby supports resolving plain ENS addresses when importing watch addresses, but not when sending funds.",
+						"url": "https://github.com/RabbyHub/Rabby/blob/5f2b84491b6af881ab4ef41f7627d5e068d10652/src/ui/views/ImportWatchAddress.tsx#L170"
+					}
+				],
+				"chainSpecificAddressing": {
+					"erc7828": {
+						"$ref": "notSupported"
+					},
+					"erc7831": {
+						"$ref": "notSupported"
+					}
+				},
+				"nonChainSpecificEnsResolution": {
+					"$ref": "notSupported"
+				}
+			},
+			"chainAbstraction": {
+				"bridging": {
+					"builtInBridging": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"$ref": "refTodo"
+								},
+								"feesLargerThan1bps": {
+									"afterSingleAction": "FeeDisplayLevel.COMPREHENSIVE",
+									"byDefault": "FeeDisplayLevel.NONE",
+									"fullySponsored": false
+								},
+								"risksExplained": "NOT_IN_UI"
+							}
+						]
+					},
+					"suggestedBridging": {
+						"$ref": "notSupported"
+					}
+				},
+				"crossChainBalances": {
+					"ref": {
+						"$ref": "refTodo"
+					},
+					"ether": {
+						"crossChainSumView": {
+							"$ref": "notSupported"
+						},
+						"perChainBalanceViewAcrossMultipleChains": {
+							"$ref": "featureSupported"
+						}
+					},
+					"globalAccountValue": {
+						"$ref": "featureSupported"
+					},
+					"perChainAccountValue": {
+						"$ref": "featureSupported"
+					},
+					"usdc": {
+						"crossChainSumView": {
+							"$ref": "notSupported"
+						},
+						"perChainBalanceViewAcrossMultipleChains": {
+							"$ref": "featureSupported"
+						}
+					}
+				}
+			},
+			"chainConfigurability": {
+				"$call": "supported",
+				"args": [
+					{
+						"ref": {
+							"$ref": "refTodo"
+						},
+						"customChainRpcEndpoint": {
+							"$ref": "featureSupported"
+						},
+						"l1": {
+							"$call": "supported",
+							"args": [
+								{
+									"rpcEndpointConfiguration": "RpcEndpointConfiguration.YES_AFTER_OTHER_REQUESTS",
+									"withNoConnectivityExceptL1RPCEndpoint": {
+										"accountCreation": {
+											"$ref": "featureSupported"
+										},
+										"accountImport": {
+											"$ref": "featureSupported"
+										},
+										"erc20BalanceLookup": {
+											"$ref": "notSupported"
+										},
+										"erc20TokenSend": {
+											"$ref": "notSupported"
+										},
+										"etherBalanceLookup": {
+											"$ref": "notSupported"
+										}
+									}
+								}
+							]
+						},
+						"nonL1": {
+							"$call": "supported",
+							"args": [
+								{
+									"rpcEndpointConfiguration": "RpcEndpointConfiguration.YES_AFTER_OTHER_REQUESTS"
+								}
+							]
+						}
+					}
+				]
+			},
+			"ecosystem": {
+				"delegation": "EIP_7702_NOT_SUPPORTED"
+			},
+			"integration": {
+				"browser": {
+					"1193": {
+						"$ref": "featureSupported"
+					},
+					"2700": {
+						"$ref": "featureSupported"
+					},
+					"6963": {
+						"$ref": "featureSupported"
+					},
+					"ref": [
+						{
+							"explanation": "Rabby implements the EIP-1193 Provider interface and injects it into web pages. EIP-2700 and EIP-6963 are also supported.",
+							"url": "https://github.com/RabbyHub/Rabby/blob/163a6cce4e12b1403b31a99da88bd417029a9973/src/background/utils/buildinProvider.ts"
+						}
+					]
+				},
+				"walletCall": {
+					"$call": "notSupportedWithRef",
+					"args": [
+						{
+							"ref": "https://github.com/RabbyHub/Rabby/blob/fa9d0988e944f67e70da67d852cf3041d3b162da/src/background/controller/provider/controller.ts#L402-L407"
+						}
+					]
+				}
+			},
+			"licensing": {
+				"type": "LicensingType.SEPARATE_CORE_CODE_LICENSE_VS_WALLET_CODE_LICENSE",
+				"coreLicense": {
+					"ref": [
+						{
+							"explanation": "Rabby's rabby-api package is unlicensed.",
+							"url": "https://www.npmjs.com/package/@rabby-wallet/rabby-api?activeTab=code"
+						},
+						{
+							"explanation": "Other than its rabby-api package, Rabby's core code is licensed under the MIT license.",
+							"url": "https://github.com/RabbyHub/Rabby/blob/2194a1c8a4ec199e7b6fe0fa1dee5cd1997fcb1c/LICENSE"
+						}
+					],
+					"license": "SourceAvailableNonFOSSLicense.UNLICENSED_VISIBLE"
+				},
+				"walletAppLicense": {
+					"BROWSER": {
+						"ref": [
+							{
+								"explanation": "Rabby's browser extension is licensed under the MIT license.",
+								"url": "https://github.com/RabbyHub/Rabby/blob/2194a1c8a4ec199e7b6fe0fa1dee5cd1997fcb1c/LICENSE"
+							}
+						],
+						"license": "FOSSLicense.MIT"
+					},
+					"MOBILE": {
+						"ref": [
+							{
+								"explanation": "Rabby's mobile app is unlicensed.",
+								"url": "https://github.com/RabbyHub/rabby-mobile"
+							}
+						],
+						"license": "SourceAvailableNonFOSSLicense.UNLICENSED_VISIBLE"
+					},
+					"DESKTOP": {
+						"ref": [
+							{
+								"explanation": "Rabby's desktop app is licensed under the MIT license.",
+								"url": "https://github.com/RabbyHub/RabbyDesktop/blob/39b04238052ba559ccae1c962cbafcfb3286ca4c/LICENSE"
+							}
+						],
+						"license": "FOSSLicense.MIT"
+					}
+				}
+			},
+			"monetization": {
+				"ref": [
+					{
+						"explanation": "Rabby is owned by DeBank, which is funded by venture capital.",
+						"url": [
+							{
+								"label": "Series A",
+								"url": "https://www.crunchbase.com/funding_round/debank-series-a--65945a04"
+							},
+							{
+								"label": "Series B",
+								"url": "https://www.crunchbase.com/funding_round/debank-series-b--44225a21"
+							}
+						]
+					}
+				],
+				"revenueBreakdownIsPublic": false,
+				"strategies": {
+					"donations": false,
+					"ecosystemGrants": false,
+					"governanceTokenLowFloat": false,
+					"governanceTokenMostlyDistributed": false,
+					"hiddenConvenienceFees": false,
+					"publicOffering": false,
+					"selfFunded": false,
+					"transparentConvenienceFees": true,
+					"ventureCapital": true
+				}
+			},
+			"multiAddress": {
+				"$ref": "featureSupported"
+			},
+			"privacy": {
+				"analytics": {
+					"crashReports": null,
+					"usage": {
+						"BROWSER": {
+							"$call": "supported",
+							"args": [
+								{
+									"ref": [
+										{
+											"explanation": "Rabby collects UI/product analytics events via Matomo which is sent to DeBank-owned infrastructure.",
+											"url": "https://github.com/search?q=repo%3ARabbyHub%2FRabby%20matomoRequestEvent&type=code"
+										}
+									],
+									"entity": {
+										"$ref": "deBank"
+									},
+									"policy": "CollectionPolicy.ALWAYS"
+								}
+							]
+						},
+						"DESKTOP": null,
+						"MOBILE": null
+					}
+				},
+				"appIsolation": {
+					"BROWSER": {
+						"createInAppConnectionFlow": {
+							"$ref": "notSupported"
+						},
+						"erc7846WalletConnect": {
+							"$ref": "notSupported"
+						},
+						"ethAccounts": {
+							"$call": "supported",
+							"args": [
+								{
+									"ref": {
+										"$ref": "refTodo"
+									},
+									"defaultBehavior": "ExposedAccountsBehavior.ACTIVE_ACCOUNT_ONLY"
+								}
+							]
+						},
+						"useAppSpecificLastConnectedAddresses": {
+							"$ref": "notSupported"
+						}
+					},
+					"MOBILE": null,
+					"DESKTOP": null
+				},
+				"dataCollection": {
+					"BROWSER": {
+						"INSTALL": null,
+						"NATIVE_SWAP": {
+							"collected": []
+						},
+						"SEND_ETHER": {
+							"collected": []
+						},
+						"SEND_USDC": null,
+						"ONBOARDING_NEW": {
+							"collected": [],
+							"publishedOnchain": "NO_DATA_PUBLISHED_ONCHAIN"
+						},
+						"ONBOARDING_IMPORT": null,
+						"MAKE_TRANSACTION": {
+							"collected": []
+						},
+						"APP_CONNECTION": {
+							"collected": [
+								{
+									"ref": [
+										{
+											"explanation": "Rabby checks whether the domain you are connecting your wallet to is on a scam list. It sends the domain along with Ethereum address in non-proxied HTTP requests for API methods `getOriginIsScam`, `getOriginPopularityLevel`, `getRecommendChains`, and others.",
+											"label": "Rabby API code on npmjs.com",
+											"url": "https://www.npmjs.com/package/@rabby-wallet/rabby-api?activeTab=code"
+										}
+									],
+									"byEntity": {
+										"$ref": "deBank"
+									},
+									"dataCollection": {
+										"IP_ADDRESS": "CollectionPolicy.ALWAYS",
+										"TRACKING_IDENTIFIER": "CollectionPolicy.ALWAYS",
+										"ACCOUNT_ADDRESS": "CollectionPolicy.ALWAYS",
+										"WALLET_CONNECTED_DOMAINS": "CollectionPolicy.ALWAYS",
+										"endpoint": {
+											"$ref": "RegularEndpoint"
+										},
+										"multiAddress": {
+											"type": "MultiAddressPolicy.ACTIVE_ADDRESS_ONLY"
+										}
+									},
+									"purposes": [
+										"DataCollectionPurpose.SCAM_DETECTION"
+									]
+								}
+							]
+						},
+						"UNCLASSIFIED": {
+							"collected": [
+								{
+									"ref": [
+										{
+											"explanation": "All wallet traffic goes through api.rabby.io without proxying.",
+											"url": "https://github.com/RabbyHub/Rabby/blob/356ed60957d61d508a89d71c63a33b7474d6b311/src/constant/index.ts#L468"
+										},
+										{
+											"explanation": "Balance refresh requests are made about the active address only.",
+											"url": "https://github.com/RabbyHub/Rabby/blob/356ed60957d61d508a89d71c63a33b7474d6b311/src/background/controller/wallet.ts#L1622"
+										},
+										{
+											"explanation": "Rabby uses self-hosted Matomo Analytics to track user actions within the wallet interface. While this tracking data does not contain wallet addresses, it goes to DeBank-owned servers much like Ethereum RPC requests do. This puts DeBank in a position to link user actions with wallet addresses through IP address correlation.",
+											"url": "https://github.com/search?q=repo%3ARabbyHub%2FRabby%20matomoRequestEvent&type=code"
+										}
+									],
+									"byEntity": {
+										"$ref": "deBank"
+									},
+									"dataCollection": {
+										"CEX_ACCOUNT": "CollectionPolicy.NEVER",
+										"IP_ADDRESS": "CollectionPolicy.ALWAYS",
+										"TRACKING_IDENTIFIER": "CollectionPolicy.ALWAYS",
+										"MEMPOOL_TRANSACTIONS": "CollectionPolicy.ALWAYS",
+										"USER_ACTIONS": "CollectionPolicy.ALWAYS",
+										"ACCOUNT_ADDRESS": "CollectionPolicy.ALWAYS",
+										"endpoint": {
+											"$ref": "RegularEndpoint"
+										},
+										"multiAddress": {
+											"type": "MultiAddressPolicy.ACTIVE_ADDRESS_ONLY"
+										}
+									},
+									"purposes": [
+										"DataCollectionPurpose.CHAIN_DATA_LOOKUP",
+										"DataCollectionPurpose.ANALYTICS",
+										"DataCollectionPurpose.SWAP_QUOTE",
+										"DataCollectionPurpose.TRANSACTION_BROADCAST",
+										"DataCollectionPurpose.TRANSACTION_SIMULATION"
+									]
+								}
+							]
+						}
+					},
+					"DESKTOP": null,
+					"MOBILE": null
+				},
+				"privacyPolicy": "https://rabby.io/docs/privacy",
+				"transactionPrivacy": {
+					"defaultFungibleTokenTransferMode": "PUBLIC",
+					"STEALTH_ADDRESSES": {
+						"$ref": "notSupported"
+					},
+					"TORNADO_CASH_NOVA": {
+						"$ref": "notSupported"
+					},
+					"PRIVACY_POOLS": {
+						"$ref": "notSupported"
+					},
+					"RAILGUN": {
+						"$ref": "notSupported"
+					}
+				}
+			},
+			"profile": "WalletProfile.GENERIC",
+			"security": {
+				"accountRecovery": {
+					"guardianRecovery": {
+						"$ref": "notSupported"
+					}
+				},
+				"bugBountyProgram": null,
+				"duressResistance": {
+					"basicUnlock": {
+						"ref": {
+							"$ref": "refTodo"
+						},
+						"mechanisms": {
+							"PIN": false,
+							"PASSWORD": true,
+							"BIOMETRIC": true,
+							"PATTERN": false
+						}
+					},
+					"duressMode": {
+						"$ref": "notSupported"
+					}
+				},
+				"hardwareWalletSupport": {
+					"DESKTOP": {
+						"ref": [
+							{
+								"explanation": "Rabby Desktop supports Ledger, Trezor, OneKey, Keystone, AirGap Vault, CoolWallet, GridPlus, and NGRAVE ZERO hardware wallets. Note that this support is only available in the desktop version, not in the mobile or browser extension versions.",
+								"url": "https://rabby.io/download"
+							}
+						],
+						"wallets": {
+							"LEDGER": {
+								"$call": "supported",
+								"args": [
+									{
+										"connectionTypes": [
+											"HardwareWalletConnection.webUSB"
+										]
+									}
+								]
+							},
+							"TREZOR": {
+								"$call": "supported",
+								"args": [
+									{
+										"connectionTypes": [
+											"HardwareWalletConnection.webUSB"
+										]
+									}
+								]
+							},
+							"KEYSTONE": {
+								"$call": "supported",
+								"args": [
+									{
+										"connectionTypes": [
+											"HardwareWalletConnection.QR"
+										]
+									}
+								]
+							},
+							"GRIDPLUS": {
+								"$call": "supported",
+								"args": [
+									{
+										"connectionTypes": [
+											"HardwareWalletConnection.webUSB"
+										]
+									}
+								]
+							},
+							"OTHER": {
+								"$call": "supported",
+								"args": [
+									{
+										"connectionTypes": [
+											"HardwareWalletConnection.webUSB"
+										]
+									}
+								]
+							}
+						}
+					},
+					"BROWSER": {
+						"ref": [
+							{
+								"explanation": "Rabby Wallet Extension supports Ledger, Trezor, GridPlus, OneKey, Keystone, NGRAVE ZERO, BitBox, CoolWallet, imToken, imKey hardware wallets.",
+								"url": "https://rabby.io/download"
+							}
+						],
+						"wallets": {
+							"LEDGER": {
+								"$call": "supported",
+								"args": [
+									{
+										"connectionTypes": [
+											"HardwareWalletConnection.webUSB"
+										]
+									}
+								]
+							},
+							"TREZOR": {
+								"$call": "supported",
+								"args": [
+									{
+										"connectionTypes": [
+											"HardwareWalletConnection.webUSB"
+										]
+									}
+								]
+							},
+							"KEYSTONE": {
+								"$call": "supported",
+								"args": [
+									{
+										"connectionTypes": [
+											"HardwareWalletConnection.QR"
+										]
+									}
+								]
+							},
+							"GRIDPLUS": {
+								"$call": "supported",
+								"args": [
+									{
+										"connectionTypes": [
+											"HardwareWalletConnection.webUSB"
+										]
+									}
+								]
+							},
+							"ONEKEY": {
+								"$call": "supported",
+								"args": [
+									{
+										"connectionTypes": [
+											"HardwareWalletConnection.webUSB"
+										]
+									}
+								]
+							},
+							"IMKEY": {
+								"$call": "supported",
+								"args": [
+									{
+										"connectionTypes": [
+											"HardwareWalletConnection.webUSB"
+										]
+									}
+								]
+							}
+						}
+					},
+					"MOBILE": null
+				},
+				"keysHandling": {
+					"ref": {
+						"$ref": "refTodo"
+					},
+					"keyGeneration": "KeyGenerationLocation.FULLY_ON_USER_DEVICE",
+					"multipartyKeyReconstruction": "MultiPartyKeyReconstruction.NON_MULTIPARTY"
+				},
+				"lightClient": {
+					"ethereumL1": {
+						"$ref": "notSupported"
+					}
+				},
+				"passkeyVerification": {
+					"$ref": "notSupported"
+				},
+				"publicSecurityAudits": [
+					{
+						"ref": "https://github.com/RabbyHub/Rabby/blob/4f0d175ea9fe0e1f75bdb95127501824aaabc72c/audits/2021/%5B20210623%5DRabby%20chrome%20extension%20Penetration%20Testing%20Report.pdf",
+						"auditDate": "2021-06-18",
+						"auditor": {
+							"$ref": "slowMist"
+						},
+						"codeSnapshot": {
+							"date": "2021-06-23"
+						},
+						"unpatchedFlaws": "ALL_FIXED",
+						"variantsScope": "ALL_VARIANTS"
+					},
+					{
+						"ref": "https://github.com/RabbyHub/Rabby/blob/4f0d175ea9fe0e1f75bdb95127501824aaabc72c/audits/2022/%5B20220318%5DSlowMist%20Audit%20Report%20-%20Rabby%20browser%20extension%20wallet.pdf",
+						"auditDate": "2022-03-18",
+						"auditor": {
+							"$ref": "slowMist"
+						},
+						"codeSnapshot": {
+							"commit": "f6d19bd70664a7214677918e298619d583f9c3f1",
+							"date": "2022-01-26",
+							"tag": "v0.21.1"
+						},
+						"unpatchedFlaws": "ALL_FIXED",
+						"variantsScope": "ALL_VARIANTS"
+					},
+					{
+						"ref": "https://github.com/RabbyHub/Rabby/blob/4f0d175ea9fe0e1f75bdb95127501824aaabc72c/audits/2023/%5B20230720%5DSlowMist%20Audit%20Report%20-%20Rabby%20Wallet.pdf",
+						"auditDate": "2023-07-20",
+						"auditor": {
+							"$ref": "slowMist"
+						},
+						"codeSnapshot": {
+							"commit": "f6221693b877b3c4eb1c7ac61146137eb1908997",
+							"date": "2023-06-19",
+							"tag": "v0.91.0"
+						},
+						"unpatchedFlaws": "ALL_FIXED",
+						"variantsScope": "ALL_VARIANTS"
+					},
+					{
+						"ref": "https://github.com/RabbyHub/RabbyDesktop/blob/39b04238052ba559ccae1c962cbafcfb3286ca4c/docs/SlowMist%20Audit%20Report%20-%20Rabby%20Wallet%20Desktop.pdf",
+						"auditDate": "2023-09-26",
+						"auditor": {
+							"$ref": "slowMist"
+						},
+						"codeSnapshot": {
+							"commit": "586447a46bcd0abab6356076e369357050c97796",
+							"date": "2023-09-01",
+							"tag": "v0.33.0-prod"
+						},
+						"unpatchedFlaws": "ALL_FIXED",
+						"variantsScope": {
+							"DESKTOP": true
+						}
+					},
+					{
+						"ref": "https://github.com/RabbyHub/rabby-mobile/blob/4c463a3fcac064228151a0f65a5af43218db53b2/audits/2024/Least%20Authority%20-%20Debank%20Rabby%20Walle%20Audit%20Report.pdf",
+						"auditDate": "2024-10-18",
+						"auditor": {
+							"$ref": "leastAuthority"
+						},
+						"codeSnapshot": {
+							"commit": "a8dea5d8c530cb1acf9104a7854089256c36d85a",
+							"date": "2024-09-08"
+						},
+						"unpatchedFlaws": [
+							{
+								"name": "Issue B: Insecure Key Derivation Function",
+								"presentStatus": "NOT_FIXED",
+								"severityAtAuditPublication": "SecurityFlawSeverity.MEDIUM"
+							},
+							{
+								"name": "Issue C: Weak Encryption Method Used",
+								"presentStatus": "NOT_FIXED",
+								"severityAtAuditPublication": "SecurityFlawSeverity.MEDIUM"
+							},
+							{
+								"name": "Issue D: Weak PBKDF2 Parameters Used",
+								"presentStatus": "NOT_FIXED",
+								"severityAtAuditPublication": "SecurityFlawSeverity.MEDIUM"
+							}
+						],
+						"variantsScope": "ALL_VARIANTS"
+					},
+					{
+						"ref": "https://github.com/RabbyHub/rabby-mobile/blob/4c463a3fcac064228151a0f65a5af43218db53b2/audits/2024/Cure53%20-%20Debank%20Rabby%20Wallet%20Audit%20Report.pdf",
+						"auditDate": "2024-10-22",
+						"auditor": {
+							"$ref": "cure53"
+						},
+						"codeSnapshot": {
+							"commit": "a8dea5d8c530cb1acf9104a7854089256c36d85a",
+							"date": "2024-09-08"
+						},
+						"unpatchedFlaws": [
+							{
+								"name": "RBY-01-001 WP1-WP2: Mnemonic recoverable via process dump",
+								"presentStatus": "NOT_FIXED",
+								"severityAtAuditPublication": "SecurityFlawSeverity.HIGH"
+							},
+							{
+								"name": "RBY-01-002 WP1-WP2: Password recoverable via process dump",
+								"presentStatus": "NOT_FIXED",
+								"severityAtAuditPublication": "SecurityFlawSeverity.HIGH"
+							},
+							{
+								"name": "RBY-01-012 WP1-WP2: RabbitCode secret recoverable from installer files",
+								"presentStatus": "NOT_FIXED",
+								"severityAtAuditPublication": "SecurityFlawSeverity.HIGH"
+							},
+							{
+								"name": "RBY-01-014 WP1-WP2: Backup password prompt bypassable",
+								"presentStatus": "NOT_FIXED",
+								"severityAtAuditPublication": "SecurityFlawSeverity.MEDIUM"
+							},
+							{
+								"name": "RBY-01-003 WP1-WP2: Lack of rate limiting for password unlock",
+								"presentStatus": "NOT_FIXED",
+								"severityAtAuditPublication": "SecurityFlawSeverity.MEDIUM"
+							}
+						],
+						"variantsScope": "ALL_VARIANTS"
+					},
+					{
+						"ref": "https://github.com/RabbyHub/rabby-mobile/blob/4c463a3fcac064228151a0f65a5af43218db53b2/audits/2024/SlowMist%20Audit%20Report%20-%20Rabby%20mobile%20wallet%20iOS.pdf",
+						"auditDate": "2024-10-23",
+						"auditor": {
+							"$ref": "slowMist"
+						},
+						"codeSnapshot": {
+							"commit": "a424dbe54bba464da7585769140f6b7136c9108b",
+							"date": "2024-06-17"
+						},
+						"unpatchedFlaws": "ALL_FIXED",
+						"variantsScope": "ALL_VARIANTS"
+					},
+					{
+						"ref": "https://github.com/RabbyHub/Rabby/blob/4f0d175ea9fe0e1f75bdb95127501824aaabc72c/audits/2024/%5B20241212%5DLeast%20Authority%20-%20DeBank%20Rabby%20Wallet%20Extension%20Final%20Audit%20Report.pdf",
+						"auditDate": "2024-12-12",
+						"auditor": {
+							"$ref": "leastAuthority"
+						},
+						"codeSnapshot": {
+							"commit": "eb5da18727b38a3fd693af8b74f6f151f2fd361c",
+							"date": "2024-10-14"
+						},
+						"unpatchedFlaws": "ALL_FIXED",
+						"variantsScope": "ALL_VARIANTS"
+					},
+					{
+						"ref": "https://github.com/RabbyHub/Rabby/blob/4f0d175ea9fe0e1f75bdb95127501824aaabc72c/audits/2024/%5B20241217%5DRabby%20Browser%20Extension%20Wallet%20-%20SlowMist%20Audit%20Report.pdf",
+						"auditDate": "2024-12-17",
+						"auditor": {
+							"$ref": "slowMist"
+						},
+						"codeSnapshot": {
+							"commit": "4e900e5944a671e99a135eea417bdfdb93072d99",
+							"date": "2024-11-28"
+						},
+						"unpatchedFlaws": "ALL_FIXED",
+						"variantsScope": "ALL_VARIANTS"
+					}
+				],
+				"scamAlerts": {
+					"contractTransactionWarning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"label": "Rabby Security engine rule for contract recency",
+										"url": "https://github.com/RabbyHub/rabby-security-engine/blob/5f6acd1a90eb0230176fadc7d0ae373cf8c21a73/src/rules/permit.ts#L42-L70"
+									},
+									{
+										"label": "Rabby Security engine rule for contracts flagged as suspicious",
+										"url": "https://github.com/RabbyHub/rabby-security-engine/blob/5f6acd1a90eb0230176fadc7d0ae373cf8c21a73/src/rules/tokenApprove.ts#L73-L92"
+									},
+									{
+										"explanation": "Rabby checks whether the contract you are visiting is on a scam list. It sends the contract along with Ethereum address in non-proxied HTTP requests for API method `unexpectedAddrList`.",
+										"label": "Rabby API code on npmjs.com",
+										"url": "https://www.npmjs.com/package/@rabby-wallet/rabby-api?activeTab=code"
+									}
+								],
+								"contractRegistry": true,
+								"leaksContractAddress": true,
+								"leaksUserAddress": true,
+								"leaksUserIp": true,
+								"previousContractInteractionWarning": false,
+								"recentContractWarning": true
+							}
+						]
+					},
+					"scamUrlWarning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"label": "Rabby Security engine rule for scam URL flagging",
+										"url": "https://github.com/RabbyHub/rabby-security-engine/blob/5f6acd1a90eb0230176fadc7d0ae373cf8c21a73/src/rules/connect.ts#L5-L73"
+									},
+									{
+										"explanation": "Rabby checks whether the domain you are visiting is on a scam list. It sends the domain along with Ethereum address in non-proxied HTTP requests for API methods `getOriginIsScam`, `getOriginPopularityLevel`, `getRecommendChains`, and others.",
+										"label": "Rabby API code on npmjs.com",
+										"url": "https://www.npmjs.com/package/@rabby-wallet/rabby-api?activeTab=code"
+									}
+								],
+								"leaksIp": true,
+								"leaksUserAddress": true,
+								"leaksVisitedUrl": "DOMAIN_ONLY"
+							}
+						]
+					},
+					"sendTransactionWarning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"label": "Rabby Security engine rule for sending to unknown addresses",
+										"url": "https://github.com/RabbyHub/rabby-security-engine/blob/5f6acd1a90eb0230176fadc7d0ae373cf8c21a73/src/rules/send.ts#L25-L44"
+									},
+									{
+										"label": "Rabby Security engine rule for sending to whitelisted addresses",
+										"url": "https://github.com/RabbyHub/rabby-security-engine/blob/5f6acd1a90eb0230176fadc7d0ae373cf8c21a73/src/rules/send.ts#L113-L132"
+									}
+								],
+								"leaksRecipient": false,
+								"leaksUserAddress": false,
+								"leaksUserIp": false,
+								"newRecipientWarning": false,
+								"userWhitelist": true
+							}
+						]
+					}
+				},
+				"securityBestPractices": null,
+				"transactionLegibility": {
+					"ref": {
+						"$ref": "refTodo"
+					},
+					"erc7730": {
+						"$call": "supported",
+						"args": [
+							{
+								"USDC_APPROVAL": {
+									"decoded": "DataDisplayOptions.SHOWN_OPTIONALLY"
+								},
+								"AAVE_SUPPLY": {
+									"decoded": "DataDisplayOptions.SHOWN_OPTIONALLY"
+								},
+								"SAFEWALLET_AAVE_SUPPLY_NESTED": {
+									"decoded": "DataDisplayOptions.NOT_IN_UI"
+								},
+								"SAFEWALLET_AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": {
+									"decoded": "DataDisplayOptions.NOT_IN_UI"
+								},
+								"AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": null
+							}
+						]
+					},
+					"erc8213": {
+						"$call": "supported",
+						"args": [
+							{
+								"calldataDisplay": {
+									"RAW_HEX": "DataDisplayOptions.SHOWN_OPTIONALLY",
+									"COPY_HEX_TO_CLIPBOARD": "DataDisplayOptions.NOT_IN_UI",
+									"FORMATTED": "DataDisplayOptions.SHOWN_OPTIONALLY",
+									"CALLDATA_DIGEST": "DataDisplayOptions.NOT_IN_UI"
+								},
+								"messageSigningLegibility": {
+									"EIP712_STRUCT": "DataDisplayOptions.SHOWN_OPTIONALLY",
+									"DOMAIN_HASH": "DataDisplayOptions.NOT_IN_UI",
+									"MESSAGE_HASH": "DataDisplayOptions.NOT_IN_UI",
+									"EIP712_DIGEST": "DataDisplayOptions.NOT_IN_UI"
+								}
+							}
+						]
+					},
+					"transactionDetailsDisplay": {
+						"chain": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+						"from": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+						"gas": "DataDisplayOptions.SHOWN_OPTIONALLY",
+						"nonce": "DataDisplayOptions.SHOWN_OPTIONALLY",
+						"to": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+						"value": "DataDisplayOptions.SHOWN_BY_DEFAULT"
+					},
+					"transactionSimulations": {
+						"$call": "supported",
+						"args": [
+							{
+								"ERC_20_TRANSFER": {
+									"transactionOutcome": "TransactionOutcome.EXPLAINED"
+								},
+								"ERC_721_TRANSFER": {
+									"transactionOutcome": "TransactionOutcome.NOT_EXPLAINED"
+								},
+								"ERC_1155_TRANSFER": {
+									"transactionOutcome": "TransactionOutcome.NOT_EXPLAINED"
+								},
+								"USDC_APPROVAL": {
+									"transactionOutcome": "TransactionOutcome.EXPLAINED"
+								},
+								"AAVE_SUPPLY": {
+									"transactionOutcome": "TransactionOutcome.EXPLAINED"
+								},
+								"SAFEWALLET_AAVE_SUPPLY_NESTED": {
+									"transactionOutcome": "TransactionOutcome.NOT_EXPLAINED"
+								},
+								"SAFEWALLET_AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": {
+									"transactionOutcome": "TransactionOutcome.NOT_EXPLAINED"
+								},
+								"ETH_TRANSFER": null,
+								"ZKSYNC_USDC_TRANSFER": null,
+								"AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": null,
+								"FAILED_TRANSACTION": {
+									"failure": "DETECTED"
+								},
+								"NONDETERMINISTIC_TRANSACTION": {
+									"nondeterminism": "STATIC_SINGLE_OUTCOME"
+								}
+							}
+						]
+					}
+				}
+			},
+			"selfSovereignty": {
+				"permissionsManagement": {
+					"BROWSER": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"$ref": "refTodo"
+								},
+								"erc1155Approvals": "SpendingApprovalsControl.CAN_INSPECT_AND_REVOKE",
+								"erc20Approvals": "SpendingApprovalsControl.CAN_INSPECT_AND_REVOKE",
+								"erc721Approvals": "SpendingApprovalsControl.CAN_INSPECT_AND_REVOKE"
+							}
+						]
+					},
+					"DESKTOP": null,
+					"MOBILE": null
+				},
+				"transactionSubmission": {
+					"l1": {
+						"ref": {
+							"$ref": "refTodo"
+						},
+						"selfBroadcastViaDirectGossip": {
+							"$ref": "notSupported"
+						},
+						"selfBroadcastViaSelfHostedNode": {
+							"$ref": "featureSupported"
+						}
+					},
+					"l2": {
+						"arbitrum": "TransactionSubmissionL2Support.SUPPORTED_BUT_NO_FORCE_INCLUSION",
+						"opStack": "TransactionSubmissionL2Support.SUPPORTED_BUT_NO_FORCE_INCLUSION",
+						"ref": {
+							"$ref": "refTodo"
+						}
+					}
+				}
+			},
+			"transparency": {
+				"operationFees": {
+					"builtInErc20Swap": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"$ref": "refTodo"
+								},
+								"afterSingleAction": "FeeDisplayLevel.COMPREHENSIVE",
+								"byDefault": "FeeDisplayLevel.NONE",
+								"fullySponsored": false
+							}
+						]
+					},
+					"erc20L1Transfer": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"$ref": "refTodo"
+								},
+								"afterSingleAction": "FeeDisplayLevel.COMPREHENSIVE",
+								"byDefault": "FeeDisplayLevel.NONE",
+								"fullySponsored": false
+							}
+						]
+					},
+					"ethL1Transfer": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"$ref": "refTodo"
+								},
+								"afterSingleAction": "FeeDisplayLevel.COMPREHENSIVE",
+								"byDefault": "FeeDisplayLevel.NONE",
+								"fullySponsored": false
+							}
+						]
+					},
+					"uniswapUSDCToEtherSwap": {
+						"$call": "supported",
+						"args": [
+							{
+								"$ref": "comprehensiveFeesShownByDefault"
+							}
+						]
+					}
+				},
+				"releaseTransparency": {
+					"artifactSigning": null,
+					"dependencyLocking": null,
+					"dependencyVulnerabilityScanning": null,
+					"hasPublicChangelog": null,
+					"hermeticBuilds": null,
+					"repositoryChangeControls": null,
+					"reproducibleBuilds": null
+				}
+			}
+		},
+		"variants": {
+			"MOBILE": true,
+			"BROWSER": true,
+			"DESKTOP": true
+		}
+	}
+}

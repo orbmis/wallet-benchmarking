@@ -1,0 +1,359 @@
+{
+	"id": "okx",
+	"source": "software-wallets",
+	"export": "okx",
+	"data": {
+		"metadata": {
+			"id": "okx",
+			"displayName": "OKX Wallet",
+			"tableName": "OKX",
+			"blurb": "OKX Wallet is a universal crypto wallet available on multiple platforms, including app, web, and extension",
+			"contributors": [
+				{
+					"$ref": "mattmatt"
+				}
+			],
+			"iconExtension": "png",
+			"lastUpdated": "2026-01-28",
+			"urls": {
+				"extensions": [
+					"https://chromewebstore.google.com/detail/okx-wallet/mcohilncbfahbmgdjkbpemcciiolgcge"
+				],
+				"socials": {
+					"x": "https://x.com/wallet"
+				},
+				"websites": [
+					"https://web3.okx.com/"
+				]
+			}
+		},
+		"features": {
+			"accountSupport": {
+				"defaultAccountType": "AccountType.eoa",
+				"eip7702": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"$ref": "refTodo"
+							},
+							"contract": "UNKNOWN"
+						}
+					]
+				},
+				"eoa": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"$ref": "refTodo"
+							},
+							"canExportPrivateKey": true,
+							"canExportSeedPhrase": true,
+							"keyDerivation": {
+								"type": "BIP32",
+								"canExportSeedPhrase": true,
+								"derivationPath": "BIP44",
+								"seedPhrase": "BIP39"
+							}
+						}
+					]
+				},
+				"mpc": {
+					"$ref": "notSupported"
+				},
+				"rawErc4337": {
+					"$ref": "notSupported"
+				},
+				"safe": {
+					"$ref": "notSupported"
+				}
+			},
+			"addressResolution": {
+				"ref": {
+					"$ref": "refTodo"
+				},
+				"chainSpecificAddressing": {
+					"erc7828": null,
+					"erc7831": null
+				},
+				"nonChainSpecificEnsResolution": null
+			},
+			"chainAbstraction": {
+				"bridging": {
+					"builtInBridging": {
+						"$ref": "notSupported"
+					},
+					"suggestedBridging": {
+						"$ref": "notSupported"
+					}
+				},
+				"crossChainBalances": {
+					"ref": {
+						"$ref": "refTodo"
+					},
+					"ether": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"$ref": "refTodo"
+								},
+								"crossChainSumView": {
+									"$ref": "featureSupported"
+								},
+								"perChainBalanceViewAcrossMultipleChains": {
+									"$ref": "featureSupported"
+								}
+							}
+						]
+					},
+					"globalAccountValue": {
+						"$ref": "featureSupported"
+					},
+					"perChainAccountValue": {
+						"$ref": "featureSupported"
+					},
+					"usdc": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"$ref": "refTodo"
+								},
+								"crossChainSumView": {
+									"$ref": "featureSupported"
+								},
+								"perChainBalanceViewAcrossMultipleChains": {
+									"$ref": "featureSupported"
+								}
+							}
+						]
+					}
+				}
+			},
+			"chainConfigurability": {
+				"$ref": "notSupported"
+			},
+			"ecosystem": {
+				"delegation": null
+			},
+			"integration": {
+				"browser": {
+					"1193": {
+						"$ref": "featureSupported"
+					},
+					"2700": {
+						"$ref": "featureSupported"
+					},
+					"6963": {
+						"$ref": "featureSupported"
+					},
+					"ref": {
+						"$ref": "refTodo"
+					}
+				},
+				"walletCall": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"$ref": "refTodo"
+							},
+							"atomicMultiTransactions": {
+								"$ref": "featureSupported"
+							}
+						}
+					]
+				}
+			},
+			"licensing": {
+				"type": "LicensingType.SINGLE_WALLET_REPO_AND_LICENSE",
+				"walletAppLicense": {
+					"ref": {
+						"$ref": "refNotNecessary"
+					},
+					"license": "SourceNotAvailableLicense.PROPRIETARY"
+				}
+			},
+			"monetization": {
+				"ref": {
+					"$ref": "refTodo"
+				},
+				"revenueBreakdownIsPublic": false,
+				"strategies": {
+					"donations": null,
+					"ecosystemGrants": null,
+					"governanceTokenLowFloat": null,
+					"governanceTokenMostlyDistributed": null,
+					"hiddenConvenienceFees": null,
+					"publicOffering": null,
+					"selfFunded": null,
+					"transparentConvenienceFees": null,
+					"ventureCapital": null
+				}
+			},
+			"multiAddress": {
+				"$ref": "featureSupported"
+			},
+			"privacy": {
+				"analytics": {
+					"crashReports": null,
+					"usage": null
+				},
+				"appIsolation": null,
+				"dataCollection": null,
+				"privacyPolicy": null,
+				"transactionPrivacy": {
+					"defaultFungibleTokenTransferMode": "PUBLIC",
+					"STEALTH_ADDRESSES": {
+						"$ref": "notSupported"
+					},
+					"TORNADO_CASH_NOVA": {
+						"$ref": "notSupported"
+					},
+					"PRIVACY_POOLS": {
+						"$ref": "notSupported"
+					},
+					"RAILGUN": {
+						"$ref": "notSupported"
+					}
+				}
+			},
+			"profile": "WalletProfile.GENERIC",
+			"security": {
+				"accountRecovery": {
+					"guardianRecovery": {
+						"$ref": "notSupported"
+					}
+				},
+				"bugBountyProgram": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": [
+								{
+									"explanation": "The OKG Bug Bounty Program enlists the help of the hacker community at HackerOne to make OKG more secure.",
+									"url": "https://hackerone.com/okg?type=team"
+								}
+							],
+							"availability": "BugBountyProgramAvailability.ACTIVE",
+							"coverageBreadth": "FULL_SCOPE",
+							"dateStarted": "2023-03-01",
+							"disclosure": {
+								"$ref": "notSupported"
+							},
+							"legalProtections": {
+								"$call": "supported",
+								"args": [
+									{
+										"type": "LegalProtectionType.SAFE_HARBOR",
+										"ref": [
+											{
+												"explanation": "Policy includes a Safe Harbor: compliant research is authorized and OKG says it will not initiate legal action.",
+												"url": "https://hackerone.com/okg?type=team"
+											}
+										]
+									}
+								]
+							},
+							"platform": "BugBountyPlatform.HACKER_ONE",
+							"rewards": {
+								"$call": "supported",
+								"args": [
+									{
+										"currency": "USD",
+										"maximum": 1000000,
+										"minimum": 50
+									}
+								]
+							},
+							"upgradePathAvailable": true
+						}
+					]
+				},
+				"duressResistance": null,
+				"hardwareWalletSupport": null,
+				"keysHandling": null,
+				"lightClient": {
+					"ethereumL1": null
+				},
+				"passkeyVerification": {
+					"$ref": "notSupported"
+				},
+				"publicSecurityAudits": null,
+				"scamAlerts": null,
+				"securityBestPractices": null,
+				"transactionLegibility": {
+					"ref": {
+						"$ref": "refTodo"
+					},
+					"erc7730": null,
+					"erc8213": {
+						"$call": "supported",
+						"args": [
+							{
+								"calldataDisplay": {
+									"RAW_HEX": "DataDisplayOptions.SHOWN_OPTIONALLY",
+									"COPY_HEX_TO_CLIPBOARD": "DataDisplayOptions.SHOWN_OPTIONALLY",
+									"FORMATTED": "DataDisplayOptions.NOT_IN_UI",
+									"CALLDATA_DIGEST": "DataDisplayOptions.NOT_IN_UI"
+								},
+								"messageSigningLegibility": {
+									"EIP712_STRUCT": "DataDisplayOptions.SHOWN_OPTIONALLY",
+									"DOMAIN_HASH": "DataDisplayOptions.NOT_IN_UI",
+									"MESSAGE_HASH": "DataDisplayOptions.NOT_IN_UI",
+									"EIP712_DIGEST": "DataDisplayOptions.NOT_IN_UI"
+								}
+							}
+						]
+					},
+					"transactionDetailsDisplay": {
+						"chain": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+						"from": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+						"gas": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+						"nonce": "DataDisplayOptions.NOT_IN_UI",
+						"to": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+						"value": "DataDisplayOptions.SHOWN_BY_DEFAULT"
+					},
+					"transactionSimulations": null
+				}
+			},
+			"selfSovereignty": {
+				"permissionsManagement": null,
+				"transactionSubmission": {
+					"l1": {
+						"ref": {
+							"$ref": "refTodo"
+						},
+						"selfBroadcastViaDirectGossip": null,
+						"selfBroadcastViaSelfHostedNode": null
+					},
+					"l2": {
+						"arbitrum": null,
+						"opStack": null,
+						"ref": {
+							"$ref": "refTodo"
+						}
+					}
+				}
+			},
+			"transparency": {
+				"operationFees": null,
+				"releaseTransparency": {
+					"artifactSigning": null,
+					"dependencyLocking": null,
+					"dependencyVulnerabilityScanning": null,
+					"hasPublicChangelog": null,
+					"hermeticBuilds": null,
+					"repositoryChangeControls": null,
+					"reproducibleBuilds": null
+				}
+			}
+		},
+		"variants": {
+			"MOBILE": true,
+			"BROWSER": true
+		}
+	}
+}

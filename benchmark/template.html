@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wallet Benchmark — PM view</title>
+<style>
+  :root{
+    --bg:#0f1115; --panel:#171a21; --panel2:#1d212b; --line:#2a2f3a;
+    --txt:#e6e9ef; --muted:#8b93a7; --accent:#5b8cff; --accentdim:#2a3a6b;
+    --good:#1f8a55; --goodbg:#11271d; --bad:#b5384a; --badbg:#2a1419;
+    --warn:#b07d23; --warnbg:#2a2110; --unknown:#3a4150; --unknownbg:#1b1f28;
+    --valuebg:#162033; --valuetxt:#9fc0ff; --baseline:#3a2a5e;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  a{color:var(--accent)}
+  header{padding:16px 20px;border-bottom:1px solid var(--line);display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+  header h1{font-size:18px;margin:0;font-weight:650}
+  header .sub{color:var(--muted);font-size:12.5px}
+  header .navlink{margin-left:auto;font-size:13px;text-decoration:none;background:var(--accentdim);border:1px solid var(--accent);color:#cfe0ff;border-radius:7px;padding:5px 11px}
+  header .navlink:hover{background:#33457f}
+  .controls{display:flex;gap:18px;flex-wrap:wrap;padding:14px 20px;border-bottom:1px solid var(--line);background:var(--panel)}
+  .ctl{display:flex;flex-direction:column;gap:5px}
+  .ctl > label{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+  select,input[type=text]{background:var(--panel2);color:var(--txt);border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-size:13px}
+  .chips{display:flex;gap:6px;flex-wrap:wrap;max-width:560px}
+  .chip{padding:4px 10px;border:1px solid var(--line);border-radius:20px;background:var(--panel2);cursor:pointer;font-size:12.5px;user-select:none;white-space:nowrap}
+  .chip.on{background:var(--accentdim);border-color:var(--accent);color:#cfe0ff}
+  .chip.base{background:var(--baseline);border-color:#7a5bd0;color:#e3d8ff}
+  .toggles{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+  .toggles label{display:flex;gap:6px;align-items:center;font-size:13px;color:var(--muted);cursor:pointer}
+  .btn{background:var(--accentdim);border:1px solid var(--accent);color:#cfe0ff;border-radius:7px;padding:6px 12px;font-size:13px;cursor:pointer}
+  .btn:hover{background:#33457f}
+
+  .summary{display:flex;gap:12px;padding:14px 20px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;min-width:150px}
+  .card.base{border-color:#7a5bd0;box-shadow:0 0 0 1px #7a5bd0 inset}
+  .card .nm{font-weight:600;display:flex;align-items:center;gap:7px}
+  .card .score{font-size:26px;font-weight:700;margin-top:6px}
+  .card .delta{font-size:12px;color:var(--muted)}
+  .card .bar{height:6px;background:var(--unknownbg);border-radius:4px;margin-top:7px;overflow:hidden}
+  .card .bar > i{display:block;height:100%;background:linear-gradient(90deg,#1f8a55,#5b8cff)}
+  .dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+
+  .wrap{overflow:auto;max-height:calc(100vh - 0px)}
+  table{border-collapse:separate;border-spacing:0;width:100%}
+  th,td{border-bottom:1px solid var(--line);padding:0;text-align:left}
+  thead th{position:sticky;top:0;z-index:5;background:var(--panel);padding:10px 12px;font-size:12.5px;vertical-align:bottom}
+  thead th.wal{cursor:default}
+  thead th .wname{font-weight:650}
+  thead th .wmeta{color:var(--muted);font-size:11px;font-weight:400}
+  thead th.basecol{background:#221a36}
+  th.metric,td.metric{position:sticky;left:0;z-index:4;background:var(--panel);padding:8px 12px;min-width:230px;max-width:260px}
+  thead th.metric{z-index:6}
+  td.metric{font-size:13px}
+  td.metric .desc{display:none}
+  tr.catrow td{background:var(--panel2);padding:7px 12px;font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);cursor:pointer;position:sticky;left:0}
+  tr.catrow td .count{color:var(--accent)}
+  td.cell{text-align:center;padding:6px 8px;border-left:1px solid var(--line)}
+  td.cell.basecol{background:#191427}
+  .pill{display:inline-block;min-width:30px;padding:3px 9px;border-radius:6px;font-size:12.5px;font-weight:600;cursor:pointer;border:1px solid transparent}
+  .pill:hover{filter:brightness(1.2);border-color:var(--accent)}
+  .pill.good{background:var(--goodbg);color:#5fd39a}
+  .pill.bad{background:var(--badbg);color:#ef7f8f}
+  .pill.warn{background:var(--warnbg);color:#e7b85c}
+  .pill.unknown{background:var(--unknownbg);color:var(--muted)}
+  .pill.value{background:var(--valuebg);color:var(--valuetxt);font-weight:500}
+  .pill.diff{box-shadow:0 0 0 2px var(--warn)}
+  .legend{display:flex;gap:14px;padding:8px 20px;color:var(--muted);font-size:12px;flex-wrap:wrap;align-items:center;border-bottom:1px solid var(--line)}
+  .legend .pill{cursor:default}
+
+  /* drawer */
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:.15s}
+  .scrim.on{opacity:1;pointer-events:auto}
+  .drawer{position:fixed;top:0;right:0;height:100%;width:420px;max-width:92vw;background:var(--panel);border-left:1px solid var(--line);transform:translateX(100%);transition:.18s;z-index:20;display:flex;flex-direction:column}
+  .drawer.on{transform:none}
+  .drawer .dh{padding:16px 18px;border-bottom:1px solid var(--line)}
+  .drawer .dh .x{float:right;cursor:pointer;color:var(--muted);font-size:20px;line-height:1}
+  .drawer .dh .mlabel{font-size:16px;font-weight:650}
+  .drawer .dh .wlabel{color:var(--muted);font-size:13px;margin-top:2px}
+  .drawer .body{padding:16px 18px;overflow:auto}
+  .verdict{display:inline-block;padding:4px 10px;border-radius:6px;font-weight:650;font-size:13px}
+  .tag{display:inline-block;padding:2px 8px;border-radius:5px;font-size:11.5px;margin-left:6px}
+  .tag.g{background:var(--goodbg);color:#5fd39a}.tag.b{background:var(--badbg);color:#ef7f8f}.tag.n{background:var(--unknownbg);color:var(--muted)}
+  .sect{margin-top:18px}
+  .sect h4{margin:0 0 7px;font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+  .cite{border:1px solid var(--line);border-radius:8px;padding:10px 11px;margin-bottom:9px;background:var(--panel2)}
+  .cite .ex{color:var(--txt);font-size:12.8px}
+  .cite a{font-size:12.5px;word-break:break-all}
+  .nosrc{color:var(--warn);background:var(--warnbg);border:1px solid #4a3a16;border-radius:8px;padding:9px 11px;font-size:12.5px}
+  .cmp{display:flex;justify-content:space-between;border:1px solid var(--line);border-radius:8px;padding:9px 11px;background:var(--panel2);font-size:13px;margin-top:6px}
+  .empty{padding:40px;text-align:center;color:var(--muted)}
+
+  /* first-run help */
+  details.help{margin:14px 20px 0;background:var(--panel);border:1px solid var(--line);border-radius:10px}
+  details.help > summary{cursor:pointer;list-style:none;padding:12px 16px;font-weight:600;display:flex;align-items:center;gap:8px}
+  details.help > summary::-webkit-details-marker{display:none}
+  details.help > summary .chev{color:var(--muted);transition:.15s;font-size:12px}
+  details.help[open] > summary .chev{transform:rotate(90deg)}
+  details.help > summary .tagn{font-weight:400;color:var(--muted);font-size:12.5px}
+  .help .inner{padding:2px 18px 16px;border-top:1px solid var(--line)}
+  .help h4{margin:16px 0 6px;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--accent)}
+  .help p{margin:6px 0;color:var(--txt)}
+  .help ul{margin:6px 0;padding-left:18px}
+  .help li{margin:4px 0}
+  .help .read{display:flex;gap:22px;flex-wrap:wrap;margin-top:6px}
+  .help .read .col{flex:1;min-width:200px}
+  .help .col .n{font-weight:600;color:var(--accent)}
+  .help .key{display:inline-block;background:var(--panel2);border:1px solid var(--line);border-radius:5px;padding:1px 7px;font-size:12px}
+  .help .muted{color:var(--muted)}
+  .help .diagram{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:8px 0;font-size:12.5px}
+  .help .box{border:1px solid var(--line);border-radius:6px;padding:5px 10px;background:var(--panel2)}
+  .help .arrow{color:var(--muted)}
+  .help .pill{cursor:default}
+</style>
+</head>
+<body>
+<header>
+  <h1>Wallet Benchmark</h1>
+  <span class="sub">PM view · feature parity vs. rivals · every cell is citation-backed</span>
+  <a class="navlink" href="privacy.html">Privacy data-flow →</a>
+</header>
+
+<details class="help" open>
+  <summary><span class="chev">▶</span> How to read this benchmark <span class="tagn">— click to collapse</span></summary>
+  <div class="inner">
+    <p>A feature-by-feature scorecard comparing wallets. You pick <b>your wallet</b> (the baseline) and a set of
+       <b>rivals</b>; every row is one capability, and each cell shows where each wallet stands —
+       <b>backed by a citation</b> you can open.</p>
+    <div class="diagram">
+      <span class="box"><b>Rows</b><br><span class="muted">capabilities, grouped by category</span></span>
+      <span class="arrow">×</span>
+      <span class="box"><b>Columns</b><br><span class="muted">your wallet ★ + rivals</span></span>
+      <span class="arrow">=</span>
+      <span class="box"><b>Cell</b><br><span class="muted">click for the source</span></span>
+    </div>
+
+    <h4>What the cell colours mean</h4>
+    <div class="read">
+      <div class="col">
+        <div class="n">Colour = better / worse for the user</div>
+        <p class="muted" style="margin-top:2px">Not literally yes/no — e.g. "sends usage analytics: Yes" shows red, because it's worse for the user.</p>
+        <ul>
+          <li><span class="pill good">Good</span> favourable for the user</li>
+          <li><span class="pill bad">Worse</span> unfavourable</li>
+          <li><span class="pill warn">Partial</span> partial / qualified support</li>
+          <li><span class="pill unknown">— Unknown</span> not recorded in the dataset (distinct from "No")</li>
+          <li><span class="pill value">Value</span> a descriptive value (e.g. a licence) rather than yes/no</li>
+        </ul>
+      </div>
+      <div class="col">
+        <div class="n">Reading the comparison</div>
+        <ul>
+          <li>Your baseline column is highlighted and marked <b>★</b>.</li>
+          <li>A rival cell that <b>differs from your baseline</b> is <b>outlined</b> — that's where you win or lose.</li>
+          <li>The <b>scorecards</b> up top give each wallet a favourability % and a delta vs. you.</li>
+          <li><b>Click any cell</b> to open the evidence drawer: the verdict, your baseline's value side-by-side, and the source links. Values sourced only to a <span class="key">refTodo</span> placeholder are flagged <b>⚠ Unsourced</b>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h4>How to use it</h4>
+    <ul>
+      <li><b>Set your wallet</b> in "Your wallet (baseline)", then toggle <b>rival chips</b> to compare against.</li>
+      <li><b>Platform</b> filters to wallets that ship on Browser / Mobile / Desktop, so you compare a fair peer set.</li>
+      <li><span class="key">Only differences</span> hides rows where every rival matches you; <span class="key">Hide unknowns</span> declutters un-recorded rows.</li>
+      <li><b>Search</b> filters rows by name; category headers collapse; <b>Export CSV</b> dumps the current view for slides/sheets.</li>
+      <li>Need the privacy story? <a href="privacy.html">open the Privacy data-flow view →</a></li>
+    </ul>
+    <p class="muted">Coverage varies by wallet — an "Unknown" cell means the dataset hasn't recorded that fact yet, not that the answer is "no".</p>
+  </div>
+</details>
+
+<div class="controls">
+  <div class="ctl">
+    <label>Your wallet (baseline)</label>
+    <select id="baseline"></select>
+  </div>
+  <div class="ctl" style="flex:1">
+    <label>Rivals to compare</label>
+    <div class="chips" id="rivalChips"></div>
+  </div>
+  <div class="ctl">
+    <label>Platform</label>
+    <select id="variant">
+      <option value="">All</option>
+      <option value="BROWSER">Browser</option>
+      <option value="MOBILE">Mobile</option>
+      <option value="DESKTOP">Desktop</option>
+    </select>
+  </div>
+  <div class="ctl">
+    <label>Filter metrics</label>
+    <input type="text" id="search" placeholder="search rows…">
+  </div>
+  <div class="ctl">
+    <label>View</label>
+    <div class="toggles">
+      <label><input type="checkbox" id="onlyDiff"> Only differences</label>
+      <label><input type="checkbox" id="hideUnknown"> Hide unknowns</label>
+      <button class="btn" id="csv">Export CSV</button>
+    </div>
+  </div>
+</div>
+
+<div class="legend">
+  <span>Colour = better/worse for the user, not literally yes/no:</span>
+  <span class="pill good">Good</span>
+  <span class="pill bad">Worse</span>
+  <span class="pill warn">Partial</span>
+  <span class="pill unknown">— Unknown</span>
+  <span class="pill value">Value</span>
+  <span style="margin-left:auto">Outlined cells differ from your baseline · click any cell for sources</span>
+</div>
+
+<div class="summary" id="summary"></div>
+
+<div class="wrap">
+  <table id="matrix"></table>
+  <div class="empty" id="empty" style="display:none">No rows match the current filters.</div>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer">
+  <div class="dh">
+    <span class="x" id="dx">×</span>
+    <div class="mlabel" id="dMetric"></div>
+    <div class="wlabel" id="dWallet"></div>
+  </div>
+  <div class="body" id="dBody"></div>
+</aside>
+
+<script>
+const DATA = /*__DATA__*/;
+const {wallets, metrics, cats} = DATA;
+const byId = Object.fromEntries(wallets.map(w=>[w.id,w]));
+
+// ---- state
+const def = (id)=>byId[id]?id:null;
+let state = {
+  baseline: def('metamask') || wallets[0].id,
+  rivals: ['rabby','rainbow','phantom','okx'].filter(id=>byId[id]),
+  variant: '',
+  search: '',
+  onlyDiff: false,
+  hideUnknown: false,
+  collapsed: {},
+};
+if(state.rivals.length===0) state.rivals = wallets.slice(0,4).map(w=>w.id).filter(id=>id!==state.baseline).slice(0,3);
+
+// ---- helpers
+function selected(){
+  // baseline first, then rivals, filtered by platform
+  const ids = [state.baseline, ...state.rivals.filter(r=>r!==state.baseline)];
+  return ids.map(id=>byId[id]).filter(Boolean)
+    .filter(w=>!state.variant || w.variants.includes(state.variant));
+}
+function polarityClass(m, cell){
+  const s = cell.state;
+  if(s==='value') return 'value';
+  if(s==='unknown') return 'unknown';
+  if(s==='partial') return 'warn';
+  if(s==='count'){
+    const goodHigh = m.type==='count_high';
+    const n = cell.detail||0;
+    if(m.type==='count_low') return n>0 ? 'bad':'good';
+    return n>0 ? 'good':'unknown';
+  }
+  // yes/no with polarity
+  if(!m.good) return s==='yes'?'good':'bad';
+  return s===m.good ? 'good':'bad';
+}
+function cellText(m, cell){
+  switch(cell.state){
+    case 'yes': return 'Yes';
+    case 'no': return 'No';
+    case 'partial': return 'Partial';
+    case 'unknown': return '—';
+    case 'value': return cell.detail || '—';
+    case 'count': return String(cell.detail);
+  }
+  return '—';
+}
+function sameAsBaseline(m, w){
+  const b = byId[state.baseline]; if(!b||w.id===b.id) return true;
+  const a=w.cells[m.key], c=b.cells[m.key];
+  if(a.state!==c.state) return false;
+  if(a.state==='value'||a.state==='count') return (a.detail||'')===(c.detail||'');
+  return true;
+}
+
+// ---- rendering
+function renderControls(){
+  const bsel = document.getElementById('baseline');
+  bsel.innerHTML = wallets.map(w=>`<option value="${w.id}" ${w.id===state.baseline?'selected':''}>${w.name}</option>`).join('');
+  const chips = document.getElementById('rivalChips');
+  chips.innerHTML = wallets.map(w=>{
+    if(w.id===state.baseline) return `<span class="chip base" title="baseline">${w.name} ★</span>`;
+    const on = state.rivals.includes(w.id);
+    const dim = state.variant && !w.variants.includes(state.variant);
+    return `<span class="chip ${on?'on':''}" data-id="${w.id}" style="${dim?'opacity:.4':''}">${w.name}</span>`;
+  }).join('');
+  chips.querySelectorAll('.chip[data-id]').forEach(c=>c.onclick=()=>{
+    const id=c.dataset.id;
+    state.rivals = state.rivals.includes(id) ? state.rivals.filter(x=>x!==id) : [...state.rivals,id];
+    render();
+  });
+}
+
+function metricVisible(m, cols){
+  if(state.search && !m.label.toLowerCase().includes(state.search.toLowerCase())) return false;
+  const cells = cols.map(w=>w.cells[m.key]);
+  if(state.hideUnknown && cells.every(c=>c.state==='unknown')) return false;
+  if(state.onlyDiff){
+    const allSame = cols.every(w=>sameAsBaseline(m,w));
+    if(allSame) return false;
+  }
+  return true;
+}
+
+function renderSummary(cols){
+  const stateMetrics = metrics.filter(m=>['state','support'].includes(m.type));
+  function score(w){
+    let good=0,tot=0;
+    stateMetrics.forEach(m=>{
+      const c=w.cells[m.key];
+      if(c.state==='unknown') return;
+      tot++;
+      const cls=polarityClass(m,c);
+      if(cls==='good') good++;
+    });
+    return {pct: tot?Math.round(100*good/tot):0, good, tot};
+  }
+  const base = cols.find(w=>w.id===state.baseline);
+  const bScore = base?score(base).pct:0;
+  document.getElementById('summary').innerHTML = cols.map(w=>{
+    const s=score(w); const isB=w.id===state.baseline;
+    const d = s.pct-bScore;
+    const delta = isB?'baseline':(d>0?`+${d} vs you`:(d<0?`${d} vs you`:'tie with you'));
+    return `<div class="card ${isB?'base':''}">
+      <div class="nm">${w.name}${isB?' ★':''}</div>
+      <div class="score">${s.pct}%</div>
+      <div class="delta">${s.good}/${s.tot} favourable · ${delta}</div>
+      <div class="bar"><i style="width:${s.pct}%"></i></div>
+    </div>`;
+  }).join('');
+}
+
+function render(){
+  renderControls();
+  const cols = selected();
+  renderSummary(cols);
+  const tbl = document.getElementById('matrix');
+  let html = '<thead><tr><th class="metric">Metric</th>';
+  cols.forEach(w=>{
+    const isB=w.id===state.baseline;
+    html += `<th class="wal ${isB?'basecol':''}"><div class="wname">${w.name}${isB?' ★':''}</div>`+
+            `<div class="wmeta">${w.variants.join('·')||'—'} · upd ${w.lastUpdated||'?'}</div></th>`;
+  });
+  html += '</tr></thead><tbody>';
+  let anyRow=false;
+  cats.forEach(cat=>{
+    const ms = metrics.filter(m=>m.cat===cat && metricVisible(m,cols));
+    if(ms.length===0) return;
+    const collapsed = state.collapsed[cat];
+    html += `<tr class="catrow" data-cat="${cat}"><td colspan="${cols.length+1}">${collapsed?'▸':'▾'} ${cat} <span class="count">(${ms.length})</span></td></tr>`;
+    if(collapsed) return;
+    ms.forEach(m=>{
+      anyRow=true;
+      html += `<tr><td class="metric" title="${m.desc.replace(/"/g,'&quot;')}">${m.label}</td>`;
+      cols.forEach(w=>{
+        const c=w.cells[m.key];
+        const cls=polarityClass(m,c);
+        const isB=w.id===state.baseline;
+        const diff = !isB && !sameAsBaseline(m,w);
+        html += `<td class="cell ${isB?'basecol':''}"><span class="pill ${cls} ${diff?'diff':''}" data-w="${w.id}" data-m="${m.key}">${cellText(m,c)}</span></td>`;
+      });
+      html += '</tr>';
+    });
+  });
+  html += '</tbody>';
+  tbl.innerHTML = html;
+  document.getElementById('empty').style.display = anyRow?'none':'block';
+  tbl.querySelectorAll('.catrow').forEach(r=>r.onclick=()=>{
+    const c=r.dataset.cat; state.collapsed[c]=!state.collapsed[c]; render();
+  });
+  tbl.querySelectorAll('.pill[data-m]').forEach(p=>p.onclick=()=>openDrawer(p.dataset.w,p.dataset.m));
+}
+
+// ---- drawer
+function openDrawer(wid, mkey){
+  const w=byId[wid], m=metrics.find(x=>x.key===mkey), c=w.cells[mkey];
+  document.getElementById('dMetric').textContent = m.label;
+  document.getElementById('dWallet').textContent = `${w.name} · ${m.cat}`;
+  const cls=polarityClass(m,c);
+  const vclass = cls==='good'?'g':cls==='bad'?'b':'n';
+  const verdictBg = {good:'var(--goodbg)',bad:'var(--badbg)',warn:'var(--warnbg)',unknown:'var(--unknownbg)',value:'var(--valuebg)'}[cls];
+  let polarityTag='';
+  if(c.state!=='unknown' && c.state!=='value'){
+    polarityTag = cls==='good'?'<span class="tag g">good for users</span>':cls==='bad'?'<span class="tag b">worse for users</span>':'';
+  }
+  let body = `<div><span class="verdict" style="background:${verdictBg}">${cellText(m,c)}</span>${polarityTag}</div>`;
+  body += `<div class="sect"><h4>What this measures</h4><div>${m.desc}</div></div>`;
+
+  // baseline comparison
+  const b=byId[state.baseline];
+  if(b && b.id!==w.id){
+    const bc=b.cells[mkey];
+    body += `<div class="sect"><h4>Vs your baseline</h4><div class="cmp"><span>${b.name} ★</span><span class="pill ${polarityClass(m,bc)}">${cellText(m,bc)}</span></div></div>`;
+  }
+
+  // sources
+  body += `<div class="sect"><h4>Sources</h4>`;
+  const ref=c.ref;
+  if(ref && ref.citations && ref.citations.length){
+    ref.citations.slice(0,5).forEach(ct=>{
+      body += `<div class="cite">`;
+      if(ct.explanation) body += `<div class="ex">${escapeHtml(ct.explanation)}</div>`;
+      if(ct.url) body += `<div style="margin-top:6px"><a href="${ct.url}" target="_blank" rel="noopener">${ct.label?escapeHtml(ct.label)+' ↗':ct.url}</a></div>`;
+      body += `</div>`;
+    });
+  } else if(ref && ref.named){
+    const nm = ref.named==='refTodo' ? 'Unsourced — flagged <code>refTodo</code> in the dataset (needs a citation).' : `Reference to shared object <code>${escapeHtml(ref.named)}</code> (not inlined in this prototype).`;
+    body += `<div class="nosrc">⚠ ${nm}</div>`;
+  } else if(c.state==='unknown'){
+    body += `<div class="nosrc">No data recorded for this wallet/metric.</div>`;
+  } else {
+    body += `<div class="nosrc">⚠ No citation attached to this value.</div>`;
+  }
+  body += `</div>`;
+  document.getElementById('dBody').innerHTML = body;
+  document.getElementById('drawer').classList.add('on');
+  document.getElementById('scrim').classList.add('on');
+}
+function closeDrawer(){
+  document.getElementById('drawer').classList.remove('on');
+  document.getElementById('scrim').classList.remove('on');
+}
+function escapeHtml(s){return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+
+// ---- csv
+function exportCsv(){
+  const cols=selected();
+  const rows=[['Category','Metric',...cols.map(w=>w.name)]];
+  cats.forEach(cat=>{
+    metrics.filter(m=>m.cat===cat && metricVisible(m,cols)).forEach(m=>{
+      rows.push([cat,m.label,...cols.map(w=>cellText(m,w.cells[m.key]))]);
+    });
+  });
+  const csv=rows.map(r=>r.map(x=>`"${String(x).replace(/"/g,'""')}"`).join(',')).join('\n');
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));
+  a.download='wallet-benchmark.csv'; a.click();
+}
+
+// ---- wire up
+document.getElementById('baseline').onchange=e=>{state.baseline=e.target.value; state.rivals=state.rivals.filter(r=>r!==state.baseline); render();};
+document.getElementById('variant').onchange=e=>{state.variant=e.target.value; render();};
+document.getElementById('search').oninput=e=>{state.search=e.target.value; render();};
+document.getElementById('onlyDiff').onchange=e=>{state.onlyDiff=e.target.checked; render();};
+document.getElementById('hideUnknown').onchange=e=>{state.hideUnknown=e.target.checked; render();};
+document.getElementById('csv').onclick=exportCsv;
+document.getElementById('dx').onclick=closeDrawer;
+document.getElementById('scrim').onclick=closeDrawer;
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
+
+render();
+</script>
+</body>
+</html>

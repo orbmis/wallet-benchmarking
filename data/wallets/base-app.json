@@ -1,0 +1,510 @@
+{
+	"id": "base-app",
+	"source": "software-wallets",
+	"export": "baseApp",
+	"data": {
+		"metadata": {
+			"id": "base-app",
+			"displayName": "Base App",
+			"tableName": "Base App",
+			"blurb": "Base is a secure onchain wallet and browser that puts you in control of your crypto, NFTs, DeFi activity, and digital assets.",
+			"contributors": [
+				{
+					"$ref": "ren2140"
+				}
+			],
+			"iconExtension": "png",
+			"lastUpdated": "2026-03-19",
+			"urls": {
+				"docs": [
+					"https://docs.base.org/get-started/base"
+				],
+				"extensions": [],
+				"repositories": [
+					"https://github.com/coinbase/smart-wallet",
+					"https://github.com/base/account-sdk"
+				],
+				"socials": {
+					"discord": "https://discord.com/invite/buildonbase",
+					"farcaster": "https://farcaster.xyz/baseapp.base.eth",
+					"x": "https://x.com/baseapp"
+				},
+				"websites": [
+					"https://base.app/",
+					"https://wallet.coinbase.com/"
+				]
+			}
+		},
+		"features": {
+			"accountSupport": {
+				"defaultAccountType": "AccountType.rawErc4337",
+				"eip7702": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"explanation": "Legacy Base App EOA users can be upgraded to smart-wallet behavior via EIP-7702 delegation to the EIP7702Proxy (an ERC-1967 proxy whose implementation can be set to the Coinbase Smart Wallet). The delegation is sponsored by Coinbase on Base mainnet and is performed transparently as part of dApp interactions; there is no user-facing \"upgrade my account\" UI in the Base App. Per the Base team questionnaire response (2026-03-13), accounts are \"EOA + 7702 delegation / 4337\".",
+								"url": "https://blog.base.dev/securing-eip-7702-upgrades"
+							},
+							"contract": {
+								"$ref": "coinbaseEip7702ProxyContract"
+							}
+						}
+					]
+				},
+				"eoa": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": "https://help.coinbase.com/en/wallet/managing-account/wallet-recovery-phrase",
+							"canExportPrivateKey": true,
+							"keyDerivation": {
+								"type": "BIP32",
+								"canExportSeedPhrase": true,
+								"derivationPath": "BIP44",
+								"seedPhrase": "BIP39"
+							}
+						}
+					]
+				},
+				"mpc": {
+					"$ref": "notSupported"
+				},
+				"rawErc4337": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"explanation": "Base Accounts are ERC-4337 Smart Wallets created via passkey onboarding. The user is sole owner by default (passkey held in device secure enclave); Coinbase does not hold a co-owner key per https://wallet.coinbase.com/terms-of-service. The underlying contract supports multi-owner via addOwner/removeOwnerAtIndex, but as of Base App v29.94.123 the mobile app does not expose any passkey or owner management UI (Account Management shows only Sign out). Optional recovery-key setup likely lives in keys.coinbase.com rather than the mobile app.",
+								"url": "https://docs.base.org/base-account/overview/what-is-base-account"
+							},
+							"contract": {
+								"$ref": "coinbaseSmartWalletContract"
+							},
+							"controllingSharesInSelfCustodyByDefault": "YES",
+							"keyRotationTransactionGeneration": "TransactionGenerationCapability.RELYING_ON_EXTERNAL_API",
+							"tokenTransferTransactionGeneration": "TransactionGenerationCapability.USING_PROPRIETARY_STANDALONE_APP"
+						}
+					]
+				},
+				"safe": {
+					"$ref": "notSupported"
+				}
+			},
+			"addressResolution": {
+				"ref": {
+					"$ref": "refTodo"
+				},
+				"chainSpecificAddressing": {
+					"erc7828": {
+						"$ref": "notSupported"
+					},
+					"erc7831": {
+						"$ref": "notSupported"
+					}
+				},
+				"nonChainSpecificEnsResolution": {
+					"$call": "supported",
+					"args": [
+						{
+							"medium": "CHAIN_CLIENT"
+						}
+					]
+				}
+			},
+			"chainAbstraction": {
+				"bridging": {
+					"builtInBridging": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"$ref": "refTodo"
+								},
+								"feesLargerThan1bps": {
+									"$ref": "comprehensiveFeesShownByDefault"
+								},
+								"risksExplained": "NOT_IN_UI"
+							}
+						]
+					},
+					"suggestedBridging": {
+						"$ref": "notSupported"
+					}
+				},
+				"crossChainBalances": {
+					"ref": {
+						"$ref": "refTodo"
+					},
+					"ether": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"$ref": "refTodo"
+								},
+								"crossChainSumView": {
+									"$ref": "featureSupported"
+								},
+								"perChainBalanceViewAcrossMultipleChains": {
+									"$ref": "featureSupported"
+								}
+							}
+						]
+					},
+					"globalAccountValue": {
+						"$ref": "featureSupported"
+					},
+					"perChainAccountValue": {
+						"$ref": "featureSupported"
+					},
+					"usdc": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"$ref": "refTodo"
+								},
+								"crossChainSumView": {
+									"$ref": "featureSupported"
+								},
+								"perChainBalanceViewAcrossMultipleChains": {
+									"$ref": "featureSupported"
+								}
+							}
+						]
+					}
+				}
+			},
+			"chainConfigurability": {
+				"$ref": "notSupported"
+			},
+			"ecosystem": {
+				"delegation": null
+			},
+			"integration": {
+				"browser": {
+					"1193": {
+						"$ref": "featureSupported"
+					},
+					"2700": {
+						"$ref": "featureSupported"
+					},
+					"6963": {
+						"$ref": "featureSupported"
+					},
+					"ref": {
+						"$ref": "refTodo"
+					}
+				},
+				"walletCall": null
+			},
+			"licensing": {
+				"type": "LicensingType.SINGLE_WALLET_REPO_AND_LICENSE",
+				"walletAppLicense": {
+					"ref": {
+						"$ref": "refNotNecessary"
+					},
+					"license": "SourceNotAvailableLicense.PROPRIETARY"
+				}
+			},
+			"monetization": {
+				"ref": "https://www.sec.gov/edgar/browse/?CIK=0001679788",
+				"revenueBreakdownIsPublic": true,
+				"strategies": {
+					"donations": false,
+					"ecosystemGrants": false,
+					"governanceTokenLowFloat": false,
+					"governanceTokenMostlyDistributed": false,
+					"hiddenConvenienceFees": false,
+					"publicOffering": true,
+					"selfFunded": false,
+					"transparentConvenienceFees": true,
+					"ventureCapital": false
+				}
+			},
+			"multiAddress": {
+				"$ref": "notSupported"
+			},
+			"privacy": {
+				"analytics": {
+					"crashReports": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Apple App Store privacy label declares \"Diagnostics: Crash Data\" and performance metrics are collected.",
+										"url": "https://apps.apple.com/us/app/base-formerly-coinbase-wallet/id1278383455"
+									},
+									{
+										"explanation": "No opt-out exists in the Base App Privacy & Security settings as of v29.94.123.",
+										"url": "https://wallet.coinbase.com/privacy-policy"
+									}
+								],
+								"entity": {
+									"$ref": "coinbase"
+								},
+								"policy": "CollectionPolicy.ALWAYS"
+							}
+						]
+					},
+					"usage": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Apple App Store privacy label declares Product Interaction (usage data) is collected and linked to identity, used for external advertising, developer advertising/marketing, AND analytics. The in-app \"Personalized Advertising\" toggle (defaulted ON) reduces advertising-related sharing but does not stop the underlying usage analytics collection.",
+										"url": "https://apps.apple.com/us/app/base-formerly-coinbase-wallet/id1278383455"
+									},
+									{
+										"explanation": "Coinbase privacy policy: in the past 12 months, Coinbase has disclosed identifiers with external analytics providers and advertising partners.",
+										"url": "https://wallet.coinbase.com/privacy-policy"
+									}
+								],
+								"entity": {
+									"$ref": "coinbase"
+								},
+								"policy": "CollectionPolicy.ALWAYS"
+							}
+						]
+					}
+				},
+				"appIsolation": null,
+				"dataCollection": null,
+				"privacyPolicy": "https://wallet.coinbase.com/dapp-privacy-policy",
+				"transactionPrivacy": {
+					"defaultFungibleTokenTransferMode": "PUBLIC",
+					"STEALTH_ADDRESSES": {
+						"$ref": "notSupported"
+					},
+					"TORNADO_CASH_NOVA": {
+						"$ref": "notSupported"
+					},
+					"PRIVACY_POOLS": {
+						"$ref": "notSupported"
+					},
+					"RAILGUN": {
+						"$ref": "notSupported"
+					}
+				}
+			},
+			"profile": "WalletProfile.GENERIC",
+			"security": {
+				"accountRecovery": null,
+				"bugBountyProgram": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": "https://hackerone.com/coinbase?type=team",
+							"availability": "BugBountyProgramAvailability.ACTIVE",
+							"coverageBreadth": "FULL_SCOPE",
+							"dateStarted": "2014-02-14",
+							"disclosure": {
+								"$ref": "notSupported"
+							},
+							"legalProtections": {
+								"$ref": "notSupported"
+							},
+							"platform": "BugBountyPlatform.HACKER_ONE",
+							"rewards": {
+								"$call": "supported",
+								"args": [
+									{
+										"currency": "USD",
+										"maximum": 1000000,
+										"minimum": 200
+									}
+								]
+							},
+							"upgradePathAvailable": true
+						}
+					]
+				},
+				"duressResistance": {
+					"basicUnlock": "NO_LOCK_MECHANISM",
+					"duressMode": {
+						"$ref": "notSupported"
+					}
+				},
+				"hardwareWalletSupport": {
+					"ref": {
+						"$ref": "refNotNecessary"
+					},
+					"wallets": {}
+				},
+				"keysHandling": {
+					"ref": [
+						{
+							"explanation": "Per Coinbase Help, Smart Wallet passkeys are stored on the device (in the platform passkey store backed by iOS Secure Enclave or Android Keystore). The user retains control of the device-bound credential.",
+							"url": "https://help.coinbase.com/en/wallet/getting-started/smart-wallet-passkeys"
+						},
+						{
+							"explanation": "Per Coinbase Help, legacy 12-word recovery phrase accounts are generated on-device using BIP39; the seed phrase is shown only to the user and stored locally.",
+							"url": "https://help.coinbase.com/en/wallet/managing-account/wallet-recovery-phrase"
+						}
+					],
+					"keyGeneration": "KeyGenerationLocation.FULLY_ON_USER_DEVICE",
+					"multipartyKeyReconstruction": "MultiPartyKeyReconstruction.NON_MULTIPARTY"
+				},
+				"lightClient": {
+					"ethereumL1": {
+						"$ref": "notSupported"
+					}
+				},
+				"passkeyVerification": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"explanation": "Coinbase Smart Wallet verifies passkey signatures on-chain via webauthn-sol, which uses the RIP-7212 precompile when available and falls back to FreshCryptoLib.",
+								"url": "https://github.com/coinbase/smart-wallet/blob/0fe87f18488fa89b792896d79de3200242778a68/src/CoinbaseSmartWallet.sol"
+							},
+							"details": "Uses base-org/webauthn-sol (built on Daimo WebAuthn.sol). Tries RIP-7212 P-256 precompile first, falls back to FreshCryptoLib.",
+							"library": "PasskeyVerificationLibrary.WEB_AUTHN_SOL",
+							"libraryUrl": "https://github.com/base-org/webauthn-sol"
+						}
+					]
+				},
+				"publicSecurityAudits": [
+					{
+						"ref": "https://github.com/coinbase/smart-wallet/blob/0fe87f18488fa89b792896d79de3200242778a68/audits/Cantina-December-2023.pdf",
+						"auditDate": "2024-01-07",
+						"auditor": {
+							"$ref": "cantina"
+						},
+						"codeSnapshot": {
+							"commit": "2779bed4",
+							"date": "2023-12-11"
+						},
+						"unpatchedFlaws": "NONE_FOUND",
+						"variantsScope": {
+							"MOBILE": true
+						}
+					},
+					{
+						"ref": "https://github.com/coinbase/smart-wallet/blob/0fe87f18488fa89b792896d79de3200242778a68/audits/Certora-February-2024.pdf",
+						"auditDate": "2024-02-29",
+						"auditor": {
+							"$ref": "certora"
+						},
+						"codeSnapshot": {
+							"commit": "7aa092a",
+							"date": "2024-02-08"
+						},
+						"unpatchedFlaws": "ALL_FIXED",
+						"variantsScope": {
+							"MOBILE": true
+						}
+					},
+					{
+						"ref": "https://code4rena.com/reports/2024-03-coinbase",
+						"auditDate": "2024-05-01",
+						"auditor": {
+							"$ref": "code4rena"
+						},
+						"codeSnapshot": {
+							"date": "2024-03-14"
+						},
+						"unpatchedFlaws": "ALL_FIXED",
+						"variantsScope": {
+							"MOBILE": true
+						}
+					},
+					{
+						"ref": "https://github.com/coinbase/smart-wallet/blob/0fe87f18488fa89b792896d79de3200242778a68/audits/Cantina-April-2024.pdf",
+						"auditDate": "2024-04-23",
+						"auditor": {
+							"$ref": "cantina"
+						},
+						"codeSnapshot": {
+							"commit": "9edcf7f1",
+							"date": "2024-04-15"
+						},
+						"unpatchedFlaws": "NONE_FOUND",
+						"variantsScope": {
+							"MOBILE": true
+						}
+					}
+				],
+				"scamAlerts": {
+					"contractTransactionWarning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"$ref": "refTodo"
+								},
+								"contractRegistry": true,
+								"leaksContractAddress": true,
+								"leaksUserAddress": true,
+								"leaksUserIp": true,
+								"previousContractInteractionWarning": false,
+								"recentContractWarning": true
+							}
+						]
+					},
+					"scamUrlWarning": null,
+					"sendTransactionWarning": {
+						"$ref": "notSupported"
+					}
+				},
+				"securityBestPractices": null,
+				"transactionLegibility": null
+			},
+			"selfSovereignty": {
+				"permissionsManagement": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"$ref": "refTodo"
+							},
+							"erc1155Approvals": "SpendingApprovalsControl.CANNOT_INSPECT",
+							"erc20Approvals": "SpendingApprovalsControl.CAN_INSPECT_AND_REVOKE",
+							"erc721Approvals": "SpendingApprovalsControl.CANNOT_INSPECT"
+						}
+					]
+				},
+				"transactionSubmission": {
+					"l1": {
+						"ref": {
+							"explanation": "Base App and base/account-sdk are both built by Coinbase. The SDK (open-source) handles dApp-initiated transactions for Base accounts and uses viem's HTTP RPC transport — it does not implement Ethereum's devp2p protocol. It is reasonable to infer the closed-source Base App mobile binary uses the same approach for its native send/swap features: mobile platform constraints make running a devp2p node impractical, and Coinbase has never advertised doing so. URL pinned to the SDK's HTTP RPC fallback logic.",
+							"url": "https://github.com/base/account-sdk/blob/24ab30c1a42a66bde605a43b1a60045b2fd19fec/packages/account-sdk/src/store/chain-clients/utils.ts"
+						},
+						"selfBroadcastViaDirectGossip": {
+							"$ref": "notSupported"
+						},
+						"selfBroadcastViaSelfHostedNode": {
+							"$ref": "notSupported"
+						}
+					},
+					"l2": {
+						"arbitrum": "TransactionSubmissionL2Support.SUPPORTED_BUT_NO_FORCE_INCLUSION",
+						"opStack": "TransactionSubmissionL2Support.SUPPORTED_BUT_NO_FORCE_INCLUSION",
+						"ref": {
+							"explanation": "Per the open-source base/account-sdk that backs Base App account flows, SUPPORTED_MAINNET_CHAINS includes Base, Optimism (both OP Stack), Arbitrum, and Ethereum mainnet (plus several other major chains). The Base App mobile UI confirms multi-L2 support but exposes no force-inclusion flow.",
+							"url": "https://github.com/base/account-sdk/blob/24ab30c1a42a66bde605a43b1a60045b2fd19fec/packages/account-sdk/src/store/chain-clients/utils.ts"
+						}
+					}
+				}
+			},
+			"transparency": {
+				"operationFees": null,
+				"releaseTransparency": {
+					"artifactSigning": null,
+					"dependencyLocking": null,
+					"dependencyVulnerabilityScanning": null,
+					"hasPublicChangelog": null,
+					"hermeticBuilds": null,
+					"repositoryChangeControls": null,
+					"reproducibleBuilds": null
+				}
+			}
+		},
+		"variants": {
+			"MOBILE": true
+		}
+	}
+}

@@ -1,0 +1,206 @@
+{
+	"id": "elytro",
+	"source": "software-wallets",
+	"export": "elytro",
+	"data": {
+		"metadata": {
+			"id": "elytro",
+			"displayName": "Elytro",
+			"tableName": "Elytro",
+			"blurb": "Coming soon. We build secured and decentralized public infra for humanity on Ethereum. We believe in a free, open, and self-own internet. We start by building a smart contract account.",
+			"contributors": [
+				{
+					"$ref": "nconsigny"
+				}
+			],
+			"iconExtension": "svg",
+			"lastUpdated": "2025-03-12",
+			"urls": {
+				"repositories": [
+					"https://github.com/Elytro-eth"
+				],
+				"socials": {
+					"telegram": "https://t.me/+l9coqJq9QHgyYjI1",
+					"x": "https://x.com/Elytro_eth"
+				},
+				"websites": [
+					"https://elytro.com"
+				]
+			}
+		},
+		"features": {
+			"accountSupport": {
+				"defaultAccountType": "AccountType.rawErc4337",
+				"eip7702": {
+					"$ref": "notSupported"
+				},
+				"eoa": {
+					"$ref": "notSupported"
+				},
+				"mpc": {
+					"$ref": "notSupported"
+				},
+				"rawErc4337": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"explanation": "Elytro supports ERC-4337 smart contract wallets",
+								"url": "https://github.com/Elytro-eth/soul-wallet-contract"
+							},
+							"contract": "UNKNOWN",
+							"controllingSharesInSelfCustodyByDefault": "YES",
+							"keyRotationTransactionGeneration": "TransactionGenerationCapability.USING_OPEN_SOURCE_STANDALONE_APP",
+							"tokenTransferTransactionGeneration": "TransactionGenerationCapability.USING_OPEN_SOURCE_STANDALONE_APP"
+						}
+					]
+				},
+				"safe": {
+					"$ref": "notSupported"
+				}
+			},
+			"addressResolution": {
+				"ref": {
+					"$ref": "refTodo"
+				},
+				"chainSpecificAddressing": {
+					"erc7828": null,
+					"erc7831": null
+				},
+				"nonChainSpecificEnsResolution": null
+			},
+			"chainAbstraction": null,
+			"chainConfigurability": null,
+			"ecosystem": {
+				"delegation": null
+			},
+			"integration": {
+				"browser": {
+					"1193": null,
+					"2700": null,
+					"6963": null,
+					"ref": {
+						"$ref": "refTodo"
+					}
+				},
+				"walletCall": null
+			},
+			"licensing": null,
+			"monetization": {
+				"ref": {
+					"$ref": "refTodo"
+				},
+				"revenueBreakdownIsPublic": false,
+				"strategies": {
+					"donations": null,
+					"ecosystemGrants": null,
+					"governanceTokenLowFloat": null,
+					"governanceTokenMostlyDistributed": null,
+					"hiddenConvenienceFees": null,
+					"publicOffering": null,
+					"selfFunded": null,
+					"transparentConvenienceFees": null,
+					"ventureCapital": null
+				}
+			},
+			"multiAddress": null,
+			"privacy": {
+				"analytics": {
+					"crashReports": null,
+					"usage": null
+				},
+				"appIsolation": null,
+				"dataCollection": null,
+				"privacyPolicy": "https://github.com/Elytro-eth",
+				"transactionPrivacy": {
+					"defaultFungibleTokenTransferMode": "PUBLIC",
+					"STEALTH_ADDRESSES": {
+						"$ref": "notSupported"
+					},
+					"TORNADO_CASH_NOVA": {
+						"$ref": "notSupported"
+					},
+					"PRIVACY_POOLS": {
+						"$ref": "notSupported"
+					},
+					"RAILGUN": {
+						"$ref": "notSupported"
+					}
+				}
+			},
+			"profile": "WalletProfile.GENERIC",
+			"security": {
+				"accountRecovery": null,
+				"bugBountyProgram": null,
+				"duressResistance": null,
+				"hardwareWalletSupport": {
+					"ref": {
+						"$ref": "refTodo"
+					},
+					"wallets": {}
+				},
+				"keysHandling": null,
+				"lightClient": {
+					"ethereumL1": null
+				},
+				"passkeyVerification": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": [
+								{
+									"explanation": "Elytro implements P256 verification using OpenZeppelin P256 verifier in their WebAuthn library.",
+									"url": "https://github.com/Elytro-eth/Elytro-wallet-contract/blob/9c6d5d9a8c3aa58a92b02ddb901478cd429569c7/contracts/libraries/WebAuthn.sol"
+								}
+							],
+							"details": "Elytro uses FreshCryptoLib for passkey verification in their WebAuthn library.",
+							"library": "PasskeyVerificationLibrary.OPEN_ZEPPELIN_P256_VERIFIER",
+							"libraryUrl": "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/d183d9b07a6cb0772ff52aa4e3e40165e99d6359/contracts/utils/cryptography/P256.sol"
+						}
+					]
+				},
+				"publicSecurityAudits": {
+					"$ref": "elytroAudits"
+				},
+				"scamAlerts": null,
+				"securityBestPractices": null,
+				"transactionLegibility": null
+			},
+			"selfSovereignty": {
+				"permissionsManagement": null,
+				"transactionSubmission": {
+					"l1": {
+						"ref": {
+							"$ref": "refTodo"
+						},
+						"selfBroadcastViaDirectGossip": null,
+						"selfBroadcastViaSelfHostedNode": null
+					},
+					"l2": {
+						"ref": {
+							"$ref": "refTodo"
+						},
+						"arbitrum": null,
+						"opStack": null
+					}
+				}
+			},
+			"transparency": {
+				"operationFees": null,
+				"releaseTransparency": {
+					"artifactSigning": null,
+					"dependencyLocking": null,
+					"dependencyVulnerabilityScanning": null,
+					"hasPublicChangelog": null,
+					"hermeticBuilds": null,
+					"repositoryChangeControls": null,
+					"reproducibleBuilds": null
+				}
+			}
+		},
+		"variants": {
+			"MOBILE": true,
+			"BROWSER": true
+		}
+	}
+}

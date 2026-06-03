@@ -1,0 +1,236 @@
+{
+	"id": "phantom",
+	"source": "software-wallets",
+	"export": "phantom",
+	"data": {
+		"metadata": {
+			"id": "phantom",
+			"displayName": "Phantom",
+			"tableName": "Phantom",
+			"blurb": "Phantom is a user-friendly Ethereum and Solana wallet. It focuses on ease of use, easy swapping of tokens and NFTs, and integration with popular DeFi and NFT exchange protocols within the wallet.",
+			"contributors": [
+				{
+					"$ref": "nconsigny"
+				},
+				{
+					"$ref": "mattmatt"
+				}
+			],
+			"iconExtension": "svg",
+			"lastUpdated": "2025-02-08",
+			"urls": {
+				"docs": [
+					"https://docs.phantom.com/"
+				],
+				"extensions": [
+					"https://chromewebstore.google.com/detail/phantom/bfnaelmomeimhlpmgjnjophhpkkoljpa"
+				],
+				"socials": {
+					"instagram": "https://www.instagram.com/phantom/",
+					"linkedin": "https://www.linkedin.com/company/phantomwallet/",
+					"reddit": "https://www.reddit.com/r/Phantom/",
+					"x": "https://x.com/phantom",
+					"youtube": "https://www.youtube.com/@phantom-wallet"
+				},
+				"websites": [
+					"https://phantom.com"
+				]
+			}
+		},
+		"features": {
+			"accountSupport": {
+				"defaultAccountType": "AccountType.eoa",
+				"eip7702": {
+					"$ref": "notSupported"
+				},
+				"eoa": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"$ref": "refTodo"
+							},
+							"canExportPrivateKey": true,
+							"keyDerivation": {
+								"type": "BIP32",
+								"canExportSeedPhrase": true,
+								"derivationPath": "BIP44",
+								"seedPhrase": "BIP39"
+							}
+						}
+					]
+				},
+				"mpc": {
+					"$ref": "notSupported"
+				},
+				"rawErc4337": {
+					"$ref": "notSupported"
+				},
+				"safe": {
+					"$ref": "notSupported"
+				}
+			},
+			"addressResolution": {
+				"ref": {
+					"$ref": "refTodo"
+				},
+				"chainSpecificAddressing": {
+					"erc7828": null,
+					"erc7831": null
+				},
+				"nonChainSpecificEnsResolution": null
+			},
+			"chainAbstraction": null,
+			"chainConfigurability": null,
+			"ecosystem": {
+				"delegation": null
+			},
+			"integration": {
+				"browser": {
+					"1193": null,
+					"2700": null,
+					"6963": null,
+					"ref": {
+						"$ref": "refTodo"
+					}
+				},
+				"walletCall": null
+			},
+			"licensing": {
+				"type": "LicensingType.SINGLE_WALLET_REPO_AND_LICENSE",
+				"walletAppLicense": {
+					"ref": {
+						"$ref": "refNotNecessary"
+					},
+					"license": "SourceNotAvailableLicense.PROPRIETARY"
+				}
+			},
+			"monetization": {
+				"ref": {
+					"$ref": "refTodo"
+				},
+				"revenueBreakdownIsPublic": false,
+				"strategies": {
+					"donations": null,
+					"ecosystemGrants": null,
+					"governanceTokenLowFloat": null,
+					"governanceTokenMostlyDistributed": null,
+					"hiddenConvenienceFees": null,
+					"publicOffering": null,
+					"selfFunded": null,
+					"transparentConvenienceFees": null,
+					"ventureCapital": null
+				}
+			},
+			"multiAddress": null,
+			"privacy": {
+				"analytics": {
+					"crashReports": null,
+					"usage": null
+				},
+				"appIsolation": null,
+				"dataCollection": null,
+				"privacyPolicy": "https://phantom.com/privacy",
+				"transactionPrivacy": {
+					"defaultFungibleTokenTransferMode": "PUBLIC",
+					"STEALTH_ADDRESSES": {
+						"$ref": "notSupported"
+					},
+					"TORNADO_CASH_NOVA": {
+						"$ref": "notSupported"
+					},
+					"PRIVACY_POOLS": {
+						"$ref": "notSupported"
+					},
+					"RAILGUN": {
+						"$ref": "notSupported"
+					}
+				}
+			},
+			"profile": "WalletProfile.GENERIC",
+			"security": {
+				"accountRecovery": null,
+				"bugBountyProgram": null,
+				"duressResistance": null,
+				"hardwareWalletSupport": {
+					"ref": {
+						"$ref": "refTodo"
+					},
+					"wallets": {
+						"LEDGER": {
+							"$call": "supported",
+							"args": [
+								{
+									"connectionTypes": [
+										"HardwareWalletConnection.webUSB"
+									]
+								}
+							]
+						}
+					}
+				},
+				"keysHandling": null,
+				"lightClient": {
+					"ethereumL1": null
+				},
+				"passkeyVerification": {
+					"$ref": "notSupported"
+				},
+				"publicSecurityAudits": null,
+				"scamAlerts": null,
+				"securityBestPractices": null,
+				"transactionLegibility": {
+					"ref": {
+						"$ref": "refTodo"
+					},
+					"erc7730": null,
+					"erc8213": null,
+					"transactionDetailsDisplay": {
+						"chain": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+						"from": "DataDisplayOptions.SHOWN_OPTIONALLY",
+						"gas": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+						"nonce": "DataDisplayOptions.SHOWN_OPTIONALLY",
+						"to": "DataDisplayOptions.SHOWN_OPTIONALLY",
+						"value": "DataDisplayOptions.SHOWN_BY_DEFAULT"
+					},
+					"transactionSimulations": null
+				}
+			},
+			"selfSovereignty": {
+				"permissionsManagement": null,
+				"transactionSubmission": {
+					"l1": {
+						"ref": {
+							"$ref": "refTodo"
+						},
+						"selfBroadcastViaDirectGossip": null,
+						"selfBroadcastViaSelfHostedNode": null
+					},
+					"l2": {
+						"ref": {
+							"$ref": "refTodo"
+						},
+						"arbitrum": null,
+						"opStack": null
+					}
+				}
+			},
+			"transparency": {
+				"operationFees": null,
+				"releaseTransparency": {
+					"artifactSigning": null,
+					"dependencyLocking": null,
+					"dependencyVulnerabilityScanning": null,
+					"hasPublicChangelog": null,
+					"hermeticBuilds": null,
+					"repositoryChangeControls": null,
+					"reproducibleBuilds": null
+				}
+			}
+		},
+		"variants": {
+			"MOBILE": true,
+			"BROWSER": true
+		}
+	}
+}

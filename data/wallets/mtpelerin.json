@@ -1,0 +1,210 @@
+{
+	"id": "mtpelerin",
+	"source": "software-wallets",
+	"export": "mtpelerin",
+	"data": {
+		"metadata": {
+			"id": "mtpelerin",
+			"displayName": "Bridge Wallet",
+			"tableName": "Bridge Wallet",
+			"blurb": "Buy, swap, and sell crypto with the lowest fees, zero hidden costs, and full control over your cryptoassets.",
+			"contributors": [
+				{
+					"$ref": "sigri"
+				},
+				{
+					"$ref": "mattmatt"
+				}
+			],
+			"iconExtension": "svg",
+			"lastUpdated": "2025-08-26",
+			"urls": {
+				"repositories": [
+					"https://github.com/mtpelerin"
+				],
+				"socials": {
+					"discord": "https://discord.com/invite/WErDKTvMr7",
+					"facebook": "https://www.facebook.com/mtpelerin/",
+					"instagram": "https://www.instagram.com/mtpelerin/",
+					"linkedin": "https://www.linkedin.com/company/mt-pelerin/",
+					"x": "https://x.com/mtpelerin",
+					"youtube": "https://www.youtube.com/@mtpelerin"
+				},
+				"websites": [
+					"https://www.mtpelerin.com/"
+				]
+			}
+		},
+		"features": {
+			"accountSupport": null,
+			"addressResolution": {
+				"ref": {
+					"$ref": "refTodo"
+				},
+				"chainSpecificAddressing": {
+					"erc7828": null,
+					"erc7831": null
+				},
+				"nonChainSpecificEnsResolution": null
+			},
+			"chainAbstraction": null,
+			"chainConfigurability": null,
+			"ecosystem": {
+				"delegation": null
+			},
+			"integration": {
+				"browser": {
+					"1193": null,
+					"2700": null,
+					"6963": null,
+					"ref": {
+						"$ref": "refTodo"
+					}
+				},
+				"walletCall": null
+			},
+			"licensing": {
+				"type": "LicensingType.SINGLE_WALLET_REPO_AND_LICENSE",
+				"walletAppLicense": {
+					"ref": {
+						"$ref": "refNotNecessary"
+					},
+					"license": "SourceNotAvailableLicense.PROPRIETARY"
+				}
+			},
+			"monetization": {
+				"ref": "https://developers.mtpelerin.com/service-information/revenue-sharing",
+				"revenueBreakdownIsPublic": false,
+				"strategies": {
+					"donations": null,
+					"ecosystemGrants": null,
+					"governanceTokenLowFloat": null,
+					"governanceTokenMostlyDistributed": null,
+					"hiddenConvenienceFees": null,
+					"publicOffering": null,
+					"selfFunded": true,
+					"transparentConvenienceFees": null,
+					"ventureCapital": null
+				}
+			},
+			"multiAddress": {
+				"$ref": "featureSupported"
+			},
+			"privacy": {
+				"analytics": {
+					"crashReports": null,
+					"usage": null
+				},
+				"appIsolation": null,
+				"dataCollection": null,
+				"privacyPolicy": "https://www.mtpelerin.com/privacy-policy",
+				"transactionPrivacy": {
+					"defaultFungibleTokenTransferMode": "PUBLIC",
+					"STEALTH_ADDRESSES": {
+						"$ref": "notSupported"
+					},
+					"TORNADO_CASH_NOVA": {
+						"$ref": "notSupported"
+					},
+					"PRIVACY_POOLS": {
+						"$ref": "notSupported"
+					},
+					"RAILGUN": {
+						"$ref": "notSupported"
+					}
+				}
+			},
+			"profile": "WalletProfile.GENERIC",
+			"security": {
+				"accountRecovery": null,
+				"bugBountyProgram": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": [
+								{
+									"explanation": "The bug bounty program is focused around its smart contracts, mobile apps and website, and is mostly aimed at addressing serious security issues directly affecting fund safety and user data protection.",
+									"url": "https://immunefi.com/bug-bounty/mtpelerin/information/"
+								}
+							],
+							"availability": "BugBountyProgramAvailability.ACTIVE",
+							"coverageBreadth": "FULL_SCOPE",
+							"dateStarted": "2021-02-08",
+							"disclosure": {
+								"$ref": "notSupported"
+							},
+							"legalProtections": {
+								"$ref": "notSupported"
+							},
+							"platform": "BugBountyPlatform.IMMUNEFI",
+							"rewards": {
+								"$call": "supported",
+								"args": [
+									{
+										"currency": "USD",
+										"maximum": 100000,
+										"minimum": 1000
+									}
+								]
+							},
+							"upgradePathAvailable": false
+						}
+					]
+				},
+				"duressResistance": null,
+				"hardwareWalletSupport": {
+					"ref": {
+						"$ref": "refTodo"
+					},
+					"wallets": {}
+				},
+				"keysHandling": null,
+				"lightClient": {
+					"ethereumL1": null
+				},
+				"passkeyVerification": {
+					"$ref": "notSupported"
+				},
+				"publicSecurityAudits": null,
+				"scamAlerts": null,
+				"securityBestPractices": null,
+				"transactionLegibility": null
+			},
+			"selfSovereignty": {
+				"permissionsManagement": null,
+				"transactionSubmission": {
+					"l1": {
+						"ref": {
+							"$ref": "refTodo"
+						},
+						"selfBroadcastViaDirectGossip": null,
+						"selfBroadcastViaSelfHostedNode": null
+					},
+					"l2": {
+						"arbitrum": null,
+						"opStack": null,
+						"ref": {
+							"$ref": "refTodo"
+						}
+					}
+				}
+			},
+			"transparency": {
+				"operationFees": null,
+				"releaseTransparency": {
+					"artifactSigning": null,
+					"dependencyLocking": null,
+					"dependencyVulnerabilityScanning": null,
+					"hasPublicChangelog": null,
+					"hermeticBuilds": null,
+					"repositoryChangeControls": null,
+					"reproducibleBuilds": null
+				}
+			}
+		},
+		"variants": {
+			"MOBILE": true,
+			"BROWSER": true
+		}
+	}
+}

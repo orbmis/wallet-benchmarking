@@ -1,0 +1,330 @@
+{
+	"id": "bitget",
+	"source": "software-wallets",
+	"export": "bitget",
+	"data": {
+		"metadata": {
+			"id": "bitget",
+			"displayName": "Bitget Wallet",
+			"tableName": "Bitget",
+			"blurb": "Bitget Wallet is a leading multi-chain decentralized wallet that is committed to providing a wide range of asset management and DeFi services for its users.",
+			"contributors": [
+				{
+					"$ref": "mattmatt"
+				}
+			],
+			"iconExtension": "svg",
+			"lastUpdated": "2026-01-17",
+			"urls": {
+				"docs": [
+					"https://web3.bitget.com/en/docs"
+				],
+				"extensions": [
+					"https://chromewebstore.google.com/detail/bitget-wallet-crypto-web3/jiidiaalihmmhddjgbnbgdfflelocpak"
+				],
+				"socials": {
+					"facebook": "https://www.facebook.com/BitgetWallet/",
+					"linkedin": "https://www.linkedin.com/company/bitgetwallet",
+					"x": "https://x.com/BitgetWallet"
+				},
+				"websites": [
+					"https://web3.bitget.com/"
+				]
+			}
+		},
+		"features": {
+			"accountSupport": {
+				"defaultAccountType": "AccountType.eoa",
+				"eip7702": {
+					"$ref": "notSupported"
+				},
+				"eoa": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"$ref": "refTodo"
+							},
+							"canExportPrivateKey": true,
+							"keyDerivation": {
+								"type": "BIP32",
+								"canExportSeedPhrase": true,
+								"derivationPath": "BIP44",
+								"seedPhrase": "BIP39"
+							}
+						}
+					]
+				},
+				"mpc": {
+					"$ref": "notSupported"
+				},
+				"rawErc4337": {
+					"$ref": "notSupported"
+				},
+				"safe": {
+					"$ref": "notSupported"
+				}
+			},
+			"addressResolution": {
+				"ref": {
+					"$ref": "refTodo"
+				},
+				"chainSpecificAddressing": {
+					"erc7828": null,
+					"erc7831": null
+				},
+				"nonChainSpecificEnsResolution": null
+			},
+			"chainAbstraction": {
+				"bridging": {
+					"builtInBridging": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"$ref": "refTodo"
+								},
+								"feesLargerThan1bps": {
+									"afterSingleAction": "FeeDisplayLevel.AGGREGATED",
+									"byDefault": "FeeDisplayLevel.AGGREGATED",
+									"fullySponsored": false
+								},
+								"risksExplained": "NOT_IN_UI"
+							}
+						]
+					},
+					"suggestedBridging": {
+						"$ref": "notSupported"
+					}
+				},
+				"crossChainBalances": {
+					"ref": {
+						"$ref": "refTodo"
+					},
+					"ether": {
+						"crossChainSumView": {
+							"$ref": "notSupported"
+						},
+						"perChainBalanceViewAcrossMultipleChains": {
+							"$ref": "featureSupported"
+						}
+					},
+					"globalAccountValue": {
+						"$ref": "featureSupported"
+					},
+					"perChainAccountValue": {
+						"$ref": "notSupported"
+					},
+					"usdc": {
+						"crossChainSumView": {
+							"$ref": "notSupported"
+						},
+						"perChainBalanceViewAcrossMultipleChains": {
+							"$ref": "featureSupported"
+						}
+					}
+				}
+			},
+			"chainConfigurability": {
+				"$ref": "notSupported"
+			},
+			"ecosystem": {
+				"delegation": "EIP_7702_NOT_SUPPORTED"
+			},
+			"integration": {
+				"browser": {
+					"1193": {
+						"$ref": "featureSupported"
+					},
+					"2700": {
+						"$ref": "featureSupported"
+					},
+					"6963": {
+						"$ref": "featureSupported"
+					},
+					"ref": {
+						"$ref": "refTodo"
+					}
+				},
+				"walletCall": {
+					"$ref": "notSupported"
+				}
+			},
+			"licensing": {
+				"type": "LicensingType.SINGLE_WALLET_REPO_AND_LICENSE",
+				"walletAppLicense": {
+					"ref": {
+						"$ref": "refNotNecessary"
+					},
+					"license": "SourceNotAvailableLicense.PROPRIETARY"
+				}
+			},
+			"monetization": {
+				"ref": {
+					"$ref": "refTodo"
+				},
+				"revenueBreakdownIsPublic": false,
+				"strategies": {
+					"donations": null,
+					"ecosystemGrants": null,
+					"governanceTokenLowFloat": null,
+					"governanceTokenMostlyDistributed": null,
+					"hiddenConvenienceFees": null,
+					"publicOffering": null,
+					"selfFunded": null,
+					"transparentConvenienceFees": null,
+					"ventureCapital": null
+				}
+			},
+			"multiAddress": {
+				"$ref": "featureSupported"
+			},
+			"privacy": {
+				"analytics": {
+					"crashReports": null,
+					"usage": null
+				},
+				"appIsolation": null,
+				"dataCollection": null,
+				"privacyPolicy": null,
+				"transactionPrivacy": {
+					"defaultFungibleTokenTransferMode": "PUBLIC",
+					"STEALTH_ADDRESSES": {
+						"$ref": "notSupported"
+					},
+					"TORNADO_CASH_NOVA": {
+						"$ref": "notSupported"
+					},
+					"PRIVACY_POOLS": {
+						"$ref": "notSupported"
+					},
+					"RAILGUN": {
+						"$ref": "notSupported"
+					}
+				}
+			},
+			"profile": "WalletProfile.GENERIC",
+			"security": {
+				"accountRecovery": {
+					"guardianRecovery": {
+						"$ref": "notSupported"
+					}
+				},
+				"bugBountyProgram": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": [
+								{
+									"explanation": "Bitget's bug bounty program is hosted through Bugrap.",
+									"url": "https://bugrap.io/bounties/Bitget%20Wallet%20(Formerly%20BitKeep)"
+								}
+							],
+							"availability": "BugBountyProgramAvailability.ACTIVE",
+							"coverageBreadth": "FULL_SCOPE",
+							"dateStarted": "2024-09-17",
+							"disclosure": {
+								"$ref": "notSupported"
+							},
+							"legalProtections": {
+								"$ref": "notSupported"
+							},
+							"platform": "BugBountyPlatform.BUGRAP",
+							"rewards": {
+								"$call": "supported",
+								"args": [
+									{
+										"currency": "USD",
+										"maximum": 50000,
+										"minimum": 10
+									}
+								]
+							},
+							"upgradePathAvailable": false
+						}
+					]
+				},
+				"duressResistance": null,
+				"hardwareWalletSupport": null,
+				"keysHandling": {
+					"ref": [
+						{
+							"explanation": "Bitget Wallet Launches MPC Wallet, Providing a More Secure and User-Friendly Web3 Wallet Service",
+							"url": "https://web3.bitget.com/en/blog/articles/bitget-wallet-launches-mpc-wallet"
+						}
+					],
+					"keyGeneration": "KeyGenerationLocation.MULTIPARTY_COMPUTED_INCLUDING_USER_DEVICE",
+					"multipartyKeyReconstruction": "MultiPartyKeyReconstruction.MULTIPARTY_COMPUTED_INCLUDING_USER_DEVICE"
+				},
+				"lightClient": {
+					"ethereumL1": {
+						"$ref": "notSupported"
+					}
+				},
+				"passkeyVerification": {
+					"$ref": "notSupported"
+				},
+				"publicSecurityAudits": null,
+				"scamAlerts": {
+					"contractTransactionWarning": {
+						"$ref": "notSupported"
+					},
+					"scamUrlWarning": {
+						"$ref": "notSupported"
+					},
+					"sendTransactionWarning": {
+						"$ref": "notSupported"
+					}
+				},
+				"securityBestPractices": null,
+				"transactionLegibility": {
+					"ref": {
+						"$ref": "refTodo"
+					},
+					"erc7730": null,
+					"erc8213": {
+						"$call": "supported",
+						"args": [
+							{
+								"calldataDisplay": {
+									"RAW_HEX": "DataDisplayOptions.SHOWN_OPTIONALLY",
+									"COPY_HEX_TO_CLIPBOARD": "DataDisplayOptions.SHOWN_OPTIONALLY",
+									"FORMATTED": "DataDisplayOptions.NOT_IN_UI",
+									"CALLDATA_DIGEST": "DataDisplayOptions.NOT_IN_UI"
+								},
+								"messageSigningLegibility": {
+									"EIP712_STRUCT": "DataDisplayOptions.NOT_IN_UI",
+									"DOMAIN_HASH": "DataDisplayOptions.NOT_IN_UI",
+									"MESSAGE_HASH": "DataDisplayOptions.NOT_IN_UI",
+									"EIP712_DIGEST": "DataDisplayOptions.NOT_IN_UI"
+								}
+							}
+						]
+					},
+					"transactionDetailsDisplay": null,
+					"transactionSimulations": null
+				}
+			},
+			"selfSovereignty": {
+				"permissionsManagement": null,
+				"transactionSubmission": null
+			},
+			"transparency": {
+				"operationFees": null,
+				"releaseTransparency": {
+					"artifactSigning": null,
+					"dependencyLocking": null,
+					"dependencyVulnerabilityScanning": null,
+					"hasPublicChangelog": null,
+					"hermeticBuilds": null,
+					"repositoryChangeControls": null,
+					"reproducibleBuilds": null
+				}
+			}
+		},
+		"variants": {
+			"MOBILE": true,
+			"BROWSER": true
+		}
+	}
+}

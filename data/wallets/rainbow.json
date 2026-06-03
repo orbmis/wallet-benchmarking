@@ -1,0 +1,502 @@
+{
+	"id": "rainbow",
+	"source": "software-wallets",
+	"export": "rainbow",
+	"data": {
+		"metadata": {
+			"id": "rainbow",
+			"displayName": "Rainbow",
+			"tableName": "Rainbow",
+			"blurb": "Rainbow Extension. Built for speed. Built for power. Built for You.",
+			"contributors": [
+				{
+					"$ref": "polymutex"
+				},
+				{
+					"$ref": "mattmatt"
+				}
+			],
+			"iconExtension": "svg",
+			"lastUpdated": "2026-05-11",
+			"urls": {
+				"docs": [
+					"https://rainbowkit.com/"
+				],
+				"extensions": [
+					"https://chromewebstore.google.com/detail/rainbow/opfgelmcmbiajamepnmloijbpoleiama"
+				],
+				"repositories": [
+					"https://github.com/rainbow-me/browser-extension",
+					"https://github.com/rainbow-me/rainbow"
+				],
+				"socials": {
+					"farcaster": "https://farcaster.xyz/rainbow",
+					"x": "https://x.com/rainbowdotme"
+				},
+				"websites": [
+					"https://rainbow.me"
+				]
+			}
+		},
+		"features": {
+			"accountSupport": {
+				"defaultAccountType": "AccountType.eoa",
+				"eip7702": {
+					"$ref": "notSupported"
+				},
+				"eoa": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"$ref": "refTodo"
+							},
+							"canExportPrivateKey": true,
+							"keyDerivation": {
+								"type": "BIP32",
+								"canExportSeedPhrase": true,
+								"derivationPath": "BIP44",
+								"seedPhrase": "BIP39"
+							}
+						}
+					]
+				},
+				"mpc": {
+					"$ref": "notSupported"
+				},
+				"rawErc4337": {
+					"$ref": "notSupported"
+				},
+				"safe": {
+					"$ref": "notSupported"
+				}
+			},
+			"addressResolution": {
+				"ref": {
+					"$ref": "refTodo"
+				},
+				"chainSpecificAddressing": {
+					"erc7828": {
+						"$ref": "notSupported"
+					},
+					"erc7831": {
+						"$ref": "notSupported"
+					}
+				},
+				"nonChainSpecificEnsResolution": {
+					"$call": "supported",
+					"args": [
+						{
+							"medium": "CHAIN_CLIENT"
+						}
+					]
+				}
+			},
+			"chainAbstraction": null,
+			"chainConfigurability": {
+				"BROWSER": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"$ref": "refTodo"
+							},
+							"customChainRpcEndpoint": {
+								"$ref": "featureSupported"
+							},
+							"l1": {
+								"$call": "supported",
+								"args": [
+									{
+										"rpcEndpointConfiguration": "RpcEndpointConfiguration.YES_BEFORE_ANY_REQUEST",
+										"withNoConnectivityExceptL1RPCEndpoint": {
+											"accountCreation": {
+												"$ref": "featureSupported"
+											},
+											"accountImport": {
+												"$ref": "featureSupported"
+											},
+											"erc20BalanceLookup": {
+												"$ref": "featureSupported"
+											},
+											"erc20TokenSend": {
+												"$ref": "featureSupported"
+											},
+											"etherBalanceLookup": {
+												"$ref": "featureSupported"
+											}
+										}
+									}
+								]
+							},
+							"nonL1": {
+								"$call": "supported",
+								"args": [
+									{
+										"rpcEndpointConfiguration": "RpcEndpointConfiguration.YES_BEFORE_ANY_REQUEST"
+									}
+								]
+							}
+						}
+					]
+				},
+				"MOBILE": null
+			},
+			"ecosystem": {
+				"delegation": null
+			},
+			"integration": {
+				"browser": {
+					"1193": {
+						"$ref": "featureSupported"
+					},
+					"2700": {
+						"$ref": "featureSupported"
+					},
+					"6963": {
+						"$ref": "featureSupported"
+					},
+					"ref": {
+						"$ref": "refTodo"
+					}
+				},
+				"walletCall": {
+					"$ref": "notSupported"
+				}
+			},
+			"licensing": {
+				"type": "LicensingType.SINGLE_WALLET_REPO_AND_LICENSE",
+				"walletAppLicense": {
+					"ref": [
+						{
+							"explanation": "Rainbow uses the GPL-3.0 license for its source code",
+							"label": "Rainbow License File",
+							"url": "https://github.com/rainbow-me/rainbow/blob/c26561eefb4251146db71e5b39f6f0b7233fa647/LICENSE"
+						}
+					],
+					"license": "FOSSLicense.GPL_3_0"
+				}
+			},
+			"monetization": {
+				"ref": [
+					{
+						"explanation": "Rainbow fee revenue data is publicly available on DeFiLlama.",
+						"url": "https://defillama.com/protocol/fees/rainbow"
+					},
+					{
+						"explanation": "Rainbow investor information is publicly available.",
+						"url": "https://investors.rainbow.me/"
+					},
+					{
+						"explanation": "Rainbow raised an $18M Series A led by Seven Seven Six, following a $1.5M seed round.",
+						"url": "https://techcrunch.com/2022/02/15/web3-mobile-wallet-startup-rainbow-raises-18m-series-a-from-alexis-ohanians-fund/"
+					},
+					{
+						"explanation": "Rainbow token has ~180M circulating of 1B total supply (~18% float) as of April 2026.",
+						"url": "https://www.coingecko.com/en/coins/rainbow-3"
+					}
+				],
+				"revenueBreakdownIsPublic": true,
+				"strategies": {
+					"donations": null,
+					"ecosystemGrants": null,
+					"governanceTokenLowFloat": true,
+					"governanceTokenMostlyDistributed": false,
+					"hiddenConvenienceFees": true,
+					"publicOffering": null,
+					"selfFunded": null,
+					"transparentConvenienceFees": true,
+					"ventureCapital": true
+				}
+			},
+			"multiAddress": {
+				"$ref": "featureSupported"
+			},
+			"privacy": {
+				"analytics": {
+					"crashReports": null,
+					"usage": null
+				},
+				"appIsolation": null,
+				"dataCollection": null,
+				"privacyPolicy": "https://rainbow.me/privacy",
+				"transactionPrivacy": {
+					"defaultFungibleTokenTransferMode": "PUBLIC",
+					"STEALTH_ADDRESSES": {
+						"$ref": "notSupported"
+					},
+					"TORNADO_CASH_NOVA": {
+						"$ref": "notSupported"
+					},
+					"PRIVACY_POOLS": {
+						"$ref": "notSupported"
+					},
+					"RAILGUN": {
+						"$ref": "notSupported"
+					}
+				}
+			},
+			"profile": "WalletProfile.GENERIC",
+			"security": {
+				"accountRecovery": {
+					"guardianRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow encrypts the seed phrase with a user-chosen password and stores the encrypted backup in iCloud (iOS) or Google Drive (Android).",
+									"url": "https://rainbow.me/support/app/restore-from-a-backup"
+								},
+								"minimumGuardianPolicy": {
+									"type": "GuardianPolicyType.SECRET_SPLIT_ACROSS_GUARDIANS",
+									"descriptionMarkdown": "Rainbow encrypts the seed phrase with the user wallet password and stores it in iCloud or Google Drive. Recovery requires the backup password and access to either cloud provider.",
+									"optionalGuardians": [
+										{
+											"type": "GuardianType.USER_EXTERNAL_ACCOUNT",
+											"description": "iCloud account",
+											"entity": {
+												"$ref": "apple"
+											}
+										},
+										{
+											"type": "GuardianType.USER_EXTERNAL_ACCOUNT",
+											"description": "Google Drive account",
+											"entity": {
+												"$ref": "alphabet"
+											}
+										}
+									],
+									"optionalGuardiansMinimumConfigurable": 1,
+									"optionalGuardiansMinimumNeededForRecovery": 1,
+									"requiredGuardians": [
+										{
+											"type": "GuardianType.WALLET_PASSWORD"
+										}
+									],
+									"secretReconstitution": "CLIENT_SIDE"
+								}
+							}
+						]
+					}
+				},
+				"bugBountyProgram": {
+					"$ref": "notSupported"
+				},
+				"duressResistance": {
+					"$call": "supported",
+					"args": [
+						{
+							"basicUnlock": {
+								"ref": {
+									"$ref": "refTodo"
+								},
+								"mechanisms": {
+									"PIN": false,
+									"PASSWORD": true,
+									"BIOMETRIC": false,
+									"PATTERN": false
+								}
+							},
+							"duressMode": {
+								"$ref": "notSupported"
+							}
+						}
+					]
+				},
+				"hardwareWalletSupport": {
+					"ref": {
+						"$ref": "refTodo"
+					},
+					"wallets": {
+						"LEDGER": {
+							"$call": "supported",
+							"args": [
+								{
+									"connectionTypes": [
+										"HardwareWalletConnection.webUSB",
+										"HardwareWalletConnection.bluetooth"
+									]
+								}
+							]
+						},
+						"TREZOR": {
+							"$call": "supported",
+							"args": [
+								{
+									"connectionTypes": [
+										"HardwareWalletConnection.webUSB"
+									]
+								}
+							]
+						}
+					}
+				},
+				"keysHandling": {
+					"ref": {
+						"$ref": "refTodo"
+					},
+					"keyGeneration": "KeyGenerationLocation.FULLY_ON_USER_DEVICE",
+					"multipartyKeyReconstruction": "MultiPartyKeyReconstruction.NON_MULTIPARTY"
+				},
+				"lightClient": {
+					"ethereumL1": {
+						"$ref": "notSupported"
+					}
+				},
+				"passkeyVerification": {
+					"$ref": "notSupported"
+				},
+				"publicSecurityAudits": [],
+				"scamAlerts": null,
+				"securityBestPractices": null,
+				"transactionLegibility": {
+					"ref": {
+						"$ref": "refTodo"
+					},
+					"erc7730": {
+						"$call": "supported",
+						"args": [
+							{
+								"USDC_APPROVAL": {
+									"decoded": "DataDisplayOptions.NOT_IN_UI"
+								},
+								"AAVE_SUPPLY": {
+									"decoded": "DataDisplayOptions.NOT_IN_UI"
+								},
+								"SAFEWALLET_AAVE_SUPPLY_NESTED": {
+									"decoded": "DataDisplayOptions.NOT_IN_UI"
+								},
+								"SAFEWALLET_AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": {
+									"decoded": "DataDisplayOptions.NOT_IN_UI"
+								},
+								"AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": null
+							}
+						]
+					},
+					"erc8213": {
+						"$call": "supported",
+						"args": [
+							{
+								"calldataDisplay": {
+									"RAW_HEX": "DataDisplayOptions.SHOWN_OPTIONALLY",
+									"COPY_HEX_TO_CLIPBOARD": "DataDisplayOptions.SHOWN_OPTIONALLY",
+									"FORMATTED": "DataDisplayOptions.NOT_IN_UI",
+									"CALLDATA_DIGEST": "DataDisplayOptions.NOT_IN_UI"
+								},
+								"messageSigningLegibility": {
+									"EIP712_STRUCT": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+									"DOMAIN_HASH": "DataDisplayOptions.NOT_IN_UI",
+									"MESSAGE_HASH": "DataDisplayOptions.NOT_IN_UI",
+									"EIP712_DIGEST": "DataDisplayOptions.NOT_IN_UI"
+								}
+							}
+						]
+					},
+					"transactionDetailsDisplay": {
+						"chain": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+						"from": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+						"gas": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+						"nonce": "DataDisplayOptions.NOT_IN_UI",
+						"to": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+						"value": "DataDisplayOptions.SHOWN_BY_DEFAULT"
+					},
+					"transactionSimulations": {
+						"$call": "supported",
+						"args": [
+							{
+								"ERC_20_TRANSFER": {
+									"transactionOutcome": "TransactionOutcome.EXPLAINED"
+								},
+								"ERC_721_TRANSFER": {
+									"transactionOutcome": "TransactionOutcome.EXPLAINED"
+								},
+								"ERC_1155_TRANSFER": {
+									"transactionOutcome": "TransactionOutcome.EXPLAINED"
+								},
+								"USDC_APPROVAL": {
+									"transactionOutcome": "TransactionOutcome.EXPLAINED"
+								},
+								"AAVE_SUPPLY": {
+									"transactionOutcome": "TransactionOutcome.NOT_EXPLAINED"
+								},
+								"SAFEWALLET_AAVE_SUPPLY_NESTED": {
+									"transactionOutcome": "TransactionOutcome.NOT_EXPLAINED"
+								},
+								"SAFEWALLET_AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": {
+									"transactionOutcome": "TransactionOutcome.NOT_EXPLAINED"
+								},
+								"ETH_TRANSFER": null,
+								"ZKSYNC_USDC_TRANSFER": null,
+								"AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": null,
+								"FAILED_TRANSACTION": {
+									"failure": "DETECTED"
+								},
+								"NONDETERMINISTIC_TRANSACTION": {
+									"nondeterminism": "STATIC_SINGLE_OUTCOME"
+								}
+							}
+						]
+					}
+				}
+			},
+			"selfSovereignty": {
+				"permissionsManagement": {
+					"$ref": "notSupported"
+				},
+				"transactionSubmission": {
+					"l1": {
+						"ref": {
+							"$ref": "refTodo"
+						},
+						"selfBroadcastViaDirectGossip": {
+							"$ref": "notSupported"
+						},
+						"selfBroadcastViaSelfHostedNode": {
+							"$ref": "featureSupported"
+						}
+					},
+					"l2": {
+						"arbitrum": "TransactionSubmissionL2Support.SUPPORTED_BUT_NO_FORCE_INCLUSION",
+						"opStack": "TransactionSubmissionL2Support.SUPPORTED_BUT_NO_FORCE_INCLUSION",
+						"ref": {
+							"$ref": "refTodo"
+						}
+					}
+				}
+			},
+			"transparency": {
+				"operationFees": {
+					"builtInErc20Swap": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"$ref": "refTodo"
+								},
+								"afterSingleAction": "FeeDisplayLevel.COMPREHENSIVE",
+								"byDefault": "FeeDisplayLevel.NONE",
+								"fullySponsored": false
+							}
+						]
+					},
+					"erc20L1Transfer": null,
+					"ethL1Transfer": null,
+					"uniswapUSDCToEtherSwap": null
+				},
+				"releaseTransparency": {
+					"artifactSigning": null,
+					"dependencyLocking": null,
+					"dependencyVulnerabilityScanning": null,
+					"hasPublicChangelog": null,
+					"hermeticBuilds": null,
+					"repositoryChangeControls": null,
+					"reproducibleBuilds": null
+				}
+			}
+		},
+		"variants": {
+			"MOBILE": true,
+			"BROWSER": true
+		}
+	}
+}

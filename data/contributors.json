@@ -1,0 +1,102 @@
+[
+	{
+		"name": "0xh3rman",
+		"affiliation": [
+			{
+				"developer": {
+					"$ref": "gemEntity"
+				},
+				"hasEquity": true,
+				"role": "EMPLOYEE"
+			}
+		],
+		"url": "https://github.com/0xh3rman"
+	},
+	{
+		"name": "0xmattmatt",
+		"affiliation": "NO_AFFILIATION",
+		"url": "https://x.com/0xmattmatt"
+	},
+	{
+		"name": "gabrielkerekes",
+		"affiliation": [
+			{
+				"developer": {
+					"$ref": "nufi"
+				},
+				"hasEquity": false,
+				"role": "EMPLOYEE"
+			}
+		],
+		"url": "https://github.com/gabrielkerekes"
+	},
+	{
+		"name": "greekfetacheese",
+		"affiliation": [
+			{
+				"developer": {
+					"$ref": "zeusEntity"
+				},
+				"hasEquity": false,
+				"role": "FOUNDER"
+			}
+		],
+		"url": "https://github.com/greekfetacheese"
+	},
+	{
+		"name": "JIOjoBG",
+		"affiliation": [
+			{
+				"developer": {
+					"$ref": "ambireEntity"
+				},
+				"hasEquity": true,
+				"role": "EMPLOYEE"
+			}
+		],
+		"url": "https://x.com/josifhamed"
+	},
+	{
+		"name": "lucemans",
+		"affiliation": "NO_AFFILIATION",
+		"url": "https://github.com/lucemans"
+	},
+	{
+		"name": "mako",
+		"affiliation": "NO_AFFILIATION",
+		"url": "https://github.com/makoshan"
+	},
+	{
+		"name": "mmlado",
+		"affiliation": "NO_AFFILIATION",
+		"url": "https://github.com/mmlado"
+	},
+	{
+		"name": "nconsigny",
+		"affiliation": "NO_AFFILIATION",
+		"url": "https://x.com/ncsgy"
+	},
+	{
+		"name": "patrickalphac",
+		"affiliation": "NO_AFFILIATION",
+		"url": "https://www.youtube.com/@patrickalphac"
+	},
+	{
+		"name": "polymutex",
+		"affiliation": "NO_AFFILIATION",
+		"url": "https://warpcast.com/polymutex.eth"
+	},
+	{
+		"name": "sigri",
+		"affiliation": [
+			{
+				"developer": {
+					"$ref": "mtpelerin"
+				},
+				"hasEquity": false,
+				"role": "CONSULTANT"
+			}
+		],
+		"url": "https://github.com/sigri44"
+	}
+]

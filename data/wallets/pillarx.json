@@ -1,0 +1,220 @@
+{
+	"id": "pillarx",
+	"source": "software-wallets",
+	"export": "pillarx",
+	"data": {
+		"metadata": {
+			"id": "pillarx",
+			"displayName": "PillarX",
+			"tableName": "PillarX",
+			"blurb": "PillarX is a web3 wallet that allows you to manage your digital assets and interact with the blockchain.",
+			"contributors": [
+				{
+					"$ref": "iamkio"
+				}
+			],
+			"iconExtension": "svg",
+			"lastUpdated": "2025-12-16",
+			"urls": {
+				"websites": [
+					"https://pillarx.app"
+				]
+			}
+		},
+		"features": {
+			"accountSupport": {
+				"defaultAccountType": "AccountType.eip7702",
+				"eip7702": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"explanation": "PillarX supports EIP-7702",
+								"url": "https://pillarx.app/login"
+							},
+							"contract": {
+								"$ref": "kernal7702Contract"
+							}
+						}
+					]
+				},
+				"eoa": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"$ref": "refTodo"
+							},
+							"canExportPrivateKey": false,
+							"keyDerivation": {
+								"type": "BIP32",
+								"canExportSeedPhrase": true,
+								"derivationPath": "BIP44",
+								"seedPhrase": "BIP39"
+							}
+						}
+					]
+				},
+				"mpc": {
+					"$ref": "notSupported"
+				},
+				"rawErc4337": {
+					"$ref": "notSupported"
+				},
+				"safe": {
+					"$ref": "notSupported"
+				}
+			},
+			"addressResolution": {
+				"ref": {
+					"$ref": "refTodo"
+				},
+				"chainSpecificAddressing": {
+					"erc7828": {
+						"$ref": "notSupported"
+					},
+					"erc7831": {
+						"$ref": "notSupported"
+					}
+				},
+				"nonChainSpecificEnsResolution": null
+			},
+			"chainAbstraction": null,
+			"chainConfigurability": null,
+			"ecosystem": {
+				"delegation": null
+			},
+			"integration": {
+				"browser": {
+					"1193": {
+						"$ref": "notSupported"
+					},
+					"2700": {
+						"$ref": "notSupported"
+					},
+					"6963": {
+						"$ref": "notSupported"
+					},
+					"ref": {
+						"$ref": "refTodo"
+					}
+				},
+				"walletCall": null
+			},
+			"licensing": {
+				"type": "LicensingType.SINGLE_WALLET_REPO_AND_LICENSE",
+				"walletAppLicense": {
+					"ref": [
+						{
+							"explanation": "PillarX is licensed under the MIT license",
+							"url": "https://github.com/pillarwallet/x/blob/43b3392ad3379a04bbe64318143f1df1d5208c70/LICENSE"
+						}
+					],
+					"license": "FOSSLicense.MIT"
+				}
+			},
+			"monetization": {
+				"ref": {
+					"$ref": "refTodo"
+				},
+				"revenueBreakdownIsPublic": false,
+				"strategies": {
+					"donations": null,
+					"ecosystemGrants": null,
+					"governanceTokenLowFloat": null,
+					"governanceTokenMostlyDistributed": null,
+					"hiddenConvenienceFees": null,
+					"publicOffering": true,
+					"selfFunded": true,
+					"transparentConvenienceFees": null,
+					"ventureCapital": null
+				}
+			},
+			"multiAddress": {
+				"$ref": "notSupported"
+			},
+			"privacy": {
+				"analytics": {
+					"crashReports": null,
+					"usage": null
+				},
+				"appIsolation": null,
+				"dataCollection": null,
+				"privacyPolicy": "https://pillarx.app/privacy-policy",
+				"transactionPrivacy": {
+					"defaultFungibleTokenTransferMode": "PUBLIC",
+					"STEALTH_ADDRESSES": {
+						"$ref": "notSupported"
+					},
+					"TORNADO_CASH_NOVA": {
+						"$ref": "notSupported"
+					},
+					"PRIVACY_POOLS": {
+						"$ref": "notSupported"
+					},
+					"RAILGUN": {
+						"$ref": "notSupported"
+					}
+				}
+			},
+			"profile": "WalletProfile.GENERIC",
+			"security": {
+				"accountRecovery": null,
+				"bugBountyProgram": null,
+				"duressResistance": null,
+				"hardwareWalletSupport": {
+					"ref": {
+						"$ref": "refTodo"
+					},
+					"wallets": {}
+				},
+				"keysHandling": null,
+				"lightClient": {
+					"ethereumL1": null
+				},
+				"passkeyVerification": {
+					"$ref": "notSupported"
+				},
+				"publicSecurityAudits": null,
+				"scamAlerts": null,
+				"securityBestPractices": null,
+				"transactionLegibility": null
+			},
+			"selfSovereignty": {
+				"permissionsManagement": null,
+				"transactionSubmission": {
+					"l1": {
+						"ref": {
+							"$ref": "refTodo"
+						},
+						"selfBroadcastViaDirectGossip": null,
+						"selfBroadcastViaSelfHostedNode": null
+					},
+					"l2": {
+						"ref": {
+							"$ref": "refTodo"
+						},
+						"arbitrum": null,
+						"opStack": null
+					}
+				}
+			},
+			"transparency": {
+				"operationFees": null,
+				"releaseTransparency": {
+					"artifactSigning": null,
+					"dependencyLocking": null,
+					"dependencyVulnerabilityScanning": null,
+					"hasPublicChangelog": null,
+					"hermeticBuilds": null,
+					"repositoryChangeControls": null,
+					"reproducibleBuilds": null
+				}
+			}
+		},
+		"variants": {
+			"MOBILE": true,
+			"BROWSER": true
+		}
+	}
+}

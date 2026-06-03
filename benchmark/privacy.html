@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wallet Privacy Data-Flow</title>
+<style>
+  :root{
+    --bg:#0f1115; --panel:#171a21; --panel2:#1d212b; --line:#2a2f3a;
+    --txt:#e6e9ef; --muted:#8b93a7; --accent:#5b8cff;
+    --high:#b5384a; --med:#b07d23; --low:#3f7d57;
+    --always:#d4495c; --bydefault:#c79233; --optin:#3f8f8a;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  a{color:var(--accent)}
+  header{padding:16px 20px;border-bottom:1px solid var(--line);display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+  header h1{font-size:18px;margin:0;font-weight:650}
+  header .sub{color:var(--muted);font-size:12.5px}
+  .bar{display:flex;gap:18px;flex-wrap:wrap;padding:12px 20px;border-bottom:1px solid var(--line);background:var(--panel);align-items:flex-end}
+  .ctl{display:flex;flex-direction:column;gap:5px}
+  .ctl > label{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+  select{background:var(--panel2);color:var(--txt);border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-size:13px}
+  .toggles{display:flex;gap:14px;align-items:center}
+  .toggles label{display:flex;gap:6px;align-items:center;font-size:13px;color:var(--muted);cursor:pointer}
+
+  /* wallet picker strip — benchmark angle */
+  .picker{display:flex;gap:10px;padding:12px 20px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+  .wcard{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:9px 13px;cursor:pointer;min-width:120px}
+  .wcard.on{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+  .wcard .nm{font-weight:600}
+  .wcard .st{font-size:11.5px;color:var(--muted);margin-top:3px}
+  .wcard .brk{color:var(--high);font-weight:600}
+
+  .stats{padding:12px 20px;color:var(--muted);font-size:13px;border-bottom:1px solid var(--line)}
+  .stats b{color:var(--txt)}
+  .stats .pill{display:inline-block;padding:2px 8px;border-radius:5px;font-size:12px;margin-left:4px}
+  .pill.high{background:#2a1419;color:#ef7f8f}.pill.med{background:#2a2110;color:#e7b85c}.pill.low{background:#11271d;color:#5fd39a}
+
+  .legend{display:flex;gap:16px;padding:9px 20px;color:var(--muted);font-size:12px;flex-wrap:wrap;align-items:center}
+  .swatch{display:inline-block;width:11px;height:11px;border-radius:3px;vertical-align:-1px;margin-right:5px}
+  .colhdr{display:flex;padding:6px 20px 0;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.06em}
+
+  #stage{position:relative}
+  svg{display:block;width:100%}
+  .node rect{cursor:pointer}
+  .node text{fill:var(--txt);font-size:12px;pointer-events:none}
+  .node text.val{fill:var(--muted);font-size:10.5px}
+  .link{fill:none;opacity:.42;cursor:pointer;transition:opacity .1s}
+  .link:hover{opacity:.85}
+  .dim{opacity:.07 !important}
+  .node.dim rect{opacity:.18}.node.dim text{opacity:.25}
+
+  #tip{position:fixed;pointer-events:none;background:#0a0c10;border:1px solid var(--line);border-radius:8px;padding:9px 11px;font-size:12.5px;max-width:300px;opacity:0;transition:.08s;z-index:30;box-shadow:0 6px 24px rgba(0,0,0,.5)}
+  #tip .t{font-weight:600;margin-bottom:4px}
+  #tip .r{color:var(--muted)}
+  #tip .pol{font-weight:600}
+  .empty{padding:50px;text-align:center;color:var(--muted)}
+
+  /* first-run help */
+  details.help{margin:14px 20px 0;background:var(--panel);border:1px solid var(--line);border-radius:10px}
+  details.help > summary{cursor:pointer;list-style:none;padding:12px 16px;font-weight:600;display:flex;align-items:center;gap:8px}
+  details.help > summary::-webkit-details-marker{display:none}
+  details.help > summary .chev{color:var(--muted);transition:.15s;font-size:12px}
+  details.help[open] > summary .chev{transform:rotate(90deg)}
+  details.help > summary .tagn{font-weight:400;color:var(--muted);font-size:12.5px}
+  .help .inner{padding:2px 18px 16px;border-top:1px solid var(--line)}
+  .help h4{margin:16px 0 6px;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--accent)}
+  .help p{margin:6px 0;color:var(--txt)}
+  .help ul{margin:6px 0;padding-left:18px}
+  .help li{margin:4px 0}
+  .help .read{display:flex;gap:22px;flex-wrap:wrap;margin-top:6px}
+  .help .read .col{flex:1;min-width:180px}
+  .help .col .n{font-weight:600;color:var(--accent)}
+  .help .key{display:inline-block;background:var(--panel2);border:1px solid var(--line);border-radius:5px;padding:1px 7px;font-size:12px}
+  .help .sw{display:inline-block;width:11px;height:11px;border-radius:3px;vertical-align:-1px;margin-right:5px}
+  .help .muted{color:var(--muted)}
+  .help .diagram{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:8px 0;font-size:12.5px}
+  .help .box{border:1px solid var(--line);border-radius:6px;padding:5px 10px;background:var(--panel2)}
+  .help .arrow{color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <h1>Wallet Privacy Data-Flow</h1>
+  <span class="sub">Who receives your data, during which action, and what they get — per wallet · <a href="index.html">← back to matrix</a></span>
+</header>
+
+<details class="help" open>
+  <summary><span class="chev">▶</span> How to read this diagram <span class="tagn">— click to collapse</span></summary>
+  <div class="inner">
+    <p>This is a <b>Sankey diagram</b>. It traces your personal data as it leaves a wallet:
+       it flows left&nbsp;→&nbsp;right through three columns, and the
+       <b>thickness of each ribbon shows how much data moves</b> along that path.</p>
+    <div class="diagram">
+      <span class="box"><b>Action</b><br><span class="muted">what the user does</span></span>
+      <span class="arrow">──▶</span>
+      <span class="box"><b>Recipient</b><br><span class="muted">who receives the data</span></span>
+      <span class="arrow">──▶</span>
+      <span class="box"><b>Data collected</b><br><span class="muted">what they actually get</span></span>
+    </div>
+    <p class="muted">e.g. a ribbon from <i>Make Transaction</i> → <i>Pimlico</i> → <i>IP address</i> means:
+       "when the user sends a transaction, the wallet hands their IP address to Pimlico."</p>
+
+    <h4>What the colours mean</h4>
+    <div class="read">
+      <div class="col">
+        <div class="n">Ribbon colour = collection policy</div>
+        <ul>
+          <li><span class="sw" style="background:var(--always)"></span><b>Always</b> — sent every time; the user <b>cannot turn it off</b>.</li>
+          <li><span class="sw" style="background:var(--bydefault)"></span><b>By default</b> — on unless the user disables it.</li>
+          <li><span class="sw" style="background:var(--optin)"></span><b>Opt-in</b> — only if the user explicitly enables it (least invasive).</li>
+        </ul>
+      </div>
+      <div class="col">
+        <div class="n">Recipient colour = privacy risk</div>
+        <ul>
+          <li><span class="sw" style="background:var(--high)"></span><b>Data broker / exchange</b> — highest concern.</li>
+          <li><span class="sw" style="background:var(--med)"></span><b>Chain / off-chain / corporate</b> infrastructure.</li>
+          <li><span class="sw" style="background:var(--low)"></span><b>Wallet developer / auditor</b> — lowest concern.</li>
+        </ul>
+        <p class="muted" style="margin-top:2px">Risk comes from each company's classification in the dataset.
+           A <b>⚠</b> on a recipient means we couldn't match it to a known company, so it has no risk rating.</p>
+      </div>
+    </div>
+
+    <h4>How to use it</h4>
+    <ul>
+      <li><b>Pick a wallet</b> from the cards below — they're sorted worst-first, and the red badge counts data brokers/exchanges.</li>
+      <li><b>Hover any ribbon</b> for the exact data types, policy, and the stated <i>purpose</i> of collection.</li>
+      <li><b>Click any node</b> (a coloured bar) to isolate just its connected flows and grey out the rest. Click it again to reset.</li>
+      <li><b>Filter</b> with the controls below: hide policies (e.g. show only <span class="key">Always</span> flows that can't be disabled), or focus on <span class="key">brokers &amp; exchanges only</span>.</li>
+      <li>For wallets with platform-specific behaviour (e.g. Rabby), a <b>Platform</b> selector appears.</li>
+    </ul>
+    <p class="muted">Only wallets whose data flows have been mapped in the dataset appear here — currently 5 of 32.
+       An empty or sparse diagram means less was recorded, not necessarily that the wallet is more private.</p>
+  </div>
+</details>
+
+<div class="picker" id="picker"></div>
+
+<div class="bar">
+  <div class="ctl" id="platCtl" style="display:none">
+    <label>Platform</label>
+    <select id="platform"></select>
+  </div>
+  <div class="ctl">
+    <label>Collection policy</label>
+    <div class="toggles">
+      <label><input type="checkbox" id="pAlways" checked> Always</label>
+      <label><input type="checkbox" id="pDefault" checked> By default</label>
+      <label><input type="checkbox" id="pOptIn" checked> Opt-in</label>
+    </div>
+  </div>
+  <div class="ctl">
+    <label>Focus</label>
+    <div class="toggles">
+      <label><input type="checkbox" id="brokersOnly"> Data brokers &amp; exchanges only</label>
+    </div>
+  </div>
+</div>
+
+<div class="stats" id="stats"></div>
+
+<div class="legend">
+  <span><span class="swatch" style="background:var(--high)"></span>Data broker / exchange</span>
+  <span><span class="swatch" style="background:var(--med)"></span>Chain / off-chain / corporate</span>
+  <span><span class="swatch" style="background:var(--low)"></span>Wallet developer / auditor</span>
+  <span style="margin-left:18px"><span class="swatch" style="background:var(--always)"></span>Collected <b>always</b></span>
+  <span><span class="swatch" style="background:var(--bydefault)"></span><b>by default</b></span>
+  <span><span class="swatch" style="background:var(--optin)"></span><b>opt-in</b></span>
+  <span style="margin-left:auto">Hover a flow for policy &amp; purpose · click a node to isolate</span>
+</div>
+<div class="colhdr"><div style="flex:1">Action</div><div style="flex:1;text-align:center">Recipient</div><div style="flex:1;text-align:right">Data collected</div></div>
+
+<div id="stage"><svg id="svg"></svg><div class="empty" id="empty" style="display:none">No flows match the current filters.</div></div>
+<div id="tip"></div>
+
+<script>
+const DATA = {"wallets": [{"id": "daimo", "name": "Daimo", "perPlatform": false, "platforms": ["ALL"], "records": [{"platform": "ALL", "action": "Onboarding New", "entity": "Binance", "entityCat": "Exchange", "entityRisk": "high", "unresolved": false, "dataType": "Ip Address", "policy": "OPT_IN", "purposes": ["External Account Linking"]}, {"platform": "ALL", "action": "Onboarding New", "entity": "Binance", "entityCat": "Exchange", "entityRisk": "high", "unresolved": false, "dataType": "Cex Account", "policy": "OPT_IN", "purposes": ["External Account Linking"]}, {"platform": "ALL", "action": "Onboarding New", "entity": "Binance", "entityCat": "Exchange", "entityRisk": "high", "unresolved": false, "dataType": "Account Address", "policy": "OPT_IN", "purposes": ["External Account Linking"]}, {"platform": "ALL", "action": "Onboarding New", "entity": "Daimo", "entityCat": "Wallet developer", "entityRisk": "low", "unresolved": false, "dataType": "Ip Address", "policy": "OPT_IN", "purposes": ["External Account Linking"]}, {"platform": "ALL", "action": "Onboarding New", "entity": "Daimo", "entityCat": "Wallet developer", "entityRisk": "low", "unresolved": false, "dataType": "Farcaster Account", "policy": "OPT_IN", "purposes": ["External Account Linking"]}, {"platform": "ALL", "action": "Onboarding New", "entity": "Daimo", "entityCat": "Wallet developer", "entityRisk": "low", "unresolved": false, "dataType": "Account Address", "policy": "OPT_IN", "purposes": ["External Account Linking"]}, {"platform": "ALL", "action": "Onboarding New", "entity": "Merkle Manufactory", "entityCat": "Third party", "entityRisk": "med", "unresolved": true, "dataType": "Ip Address", "policy": "OPT_IN", "purposes": ["External Account Linking"]}, {"platform": "ALL", "action": "Onboarding New", "entity": "Merkle Manufactory", "entityCat": "Third party", "entityRisk": "med", "unresolved": true, "dataType": "Farcaster Account", "policy": "OPT_IN", "purposes": ["External Account Linking"]}, {"platform": "ALL", "action": "Onboarding New", "entity": "Merkle Manufactory", "entityCat": "Third party", "entityRisk": "med", "unresolved": true, "dataType": "Account Address", "policy": "OPT_IN", "purposes": ["External Account Linking"]}, {"platform": "ALL", "action": "Make Transaction", "entity": "Pimlico", "entityCat": "Tx broadcast", "entityRisk": "med", "unresolved": false, "dataType": "Ip Address", "policy": "ALWAYS", "purposes": ["Transaction Broadcast"]}, {"platform": "ALL", "action": "Make Transaction", "entity": "Pimlico", "entityCat": "Tx broadcast", "entityRisk": "med", "unresolved": false, "dataType": "Mempool Transactions", "policy": "ALWAYS", "purposes": ["Transaction Broadcast"]}, {"platform": "ALL", "action": "Make Transaction", "entity": "Pimlico", "entityCat": "Tx broadcast", "entityRisk": "med", "unresolved": false, "dataType": "Account Address", "policy": "ALWAYS", "purposes": ["Transaction Broadcast"]}, {"platform": "ALL", "action": "Unclassified", "entity": "Daimo", "entityCat": "Wallet developer", "entityRisk": "low", "unresolved": false, "dataType": "Ip Address", "policy": "ALWAYS", "purposes": ["Chain Data Lookup", "Account Signup"]}, {"platform": "ALL", "action": "Unclassified", "entity": "Daimo", "entityCat": "Wallet developer", "entityRisk": "low", "unresolved": false, "dataType": "Mempool Transactions", "policy": "ALWAYS", "purposes": ["Chain Data Lookup", "Account Signup"]}, {"platform": "ALL", "action": "Unclassified", "entity": "Daimo", "entityCat": "Wallet developer", "entityRisk": "low", "unresolved": false, "dataType": "Account Address", "policy": "ALWAYS", "purposes": ["Chain Data Lookup", "Account Signup"]}, {"platform": "ALL", "action": "Unclassified", "entity": "Daimo", "entityCat": "Wallet developer", "entityRisk": "low", "unresolved": false, "dataType": "Pseudonym", "policy": "ALWAYS", "purposes": ["Chain Data Lookup", "Account Signup"]}, {"platform": "ALL", "action": "Unclassified", "entity": "Honeycomb", "entityCat": "Data broker", "entityRisk": "high", "unresolved": false, "dataType": "Ip Address", "policy": "ALWAYS", "purposes": ["Analytics"]}, {"platform": "ALL", "action": "Unclassified", "entity": "Honeycomb", "entityCat": "Data broker", "entityRisk": "high", "unresolved": false, "dataType": "Pseudonym", "policy": "ALWAYS", "purposes": ["Analytics"]}, {"platform": "ALL", "action": "Unclassified", "entity": "Honeycomb", "entityCat": "Data broker", "entityRisk": "high", "unresolved": false, "dataType": "Account Address", "policy": "ALWAYS", "purposes": ["Analytics"]}, {"platform": "ALL", "action": "Unclassified", "entity": "Open Exchange Rates", "entityCat": "Third party", "entityRisk": "med", "unresolved": true, "dataType": "Ip Address", "policy": "ALWAYS", "purposes": ["Asset Metadata"]}], "nEntities": 6, "nBrokers": 2, "nActions": 3}, {"id": "ambire", "name": "Ambire", "perPlatform": false, "platforms": ["ALL"], "records": [{"platform": "ALL", "action": "Native Swap", "entity": "LiFi", "entityCat": "Off-chain data", "entityRisk": "med", "unresolved": false, "dataType": "Ip Address", "policy": "ALWAYS", "purposes": ["Asset Metadata"]}, {"platform": "ALL", "action": "Onboarding New", "entity": "Ambire Wallet", "entityCat": "Off-chain data", "entityRisk": "med", "unresolved": false, "dataType": "Ip Address", "policy": "BY_DEFAULT", "purposes": ["Chain Data Lookup"]}, {"platform": "ALL", "action": "Onboarding New", "entity": "Ambire Wallet", "entityCat": "Off-chain data", "entityRisk": "med", "unresolved": false, "dataType": "Account Address", "policy": "BY_DEFAULT", "purposes": ["Chain Data Lookup"]}, {"platform": "ALL", "action": "Onboarding New", "entity": "Ambire Wallet", "entityCat": "Off-chain data", "entityRisk": "med", "unresolved": false, "dataType": "Assets", "policy": "BY_DEFAULT", "purposes": ["Chain Data Lookup"]}, {"platform": "ALL", "action": "Onboarding New", "entity": "Ambire Wallet", "entityCat": "Off-chain data", "entityRisk": "med", "unresolved": false, "dataType": "Balance", "policy": "BY_DEFAULT", "purposes": ["Chain Data Lookup"]}, {"platform": "ALL", "action": "Onboarding New", "entity": "Monad", "entityCat": "Chain data", "entityRisk": "med", "unresolved": false, "dataType": "Ip Address", "policy": "BY_DEFAULT", "purposes": ["Chain Data Lookup"]}, {"platform": "ALL", "action": "Onboarding New", "entity": "Monad", "entityCat": "Chain data", "entityRisk": "med", "unresolved": false, "dataType": "Account Address", "policy": "BY_DEFAULT", "purposes": ["Chain Data Lookup"]}, {"platform": "ALL", "action": "Onboarding New", "entity": "Citrea", "entityCat": "Chain data", "entityRisk": "med", "unresolved": false, "dataType": "Ip Address", "policy": "BY_DEFAULT", "purposes": ["Chain Data Lookup"]}, {"platform": "ALL", "action": "Onboarding New", "entity": "Citrea", "entityCat": "Chain data", "entityRisk": "med", "unresolved": false, "dataType": "Account Address", "policy": "BY_DEFAULT", "purposes": ["Chain Data Lookup"]}, {"platform": "ALL", "action": "Onboarding Import", "entity": "Ambire Wallet", "entityCat": "Off-chain data", "entityRisk": "med", "unresolved": false, "dataType": "Ip Address", "policy": "BY_DEFAULT", "purposes": ["Chain Data Lookup"]}, {"platform": "ALL", "action": "Onboarding Import", "entity": "Ambire Wallet", "entityCat": "Off-chain data", "entityRisk": "med", "unresolved": false, "dataType": "Account Address", "policy": "BY_DEFAULT", "purposes": ["Chain Data Lookup"]}, {"platform": "ALL", "action": "Onboarding Import", "entity": "Ambire Wallet", "entityCat": "Off-chain data", "entityRisk": "med", "unresolved": false, "dataType": "Assets", "policy": "BY_DEFAULT", "purposes": ["Chain Data Lookup"]}, {"platform": "ALL", "action": "Onboarding Import", "entity": "Ambire Wallet", "entityCat": "Off-chain data", "entityRisk": "med", "unresolved": false, "dataType": "Balance", "policy": "BY_DEFAULT", "purposes": ["Chain Data Lookup"]}, {"platform": "ALL", "action": "Onboarding Import", "entity": "Monad", "entityCat": "Chain data", "entityRisk": "med", "unresolved": false, "dataType": "Ip Address", "policy": "BY_DEFAULT", "purposes": ["Chain Data Lookup"]}, {"platform": "ALL", "action": "Onboarding Import", "entity": "Monad", "entityCat": "Chain data", "entityRisk": "med", "unresolved": false, "dataType": "Account Address", "policy": "BY_DEFAULT", "purposes": ["Chain Data Lookup"]}, {"platform": "ALL", "action": "Onboarding Import", "entity": "Citrea", "entityCat": "Chain data", "entityRisk": "med", "unresolved": false, "dataType": "Ip Address", "policy": "BY_DEFAULT", "purposes": ["Chain Data Lookup"]}, {"platform": "ALL", "action": "Onboarding Import", "entity": "Citrea", "entityCat": "Chain data", "entityRisk": "med", "unresolved": false, "dataType": "Account Address", "policy": "BY_DEFAULT", "purposes": ["Chain Data Lookup"]}, {"platform": "ALL", "action": "Send Usdc", "entity": "Ambire Wallet", "entityCat": "Off-chain data", "entityRisk": "med", "unresolved": false, "dataType": "Ip Address", "policy": "BY_DEFAULT", "purposes": ["Chain Data Lookup"]}, {"platform": "ALL", "action": "Send Usdc", "entity": "Ambire Wallet", "entityCat": "Off-chain data", "entityRisk": "med", "unresolved": false, "dataType": "Account Address", "policy": "BY_DEFAULT", "purposes": ["Chain Data Lookup"]}, {"platform": "ALL", "action": "Send Usdc", "entity": "Ambire Wallet", "entityCat": "Off-chain data", "entityRisk": "med", "unresolved": false, "dataType": "Assets", "policy": "BY_DEFAULT", "purposes": ["Chain Data Lookup"]}, {"platform": "ALL", "action": "Send Usdc", "entity": "Ambire Wallet", "entityCat": "Off-chain data", "entityRisk": "med", "unresolved": false, "dataType": "Balance", "policy": "BY_DEFAULT", "purposes": ["Chain Data Lookup"]}, {"platform": "ALL", "action": "Make Transaction", "entity": "Ambire Wallet", "entityCat": "Off-chain data", "entityRisk": "med", "unresolved": false, "dataType": "Ip Address", "policy": "ALWAYS", "purposes": ["Chain Data Lookup", "Transaction Broadcast"]}, {"platform": "ALL", "action": "Make Transaction", "entity": "Ambire Wallet", "entityCat": "Off-chain data", "entityRisk": "med", "unresolved": false, "dataType": "Mempool Transactions", "policy": "ALWAYS", "purposes": ["Chain Data Lookup", "Transaction Broadcast"]}, {"platform": "ALL", "action": "Make Transaction", "entity": "Ambire Wallet", "entityCat": "Off-chain data", "entityRisk": "med", "unresolved": false, "dataType": "Account Address", "policy": "ALWAYS", "purposes": ["Chain Data Lookup", "Transaction Broadcast"]}, {"platform": "ALL", "action": "Make Transaction", "entity": "Pimlico", "entityCat": "Tx broadcast", "entityRisk": "med", "unresolved": false, "dataType": "Ip Address", "policy": "ALWAYS", "purposes": ["Transaction Broadcast"]}, {"platform": "ALL", "action": "Make Transaction", "entity": "Pimlico", "entityCat": "Tx broadcast", "entityRisk": "med", "unresolved": false, "dataType": "Mempool Transactions", "policy": "ALWAYS", "purposes": ["Transaction Broadcast"]}, {"platform": "ALL", "action": "Make Transaction", "entity": "Pimlico", "entityCat": "Tx broadcast", "entityRisk": "med", "unresolved": false, "dataType": "Account Address", "policy": "ALWAYS", "purposes": ["Transaction Broadcast"]}, {"platform": "ALL", "action": "Make Transaction", "entity": "Biconomy", "entityCat": "Chain data", "entityRisk": "med", "unresolved": false, "dataType": "Ip Address", "policy": "ALWAYS", "purposes": ["Transaction Broadcast"]}, {"platform": "ALL", "action": "Make Transaction", "entity": "Biconomy", "entityCat": "Chain data", "entityRisk": "med", "unresolved": false, "dataType": "Mempool Transactions", "policy": "ALWAYS", "purposes": ["Transaction Broadcast"]}, {"platform": "ALL", "action": "Make Transaction", "entity": "Biconomy", "entityCat": "Chain data", "entityRisk": "med", "unresolved": false, "dataType": "Account Address", "policy": "ALWAYS", "purposes": ["Transaction Broadcast"]}, {"platform": "ALL", "action": "Unclassified", "entity": "Github", "entityCat": "Off-chain data", "entityRisk": "med", "unresolved": false, "dataType": "Ip Address", "policy": "ALWAYS", "purposes": ["Update Checking", "Static Assets"]}], "nEntities": 7, "nBrokers": 0, "nActions": 6}, {"id": "bitbox", "name": "BitBox", "perPlatform": false, "platforms": ["ALL"], "records": [{"platform": "ALL", "action": "Unclassified", "entity": "BitBox/Shift Crypto", "entityCat": "Wallet developer", "entityRisk": "low", "unresolved": false, "dataType": "Ip Address", "policy": "BY_DEFAULT", "purposes": ["Analytics"]}, {"platform": "ALL", "action": "Unclassified", "entity": "BitBox/Shift Crypto", "entityCat": "Wallet developer", "entityRisk": "low", "unresolved": false, "dataType": "Account Address", "policy": "BY_DEFAULT", "purposes": ["Analytics"]}, {"platform": "ALL", "action": "Unclassified", "entity": "BitBox/Shift Crypto", "entityCat": "Wallet developer", "entityRisk": "low", "unresolved": false, "dataType": "User Actions", "policy": "BY_DEFAULT", "purposes": ["Analytics"]}, {"platform": "ALL", "action": "Unclassified", "entity": "Etherscan", "entityCat": "Chain data", "entityRisk": "med", "unresolved": false, "dataType": "Ip Address", "policy": "BY_DEFAULT", "purposes": ["Chain Data Lookup", "Asset Metadata"]}, {"platform": "ALL", "action": "Unclassified", "entity": "Etherscan", "entityCat": "Chain data", "entityRisk": "med", "unresolved": false, "dataType": "Account Address", "policy": "BY_DEFAULT", "purposes": ["Chain Data Lookup", "Asset Metadata"]}, {"platform": "ALL", "action": "Unclassified", "entity": "Etherscan", "entityCat": "Chain data", "entityRisk": "med", "unresolved": false, "dataType": "Balance", "policy": "BY_DEFAULT", "purposes": ["Chain Data Lookup", "Asset Metadata"]}], "nEntities": 2, "nBrokers": 0, "nActions": 1}, {"id": "imtoken", "name": "imToken", "perPlatform": false, "platforms": ["ALL"], "records": [{"platform": "ALL", "action": "Make Transaction", "entity": "imToken", "entityCat": "Wallet developer", "entityRisk": "low", "unresolved": false, "dataType": "Account Address", "policy": "ALWAYS", "purposes": ["Chain Data Lookup"]}], "nEntities": 1, "nBrokers": 0, "nActions": 1}, {"id": "rabby", "name": "Rabby", "perPlatform": true, "platforms": ["BROWSER"], "records": [{"platform": "BROWSER", "action": "App Connection", "entity": "DeBank", "entityCat": "Chain data", "entityRisk": "med", "unresolved": false, "dataType": "Ip Address", "policy": "ALWAYS", "purposes": ["Scam Detection"]}, {"platform": "BROWSER", "action": "App Connection", "entity": "DeBank", "entityCat": "Chain data", "entityRisk": "med", "unresolved": false, "dataType": "Tracking Identifier", "policy": "ALWAYS", "purposes": ["Scam Detection"]}, {"platform": "BROWSER", "action": "App Connection", "entity": "DeBank", "entityCat": "Chain data", "entityRisk": "med", "unresolved": false, "dataType": "Account Address", "policy": "ALWAYS", "purposes": ["Scam Detection"]}, {"platform": "BROWSER", "action": "App Connection", "entity": "DeBank", "entityCat": "Chain data", "entityRisk": "med", "unresolved": false, "dataType": "Wallet Connected Domains", "policy": "ALWAYS", "purposes": ["Scam Detection"]}, {"platform": "BROWSER", "action": "Unclassified", "entity": "DeBank", "entityCat": "Chain data", "entityRisk": "med", "unresolved": false, "dataType": "Ip Address", "policy": "ALWAYS", "purposes": ["Chain Data Lookup", "Analytics", "Swap Quote", "Transaction Broadcast", "Transaction Simulation"]}, {"platform": "BROWSER", "action": "Unclassified", "entity": "DeBank", "entityCat": "Chain data", "entityRisk": "med", "unresolved": false, "dataType": "Tracking Identifier", "policy": "ALWAYS", "purposes": ["Chain Data Lookup", "Analytics", "Swap Quote", "Transaction Broadcast", "Transaction Simulation"]}, {"platform": "BROWSER", "action": "Unclassified", "entity": "DeBank", "entityCat": "Chain data", "entityRisk": "med", "unresolved": false, "dataType": "Mempool Transactions", "policy": "ALWAYS", "purposes": ["Chain Data Lookup", "Analytics", "Swap Quote", "Transaction Broadcast", "Transaction Simulation"]}, {"platform": "BROWSER", "action": "Unclassified", "entity": "DeBank", "entityCat": "Chain data", "entityRisk": "med", "unresolved": false, "dataType": "User Actions", "policy": "ALWAYS", "purposes": ["Chain Data Lookup", "Analytics", "Swap Quote", "Transaction Broadcast", "Transaction Simulation"]}, {"platform": "BROWSER", "action": "Unclassified", "entity": "DeBank", "entityCat": "Chain data", "entityRisk": "med", "unresolved": false, "dataType": "Account Address", "policy": "ALWAYS", "purposes": ["Chain Data Lookup", "Analytics", "Swap Quote", "Transaction Broadcast", "Transaction Simulation"]}], "nEntities": 1, "nBrokers": 0, "nActions": 2}]};
+const wallets = DATA.wallets;
+const byId = Object.fromEntries(wallets.map(w=>[w.id,w]));
+
+let state = {
+  wallet: wallets[0].id,
+  platform: wallets[0].platforms[0],
+  always:true, byDefault:true, optIn:true, brokersOnly:false,
+  focus:null,
+};
+const RISK = {high:'var(--high)', med:'var(--med)', low:'var(--low)'};
+const POLC = {ALWAYS:'var(--always)', BY_DEFAULT:'var(--bydefault)', OPT_IN:'var(--optin)'};
+const POLRANK = {ALWAYS:3, BY_DEFAULT:2, OPT_IN:1};
+const POLTXT = {ALWAYS:'#ef7f8f', BY_DEFAULT:'#e7b85c', OPT_IN:'#5fd0c8'};
+
+function renderPicker(){
+  document.getElementById('picker').innerHTML = wallets.map(w=>`
+    <div class="wcard ${w.id===state.wallet?'on':''}" data-id="${w.id}">
+      <div class="nm">${w.name}</div>
+      <div class="st">${w.nEntities} recipients · ${w.nActions} actions${w.nBrokers?` · <span class="brk">${w.nBrokers} broker/exchange</span>`:''}</div>
+    </div>`).join('');
+  document.querySelectorAll('.wcard').forEach(c=>c.onclick=()=>{
+    state.wallet=c.dataset.id; state.platform=byId[state.wallet].platforms[0]; state.focus=null; render();
+  });
+}
+
+function activeRecords(){
+  const w=byId[state.wallet];
+  return w.records.filter(r=>{
+    if(w.perPlatform && r.platform!==state.platform) return false;
+    if(r.policy==='ALWAYS' && !state.always) return false;
+    if(r.policy==='BY_DEFAULT' && !state.byDefault) return false;
+    if(r.policy==='OPT_IN' && !state.optIn) return false;
+    if(state.brokersOnly && r.entityRisk!=='high') return false;
+    return true;
+  });
+}
+
+function worse(a,b){ return (POLRANK[a]||0)>=(POLRANK[b]||0)?a:b; }
+
+function buildGraph(recs){
+  // 3 columns: action(0), entity(1), dataType(2)
+  const nodes=new Map(); // key -> node
+  function node(col,name,extra){
+    const key=col+' '+name;
+    if(!nodes.has(key)) nodes.set(key,{key,col,name,value:0,outOff:0,inOff:0,links_out:[],links_in:[],...extra});
+    return nodes.get(key);
+  }
+  const linkMap=new Map();
+  function link(s,t,rec){
+    const key=s.key+'->'+t.key;
+    let l=linkMap.get(key);
+    if(!l){ l={source:s,target:t,value:0,policy:'',purposes:new Set(),dataTypes:new Set()}; linkMap.set(key,l); s.links_out.push(l); t.links_in.push(l); }
+    l.value++; l.policy=l.policy?worse(l.policy,rec.policy):rec.policy;
+    rec.purposes.forEach(p=>l.purposes.add(p)); l.dataTypes.add(rec.dataType);
+    return l;
+  }
+  recs.forEach(r=>{
+    const a=node(0,r.action);
+    const e=node(1,r.entity,{risk:r.entityRisk,cat:r.entityCat,unresolved:r.unresolved});
+    const d=node(2,r.dataType);
+    a.value++; e.value++; d.value++;
+    link(a,e,r); link(e,d,r);
+  });
+  return {nodes:[...nodes.values()], links:[...linkMap.values()]};
+}
+
+function layout(g, W, H){
+  const PADX=160, NW=15, padY=10, top=14;
+  const cols=[[],[],[]];
+  g.nodes.forEach(n=>cols[n.col].push(n));
+  const colX=[PADX, W/2 - NW/2, W-PADX-NW];
+  // single global scale so widths are comparable across columns
+  let ky=Infinity;
+  cols.forEach(col=>{
+    const sum=col.reduce((s,n)=>s+n.value,0);
+    if(col.length && sum>0) ky=Math.min(ky,(H-top-padY*(col.length-1)-padY)/sum);
+  });
+  if(!isFinite(ky)) ky=1;
+  cols.forEach((col,ci)=>{
+    col.sort((a,b)=> ci===1 ? (a.risk===b.risk? b.value-a.value : (a.risk==='high'?-1:b.risk==='high'?1:b.value-a.value)) : b.value-a.value);
+    let y=top;
+    col.forEach(n=>{ n.x=colX[ci]; n.h=Math.max(1.5,n.value*ky); n.y=y; n.outOff=y; n.inOff=y; y+=n.h+padY; });
+  });
+  // assign link endpoints (sorted to reduce crossings)
+  g.nodes.forEach(n=>{
+    n.links_out.sort((a,b)=>a.target.y-b.target.y);
+    n.links_in.sort((a,b)=>a.source.y-b.source.y);
+  });
+  g.nodes.forEach(n=>{
+    n.links_out.forEach(l=>{ l.sy=n.outOff; l.sw=Math.max(1,l.value*ky); n.outOff+=l.sw; });
+    n.links_in.forEach(l=>{ l.ty=n.inOff; l.tw=Math.max(1,l.value*ky); n.inOff+=l.tw; });
+  });
+  return {ky,NW};
+}
+
+function ribbon(l,NW){
+  const x0=l.source.x+NW, x1=l.target.x;
+  const y0=l.sy+l.sw/2, y1=l.ty+l.tw/2, xm=(x0+x1)/2;
+  return `M${x0},${y0} C${xm},${y0} ${xm},${y1} ${x1},${y1}`;
+}
+
+function render(){
+  renderPicker();
+  const w=byId[state.wallet];
+  // platform control
+  const pc=document.getElementById('platCtl');
+  if(w.perPlatform){ pc.style.display='flex';
+    document.getElementById('platform').innerHTML=w.platforms.map(p=>`<option ${p===state.platform?'selected':''}>${p}</option>`).join('');
+  } else pc.style.display='none';
+
+  const recs=activeRecords();
+  const g=buildGraph(recs);
+  // stats
+  const brokers=[...new Set(g.nodes.filter(n=>n.col===1&&n.risk==='high').map(n=>n.name))];
+  const ents=g.nodes.filter(n=>n.col===1);
+  const always=recs.filter(r=>r.policy==='ALWAYS').length;
+  document.getElementById('stats').innerHTML =
+    `<b>${w.name}</b> leaks to <b>${ents.length}</b> recipient${ents.length!==1?'s':''} across <b>${g.nodes.filter(n=>n.col===0).length}</b> action${g.nodes.filter(n=>n.col===0).length!==1?'s':''}. `+
+    (brokers.length?`<span class="pill high">${brokers.length} data broker/exchange</span> ${brokers.map(b=>b).join(', ')}. `:'')+
+    `<span style="color:var(--muted)">${always} of ${recs.length} data flows are collected <b style="color:#ef7f8f">always</b> (cannot be turned off).</span>`;
+
+  const svg=document.getElementById('svg');
+  const emptyEl=document.getElementById('empty');
+  if(recs.length===0){ svg.innerHTML=''; svg.setAttribute('height',0); emptyEl.style.display='block'; return; }
+  emptyEl.style.display='none';
+
+  const W=document.getElementById('stage').clientWidth || 1100;
+  const rowH=22;
+  const maxNodes=Math.max(...[0,1,2].map(c=>g.nodes.filter(n=>n.col===c).length));
+  const H=Math.max(360, maxNodes*rowH + 40);
+  const {NW}=layout(g,W,H);
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`); svg.setAttribute('height',H);
+
+  let s='';
+  // links
+  g.links.forEach((l,i)=>{
+    l._id='L'+i;
+    s+=`<path class="link" id="L${i}" d="${ribbon(l,NW)}" stroke="${POLC[l.policy]||'var(--med)'}" stroke-width="${Math.max(1,l.sw)}"
+        data-s="${l.source.key.replace(/"/g,'')}" data-t="${l.target.key.replace(/"/g,'')}"></path>`;
+  });
+  // nodes
+  g.nodes.forEach((n,i)=>{
+    n._id='N'+i;
+    const col = n.col===1 ? RISK[n.risk] : '#41485a';
+    const anchor = n.col===2 ? 'end' : (n.col===0?'start':'middle');
+    let tx = n.col===0 ? n.x-6 : n.col===2 ? n.x+NW+6 : n.x+NW/2;
+    if(n.col===1){ tx = n.x+NW+6; }
+    const ta = n.col===0?'end':'start';
+    const label = n.unresolved ? n.name+' ⚠' : n.name;
+    s+=`<g class="node" id="N${i}" data-key="${n.key.replace(/"/g,'')}">
+      <rect x="${n.x}" y="${n.y}" width="${NW}" height="${n.h}" rx="2" fill="${col}"></rect>
+      <text x="${tx}" y="${n.y+n.h/2-1}" text-anchor="${ta}" dominant-baseline="middle">${label}</text>
+      <text class="val" x="${tx}" y="${n.y+n.h/2+11}" text-anchor="${ta}" dominant-baseline="middle">${n.value}</text>
+    </g>`;
+  });
+  svg.innerHTML=s;
+
+  // interactions
+  const tip=document.getElementById('tip');
+  svg.querySelectorAll('.link').forEach((el,i)=>{
+    const l=g.links[i];
+    el.onmousemove=ev=>{
+      tip.style.opacity=1; tip.style.left=Math.min(ev.clientX+14,innerWidth-310)+'px'; tip.style.top=(ev.clientY+14)+'px';
+      const dir = l.source.col===0?`${l.source.name} → ${l.target.name}`:`${l.source.name} → ${l.target.name}`;
+      tip.innerHTML=`<div class="t">${dir}</div>`+
+        `<div class="r">Policy: <span class="pol" style="color:${POLTXT[l.policy]||'#e7b85c'}">${l.policy.replace('_',' ').toLowerCase()}</span></div>`+
+        (l.dataTypes.size?`<div class="r">Data: ${[...l.dataTypes].join(', ')}</div>`:'')+
+        (l.purposes.size?`<div class="r">Purpose: ${[...l.purposes].join(', ')}</div>`:'');
+    };
+    el.onmouseleave=()=>tip.style.opacity=0;
+  });
+  // click node to isolate its connected flows
+  svg.querySelectorAll('.node').forEach((el)=>{
+    el.onclick=()=>{ state.focus = state.focus===el.dataset.key?null:el.dataset.key; applyFocus(g); };
+  });
+  applyFocus(g);
+}
+
+function connected(g, key){
+  // nodes/links reachable through the focused node (both directions)
+  const keep=new Set([key]);
+  const node=g.nodes.find(n=>n.key===key);
+  if(!node) return {nodes:keep,links:new Set()};
+  const links=new Set();
+  node.links_out.forEach(l=>{links.add(l); keep.add(l.target.key); l.target.links_out.forEach(l2=>{links.add(l2);keep.add(l2.target.key);});});
+  node.links_in.forEach(l=>{links.add(l); keep.add(l.source.key); l.source.links_in.forEach(l2=>{links.add(l2);keep.add(l2.source.key);});});
+  return {nodes:keep,links};
+}
+function applyFocus(g){
+  const svg=document.getElementById('svg');
+  if(!state.focus){ svg.querySelectorAll('.link,.node').forEach(e=>e.classList.remove('dim')); return; }
+  const {nodes,links}=connected(g,state.focus);
+  g.links.forEach((l,i)=>{ const el=svg.querySelector('#L'+i); if(el) el.classList.toggle('dim',!links.has(l)); });
+  g.nodes.forEach((n,i)=>{ const el=svg.querySelector('#N'+i); if(el) el.classList.toggle('dim',!nodes.has(n.key)); });
+}
+
+document.getElementById('platform').onchange=e=>{state.platform=e.target.value; state.focus=null; render();};
+document.getElementById('pAlways').onchange=e=>{state.always=e.target.checked; render();};
+document.getElementById('pDefault').onchange=e=>{state.byDefault=e.target.checked; render();};
+document.getElementById('pOptIn').onchange=e=>{state.optIn=e.target.checked; render();};
+document.getElementById('brokersOnly').onchange=e=>{state.brokersOnly=e.target.checked; render();};
+window.addEventListener('resize',()=>render());
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,264 @@
+{
+	"id": "frame",
+	"source": "software-wallets",
+	"export": "frame",
+	"data": {
+		"metadata": {
+			"id": "frame",
+			"displayName": "Frame",
+			"tableName": "Frame",
+			"blurb": "Frame...",
+			"contributors": [
+				{
+					"$ref": "polymutex"
+				},
+				{
+					"$ref": "nconsigny"
+				},
+				{
+					"$ref": "lucemans"
+				},
+				{
+					"$ref": "mattmatt"
+				}
+			],
+			"iconExtension": "svg",
+			"lastUpdated": "2025-03-13",
+			"urls": {
+				"docs": [
+					"https://docs.frame.sh/"
+				],
+				"repositories": [
+					"https://github.com/floating/frame"
+				],
+				"socials": {
+					"discord": "https://discord.com/invite/rr4Yr3JkPq",
+					"x": "https://x.com/0xFrame"
+				},
+				"websites": [
+					"https://frame.sh"
+				]
+			}
+		},
+		"features": {
+			"accountSupport": {
+				"defaultAccountType": "AccountType.eoa",
+				"eip7702": {
+					"$ref": "notSupported"
+				},
+				"eoa": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"$ref": "refTodo"
+							},
+							"canExportPrivateKey": true,
+							"keyDerivation": {
+								"type": "BIP32",
+								"canExportSeedPhrase": true,
+								"derivationPath": "BIP44",
+								"seedPhrase": "BIP39"
+							}
+						}
+					]
+				},
+				"mpc": {
+					"$ref": "notSupported"
+				},
+				"rawErc4337": {
+					"$ref": "notSupported"
+				},
+				"safe": {
+					"$ref": "notSupported"
+				}
+			},
+			"addressResolution": {
+				"ref": {
+					"$ref": "refTodo"
+				},
+				"chainSpecificAddressing": {
+					"erc7828": null,
+					"erc7831": null
+				},
+				"nonChainSpecificEnsResolution": null
+			},
+			"chainAbstraction": null,
+			"chainConfigurability": null,
+			"ecosystem": {
+				"delegation": null
+			},
+			"integration": {
+				"browser": {
+					"1193": null,
+					"2700": null,
+					"6963": null,
+					"ref": {
+						"$ref": "refTodo"
+					}
+				},
+				"walletCall": null
+			},
+			"licensing": null,
+			"monetization": {
+				"ref": {
+					"$ref": "refTodo"
+				},
+				"revenueBreakdownIsPublic": false,
+				"strategies": {
+					"donations": null,
+					"ecosystemGrants": null,
+					"governanceTokenLowFloat": null,
+					"governanceTokenMostlyDistributed": null,
+					"hiddenConvenienceFees": null,
+					"publicOffering": null,
+					"selfFunded": null,
+					"transparentConvenienceFees": null,
+					"ventureCapital": null
+				}
+			},
+			"multiAddress": null,
+			"privacy": {
+				"analytics": {
+					"crashReports": null,
+					"usage": null
+				},
+				"appIsolation": null,
+				"dataCollection": null,
+				"privacyPolicy": null,
+				"transactionPrivacy": {
+					"defaultFungibleTokenTransferMode": "PUBLIC",
+					"STEALTH_ADDRESSES": {
+						"$ref": "notSupported"
+					},
+					"TORNADO_CASH_NOVA": {
+						"$ref": "notSupported"
+					},
+					"PRIVACY_POOLS": {
+						"$ref": "notSupported"
+					},
+					"RAILGUN": {
+						"$ref": "notSupported"
+					}
+				}
+			},
+			"profile": "WalletProfile.GENERIC",
+			"security": {
+				"accountRecovery": null,
+				"bugBountyProgram": null,
+				"duressResistance": null,
+				"hardwareWalletSupport": {
+					"ref": {
+						"$ref": "refTodo"
+					},
+					"wallets": {
+						"LEDGER": {
+							"$call": "supported",
+							"args": [
+								{
+									"connectionTypes": [
+										"HardwareWalletConnection.webUSB"
+									]
+								}
+							]
+						},
+						"TREZOR": {
+							"$call": "supported",
+							"args": [
+								{
+									"connectionTypes": [
+										"HardwareWalletConnection.webUSB"
+									]
+								}
+							]
+						},
+						"KEYSTONE": {
+							"$call": "supported",
+							"args": [
+								{
+									"connectionTypes": [
+										"HardwareWalletConnection.QR"
+									]
+								}
+							]
+						},
+						"GRIDPLUS": {
+							"$call": "supported",
+							"args": [
+								{
+									"connectionTypes": [
+										"HardwareWalletConnection.webUSB"
+									]
+								}
+							]
+						},
+						"OTHER": {
+							"$call": "supported",
+							"args": [
+								{
+									"connectionTypes": [
+										"HardwareWalletConnection.webUSB"
+									]
+								}
+							]
+						}
+					}
+				},
+				"keysHandling": null,
+				"lightClient": {
+					"ethereumL1": null
+				},
+				"passkeyVerification": {
+					"$ref": "notSupported"
+				},
+				"publicSecurityAudits": null,
+				"scamAlerts": null,
+				"securityBestPractices": null,
+				"transactionLegibility": {
+					"ref": {
+						"$ref": "refTodo"
+					},
+					"erc7730": null,
+					"erc8213": null,
+					"transactionDetailsDisplay": null,
+					"transactionSimulations": null
+				}
+			},
+			"selfSovereignty": {
+				"permissionsManagement": null,
+				"transactionSubmission": {
+					"l1": {
+						"ref": {
+							"$ref": "refTodo"
+						},
+						"selfBroadcastViaDirectGossip": null,
+						"selfBroadcastViaSelfHostedNode": null
+					},
+					"l2": {
+						"arbitrum": null,
+						"opStack": null,
+						"ref": {
+							"$ref": "refTodo"
+						}
+					}
+				}
+			},
+			"transparency": {
+				"operationFees": null,
+				"releaseTransparency": {
+					"artifactSigning": null,
+					"dependencyLocking": null,
+					"dependencyVulnerabilityScanning": null,
+					"hasPublicChangelog": null,
+					"hermeticBuilds": null,
+					"repositoryChangeControls": null,
+					"reproducibleBuilds": null
+				}
+			}
+		},
+		"variants": {
+			"BROWSER": true,
+			"DESKTOP": true
+		}
+	}
+}

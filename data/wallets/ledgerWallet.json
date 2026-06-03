@@ -1,0 +1,177 @@
+{
+	"id": "ledgerWallet",
+	"source": "hardware-wallets",
+	"export": "ledgerWallet",
+	"data": {
+		"metadata": {
+			"$ref": "ledgerWalletMetadata"
+		},
+		"features": {
+			"accountSupport": null,
+			"appConnectionSupport": {
+				"$call": "supported",
+				"args": [
+					{
+						"ref": "https://support.ledger.com/article/360018444599-zd",
+						"requiresManufacturerConsent": {
+							"type": "FEATURES_GATED_BY_MANUFACTURER",
+							"ref": {
+								"explanation": "Software wallet developers are required to register with Ledger's partner program before their software wallet becomes able to display clear signing data on Ledger devices.",
+								"label": "Ledger Developer Portal",
+								"url": "https://developers.ledger.com/docs/clear-signing/for-wallets"
+							}
+						},
+						"supportedConnections": {
+							"METAMASK": true,
+							"RABBY": true,
+							"FRAME": true,
+							"OTHER": true,
+							"VENDOR_OPEN_SOURCE_APP": true
+						}
+					}
+				]
+			},
+			"licensing": null,
+			"monetization": {
+				"ref": [
+					{
+						"explanation": "Ledger raises $380 million to make digital assets more secure and accessible to everyone",
+						"url": "https://www.businesswire.com/news/home/20210609005985/en/Ledger-completes-a-%24380-million-Series-C-fundraising-valuing-the-company-at-more-than-%241.5-billion-to-strengthen-its-position-as-the-leading-secure-gateway-to-digital-assets"
+					}
+				],
+				"revenueBreakdownIsPublic": false,
+				"strategies": {
+					"donations": null,
+					"ecosystemGrants": null,
+					"governanceTokenLowFloat": null,
+					"governanceTokenMostlyDistributed": null,
+					"hiddenConvenienceFees": null,
+					"publicOffering": null,
+					"selfFunded": null,
+					"transparentConvenienceFees": null,
+					"ventureCapital": true
+				}
+			},
+			"multiAddress": null,
+			"privacy": {
+				"analytics": {
+					"crashReports": null,
+					"usage": null
+				},
+				"dataCollection": null,
+				"hardwarePrivacy": null,
+				"privacyPolicy": "https://ledger.com/privacy-policy",
+				"transactionPrivacy": null
+			},
+			"profile": "WalletProfile.GENERIC",
+			"security": {
+				"accountRecovery": null,
+				"bugBountyProgram": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"$ref": "refTodo"
+							},
+							"availability": "BugBountyProgramAvailability.ACTIVE",
+							"coverageBreadth": "FULL_SCOPE",
+							"dateStarted": "2020-03-07",
+							"disclosure": {
+								"$call": "supported",
+								"args": [
+									{
+										"numberOfDays": 90
+									}
+								]
+							},
+							"legalProtections": {
+								"$call": "supported",
+								"args": [
+									{
+										"type": "LegalProtectionType.SAFE_HARBOR",
+										"ref": [
+											{
+												"explanation": "Ledger commits that security researchers reporting bugs will be protected from legal liability, so long as they follow responsible disclosure guidelines and principles.",
+												"url": "https://donjon.ledger.com/bounty"
+											}
+										]
+									}
+								]
+							},
+							"platform": "BugBountyPlatform.SELF_HOSTED",
+							"rewards": {
+								"$ref": "notSupported"
+							},
+							"upgradePathAvailable": true
+						}
+					]
+				},
+				"duressResistance": null,
+				"firmware": null,
+				"keysHandling": null,
+				"lightClient": {
+					"ethereumL1": null
+				},
+				"publicSecurityAudits": null,
+				"secureElement": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": [
+								{
+									"explanation": "Ledger devices have an EAL 5+ or an EAL 6+ certification depending on which device you get.",
+									"url": "https://www.ledger.com/academy/security/the-secure-element-whistanding-security-attacks"
+								}
+							],
+							"secureElementType": "SecureElementType.EAL_6_PLUS"
+						}
+					]
+				},
+				"securityBestPractices": null,
+				"supplyChainDIY": null,
+				"supplyChainFactory": null,
+				"transactionLegibility": {
+					"ref": [
+						{
+							"explanation": "Independent video demonstration of Ledger's signing implementation on a Safe.",
+							"url": "https://youtu.be/9YmPWxAvKYY?t=1722"
+						}
+					],
+					"dataExtraction": {
+						"EYES": true,
+						"HASHES": false,
+						"QRCODE": false
+					},
+					"detailsDisplayed": {
+						"$ref": "displaysFullTransactionDetails"
+					},
+					"erc7730": {
+						"$ref": "notSupported"
+					},
+					"erc8213": null
+				},
+				"userSafety": null
+			},
+			"selfSovereignty": {
+				"interoperability": null
+			},
+			"transparency": {
+				"maintenance": null,
+				"operationFees": null,
+				"releaseTransparency": {
+					"artifactSigning": null,
+					"dependencyLocking": null,
+					"dependencyVulnerabilityScanning": null,
+					"hasPublicChangelog": null,
+					"hermeticBuilds": null,
+					"repositoryChangeControls": null,
+					"reproducibleBuilds": null
+				},
+				"reputation": null
+			}
+		},
+		"variants": {
+			"HARDWARE": true
+		}
+	}
+}

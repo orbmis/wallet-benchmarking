@@ -1,0 +1,868 @@
+{
+	"id": "metamask",
+	"source": "software-wallets",
+	"export": "metamask",
+	"data": {
+		"metadata": {
+			"id": "metamask",
+			"displayName": "MetaMask",
+			"tableName": "MetaMask",
+			"blurb": "MetaMask is a popular multichain wallet created by Consensys and that has been around for a long time. It is a jack-of-all-trades wallet that can be extended through MetaMask Snaps.",
+			"contributors": [
+				{
+					"$ref": "polymutex"
+				},
+				{
+					"$ref": "nconsigny"
+				},
+				{
+					"$ref": "mattmatt"
+				}
+			],
+			"iconExtension": "svg",
+			"lastUpdated": "2026-05-06",
+			"urls": {
+				"androidManifestXml": "https://raw.githubusercontent.com/MetaMask/metamask-mobile/main/android/app/src/main/AndroidManifest.xml",
+				"docs": [
+					"https://docs.metamask.io/"
+				],
+				"extensions": [
+					"https://chromewebstore.google.com/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn"
+				],
+				"iosInfoPlist": "https://raw.githubusercontent.com/MetaMask/metamask-mobile/main/ios/MetaMask/Info.plist",
+				"repositories": [
+					"https://github.com/MetaMask/metamask-extension"
+				],
+				"socials": {
+					"farcaster": "https://farcaster.xyz/metamask",
+					"linkedin": "https://www.linkedin.com/company/metamask/",
+					"reddit": "https://www.reddit.com/r/Metamask/",
+					"tiktok": "https://www.tiktok.com/@metamask",
+					"x": "https://x.com/MetaMask"
+				},
+				"websites": [
+					"https://metamask.io"
+				]
+			}
+		},
+		"features": {
+			"accountSupport": {
+				"defaultAccountType": "AccountType.eoa",
+				"eip7702": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"$ref": "refTodo"
+							},
+							"contract": {
+								"$ref": "metamask7702DelegatorContract"
+							}
+						}
+					]
+				},
+				"eoa": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"$ref": "refTodo"
+							},
+							"canExportPrivateKey": true,
+							"keyDerivation": {
+								"type": "BIP32",
+								"canExportSeedPhrase": true,
+								"derivationPath": "BIP44",
+								"seedPhrase": "BIP39"
+							}
+						}
+					]
+				},
+				"mpc": {
+					"$ref": "notSupported"
+				},
+				"rawErc4337": {
+					"$ref": "notSupported"
+				},
+				"safe": {
+					"$ref": "notSupported"
+				}
+			},
+			"addressResolution": {
+				"ref": [
+					{
+						"explanation": "MetaMask supports ENS domain resolution.",
+						"url": "https://support.metamask.io/more-web3/learn/sending-or-receiving-a-transaction-with-ens/"
+					}
+				],
+				"chainSpecificAddressing": {
+					"erc7828": {
+						"$ref": "notSupported"
+					},
+					"erc7831": {
+						"$ref": "notSupported"
+					}
+				},
+				"nonChainSpecificEnsResolution": {
+					"$call": "supported",
+					"args": [
+						{
+							"medium": "CHAIN_CLIENT"
+						}
+					]
+				}
+			},
+			"chainAbstraction": {
+				"bridging": {
+					"builtInBridging": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask has a built-in bridge feature that allows users to bridge assets between chains.",
+									"url": "https://support.metamask.io/more-web3/learn/field-guide-to-bridges/"
+								},
+								"feesLargerThan1bps": {
+									"afterSingleAction": "FeeDisplayLevel.COMPREHENSIVE",
+									"byDefault": "FeeDisplayLevel.COMPREHENSIVE",
+									"fullySponsored": false
+								},
+								"risksExplained": "NOT_IN_UI"
+							}
+						]
+					},
+					"suggestedBridging": {
+						"$ref": "notSupported"
+					}
+				},
+				"crossChainBalances": {
+					"ref": {
+						"explanation": "MetaMask displays tokens across multiple networks in a single aggregated view with estimated portfolio value",
+						"url": "https://support.metamask.io/manage-crypto/tokens/how-to-view-your-token-balance-across-multiple-networks/"
+					},
+					"ether": {
+						"crossChainSumView": {
+							"$ref": "notSupported"
+						},
+						"perChainBalanceViewAcrossMultipleChains": {
+							"$ref": "featureSupported"
+						}
+					},
+					"globalAccountValue": {
+						"$ref": "featureSupported"
+					},
+					"perChainAccountValue": {
+						"$ref": "featureSupported"
+					},
+					"usdc": {
+						"crossChainSumView": {
+							"$ref": "notSupported"
+						},
+						"perChainBalanceViewAcrossMultipleChains": {
+							"$ref": "featureSupported"
+						}
+					}
+				}
+			},
+			"chainConfigurability": {
+				"$call": "supported",
+				"args": [
+					{
+						"ref": [
+							{
+								"explanation": "\n\t\t\t\t\t\tMetaMask lets users set custom RPC endpoints for any network,\n\t\t\t\t\t\tincluding mainnet. Before that, it contacts default endpoints\n\t\t\t\t\t\t(mainnet.infura.io and some L2s) for non-sensitive RPCs\n\t\t\t\t\t\t(`eth_blockNumber`, `net_version`).\n\t\t\t\t\t",
+								"url": "https://support.metamask.io/configure/networks/how-to-add-a-custom-network-rpc/"
+							}
+						],
+						"customChainRpcEndpoint": {
+							"$ref": "featureSupported"
+						},
+						"l1": {
+							"$call": "supported",
+							"args": [
+								{
+									"rpcEndpointConfiguration": "RpcEndpointConfiguration.YES_AFTER_OTHER_REQUESTS",
+									"withNoConnectivityExceptL1RPCEndpoint": {
+										"accountCreation": {
+											"$ref": "featureSupported"
+										},
+										"accountImport": {
+											"$ref": "featureSupported"
+										},
+										"erc20BalanceLookup": {
+											"$ref": "notSupported"
+										},
+										"erc20TokenSend": {
+											"$ref": "notSupported"
+										},
+										"etherBalanceLookup": {
+											"$ref": "featureSupported"
+										}
+									}
+								}
+							]
+						},
+						"nonL1": {
+							"$call": "supported",
+							"args": [
+								{
+									"rpcEndpointConfiguration": "RpcEndpointConfiguration.YES_AFTER_OTHER_REQUESTS"
+								}
+							]
+						}
+					}
+				]
+			},
+			"ecosystem": {
+				"delegation": {
+					"duringEOACreation": "NO",
+					"duringEOAImport": "NO",
+					"duringFirst7702Operation": {
+						"$call": "supported",
+						"args": [
+							{
+								"type": "DELEGATION_BUNDLED_WITH_OTHER_OPERATIONS",
+								"nonDelegationTransactionDetailsIdenticalToNormalFlow": true
+							}
+						]
+					},
+					"fee": {
+						"crossChainGas": {
+							"$ref": "notSupported"
+						},
+						"walletSponsored": {
+							"$ref": "notSupported"
+						}
+					}
+				}
+			},
+			"integration": {
+				"browser": {
+					"1193": {
+						"$ref": "featureSupported"
+					},
+					"2700": {
+						"$ref": "featureSupported"
+					},
+					"6963": {
+						"$ref": "featureSupported"
+					},
+					"ref": [
+						{
+							"explanation": "MetaMask browser extension supports standard Ethereum Provider APIs. Mobile app does not inject into web pages.",
+							"url": "https://support.metamask.io/hc/en-us/articles/360015489471"
+						}
+					]
+				},
+				"walletCall": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"$ref": "refTodo"
+							},
+							"atomicMultiTransactions": {
+								"$ref": "featureSupported"
+							}
+						}
+					]
+				}
+			},
+			"licensing": {
+				"type": "LicensingType.SEPARATE_CORE_CODE_LICENSE_VS_WALLET_CODE_LICENSE",
+				"coreLicense": {
+					"ref": {
+						"explanation": "The MetaMask core repository contains various packages reused across all MetaMask versions, licensed under MIT.",
+						"url": "https://github.com/MetaMask/core/tree/main/packages"
+					},
+					"license": "FOSSLicense.MIT"
+				},
+				"walletAppLicense": {
+					"BROWSER": {
+						"ref": {
+							"explanation": "The MetaMask browser extension uses a proprietary source-available license.",
+							"url": "https://github.com/MetaMask/metamask-extension/blob/c83a307e909b1f767531162a8e30043254d0e9b7/LICENSE"
+						},
+						"license": "SourceAvailableNonFOSSLicense.PROPRIETARY_SOURCE_AVAILABLE"
+					},
+					"MOBILE": {
+						"ref": {
+							"explanation": "The MetaMask mobile app uses a proprietary source-available license.",
+							"url": "https://github.com/MetaMask/metamask-mobile/blob/d502f24bb850d279709081c2667adb53a1eff20f/LICENSE"
+						},
+						"license": "SourceAvailableNonFOSSLicense.PROPRIETARY_SOURCE_AVAILABLE"
+					}
+				}
+			},
+			"monetization": {
+				"ref": [
+					{
+						"explanation": "MetaMask is funded through transparent swap fees and venture capital with publicly disclosed funding rounds.",
+						"url": "https://consensys.io/blog/consensys-raises-450m-series-d-funding"
+					}
+				],
+				"revenueBreakdownIsPublic": true,
+				"strategies": {
+					"donations": false,
+					"ecosystemGrants": false,
+					"governanceTokenLowFloat": false,
+					"governanceTokenMostlyDistributed": false,
+					"hiddenConvenienceFees": false,
+					"publicOffering": false,
+					"selfFunded": false,
+					"transparentConvenienceFees": true,
+					"ventureCapital": true
+				}
+			},
+			"multiAddress": {
+				"$ref": "featureSupported"
+			},
+			"privacy": {
+				"analytics": {
+					"crashReports": null,
+					"usage": null
+				},
+				"appIsolation": {
+					"createInAppConnectionFlow": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"$ref": "refTodo"
+								}
+							}
+						]
+					},
+					"erc7846WalletConnect": {
+						"$ref": "notSupported"
+					},
+					"ethAccounts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"$ref": "refTodo"
+								},
+								"defaultBehavior": "ExposedAccountsBehavior.ACTIVE_ACCOUNT_ONLY"
+							}
+						]
+					},
+					"useAppSpecificLastConnectedAddresses": {
+						"$ref": "notSupported"
+					}
+				},
+				"dataCollection": null,
+				"privacyPolicy": "https://consensys.io/privacy-notice/",
+				"transactionPrivacy": {
+					"defaultFungibleTokenTransferMode": "PUBLIC",
+					"STEALTH_ADDRESSES": {
+						"$ref": "notSupported"
+					},
+					"TORNADO_CASH_NOVA": {
+						"$ref": "notSupported"
+					},
+					"PRIVACY_POOLS": {
+						"$ref": "notSupported"
+					},
+					"RAILGUN": {
+						"$ref": "notSupported"
+					}
+				}
+			},
+			"profile": "WalletProfile.GENERIC",
+			"security": {
+				"accountRecovery": {
+					"guardianRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"label": "MetaMask account recovery documentation",
+										"url": "https://support.metamask.io/configure/wallet/social-login"
+									}
+								],
+								"minimumGuardianPolicy": {
+									"type": "GuardianPolicyType.SECRET_SPLIT_ACROSS_GUARDIANS",
+									"descriptionMarkdown": "\n\t\t\t\t\t\t\tMetaMask's account recovery feature splits recovery key shares across Google\n\t\t\t\t\t\t\tand/or Apple. The user may configure a single one without the other,\n\t\t\t\t\t\t\tin which case the key is effectively a 1-of-1.\n\n\t\t\t\t\t\t\tMetaMask uses a key derived from the wallet password and these key shares\n\t\t\t\t\t\t\tto create an encrypted seed phrase backup stored in Consensys's data store service.\n\t\t\t\t\t\t",
+									"optionalGuardians": [
+										{
+											"type": "GuardianType.USER_EXTERNAL_ACCOUNT",
+											"description": "Google account",
+											"entity": {
+												"$ref": "alphabet"
+											}
+										},
+										{
+											"type": "GuardianType.USER_EXTERNAL_ACCOUNT",
+											"description": "Apple account",
+											"entity": {
+												"$ref": "apple"
+											}
+										}
+									],
+									"optionalGuardiansMinimumConfigurable": 1,
+									"optionalGuardiansMinimumNeededForRecovery": 1,
+									"requiredGuardians": [
+										{
+											"type": "GuardianType.WALLET_PASSWORD"
+										},
+										{
+											"type": "GuardianType.WALLET_PROVIDER",
+											"description": "MetaMask data store service",
+											"entity": {
+												"$ref": "consensys"
+											}
+										}
+									],
+									"secretReconstitution": "CLIENT_SIDE"
+								}
+							}
+						]
+					}
+				},
+				"bugBountyProgram": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": [
+								{
+									"explanation": "Metamask works with an active community of security researchers through their Bug Bounty Program to continually improve their security.",
+									"url": "https://metamask.io/security/metamask-security-program"
+								}
+							],
+							"availability": "BugBountyProgramAvailability.ACTIVE",
+							"coverageBreadth": "FULL_SCOPE",
+							"dateStarted": "2022-06-01",
+							"disclosure": {
+								"$ref": "notSupported"
+							},
+							"legalProtections": {
+								"$call": "supported",
+								"args": [
+									{
+										"type": "LegalProtectionType.SAFE_HARBOR",
+										"ref": {
+											"explanation": "Metamask waives any relevant restriction in our Terms of Service (\"TOS\") and/or Acceptable Use Policies (\"AUP\") that conflicts with the standard for Good Faith Security Research outlined here..",
+											"url": "https://hackerone.com/metamask/safe_harbor"
+										}
+									}
+								]
+							},
+							"platform": "BugBountyPlatform.HACKER_ONE",
+							"rewards": {
+								"$call": "supported",
+								"args": [
+									{
+										"currency": "USD",
+										"maximum": 1000000,
+										"minimum": 250
+									}
+								]
+							},
+							"upgradePathAvailable": true
+						}
+					]
+				},
+				"duressResistance": {
+					"basicUnlock": {
+						"ref": {
+							"$ref": "refTodo"
+						},
+						"mechanisms": {
+							"PIN": false,
+							"PASSWORD": true,
+							"BIOMETRIC": true,
+							"PATTERN": false
+						}
+					},
+					"duressMode": {
+						"$ref": "notSupported"
+					}
+				},
+				"hardwareWalletSupport": {
+					"ref": [
+						{
+							"explanation": "MetaMask supports Ledger, Trezor, Lattice (GridPlus), Keystone, OneKey, and KeepKey via its Hardware Wallet Hub.",
+							"url": "https://support.metamask.io/more-web3/wallets/hardware-wallet-hub/"
+						}
+					],
+					"wallets": {
+						"LEDGER": {
+							"$call": "supported",
+							"args": [
+								{
+									"connectionTypes": [
+										"HardwareWalletConnection.webUSB"
+									]
+								}
+							]
+						},
+						"TREZOR": {
+							"$call": "supported",
+							"args": [
+								{
+									"connectionTypes": [
+										"HardwareWalletConnection.webUSB"
+									]
+								}
+							]
+						},
+						"GRIDPLUS": {
+							"$call": "supported",
+							"args": [
+								{
+									"connectionTypes": [
+										"HardwareWalletConnection.webUSB"
+									]
+								}
+							]
+						},
+						"KEYSTONE": {
+							"$call": "supported",
+							"args": [
+								{
+									"connectionTypes": [
+										"HardwareWalletConnection.QR"
+									]
+								}
+							]
+						}
+					}
+				},
+				"keysHandling": {
+					"ref": {
+						"$ref": "refTodo"
+					},
+					"keyGeneration": "KeyGenerationLocation.FULLY_ON_USER_DEVICE",
+					"multipartyKeyReconstruction": "MultiPartyKeyReconstruction.NON_MULTIPARTY"
+				},
+				"lightClient": {
+					"ethereumL1": {
+						"$ref": "notSupported"
+					}
+				},
+				"passkeyVerification": {
+					"$ref": "notSupported"
+				},
+				"publicSecurityAudits": [
+					{
+						"ref": "https://assets.ctfassets.net/clixtyxoaeas/21m4LE3WLYbgWjc33aDcp2/8252073e115688b1dc1500a9c2d33fe4/metamask-delegator-framework-audit-2024-10.pdf",
+						"auditDate": "2024-10-25",
+						"auditor": {
+							"$ref": "diligence"
+						},
+						"codeSnapshot": {
+							"date": "2024-10-25"
+						},
+						"unpatchedFlaws": "ALL_FIXED",
+						"variantsScope": "ALL_VARIANTS"
+					},
+					{
+						"ref": "https://assets.ctfassets.net/clixtyxoaeas/4sNMB55kkGw6BtAiIn08mm/f1f4a78d3901dd03848d070e15a1ff12/pentest-report_metamask-signing-snap.pdf",
+						"auditDate": "2024-10-25",
+						"auditor": {
+							"$ref": "cure53"
+						},
+						"codeSnapshot": {
+							"date": "2024-03-25"
+						},
+						"unpatchedFlaws": "ALL_FIXED",
+						"variantsScope": "ALL_VARIANTS"
+					},
+					{
+						"ref": "https://github.com/Cyfrin/cyfrin-audit-reports/blob/1c439c5aecc7176328c87fa424455b2beb35acf3/reports/2025-03-18-cyfrin-Metamask-DelegationFramework1-v2.0.pdf",
+						"auditDate": "2025-03-18",
+						"auditor": {
+							"$ref": "cyfrin"
+						},
+						"codeSnapshot": {
+							"date": "2025-02-07"
+						},
+						"unpatchedFlaws": "ALL_FIXED",
+						"variantsScope": "ALL_VARIANTS"
+					},
+					{
+						"ref": "https://github.com/Cyfrin/cyfrin-audit-reports/blob/1c439c5aecc7176328c87fa424455b2beb35acf3/reports/2025-04-01-cyfrin-Metamask-DelegationFramework2-v2.0.pdf",
+						"auditDate": "2025-04-01",
+						"auditor": {
+							"$ref": "cyfrin"
+						},
+						"codeSnapshot": {
+							"date": "2025-04-01"
+						},
+						"unpatchedFlaws": "ALL_FIXED",
+						"variantsScope": "ALL_VARIANTS"
+					}
+				],
+				"scamAlerts": {
+					"contractTransactionWarning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "MetaMask uses Blockaid integration to provide privacy-preserving transaction simulation and malicious contract detection without sharing transaction details with parties other than Consensys.",
+										"url": "https://metamask.io/news/latest/metamask-security-alerts-by-blockaid-the-new-normal-for-a-safer-transaction/"
+									}
+								],
+								"contractRegistry": true,
+								"leaksContractAddress": true,
+								"leaksUserAddress": true,
+								"leaksUserIp": true,
+								"previousContractInteractionWarning": true,
+								"recentContractWarning": true
+							}
+						]
+					},
+					"scamUrlWarning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "MetaMask maintains a local phishing database to detect malicious apps and websites without revealing browsing activity to external services.",
+										"url": "https://support.metamask.io/configure/wallet/how-to-turn-on-security-alerts"
+									},
+									{
+										"explanation": "Privacy preserving registry of malicious URLs implemented through eth-phishing-detect.",
+										"url": "https://github.com/MetaMask/eth-phishing-detect"
+									}
+								],
+								"leaksIp": false,
+								"leaksUserAddress": false,
+								"leaksVisitedUrl": "NO"
+							}
+						]
+					},
+					"sendTransactionWarning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "MetaMask provides address labeling and warns about address poisoning attacks using local address book and transaction history. For enhanced security validation, MetaMask may use Consensys services which share recipient and user addresses along with IP addresses. Users can disable external services to prevent this data sharing.",
+										"url": "https://support.metamask.io/configure/privacy/how-to-adjust-metamask-privacy-settings/"
+									}
+								],
+								"leaksRecipient": true,
+								"leaksUserAddress": true,
+								"leaksUserIp": true,
+								"newRecipientWarning": true,
+								"userWhitelist": true
+							}
+						]
+					}
+				},
+				"securityBestPractices": {
+					"browser": {
+						"ref": {
+							"$ref": "refTodo"
+						},
+						"browserExtensionHardening": {
+							"$call": "parseBrowserExtensionManifest",
+							"args": [
+								{
+									"$ref": "metamaskRawExtManifest"
+								}
+							]
+						},
+						"keyStorageMechanism": "KeyStorageMechanism.ENCRYPTED_WITH_USER_SECRET_STANDARDIZED_KDF",
+						"secureRng": "SecureRngSource.OS_CSPRNG"
+					},
+					"desktop": "NOT_A_DESKTOP_APP",
+					"mobile": {
+						"ref": {
+							"$ref": "refTodo"
+						},
+						"keyStorageMechanism": "KeyStorageMechanism.ENCRYPTED_WITH_USER_SECRET_STANDARDIZED_KDF",
+						"mobileAppHardening": {
+							"$call": "parseMobileManifestJson",
+							"args": [
+								{
+									"$ref": "metamaskAndroidParsed"
+								},
+								{
+									"$ref": "metamaskIosParsed"
+								}
+							]
+						},
+						"secureRng": "SecureRngSource.OS_CSPRNG"
+					}
+				},
+				"transactionLegibility": {
+					"ref": {
+						"$ref": "refTodo"
+					},
+					"erc7730": {
+						"$call": "supported",
+						"args": [
+							{
+								"USDC_APPROVAL": {
+									"decoded": "DataDisplayOptions.SHOWN_OPTIONALLY"
+								},
+								"AAVE_SUPPLY": {
+									"decoded": "DataDisplayOptions.SHOWN_OPTIONALLY"
+								},
+								"SAFEWALLET_AAVE_SUPPLY_NESTED": {
+									"decoded": "DataDisplayOptions.NOT_IN_UI"
+								},
+								"SAFEWALLET_AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": {
+									"decoded": "DataDisplayOptions.NOT_IN_UI"
+								},
+								"AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": null
+							}
+						]
+					},
+					"erc8213": {
+						"$call": "supported",
+						"args": [
+							{
+								"calldataDisplay": {
+									"RAW_HEX": "DataDisplayOptions.SHOWN_OPTIONALLY",
+									"COPY_HEX_TO_CLIPBOARD": "DataDisplayOptions.SHOWN_OPTIONALLY",
+									"FORMATTED": "DataDisplayOptions.SHOWN_OPTIONALLY",
+									"CALLDATA_DIGEST": "DataDisplayOptions.NOT_IN_UI"
+								},
+								"messageSigningLegibility": {
+									"EIP712_STRUCT": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+									"DOMAIN_HASH": "DataDisplayOptions.NOT_IN_UI",
+									"MESSAGE_HASH": "DataDisplayOptions.NOT_IN_UI",
+									"EIP712_DIGEST": "DataDisplayOptions.NOT_IN_UI"
+								}
+							}
+						]
+					},
+					"transactionDetailsDisplay": {
+						"chain": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+						"from": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+						"gas": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+						"nonce": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+						"to": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+						"value": "DataDisplayOptions.SHOWN_BY_DEFAULT"
+					},
+					"transactionSimulations": {
+						"$call": "supported",
+						"args": [
+							{
+								"ERC_20_TRANSFER": {
+									"transactionOutcome": "TransactionOutcome.EXPLAINED"
+								},
+								"ERC_721_TRANSFER": {
+									"transactionOutcome": "TransactionOutcome.EXPLAINED"
+								},
+								"ERC_1155_TRANSFER": {
+									"transactionOutcome": "TransactionOutcome.EXPLAINED"
+								},
+								"USDC_APPROVAL": {
+									"transactionOutcome": "TransactionOutcome.EXPLAINED"
+								},
+								"AAVE_SUPPLY": {
+									"transactionOutcome": "TransactionOutcome.EXPLAINED"
+								},
+								"SAFEWALLET_AAVE_SUPPLY_NESTED": {
+									"transactionOutcome": "TransactionOutcome.NOT_EXPLAINED"
+								},
+								"SAFEWALLET_AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": {
+									"transactionOutcome": "TransactionOutcome.NOT_EXPLAINED"
+								},
+								"ETH_TRANSFER": null,
+								"ZKSYNC_USDC_TRANSFER": null,
+								"AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": null,
+								"FAILED_TRANSACTION": {
+									"failure": "DETECTED"
+								},
+								"NONDETERMINISTIC_TRANSACTION": {
+									"nondeterminism": "RESIMULATES_NO_WARNING"
+								}
+							}
+						]
+					}
+				}
+			},
+			"selfSovereignty": {
+				"permissionsManagement": {
+					"$ref": "notSupported"
+				},
+				"transactionSubmission": {
+					"l1": {
+						"ref": {
+							"$ref": "refTodo"
+						},
+						"selfBroadcastViaDirectGossip": {
+							"$ref": "notSupported"
+						},
+						"selfBroadcastViaSelfHostedNode": {
+							"$ref": "notSupported"
+						}
+					},
+					"l2": {
+						"arbitrum": "TransactionSubmissionL2Support.SUPPORTED_BUT_NO_FORCE_INCLUSION",
+						"opStack": "TransactionSubmissionL2Support.SUPPORTED_BUT_NO_FORCE_INCLUSION",
+						"ref": {
+							"$ref": "refTodo"
+						}
+					}
+				}
+			},
+			"transparency": {
+				"operationFees": {
+					"builtInErc20Swap": {
+						"$call": "supported",
+						"args": [
+							{
+								"$ref": "comprehensiveFeesShownByDefault"
+							}
+						]
+					},
+					"erc20L1Transfer": {
+						"$call": "supported",
+						"args": [
+							{
+								"$ref": "comprehensiveFeesShownByDefault"
+							}
+						]
+					},
+					"ethL1Transfer": {
+						"$call": "supported",
+						"args": [
+							{
+								"$ref": "comprehensiveFeesShownByDefault"
+							}
+						]
+					},
+					"uniswapUSDCToEtherSwap": {
+						"$call": "supported",
+						"args": [
+							{
+								"$ref": "comprehensiveFeesShownByDefault"
+							}
+						]
+					}
+				},
+				"releaseTransparency": {
+					"artifactSigning": null,
+					"dependencyLocking": null,
+					"dependencyVulnerabilityScanning": null,
+					"hasPublicChangelog": null,
+					"hermeticBuilds": null,
+					"repositoryChangeControls": null,
+					"reproducibleBuilds": null
+				}
+			}
+		},
+		"overrides": {
+			"attributes": {
+				"security": {
+					"scamPrevention": {
+						"note": "MetaMask collaborated with Blockaid to create a [privacy-preserving security feature](https://metamask.io/news/metamask-security-alerts-by-blockaid-the-new-normal-for-a-safer-transaction) that simulates transactions and alerts users to malicious apps without sharing transaction data with parties outside of Consensys."
+					}
+				}
+			}
+		},
+		"variants": {
+			"MOBILE": true,
+			"BROWSER": true
+		}
+	}
+}
