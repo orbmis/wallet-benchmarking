@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the self-contained "Where you lose" gap-report page.
+"""Generate the self-contained "Strengths & Gaps" gap-report page.
 
 Reuses the normalized matrix model from build.py (build_payload) — the same
 {wallets, metrics, cats} payload that drives index.html — and inlines it into

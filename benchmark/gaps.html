@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Wallet Benchmark — Where you lose</title>
+<title>Wallet Benchmark — Strengths & Gaps</title>
 <style>
   :root{
     --bg:#0f1115; --panel:#171a21; --panel2:#1d212b; --line:#2a2f3a;
@@ -119,8 +119,8 @@
 </head>
 <body>
 <header>
-  <h1>Where You Lose</h1>
-  <span class="sub">Gap report · the metrics where rivals beat your wallet — a data-derived build-next backlog</span>
+  <h1>Strengths &amp; Gaps</h1>
+  <span class="sub">Gap report · where rivals beat your wallet and where you beat them all — a data-derived build-next backlog</span>
   <div class="nav">
     <a class="navlink" href="index.html">← Matrix</a>
     <a class="navlink" href="privacy.html">Privacy data-flow →</a>
@@ -132,11 +132,11 @@
   <div class="inner">
     <p>This flips the comparison matrix into a <b>decision</b>. Pick <b>your wallet</b> and a set of
        <b>rivals</b>; the page auto-derives the two lists a PM actually needs:</p>
-    <h4>Where you lose</h4>
+    <h4>Gaps</h4>
     <p>Every metric where <b>at least one rival is better for the user than you</b>, sorted by
        <b>how many rivals beat you</b>. The big number on the left is "<i>beaten by k of n rivals</i>" —
        the top of the list is your most-contested gap. This is your <b>what-to-build-next backlog</b>.</p>
-    <h4>Where you uniquely win</h4>
+    <h4>Strengths</h4>
     <p>Metrics where <b>you beat every selected rival</b> — your defensible positioning. (A tie doesn't
        count as a win.)</p>
     <h4>How "better" is decided</h4>
@@ -187,13 +187,13 @@
 
 <main>
   <div class="sectionhead lose">
-    <h2><span class="ico">▼</span>Where you lose</h2>
+    <h2><span class="ico">▼</span>Gaps</h2>
     <span class="lead" id="loseLead"></span>
   </div>
   <div id="loseList"></div>
 
   <div class="sectionhead win">
-    <h2><span class="ico">▲</span>Where you uniquely win</h2>
+    <h2><span class="ico">▲</span>Strengths</h2>
     <span class="lead" id="winLead"></span>
   </div>
   <div id="winList"></div>
@@ -458,12 +458,12 @@ function copyMarkdown(){
   const base = g.base;
   const peers = g.rivals.map(r=>r.name).join(', ') || '(none)';
   const L = [];
-  L.push(`# Where ${base.name} loses — build-next backlog`);
+  L.push(`# ${base.name} — strengths & gaps`);
   L.push('');
   L.push(`_Baseline: **${base.name}** · Rivals: ${peers}${state.variant?` · Platform: ${state.variant}`:''}._`);
-  L.push(`_You lose on ${g.lose.length}, uniquely win on ${g.win.length}, ${g.mixedCount} contested._`);
+  L.push(`_Gaps: ${g.lose.length} · Strengths: ${g.win.length} · ${g.mixedCount} contested._`);
   L.push('');
-  L.push(`## Where you lose (most-contested first)`);
+  L.push(`## Gaps (most-contested first)`);
   if(g.lose.length===0){ L.push('_No gaps against this peer set._'); }
   g.lose.forEach(item=>{
     const you = cellText(item.m, base.cells[item.m.key]);
@@ -471,7 +471,7 @@ function copyMarkdown(){
     L.push(`- **${item.m.label}** (${item.m.cat}) — beaten by ${item.beat.length}/${item.comparable}. You: ${you}. Ahead: ${ahead}.`);
   });
   L.push('');
-  L.push(`## Where you uniquely win`);
+  L.push(`## Strengths (where you beat every rival)`);
   if(g.win.length===0){ L.push('_No outright wins against this peer set._'); }
   g.win.forEach(item=>{
     const you = cellText(item.m, base.cells[item.m.key]);

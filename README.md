@@ -13,7 +13,7 @@ are no external libraries and no server — just open the file in a browser.
 |------|---------------|--------------|
 | `benchmark/index.html` | **Comparison matrix** — wallets × features, citation-backed cells, three-state colouring, diff / hide-unknown toggles, CSV export | `build.py` ← `template.html` |
 | `benchmark/privacy.html` | **Privacy data-flow (Sankey)** — Action → Recipient → Data collected, coloured by collection policy and recipient risk | `build_privacy.py` ← `template_privacy.html` |
-| `benchmark/gaps.html` | **"Where you lose" gap report** — per baseline + peer set, the metrics where rivals beat you (and where you beat all of them), with evidence drawer and Markdown / CSV export | `build_gaps.py` ← `template_gaps.html` |
+| `benchmark/gaps.html` | **"Strengths & Gaps" report** — per baseline + peer set, the metrics where rivals beat you (and where you beat all of them), with evidence drawer and Markdown / CSV export | `build_gaps.py` ← `template_gaps.html` |
 
 See `benchmark/IDEAS.md` for the feature backlog and rationale.
 
