@@ -18,7 +18,7 @@
   header{padding:16px 20px;border-bottom:1px solid var(--line);display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
   header h1{font-size:18px;margin:0;font-weight:650}
   header .sub{color:var(--muted);font-size:12.5px}
-  header .navlink{margin-left:auto;font-size:13px;text-decoration:none;background:var(--accentdim);border:1px solid var(--accent);color:#cfe0ff;border-radius:7px;padding:5px 11px}
+  header .navlink{font-size:13px;text-decoration:none;background:var(--accentdim);border:1px solid var(--accent);color:#cfe0ff;border-radius:7px;padding:5px 11px}
   header .navlink:hover{background:#33457f}
   .controls{display:flex;gap:18px;flex-wrap:wrap;padding:14px 20px;border-bottom:1px solid var(--line);background:var(--panel)}
   .ctl{display:flex;flex-direction:column;gap:5px}
@@ -119,7 +119,10 @@
 <header>
   <h1>Wallet Benchmark</h1>
   <span class="sub">PM view · feature parity vs. rivals · every cell is citation-backed</span>
-  <a class="navlink" href="privacy.html">Privacy data-flow →</a>
+  <span style="margin-left:auto;display:flex;gap:8px">
+    <a class="navlink" href="gaps.html">Where you lose →</a>
+    <a class="navlink" href="privacy.html">Privacy data-flow →</a>
+  </span>
 </header>
 
 <details class="help" open>

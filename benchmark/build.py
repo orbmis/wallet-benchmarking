@@ -244,56 +244,70 @@ def license_value(node):
 
 # --- build normalized model ------------------------------------------------
 
-wallets = []
-for w in wallets_raw:
-    feats = w["data"]["features"]
-    meta = w["data"]["metadata"]
-    cells = {}
-    for key, label, cat, path, typ, good, desc in M:
-        node = get_path(feats, path)
-        ref = find_ref(node) if isinstance(node, (dict, list)) else None
-        if typ == "state":
-            state, detail = classify(node)
-        elif typ == "value":
-            state, detail = ("value", short_enum(node)) if isinstance(node, str) else ("unknown", None)
-        elif typ == "support":
-            if node is None:
-                state, detail = "unknown", None
+def build_payload():
+    """Resolve the DSL into the normalized {wallets, metrics, cats} model.
+
+    Shared with sibling generators (e.g. build_gaps.py) so the $ref / $call
+    resolution lives in exactly one place.
+    """
+    wallets = []
+    for w in wallets_raw:
+        feats = w["data"]["features"]
+        meta = w["data"]["metadata"]
+        cells = {}
+        for key, label, cat, path, typ, good, desc in M:
+            node = get_path(feats, path)
+            ref = find_ref(node) if isinstance(node, (dict, list)) else None
+            if typ == "state":
+                state, detail = classify(node)
+            elif typ == "value":
+                state, detail = ("value", short_enum(node)) if isinstance(node, str) else ("unknown", None)
+            elif typ == "support":
+                if node is None:
+                    state, detail = "unknown", None
+                else:
+                    state, detail = ("yes", None) if has_support(node) else ("no", None)
+            elif typ == "count_high":
+                c = count_high_audits(node)
+                state, detail = ("count", c) if c is not None else ("unknown", None)
+            elif typ == "count_low":
+                c = count_open_high(node)
+                state, detail = ("count", c) if c is not None else ("unknown", None)
+            elif typ == "license":
+                lv = license_value(node)
+                state, detail = ("value", lv) if lv else ("unknown", None)
             else:
-                state, detail = ("yes", None) if has_support(node) else ("no", None)
-        elif typ == "count_high":
-            c = count_high_audits(node)
-            state, detail = ("count", c) if c is not None else ("unknown", None)
-        elif typ == "count_low":
-            c = count_open_high(node)
-            state, detail = ("count", c) if c is not None else ("unknown", None)
-        elif typ == "license":
-            lv = license_value(node)
-            state, detail = ("value", lv) if lv else ("unknown", None)
-        else:
-            state, detail = "unknown", None
-        cells[key] = {"state": state, "detail": detail, "ref": ref}
-    wallets.append({
-        "id": w["id"],
-        "name": meta.get("displayName", w["id"]),
-        "blurb": meta.get("blurb", ""),
-        "lastUpdated": meta.get("lastUpdated", ""),
-        "variants": [k for k, v in (w["data"].get("variants") or {}).items() if v],
-        "cells": cells,
-    })
+                state, detail = "unknown", None
+            cells[key] = {"state": state, "detail": detail, "ref": ref}
+        wallets.append({
+            "id": w["id"],
+            "name": meta.get("displayName", w["id"]),
+            "blurb": meta.get("blurb", ""),
+            "lastUpdated": meta.get("lastUpdated", ""),
+            "variants": [k for k, v in (w["data"].get("variants") or {}).items() if v],
+            "cells": cells,
+        })
 
-wallets.sort(key=lambda x: x["name"].lower())
+    wallets.sort(key=lambda x: x["name"].lower())
 
-metrics = [{"key": k, "label": l, "cat": c, "type": t, "good": g, "desc": d}
-           for (k, l, c, t, p, g, d) in M]
+    metrics = [{"key": k, "label": l, "cat": c, "path": path, "type": typ, "good": g, "desc": d}
+               for (k, l, c, path, typ, g, d) in M]
 
-payload = {"wallets": wallets, "metrics": metrics, "cats": CATS}
+    return {"wallets": wallets, "metrics": metrics, "cats": CATS}
 
 # --- emit HTML -------------------------------------------------------------
-TEMPLATE = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "template.html")).read()
-out = TEMPLATE.replace("/*__DATA__*/", json.dumps(payload))
-with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "index.html"), "w") as f:
-    f.write(out)
 
-print("wallets:", len(wallets), "metrics:", len(metrics), "cats:", len(CATS))
-print("wrote benchmark/index.html")
+def main():
+    payload = build_payload()
+    here = os.path.dirname(os.path.abspath(__file__))
+    template = open(os.path.join(here, "template.html")).read()
+    out = template.replace("/*__DATA__*/", json.dumps(payload))
+    with open(os.path.join(here, "index.html"), "w") as f:
+        f.write(out)
+    print("wallets:", len(payload["wallets"]), "metrics:", len(payload["metrics"]),
+          "cats:", len(payload["cats"]))
+    print("wrote benchmark/index.html")
+
+
+if __name__ == "__main__":
+    main()
