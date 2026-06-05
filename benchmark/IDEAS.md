@@ -17,7 +17,13 @@ that already exists in `build.py` (matrix) or `build_privacy.py` (Sankey).
   where ≥1 rival beats you (sorted by how many do) and the metrics where you beat every rival, with an
   evidence drawer, Markdown backlog export, and CSV. Ranks by the same better/worse polarity as the matrix;
   unknowns and descriptive values are excluded.
-- **Cross-links + first-run help panels** on all three pages.
+- **Positioning quadrant** — `quadrant.html` (generated from `template_quadrant.html` by `build_quadrant.py`).
+  Reuses the matrix model via `build.build_payload()`. Scores every wallet 0–100 per category (averaging the
+  rankable metrics on the matrix's better/worse polarity; counts normalised to their range, unknowns/values
+  excluded) and plots them on two chosen category axes — the "magic quadrant" slide. Median or fixed 50/100
+  split, baseline highlight, platform filter, decluttered labels, per-wallet score-breakdown drawer, and
+  Markdown / CSV export. Wallets with no data on a chosen axis are listed below the chart.
+- **Cross-links + first-run help panels** on all four pages.
 
 ---
 
@@ -30,8 +36,7 @@ that already exists in `build.py` (matrix) or `build_privacy.py` (Sankey).
 - **Weighted custom index + leaderboard** — *high / medium.*
   Let the PM weight categories (privacy-max vs. institutional vs. consumer) and produce a ranked
   leaderboard, so the benchmark can argue a specific thesis.
-- **Positioning scatter / quadrant** — *medium / medium.*
-  Plot wallets on two chosen axes (e.g. Privacy score × Security score) — the "magic quadrant" slide.
+- **Positioning scatter / quadrant** — ✅ **Built** (`quadrant.html`). See "Already built" above.
 - **Per-category radar overlay** — *medium / low.*
   2–3 wallets superimposed on a spider chart — the exec-summary visual.
 
