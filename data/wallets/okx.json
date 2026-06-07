@@ -35,7 +35,8 @@
 					"args": [
 						{
 							"ref": {
-								"$ref": "refTodo"
+								"explanation": "OKX says OKX Wallet has taken the lead in supporting Ethereum's EIP-7702 account-abstraction standard.",
+								"url": "https://web3.okx.com/learn/eip-sdk-implementation"
 							},
 							"contract": "UNKNOWN"
 						}
@@ -46,7 +47,8 @@
 					"args": [
 						{
 							"ref": {
-								"$ref": "refTodo"
+								"explanation": "OKX's wallet setup guide documents creating a wallet with a seed phrase and importing an existing wallet using a seed phrase or private key.",
+								"url": "https://www.okx.com/en-gb/help/how-do-i-create-import-an-okx-wallet"
 							},
 							"canExportPrivateKey": true,
 							"canExportSeedPhrase": true,
@@ -71,33 +73,55 @@
 			},
 			"addressResolution": {
 				"ref": {
-					"$ref": "refTodo"
+					"explanation": "OKX says OKX Wallet integrates ENS, allowing users to send, receive, and display assets using a .eth domain.",
+					"url": "https://www.okx.com/en-gb/learn/what-is-ethereum-name-service-ens"
 				},
 				"chainSpecificAddressing": {
 					"erc7828": null,
 					"erc7831": null
 				},
-				"nonChainSpecificEnsResolution": null
+				"nonChainSpecificEnsResolution": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"explanation": "OKX says OKX Wallet integrates ENS, allowing users to send, receive, and display assets using a .eth domain.",
+								"url": "https://www.okx.com/en-gb/learn/what-is-ethereum-name-service-ens"
+							},
+							"medium": "CHAIN_CLIENT"
+						}
+					]
+				}
 			},
 			"chainAbstraction": {
 				"bridging": {
 					"builtInBridging": {
-						"$ref": "notSupported"
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX's help center documents entering Wallet > Trade > Swap > Bridge to make cross-chain transfers through OKX DEX.",
+									"url": "https://www.okx.com/en-eu/help/whats-okx-bridge-and-how-do-i-swap-tokens-across-chains"
+								},
+								"fromChainGas": "SEND_CHAIN_ONLY",
+								"liquidityProvider": "OKX_DEX"
+							}
+						]
 					},
-					"suggestedBridging": {
-						"$ref": "notSupported"
-					}
+					"suggestedBridging": null
 				},
 				"crossChainBalances": {
 					"ref": {
-						"$ref": "refTodo"
+						"explanation": "OKX says the wallet dashboard tracks multi-chain, multi-wallet, and multi-asset holdings, asset allocation, DeFi portfolios/liabilities/earnings, approvals, and transaction history across multiple networks.",
+						"url": "https://www.okx.com/en-gb/help/how-do-i-manage-my-assets-in-my-okx-wallet-web"
 					},
 					"ether": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"$ref": "refTodo"
+									"explanation": "OKX says the wallet dashboard tracks multi-chain, multi-wallet, and multi-asset holdings, asset allocation, DeFi portfolios/liabilities/earnings, approvals, and transaction history across multiple networks.",
+									"url": "https://www.okx.com/en-gb/help/how-do-i-manage-my-assets-in-my-okx-wallet-web"
 								},
 								"crossChainSumView": {
 									"$ref": "featureSupported"
@@ -119,7 +143,8 @@
 						"args": [
 							{
 								"ref": {
-									"$ref": "refTodo"
+									"explanation": "OKX says the wallet dashboard tracks multi-chain, multi-wallet, and multi-asset holdings, asset allocation, DeFi portfolios/liabilities/earnings, approvals, and transaction history across multiple networks.",
+									"url": "https://www.okx.com/en-gb/help/how-do-i-manage-my-assets-in-my-okx-wallet-web"
 								},
 								"crossChainSumView": {
 									"$ref": "featureSupported"
@@ -133,7 +158,26 @@
 				}
 			},
 			"chainConfigurability": {
-				"$ref": "notSupported"
+				"$call": "supported",
+				"args": [
+					{
+						"ref": {
+							"explanation": "OKX documents adding a custom RPC endpoint in OKX Wallet on both the app and web extension; users enter network name, RPC URL, chain ID, currency symbol, and optional explorer URL.",
+							"url": "https://www.okx.com/en-eu/help/how-do-i-add-a-custom-rpc-to-the-okx-web3-wallet"
+						},
+						"customChainRpcEndpoint": {
+							"$ref": "featureSupported"
+						},
+						"l1": {
+							"$call": "supported",
+							"args": [
+								{
+									"rpcEndpointConfiguration": "RpcEndpointConfiguration.YES_BEFORE_ANY_REQUEST"
+								}
+							]
+						}
+					}
+				]
 			},
 			"ecosystem": {
 				"delegation": null
@@ -150,7 +194,8 @@
 						"$ref": "featureSupported"
 					},
 					"ref": {
-						"$ref": "refTodo"
+						"explanation": "OKX developer documentation describes the injected provider API used by dApps to request accounts and signing through OKX Wallet, and OKX's EIP-6963 article lists OKX Wallet as supporting EIP-6963.",
+						"url": "https://web3.okx.com/build/dev-docs/sdks/chains/cosmos/provider"
 					}
 				},
 				"walletCall": {
@@ -158,7 +203,8 @@
 					"args": [
 						{
 							"ref": {
-								"$ref": "refTodo"
+								"explanation": "OKX's EIP-7702 article describes account-abstraction support and batched/automated smart-account capabilities; the exact delegation contract remains unknown.",
+								"url": "https://web3.okx.com/learn/eip-sdk-implementation"
 							},
 							"atomicMultiTransactions": {
 								"$ref": "featureSupported"
@@ -198,12 +244,32 @@
 			},
 			"privacy": {
 				"analytics": {
-					"crashReports": null,
-					"usage": null
+					"crashReports": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "The OKX Wallet App Store privacy label lists Diagnostics / Crash Data, Performance Data, and Other Diagnostic Data as collected but not linked to identity.",
+									"url": "https://apps.apple.com/us/app/okx-wallet-crypto-web3/id6743309484"
+								}
+							}
+						]
+					},
+					"usage": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "The OKX Wallet App Store privacy label lists Usage Data / Product Interaction and Other Usage Data for analytics and app functionality.",
+									"url": "https://apps.apple.com/us/app/okx-wallet-crypto-web3/id6743309484"
+								}
+							}
+						]
+					}
 				},
 				"appIsolation": null,
 				"dataCollection": null,
-				"privacyPolicy": null,
+				"privacyPolicy": "https://www.okx.com/privacy-notice",
 				"transactionPrivacy": {
 					"defaultFungibleTokenTransferMode": "PUBLIC",
 					"STEALTH_ADDRESSES": {
@@ -272,21 +338,141 @@
 						}
 					]
 				},
-				"duressResistance": null,
-				"hardwareWalletSupport": null,
+				"duressResistance": {
+					"basicUnlock": {
+						"ref": {
+							"explanation": "OKX wallet settings let users choose the wallet authentication method, including biometrics or password, and OKX wallet setup also offers Face ID or fingerprint login depending on device support.",
+							"url": "https://www.okx.com/de/help/how-to-set-up-basic-wallet-settings"
+						},
+						"mechanisms": {
+							"PIN": false,
+							"PASSWORD": true,
+							"BIOMETRIC": true,
+							"PATTERN": false
+						}
+					},
+					"duressMode": {
+						"$ref": "notSupported"
+					}
+				},
+				"hardwareWalletSupport": {
+					"ref": {
+						"explanation": "OKX publishes a step-by-step guide for connecting Keystone hardware wallets to the OKX app and OKX Wallet browser extension, including send/receive/swap features.",
+						"url": "https://www.okx.com/en-gb/help/how-do-i-connect-my-keystone-hardware-wallet-to-okx-wallet"
+					},
+					"wallets": {
+						"KEYSTONE": {
+							"$call": "supported",
+							"args": [
+								{
+									"connectionTypes": [
+										"HardwareWalletConnection.qrCode"
+									]
+								}
+							]
+						}
+					}
+				},
 				"keysHandling": null,
 				"lightClient": {
-					"ethereumL1": null
+					"ethereumL1": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet documentation defines RPC as the protocol the wallet uses to communicate with blockchain networks and documents adding HTTPS custom RPC endpoints, indicating RPC-backed operation rather than an embedded Ethereum L1 light client.",
+									"url": "https://www.okx.com/en-gb/help/how-do-i-add-a-custom-rpc-to-the-okx-web3-wallet"
+								}
+							}
+						]
+					}
 				},
 				"passkeyVerification": {
 					"$ref": "notSupported"
 				},
-				"publicSecurityAudits": null,
-				"scamAlerts": null,
+				"publicSecurityAudits": [
+					{
+						"ref": "https://www.okx.com/en-us/help/web3-security-audit-reports",
+						"auditDate": "2024-05-23",
+						"auditor": {
+							"$ref": "certik"
+						},
+						"unpatchedFlaws": "ALL_FIXED",
+						"variantsScope": {
+							"MOBILE": true,
+							"BROWSER": true
+						}
+					},
+					{
+						"ref": "https://www.okx.com/cdn/assets/plugins/announcements/contentful/tofttmniq0qv/2Diik7rLanSliySrFOA8a1/3d57e88e212f56da286bc585f0889f34/SlowMist_Audit_Report_-_OKX_Web3_Wallet_iOS_en-us__05.pdf",
+						"auditDate": "2023-05-16",
+						"auditor": {
+							"$ref": "slowMist"
+						},
+						"unpatchedFlaws": "ALL_FIXED",
+						"variantsScope": {
+							"MOBILE": true
+						}
+					}
+				],
+				"scamAlerts": {
+					"contractTransactionWarning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "OKX says its approval-management upgrade filters malicious approval poisoning linked to wallet addresses.",
+										"url": "https://www.okx.com/en-us/help/okx-web3-wallet-has-updated-approval-management"
+									}
+								],
+								"contractRegistry": true,
+								"leaksContractAddress": true,
+								"leaksUserAddress": true,
+								"leaksUserIp": true,
+								"previousContractInteractionWarning": false,
+								"recentContractWarning": false
+							}
+						]
+					},
+					"scamUrlWarning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "OKX says its second line of defense automatically blocks and prompts users to review transaction risks for potentially risky DApp requests, including phishing-link scenarios.",
+										"url": "https://web3.okx.com/en-eu/learn/detect-scams-to-keep-web3-secure"
+									},
+									{
+										"explanation": "OKX Wallet security materials say the wallet scans addresses, identifies malicious addresses, and blocks interaction with malicious DApps or addresses.",
+										"url": "https://web3.okx.com/zh-hans/security"
+									}
+								]
+							}
+						]
+					},
+					"sendTransactionWarning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "OKX Wallet says its high-risk transaction interception strategy detects malicious authorization to EOAs, malicious ownership changes, malicious transfer-address changes, and transfers to similar addresses.",
+										"url": "https://www.okx.com/en-us/help/okx-wallet-has-supported-risky-transaction-interception"
+									}
+								],
+								"newRecipientWarning": true,
+								"userWhitelist": null
+							}
+						]
+					}
+				},
 				"securityBestPractices": null,
 				"transactionLegibility": {
 					"ref": {
-						"$ref": "refTodo"
+						"explanation": "OKX's wallet transfer guide shows confirmation details for recipient, amount, token/network, and network fee before completing a send.",
+						"url": "https://www.okx.com/en-gb/help/how-do-i-manage-my-assets-in-my-okx-wallet-web"
 					},
 					"erc7730": null,
 					"erc8213": {
@@ -316,18 +502,69 @@
 						"to": "DataDisplayOptions.SHOWN_BY_DEFAULT",
 						"value": "DataDisplayOptions.SHOWN_BY_DEFAULT"
 					},
-					"transactionSimulations": null
+					"transactionSimulations": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "OKX's Web3 Security White Paper says the OKX Web3 ecosystem, including the wallet, uses Blockaid for transaction simulation and verification, token security, and URL screening.",
+										"url": "https://web3.okx.com/cdn/oksupport/common/okx-web3-security-white-paper.fa6993b5b2919b.pdf"
+									},
+									{
+										"explanation": "OKX Onchain OS wallet API documentation describes simulating blockchain transactions before execution to show expected outcomes and potential risks for Swap and Approve requests.",
+										"url": "https://web3.okx.com/onchainos/dev-docs/wallet/onchain-gateway-api-simulate-transaction"
+									}
+								],
+								"ERC_20_TRANSFER": {
+									"transactionOutcome": "TransactionOutcome.EXPLAINED"
+								},
+								"ERC_721_TRANSFER": {
+									"transactionOutcome": "TransactionOutcome.EXPLAINED"
+								},
+								"ERC_1155_TRANSFER": null,
+								"USDC_APPROVAL": {
+									"transactionOutcome": "TransactionOutcome.EXPLAINED"
+								},
+								"AAVE_SUPPLY": null,
+								"SAFEWALLET_AAVE_SUPPLY_NESTED": null,
+								"SAFEWALLET_AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": null,
+								"ETH_TRANSFER": {
+									"transactionOutcome": "TransactionOutcome.EXPLAINED"
+								}
+							}
+						]
+					}
 				}
 			},
 			"selfSovereignty": {
-				"permissionsManagement": null,
+				"permissionsManagement": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": [
+								{
+									"explanation": "OKX Wallet launched full historical approval analysis, allowing users to view and manage approval records on the wallet homepage Approval tab.",
+									"url": "https://www.okx.com/en-us/help/okx-wallet-now-support-on-full-approval-history"
+								},
+								{
+									"explanation": "OKX later enhanced approval management to view past approvals and filter malicious approval poisoning.",
+									"url": "https://www.okx.com/en-us/help/okx-web3-wallet-has-updated-approval-management"
+								}
+							]
+						}
+					]
+				},
 				"transactionSubmission": {
 					"l1": {
 						"ref": {
-							"$ref": "refTodo"
+							"explanation": "OKX documents adding a custom RPC endpoint in OKX Wallet on both the app and web extension; users enter network name, RPC URL, chain ID, currency symbol, and optional explorer URL.",
+							"url": "https://www.okx.com/en-eu/help/how-do-i-add-a-custom-rpc-to-the-okx-web3-wallet"
 						},
 						"selfBroadcastViaDirectGossip": null,
-						"selfBroadcastViaSelfHostedNode": null
+						"selfBroadcastViaSelfHostedNode": {
+							"$ref": "featureSupported"
+						}
 					},
 					"l2": {
 						"arbitrum": null,
@@ -341,13 +578,49 @@
 			"transparency": {
 				"operationFees": null,
 				"releaseTransparency": {
-					"artifactSigning": null,
+					"artifactSigning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "OKX Wallet publishes a browser extension through the Chrome Web Store.",
+										"url": "https://chromewebstore.google.com/detail/okx-wallet/mcohilncbfahbmgdjkbpemcciiolgcge"
+									},
+									{
+										"explanation": "Chrome for Developers states that all Chrome Web Store extensions are signed by Google, with signing handled automatically when a package is uploaded.",
+										"url": "https://developer.chrome.com/blog/verified-uploads-cws"
+									}
+								]
+							}
+						]
+					},
 					"dependencyLocking": null,
 					"dependencyVulnerabilityScanning": null,
-					"hasPublicChangelog": null,
+					"hasPublicChangelog": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									"https://apps.apple.com/us/app/okx-wallet-crypto-web3/id6743309484",
+									"https://www.okx.com/en-us/help/section/announcements-web3"
+								]
+							}
+						]
+					},
 					"hermeticBuilds": null,
 					"repositoryChangeControls": null,
-					"reproducibleBuilds": null
+					"reproducibleBuilds": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet is recorded as source-unavailable proprietary software; no public source tree or reproducible-build instructions are published for independently reproducing the wallet release artifact.",
+									"url": "https://www.okx.com/web3"
+								}
+							}
+						]
+					}
 				}
 			}
 		},

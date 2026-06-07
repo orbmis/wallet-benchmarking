@@ -67,13 +67,25 @@
 			},
 			"addressResolution": {
 				"ref": {
-					"$ref": "refTodo"
+					"explanation": "Bitget Wallet describes ENS as translating wallet addresses into human-readable .eth domains and presents Bitget as an ENS-compatible wallet for interacting with the Ethereum Name Service ecosystem.",
+					"url": "https://web3.bitget.com/wallet/ens-wallet"
 				},
 				"chainSpecificAddressing": {
 					"erc7828": null,
 					"erc7831": null
 				},
-				"nonChainSpecificEnsResolution": null
+				"nonChainSpecificEnsResolution": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"explanation": "Bitget Wallet describes ENS as translating wallet addresses into human-readable .eth domains and presents Bitget as an ENS-compatible wallet for interacting with the Ethereum Name Service ecosystem.",
+								"url": "https://web3.bitget.com/wallet/ens-wallet"
+							},
+							"medium": "CHAIN_CLIENT"
+						}
+					]
+				}
 			},
 			"chainAbstraction": {
 				"bridging": {
@@ -126,7 +138,26 @@
 				}
 			},
 			"chainConfigurability": {
-				"$ref": "notSupported"
+				"$call": "supported",
+				"args": [
+					{
+						"ref": {
+							"explanation": "Bitget Wallet documents adding a custom mainnet manually by filling in the RPC address, mainnet name, and chain ID.",
+							"url": "https://web3.bitget.com/en/academy/a-guide-for-getting-fork-tokens-how-to-add-a-custom-mainnet"
+						},
+						"customChainRpcEndpoint": {
+							"$ref": "featureSupported"
+						},
+						"l1": {
+							"$call": "supported",
+							"args": [
+								{
+									"rpcEndpointConfiguration": "RpcEndpointConfiguration.YES_BEFORE_ANY_REQUEST"
+								}
+							]
+						}
+					}
+				]
 			},
 			"ecosystem": {
 				"delegation": "EIP_7702_NOT_SUPPORTED"
@@ -181,12 +212,32 @@
 			},
 			"privacy": {
 				"analytics": {
-					"crashReports": null,
-					"usage": null
+					"crashReports": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet's App Store privacy label says the developer does not collect any data from this app.",
+									"url": "https://apps.apple.com/us/app/bitget-wallet-bitcoin-crypto/id1395301115"
+								}
+							}
+						]
+					},
+					"usage": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet's App Store privacy label says the developer does not collect any data from this app.",
+									"url": "https://apps.apple.com/us/app/bitget-wallet-bitcoin-crypto/id1395301115"
+								}
+							}
+						]
+					}
 				},
 				"appIsolation": null,
 				"dataCollection": null,
-				"privacyPolicy": null,
+				"privacyPolicy": "https://web3.bitget.com/en/privacy",
 				"transactionPrivacy": {
 					"defaultFungibleTokenTransferMode": "PUBLIC",
 					"STEALTH_ADDRESSES": {
@@ -244,8 +295,57 @@
 						}
 					]
 				},
-				"duressResistance": null,
-				"hardwareWalletSupport": null,
+				"duressResistance": {
+					"basicUnlock": {
+						"ref": {
+							"explanation": "Bitget Wallet says users create a wallet passcode/PIN that is used to verify identity or approve/sign transactions, and that face/fingerprint authentication can be used to unlock the wallet and make transactions once configured.",
+							"url": "https://web3.bitget.com/en/helpCenter/484"
+						},
+						"mechanisms": {
+							"PIN": true,
+							"PASSWORD": false,
+							"BIOMETRIC": true,
+							"PATTERN": false
+						}
+					},
+					"duressMode": {
+						"$ref": "notSupported"
+					}
+				},
+				"hardwareWalletSupport": {
+					"ref": [
+						{
+							"explanation": "Bitget's Ledger help guide says users can add a Ledger by going to Switch wallet > Add wallet > Add hardware wallet in the browser extension.",
+							"url": "https://web3.bitget.com/en/helpCenter/767"
+						},
+						{
+							"explanation": "Bitget's security page says Bitget Wallet supports hardware wallet connection and importing Keystone hardware wallets via QR code.",
+							"url": "https://web3.bitget.com/en/about/security-technology"
+						}
+					],
+					"wallets": {
+						"LEDGER": {
+							"$call": "supported",
+							"args": [
+								{
+									"connectionTypes": [
+										"HardwareWalletConnection.webUSB"
+									]
+								}
+							]
+						},
+						"KEYSTONE": {
+							"$call": "supported",
+							"args": [
+								{
+									"connectionTypes": [
+										"HardwareWalletConnection.QR"
+									]
+								}
+							]
+						}
+					}
+				},
 				"keysHandling": {
 					"ref": [
 						{
@@ -264,7 +364,26 @@
 				"passkeyVerification": {
 					"$ref": "notSupported"
 				},
-				"publicSecurityAudits": null,
+				"publicSecurityAudits": [
+					{
+						"ref": "https://web3.bitget.com/en/about/security-technology",
+						"auditDate": "UNKNOWN",
+						"auditor": {
+							"$ref": "certik"
+						},
+						"unpatchedFlaws": "UNKNOWN",
+						"variantsScope": "UNKNOWN"
+					},
+					{
+						"ref": "https://web3.bitget.com/en/about/security-technology",
+						"auditDate": "UNKNOWN",
+						"auditor": {
+							"$ref": "slowmist"
+						},
+						"unpatchedFlaws": "UNKNOWN",
+						"variantsScope": "UNKNOWN"
+					}
+				],
 				"scamAlerts": {
 					"contractTransactionWarning": {
 						"$ref": "notSupported"
@@ -273,7 +392,19 @@
 						"$ref": "notSupported"
 					},
 					"sendTransactionWarning": {
-						"$ref": "notSupported"
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Bitget Wallet says it pops up a risk warning for eth_sign signing and planned active risk reminders for malicious authorization to reduce signature-related security risks.",
+										"url": "https://web3.bitget.com/en/blog/articles/6331"
+									}
+								],
+								"newRecipientWarning": null,
+								"userWhitelist": null
+							}
+						]
 					}
 				},
 				"securityBestPractices": null,
@@ -302,23 +433,97 @@
 						]
 					},
 					"transactionDetailsDisplay": null,
-					"transactionSimulations": null
+					"transactionSimulations": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinspect’s January 2026 Wallet Security Ranking update lists Bitget under Android wallets that added transaction simulation support since the previous edition.",
+									"url": "https://www.coinspect.com/blog/wallet-security-ranking-results-third-edition/"
+								},
+								"insights": "Coinspect identifies Bitget Android as having added transaction simulation in its third-edition wallet security ranking."
+							}
+						]
+					}
 				}
 			},
 			"selfSovereignty": {
-				"permissionsManagement": null,
-				"transactionSubmission": null
+				"permissionsManagement": {
+					"ref": {
+						"explanation": "Bitget Wallet's approval-security guide says users can go to Wallet > More > Approvals to view approval details and choose Revoke or Edit quota.",
+						"url": "https://web3.bitget.com/en/helpCenter/420"
+					},
+					"inWalletApprovalManagement": {
+						"$ref": "featureSupported"
+					},
+					"canRevokeApprovals": {
+						"$ref": "featureSupported"
+					}
+				},
+				"transactionSubmission": {
+					"l1": {
+						"ref": {
+							"explanation": "Bitget Wallet documents adding a custom mainnet manually by filling in the RPC address, mainnet name, and chain ID.",
+							"url": "https://web3.bitget.com/en/academy/a-guide-for-getting-fork-tokens-how-to-add-a-custom-mainnet"
+						},
+						"selfBroadcastViaDirectGossip": null,
+						"selfBroadcastViaSelfHostedNode": {
+							"$ref": "featureSupported"
+						}
+					},
+					"l2": {
+						"ref": {
+							"explanation": "Bitget Wallet documents adding a custom mainnet manually by filling in the RPC address, mainnet name, and chain ID.",
+							"url": "https://web3.bitget.com/en/academy/a-guide-for-getting-fork-tokens-how-to-add-a-custom-mainnet"
+						},
+						"arbitrum": null,
+						"opStack": null
+					}
+				}
 			},
 			"transparency": {
 				"operationFees": null,
 				"releaseTransparency": {
-					"artifactSigning": null,
+					"artifactSigning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Bitget Wallet publishes a browser extension through the Chrome Web Store.",
+										"url": "https://chromewebstore.google.com/detail/bitget-wallet-crypto-web3/jiidiaalihmmhddjgbnbgdfflelocpak"
+									},
+									{
+										"explanation": "Chrome for Developers states that all Chrome Web Store extensions are signed by Google, with signing handled automatically when a package is uploaded.",
+										"url": "https://developer.chrome.com/blog/verified-uploads-cws"
+									}
+								]
+							}
+						]
+					},
 					"dependencyLocking": null,
 					"dependencyVulnerabilityScanning": null,
-					"hasPublicChangelog": null,
+					"hasPublicChangelog": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": "https://apps.apple.com/us/app/bitget-wallet-bitcoin-crypto/id1395301115"
+							}
+						]
+					},
 					"hermeticBuilds": null,
 					"repositoryChangeControls": null,
-					"reproducibleBuilds": null
+					"reproducibleBuilds": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet is recorded as source-unavailable proprietary software; no public source tree or reproducible-build instructions are published for independently reproducing the wallet release artifact.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					}
 				}
 			}
 		},

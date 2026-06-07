@@ -445,13 +445,54 @@
 							}
 						]
 					},
-					"scamUrlWarning": null,
+					"scamUrlWarning": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinspect's Coinbase Wallet Android v29.63.40 report says the wallet does not alert the user about connections to known phishing dApps.",
+									"url": "https://www.coinspect.com/wallets/reports/coinbase-wallet-android/"
+								}
+							}
+						]
+					},
 					"sendTransactionWarning": {
 						"$ref": "notSupported"
 					}
 				},
 				"securityBestPractices": null,
-				"transactionLegibility": null
+				"transactionLegibility": {
+					"ref": {
+						"explanation": "Coinspect's Coinbase Wallet Android v29.63.40 report verifies transaction simulation and says the wallet clearly displays incoming and outgoing assets before signing.",
+						"url": "https://www.coinspect.com/wallets/reports/coinbase-wallet-android/"
+					},
+					"erc7730": null,
+					"erc8213": null,
+					"transactionDetailsDisplay": null,
+					"transactionSimulations": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinspect verifies that Coinbase Wallet offers transaction simulation, clearly displaying incoming and outgoing assets involved in the transaction.",
+									"url": "https://www.coinspect.com/wallets/reports/coinbase-wallet-android/"
+								},
+								"ERC_20_TRANSFER": null,
+								"ERC_721_TRANSFER": null,
+								"ERC_1155_TRANSFER": null,
+								"USDC_APPROVAL": null,
+								"AAVE_SUPPLY": null,
+								"SAFEWALLET_AAVE_SUPPLY_NESTED": null,
+								"SAFEWALLET_AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": null,
+								"ETH_TRANSFER": null,
+								"ZKSYNC_USDC_TRANSFER": null,
+								"AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": null,
+								"FAILED_TRANSACTION": null,
+								"NONDETERMINISTIC_TRANSACTION": null
+							}
+						]
+					}
+				}
 			},
 			"selfSovereignty": {
 				"permissionsManagement": {
@@ -493,13 +534,49 @@
 			"transparency": {
 				"operationFees": null,
 				"releaseTransparency": {
-					"artifactSigning": null,
+					"artifactSigning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Base App is distributed through Apple's App Store under the Base: Formerly Coinbase Wallet listing.",
+										"url": "https://apps.apple.com/us/app/base-formerly-coinbase-wallet/id1278383455"
+									},
+									{
+										"explanation": "Apple documents that App Store distribution verifies the developer signature and then re-signs the app using an Apple identity before download.",
+										"url": "https://developer.apple.com/documentation/Xcode/using-the-latest-code-signature-format"
+									}
+								]
+							}
+						]
+					},
 					"dependencyLocking": null,
 					"dependencyVulnerabilityScanning": null,
-					"hasPublicChangelog": null,
+					"hasPublicChangelog": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "The App Store listing for Base: Formerly Coinbase Wallet publishes Version History entries and release notes.",
+									"url": "https://apps.apple.com/us/app/base-formerly-coinbase-wallet/id1278383455"
+								}
+							}
+						]
+					},
 					"hermeticBuilds": null,
 					"repositoryChangeControls": null,
-					"reproducibleBuilds": null
+					"reproducibleBuilds": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App / Coinbase Wallet mobile is recorded as source-unavailable proprietary software; no public source tree or reproducible-build instructions are published for independently reproducing the app-store release artifact.",
+									"url": "https://apps.apple.com/us/app/base-formerly-coinbase-wallet/id1278383455"
+								}
+							}
+						]
+					}
 				}
 			}
 		},

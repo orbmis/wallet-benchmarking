@@ -805,9 +805,45 @@
 				"passkeyVerification": {
 					"$ref": "notSupported"
 				},
-				"publicSecurityAudits": {
-					"$ref": "v2Audits"
-				},
+				"publicSecurityAudits": [
+					{
+						"ref": "https://github.com/AmbireTech/ambire-common/blob/v2/audits/Pashov-Ambire-security-review.md",
+						"auditDate": "UNKNOWN",
+						"auditor": {
+							"$ref": "pashov-audit-group"
+						},
+						"codeSnapshot": "3f17320132e3bc67fa9a505fafded7bb16fc3e96",
+						"unpatchedFlaws": "NO_HIGH_SEVERITY_FLAWS_FOUND",
+						"variantsScope": "AMBIRE_ACCOUNT_SIGNATURE_VALIDATOR_AND_FACTORY_SMART_CONTRACTS"
+					},
+					{
+						"ref": "https://github.com/AmbireTech/ambire-common/blob/v2/audits/CuriousApple-AmbireRewview01.md",
+						"auditDate": "2023-10-24",
+						"codeSnapshot": "f411456c06a409bbcbbee0c12c7496916202860b",
+						"unpatchedFlaws": "NO_HIGH_SEVERITY_FLAWS_FOUND",
+						"variantsScope": "AMBIRE_ACCOUNT_PAYMASTER_AND_DKIM_RECOVERY_SMART_CONTRACTS"
+					},
+					{
+						"ref": "https://github.com/AmbireTech/ambire-common/blob/v2/audits/Pashov-Ambire-second-security-review.md",
+						"auditDate": "UNKNOWN",
+						"auditor": {
+							"$ref": "pashov-audit-group"
+						},
+						"codeSnapshot": "8521c4e68b147c0002b2e2c337178e4f5d23d594",
+						"unpatchedFlaws": "NO_HIGH_SEVERITY_FLAWS_FOUND",
+						"variantsScope": "AMBIRE_ACCOUNT_AND_DKIM_RECOVERY_SMART_CONTRACTS"
+					},
+					{
+						"ref": "https://github.com/AmbireTech/ambire-common/blob/v2/audits/Pashov-Ambire-third-security-review.md",
+						"auditDate": "UNKNOWN",
+						"auditor": {
+							"$ref": "pashov-audit-group"
+						},
+						"codeSnapshot": "da3ba641a004d1f0143a20ddde48049b619431ad",
+						"unpatchedFlaws": "NO_HIGH_SEVERITY_FLAWS_FOUND",
+						"variantsScope": "AMBIRE_ERC4337_AND_PAYMASTER_SMART_CONTRACTS"
+					}
+				],
 				"scamAlerts": {
 					"contractTransactionWarning": {
 						"$call": "supported",
@@ -1103,7 +1139,23 @@
 						]
 					},
 					"repositoryChangeControls": null,
-					"reproducibleBuilds": null
+					"reproducibleBuilds": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Ambire's public extension release workflow builds WebKit extension ZIPs in GitHub Actions from repository code plus GitHub environment variables and secrets, then uploads CI artifacts; this does not provide a public deterministic rebuild/compare process for independently reproducing the released extension artifact.",
+										"url": "https://github.com/AmbireTech/extension/blob/19c22dbba374dc12730f1f40e3fce33e71ad2f90/.github/workflows/build-extensions.yml"
+									},
+									{
+										"explanation": "The same release workflow has a source-code ZIP publication step commented out, so the release path does not currently publish a complete review source bundle alongside the built extension artifact.",
+										"url": "https://github.com/AmbireTech/extension/blob/19c22dbba374dc12730f1f40e3fce33e71ad2f90/.github/workflows/build-extensions.yml"
+									}
+								]
+							}
+						]
+					}
 				}
 			}
 		},

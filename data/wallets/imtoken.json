@@ -144,7 +144,28 @@
 					}
 				}
 			},
-			"chainConfigurability": null,
+			"chainConfigurability": {
+				"$call": "supported",
+				"args": [
+					{
+						"ref": {
+							"explanation": "imToken says its custom RPC feature lets users connect directly to Ethereum-compatible networks and custom network nodes through imToken.",
+							"url": "https://support.token.im/hc/en-us/articles/900005324266-imToken-now-supports-custom-RPC-Experience-the-layer-2-ecosystem-today"
+						},
+						"customChainRpcEndpoint": {
+							"$ref": "featureSupported"
+						},
+						"l1": {
+							"$call": "supported",
+							"args": [
+								{
+									"rpcEndpointConfiguration": "RpcEndpointConfiguration.YES_BEFORE_ANY_REQUEST"
+								}
+							]
+						}
+					}
+				]
+			},
 			"ecosystem": {
 				"delegation": null
 			},
@@ -206,8 +227,28 @@
 			},
 			"privacy": {
 				"analytics": {
-					"crashReports": null,
-					"usage": null
+					"crashReports": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken's App Store privacy label lists Diagnostics as data linked to the user.",
+									"url": "https://apps.apple.com/us/app/imtoken-btc-eth-wallet/id1384798940"
+								}
+							}
+						]
+					},
+					"usage": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken's App Store privacy label lists Usage Data as data linked to the user.",
+									"url": "https://apps.apple.com/us/app/imtoken-btc-eth-wallet/id1384798940"
+								}
+							}
+						]
+					}
 				},
 				"appIsolation": {
 					"MOBILE": null
@@ -311,7 +352,23 @@
 						}
 					]
 				},
-				"duressResistance": null,
+				"duressResistance": {
+					"basicUnlock": {
+						"ref": {
+							"explanation": "imToken documents biometric verification with Touch ID/Face ID for password-free payments across accounts.",
+							"url": "https://support.token.im/hc/en-us/articles/33035005586841-Seamless-Payments-One-Click-Instant-Transfer"
+						},
+						"mechanisms": {
+							"PIN": false,
+							"PASSWORD": true,
+							"BIOMETRIC": true,
+							"PATTERN": false
+						}
+					},
+					"duressMode": {
+						"$ref": "notSupported"
+					}
+				},
 				"hardwareWalletSupport": {
 					"MOBILE": {
 						"ref": [
@@ -410,19 +467,54 @@
 					}
 				},
 				"securityBestPractices": null,
-				"transactionLegibility": null
+				"transactionLegibility": {
+					"ref": {
+						"$ref": "refTodo"
+					},
+					"transactionSimulations": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinspect verified imToken iOS transaction simulation, stating that the wallet previews the expected outcome by simulating request execution on-chain before signing and displays transaction incomes and outcomes.",
+									"url": "https://www.coinspect.com/wallets/reports/im-token-ios/"
+								},
+								"insights": "imToken shows simulated transaction income/outcome information before signing, according to Coinspect verification."
+							}
+						]
+					}
+				}
 			},
 			"selfSovereignty": {
-				"permissionsManagement": null,
+				"permissionsManagement": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": [
+								{
+									"explanation": "imToken support explains that users can open an ETH token, tap the Token Function button, and select Revoke to enter the Revoke page for token approvals.",
+									"url": "https://support.token.im/hc/en-us/articles/900006746566-My-USDT-was-sent-out-from-my-wallet-without-my-consent-How-did-that-happen"
+								},
+								{
+									"explanation": "imToken Sweet7 documentation says the Revoke entry lets users view and manage token approvals from the token function menu.",
+									"url": "https://support.token.im/hc/en-us/articles/20330137166361-imToken-Sweet7-Implementation-A-Guide-to-the-Seven-Function-Operations"
+								}
+							]
+						}
+					]
+				},
 				"transactionSubmission": {
 					"l1": {
 						"ref": {
-							"$ref": "refTodo"
+							"explanation": "imToken says its custom RPC feature lets users connect directly to Ethereum-compatible networks and custom network nodes through imToken.",
+							"url": "https://support.token.im/hc/en-us/articles/900005324266-imToken-now-supports-custom-RPC-Experience-the-layer-2-ecosystem-today"
 						},
 						"selfBroadcastViaDirectGossip": {
 							"$ref": "notSupported"
 						},
-						"selfBroadcastViaSelfHostedNode": null
+						"selfBroadcastViaSelfHostedNode": {
+							"$ref": "featureSupported"
+						}
 					},
 					"l2": {
 						"ref": {
@@ -436,13 +528,49 @@
 			"transparency": {
 				"operationFees": null,
 				"releaseTransparency": {
-					"artifactSigning": null,
+					"artifactSigning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "imToken is distributed through Apple's App Store under the imToken BTC & ETH Wallet listing.",
+										"url": "https://apps.apple.com/us/app/imtoken-btc-eth-wallet/id1384798940"
+									},
+									{
+										"explanation": "Apple documents that App Store distribution verifies the developer signature and then re-signs the app using an Apple identity before download.",
+										"url": "https://developer.apple.com/documentation/Xcode/using-the-latest-code-signature-format"
+									}
+								]
+							}
+						]
+					},
 					"dependencyLocking": null,
 					"dependencyVulnerabilityScanning": null,
-					"hasPublicChangelog": null,
+					"hasPublicChangelog": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken's App Store page publishes version history and release notes.",
+									"url": "https://apps.apple.com/us/app/imtoken-btc-eth-wallet/id1384798940"
+								}
+							}
+						]
+					},
 					"hermeticBuilds": null,
 					"repositoryChangeControls": null,
-					"reproducibleBuilds": null
+					"reproducibleBuilds": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken mobile is recorded as source-unavailable proprietary software; no public source tree or reproducible-build instructions are published for independently reproducing the mobile wallet release artifact.",
+									"url": "https://token.im/"
+								}
+							}
+						]
+					}
 				}
 			}
 		},

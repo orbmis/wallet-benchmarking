@@ -319,8 +319,36 @@
 			},
 			"privacy": {
 				"analytics": {
-					"crashReports": null,
-					"usage": null
+					"crashReports": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "MetaMask's App Store privacy label lists Diagnostics, including Crash Data and Other Diagnostic Data, as data that may be collected.",
+										"url": "https://apps.apple.com/us/app/metamask-blockchain-wallet/id1438144202"
+									}
+								]
+							}
+						]
+					},
+					"usage": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "MetaMask's Help Center says its optional analytics system records certain in-app actions, feature usage, and navigation patterns.",
+										"url": "https://support.metamask.io/configure/privacy/how-to-manage-your-analytics-data/"
+									},
+									{
+										"explanation": "MetaMask's App Store privacy label lists Usage Data, including Product Interaction, as data that may be collected.",
+										"url": "https://apps.apple.com/us/app/metamask-blockchain-wallet/id1438144202"
+									}
+								]
+							}
+						]
+					}
 				},
 				"appIsolation": {
 					"createInAppConnectionFlow": {
@@ -841,13 +869,57 @@
 					}
 				},
 				"releaseTransparency": {
-					"artifactSigning": null,
+					"artifactSigning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask extension release commits on GitHub show GitHub verified signatures for release tags/commits.",
+									"url": "https://github.com/MetaMask/metamask-extension/releases"
+								},
+								"publication": "GITHUB_RELEASE",
+								"signer": "DEVELOPER_KEY"
+							}
+						]
+					},
 					"dependencyLocking": null,
 					"dependencyVulnerabilityScanning": null,
-					"hasPublicChangelog": null,
+					"hasPublicChangelog": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "MetaMask publishes GitHub releases for the browser extension with Added/Changed/Fixed release notes.",
+										"url": "https://github.com/MetaMask/metamask-extension/releases"
+									},
+									{
+										"explanation": "MetaMask Mobile publishes GitHub releases with release-changelog entries.",
+										"url": "https://github.com/MetaMask/metamask-mobile/releases"
+									}
+								]
+							}
+						]
+					},
 					"hermeticBuilds": null,
 					"repositoryChangeControls": null,
-					"reproducibleBuilds": null
+					"reproducibleBuilds": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "MetaMask's extension README documents ordinary local builds with `yarn dist` and user-supplied local configuration such as Infura/API-related settings, but it does not document an independent reproducible-build verification process for matching published extension artifacts.",
+										"url": "https://github.com/MetaMask/metamask-extension/blob/main/README.md"
+									},
+									{
+										"explanation": "The MetaMask build-system README describes production-ready ZIP generation into `./builds` and unpacked builds into `./dist`, but provides usage/build-system documentation rather than a deterministic release-artifact reproduction and comparison procedure.",
+										"url": "https://github.com/MetaMask/metamask-extension/blob/main/development/build/README.md"
+									}
+								]
+							}
+						]
+					}
 				}
 			}
 		},

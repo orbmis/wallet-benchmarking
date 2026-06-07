@@ -65,13 +65,24 @@
 			},
 			"addressResolution": {
 				"ref": {
-					"$ref": "refTodo"
+					"explanation": "Zeus's send UI validates recipients by parsing the input as an Ethereum address with `Address::from_str`; repository search found no ENS, namehash, resolver, or Universal Resolver implementation.",
+					"url": "https://github.com/greekfetacheese/zeus/blob/1eebac5c3dfd740aa6b87d915b495b98a3f140c4/src/gui/ui/send_crypto.rs"
 				},
 				"chainSpecificAddressing": {
 					"erc7828": null,
 					"erc7831": null
 				},
-				"nonChainSpecificEnsResolution": null
+				"nonChainSpecificEnsResolution": {
+					"$call": "notSupportedWithRef",
+					"args": [
+						{
+							"ref": {
+								"explanation": "The Zeus send flow checks recipient input with `Address::from_str`, so non-address names such as ENS names are rejected as invalid recipients rather than resolved.",
+								"url": "https://github.com/greekfetacheese/zeus/blob/1eebac5c3dfd740aa6b87d915b495b98a3f140c4/src/gui/ui/send_crypto.rs"
+							}
+						}
+					]
+				}
 			},
 			"chainAbstraction": {
 				"bridging": {
@@ -224,8 +235,28 @@
 			},
 			"privacy": {
 				"analytics": {
-					"crashReports": null,
-					"usage": null
+					"crashReports": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "The Zeus README states that Zeus has no telemetry and does not communicate with any third-party server; activity stays local on the user computer.",
+									"url": "https://github.com/greekfetacheese/zeus#security"
+								}
+							}
+						]
+					},
+					"usage": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "The Zeus README states that Zeus has no telemetry and does not communicate with any third-party server; activity stays local on the user computer.",
+									"url": "https://github.com/greekfetacheese/zeus#security"
+								}
+							}
+						]
+					}
 				},
 				"appIsolation": {
 					"DESKTOP": {
@@ -293,8 +324,34 @@
 				"bugBountyProgram": {
 					"$ref": "notSupported"
 				},
-				"duressResistance": null,
-				"hardwareWalletSupport": null,
+				"duressResistance": {
+					"basicUnlock": {
+						"ref": {
+							"explanation": "Zeus uses a username and password to derive the master HD wallet; recovery is only possible by using the same username and password.",
+							"url": "https://github.com/greekfetacheese/zeus#how-wallet-management-work-in-zeus"
+						},
+						"mechanisms": {
+							"PIN": false,
+							"PASSWORD": true,
+							"BIOMETRIC": false,
+							"PATTERN": false
+						}
+					},
+					"duressMode": {
+						"$ref": "notSupported"
+					}
+				},
+				"hardwareWalletSupport": {
+					"$call": "notSupportedWithRef",
+					"args": [
+						{
+							"ref": {
+								"explanation": "Zeus documents wallet management through username/password-derived wallets plus seed-phrase and private-key imports; no public hardware-wallet pairing or signing support is documented in the README, and repository search found no Ledger, Trezor, or hardware-wallet integration.",
+								"url": "https://github.com/greekfetacheese/zeus#how-wallet-management-work-in-zeus"
+							}
+						}
+					]
+				},
 				"keysHandling": {
 					"ref": [
 						{
@@ -313,7 +370,7 @@
 				"passkeyVerification": {
 					"$ref": "notSupported"
 				},
-				"publicSecurityAudits": null,
+				"publicSecurityAudits": [],
 				"scamAlerts": {
 					"contractTransactionWarning": {
 						"$call": "notSupportedWithRef",
@@ -353,45 +410,82 @@
 				},
 				"securityBestPractices": null,
 				"transactionLegibility": {
-					"$call": "supported",
+					"ref": [
+						{
+							"explanation": "Zeus performs local EVM simulations to verify and display exact transaction outcomes, including decoding of common events like erc20 transfers, swaps, approvals etc...",
+							"url": "https://github.com/greekfetacheese/zeus/blob/6fc3006fd8790f3f0db2feae24a5bdbad07c0c30/src/core/tx_analysis.rs"
+						}
+					],
+					"erc7730": null,
+					"erc8213": {
+						"$call": "supported",
+						"args": [
+							{
+								"calldataDisplay": null,
+								"messageSigningLegibility": {
+									"EIP712_STRUCT": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+									"DOMAIN_HASH": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+									"MESSAGE_HASH": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+									"EIP712_DIGEST": "DataDisplayOptions.NOT_IN_UI"
+								}
+							}
+						]
+					},
+					"transactionDetailsDisplay": {
+						"chain": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+						"from": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+						"gas": "DataDisplayOptions.NOT_IN_UI",
+						"nonce": "DataDisplayOptions.NOT_IN_UI",
+						"to": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+						"value": "DataDisplayOptions.SHOWN_BY_DEFAULT"
+					},
+					"transactionSimulations": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zeus performs local EVM simulations with revm before transaction submission and decodes transfers, token approvals, permits, bridge deposits, Uniswap swaps, and failed outcomes from logs.",
+									"url": "https://github.com/greekfetacheese/zeus/blob/6fc3006fd8790f3f0db2feae24a5bdbad07c0c30/src/core/tx_analysis.rs"
+								},
+								"ERC_20_TRANSFER": {
+									"transactionOutcome": "TransactionOutcome.EXPLAINED"
+								},
+								"ERC_721_TRANSFER": null,
+								"ERC_1155_TRANSFER": null,
+								"USDC_APPROVAL": {
+									"transactionOutcome": "TransactionOutcome.EXPLAINED"
+								},
+								"AAVE_SUPPLY": null,
+								"SAFEWALLET_AAVE_SUPPLY_NESTED": null,
+								"SAFEWALLET_AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": null,
+								"ETH_TRANSFER": {
+									"transactionOutcome": "TransactionOutcome.EXPLAINED"
+								},
+								"ZKSYNC_USDC_TRANSFER": null,
+								"AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": null,
+								"FAILED_TRANSACTION": {
+									"transactionOutcome": "TransactionOutcome.EXPLAINED"
+								},
+								"NONDETERMINISTIC_TRANSACTION": null
+							}
+						]
+					}
+				}
+			},
+			"selfSovereignty": {
+				"permissionsManagement": {
+					"$call": "notSupportedWithRef",
 					"args": [
 						{
 							"ref": [
 								{
-									"explanation": "Zeus performs local EVM simulations to verify and display exact transaction outcomes, including decoding of common events like erc20 transfers, swaps, approvals etc...",
-									"url": "https://github.com/greekfetacheese/zeus/blob/6fc3006fd8790f3f0db2feae24a5bdbad07c0c30/src/core/tx_analysis.rs"
+									"explanation": "The Zeus README says the wallet does not automatically index data like token approvals, because it works from Ethereum RPC APIs rather than third-party indexing services.",
+									"url": "https://github.com/greekfetacheese/zeus#features"
 								}
-							],
-							"erc7730": null,
-							"erc8213": {
-								"$call": "supported",
-								"args": [
-									{
-										"calldataDisplay": null,
-										"messageSigningLegibility": {
-											"EIP712_STRUCT": "DataDisplayOptions.SHOWN_BY_DEFAULT",
-											"DOMAIN_HASH": "DataDisplayOptions.SHOWN_BY_DEFAULT",
-											"MESSAGE_HASH": "DataDisplayOptions.SHOWN_BY_DEFAULT",
-											"EIP712_DIGEST": "DataDisplayOptions.NOT_IN_UI"
-										}
-									}
-								]
-							},
-							"transactionDetailsDisplay": {
-								"chain": "DataDisplayOptions.SHOWN_BY_DEFAULT",
-								"from": "DataDisplayOptions.SHOWN_BY_DEFAULT",
-								"gas": "DataDisplayOptions.NOT_IN_UI",
-								"nonce": "DataDisplayOptions.NOT_IN_UI",
-								"to": "DataDisplayOptions.SHOWN_BY_DEFAULT",
-								"value": "DataDisplayOptions.SHOWN_BY_DEFAULT"
-							},
-							"transactionSimulations": null
+							]
 						}
 					]
-				}
-			},
-			"selfSovereignty": {
-				"permissionsManagement": null,
+				},
 				"transactionSubmission": {
 					"l1": {
 						"ref": [
@@ -497,13 +591,59 @@
 					}
 				},
 				"releaseTransparency": {
-					"artifactSigning": null,
-					"dependencyLocking": null,
+					"artifactSigning": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "The latest Zeus GitHub release publishes ZIP assets with GitHub-provided SHA-256 digests, but no detached signature, signed checksum file, or platform signing artifact is listed among the release assets.",
+									"url": "https://api.github.com/repos/greekfetacheese/zeus/releases?per_page=1"
+								}
+							}
+						]
+					},
+					"dependencyLocking": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "The Zeus repository includes a Cargo.lock lockfile for Rust dependency resolution.",
+									"url": "https://github.com/greekfetacheese/zeus/blob/master/Cargo.lock"
+								}
+							}
+						]
+					},
 					"dependencyVulnerabilityScanning": null,
-					"hasPublicChangelog": null,
+					"hasPublicChangelog": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zeus publishes release notes and downloadable artifacts on its public GitHub releases page.",
+									"url": "https://github.com/greekfetacheese/zeus/releases"
+								}
+							}
+						]
+					},
 					"hermeticBuilds": null,
 					"repositoryChangeControls": null,
-					"reproducibleBuilds": null
+					"reproducibleBuilds": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Zeus publishes locked Rust dependencies in Cargo.lock and a production profile in Cargo.toml, but the public repository does not document deterministic rebuild-and-compare verification for matching published desktop release artifacts.",
+										"url": "https://github.com/greekfetacheese/zeus/blob/master/Cargo.toml"
+									},
+									{
+										"explanation": "The Zeus Cargo.lock file pins registry package versions and checksums for dependency resolution; this supports repeatable dependency selection but is not a published reproducible-build verification workflow for release binaries.",
+										"url": "https://github.com/greekfetacheese/zeus/blob/master/Cargo.lock"
+									}
+								]
+							}
+						]
+					}
 				}
 			}
 		},

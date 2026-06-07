@@ -316,7 +316,17 @@
 			},
 			"privacy": {
 				"analytics": {
-					"crashReports": null,
+					"crashReports": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby's privacy policy says log and usage data can include diagnostic, usage, and performance information, including device event information such as error reports/crash dumps.",
+									"url": "https://rabby.io/docs/privacy"
+								}
+							}
+						]
+					},
 					"usage": {
 						"BROWSER": {
 							"$call": "supported",
@@ -486,7 +496,17 @@
 						"$ref": "notSupported"
 					}
 				},
-				"bugBountyProgram": null,
+				"bugBountyProgram": {
+					"$call": "notSupportedWithRef",
+					"args": [
+						{
+							"ref": {
+								"explanation": "RabbyHub/Rabby GitHub Security reports no SECURITY.md policy and no published security advisories; targeted searches did not find a public Rabby bug bounty program.",
+								"url": "https://github.com/RabbyHub/Rabby/security"
+							}
+						}
+					]
+				},
 				"duressResistance": {
 					"basicUnlock": {
 						"ref": {
@@ -1070,13 +1090,71 @@
 					}
 				},
 				"releaseTransparency": {
-					"artifactSigning": null,
-					"dependencyLocking": null,
+					"artifactSigning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Rabby publishes a browser extension through the Chrome Web Store.",
+										"url": "https://chromewebstore.google.com/detail/rabby-wallet/acmacodkjbdgmoleebolmdjonilkdbch"
+									},
+									{
+										"explanation": "Chrome for Developers states that all Chrome Web Store extensions are signed by Google, with signing handled automatically when a package is uploaded.",
+										"url": "https://developer.chrome.com/blog/verified-uploads-cws"
+									}
+								]
+							}
+						]
+					},
+					"dependencyLocking": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "The Rabby browser extension repository includes a Yarn lockfile with fixed package resolutions and checksums.",
+									"url": "https://github.com/RabbyHub/Rabby/blob/develop/yarn.lock"
+								}
+							}
+						]
+					},
 					"dependencyVulnerabilityScanning": null,
-					"hasPublicChangelog": null,
+					"hasPublicChangelog": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Rabby publishes versioned GitHub releases for the browser extension, including release assets.",
+										"url": "https://github.com/RabbyHub/Rabby/releases"
+									},
+									{
+										"explanation": "Rabby Desktop publishes GitHub releases with release notes and installer hashes.",
+										"url": "https://github.com/RabbyHub/RabbyDesktop/releases"
+									}
+								]
+							}
+						]
+					},
 					"hermeticBuilds": null,
 					"repositoryChangeControls": null,
-					"reproducibleBuilds": null
+					"reproducibleBuilds": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Rabby's README documents ordinary production-package generation with `yarn build:pro` into the `dist` folder, but does not document an independent deterministic rebuild-and-compare process for matching published browser-extension or desktop release artifacts.",
+										"url": "https://github.com/RabbyHub/Rabby/blob/develop/README.md"
+									},
+									{
+										"explanation": "Rabby's package scripts show production builds are generated through webpack-oriented `build:pro` commands; the public scripts describe build generation rather than reproducible release verification against published artifacts.",
+										"url": "https://github.com/RabbyHub/Rabby/blob/develop/package.json"
+									}
+								]
+							}
+						]
+					}
 				}
 			}
 		},
