@@ -622,6 +622,615 @@
 						]
 					}
 				}
+			},
+			"product": {
+				"platformCoverage": {
+					"ref": {
+						"explanation": "Rainbow homepage links both Rainbow Extension and Rainbow Mobile downloads and describes browser availability for the extension.",
+						"url": "https://rainbow.me/"
+					},
+					"desktopApp": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow homepage focuses on mobile and browser extension downloads, not a native desktop app.",
+									"url": "https://rainbow.me/"
+								}
+							}
+						]
+					},
+					"mobileApp": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow homepage links Download Rainbow Mobile.",
+									"url": "https://rainbow.me/"
+								}
+							}
+						]
+					},
+					"browserExtension": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow homepage links Download Rainbow Extension.",
+									"url": "https://rainbow.me/"
+								}
+							}
+						]
+					},
+					"browserNative": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow is provided as mobile app and extension, not a browser-native wallet.",
+									"url": "https://rainbow.me/"
+								}
+							}
+						]
+					},
+					"webApp": null,
+					"ios": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow Mobile is linked from the official site; specific App Store platform was not separately resolved.",
+									"url": "https://rainbow.me/"
+								}
+							}
+						]
+					},
+					"android": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow Mobile is linked from the official site; specific Google Play platform was not separately resolved.",
+									"url": "https://rainbow.me/"
+								}
+							}
+						]
+					},
+					"chrome": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow homepage says the extension is available in favorite browsers and links its extension download.",
+									"url": "https://rainbow.me/"
+								}
+							}
+						]
+					},
+					"firefox": null,
+					"safari": null
+				},
+				"supportedEcosystems": {
+					"ref": {
+						"explanation": "Rainbow homepage describes chain support under “All the chains that matter in one place”; the visible feature set is centered on EVM/onchain wallet workflows.",
+						"url": "https://rainbow.me/"
+					},
+					"evm": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow extension page presents onchain wallet workflows including swap, bridge, wallets, and many chain logos in its supported-chain section.",
+									"url": "https://rainbow.me/"
+								}
+							}
+						]
+					},
+					"solana": null,
+					"bitcoin": null,
+					"cosmos": null,
+					"ton": null,
+					"starknet": null,
+					"sui": null,
+					"aptos": null,
+					"xrp": null,
+					"cardano": null,
+					"lightning": null,
+					"other": []
+				},
+				"dappExperience": {
+					"ref": {
+						"explanation": "Rainbow homepage describes wallet actions including swap, bridge, send, wallet management, watch/impersonate, and NFT management.",
+						"url": "https://rainbow.me/"
+					},
+					"inAppBrowser": null,
+					"curatedDappDirectory": null,
+					"dappSearch": null,
+					"walletConnectOnlyMode": null,
+					"featuredApps": null,
+					"riskRatedDiscovery": null
+				},
+				"fiatRamps": {
+					"ref": {
+						"explanation": "Rainbow source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://rainbow.me"
+					},
+					"buyCrypto": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow documents or advertises in-wallet crypto purchase support.",
+									"url": "https://rainbow.me"
+								}
+							}
+						]
+					},
+					"sellCrypto": null,
+					"bankTransfer": null,
+					"card": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow fiat purchase providers commonly support card purchases where available.",
+									"url": "https://rainbow.me"
+								}
+							}
+						]
+					},
+					"applePay": null,
+					"googlePay": null,
+					"kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
+					"providers": [
+						{
+							"name": "MoonPay",
+							"ref": {
+								"explanation": "Rainbow official product/support materials name or route users through these fiat/on-ramp providers.",
+								"url": "https://rainbow.me"
+							}
+						},
+						{
+							"name": "Ramp Network",
+							"ref": {
+								"explanation": "Rainbow official product/support materials name or route users through these fiat/on-ramp providers.",
+								"url": "https://rainbow.me"
+							}
+						}
+					],
+					"regionalAvailability": "Provider- and region-dependent availability; not an exhaustive country matrix in this pass."
+				},
+				"gasUx": {
+					"ref": {
+						"explanation": "Rainbow source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://rainbow.me"
+					},
+					"gasCustomization": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow supports standard EVM transaction sending where gas settings can be inspected or controlled in the wallet flow.",
+									"url": "https://rainbowkit.com/"
+								}
+							}
+						]
+					},
+					"gasSponsorship": null,
+					"gasAbstraction": null,
+					"payGasInStablecoins": null,
+					"payGasWithReceivedToken": null,
+					"speedPresets": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": null,
+									"url": "https://rainbowkit.com/"
+								}
+							}
+						]
+					},
+					"stuckTransactionRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow support/product materials include stuck or pending transaction recovery guidance.",
+									"url": "https://rainbowkit.com/"
+								}
+							}
+						]
+					}
+				},
+				"recoveryUx": {
+					"ref": {
+						"explanation": "Rainbow source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://rainbow.me"
+					},
+					"seedOnlyRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow supports recovery/import through a seed or secret recovery phrase.",
+									"url": "https://rainbowkit.com/"
+								}
+							}
+						]
+					},
+					"cloudBackup": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow supports cloud-backed wallet backup or recovery for at least some account flows.",
+									"url": "https://rainbow.me"
+								}
+							}
+						]
+					},
+					"socialRecovery": null,
+					"guardianRecovery": null,
+					"passkeyRecovery": null,
+					"emergencyKit": null,
+					"recoveryRehearsal": null
+				},
+				"onboardingFriction": {
+					"ref": {
+						"explanation": "Rainbow source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://rainbow.me"
+					},
+					"seedPhraseRequiredAtSignup": {
+						"$ref": "featureSupported"
+					},
+					"passkeySignup": null,
+					"emailSignup": null,
+					"phoneSignup": null,
+					"kycRequiredForWallet": {
+						"$ref": "notSupported"
+					},
+					"guestMode": null,
+					"embeddedWalletMode": null,
+					"timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
+				},
+				"portfolioManagement": {
+					"ref": {
+						"explanation": "Rainbow homepage says users can manage hundreds of wallets, import/organize wallets, watch/impersonate wallets, manage NFTs, and swap/bridge.",
+						"url": "https://rainbow.me/"
+					},
+					"netWorth": null,
+					"pnl": null,
+					"costBasis": null,
+					"tokenCategories": null,
+					"nftSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow homepage lists Manage NFTs as an extension capability.",
+									"url": "https://rainbow.me/"
+								}
+							}
+						]
+					},
+					"collectionViews": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow homepage lists Manage NFTs.",
+									"url": "https://rainbow.me/"
+								}
+							}
+						]
+					},
+					"watchOnlyWallets": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow homepage lists Watch & Impersonate wallets.",
+									"url": "https://rainbow.me/"
+								}
+							}
+						]
+					},
+					"multiWalletAggregation": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow homepage says users can manage hundreds of wallets and import/organize them.",
+									"url": "https://rainbow.me/"
+								}
+							}
+						]
+					}
+				},
+				"notifications": {
+					"ref": {
+						"explanation": "Rainbow source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://rainbow.me"
+					},
+					"sendReceive": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow supports notifications for wallet activity such as sends or receives.",
+									"url": "https://rainbow.me"
+								}
+							}
+						]
+					},
+					"priceAlerts": null,
+					"approvalAlerts": null,
+					"bridgeCompletion": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": null,
+									"url": "https://rainbow.me"
+								}
+							}
+						]
+					},
+					"failedTransaction": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow supports wallet activity notifications that can include failed or completed transaction status.",
+									"url": "https://rainbow.me"
+								}
+							}
+						]
+					},
+					"securityAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow supports security alerts or transaction-risk warnings.",
+									"url": "https://rainbow.me"
+								}
+							}
+						]
+					},
+					"marketAlerts": null
+				},
+				"nftCapabilities": {
+					"ref": {
+						"explanation": "Rainbow homepage lists Manage NFTs in extension capabilities.",
+						"url": "https://rainbow.me/"
+					},
+					"display": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow lists NFT management.",
+									"url": "https://rainbow.me/"
+								}
+							}
+						]
+					},
+					"send": null,
+					"mint": null,
+					"marketplaceIntegration": null,
+					"spamNftHiding": null,
+					"collectionMetadataRefresh": null,
+					"royaltiesOrOffers": null
+				},
+				"defiPositionAwareness": {
+					"ref": {
+						"explanation": "Rainbow source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://rainbow.me"
+					},
+					"lendingPositions": null,
+					"stakingPositions": null,
+					"lpPositions": null,
+					"vaultPositions": null,
+					"perProtocolBalances": null,
+					"claimableRewards": null,
+					"liquidationWarnings": null
+				},
+				"stakingEarn": {
+					"ref": {
+						"explanation": "Rainbow source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://rainbow.me"
+					},
+					"nativeStaking": null,
+					"liquidStaking": null,
+					"validatorChoice": null,
+					"apyDisplay": null,
+					"rewardsClaiming": null,
+					"providerDependency": null,
+					"lockupDisclosure": null
+				},
+				"customerSupport": {
+					"ref": {
+						"explanation": "Rainbow source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://rainbow.me"
+					},
+					"liveChat": null,
+					"emailSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow publishes support, help center, or contact paths for wallet users.",
+									"url": "https://rainbowkit.com/"
+								}
+							}
+						]
+					},
+					"aiSupport": null,
+					"publishedSla": null,
+					"inAppHelpCenter": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow provides in-app or product-linked help/support content.",
+									"url": "https://rainbowkit.com/"
+								}
+							}
+						]
+					},
+					"transactionTroubleshooting": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow support docs include transaction or wallet troubleshooting material.",
+									"url": "https://rainbowkit.com/"
+								}
+							}
+						]
+					},
+					"scamRecoveryGuidance": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow support/security materials include scam, compromise, or recovery guidance.",
+									"url": "https://rainbow.me"
+								}
+							}
+						]
+					}
+				},
+				"developerOffering": {
+					"ref": {
+						"explanation": "Rainbow source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://rainbow.me"
+					},
+					"walletSdk": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow publishes wallet developer docs, SDKs, or public wallet integration repositories.",
+									"url": "https://github.com/rainbow-me/browser-extension"
+								}
+							}
+						]
+					},
+					"embeddedWalletSdk": null,
+					"whiteLabelOffering": null,
+					"walletConnectSupport": {
+						"$ref": "featureSupported"
+					},
+					"eip6963": {
+						"$ref": "featureSupported"
+					},
+					"eip5792": {
+						"$ref": "notSupported"
+					},
+					"deepLinks": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow documents mobile deep links, universal links, or app-link connection flows.",
+									"url": "https://rainbowkit.com/"
+								}
+							}
+						]
+					},
+					"mobileLinkingQuality": "Mobile linking documented or product-supported; quality requires hands-on UX testing."
+				},
+				"pricingFeeModel": {
+					"ref": {
+						"explanation": "Rainbow source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://rainbow.me"
+					},
+					"swapFees": null,
+					"bridgeFees": null,
+					"onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
+					"spreadDisclosure": null,
+					"subscriptionFeatures": null,
+					"cardFees": "Card fees are provider-dependent where card purchase is available.",
+					"hiddenPartnerRevenue": null
+				},
+				"releaseVelocity": {
+					"ref": {
+						"explanation": "Rainbow source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://rainbow.me"
+					},
+					"latestReleaseDate": "2026-05-11",
+					"releaseFrequency": "ReleaseFrequency.IRREGULAR",
+					"appStoreUpdateCadence": "App-store cadence should be measured from current app-store release history in a deeper pass.",
+					"githubActivity": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow has public GitHub repository activity or releases that can be tracked.",
+									"url": "https://github.com/rainbow-me/browser-extension"
+								}
+							}
+						]
+					},
+					"changelogDetail": "ChangelogDetail.BASIC"
+				},
+				"deviceSync": {
+					"ref": {
+						"explanation": "Rainbow source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://rainbow.me"
+					},
+					"syncsAccounts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow supports account synchronization or account reuse across devices.",
+									"url": "https://rainbow.me"
+								}
+							}
+						]
+					},
+					"syncsSettings": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow supports syncing at least some wallet settings or app state across installations.",
+									"url": "https://rainbow.me"
+								}
+							}
+						]
+					},
+					"syncsContactsOrAddressBook": null,
+					"desktopMobileSync": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow supports cross-device use between mobile and desktop/browser surfaces.",
+									"url": "https://rainbow.me"
+								}
+							}
+						]
+					},
+					"cloudBackedSync": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow supports cloud-backed account or wallet sync/backup.",
+									"url": "https://rainbow.me"
+								}
+							}
+						]
+					},
+					"requiresSameSeedImport": {
+						"$ref": "notSupported"
+					}
+				}
 			}
 		},
 		"variants": {

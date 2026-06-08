@@ -921,6 +921,943 @@
 						]
 					}
 				}
+			},
+			"product": {
+				"platformCoverage": {
+					"ref": {
+						"explanation": "MetaMask download and support pages document browser extension and mobile app distribution surfaces.",
+						"url": "https://metamask.io/download/"
+					},
+					"desktopApp": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask distributes as browser extensions, mobile apps, and Portfolio web app; no standalone desktop wallet app is published on the official download page.",
+									"url": "https://metamask.io/download/"
+								}
+							}
+						]
+					},
+					"mobileApp": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask is available as a mobile wallet app from the official download page.",
+									"url": "https://metamask.io/download/"
+								}
+							}
+						]
+					},
+					"browserExtension": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask is available as a browser extension from the official download page.",
+									"url": "https://metamask.io/download/"
+								}
+							}
+						]
+					},
+					"browserNative": {
+						"$ref": "notSupported"
+					},
+					"webApp": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask Portfolio is a standalone web app for managing tokens, NFTs, DeFi positions, buy/sell, bridge, swap, and staking flows.",
+									"url": "https://portfolio.metamask.io/"
+								}
+							}
+						]
+					},
+					"ios": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask restore documentation covers MetaMask Mobile on iOS, and the official download page routes to mobile app installs.",
+									"url": "https://support.metamask.io/configure/wallet/how-to-restore-your-metamask-wallet-from-secret-recovery-phrase"
+								}
+							}
+						]
+					},
+					"android": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask restore documentation covers MetaMask Mobile on Android, and the official download page routes to mobile app installs.",
+									"url": "https://support.metamask.io/configure/wallet/how-to-restore-your-metamask-wallet-from-secret-recovery-phrase"
+								}
+							}
+						]
+					},
+					"chrome": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask extension restoration guidance documents Chrome-based browser storage and the official download page routes to browser extension installs.",
+									"url": "https://support.metamask.io/configure/wallet/how-to-recover-your-secret-recovery-phrase"
+								}
+							}
+						]
+					},
+					"firefox": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask recovery documentation includes Firefox-specific extension recovery limitations, confirming Firefox extension support.",
+									"url": "https://support.metamask.io/configure/wallet/how-to-recover-your-secret-recovery-phrase"
+								}
+							}
+						]
+					},
+					"safari": null
+				},
+				"supportedEcosystems": {
+					"ref": {
+						"explanation": "MetaMask source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://metamask.io"
+					},
+					"evm": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask officially positions itself as supporting the EVM ecosystem or assets in this ecosystem.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"solana": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask officially positions itself as supporting the SOLANA ecosystem or assets in this ecosystem.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"bitcoin": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask officially positions itself as supporting the BITCOIN ecosystem or assets in this ecosystem.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"cosmos": {
+						"$ref": "notSupported"
+					},
+					"ton": {
+						"$ref": "notSupported"
+					},
+					"starknet": {
+						"$ref": "notSupported"
+					},
+					"sui": {
+						"$ref": "notSupported"
+					},
+					"aptos": {
+						"$ref": "notSupported"
+					},
+					"xrp": {
+						"$ref": "notSupported"
+					},
+					"cardano": {
+						"$ref": "notSupported"
+					},
+					"lightning": {
+						"$ref": "notSupported"
+					},
+					"other": []
+				},
+				"dappExperience": {
+					"ref": {
+						"explanation": "MetaMask source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://metamask.io"
+					},
+					"inAppBrowser": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask provides a dapp browser or in-wallet dapp connection surface.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"curatedDappDirectory": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask provides a curated dapp or app discovery surface.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"dappSearch": null,
+					"walletConnectOnlyMode": {
+						"$ref": "notSupported"
+					},
+					"featuredApps": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask features selected dapps or apps in its discovery surface.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"riskRatedDiscovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask provides risk warnings or risk-aware dapp/transaction discovery cues.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					}
+				},
+				"fiatRamps": {
+					"ref": {
+						"explanation": "MetaMask buy/sell documentation describes in-wallet fiat on-ramp and off-ramp flows, providers, payment methods, KYC/provider dependency, and regional limits.",
+						"url": "https://support.metamask.io/manage-crypto/move-crypto/buy/how-to-buy-crypto-in-metamask"
+					},
+					"buyCrypto": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask supports buying crypto in Extension, Mobile, and Portfolio with provider quotes selected by region.",
+									"url": "https://support.metamask.io/manage-crypto/move-crypto/buy/how-to-buy-crypto-in-metamask"
+								}
+							}
+						]
+					},
+					"sellCrypto": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask supports selling crypto directly in MetaMask Portfolio or MetaMask Mobile, with proceeds deposited to a bank account through providers.",
+									"url": "https://support.metamask.io/manage-crypto/move-crypto/sell/how-to-sell-your-crypto-assets-for-fiat-currency-in-metamask"
+								}
+							}
+						]
+					},
+					"bankTransfer": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask buy and sell docs describe bank transfer methods including wire, ACH, SEPA/Faster Payments, and bank-account withdrawal depending on provider and region.",
+									"url": "https://support.metamask.io/manage-crypto/move-crypto/sell/how-to-sell-your-crypto-assets-for-fiat-currency-in-metamask"
+								}
+							}
+						]
+					},
+					"card": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask buy docs describe debit-card purchase support through provider integrations.",
+									"url": "https://support.metamask.io/manage-crypto/move-crypto/buy/how-to-buy-crypto-in-metamask"
+								}
+							}
+						]
+					},
+					"applePay": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask buy docs say Transak can top up using Google or Apple Pay where available.",
+									"url": "https://support.metamask.io/manage-crypto/move-crypto/buy/how-to-buy-crypto-in-metamask"
+								}
+							}
+						]
+					},
+					"googlePay": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask buy docs say Transak can top up using Google or Apple Pay where available.",
+									"url": "https://support.metamask.io/manage-crypto/move-crypto/buy/how-to-buy-crypto-in-metamask"
+								}
+							}
+						]
+					},
+					"kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
+					"providers": [
+						{
+							"name": "Transak",
+							"ref": {
+								"explanation": "MetaMask sell docs list these providers for fiat off-ramp quotes; buy docs say provider availability varies by region.",
+								"url": "https://support.metamask.io/manage-crypto/move-crypto/sell/how-to-sell-your-crypto-assets-for-fiat-currency-in-metamask"
+							}
+						},
+						{
+							"name": "MoonPay",
+							"ref": {
+								"explanation": "MetaMask sell docs list these providers for fiat off-ramp quotes; buy docs say provider availability varies by region.",
+								"url": "https://support.metamask.io/manage-crypto/move-crypto/sell/how-to-sell-your-crypto-assets-for-fiat-currency-in-metamask"
+							}
+						},
+						{
+							"name": "Sardine",
+							"ref": {
+								"explanation": "MetaMask sell docs list these providers for fiat off-ramp quotes; buy docs say provider availability varies by region.",
+								"url": "https://support.metamask.io/manage-crypto/move-crypto/sell/how-to-sell-your-crypto-assets-for-fiat-currency-in-metamask"
+							}
+						},
+						{
+							"name": "Banxa",
+							"ref": {
+								"explanation": "MetaMask sell docs list these providers for fiat off-ramp quotes; buy docs say provider availability varies by region.",
+								"url": "https://support.metamask.io/manage-crypto/move-crypto/sell/how-to-sell-your-crypto-assets-for-fiat-currency-in-metamask"
+							}
+						}
+					],
+					"regionalAvailability": "Buy and sell availability is provider-, token-, and region-dependent; sell support is documented for the US, UK, and parts of Europe."
+				},
+				"gasUx": {
+					"ref": {
+						"explanation": "MetaMask transaction and sell documentation describes gas fee control, speed-up/cancel flows, and gas obligations for off-ramp transactions.",
+						"url": "https://support.metamask.io/ro/manage-crypto/transactions/how-to-speed-up-or-cancel-a-pending-transaction/"
+					},
+					"gasCustomization": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask explains that users can resubmit a pending transaction with a higher gas fee and consult gas trackers for transaction finality.",
+									"url": "https://support.metamask.io/ro/manage-crypto/transactions/how-to-speed-up-or-cancel-a-pending-transaction/"
+								}
+							}
+						]
+					},
+					"gasSponsorship": null,
+					"gasAbstraction": null,
+					"payGasInStablecoins": null,
+					"payGasWithReceivedToken": null,
+					"speedPresets": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask pending-transaction guidance documents Speed Up and Cancel controls, including resubmitting with a higher gas fee.",
+									"url": "https://support.metamask.io/ro/manage-crypto/transactions/how-to-speed-up-or-cancel-a-pending-transaction/"
+								}
+							}
+						]
+					},
+					"stuckTransactionRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask documents multiple ways to handle stuck or pending transactions, including in-app cancellation and speed-up.",
+									"url": "https://support.metamask.io/ro/manage-crypto/transactions/how-to-speed-up-or-cancel-a-pending-transaction/"
+								}
+							}
+						]
+					}
+				},
+				"recoveryUx": {
+					"ref": {
+						"explanation": "MetaMask recovery docs cover SRP restoration, Google/Apple login restoration, backup-and-sync, and vault recovery limits.",
+						"url": "https://support.metamask.io/configure/wallet/how-to-restore-your-metamask-wallet-from-secret-recovery-phrase"
+					},
+					"seedOnlyRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask can restore a wallet using a Secret Recovery Phrase on extension and mobile.",
+									"url": "https://support.metamask.io/configure/wallet/how-to-restore-your-metamask-wallet-from-secret-recovery-phrase"
+								}
+							}
+						]
+					},
+					"cloudBackup": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask restore docs say users can log in on a new device with a Google or Apple account and password, and backup/sync docs say account names and contacts sync across devices.",
+									"url": "https://support.metamask.io/configure/wallet/account-backup-and-sync"
+								}
+							}
+						]
+					},
+					"socialRecovery": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask SRP/password guidance says MetaMask cannot recover the wallet for users and documents SRP or Google/Apple login access, not social recovery.",
+									"url": "https://support.metamask.io/start/user-guide-secret-recovery-phrase-password-and-private-keys"
+								}
+							}
+						]
+					},
+					"guardianRecovery": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask recovery guidance does not provide guardian recovery; restoration is through SRP, Google/Apple login, or vault recovery scenarios.",
+									"url": "https://support.metamask.io/configure/wallet/how-to-restore-your-metamask-wallet-from-secret-recovery-phrase"
+								}
+							}
+						]
+					},
+					"passkeyRecovery": null,
+					"emergencyKit": null,
+					"recoveryRehearsal": null
+				},
+				"onboardingFriction": {
+					"ref": {
+						"explanation": "MetaMask source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://metamask.io"
+					},
+					"seedPhraseRequiredAtSignup": {
+						"$ref": "featureSupported"
+					},
+					"passkeySignup": null,
+					"emailSignup": null,
+					"phoneSignup": null,
+					"kycRequiredForWallet": {
+						"$ref": "notSupported"
+					},
+					"guestMode": null,
+					"embeddedWalletMode": null,
+					"timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
+				},
+				"portfolioManagement": {
+					"ref": {
+						"explanation": "MetaMask Portfolio and help docs cover portfolio value, DeFi positions, token/NFT views, and watch-account workflows.",
+						"url": "https://support.metamask.io/manage-crypto/portfolio/how-to-use-the-defi-dashboard-in-metamask-portfolio/"
+					},
+					"netWorth": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask Portfolio displays portfolio value and can show DeFi positions beneath portfolio value.",
+									"url": "https://support.metamask.io/manage-crypto/portfolio/how-to-use-the-defi-dashboard-in-metamask-portfolio/"
+								}
+							}
+						]
+					},
+					"pnl": null,
+					"costBasis": null,
+					"tokenCategories": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask Portfolio manages token assets and DeFi protocol positions across supported networks.",
+									"url": "https://support.metamask.io/manage-crypto/portfolio/how-to-use-the-defi-dashboard-in-metamask-portfolio/"
+								}
+							}
+						]
+					},
+					"nftSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask displays NFTs in Mobile, Extension, and MetaMask Portfolio, including NFT pricing data and metadata where available.",
+									"url": "https://support.metamask.io/manage-crypto/nfts/nft-tokens-in-your-metamask-wallet"
+								}
+							}
+						]
+					},
+					"collectionViews": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask Portfolio includes an NFTs tab that displays NFTs attributable to linked accounts.",
+									"url": "https://support.metamask.io/manage-crypto/nfts/nft-tokens-in-your-metamask-wallet"
+								}
+							}
+						]
+					},
+					"watchOnlyWallets": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask Portfolio can monitor connected accounts and DeFi positions; unsupported positions can be added through the open-source library.",
+									"url": "https://support.metamask.io/manage-crypto/portfolio/how-to-use-the-defi-dashboard-in-metamask-portfolio/"
+								}
+							}
+						]
+					},
+					"multiWalletAggregation": {
+						"$ref": "featureSupported"
+					}
+				},
+				"notifications": {
+					"ref": {
+						"explanation": "MetaMask notification documentation describes in-wallet/browser notifications for successful transactions and onchain wallet activity.",
+						"url": "https://support.metamask.io/it/configure/wallet/notifications/"
+					},
+					"sendReceive": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask wallet activity notifications cover receiving tokens and successful sends/transactions.",
+									"url": "https://support.metamask.io/it/configure/wallet/notifications/"
+								}
+							}
+						]
+					},
+					"priceAlerts": null,
+					"approvalAlerts": null,
+					"bridgeCompletion": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask wallet activity notifications cover bridging, swapping, buying crypto, staking, and unstaking actions.",
+									"url": "https://support.metamask.io/it/configure/wallet/notifications/"
+								}
+							}
+						]
+					},
+					"failedTransaction": null,
+					"securityAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask has security-alert features elsewhere in the dataset; notification docs also cover wallet activity monitoring.",
+									"url": "https://support.metamask.io/it/configure/wallet/notifications/"
+								}
+							}
+						]
+					},
+					"marketAlerts": null
+				},
+				"nftCapabilities": {
+					"ref": {
+						"explanation": "MetaMask NFT docs cover NFT display, sending/cash-out guidance, metadata display, suspicious NFT marking, and mint/airdrop workflows.",
+						"url": "https://support.metamask.io/manage-crypto/nfts/"
+					},
+					"display": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask displays NFTs in Extension, Mobile, and Portfolio, with NFT autodetect available on several networks.",
+									"url": "https://support.metamask.io/manage-crypto/nfts/nft-tokens-in-your-metamask-wallet"
+								}
+							}
+						]
+					},
+					"send": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask documents how to send, receive, or cash out NFTs.",
+									"url": "https://support.metamask.io/manage-crypto/nfts/how-do-i-send-receive-or-cash-out-an-nft"
+								}
+							}
+						]
+					},
+					"mint": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask NFT docs include guidance for viewing and claiming NFT airdrops and mints.",
+									"url": "https://support.metamask.io/manage-crypto/nfts/"
+								}
+							}
+						]
+					},
+					"marketplaceIntegration": null,
+					"spamNftHiding": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask Portfolio marks suspicious NFTs and can redact fraudulent URLs in NFT metadata.",
+									"url": "https://support.metamask.io/manage-crypto/nfts/an-nft-is-missing-marked-suspicious-or-not-displaying-correctly-in-metamask-portfolio/"
+								}
+							}
+						]
+					},
+					"collectionMetadataRefresh": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask NFT docs describe metadata retrieval/indexing and automatic NFT display in Portfolio and wallet surfaces.",
+									"url": "https://support.metamask.io/manage-crypto/nfts/an-nft-is-missing-marked-suspicious-or-not-displaying-correctly-in-metamask-portfolio/"
+								}
+							}
+						]
+					},
+					"royaltiesOrOffers": null
+				},
+				"defiPositionAwareness": {
+					"ref": {
+						"explanation": "MetaMask DeFi dashboard documentation describes monitoring supported protocols and positions by protocol, with balances, rewards, account address, and value.",
+						"url": "https://support.metamask.io/manage-crypto/portfolio/how-to-use-the-defi-dashboard-in-metamask-portfolio/"
+					},
+					"lendingPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask Portfolio DeFi dashboard shows existing positions on supported DeFi protocols.",
+									"url": "https://support.metamask.io/manage-crypto/portfolio/how-to-use-the-defi-dashboard-in-metamask-portfolio/"
+								}
+							}
+						]
+					},
+					"stakingPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask Portfolio DeFi dashboard and notifications include staking/unstaking positions and actions.",
+									"url": "https://support.metamask.io/it/configure/wallet/notifications/"
+								}
+							}
+						]
+					},
+					"lpPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask Portfolio DeFi dashboard groups supported protocol positions by protocol and position name.",
+									"url": "https://support.metamask.io/manage-crypto/portfolio/how-to-use-the-defi-dashboard-in-metamask-portfolio/"
+								}
+							}
+						]
+					},
+					"vaultPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask Portfolio DeFi dashboard shows protocol positions; whether a specific vault appears depends on supported protocol indexing.",
+									"url": "https://support.metamask.io/manage-crypto/portfolio/how-to-use-the-defi-dashboard-in-metamask-portfolio/"
+								}
+							}
+						]
+					},
+					"perProtocolBalances": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask DeFi dashboard is organized by protocols and shows balance, rewards, account address, and value under each position.",
+									"url": "https://support.metamask.io/manage-crypto/portfolio/how-to-use-the-defi-dashboard-in-metamask-portfolio/"
+								}
+							}
+						]
+					},
+					"claimableRewards": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask DeFi dashboard shows rewards for supported protocol positions.",
+									"url": "https://support.metamask.io/manage-crypto/portfolio/how-to-use-the-defi-dashboard-in-metamask-portfolio/"
+								}
+							}
+						]
+					},
+					"liquidationWarnings": null
+				},
+				"stakingEarn": {
+					"ref": {
+						"explanation": "MetaMask Portfolio advertises staking ETH and earning rewards; notifications cover staking and unstaking ETH on Lido and Rocket Pool.",
+						"url": "https://portfolio.metamask.io/"
+					},
+					"nativeStaking": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask Portfolio advertises staking ETH and earning rewards.",
+									"url": "https://portfolio.metamask.io/"
+								}
+							}
+						]
+					},
+					"liquidStaking": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask wallet notifications specifically mention staking and unstaking ETH on Lido and Rocket Pool.",
+									"url": "https://metamask.io/news/latest/introducing-wallet-notifications/"
+								}
+							}
+						]
+					},
+					"validatorChoice": null,
+					"apyDisplay": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask Portfolio staking surfaces reward information as part of its ETH staking product.",
+									"url": "https://portfolio.metamask.io/"
+								}
+							}
+						]
+					},
+					"rewardsClaiming": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask notification docs cover staking and unstaking ETH actions, indicating wallet support for staking lifecycle operations.",
+									"url": "https://support.metamask.io/it/configure/wallet/notifications/"
+								}
+							}
+						]
+					},
+					"providerDependency": "Staking provider-dependent; MetaMask docs mention Lido and Rocket Pool for staking/unstaking notification coverage.",
+					"lockupDisclosure": null
+				},
+				"customerSupport": {
+					"ref": {
+						"explanation": "MetaMask source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://metamask.io"
+					},
+					"liveChat": null,
+					"emailSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask publishes support, help center, or contact paths for wallet users.",
+									"url": "https://docs.metamask.io/"
+								}
+							}
+						]
+					},
+					"aiSupport": null,
+					"publishedSla": null,
+					"inAppHelpCenter": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask provides in-app or product-linked help/support content.",
+									"url": "https://docs.metamask.io/"
+								}
+							}
+						]
+					},
+					"transactionTroubleshooting": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask support docs include transaction or wallet troubleshooting material.",
+									"url": "https://docs.metamask.io/"
+								}
+							}
+						]
+					},
+					"scamRecoveryGuidance": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask support/security materials include scam, compromise, or recovery guidance.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					}
+				},
+				"developerOffering": {
+					"ref": {
+						"explanation": "MetaMask source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://metamask.io"
+					},
+					"walletSdk": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask publishes wallet developer docs, SDKs, or public wallet integration repositories.",
+									"url": "https://github.com/MetaMask/metamask-extension"
+								}
+							}
+						]
+					},
+					"embeddedWalletSdk": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask offers embedded wallet or embedded account SDK capabilities.",
+									"url": "https://github.com/MetaMask/metamask-extension"
+								}
+							}
+						]
+					},
+					"whiteLabelOffering": null,
+					"walletConnectSupport": {
+						"$ref": "featureSupported"
+					},
+					"eip6963": {
+						"$ref": "featureSupported"
+					},
+					"eip5792": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"$ref": "refTodo"
+								},
+								"atomicMultiTransactions": {
+									"$ref": "featureSupported"
+								}
+							}
+						]
+					},
+					"deepLinks": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask documents mobile deep links, universal links, or app-link connection flows.",
+									"url": "https://docs.metamask.io/"
+								}
+							}
+						]
+					},
+					"mobileLinkingQuality": "Mobile linking documented or product-supported; quality requires hands-on UX testing."
+				},
+				"pricingFeeModel": {
+					"ref": {
+						"explanation": "MetaMask buy/sell and card fee docs publish provider/region fee dependency and specific MetaMask fees where applicable.",
+						"url": "https://support.metamask.io/manage-crypto/move-crypto/sell/how-to-sell-your-crypto-assets-for-fiat-currency-in-metamask"
+					},
+					"swapFees": null,
+					"bridgeFees": null,
+					"onRampFees": "On-ramp fees are provider-, payment-method-, token-, and region-dependent.",
+					"spreadDisclosure": {
+						"$ref": "featureSupported"
+					},
+					"subscriptionFeatures": null,
+					"cardFees": "MetaMask sell docs say MetaMask receives a 1% fee on sell transactions from providers; MetaMask Card docs list card fee rows such as 0.875% for some non-stablecoin spending contexts.",
+					"hiddenPartnerRevenue": null
+				},
+				"releaseVelocity": {
+					"ref": {
+						"explanation": "MetaMask publishes public extension and mobile release notes through GitHub releases.",
+						"url": "https://github.com/MetaMask/metamask-extension/releases"
+					},
+					"latestReleaseDate": "2026-05-06",
+					"releaseFrequency": "ReleaseFrequency.IRREGULAR",
+					"appStoreUpdateCadence": null,
+					"githubActivity": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask extension releases are published on GitHub with versioned release notes.",
+									"url": "https://github.com/MetaMask/metamask-extension/releases"
+								}
+							}
+						]
+					},
+					"changelogDetail": "ChangelogDetail.DETAILED"
+				},
+				"deviceSync": {
+					"ref": {
+						"explanation": "MetaMask backup and sync documentation describes syncing accounts, account names, and contacts across devices using the same SRP.",
+						"url": "https://support.metamask.io/configure/wallet/account-backup-and-sync"
+					},
+					"syncsAccounts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask backup and sync automatically syncs accounts from default and imported SRPs across devices.",
+									"url": "https://support.metamask.io/configure/wallet/account-backup-and-sync"
+								}
+							}
+						]
+					},
+					"syncsSettings": null,
+					"syncsContactsOrAddressBook": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask backup and sync keeps contacts consistent across devices.",
+									"url": "https://support.metamask.io/configure/wallet/account-backup-and-sync"
+								}
+							}
+						]
+					},
+					"desktopMobileSync": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask backup and sync is available on Extension and Mobile for two or more devices with the same SRP.",
+									"url": "https://support.metamask.io/configure/wallet/account-backup-and-sync"
+								}
+							}
+						]
+					},
+					"cloudBackedSync": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask backup and sync hosts data encrypted client-side and syncs accounts/contacts across devices.",
+									"url": "https://support.metamask.io/configure/wallet/account-backup-and-sync"
+								}
+							}
+						]
+					},
+					"requiresSameSeedImport": {
+						"$ref": "notSupported"
+					}
+				}
 			}
 		},
 		"overrides": {

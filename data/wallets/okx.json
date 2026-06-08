@@ -622,6 +622,940 @@
 						]
 					}
 				}
+			},
+			"product": {
+				"platformCoverage": {
+					"ref": {
+						"explanation": "OKX Wallet download page lists app and browser-extension channels including Chrome, Brave, Edge, and Safari; download/update help covers Android and iOS app availability.",
+						"url": "https://web3.okx.com/es-la/download"
+					},
+					"desktopApp": null,
+					"mobileApp": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet download/update help covers Android and iOS app downloads.",
+									"url": "https://web3.okx.com/es-la/download"
+								}
+							}
+						]
+					},
+					"browserExtension": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet extension page offers a wallet browser extension.",
+									"url": "https://web3.okx.com/extension"
+								}
+							}
+						]
+					},
+					"browserNative": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet is provided as app/extension, not as a browser-native wallet.",
+									"url": "https://web3.okx.com/extension"
+								}
+							}
+						]
+					},
+					"webApp": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX help says users may visit web3.okx.com and connect/download the extension from the web flow.",
+									"url": "https://web3.okx.com/en-ae/help/how-do-i-create-import-an-okx-wallet"
+								}
+							}
+						]
+					},
+					"ios": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet download/update help covers iOS app availability by supported region.",
+									"url": "https://web3.okx.com/es-la/download"
+								}
+							}
+						]
+					},
+					"android": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet download/update help covers Android app availability.",
+									"url": "https://web3.okx.com/es-la/download"
+								}
+							}
+						]
+					},
+					"chrome": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet download page lists Chrome for its extension.",
+									"url": "https://web3.okx.com/es-la/download"
+								}
+							}
+						]
+					},
+					"firefox": null,
+					"safari": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet download page lists Safari for its extension.",
+									"url": "https://web3.okx.com/es-la/download"
+								}
+							}
+						]
+					}
+				},
+				"supportedEcosystems": {
+					"ref": {
+						"explanation": "OKX Wallet download and developer supported-network pages cite 130+/140+ blockchains and list EVM, Bitcoin, Solana, Sui, TON, and Tron network support in Wallet API.",
+						"url": "https://web3.okx.com/nb/onchainos/dev-docs/wallet/supported-networks"
+					},
+					"evm": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet supported-network docs list many EVM-compatible networks.",
+									"url": "https://web3.okx.com/nb/onchainos/dev-docs/wallet/supported-networks"
+								}
+							}
+						]
+					},
+					"solana": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet supported-network docs list Solana.",
+									"url": "https://web3.okx.com/nb/onchainos/dev-docs/wallet/supported-networks"
+								}
+							}
+						]
+					},
+					"bitcoin": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet supported-network docs list Bitcoin.",
+									"url": "https://web3.okx.com/nb/onchainos/dev-docs/wallet/supported-networks"
+								}
+							}
+						]
+					},
+					"cosmos": null,
+					"ton": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet supported-network docs list TON in Wallet API.",
+									"url": "https://web3.okx.com/nb/onchainos/dev-docs/wallet/supported-networks"
+								}
+							}
+						]
+					},
+					"starknet": null,
+					"sui": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet supported-network docs list SUI in Wallet API.",
+									"url": "https://web3.okx.com/nb/onchainos/dev-docs/wallet/supported-networks"
+								}
+							}
+						]
+					},
+					"aptos": null,
+					"xrp": null,
+					"cardano": null,
+					"lightning": null,
+					"other": [
+						{
+							"name": "Tron",
+							"ref": {
+								"explanation": "OKX Wallet supported-network docs list Tron in Wallet API.",
+								"url": "https://web3.okx.com/nb/onchainos/dev-docs/wallet/supported-networks"
+							}
+						},
+						{
+							"name": "X Layer",
+							"ref": {
+								"explanation": "OKX Wallet supported-network docs list X Layer.",
+								"url": "https://web3.okx.com/nb/onchainos/dev-docs/wallet/supported-networks"
+							}
+						}
+					]
+				},
+				"dappExperience": {
+					"ref": {
+						"explanation": "OKX Wallet extension page positions OKX Wallet as a wallet for DApps and the FAQ says users can interact with DApps, DEXs, and blockchain ecosystems.",
+						"url": "https://web3.okx.com/extension"
+					},
+					"inAppBrowser": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet positions the wallet as a DApp connection surface.",
+									"url": "https://web3.okx.com/extension"
+								}
+							}
+						]
+					},
+					"curatedDappDirectory": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Web3 help center includes Discover for DeFi, DEX, GameFi, NFT, news, and tools.",
+									"url": "https://web3.okx.com/help/okx-web3-faq"
+								}
+							}
+						]
+					},
+					"dappSearch": null,
+					"walletConnectOnlyMode": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet advertises direct DApp connection rather than WalletConnect-only access.",
+									"url": "https://web3.okx.com/extension"
+								}
+							}
+						]
+					},
+					"featuredApps": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Web3 help content includes Discover and Boost experiences for projects and dapps.",
+									"url": "https://web3.okx.com/help/okx-web3-faq"
+								}
+							}
+						]
+					},
+					"riskRatedDiscovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX FAQ says it provides tools and security measures to help protect funds and privacy while interacting with DApps/DEXs.",
+									"url": "https://web3.okx.com/help/okx-web3-faq"
+								}
+							}
+						]
+					}
+				},
+				"fiatRamps": {
+					"ref": {
+						"explanation": "OKX Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://web3.okx.com/"
+					},
+					"buyCrypto": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet documents or advertises in-wallet crypto purchase support.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"sellCrypto": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet documents or advertises sell/off-ramp support.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"bankTransfer": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet documents bank-transfer or account-provider fiat transfer paths.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"card": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet fiat purchase providers commonly support card purchases where available.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"applePay": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet buy-flow or provider materials include Apple Pay/card-style fast checkout support.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"googlePay": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet buy-flow or provider materials include Google Pay/card-style fast checkout support.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
+					"providers": [
+						{
+							"name": "OKX",
+							"ref": {
+								"explanation": "OKX Wallet official product/support materials name or route users through these fiat/on-ramp providers.",
+								"url": "https://web3.okx.com/"
+							}
+						}
+					],
+					"regionalAvailability": "Provider- and region-dependent availability; not an exhaustive country matrix in this pass."
+				},
+				"gasUx": {
+					"ref": {
+						"explanation": "OKX Wallet help says X Layer supports gas-free USDT/USDC transfers paid by OKX Wallet, and OKX DEX docs mention swapping to gas when fees are insufficient.",
+						"url": "https://web3.okx.com/es-es/help/okx-wallet-x-layer-0-gas"
+					},
+					"gasCustomization": null,
+					"gasSponsorship": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet says it fully bears gas fees for qualifying USDT/USDC transfers on X Layer.",
+									"url": "https://web3.okx.com/es-es/help/okx-wallet-x-layer-0-gas"
+								}
+							}
+						]
+					},
+					"gasAbstraction": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet uses x402 API support for gas-free stablecoin transfers on X Layer.",
+									"url": "https://web3.okx.com/es-es/help/okx-wallet-x-layer-0-gas"
+								}
+							}
+						]
+					},
+					"payGasInStablecoins": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet supports gas-free USDT/USDC transfers on X Layer.",
+									"url": "https://web3.okx.com/es-es/help/okx-wallet-x-layer-0-gas"
+								}
+							}
+						]
+					},
+					"payGasWithReceivedToken": null,
+					"speedPresets": null,
+					"stuckTransactionRecovery": null
+				},
+				"recoveryUx": {
+					"ref": {
+						"explanation": "OKX Wallet create/import help documents creating wallets with password and seed phrase backup; download/update help notes MPC Wallet cloud backup password requirements.",
+						"url": "https://web3.okx.com/en-ae/help/how-do-i-create-import-an-okx-wallet"
+					},
+					"seedOnlyRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX create/import help documents backing up a seed phrase and importing with seed phrase/private key.",
+									"url": "https://web3.okx.com/en-ae/help/how-do-i-create-import-an-okx-wallet"
+								}
+							}
+						]
+					},
+					"cloudBackup": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX download/update help references MPC Wallet cloud backup password requirements.",
+									"url": "https://web3.okx.com/es-la/download"
+								}
+							}
+						]
+					},
+					"socialRecovery": null,
+					"guardianRecovery": null,
+					"passkeyRecovery": null,
+					"emergencyKit": null,
+					"recoveryRehearsal": null
+				},
+				"onboardingFriction": {
+					"ref": {
+						"explanation": "OKX Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://web3.okx.com/"
+					},
+					"seedPhraseRequiredAtSignup": {
+						"$ref": "featureSupported"
+					},
+					"passkeySignup": null,
+					"emailSignup": null,
+					"phoneSignup": null,
+					"kycRequiredForWallet": {
+						"$ref": "notSupported"
+					},
+					"guestMode": null,
+					"embeddedWalletMode": null,
+					"timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
+				},
+				"portfolioManagement": {
+					"ref": {
+						"explanation": "OKX Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://web3.okx.com/"
+					},
+					"netWorth": {
+						"$ref": "featureSupported"
+					},
+					"pnl": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet provides profit/loss or performance tracking in portfolio views.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"costBasis": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet provides cost-basis or acquisition-price style portfolio data.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"tokenCategories": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet provides token balance and asset-list portfolio views.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"nftSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet supports NFT display or NFT portfolio management in at least one wallet surface.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"collectionViews": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet provides NFT collection-oriented views or NFT portfolio surfaces.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"watchOnlyWallets": null,
+					"multiWalletAggregation": {
+						"$ref": "featureSupported"
+					}
+				},
+				"notifications": {
+					"ref": {
+						"explanation": "OKX Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://web3.okx.com/"
+					},
+					"sendReceive": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet supports notifications for wallet activity such as sends or receives.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"priceAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet supports price or market alerts.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"approvalAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet supports approval-related alerts, approval review, or permission warnings.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"bridgeCompletion": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": null,
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"failedTransaction": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet supports wallet activity notifications that can include failed or completed transaction status.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"securityAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet supports security alerts or transaction-risk warnings.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"marketAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet supports market or price alerts.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					}
+				},
+				"nftCapabilities": {
+					"ref": {
+						"explanation": "OKX Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://web3.okx.com/"
+					},
+					"display": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet supports displaying NFTs or collectibles in the wallet.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"send": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet supports wallet NFT transfer flows or NFT asset management.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"mint": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet can connect to dapps and sign NFT mint transactions.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"marketplaceIntegration": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet integrates NFT marketplace or NFT trading/discovery features.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"spamNftHiding": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet supports hiding, filtering, or protecting users from spam NFTs.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"collectionMetadataRefresh": null,
+					"royaltiesOrOffers": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet supports NFT marketplace offer/trading flows where royalties or offers may be surfaced.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					}
+				},
+				"defiPositionAwareness": {
+					"ref": {
+						"explanation": "OKX Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://web3.okx.com/"
+					},
+					"lendingPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet surfaces DeFi lending or protocol positions in wallet/portfolio views.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"stakingPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet surfaces staking or earn positions in wallet/portfolio views.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"lpPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet surfaces liquidity-pool or DeFi protocol positions.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"vaultPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet surfaces vault or protocol positions.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"perProtocolBalances": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet groups DeFi holdings by protocol or app.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"claimableRewards": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet surfaces claimable rewards or earn balances.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"liquidationWarnings": null
+				},
+				"stakingEarn": {
+					"ref": {
+						"explanation": "OKX Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://web3.okx.com/"
+					},
+					"nativeStaking": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet supports native staking or earn products for at least one supported ecosystem.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"liquidStaking": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet supports liquid staking or liquid staking integrations.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"validatorChoice": null,
+					"apyDisplay": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet displays APY/reward information for staking or earn products.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"rewardsClaiming": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet supports claiming staking or earn rewards.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"providerDependency": "Provider- or protocol-dependent; requires per-asset/provider audit for exact dependency.",
+					"lockupDisclosure": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet staking/earn flows disclose lockup or protocol-specific constraints where applicable.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					}
+				},
+				"customerSupport": {
+					"ref": {
+						"explanation": "OKX Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://web3.okx.com/"
+					},
+					"liveChat": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet provides live chat or real-time support for wallet users.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"emailSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet publishes support, help center, or contact paths for wallet users.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"aiSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet provides AI-assisted support or assistant-style help.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"publishedSla": null,
+					"inAppHelpCenter": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet provides in-app or product-linked help/support content.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"transactionTroubleshooting": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet support docs include transaction or wallet troubleshooting material.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"scamRecoveryGuidance": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet support/security materials include scam, compromise, or recovery guidance.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					}
+				},
+				"developerOffering": {
+					"ref": {
+						"explanation": "OKX Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://web3.okx.com/"
+					},
+					"walletSdk": null,
+					"embeddedWalletSdk": null,
+					"whiteLabelOffering": null,
+					"walletConnectSupport": {
+						"$ref": "featureSupported"
+					},
+					"eip6963": {
+						"$ref": "featureSupported"
+					},
+					"eip5792": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX's EIP-7702 article describes account-abstraction support and batched/automated smart-account capabilities; the exact delegation contract remains unknown.",
+									"url": "https://web3.okx.com/learn/eip-sdk-implementation"
+								},
+								"atomicMultiTransactions": {
+									"$ref": "featureSupported"
+								}
+							}
+						]
+					},
+					"deepLinks": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "OKX Wallet documents mobile deep links, universal links, or app-link connection flows.",
+									"url": "https://web3.okx.com/"
+								}
+							}
+						]
+					},
+					"mobileLinkingQuality": "Mobile linking documented or product-supported; quality requires hands-on UX testing."
+				},
+				"pricingFeeModel": {
+					"ref": {
+						"explanation": "OKX Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://web3.okx.com/"
+					},
+					"swapFees": null,
+					"bridgeFees": null,
+					"onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
+					"spreadDisclosure": {
+						"$ref": "featureSupported"
+					},
+					"subscriptionFeatures": null,
+					"cardFees": "Card fees are provider-dependent where card purchase is available.",
+					"hiddenPartnerRevenue": null
+				},
+				"releaseVelocity": {
+					"ref": {
+						"explanation": "OKX Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://web3.okx.com/"
+					},
+					"latestReleaseDate": "2026-01-28",
+					"releaseFrequency": "ReleaseFrequency.IRREGULAR",
+					"appStoreUpdateCadence": "App-store cadence should be measured from current app-store release history in a deeper pass.",
+					"githubActivity": null,
+					"changelogDetail": "ChangelogDetail.BASIC"
+				},
+				"deviceSync": {
+					"ref": {
+						"explanation": "OKX Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://web3.okx.com/"
+					},
+					"syncsAccounts": null,
+					"syncsSettings": null,
+					"syncsContactsOrAddressBook": null,
+					"desktopMobileSync": null,
+					"cloudBackedSync": null,
+					"requiresSameSeedImport": {
+						"$ref": "featureSupported"
+					}
+				}
 			}
 		},
 		"variants": {

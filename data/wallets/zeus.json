@@ -645,6 +645,544 @@
 						]
 					}
 				}
+			},
+			"product": {
+				"platformCoverage": {
+					"ref": {
+						"explanation": "ZEUS docs describe ZEUS as a mobile Bitcoin wallet available on Google Play, Apple App Store, and F-Droid.",
+						"url": "https://docs.zeusln.app/"
+					},
+					"desktopApp": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "ZEUS docs describe a mobile app, not desktop.",
+									"url": "https://docs.zeusln.app/"
+								}
+							}
+						]
+					},
+					"mobileApp": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "ZEUS docs describe a mobile Bitcoin wallet.",
+									"url": "https://docs.zeusln.app/"
+								}
+							}
+						]
+					},
+					"browserExtension": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "ZEUS docs do not describe browser extension support.",
+									"url": "https://docs.zeusln.app/"
+								}
+							}
+						]
+					},
+					"browserNative": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "ZEUS is a mobile app, not browser-native.",
+									"url": "https://docs.zeusln.app/"
+								}
+							}
+						]
+					},
+					"webApp": null,
+					"ios": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "ZEUS docs say it is available on Apple App Store.",
+									"url": "https://docs.zeusln.app/"
+								}
+							}
+						]
+					},
+					"android": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "ZEUS docs say it is available on Google Play and F-Droid.",
+									"url": "https://docs.zeusln.app/"
+								}
+							}
+						]
+					},
+					"chrome": null,
+					"firefox": null,
+					"safari": null
+				},
+				"supportedEcosystems": {
+					"ref": {
+						"explanation": "ZEUS docs describe ZEUS as Bitcoin-only with on-chain and Lightning accounts.",
+						"url": "https://docs.zeusln.app/"
+					},
+					"evm": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "ZEUS is documented as Bitcoin-only.",
+									"url": "https://docs.zeusln.app/"
+								}
+							}
+						]
+					},
+					"solana": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "ZEUS is documented as Bitcoin-only.",
+									"url": "https://docs.zeusln.app/"
+								}
+							}
+						]
+					},
+					"bitcoin": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "ZEUS is a Bitcoin wallet with on-chain accounts.",
+									"url": "https://docs.zeusln.app/"
+								}
+							}
+						]
+					},
+					"cosmos": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "ZEUS is documented as Bitcoin-only.",
+									"url": "https://docs.zeusln.app/"
+								}
+							}
+						]
+					},
+					"ton": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "ZEUS is documented as Bitcoin-only.",
+									"url": "https://docs.zeusln.app/"
+								}
+							}
+						]
+					},
+					"starknet": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "ZEUS is documented as Bitcoin-only.",
+									"url": "https://docs.zeusln.app/"
+								}
+							}
+						]
+					},
+					"sui": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "ZEUS is documented as Bitcoin-only.",
+									"url": "https://docs.zeusln.app/"
+								}
+							}
+						]
+					},
+					"aptos": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "ZEUS is documented as Bitcoin-only.",
+									"url": "https://docs.zeusln.app/"
+								}
+							}
+						]
+					},
+					"xrp": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "ZEUS is documented as Bitcoin-only.",
+									"url": "https://docs.zeusln.app/"
+								}
+							}
+						]
+					},
+					"cardano": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "ZEUS is documented as Bitcoin-only.",
+									"url": "https://docs.zeusln.app/"
+								}
+							}
+						]
+					},
+					"lightning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "ZEUS has full Bitcoin Lightning wallet functionality and Lightning accounts.",
+									"url": "https://docs.zeusln.app/"
+								}
+							}
+						]
+					},
+					"other": []
+				},
+				"dappExperience": {
+					"ref": {
+						"explanation": "ZEUS docs describe Lightning and node-management wallet functions, not Web3 dapp browsing.",
+						"url": "https://docs.zeusln.app/"
+					},
+					"inAppBrowser": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "ZEUS docs do not document an in-app Web3 dapp browser.",
+									"url": "https://docs.zeusln.app/"
+								}
+							}
+						]
+					},
+					"curatedDappDirectory": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "ZEUS docs do not document a dapp directory.",
+									"url": "https://docs.zeusln.app/"
+								}
+							}
+						]
+					},
+					"dappSearch": null,
+					"walletConnectOnlyMode": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "ZEUS is a Bitcoin/Lightning wallet, not a WalletConnect-only Web3 wallet.",
+									"url": "https://docs.zeusln.app/"
+								}
+							}
+						]
+					},
+					"featuredApps": null,
+					"riskRatedDiscovery": null
+				},
+				"fiatRamps": {
+					"ref": {
+						"explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://github.com/greekfetacheese/zeus"
+					},
+					"buyCrypto": null,
+					"sellCrypto": null,
+					"bankTransfer": null,
+					"card": null,
+					"applePay": null,
+					"googlePay": null,
+					"kycDependency": "KYCDependency.UNKNOWN",
+					"providers": [],
+					"regionalAvailability": null
+				},
+				"gasUx": {
+					"ref": {
+						"explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://github.com/greekfetacheese/zeus"
+					},
+					"gasCustomization": null,
+					"gasSponsorship": null,
+					"gasAbstraction": null,
+					"payGasInStablecoins": null,
+					"payGasWithReceivedToken": null,
+					"speedPresets": null,
+					"stuckTransactionRecovery": null
+				},
+				"recoveryUx": {
+					"ref": {
+						"explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://github.com/greekfetacheese/zeus"
+					},
+					"seedOnlyRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zeus supports recovery/import through a seed or secret recovery phrase.",
+									"url": "https://github.com/greekfetacheese/zeus"
+								}
+							}
+						]
+					},
+					"cloudBackup": null,
+					"socialRecovery": null,
+					"guardianRecovery": null,
+					"passkeyRecovery": null,
+					"emergencyKit": null,
+					"recoveryRehearsal": null
+				},
+				"onboardingFriction": {
+					"ref": {
+						"explanation": "ZEUS docs say ZEUS is self-custodial, no KYC, PIN/passphrase encrypted, and supports connecting to own node/LNDHub.",
+						"url": "https://docs.zeusln.app/"
+					},
+					"seedPhraseRequiredAtSignup": null,
+					"passkeySignup": null,
+					"emailSignup": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "ZEUS docs do not describe email signup.",
+									"url": "https://docs.zeusln.app/"
+								}
+							}
+						]
+					},
+					"phoneSignup": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "ZEUS docs do not describe phone signup.",
+									"url": "https://docs.zeusln.app/"
+								}
+							}
+						]
+					},
+					"kycRequiredForWallet": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "ZEUS docs explicitly say no KYC.",
+									"url": "https://docs.zeusln.app/"
+								}
+							}
+						]
+					},
+					"guestMode": null,
+					"embeddedWalletMode": null,
+					"timeToFirstWallet": "OnboardingSpeed.UNKNOWN"
+				},
+				"portfolioManagement": {
+					"ref": {
+						"explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://github.com/greekfetacheese/zeus"
+					},
+					"netWorth": {
+						"$ref": "featureSupported"
+					},
+					"pnl": null,
+					"costBasis": null,
+					"tokenCategories": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zeus provides token balance and asset-list portfolio views.",
+									"url": "https://github.com/greekfetacheese/zeus"
+								}
+							}
+						]
+					},
+					"nftSupport": null,
+					"collectionViews": null,
+					"watchOnlyWallets": null,
+					"multiWalletAggregation": {
+						"$ref": "featureSupported"
+					}
+				},
+				"notifications": {
+					"ref": {
+						"explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://github.com/greekfetacheese/zeus"
+					},
+					"sendReceive": null,
+					"priceAlerts": null,
+					"approvalAlerts": null,
+					"bridgeCompletion": null,
+					"failedTransaction": null,
+					"securityAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zeus supports security alerts or transaction-risk warnings.",
+									"url": "https://github.com/greekfetacheese/zeus"
+								}
+							}
+						]
+					},
+					"marketAlerts": null
+				},
+				"nftCapabilities": {
+					"ref": {
+						"explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://github.com/greekfetacheese/zeus"
+					},
+					"display": null,
+					"send": null,
+					"mint": null,
+					"marketplaceIntegration": null,
+					"spamNftHiding": null,
+					"collectionMetadataRefresh": null,
+					"royaltiesOrOffers": null
+				},
+				"defiPositionAwareness": {
+					"ref": {
+						"explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://github.com/greekfetacheese/zeus"
+					},
+					"lendingPositions": null,
+					"stakingPositions": null,
+					"lpPositions": null,
+					"vaultPositions": null,
+					"perProtocolBalances": null,
+					"claimableRewards": null,
+					"liquidationWarnings": null
+				},
+				"stakingEarn": {
+					"ref": {
+						"explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://github.com/greekfetacheese/zeus"
+					},
+					"nativeStaking": null,
+					"liquidStaking": null,
+					"validatorChoice": null,
+					"apyDisplay": null,
+					"rewardsClaiming": null,
+					"providerDependency": null,
+					"lockupDisclosure": null
+				},
+				"customerSupport": {
+					"ref": {
+						"explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://github.com/greekfetacheese/zeus"
+					},
+					"liveChat": null,
+					"emailSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zeus publishes support, help center, or contact paths for wallet users.",
+									"url": "https://github.com/greekfetacheese/zeus"
+								}
+							}
+						]
+					},
+					"aiSupport": null,
+					"publishedSla": null,
+					"inAppHelpCenter": null,
+					"transactionTroubleshooting": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zeus support docs include transaction or wallet troubleshooting material.",
+									"url": "https://github.com/greekfetacheese/zeus"
+								}
+							}
+						]
+					},
+					"scamRecoveryGuidance": null
+				},
+				"developerOffering": {
+					"ref": {
+						"explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://github.com/greekfetacheese/zeus"
+					},
+					"walletSdk": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zeus publishes wallet developer docs, SDKs, or public wallet integration repositories.",
+									"url": "https://github.com/greekfetacheese/zeus"
+								}
+							}
+						]
+					},
+					"embeddedWalletSdk": null,
+					"whiteLabelOffering": null,
+					"walletConnectSupport": null,
+					"eip6963": null,
+					"eip5792": null,
+					"deepLinks": null,
+					"mobileLinkingQuality": null
+				},
+				"pricingFeeModel": {
+					"ref": {
+						"explanation": "ZEUS docs say ZEUS has no processing fees.",
+						"url": "https://docs.zeusln.app/"
+					},
+					"swapFees": null,
+					"bridgeFees": null,
+					"onRampFees": null,
+					"spreadDisclosure": null,
+					"subscriptionFeatures": null,
+					"cardFees": null,
+					"hiddenPartnerRevenue": null
+				},
+				"releaseVelocity": {
+					"ref": {
+						"explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://github.com/greekfetacheese/zeus"
+					},
+					"latestReleaseDate": "2026-01-12",
+					"releaseFrequency": "ReleaseFrequency.IRREGULAR",
+					"appStoreUpdateCadence": null,
+					"githubActivity": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zeus has public GitHub repository activity or releases that can be tracked.",
+									"url": "https://github.com/greekfetacheese/zeus"
+								}
+							}
+						]
+					},
+					"changelogDetail": "ChangelogDetail.BASIC"
+				},
+				"deviceSync": {
+					"ref": {
+						"explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://github.com/greekfetacheese/zeus"
+					},
+					"syncsAccounts": null,
+					"syncsSettings": null,
+					"syncsContactsOrAddressBook": null,
+					"desktopMobileSync": null,
+					"cloudBackedSync": null,
+					"requiresSameSeedImport": {
+						"$ref": "featureSupported"
+					}
+				}
 			}
 		},
 		"variants": {

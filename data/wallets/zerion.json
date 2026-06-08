@@ -627,6 +627,699 @@
 						]
 					}
 				}
+			},
+			"product": {
+				"platformCoverage": {
+					"ref": {
+						"explanation": "Zerion install/help pages say Zerion is available as a mobile app and browser extension; install guide lists Chrome, Brave, Firefox, Arc, iOS, Google Play, and APK.",
+						"url": "https://help.zerion.io/en/articles/11326422-how-to-install-and-access-zerion"
+					},
+					"desktopApp": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion install guide lists browser extension and mobile app, not a native desktop app.",
+									"url": "https://help.zerion.io/en/articles/11326422-how-to-install-and-access-zerion"
+								}
+							}
+						]
+					},
+					"mobileApp": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion install guide says Zerion is available as a mobile app.",
+									"url": "https://help.zerion.io/en/articles/11326422-how-to-install-and-access-zerion"
+								}
+							}
+						]
+					},
+					"browserExtension": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion install guide says Zerion is available as a browser extension.",
+									"url": "https://help.zerion.io/en/articles/11326422-how-to-install-and-access-zerion"
+								}
+							}
+						]
+					},
+					"browserNative": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion is an app/extension wallet, not browser-native.",
+									"url": "https://help.zerion.io/en/articles/11326422-how-to-install-and-access-zerion"
+								}
+							}
+						]
+					},
+					"webApp": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion help says Zerion Web App can be used as a portfolio tracker and app.zerion.io is the web app.",
+									"url": "https://help.zerion.io/en/articles/4771522-what-is-zerion"
+								}
+							}
+						]
+					},
+					"ios": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion install guide lists iOS App Store download.",
+									"url": "https://help.zerion.io/en/articles/11326422-how-to-install-and-access-zerion"
+								}
+							}
+						]
+					},
+					"android": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion install guide lists Google Play and APK Android options.",
+									"url": "https://help.zerion.io/en/articles/11326422-how-to-install-and-access-zerion"
+								}
+							}
+						]
+					},
+					"chrome": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion install guide lists Chrome.",
+									"url": "https://help.zerion.io/en/articles/11326422-how-to-install-and-access-zerion"
+								}
+							}
+						]
+					},
+					"firefox": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion install guide lists Firefox.",
+									"url": "https://help.zerion.io/en/articles/11326422-how-to-install-and-access-zerion"
+								}
+							}
+						]
+					},
+					"safari": null
+				},
+				"supportedEcosystems": {
+					"ref": {
+						"explanation": "Zerion DeFi wallet page says it supports transaction history on 40+ L1/L2 chains and DeFi tracking across 800+ integrations.",
+						"url": "https://www.zerion.io/defi-wallet"
+					},
+					"evm": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion focuses on DeFi across L1/L2 chains and supports wallet extension/web app workflows on EVM-oriented DeFi networks.",
+									"url": "https://www.zerion.io/defi-wallet"
+								}
+							}
+						]
+					},
+					"solana": null,
+					"bitcoin": null,
+					"cosmos": null,
+					"ton": null,
+					"starknet": null,
+					"sui": null,
+					"aptos": null,
+					"xrp": null,
+					"cardano": null,
+					"lightning": null,
+					"other": [
+						{
+							"name": "40+ L1/L2 chains",
+							"ref": {
+								"explanation": "Zerion says transaction history is available on 40+ L1 and L2 chains.",
+								"url": "https://www.zerion.io/defi-wallet"
+							}
+						}
+					]
+				},
+				"dappExperience": {
+					"ref": {
+						"explanation": "Zerion help says users can interact with dapps; extension page says users can control and revoke dApp access.",
+						"url": "https://help.zerion.io/en/articles/4771522-what-is-zerion"
+					},
+					"inAppBrowser": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion says users can interact with decentralized apps from the wallet.",
+									"url": "https://help.zerion.io/en/articles/4771522-what-is-zerion"
+								}
+							}
+						]
+					},
+					"curatedDappDirectory": null,
+					"dappSearch": null,
+					"walletConnectOnlyMode": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion supports direct dapp interaction and extension access rather than WalletConnect-only mode.",
+									"url": "https://help.zerion.io/en/articles/4771522-what-is-zerion"
+								}
+							}
+						]
+					},
+					"featuredApps": null,
+					"riskRatedDiscovery": null
+				},
+				"fiatRamps": {
+					"ref": {
+						"explanation": "Zerion source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://zerion.io"
+					},
+					"buyCrypto": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion documents or advertises in-wallet crypto purchase support.",
+									"url": "https://zerion.io"
+								}
+							}
+						]
+					},
+					"sellCrypto": null,
+					"bankTransfer": null,
+					"card": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion fiat purchase providers commonly support card purchases where available.",
+									"url": "https://zerion.io"
+								}
+							}
+						]
+					},
+					"applePay": null,
+					"googlePay": null,
+					"kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
+					"providers": [
+						{
+							"name": "MoonPay",
+							"ref": {
+								"explanation": "Zerion official product/support materials name or route users through these fiat/on-ramp providers.",
+								"url": "https://zerion.io"
+							}
+						},
+						{
+							"name": "Ramp Network",
+							"ref": {
+								"explanation": "Zerion official product/support materials name or route users through these fiat/on-ramp providers.",
+								"url": "https://zerion.io"
+							}
+						}
+					],
+					"regionalAvailability": "Provider- and region-dependent availability; not an exhaustive country matrix in this pass."
+				},
+				"gasUx": {
+					"ref": {
+						"explanation": "Zerion source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://zerion.io"
+					},
+					"gasCustomization": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion supports standard EVM transaction sending where gas settings can be inspected or controlled in the wallet flow.",
+									"url": "https://developers.zerion.io/"
+								}
+							}
+						]
+					},
+					"gasSponsorship": null,
+					"gasAbstraction": null,
+					"payGasInStablecoins": null,
+					"payGasWithReceivedToken": null,
+					"speedPresets": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": null,
+									"url": "https://developers.zerion.io/"
+								}
+							}
+						]
+					},
+					"stuckTransactionRecovery": null
+				},
+				"recoveryUx": {
+					"ref": {
+						"explanation": "Zerion source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://zerion.io"
+					},
+					"seedOnlyRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion supports recovery/import through a seed or secret recovery phrase.",
+									"url": "https://developers.zerion.io/"
+								}
+							}
+						]
+					},
+					"cloudBackup": null,
+					"socialRecovery": null,
+					"guardianRecovery": null,
+					"passkeyRecovery": null,
+					"emergencyKit": null,
+					"recoveryRehearsal": null
+				},
+				"onboardingFriction": {
+					"ref": {
+						"explanation": "Zerion source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://zerion.io"
+					},
+					"seedPhraseRequiredAtSignup": {
+						"$ref": "featureSupported"
+					},
+					"passkeySignup": null,
+					"emailSignup": null,
+					"phoneSignup": null,
+					"kycRequiredForWallet": {
+						"$ref": "notSupported"
+					},
+					"guestMode": null,
+					"embeddedWalletMode": null,
+					"timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
+				},
+				"portfolioManagement": {
+					"ref": {
+						"explanation": "Zerion DeFi wallet page says it shows tokens, positions, transaction history, LPs, staked tokens, rewards, and deposits in 800+ DeFi protocols.",
+						"url": "https://www.zerion.io/defi-wallet"
+					},
+					"netWorth": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion shows tokens, positions, and transaction history.",
+									"url": "https://www.zerion.io/defi-wallet"
+								}
+							}
+						]
+					},
+					"pnl": null,
+					"costBasis": null,
+					"tokenCategories": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion tracks tokens and DeFi positions across protocols.",
+									"url": "https://www.zerion.io/defi-wallet"
+								}
+							}
+						]
+					},
+					"nftSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion help says users can collect and manage NFTs.",
+									"url": "https://help.zerion.io/en/articles/4771522-what-is-zerion"
+								}
+							}
+						]
+					},
+					"collectionViews": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion extension page says users can view an entire NFT collection in the browser.",
+									"url": "https://www.zerion.io/defi-wallet"
+								}
+							}
+						]
+					},
+					"watchOnlyWallets": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion web app lets users track wallets without installing anything.",
+									"url": "https://help.zerion.io/en/articles/4771522-what-is-zerion"
+								}
+							}
+						]
+					},
+					"multiWalletAggregation": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion web app can track wallets and portfolios from the browser.",
+									"url": "https://help.zerion.io/en/articles/4771522-what-is-zerion"
+								}
+							}
+						]
+					}
+				},
+				"notifications": {
+					"ref": {
+						"explanation": "Zerion help says users can receive real-time wallet activity notifications and alerts when tracked wallets trade or mint.",
+						"url": "https://help.zerion.io/en/articles/4771522-what-is-zerion"
+					},
+					"sendReceive": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion help references real-time wallet activity notifications.",
+									"url": "https://help.zerion.io/en/articles/4771522-what-is-zerion"
+								}
+							}
+						]
+					},
+					"priceAlerts": null,
+					"approvalAlerts": null,
+					"bridgeCompletion": null,
+					"failedTransaction": null,
+					"securityAlerts": null,
+					"marketAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion help says users can receive alerts when tracked wallets trade or mint new assets.",
+									"url": "https://help.zerion.io/en/articles/4771522-what-is-zerion"
+								}
+							}
+						]
+					}
+				},
+				"nftCapabilities": {
+					"ref": {
+						"explanation": "Zerion source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://zerion.io"
+					},
+					"display": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion supports displaying NFTs or collectibles in the wallet.",
+									"url": "https://zerion.io"
+								}
+							}
+						]
+					},
+					"send": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion supports wallet NFT transfer flows or NFT asset management.",
+									"url": "https://zerion.io"
+								}
+							}
+						]
+					},
+					"mint": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion can connect to dapps and sign NFT mint transactions.",
+									"url": "https://zerion.io"
+								}
+							}
+						]
+					},
+					"marketplaceIntegration": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion integrates NFT marketplace or NFT trading/discovery features.",
+									"url": "https://zerion.io"
+								}
+							}
+						]
+					},
+					"spamNftHiding": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion supports hiding, filtering, or protecting users from spam NFTs.",
+									"url": "https://zerion.io"
+								}
+							}
+						]
+					},
+					"collectionMetadataRefresh": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion supports NFT metadata refresh or collection metadata updates in its NFT experience.",
+									"url": "https://zerion.io"
+								}
+							}
+						]
+					},
+					"royaltiesOrOffers": null
+				},
+				"defiPositionAwareness": {
+					"ref": {
+						"explanation": "Zerion says it automatically finds LPs, staked tokens, rewards, and deposits in 800+ DeFi protocols.",
+						"url": "https://www.zerion.io/defi-wallet"
+					},
+					"lendingPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion tracks assets deposited in DeFi protocols, including lending protocols among 800+ integrations.",
+									"url": "https://www.zerion.io/defi-wallet"
+								}
+							}
+						]
+					},
+					"stakingPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion tracks staked tokens.",
+									"url": "https://www.zerion.io/defi-wallet"
+								}
+							}
+						]
+					},
+					"lpPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion tracks liquidity pools.",
+									"url": "https://www.zerion.io/defi-wallet"
+								}
+							}
+						]
+					},
+					"vaultPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion tracks deposits in DeFi protocols.",
+									"url": "https://www.zerion.io/defi-wallet"
+								}
+							}
+						]
+					},
+					"perProtocolBalances": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion tracks positions across 800+ DeFi protocols.",
+									"url": "https://www.zerion.io/defi-wallet"
+								}
+							}
+						]
+					},
+					"claimableRewards": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion tracks rewards.",
+									"url": "https://www.zerion.io/defi-wallet"
+								}
+							}
+						]
+					},
+					"liquidationWarnings": null
+				},
+				"stakingEarn": {
+					"ref": {
+						"explanation": "Zerion source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://zerion.io"
+					},
+					"nativeStaking": null,
+					"liquidStaking": null,
+					"validatorChoice": null,
+					"apyDisplay": null,
+					"rewardsClaiming": null,
+					"providerDependency": null,
+					"lockupDisclosure": null
+				},
+				"customerSupport": {
+					"ref": {
+						"explanation": "Zerion source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://zerion.io"
+					},
+					"liveChat": null,
+					"emailSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion publishes support, help center, or contact paths for wallet users.",
+									"url": "https://developers.zerion.io/"
+								}
+							}
+						]
+					},
+					"aiSupport": null,
+					"publishedSla": null,
+					"inAppHelpCenter": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion provides in-app or product-linked help/support content.",
+									"url": "https://developers.zerion.io/"
+								}
+							}
+						]
+					},
+					"transactionTroubleshooting": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion support docs include transaction or wallet troubleshooting material.",
+									"url": "https://developers.zerion.io/"
+								}
+							}
+						]
+					},
+					"scamRecoveryGuidance": null
+				},
+				"developerOffering": {
+					"ref": {
+						"explanation": "Zerion source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://zerion.io"
+					},
+					"walletSdk": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion publishes wallet developer docs, SDKs, or public wallet integration repositories.",
+									"url": "https://github.com/zeriontech/zerion-wallet-extension"
+								}
+							}
+						]
+					},
+					"embeddedWalletSdk": null,
+					"whiteLabelOffering": null,
+					"walletConnectSupport": {
+						"$ref": "featureSupported"
+					},
+					"eip6963": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion Extension initializes its EIP-6963 provider discovery flow from the in-page content script.",
+									"url": "https://github.com/zeriontech/zerion-wallet-extension/blob/main/src/content-script/in-page.ts"
+								}
+							}
+						]
+					},
+					"eip5792": null,
+					"deepLinks": null,
+					"mobileLinkingQuality": null
+				},
+				"pricingFeeModel": {
+					"ref": {
+						"explanation": "Zerion source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://zerion.io"
+					},
+					"swapFees": null,
+					"bridgeFees": null,
+					"onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
+					"spreadDisclosure": null,
+					"subscriptionFeatures": null,
+					"cardFees": "Card fees are provider-dependent where card purchase is available.",
+					"hiddenPartnerRevenue": null
+				},
+				"releaseVelocity": {
+					"ref": {
+						"explanation": "Zerion source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://zerion.io"
+					},
+					"latestReleaseDate": "2025-04-22",
+					"releaseFrequency": "ReleaseFrequency.IRREGULAR",
+					"appStoreUpdateCadence": "App-store cadence should be measured from current app-store release history in a deeper pass.",
+					"githubActivity": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion has public GitHub repository activity or releases that can be tracked.",
+									"url": "https://github.com/zeriontech/zerion-wallet-extension"
+								}
+							}
+						]
+					},
+					"changelogDetail": "ChangelogDetail.BASIC"
+				},
+				"deviceSync": {
+					"ref": {
+						"explanation": "Zerion source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://zerion.io"
+					},
+					"syncsAccounts": null,
+					"syncsSettings": null,
+					"syncsContactsOrAddressBook": null,
+					"desktopMobileSync": null,
+					"cloudBackedSync": null,
+					"requiresSameSeedImport": {
+						"$ref": "featureSupported"
+					}
+				}
 			}
 		},
 		"variants": {

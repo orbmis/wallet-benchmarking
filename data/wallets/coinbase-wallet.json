@@ -404,6 +404,947 @@
 						]
 					}
 				}
+			},
+			"product": {
+				"platformCoverage": {
+					"ref": {
+						"explanation": "Coinbase Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://wallet.coinbase.com/"
+					},
+					"desktopApp": null,
+					"mobileApp": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet has a mobile wallet variant recorded in the dataset.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"browserExtension": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet publishes a browser extension listing.",
+									"url": "https://chromewebstore.google.com/detail/coinbase-wallet-extension/hnfanknocfeofbddgcijnmhnfnkdnaad"
+								}
+							}
+						]
+					},
+					"browserNative": {
+						"$ref": "notSupported"
+					},
+					"webApp": null,
+					"ios": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet official wallet sources list a mobile app surface for iOS; a separate store-listing citation was not captured.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"android": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet official wallet sources list a mobile app surface for Android; a separate store-listing citation was not captured.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"chrome": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet has a Chrome Web Store extension listing.",
+									"url": "https://chromewebstore.google.com/detail/coinbase-wallet-extension/hnfanknocfeofbddgcijnmhnfnkdnaad"
+								}
+							}
+						]
+					},
+					"firefox": null,
+					"safari": null
+				},
+				"supportedEcosystems": {
+					"ref": {
+						"explanation": "Coinbase Wallet/Base app docs list supported networks for Base mode and legacy Coinbase Wallet mode.",
+						"url": "https://help.coinbase.com/en-gb/wallet/getting-started/what-types-of-crypto-does-wallet-support"
+					},
+					"evm": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet/Base app supports Ethereum and EVM-compatible networks in both Base mode and legacy Coinbase Wallet mode.",
+									"url": "https://help.coinbase.com/en-gb/wallet/getting-started/what-types-of-crypto-does-wallet-support"
+								}
+							}
+						]
+					},
+					"solana": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet/Base app supports Solana in both Base mode and legacy Coinbase Wallet mode.",
+									"url": "https://help.coinbase.com/en-gb/wallet/getting-started/what-types-of-crypto-does-wallet-support"
+								}
+							}
+						]
+					},
+					"bitcoin": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Legacy Coinbase Wallet mode supports Bitcoin, while Base mode is view-only for existing linked Bitcoin wallets.",
+									"url": "https://help.coinbase.com/en-gb/wallet/getting-started/what-types-of-crypto-does-wallet-support"
+								}
+							}
+						]
+					},
+					"cosmos": {
+						"$ref": "notSupported"
+					},
+					"ton": {
+						"$ref": "notSupported"
+					},
+					"starknet": {
+						"$ref": "notSupported"
+					},
+					"sui": {
+						"$ref": "notSupported"
+					},
+					"aptos": {
+						"$ref": "notSupported"
+					},
+					"xrp": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet/Base app docs say XRP support ended with BCH, ETC, and XLM in February 2023 for the app experience.",
+									"url": "https://help.coinbase.com/en-gb/wallet/getting-started/what-types-of-crypto-does-wallet-support"
+								}
+							}
+						]
+					},
+					"cardano": {
+						"$ref": "notSupported"
+					},
+					"lightning": {
+						"$ref": "notSupported"
+					},
+					"other": [
+						{
+							"name": "Dogecoin",
+							"ref": {
+								"explanation": "Legacy Coinbase Wallet mode supports Dogecoin; Base mode does not.",
+								"url": "https://help.coinbase.com/en-gb/wallet/getting-started/what-types-of-crypto-does-wallet-support"
+							}
+						},
+						{
+							"name": "Litecoin",
+							"ref": {
+								"explanation": "Legacy Coinbase Wallet mode supports Litecoin; Base mode does not.",
+								"url": "https://help.coinbase.com/en-gb/wallet/getting-started/what-types-of-crypto-does-wallet-support"
+							}
+						}
+					]
+				},
+				"dappExperience": {
+					"ref": {
+						"explanation": "Coinbase Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://wallet.coinbase.com/"
+					},
+					"inAppBrowser": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet provides a dapp browser or in-wallet dapp connection surface.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"curatedDappDirectory": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet provides a curated dapp or app discovery surface.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"dappSearch": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet provides search over dapps or app discovery content.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"walletConnectOnlyMode": {
+						"$ref": "notSupported"
+					},
+					"featuredApps": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet features selected dapps or apps in its discovery surface.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"riskRatedDiscovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet provides risk warnings or risk-aware dapp/transaction discovery cues.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					}
+				},
+				"fiatRamps": {
+					"ref": {
+						"explanation": "Coinbase Onramp and Base app funding docs describe buying/transferring crypto from Coinbase or third-party providers, payment-method dependence, and KYC through Coinbase/provider accounts.",
+						"url": "https://help.coinbase.com/en/coinbase/trading-and-funding/coinbase-pay/using-coinbase-pay"
+					},
+					"buyCrypto": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Onramp allows buying supported crypto on Coinbase.com directly from Coinbase Wallet/Base app and other self-custody wallets or dapps.",
+									"url": "https://help.coinbase.com/en/coinbase/trading-and-funding/coinbase-pay/using-coinbase-pay"
+								}
+							}
+						]
+					},
+					"sellCrypto": null,
+					"bankTransfer": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Onramp uses the payment methods on the linked Coinbase.com account; Coinbase buy docs include bank-account/payment-method flows where supported.",
+									"url": "https://help.coinbase.com/en/coinbase/trading-and-funding/coinbase-pay/using-coinbase-pay"
+								}
+							}
+						]
+					},
+					"card": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Onramp lets users choose a preferred payment method from their Coinbase account to buy crypto.",
+									"url": "https://help.coinbase.com/en/coinbase/trading-and-funding/coinbase-pay/using-coinbase-pay"
+								}
+							}
+						]
+					},
+					"applePay": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase buy docs document Apple Pay support for Coinbase purchases where eligible.",
+									"url": "https://help.coinbase.com/en-gb/coinbase/trading-and-funding/buying-selling-or-converting-crypto/how-do-i-buy-digital-currency"
+								}
+							}
+						]
+					},
+					"googlePay": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase buy docs document Google Pay support for Coinbase purchases where eligible.",
+									"url": "https://help.coinbase.com/en-gb/coinbase/trading-and-funding/buying-selling-or-converting-crypto/how-do-i-buy-digital-currency"
+								}
+							}
+						]
+					},
+					"kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
+					"providers": [
+						{
+							"name": "Coinbase Onramp",
+							"ref": {
+								"explanation": "Coinbase Onramp is the named payment feature for buying or transferring supported crypto from Coinbase.com directly into self-custody wallets and dapps.",
+								"url": "https://help.coinbase.com/en/coinbase/trading-and-funding/coinbase-pay/using-coinbase-pay"
+							}
+						}
+					],
+					"regionalAvailability": "Coinbase/payment-method availability is region-dependent; Coinbase documents crypto-only markets where local fiat deposits/cash-outs are not available."
+				},
+				"gasUx": {
+					"ref": {
+						"explanation": "Coinbase Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://wallet.coinbase.com/"
+					},
+					"gasCustomization": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet supports standard EVM transaction sending where gas settings can be inspected or controlled in the wallet flow.",
+									"url": "https://help.coinbase.com/en/wallet"
+								}
+							}
+						]
+					},
+					"gasSponsorship": null,
+					"gasAbstraction": null,
+					"payGasInStablecoins": null,
+					"payGasWithReceivedToken": null,
+					"speedPresets": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": null,
+									"url": "https://help.coinbase.com/en/wallet"
+								}
+							}
+						]
+					},
+					"stuckTransactionRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet support/product materials include stuck or pending transaction recovery guidance.",
+									"url": "https://help.coinbase.com/en/wallet"
+								}
+							}
+						]
+					}
+				},
+				"recoveryUx": {
+					"ref": {
+						"explanation": "Coinbase Wallet recovery docs cover 12-word recovery phrase, Google Drive/iCloud backup, and non-custodial recovery limits.",
+						"url": "https://help.coinbase.com/en/contact-us/support-faq/coinbase-wallet/how-to-recover-access-to-coinbase-wallet"
+					},
+					"seedOnlyRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet can be restored with a 12-word recovery phrase.",
+									"url": "https://help.coinbase.com/en/contact-us/support-faq/coinbase-wallet/how-to-recover-access-to-coinbase-wallet"
+								}
+							}
+						]
+					},
+					"cloudBackup": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet recovery docs say users can re-import with Google Drive or iCloud backup.",
+									"url": "https://help.coinbase.com/en/contact-us/support-faq/coinbase-wallet/how-to-recover-access-to-coinbase-wallet"
+								}
+							}
+						]
+					},
+					"socialRecovery": {
+						"$ref": "notSupported"
+					},
+					"guardianRecovery": {
+						"$ref": "notSupported"
+					},
+					"passkeyRecovery": null,
+					"emergencyKit": null,
+					"recoveryRehearsal": null
+				},
+				"onboardingFriction": {
+					"ref": {
+						"explanation": "Coinbase Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://wallet.coinbase.com/"
+					},
+					"seedPhraseRequiredAtSignup": {
+						"$ref": "featureSupported"
+					},
+					"passkeySignup": null,
+					"emailSignup": null,
+					"phoneSignup": null,
+					"kycRequiredForWallet": {
+						"$ref": "notSupported"
+					},
+					"guestMode": null,
+					"embeddedWalletMode": null,
+					"timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
+				},
+				"portfolioManagement": {
+					"ref": {
+						"explanation": "Coinbase Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://wallet.coinbase.com/"
+					},
+					"netWorth": {
+						"$ref": "featureSupported"
+					},
+					"pnl": null,
+					"costBasis": null,
+					"tokenCategories": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet provides token balance and asset-list portfolio views.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"nftSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet supports NFT display or NFT portfolio management in at least one wallet surface.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"collectionViews": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet provides NFT collection-oriented views or NFT portfolio surfaces.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"watchOnlyWallets": null,
+					"multiWalletAggregation": {
+						"$ref": "featureSupported"
+					}
+				},
+				"notifications": {
+					"ref": {
+						"explanation": "Coinbase Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://wallet.coinbase.com/"
+					},
+					"sendReceive": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet supports notifications for wallet activity such as sends or receives.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"priceAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase mobile app supports automatic price alerts for watched cryptocurrencies, with push, in-app, and email notification options.",
+									"url": "https://help.coinbase.com/en/coinbase/trading-and-funding/pricing-and-fees/what-are-price-alerts?rating=1"
+								}
+							}
+						]
+					},
+					"approvalAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet supports approval-related alerts, approval review, or permission warnings.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"bridgeCompletion": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": null,
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"failedTransaction": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet supports wallet activity notifications that can include failed or completed transaction status.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"securityAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet supports security alerts or transaction-risk warnings.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"marketAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase mobile app supports price alerts for cryptocurrency market movements.",
+									"url": "https://help.coinbase.com/en/coinbase/trading-and-funding/pricing-and-fees/what-are-price-alerts?rating=1"
+								}
+							}
+						]
+					}
+				},
+				"nftCapabilities": {
+					"ref": {
+						"explanation": "Coinbase Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://wallet.coinbase.com/"
+					},
+					"display": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet supports displaying NFTs or collectibles in the wallet.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"send": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet supports wallet NFT transfer flows or NFT asset management.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"mint": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet can connect to dapps and sign NFT mint transactions.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"marketplaceIntegration": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet integrates NFT marketplace or NFT trading/discovery features.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"spamNftHiding": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet supports hiding, filtering, or protecting users from spam NFTs.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"collectionMetadataRefresh": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet supports NFT metadata refresh or collection metadata updates in its NFT experience.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"royaltiesOrOffers": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet supports NFT marketplace offer/trading flows where royalties or offers may be surfaced.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					}
+				},
+				"defiPositionAwareness": {
+					"ref": {
+						"explanation": "Coinbase Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://wallet.coinbase.com/"
+					},
+					"lendingPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet surfaces DeFi lending or protocol positions in wallet/portfolio views.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"stakingPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet surfaces staking or earn positions in wallet/portfolio views.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"lpPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet surfaces liquidity-pool or DeFi protocol positions.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"vaultPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet surfaces vault or protocol positions.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"perProtocolBalances": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet groups DeFi holdings by protocol or app.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"claimableRewards": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet surfaces claimable rewards or earn balances.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"liquidationWarnings": null
+				},
+				"stakingEarn": {
+					"ref": {
+						"explanation": "Coinbase Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://wallet.coinbase.com/"
+					},
+					"nativeStaking": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet supports native staking or earn products for at least one supported ecosystem.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"liquidStaking": null,
+					"validatorChoice": null,
+					"apyDisplay": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet displays APY/reward information for staking or earn products.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"rewardsClaiming": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet supports claiming staking or earn rewards.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"providerDependency": "Provider- or protocol-dependent; requires per-asset/provider audit for exact dependency.",
+					"lockupDisclosure": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet staking/earn flows disclose lockup or protocol-specific constraints where applicable.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					}
+				},
+				"customerSupport": {
+					"ref": {
+						"explanation": "Coinbase Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://wallet.coinbase.com/"
+					},
+					"liveChat": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet provides live chat or real-time support for wallet users.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"emailSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet publishes support, help center, or contact paths for wallet users.",
+									"url": "https://help.coinbase.com/en/wallet"
+								}
+							}
+						]
+					},
+					"aiSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet provides AI-assisted support or assistant-style help.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"publishedSla": null,
+					"inAppHelpCenter": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet provides in-app or product-linked help/support content.",
+									"url": "https://help.coinbase.com/en/wallet"
+								}
+							}
+						]
+					},
+					"transactionTroubleshooting": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet support docs include transaction or wallet troubleshooting material.",
+									"url": "https://help.coinbase.com/en/wallet"
+								}
+							}
+						]
+					},
+					"scamRecoveryGuidance": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet support/security materials include scam, compromise, or recovery guidance.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					}
+				},
+				"developerOffering": {
+					"ref": {
+						"explanation": "Coinbase Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://wallet.coinbase.com/"
+					},
+					"walletSdk": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet publishes wallet developer docs, SDKs, or public wallet integration repositories.",
+									"url": "https://github.com/coinbase/coinbase-wallet-sdk"
+								}
+							}
+						]
+					},
+					"embeddedWalletSdk": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet offers embedded wallet or embedded account SDK capabilities.",
+									"url": "https://github.com/coinbase/coinbase-wallet-sdk"
+								}
+							}
+						]
+					},
+					"whiteLabelOffering": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet offers white-label or app-embedded wallet infrastructure.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"walletConnectSupport": {
+						"$ref": "featureSupported"
+					},
+					"eip6963": null,
+					"eip5792": null,
+					"deepLinks": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet documents mobile deep links, universal links, or app-link connection flows.",
+									"url": "https://help.coinbase.com/en/wallet"
+								}
+							}
+						]
+					},
+					"mobileLinkingQuality": "Mobile linking documented or product-supported; quality requires hands-on UX testing."
+				},
+				"pricingFeeModel": {
+					"ref": {
+						"explanation": "Coinbase Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://wallet.coinbase.com/"
+					},
+					"swapFees": null,
+					"bridgeFees": null,
+					"onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
+					"spreadDisclosure": {
+						"$ref": "featureSupported"
+					},
+					"subscriptionFeatures": null,
+					"cardFees": "Card fees are provider-dependent where card purchase is available.",
+					"hiddenPartnerRevenue": null
+				},
+				"releaseVelocity": {
+					"ref": {
+						"explanation": "Coinbase Wallet/Base app has app-store release channels and Coinbase Help pages, but no stable public changelog comparable to a GitHub release stream was found for the consumer wallet app.",
+						"url": "https://apps.apple.com/us/app/coinbase-wallet-nfts-crypto/id1278383455"
+					},
+					"latestReleaseDate": "2026-06-07",
+					"releaseFrequency": "ReleaseFrequency.UNKNOWN",
+					"appStoreUpdateCadence": null,
+					"githubActivity": null,
+					"changelogDetail": "ChangelogDetail.NONE"
+				},
+				"deviceSync": {
+					"ref": {
+						"explanation": "Coinbase Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://wallet.coinbase.com/"
+					},
+					"syncsAccounts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet supports account synchronization or account reuse across devices.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"syncsSettings": null,
+					"syncsContactsOrAddressBook": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet supports contacts, usernames, or address-book style account discovery across devices.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"desktopMobileSync": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet supports cross-device use between mobile and desktop/browser surfaces.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"cloudBackedSync": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet supports cloud-backed account or wallet sync/backup.",
+									"url": "https://wallet.coinbase.com/"
+								}
+							}
+						]
+					},
+					"requiresSameSeedImport": {
+						"$ref": "notSupported"
+					}
+				}
 			}
 		},
 		"variants": {

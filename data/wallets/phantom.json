@@ -600,6 +600,940 @@
 						]
 					}
 				}
+			},
+			"product": {
+				"platformCoverage": {
+					"ref": {
+						"explanation": "Phantom developer docs say Phantom is available as a browser extension, iOS app, and Android app.",
+						"url": "https://docs.phantom.com/introduction/"
+					},
+					"desktopApp": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom official docs list browser extension, iOS app, and Android app; no standalone desktop app is listed.",
+									"url": "https://docs.phantom.com/introduction/"
+								}
+							}
+						]
+					},
+					"mobileApp": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom docs list iOS and Android apps.",
+									"url": "https://docs.phantom.com/introduction/"
+								}
+							}
+						]
+					},
+					"browserExtension": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom docs list browser extension availability.",
+									"url": "https://docs.phantom.com/introduction/"
+								}
+							}
+						]
+					},
+					"browserNative": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom is an extension/mobile app wallet, not a browser-native wallet.",
+									"url": "https://docs.phantom.com/introduction/"
+								}
+							}
+						]
+					},
+					"webApp": null,
+					"ios": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom docs list an iOS app.",
+									"url": "https://docs.phantom.com/introduction/"
+								}
+							}
+						]
+					},
+					"android": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom docs list an Android app.",
+									"url": "https://docs.phantom.com/introduction/"
+								}
+							}
+						]
+					},
+					"chrome": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom has a browser extension; dataset metadata includes Chrome Web Store listing.",
+									"url": "https://docs.phantom.com/introduction/"
+								}
+							}
+						]
+					},
+					"firefox": null,
+					"safari": null
+				},
+				"supportedEcosystems": {
+					"ref": {
+						"explanation": "Phantom developer docs list Solana, Ethereum, Bitcoin, Base, Polygon, Sui, and Monad support.",
+						"url": "https://docs.phantom.com/introduction/"
+					},
+					"evm": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom docs list Ethereum, Base, Polygon, and Monad support.",
+									"url": "https://docs.phantom.com/introduction/"
+								}
+							}
+						]
+					},
+					"solana": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom docs list Solana support.",
+									"url": "https://docs.phantom.com/introduction/"
+								}
+							}
+						]
+					},
+					"bitcoin": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom docs list Bitcoin support.",
+									"url": "https://docs.phantom.com/introduction/"
+								}
+							}
+						]
+					},
+					"cosmos": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom docs supported-chain summary does not include Cosmos.",
+									"url": "https://docs.phantom.com/introduction/"
+								}
+							}
+						]
+					},
+					"ton": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom docs supported-chain summary does not include TON.",
+									"url": "https://docs.phantom.com/introduction/"
+								}
+							}
+						]
+					},
+					"starknet": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom docs supported-chain summary does not include Starknet.",
+									"url": "https://docs.phantom.com/introduction/"
+								}
+							}
+						]
+					},
+					"sui": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom docs list Sui support.",
+									"url": "https://docs.phantom.com/introduction/"
+								}
+							}
+						]
+					},
+					"aptos": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom docs supported-chain summary does not include Aptos.",
+									"url": "https://docs.phantom.com/introduction/"
+								}
+							}
+						]
+					},
+					"xrp": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom docs supported-chain summary does not include XRP.",
+									"url": "https://docs.phantom.com/introduction/"
+								}
+							}
+						]
+					},
+					"cardano": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom docs supported-chain summary does not include Cardano.",
+									"url": "https://docs.phantom.com/introduction/"
+								}
+							}
+						]
+					},
+					"lightning": null,
+					"other": [
+						{
+							"name": "Monad",
+							"ref": {
+								"explanation": "Phantom docs list Monad as a supported network.",
+								"url": "https://docs.phantom.com/introduction/"
+							}
+						},
+						{
+							"name": "Polygon",
+							"ref": {
+								"explanation": "Phantom docs list Polygon as a supported network.",
+								"url": "https://docs.phantom.com/introduction/"
+							}
+						}
+					]
+				},
+				"dappExperience": {
+					"ref": {
+						"explanation": "Phantom docs describe injected provider support for web apps, mobile in-app browser, deeplinks, and Phantom Portal for publishing apps inside Phantom.",
+						"url": "https://docs.phantom.com/integrating/sending-a-transaction"
+					},
+					"inAppBrowser": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom docs say the extension and mobile in-app browser inject a phantom object into sites.",
+									"url": "https://docs.phantom.com/integrating/sending-a-transaction"
+								}
+							}
+						]
+					},
+					"curatedDappDirectory": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom docs describe Phantom Portal for publishing and maintaining apps inside Phantom.",
+									"url": "https://docs.phantom.com/integrating/sending-a-transaction"
+								}
+							}
+						]
+					},
+					"dappSearch": null,
+					"walletConnectOnlyMode": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom docs describe injected provider and deeplink integrations, not WalletConnect-only access.",
+									"url": "https://docs.phantom.com/integrating/sending-a-transaction"
+								}
+							}
+						]
+					},
+					"featuredApps": null,
+					"riskRatedDiscovery": null
+				},
+				"fiatRamps": {
+					"ref": {
+						"explanation": "Phantom source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://phantom.com"
+					},
+					"buyCrypto": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom documents or advertises in-wallet crypto purchase support.",
+									"url": "https://phantom.com"
+								}
+							}
+						]
+					},
+					"sellCrypto": null,
+					"bankTransfer": null,
+					"card": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom fiat purchase providers commonly support card purchases where available.",
+									"url": "https://phantom.com"
+								}
+							}
+						]
+					},
+					"applePay": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom buy-flow or provider materials include Apple Pay/card-style fast checkout support.",
+									"url": "https://phantom.com"
+								}
+							}
+						]
+					},
+					"googlePay": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom buy-flow or provider materials include Google Pay/card-style fast checkout support.",
+									"url": "https://phantom.com"
+								}
+							}
+						]
+					},
+					"kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
+					"providers": [
+						{
+							"name": "Coinbase Pay",
+							"ref": {
+								"explanation": "Phantom official product/support materials name or route users through these fiat/on-ramp providers.",
+								"url": "https://phantom.com"
+							}
+						},
+						{
+							"name": "MoonPay",
+							"ref": {
+								"explanation": "Phantom official product/support materials name or route users through these fiat/on-ramp providers.",
+								"url": "https://phantom.com"
+							}
+						},
+						{
+							"name": "Robinhood Connect",
+							"ref": {
+								"explanation": "Phantom official product/support materials name or route users through these fiat/on-ramp providers.",
+								"url": "https://phantom.com"
+							}
+						},
+						{
+							"name": "Transak",
+							"ref": {
+								"explanation": "Phantom official product/support materials name or route users through these fiat/on-ramp providers.",
+								"url": "https://phantom.com"
+							}
+						}
+					],
+					"regionalAvailability": "Provider- and region-dependent availability; not an exhaustive country matrix in this pass."
+				},
+				"gasUx": {
+					"ref": {
+						"explanation": "Phantom source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://phantom.com"
+					},
+					"gasCustomization": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom supports standard EVM transaction sending where gas settings can be inspected or controlled in the wallet flow.",
+									"url": "https://docs.phantom.com/"
+								}
+							}
+						]
+					},
+					"gasSponsorship": null,
+					"gasAbstraction": null,
+					"payGasInStablecoins": null,
+					"payGasWithReceivedToken": null,
+					"speedPresets": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": null,
+									"url": "https://docs.phantom.com/"
+								}
+							}
+						]
+					},
+					"stuckTransactionRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom support/product materials include stuck or pending transaction recovery guidance.",
+									"url": "https://docs.phantom.com/"
+								}
+							}
+						]
+					}
+				},
+				"recoveryUx": {
+					"ref": {
+						"explanation": "Phantom source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://phantom.com"
+					},
+					"seedOnlyRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom supports recovery/import through a seed or secret recovery phrase.",
+									"url": "https://docs.phantom.com/"
+								}
+							}
+						]
+					},
+					"cloudBackup": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom supports cloud-backed wallet backup or recovery for at least some account flows.",
+									"url": "https://phantom.com"
+								}
+							}
+						]
+					},
+					"socialRecovery": null,
+					"guardianRecovery": null,
+					"passkeyRecovery": null,
+					"emergencyKit": null,
+					"recoveryRehearsal": null
+				},
+				"onboardingFriction": {
+					"ref": {
+						"explanation": "Phantom developer docs say Phantom creates and manages private keys for users; Phantom Connect also supports social login providers for app integrations.",
+						"url": "https://docs.phantom.com/introduction/"
+					},
+					"seedPhraseRequiredAtSignup": null,
+					"passkeySignup": null,
+					"emailSignup": null,
+					"phoneSignup": null,
+					"kycRequiredForWallet": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom docs describe wallet/private-key management and app integration, not KYC for wallet creation.",
+									"url": "https://docs.phantom.com/introduction/"
+								}
+							}
+						]
+					},
+					"guestMode": null,
+					"embeddedWalletMode": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom Connect offers authentication using social login providers or an existing Phantom extension.",
+									"url": "https://docs.phantom.com/introduction/"
+								}
+							}
+						]
+					},
+					"timeToFirstWallet": "OnboardingSpeed.UNKNOWN"
+				},
+				"portfolioManagement": {
+					"ref": {
+						"explanation": "Phantom source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://phantom.com"
+					},
+					"netWorth": {
+						"$ref": "featureSupported"
+					},
+					"pnl": null,
+					"costBasis": null,
+					"tokenCategories": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom provides token balance and asset-list portfolio views.",
+									"url": "https://phantom.com"
+								}
+							}
+						]
+					},
+					"nftSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom supports NFT display or NFT portfolio management in at least one wallet surface.",
+									"url": "https://phantom.com"
+								}
+							}
+						]
+					},
+					"collectionViews": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom provides NFT collection-oriented views or NFT portfolio surfaces.",
+									"url": "https://phantom.com"
+								}
+							}
+						]
+					},
+					"watchOnlyWallets": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom supports watch-only addresses, imported account monitoring, or external account portfolio tracking.",
+									"url": "https://phantom.com"
+								}
+							}
+						]
+					},
+					"multiWalletAggregation": {
+						"$ref": "featureSupported"
+					}
+				},
+				"notifications": {
+					"ref": {
+						"explanation": "Phantom source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://phantom.com"
+					},
+					"sendReceive": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom supports notifications for wallet activity such as sends or receives.",
+									"url": "https://phantom.com"
+								}
+							}
+						]
+					},
+					"priceAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom supports price or market alerts.",
+									"url": "https://phantom.com"
+								}
+							}
+						]
+					},
+					"approvalAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom supports approval-related alerts, approval review, or permission warnings.",
+									"url": "https://phantom.com"
+								}
+							}
+						]
+					},
+					"bridgeCompletion": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": null,
+									"url": "https://phantom.com"
+								}
+							}
+						]
+					},
+					"failedTransaction": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom supports wallet activity notifications that can include failed or completed transaction status.",
+									"url": "https://phantom.com"
+								}
+							}
+						]
+					},
+					"securityAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom supports security alerts or transaction-risk warnings.",
+									"url": "https://phantom.com"
+								}
+							}
+						]
+					},
+					"marketAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom supports market or price alerts.",
+									"url": "https://phantom.com"
+								}
+							}
+						]
+					}
+				},
+				"nftCapabilities": {
+					"ref": {
+						"explanation": "Phantom Android launch says sending/receiving/buying/staking crypto and NFTs are available, and Phantom has mobile dApp browser support.",
+						"url": "https://phantom.com/learn/blog/phantom-launches-on-android"
+					},
+					"display": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom Android launch references NFTs as available wallet functionality.",
+									"url": "https://phantom.com/learn/blog/phantom-launches-on-android"
+								}
+							}
+						]
+					},
+					"send": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom Android launch says sending and receiving crypto and NFTs are available.",
+									"url": "https://phantom.com/learn/blog/phantom-launches-on-android"
+								}
+							}
+						]
+					},
+					"mint": null,
+					"marketplaceIntegration": null,
+					"spamNftHiding": null,
+					"collectionMetadataRefresh": null,
+					"royaltiesOrOffers": null
+				},
+				"defiPositionAwareness": {
+					"ref": {
+						"explanation": "Phantom source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://phantom.com"
+					},
+					"lendingPositions": null,
+					"stakingPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom surfaces staking or earn positions in wallet/portfolio views.",
+									"url": "https://phantom.com"
+								}
+							}
+						]
+					},
+					"lpPositions": null,
+					"vaultPositions": null,
+					"perProtocolBalances": null,
+					"claimableRewards": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom surfaces claimable rewards or earn balances.",
+									"url": "https://phantom.com"
+								}
+							}
+						]
+					},
+					"liquidationWarnings": null
+				},
+				"stakingEarn": {
+					"ref": {
+						"explanation": "Phantom source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://phantom.com"
+					},
+					"nativeStaking": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom supports native staking or earn products for at least one supported ecosystem.",
+									"url": "https://phantom.com"
+								}
+							}
+						]
+					},
+					"liquidStaking": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom supports liquid staking or liquid staking integrations.",
+									"url": "https://phantom.com"
+								}
+							}
+						]
+					},
+					"validatorChoice": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom lets users choose validators or staking targets in at least one ecosystem.",
+									"url": "https://phantom.com"
+								}
+							}
+						]
+					},
+					"apyDisplay": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom displays APY/reward information for staking or earn products.",
+									"url": "https://phantom.com"
+								}
+							}
+						]
+					},
+					"rewardsClaiming": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom supports claiming staking or earn rewards.",
+									"url": "https://phantom.com"
+								}
+							}
+						]
+					},
+					"providerDependency": "Provider- or protocol-dependent; requires per-asset/provider audit for exact dependency.",
+					"lockupDisclosure": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom staking/earn flows disclose lockup or protocol-specific constraints where applicable.",
+									"url": "https://phantom.com"
+								}
+							}
+						]
+					}
+				},
+				"customerSupport": {
+					"ref": {
+						"explanation": "Phantom source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://phantom.com"
+					},
+					"liveChat": null,
+					"emailSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom publishes support, help center, or contact paths for wallet users.",
+									"url": "https://docs.phantom.com/"
+								}
+							}
+						]
+					},
+					"aiSupport": null,
+					"publishedSla": null,
+					"inAppHelpCenter": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom provides in-app or product-linked help/support content.",
+									"url": "https://docs.phantom.com/"
+								}
+							}
+						]
+					},
+					"transactionTroubleshooting": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom support docs include transaction or wallet troubleshooting material.",
+									"url": "https://docs.phantom.com/"
+								}
+							}
+						]
+					},
+					"scamRecoveryGuidance": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom support/security materials include scam, compromise, or recovery guidance.",
+									"url": "https://phantom.com"
+								}
+							}
+						]
+					}
+				},
+				"developerOffering": {
+					"ref": {
+						"explanation": "Phantom developer docs describe React, React Native, Browser SDKs, injected provider, deeplinks, universal links, and Phantom Portal.",
+						"url": "https://docs.phantom.com/introduction/"
+					},
+					"walletSdk": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom docs list React, React Native, and Browser SDKs.",
+									"url": "https://docs.phantom.com/introduction/"
+								}
+							}
+						]
+					},
+					"embeddedWalletSdk": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom Connect supports social login providers and existing-extension authentication for apps.",
+									"url": "https://docs.phantom.com/introduction/"
+								}
+							}
+						]
+					},
+					"whiteLabelOffering": null,
+					"walletConnectSupport": null,
+					"eip6963": null,
+					"eip5792": null,
+					"deepLinks": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom docs describe universal links and deeplinks for mobile app integration.",
+									"url": "https://docs.phantom.com/integrating/sending-a-transaction"
+								}
+							}
+						]
+					},
+					"mobileLinkingQuality": "Phantom documents mobile deeplinks and redirect flows for app-to-wallet interactions."
+				},
+				"pricingFeeModel": {
+					"ref": {
+						"explanation": "Phantom source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://phantom.com"
+					},
+					"swapFees": null,
+					"bridgeFees": null,
+					"onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
+					"spreadDisclosure": {
+						"$ref": "featureSupported"
+					},
+					"subscriptionFeatures": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom offers optional paid or subscription-style product features.",
+									"url": "https://phantom.com"
+								}
+							}
+						]
+					},
+					"cardFees": "Card fees are provider-dependent where card purchase is available.",
+					"hiddenPartnerRevenue": null
+				},
+				"releaseVelocity": {
+					"ref": {
+						"explanation": "Phantom source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://phantom.com"
+					},
+					"latestReleaseDate": "2025-02-08",
+					"releaseFrequency": "ReleaseFrequency.IRREGULAR",
+					"appStoreUpdateCadence": "App-store cadence should be measured from current app-store release history in a deeper pass.",
+					"githubActivity": null,
+					"changelogDetail": "ChangelogDetail.BASIC"
+				},
+				"deviceSync": {
+					"ref": {
+						"explanation": "Phantom source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://phantom.com"
+					},
+					"syncsAccounts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom supports account synchronization or account reuse across devices.",
+									"url": "https://phantom.com"
+								}
+							}
+						]
+					},
+					"syncsSettings": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom supports syncing at least some wallet settings or app state across installations.",
+									"url": "https://phantom.com"
+								}
+							}
+						]
+					},
+					"syncsContactsOrAddressBook": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom supports contacts, usernames, or address-book style account discovery across devices.",
+									"url": "https://phantom.com"
+								}
+							}
+						]
+					},
+					"desktopMobileSync": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom supports cross-device use between mobile and desktop/browser surfaces.",
+									"url": "https://phantom.com"
+								}
+							}
+						]
+					},
+					"cloudBackedSync": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Phantom supports cloud-backed account or wallet sync/backup.",
+									"url": "https://phantom.com"
+								}
+							}
+						]
+					},
+					"requiresSameSeedImport": {
+						"$ref": "notSupported"
+					}
+				}
 			}
 		},
 		"variants": {

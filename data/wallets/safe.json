@@ -721,6 +721,731 @@
 						]
 					}
 				}
+			},
+			"product": {
+				"platformCoverage": {
+					"ref": {
+						"explanation": "Safe user/mobile pages describe the web app launch flow and Safe Mobile iOS/Android app.",
+						"url": "https://safe.global/users"
+					},
+					"desktopApp": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe is a web/mobile wallet experience, not a standalone desktop app.",
+									"url": "https://safe.global/users"
+								}
+							}
+						]
+					},
+					"mobileApp": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe Mobile page describes a mobile wallet app.",
+									"url": "https://safe.global/mobile"
+								}
+							}
+						]
+					},
+					"browserExtension": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe is accessed via web/mobile and WalletConnect, not a browser extension wallet.",
+									"url": "https://safe.global/users"
+								}
+							}
+						]
+					},
+					"browserNative": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe is not a browser-native wallet.",
+									"url": "https://safe.global/users"
+								}
+							}
+						]
+					},
+					"webApp": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe users page links Launch app for Safe Wallet.",
+									"url": "https://safe.global/users"
+								}
+							}
+						]
+					},
+					"ios": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe Mobile page links iOS download.",
+									"url": "https://safe.global/mobile"
+								}
+							}
+						]
+					},
+					"android": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe Mobile page links Android download.",
+									"url": "https://safe.global/mobile"
+								}
+							}
+						]
+					},
+					"chrome": null,
+					"firefox": null,
+					"safari": null
+				},
+				"supportedEcosystems": {
+					"ref": {
+						"explanation": "Safe users page states Safe works across 25+ networks and 28+ networks for building/simulating transactions; these are EVM smart-account deployments.",
+						"url": "https://safe.global/users"
+					},
+					"evm": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe is an EVM smart-contract wallet across 25+/28+ networks.",
+									"url": "https://safe.global/users"
+								}
+							}
+						]
+					},
+					"solana": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe product pages reviewed here describe EVM smart-contract wallet networks, not Solana.",
+									"url": "https://safe.global/users"
+								}
+							}
+						]
+					},
+					"bitcoin": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe product pages reviewed here describe EVM smart-contract wallet networks, not Bitcoin.",
+									"url": "https://safe.global/users"
+								}
+							}
+						]
+					},
+					"cosmos": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe product pages reviewed here describe EVM smart-contract wallet networks, not Cosmos.",
+									"url": "https://safe.global/users"
+								}
+							}
+						]
+					},
+					"ton": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe product pages reviewed here describe EVM smart-contract wallet networks, not TON.",
+									"url": "https://safe.global/users"
+								}
+							}
+						]
+					},
+					"starknet": null,
+					"sui": null,
+					"aptos": null,
+					"xrp": null,
+					"cardano": null,
+					"lightning": null,
+					"other": [
+						{
+							"name": "25+ Safe networks",
+							"ref": {
+								"explanation": "Safe users page says 25+ networks are supported.",
+								"url": "https://safe.global/users"
+							}
+						}
+					]
+				},
+				"dappExperience": {
+					"ref": {
+						"explanation": "Safe users page says users can trade, stake, bridge, and lend without leaving Safe and connect anywhere with WalletConnect; mobile help documents WalletConnect dapp connections.",
+						"url": "https://safe.global/users"
+					},
+					"inAppBrowser": null,
+					"curatedDappDirectory": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe users page references 200+ Apps Integrated/Appstore.",
+									"url": "https://safe.global/users"
+								}
+							}
+						]
+					},
+					"dappSearch": null,
+					"walletConnectOnlyMode": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe Mobile help documents dapp connections through WalletConnect scan/universal links.",
+									"url": "https://help.safe.global/en/articles/40810-connect-to-dapps-with-walletconnect-on-mobile"
+								}
+							}
+						]
+					},
+					"featuredApps": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe users page references 200+ integrated apps.",
+									"url": "https://safe.global/users"
+								}
+							}
+						]
+					},
+					"riskRatedDiscovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe users page advertises transaction simulation and Safe Shield insights/protection.",
+									"url": "https://safe.global/users"
+								}
+							}
+						]
+					}
+				},
+				"fiatRamps": {
+					"ref": {
+						"explanation": "Safe source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://safe.global"
+					},
+					"buyCrypto": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe documents or advertises in-wallet crypto purchase support.",
+									"url": "https://safe.global"
+								}
+							}
+						]
+					},
+					"sellCrypto": null,
+					"bankTransfer": null,
+					"card": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe fiat purchase providers commonly support card purchases where available.",
+									"url": "https://safe.global"
+								}
+							}
+						]
+					},
+					"applePay": null,
+					"googlePay": null,
+					"kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
+					"providers": [
+						{
+							"name": "Monerium",
+							"ref": {
+								"explanation": "Safe official product/support materials name or route users through these fiat/on-ramp providers.",
+								"url": "https://safe.global"
+							}
+						},
+						{
+							"name": "Transak",
+							"ref": {
+								"explanation": "Safe official product/support materials name or route users through these fiat/on-ramp providers.",
+								"url": "https://safe.global"
+							}
+						}
+					],
+					"regionalAvailability": "Provider- and region-dependent availability; not an exhaustive country matrix in this pass."
+				},
+				"gasUx": {
+					"ref": {
+						"explanation": "Safe users page says users can batch multiple transactions to sign once and save gas, and build/simulate multi-step transactions before signing.",
+						"url": "https://safe.global/users"
+					},
+					"gasCustomization": null,
+					"gasSponsorship": null,
+					"gasAbstraction": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe supports batching multiple transactions into one signing flow and smart-account execution.",
+									"url": "https://safe.global/users"
+								}
+							}
+						]
+					},
+					"payGasInStablecoins": null,
+					"payGasWithReceivedToken": null,
+					"speedPresets": null,
+					"stuckTransactionRecovery": null
+				},
+				"recoveryUx": {
+					"ref": {
+						"explanation": "Safe users page says users can add recovery keys or co-signers; Safe passkeys docs describe passkeys as an alternative to seed phrases.",
+						"url": "https://safe.global/users"
+					},
+					"seedOnlyRecovery": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe account recovery centers on owners/co-signers/recovery keys rather than seed-only recovery.",
+									"url": "https://safe.global/users"
+								}
+							}
+						]
+					},
+					"cloudBackup": null,
+					"socialRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe users page says co-signers can guarantee access.",
+									"url": "https://safe.global/users"
+								}
+							}
+						]
+					},
+					"guardianRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe users page says users can add recovery keys or co-signers.",
+									"url": "https://safe.global/users"
+								}
+							}
+						]
+					},
+					"passkeyRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe docs say passkeys can sign into wallets and sync across Apple/Android devices.",
+									"url": "https://docs.safe.global/advanced/passkeys/overview"
+								}
+							}
+						]
+					},
+					"emergencyKit": null,
+					"recoveryRehearsal": null
+				},
+				"onboardingFriction": {
+					"ref": {
+						"explanation": "Safe source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://safe.global"
+					},
+					"seedPhraseRequiredAtSignup": {
+						"$ref": "notSupported"
+					},
+					"passkeySignup": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe supports passkey-first signup or passkey smart-account onboarding.",
+									"url": "https://safe.global"
+								}
+							}
+						]
+					},
+					"emailSignup": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe supports email-based onboarding or recovery for at least some wallet flows.",
+									"url": "https://safe.global"
+								}
+							}
+						]
+					},
+					"phoneSignup": null,
+					"kycRequiredForWallet": {
+						"$ref": "notSupported"
+					},
+					"guestMode": null,
+					"embeddedWalletMode": null,
+					"timeToFirstWallet": "OnboardingSpeed.PASSKEY_OR_EMAIL_FIRST"
+				},
+				"portfolioManagement": {
+					"ref": {
+						"explanation": "Safe source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://safe.global"
+					},
+					"netWorth": {
+						"$ref": "featureSupported"
+					},
+					"pnl": null,
+					"costBasis": null,
+					"tokenCategories": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe provides token balance and asset-list portfolio views.",
+									"url": "https://safe.global"
+								}
+							}
+						]
+					},
+					"nftSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe supports NFT display or NFT portfolio management in at least one wallet surface.",
+									"url": "https://safe.global"
+								}
+							}
+						]
+					},
+					"collectionViews": null,
+					"watchOnlyWallets": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe supports watch-only addresses, imported account monitoring, or external account portfolio tracking.",
+									"url": "https://safe.global"
+								}
+							}
+						]
+					},
+					"multiWalletAggregation": {
+						"$ref": "featureSupported"
+					}
+				},
+				"notifications": {
+					"ref": {
+						"explanation": "Safe source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://safe.global"
+					},
+					"sendReceive": null,
+					"priceAlerts": null,
+					"approvalAlerts": null,
+					"bridgeCompletion": null,
+					"failedTransaction": null,
+					"securityAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe supports security alerts or transaction-risk warnings.",
+									"url": "https://safe.global"
+								}
+							}
+						]
+					},
+					"marketAlerts": null
+				},
+				"nftCapabilities": {
+					"ref": {
+						"explanation": "Safe source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://safe.global"
+					},
+					"display": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe supports displaying NFTs or collectibles in the wallet.",
+									"url": "https://safe.global"
+								}
+							}
+						]
+					},
+					"send": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe supports wallet NFT transfer flows or NFT asset management.",
+									"url": "https://safe.global"
+								}
+							}
+						]
+					},
+					"mint": null,
+					"marketplaceIntegration": null,
+					"spamNftHiding": null,
+					"collectionMetadataRefresh": null,
+					"royaltiesOrOffers": null
+				},
+				"defiPositionAwareness": {
+					"ref": {
+						"explanation": "Safe source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://safe.global"
+					},
+					"lendingPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe surfaces DeFi lending or protocol positions in wallet/portfolio views.",
+									"url": "https://safe.global"
+								}
+							}
+						]
+					},
+					"stakingPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe surfaces staking or earn positions in wallet/portfolio views.",
+									"url": "https://safe.global"
+								}
+							}
+						]
+					},
+					"lpPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe surfaces liquidity-pool or DeFi protocol positions.",
+									"url": "https://safe.global"
+								}
+							}
+						]
+					},
+					"vaultPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe surfaces vault or protocol positions.",
+									"url": "https://safe.global"
+								}
+							}
+						]
+					},
+					"perProtocolBalances": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe groups DeFi holdings by protocol or app.",
+									"url": "https://safe.global"
+								}
+							}
+						]
+					},
+					"claimableRewards": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe surfaces claimable rewards or earn balances.",
+									"url": "https://safe.global"
+								}
+							}
+						]
+					},
+					"liquidationWarnings": null
+				},
+				"stakingEarn": {
+					"ref": {
+						"explanation": "Safe source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://safe.global"
+					},
+					"nativeStaking": null,
+					"liquidStaking": null,
+					"validatorChoice": null,
+					"apyDisplay": null,
+					"rewardsClaiming": null,
+					"providerDependency": null,
+					"lockupDisclosure": null
+				},
+				"customerSupport": {
+					"ref": {
+						"explanation": "Safe source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://safe.global"
+					},
+					"liveChat": null,
+					"emailSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe publishes support, help center, or contact paths for wallet users.",
+									"url": "https://docs.safe.global/"
+								}
+							}
+						]
+					},
+					"aiSupport": null,
+					"publishedSla": null,
+					"inAppHelpCenter": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe provides in-app or product-linked help/support content.",
+									"url": "https://docs.safe.global/"
+								}
+							}
+						]
+					},
+					"transactionTroubleshooting": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe support docs include transaction or wallet troubleshooting material.",
+									"url": "https://docs.safe.global/"
+								}
+							}
+						]
+					},
+					"scamRecoveryGuidance": null
+				},
+				"developerOffering": {
+					"ref": {
+						"explanation": "Safe users page says Safe offers developer SDKs; Safe passkeys docs discuss ERC-4337 and passkey contracts.",
+						"url": "https://safe.global/users"
+					},
+					"walletSdk": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe users page references developer SDKs for deeper integrations.",
+									"url": "https://safe.global/users"
+								}
+							}
+						]
+					},
+					"embeddedWalletSdk": null,
+					"whiteLabelOffering": null,
+					"walletConnectSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe users page and Safe Mobile help document WalletConnect.",
+									"url": "https://help.safe.global/en/articles/40810-connect-to-dapps-with-walletconnect-on-mobile"
+								}
+							}
+						]
+					},
+					"eip6963": null,
+					"eip5792": null,
+					"deepLinks": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe Mobile help describes universal links when using dApps on the same mobile device.",
+									"url": "https://help.safe.global/en/articles/40810-connect-to-dapps-with-walletconnect-on-mobile"
+								}
+							}
+						]
+					},
+					"mobileLinkingQuality": "Safe Mobile documents WalletConnect QR scanning and universal-link handoff flows."
+				},
+				"pricingFeeModel": {
+					"ref": {
+						"explanation": "Safe source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://safe.global"
+					},
+					"swapFees": null,
+					"bridgeFees": null,
+					"onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
+					"spreadDisclosure": null,
+					"subscriptionFeatures": null,
+					"cardFees": "Card fees are provider-dependent where card purchase is available.",
+					"hiddenPartnerRevenue": null
+				},
+				"releaseVelocity": {
+					"ref": {
+						"explanation": "Safe source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://safe.global"
+					},
+					"latestReleaseDate": "2025-03-12",
+					"releaseFrequency": "ReleaseFrequency.IRREGULAR",
+					"appStoreUpdateCadence": "App-store cadence should be measured from current app-store release history in a deeper pass.",
+					"githubActivity": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe has public GitHub repository activity or releases that can be tracked.",
+									"url": "https://github.com/safe-fndn"
+								}
+							}
+						]
+					},
+					"changelogDetail": "ChangelogDetail.BASIC"
+				},
+				"deviceSync": {
+					"ref": {
+						"explanation": "Safe source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://safe.global"
+					},
+					"syncsAccounts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe supports account synchronization or account reuse across devices.",
+									"url": "https://safe.global"
+								}
+							}
+						]
+					},
+					"syncsSettings": null,
+					"syncsContactsOrAddressBook": null,
+					"desktopMobileSync": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe supports cross-device use between mobile and desktop/browser surfaces.",
+									"url": "https://safe.global"
+								}
+							}
+						]
+					},
+					"cloudBackedSync": null,
+					"requiresSameSeedImport": {
+						"$ref": "notSupported"
+					}
+				}
 			}
 		},
 		"variants": {

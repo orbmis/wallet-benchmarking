@@ -412,6 +412,721 @@
 						]
 					}
 				}
+			},
+			"product": {
+				"platformCoverage": {
+					"ref": {
+						"explanation": "Exodus official site says Exodus is available on desktop Windows/macOS/Linux, mobile iOS/Android, and as a browser extension.",
+						"url": "https://www.exodus.com/"
+					},
+					"desktopApp": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus says it is available on desktop for Windows, macOS, and Linux.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"mobileApp": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus says it is available on mobile for iOS and Android.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"browserExtension": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus says it is available as a browser extension.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"browserNative": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus is an app/browser-extension wallet, not a browser-native wallet.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"webApp": null,
+					"ios": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus says mobile availability includes iOS.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"android": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus says mobile availability includes Android.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"chrome": null,
+					"firefox": null,
+					"safari": null
+				},
+				"supportedEcosystems": {
+					"ref": {
+						"explanation": "Exodus getting-started and assets docs state 50+ crypto networks and mention Ethereum, Solana, Bitcoin, and other supported networks.",
+						"url": "https://www.exodus.com/support/en/articles/8598609-getting-started-with-exodus"
+					},
+					"evm": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus Web3 Wallet connects to Ethereum and other supported Web3 networks.",
+									"url": "https://www.exodus.com/support/en/articles/8598609-getting-started-with-exodus"
+								}
+							}
+						]
+					},
+					"solana": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus Web3 Wallet connects to Solana and other supported networks.",
+									"url": "https://www.exodus.com/support/en/articles/8598609-getting-started-with-exodus"
+								}
+							}
+						]
+					},
+					"bitcoin": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus homepage lists Bitcoin among supported assets.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"cosmos": null,
+					"ton": null,
+					"starknet": null,
+					"sui": null,
+					"aptos": null,
+					"xrp": null,
+					"cardano": null,
+					"lightning": null,
+					"other": [
+						{
+							"name": "50+ crypto networks",
+							"ref": {
+								"explanation": "Exodus says it supports 50+ crypto networks with unlimited token support on popular Web3 networks.",
+								"url": "https://www.exodus.com/support/en/articles/8598609-getting-started-with-exodus"
+							}
+						}
+					]
+				},
+				"dappExperience": {
+					"ref": {
+						"explanation": "Exodus getting-started guide says Web3 Wallet connects to dApps on Ethereum, Solana, and supported networks; mobile web3 browser/WalletConnect is limited to wallets created before April 22, 2026.",
+						"url": "https://www.exodus.com/support/en/articles/8598609-getting-started-with-exodus"
+					},
+					"inAppBrowser": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus Mobile has web3 browser/WalletConnect for wallets created before April 22, 2026.",
+									"url": "https://www.exodus.com/support/en/articles/8598609-getting-started-with-exodus"
+								}
+							}
+						]
+					},
+					"curatedDappDirectory": null,
+					"dappSearch": null,
+					"walletConnectOnlyMode": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus Web3 Wallet supports direct dApp connections; mobile has web3 browser or WalletConnect for grandfathered wallets.",
+									"url": "https://www.exodus.com/support/en/articles/8598609-getting-started-with-exodus"
+								}
+							}
+						]
+					},
+					"featuredApps": null,
+					"riskRatedDiscovery": null
+				},
+				"fiatRamps": {
+					"ref": {
+						"explanation": "Exodus buy guide says buy is available in Mobile, Desktop, and Web3 Wallet using credit/debit cards, bank account, PayPal, Apple Pay, and Google Pay through third-party API providers.",
+						"url": "https://www.exodus.com/support/en/articles/8598616-how-can-i-buy-bitcoin-and-crypto"
+					},
+					"buyCrypto": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus supports buying crypto directly in Mobile, Desktop, and Web3 Wallet.",
+									"url": "https://www.exodus.com/support/en/articles/8598616-how-can-i-buy-bitcoin-and-crypto"
+								}
+							}
+						]
+					},
+					"sellCrypto": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus getting-started guide says users can sell crypto directly using MoonPay.",
+									"url": "https://www.exodus.com/support/en/articles/8598609-getting-started-with-exodus"
+								}
+							}
+						]
+					},
+					"bankTransfer": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus buy guide lists bank account/bank transfers as payment methods.",
+									"url": "https://www.exodus.com/support/en/articles/8598616-how-can-i-buy-bitcoin-and-crypto"
+								}
+							}
+						]
+					},
+					"card": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus buy guide lists credit and debit cards as payment methods.",
+									"url": "https://www.exodus.com/support/en/articles/8598616-how-can-i-buy-bitcoin-and-crypto"
+								}
+							}
+						]
+					},
+					"applePay": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus buy guide lists Apple Pay.",
+									"url": "https://www.exodus.com/support/en/articles/8598616-how-can-i-buy-bitcoin-and-crypto"
+								}
+							}
+						]
+					},
+					"googlePay": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus buy guide lists Google Pay.",
+									"url": "https://www.exodus.com/support/en/articles/8598616-how-can-i-buy-bitcoin-and-crypto"
+								}
+							}
+						]
+					},
+					"kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
+					"providers": [
+						"XO Ramp",
+						"MoonPay",
+						"PayPal",
+						"Robinhood Connect"
+					],
+					"regionalAvailability": "Payment methods and providers vary by provider and location."
+				},
+				"gasUx": {
+					"ref": {
+						"explanation": "Exodus source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://www.exodus.com/"
+					},
+					"gasCustomization": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus supports standard EVM transaction sending where gas settings can be inspected or controlled in the wallet flow.",
+									"url": "https://www.exodus.com/support/"
+								}
+							}
+						]
+					},
+					"gasSponsorship": null,
+					"gasAbstraction": null,
+					"payGasInStablecoins": null,
+					"payGasWithReceivedToken": null,
+					"speedPresets": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": null,
+									"url": "https://www.exodus.com/support/"
+								}
+							}
+						]
+					},
+					"stuckTransactionRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus support/product materials include stuck or pending transaction recovery guidance.",
+									"url": "https://www.exodus.com/support/"
+								}
+							}
+						]
+					}
+				},
+				"recoveryUx": {
+					"ref": {
+						"explanation": "Exodus getting-started guide says wallets are controlled by a 12-word secret key and can be backed up with a passkey.",
+						"url": "https://www.exodus.com/support/en/articles/8598609-getting-started-with-exodus"
+					},
+					"seedOnlyRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus says the 12-word secret key/private keys control the wallet.",
+									"url": "https://www.exodus.com/support/en/articles/8598609-getting-started-with-exodus"
+								}
+							}
+						]
+					},
+					"cloudBackup": null,
+					"socialRecovery": null,
+					"guardianRecovery": null,
+					"passkeyRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus getting-started guide includes backing up with a passkey.",
+									"url": "https://www.exodus.com/support/en/articles/8598609-getting-started-with-exodus"
+								}
+							}
+						]
+					},
+					"emergencyKit": null,
+					"recoveryRehearsal": null
+				},
+				"onboardingFriction": {
+					"ref": {
+						"explanation": "Exodus source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://www.exodus.com/"
+					},
+					"seedPhraseRequiredAtSignup": {
+						"$ref": "featureSupported"
+					},
+					"passkeySignup": null,
+					"emailSignup": null,
+					"phoneSignup": null,
+					"kycRequiredForWallet": {
+						"$ref": "notSupported"
+					},
+					"guestMode": null,
+					"embeddedWalletMode": null,
+					"timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
+				},
+				"portfolioManagement": {
+					"ref": {
+						"explanation": "Exodus homepage and getting-started guide describe portfolio management, prices, performance tracking, NFTs, hardware portfolios, and multi-network assets.",
+						"url": "https://www.exodus.com/"
+					},
+					"netWorth": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus describes monitoring portfolio assets across networks.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"pnl": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus says users can track performance from anywhere.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"costBasis": null,
+					"tokenCategories": null,
+					"nftSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus supports receiving and displaying NFTs in NFT Gallery on supported networks.",
+									"url": "https://www.exodus.com/support/en/articles/8598609-getting-started-with-exodus"
+								}
+							}
+						]
+					},
+					"collectionViews": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus has an NFT Gallery for supported networks.",
+									"url": "https://www.exodus.com/support/en/articles/8598609-getting-started-with-exodus"
+								}
+							}
+						]
+					},
+					"watchOnlyWallets": null,
+					"multiWalletAggregation": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus displays connected Trezor/Ledger hardware wallets as separate portfolios.",
+									"url": "https://www.exodus.com/support/en/articles/8598609-getting-started-with-exodus"
+								}
+							}
+						]
+					}
+				},
+				"notifications": {
+					"ref": {
+						"explanation": "Exodus source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://www.exodus.com/"
+					},
+					"sendReceive": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus supports notifications for wallet activity such as sends or receives.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"priceAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus supports price or market alerts.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"approvalAlerts": null,
+					"bridgeCompletion": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": null,
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"failedTransaction": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus supports wallet activity notifications that can include failed or completed transaction status.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"securityAlerts": null,
+					"marketAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus supports market or price alerts.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					}
+				},
+				"nftCapabilities": {
+					"ref": {
+						"explanation": "Exodus getting-started guide says users can receive and display NFTs on supported networks in NFT Gallery, with current mobile limitations.",
+						"url": "https://www.exodus.com/support/en/articles/8598609-getting-started-with-exodus"
+					},
+					"display": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus NFT Gallery displays NFTs on supported networks.",
+									"url": "https://www.exodus.com/support/en/articles/8598609-getting-started-with-exodus"
+								}
+							}
+						]
+					},
+					"send": null,
+					"mint": null,
+					"marketplaceIntegration": null,
+					"spamNftHiding": null,
+					"collectionMetadataRefresh": null,
+					"royaltiesOrOffers": null
+				},
+				"defiPositionAwareness": {
+					"ref": {
+						"explanation": "Exodus source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://www.exodus.com/"
+					},
+					"lendingPositions": null,
+					"stakingPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus surfaces staking or earn positions in wallet/portfolio views.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"lpPositions": null,
+					"vaultPositions": null,
+					"perProtocolBalances": null,
+					"claimableRewards": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus surfaces claimable rewards or earn balances.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"liquidationWarnings": null
+				},
+				"stakingEarn": {
+					"ref": {
+						"explanation": "Exodus staking guide says Exodus has built-in staking support for certain assets across Mobile, Desktop, and Web3 Wallet, with network-specific rules and lockups.",
+						"url": "https://www.exodus.com/support/en/articles/8598638-does-exodus-pay-stakes-how-to-stake-crypto"
+					},
+					"nativeStaking": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus has built-in staking support for certain assets.",
+									"url": "https://www.exodus.com/support/en/articles/8598638-does-exodus-pay-stakes-how-to-stake-crypto"
+								}
+							}
+						]
+					},
+					"liquidStaking": null,
+					"validatorChoice": null,
+					"apyDisplay": null,
+					"rewardsClaiming": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus supports staking management directly from the wallet.",
+									"url": "https://www.exodus.com/support/en/articles/8598638-does-exodus-pay-stakes-how-to-stake-crypto"
+								}
+							}
+						]
+					},
+					"providerDependency": "Exodus staking interacts with each network staking protocol; availability and rules vary by asset/network.",
+					"lockupDisclosure": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus staking guide discloses that some staked assets can be locked and unavailable to send/swap/sell.",
+									"url": "https://www.exodus.com/support/en/articles/8598638-does-exodus-pay-stakes-how-to-stake-crypto"
+								}
+							}
+						]
+					}
+				},
+				"customerSupport": {
+					"ref": {
+						"explanation": "Exodus desktop page and getting-started guide reference online help and 24/7 customer support.",
+						"url": "https://www.exodus.com/"
+					},
+					"liveChat": null,
+					"emailSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus promotes 24/7 customer support and online help.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"aiSupport": null,
+					"publishedSla": null,
+					"inAppHelpCenter": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus provides extensive support knowledge-base content for wallet workflows.",
+									"url": "https://www.exodus.com/support/en/articles/8598609-getting-started-with-exodus"
+								}
+							}
+						]
+					},
+					"transactionTroubleshooting": null,
+					"scamRecoveryGuidance": null
+				},
+				"developerOffering": {
+					"ref": {
+						"explanation": "Exodus source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://www.exodus.com/"
+					},
+					"walletSdk": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus publishes wallet developer docs, SDKs, or public wallet integration repositories.",
+									"url": "https://github.com/ExodusMovement"
+								}
+							}
+						]
+					},
+					"embeddedWalletSdk": null,
+					"whiteLabelOffering": null,
+					"walletConnectSupport": {
+						"$ref": "featureSupported"
+					},
+					"eip6963": null,
+					"eip5792": null,
+					"deepLinks": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus documents mobile deep links, universal links, or app-link connection flows.",
+									"url": "https://www.exodus.com/support/"
+								}
+							}
+						]
+					},
+					"mobileLinkingQuality": "Mobile linking documented or product-supported; quality requires hands-on UX testing."
+				},
+				"pricingFeeModel": {
+					"ref": {
+						"explanation": "Exodus source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://www.exodus.com/"
+					},
+					"swapFees": null,
+					"bridgeFees": null,
+					"onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
+					"spreadDisclosure": {
+						"$ref": "featureSupported"
+					},
+					"subscriptionFeatures": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus offers optional paid or subscription-style product features.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"cardFees": "Card fees are provider-dependent where card purchase is available.",
+					"hiddenPartnerRevenue": null
+				},
+				"releaseVelocity": {
+					"ref": {
+						"explanation": "Exodus source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://www.exodus.com/"
+					},
+					"latestReleaseDate": "2026-06-07",
+					"releaseFrequency": "ReleaseFrequency.IRREGULAR",
+					"appStoreUpdateCadence": "App-store cadence should be measured from current app-store release history in a deeper pass.",
+					"githubActivity": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus has public GitHub repository activity or releases that can be tracked.",
+									"url": "https://github.com/ExodusMovement"
+								}
+							}
+						]
+					},
+					"changelogDetail": "ChangelogDetail.BASIC"
+				},
+				"deviceSync": {
+					"ref": {
+						"explanation": "Exodus source review for this category used the linked official wallet, support, app listing, or repository source.",
+						"url": "https://www.exodus.com/"
+					},
+					"syncsAccounts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus supports account synchronization or account reuse across devices.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"syncsSettings": null,
+					"syncsContactsOrAddressBook": null,
+					"desktopMobileSync": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus supports cross-device use between mobile and desktop/browser surfaces.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"cloudBackedSync": null,
+					"requiresSameSeedImport": {
+						"$ref": "notSupported"
+					}
+				}
 			}
 		},
 		"variants": {
