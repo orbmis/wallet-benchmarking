@@ -45,16 +45,24 @@
 					"$call": "supported",
 					"args": [
 						{
-							"ref": {
-								"$ref": "refTodo"
-							},
-							"canExportPrivateKey": true,
+							"ref": [
+								{
+									"explanation": "Gem Wallet's backup guide shows users can reveal and write down the Secret Recovery Phrase from wallet settings.",
+									"url": "https://docs.gemwallet.com/guides/backup-wallet/"
+								},
+								{
+									"explanation": "Gem Wallet's private-key derivation guide says the wallet uses a 12-word recovery phrase based on BIP-39; Gem does not show private keys directly in the app.",
+									"url": "https://docs.gemwallet.com/troubleshoot/derive-private-key/"
+								}
+							],
+							"canExportPrivateKey": false,
 							"keyDerivation": {
 								"type": "BIP32",
 								"canExportSeedPhrase": true,
 								"derivationPath": "BIP44",
 								"seedPhrase": "BIP39"
-							}
+							},
+							"canExportSeedPhrase": true
 						}
 					]
 				},
@@ -92,8 +100,66 @@
 					]
 				}
 			},
-			"chainAbstraction": null,
-			"chainConfigurability": null,
+			"chainAbstraction": {
+				"bridging": {
+					"builtInBridging": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Gem Wallet docs say swaps can exchange assets across different blockchains without leaving the app, using a built-in aggregator across THORChain, Mayan, NEAR Intents, and other protocols.",
+										"url": "https://docs.gemwallet.com/defi/swap/"
+									},
+									{
+										"explanation": "Gem Wallet describes integrated bridging with fee and route comparisons for stablecoins across 10+ networks.",
+										"url": "https://docs.gemwallet.com/defi/swap/"
+									}
+								]
+							}
+						]
+					},
+					"suggestedBridging": null
+				},
+				"crossChainBalances": {
+					"ref": [
+						{
+							"explanation": "Gem Wallet documents support for 100+ blockchains and thousands of tokens in one multichain wallet interface.",
+							"url": "https://docs.gemwallet.com/features/"
+						},
+						{
+							"explanation": "Gem Wallet describes support for 100+ networks and 10M+ assets, with the entire Web3 ecosystem available on the phone rather than separate apps or interfaces.",
+							"url": "https://gemwallet.com/learn/gem-wallet-benefits-self-custody-open-source-multichain-swaps-and-staking/"
+						}
+					],
+					"globalAccountValue": {
+						"$ref": "featureSupported"
+					},
+					"perChainAccountValue": null
+				}
+			},
+			"chainConfigurability": {
+				"$call": "supported",
+				"args": [
+					{
+						"ref": {
+							"explanation": "Gem Wallet documents setting a custom RPC by selecting a network, tapping the add-node control, and importing an RPC URL; the same guide explains RPC is used by wallets to broadcast transactions and retrieve chain data.",
+							"url": "https://docs.gemwallet.com/guides/custom-rpc/"
+						},
+						"customChainRpcEndpoint": {
+							"$ref": "featureSupported"
+						},
+						"l1": {
+							"$call": "supported",
+							"args": [
+								{
+									"rpcEndpointConfiguration": "RpcEndpointConfiguration.YES_BEFORE_ANY_REQUEST"
+								}
+							]
+						}
+					}
+				]
+			},
 			"ecosystem": {
 				"delegation": "EIP_7702_NOT_SUPPORTED"
 			},
@@ -138,8 +204,28 @@
 			},
 			"privacy": {
 				"analytics": {
-					"crashReports": null,
-					"usage": null
+					"crashReports": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Gem Wallet's App Store privacy label says the developer does not collect any data from the app.",
+									"url": "https://apps.apple.com/us/app/gemwallet-bitcoin-ethereum/id6448712670"
+								}
+							}
+						]
+					},
+					"usage": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Gem Wallet's App Store privacy label says the developer does not collect any data from the app.",
+									"url": "https://apps.apple.com/us/app/gemwallet-bitcoin-ethereum/id6448712670"
+								}
+							}
+						]
+					}
 				},
 				"appIsolation": null,
 				"dataCollection": null,
@@ -163,9 +249,69 @@
 			"profile": "WalletProfile.GENERIC",
 			"security": {
 				"accountRecovery": null,
-				"bugBountyProgram": null,
-				"duressResistance": null,
-				"hardwareWalletSupport": null,
+				"bugBountyProgram": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": [
+								{
+									"explanation": "Gem Wallet publishes a bug bounty program covering its iOS and Android apps, repositories, gemwallet.com, api.gemwallet.com, and gemnodes.com.",
+									"url": "https://gemwallet.com/security/bug-bounty/"
+								},
+								{
+									"explanation": "Gem's security page describes an active bug bounty with rewards up to $8,000.",
+									"url": "https://gemwallet.com/security/"
+								}
+							],
+							"availability": "BugBountyProgramAvailability.ACTIVE",
+							"coverageBreadth": "FULL_SCOPE",
+							"disclosure": {
+								"$ref": "featureSupported"
+							},
+							"legalProtections": null,
+							"platform": "BugBountyPlatform.SELF_HOSTED",
+							"rewards": {
+								"$call": "supported",
+								"args": [
+									{
+										"currency": "USD",
+										"maximum": 8000,
+										"minimum": 100
+									}
+								]
+							},
+							"upgradePathAvailable": true
+						}
+					]
+				},
+				"duressResistance": {
+					"basicUnlock": {
+						"ref": {
+							"explanation": "Gem Wallet's App Store listing advertises advanced encryption and Face ID protection.",
+							"url": "https://apps.apple.com/us/app/gemwallet-bitcoin-ethereum/id6448712670"
+						},
+						"mechanisms": {
+							"PIN": true,
+							"PASSWORD": false,
+							"BIOMETRIC": true,
+							"PATTERN": false
+						}
+					},
+					"duressMode": {
+						"$ref": "notSupported"
+					}
+				},
+				"hardwareWalletSupport": {
+					"$call": "notSupportedWithRef",
+					"args": [
+						{
+							"ref": {
+								"explanation": "Gem Wallet's security page lists hardware wallet support as a public-roadmap item, specifically 'Coming Soon: Hardware Wallet Support - Integration with Ledger and Trezor'.",
+								"url": "https://gemwallet.com/security/"
+							}
+						}
+					]
+				},
 				"keysHandling": null,
 				"lightClient": {
 					"ethereumL1": {
@@ -175,7 +321,19 @@
 				"passkeyVerification": {
 					"$ref": "notSupported"
 				},
-				"publicSecurityAudits": null,
+				"publicSecurityAudits": [
+					{
+						"ref": "https://static.gemwallet.com/audits/Gem-Wallet-CertiK-Security-Audit-April-2026.pdf",
+						"auditDate": "2026-04-08",
+						"auditor": {
+							"$ref": "certik"
+						},
+						"unpatchedFlaws": "NO_HIGH_SEVERITY_FLAWS_FOUND",
+						"variantsScope": {
+							"MOBILE": true
+						}
+					}
+				],
 				"scamAlerts": {
 					"contractTransactionWarning": {
 						"$call": "supported",
@@ -219,17 +377,56 @@
 					}
 				},
 				"securityBestPractices": null,
-				"transactionLegibility": null
+				"transactionLegibility": {
+					"ref": {
+						"explanation": "Gem Wallet documents domain verification and security scanning for WalletConnect/dapp connections, while public source and docs searches found no transaction-simulation preview feature.",
+						"url": "https://docs.gemwallet.com/guide/domain-verification/"
+					},
+					"transactionDetailsDisplay": null,
+					"transactionSimulations": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Gem Wallet's WalletConnect domain-verification docs describe checking dapp domains against registries and security scanners before connection, not simulating transaction outcomes before signing.",
+										"url": "https://docs.gemwallet.com/guide/domain-verification/"
+									},
+									{
+										"explanation": "A search of Gem Wallet's public source repositories found no transaction simulation, Tenderly, Blockaid, Blowfish, or transaction-preview implementation matching the transaction-simulation metric.",
+										"url": "https://github.com/gemwalletcom"
+									}
+								]
+							}
+						]
+					}
+				}
 			},
 			"selfSovereignty": {
-				"permissionsManagement": null,
+				"permissionsManagement": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"explanation": "Gem Wallet's knowledge base explains token approvals, warns users to review and revoke unnecessary permissions, and points users to Ethereum Token Approval for revoking ERC-20 approvals.",
+								"url": "https://docs.gemwallet.com/faq/token-approval/"
+							},
+							"erc20Approvals": null,
+							"erc721Approvals": null,
+							"erc1155Approvals": null
+						}
+					]
+				},
 				"transactionSubmission": {
 					"l1": {
 						"ref": {
-							"$ref": "refTodo"
+							"explanation": "Gem Wallet documents setting a custom RPC by selecting a network, tapping the add-node control, and importing an RPC URL; the same guide explains RPC is used by wallets to broadcast transactions and retrieve chain data.",
+							"url": "https://docs.gemwallet.com/guides/custom-rpc/"
 						},
 						"selfBroadcastViaDirectGossip": null,
-						"selfBroadcastViaSelfHostedNode": null
+						"selfBroadcastViaSelfHostedNode": {
+							"$ref": "featureSupported"
+						}
 					},
 					"l2": {
 						"arbitrum": null,
@@ -276,13 +473,53 @@
 					}
 				},
 				"releaseTransparency": {
-					"artifactSigning": null,
+					"artifactSigning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Gem Wallet is distributed through Apple's App Store under the GemWallet: Bitcoin, Ethereum listing.",
+										"url": "https://apps.apple.com/us/app/gemwallet-bitcoin-ethereum/id6448712670"
+									},
+									{
+										"explanation": "Apple documents that App Store distribution verifies the developer signature and then re-signs the app using an Apple identity before download.",
+										"url": "https://developer.apple.com/documentation/Xcode/using-the-latest-code-signature-format"
+									}
+								]
+							}
+						]
+					},
 					"dependencyLocking": null,
 					"dependencyVulnerabilityScanning": null,
-					"hasPublicChangelog": null,
+					"hasPublicChangelog": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": "https://apps.apple.com/us/app/gemwallet-bitcoin-ethereum/id6448712670"
+							}
+						]
+					},
 					"hermeticBuilds": null,
 					"repositoryChangeControls": null,
-					"reproducibleBuilds": null
+					"reproducibleBuilds": {
+						"ref": [
+							{
+								"explanation": "Gem Wallet Android README points to Docker-based reproducible release verification tooling for tagged releases and published APKs.",
+								"url": "https://github.com/gemwalletcom/gem-android/blob/main/README.md"
+							},
+							{
+								"explanation": "Gem Wallet reproducible-build documentation says the verifier rebuilds tagged releases in Docker, strips signing artifacts, patches the R8 map-id when needed, and compares the rebuilt APK with the official APK; it also documents that hashes do not yet match without signature copying until AGP/R8 exposes deterministic map-id configuration.",
+								"url": "https://github.com/gemwalletcom/gem-android/blob/main/reproducible/README.md"
+							}
+						],
+						"status": "PARTIAL_REPRODUCIBLE_RELEASE_VERIFICATION",
+						"scope": {
+							"ANDROID": true,
+							"IOS": null
+						},
+						"notes": "Android APK payload verification tooling is published, but the project documents remaining AGP/R8 map-id and signing-block workarounds before full bit-for-bit release reproducibility."
+					}
 				}
 			}
 		},

@@ -92,7 +92,40 @@
 					]
 				}
 			},
-			"chainAbstraction": null,
+			"chainAbstraction": {
+				"bridging": {
+					"builtInBridging": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Rainbow's website describes built-in Swap & Bridge with cross-chain swaps, DEX and bridge liquidity, and Flashbots protection.",
+										"url": "https://rainbow.me/en/"
+									},
+									{
+										"explanation": "Rainbow's support article explains cross-chain swaps and bridging with Rainbow, including swaps between Ethereum, Optimism, Arbitrum, and Polygon.",
+										"url": "https://learn.rainbow.me/cross-chain-swaps-and-bridging-with-rainbow"
+									}
+								]
+							}
+						]
+					},
+					"suggestedBridging": null
+				},
+				"crossChainBalances": {
+					"ref": {
+						"explanation": "Rainbow describes all relevant chains in one place and displays tokens, activity details, and NFTs for supported L2s.",
+						"url": "https://rainbow.me/en/"
+					},
+					"globalAccountValue": {
+						"$ref": "featureSupported"
+					},
+					"perChainAccountValue": {
+						"$ref": "featureSupported"
+					}
+				}
+			},
 			"chainConfigurability": {
 				"BROWSER": {
 					"$call": "supported",
@@ -214,8 +247,28 @@
 			},
 			"privacy": {
 				"analytics": {
-					"crashReports": null,
-					"usage": null
+					"crashReports": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow's App Store privacy label lists Diagnostics as data that may be handled by the app.",
+									"url": "https://apps.apple.com/us/app/rainbow-ethereum-wallet/id1457119021"
+								}
+							}
+						]
+					},
+					"usage": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow's App Store privacy label lists Usage Data as data that may be handled by the app.",
+									"url": "https://apps.apple.com/us/app/rainbow-ethereum-wallet/id1457119021"
+								}
+							}
+						]
+					}
 				},
 				"appIsolation": null,
 				"dataCollection": null,
@@ -283,25 +336,21 @@
 					"$ref": "notSupported"
 				},
 				"duressResistance": {
-					"$call": "supported",
-					"args": [
-						{
-							"basicUnlock": {
-								"ref": {
-									"$ref": "refTodo"
-								},
-								"mechanisms": {
-									"PIN": false,
-									"PASSWORD": true,
-									"BIOMETRIC": false,
-									"PATTERN": false
-								}
-							},
-							"duressMode": {
-								"$ref": "notSupported"
-							}
+					"basicUnlock": {
+						"ref": {
+							"explanation": "Rainbow's support guide says iOS users can require Face ID before opening the Rainbow app, using Apple's app-lock feature as an additional security layer.",
+							"url": "https://rainbow.me/support/app/lock-your-rainbow-app-on-ios"
+						},
+						"mechanisms": {
+							"PIN": false,
+							"PASSWORD": false,
+							"BIOMETRIC": true,
+							"PATTERN": false
 						}
-					]
+					},
+					"duressMode": {
+						"$ref": "notSupported"
+					}
 				},
 				"hardwareWalletSupport": {
 					"ref": {
@@ -347,7 +396,46 @@
 					"$ref": "notSupported"
 				},
 				"publicSecurityAudits": [],
-				"scamAlerts": null,
+				"scamAlerts": {
+					"contractTransactionWarning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Blockaid says Rainbow uses its transaction security simulation and validation API to show whether a connected contract is malicious or benign and what functions the contract will execute.",
+									"url": "https://www.blockaid.io/blog/rainbow-wallet-mobile-app-and-browser-extension-powered-by-blockaid"
+								},
+								"contractRegistry": null,
+								"previousContractInteractionWarning": null,
+								"recentContractWarning": null
+							}
+						]
+					},
+					"scamUrlWarning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Blockaid says Rainbow users get a warning before connecting to a site that might be malicious through dApp Scanning.",
+									"url": "https://www.blockaid.io/blog/rainbow-wallet-mobile-app-and-browser-extension-powered-by-blockaid"
+								}
+							}
+						]
+					},
+					"sendTransactionWarning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Blockaid says Rainbow shows what will happen before users send a transaction, including token movements and contract actions.",
+									"url": "https://www.blockaid.io/blog/rainbow-wallet-mobile-app-and-browser-extension-powered-by-blockaid"
+								},
+								"newRecipientWarning": null,
+								"userWhitelist": null
+							}
+						]
+					}
+				},
 				"securityBestPractices": null,
 				"transactionLegibility": {
 					"ref": {
@@ -484,13 +572,55 @@
 					"uniswapUSDCToEtherSwap": null
 				},
 				"releaseTransparency": {
-					"artifactSigning": null,
+					"artifactSigning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Rainbow publishes a browser extension through the Chrome Web Store.",
+										"url": "https://chromewebstore.google.com/detail/rainbow/opfgelmcmbiajamepnmloijbpoleiama"
+									},
+									{
+										"explanation": "Chrome for Developers states that all Chrome Web Store extensions are signed by Google, with signing handled automatically when a package is uploaded.",
+										"url": "https://developer.chrome.com/blog/verified-uploads-cws"
+									}
+								]
+							}
+						]
+					},
 					"dependencyLocking": null,
 					"dependencyVulnerabilityScanning": null,
-					"hasPublicChangelog": null,
+					"hasPublicChangelog": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rainbow's App Store page publishes version history and release notes for the mobile app.",
+									"url": "https://apps.apple.com/us/app/rainbow-ethereum-wallet/id1457119021"
+								}
+							}
+						]
+					},
 					"hermeticBuilds": null,
 					"repositoryChangeControls": null,
-					"reproducibleBuilds": null
+					"reproducibleBuilds": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Rainbow's public setup instructions require external contributors to provide their own `.env` API keys and Firebase `google-services.json`, while internal developers use private setup inputs; this does not provide a public deterministic rebuild path for matching the released wallet artifacts.",
+										"url": "https://github.com/rainbow-me/rainbow/blob/develop/README.md"
+									},
+									{
+										"explanation": "Rainbow's package scripts include release APK/bundle generation commands, but the public project scripts document local build generation rather than a reproducible release-artifact verification and comparison procedure.",
+										"url": "https://github.com/rainbow-me/rainbow/blob/develop/package.json"
+									}
+								]
+							}
+						]
+					}
 				}
 			}
 		},

@@ -16,6 +16,9 @@
 			"iconExtension": "svg",
 			"lastUpdated": "2025-03-12",
 			"urls": {
+				"extensions": [
+					"https://chromewebstore.google.com/detail/elytro/alkpdbodocedcmhgmhkebanomfeenoik"
+				],
 				"repositories": [
 					"https://github.com/Elytro-eth"
 				],
@@ -61,15 +64,83 @@
 			},
 			"addressResolution": {
 				"ref": {
-					"$ref": "refTodo"
+					"explanation": "Elytro CLI docs define transaction specs with raw `to:0xAddr` recipients, and public repository search found no ENS, namehash, resolver, or Universal Resolver implementation.",
+					"url": "https://elytro.com/docs/cli"
 				},
 				"chainSpecificAddressing": {
 					"erc7828": null,
 					"erc7831": null
 				},
-				"nonChainSpecificEnsResolution": null
+				"nonChainSpecificEnsResolution": {
+					"$call": "notSupportedWithRef",
+					"args": [
+						{
+							"ref": [
+								{
+									"explanation": "Elytro's transaction spec format is documented as `--tx \"to:0xAddr,value:0.1,data:0x\"`, with no ENS-name recipient format documented.",
+									"url": "https://elytro.com/docs/cli"
+								},
+								{
+									"explanation": "Elytro's quickstart sends transactions using `to:0xRecipient` and does not document ENS-name resolution for recipients.",
+									"url": "https://elytro.com/docs/quickstart"
+								}
+							]
+						}
+					]
+				}
 			},
-			"chainAbstraction": null,
+			"chainAbstraction": {
+				"bridging": {
+					"builtInBridging": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Elytro describes token activity as \"Send, swap & bridge daily\" and its demo includes a \"Swap & bridge\" flow.",
+										"url": "https://elytro.com/"
+									},
+									{
+										"explanation": "Elytro publishes an illustrative \"Swap & bridge\" demo flow for the wallet CLI and agent chat scenarios.",
+										"url": "https://elytro.com/demo"
+									}
+								]
+							}
+						]
+					},
+					"bridgingViaTransactionGeneration": null,
+					"trustMinimizedBridging": null
+				},
+				"crossChainBalances": {
+					"ref": {
+						"explanation": "Elytro documents account-level balance checks and ERC-20 token listing commands, but not a unified cross-chain account-value dashboard.",
+						"url": "https://elytro.com/docs/cli"
+					},
+					"globalAccountValue": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Elytro's account info and balance commands return account status and balances for a wallet/account, while the CLI reference separately lists accounts by chain; it does not document a single unified cross-chain account-value view.",
+										"url": "https://elytro.com/docs/cli"
+									},
+									{
+										"explanation": "The Elytro quickstart emphasizes querying balances directly and documents supported chains, but does not describe a global portfolio-value view across chains.",
+										"url": "https://elytro.com/docs/quickstart"
+									}
+								]
+							}
+						]
+					},
+					"perChainAccountValue": null
+				},
+				"gasSubsidies": {
+					"l1GasRelay": null,
+					"l1GasTank": null,
+					"l2GasRelay": null
+				}
+			},
 			"chainConfigurability": null,
 			"ecosystem": {
 				"delegation": null
@@ -85,7 +156,26 @@
 				},
 				"walletCall": null
 			},
-			"licensing": null,
+			"licensing": {
+				"type": "LicensingType.SEPARATE_CORE_CODE_LICENSE_VS_WALLET_CODE_LICENSE",
+				"coreLicense": {
+					"ref": {
+						"explanation": "The current Elytro wallet contract repository is licensed under GPL-3.0.",
+						"url": "https://github.com/Elytro-eth/Elytro-wallet-contract/blob/develop/LICENSE"
+					},
+					"license": "FOSSLicense.GPL_3_0"
+				},
+				"walletAppLicense": {
+					"BROWSER": {
+						"ref": {
+							"explanation": "The Soul Wallet Web README states that the web wallet codebase is licensed under the MIT License.",
+							"url": "https://github.com/Elytro-eth/soul-wallet-web/blob/develop/README.md"
+						},
+						"license": "FOSSLicense.MIT"
+					},
+					"MOBILE": null
+				}
+			},
 			"monetization": {
 				"ref": {
 					"$ref": "refTodo"
@@ -103,11 +193,43 @@
 					"ventureCapital": null
 				}
 			},
-			"multiAddress": null,
+			"multiAddress": {
+				"$call": "supported",
+				"args": [
+					{
+						"ref": [
+							{
+								"explanation": "Elytro Web shows a Select a wallet modal for multiple wallets found under a signer, and lets the user import another account.",
+								"url": "https://github.com/Elytro-eth/soul-wallet-web/blob/832c6eb03a2300b607559f9665bedabe94645424/src/pages/auth/SelectAccountModal/index.tsx"
+							}
+						]
+					}
+				]
+			},
 			"privacy": {
 				"analytics": {
-					"crashReports": null,
-					"usage": null
+					"crashReports": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "The Chrome Web Store privacy disclosure for Elytro says the developer will not collect or use user data.",
+									"url": "https://chromewebstore.google.com/detail/elytro/alkpdbodocedcmhgmhkebanomfeenoik"
+								}
+							}
+						]
+					},
+					"usage": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "The Chrome Web Store privacy disclosure for Elytro says the developer will not collect or use user data.",
+									"url": "https://chromewebstore.google.com/detail/elytro/alkpdbodocedcmhgmhkebanomfeenoik"
+								}
+							}
+						]
+					}
 				},
 				"appIsolation": null,
 				"dataCollection": null,
@@ -131,8 +253,57 @@
 			"profile": "WalletProfile.GENERIC",
 			"security": {
 				"accountRecovery": null,
-				"bugBountyProgram": null,
-				"duressResistance": null,
+				"bugBountyProgram": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": [
+								{
+									"explanation": "Soul Wallet/Elytro publishes a bug bounty program for soulwallet-core and soul-wallet-contract, focused on critical and high-severity bugs affecting user funds.",
+									"url": "https://github.com/Elytro-eth/soul-wallet-contract/blob/develop/bug-bounty.md"
+								}
+							],
+							"availability": "BugBountyProgramAvailability.ACTIVE",
+							"coverageBreadth": "PARTIAL_SCOPE",
+							"dateStarted": "2024-08-20",
+							"disclosure": {
+								"$ref": "featureSupported"
+							},
+							"legalProtections": {
+								"$ref": "notSupported"
+							},
+							"platform": "BugBountyPlatform.SELF_HOSTED",
+							"rewards": {
+								"$call": "supported",
+								"args": [
+									{
+										"currency": "USD",
+										"maximum": 50000,
+										"minimum": 0
+									}
+								]
+							},
+							"upgradePathAvailable": true
+						}
+					]
+				},
+				"duressResistance": {
+					"basicUnlock": {
+						"ref": {
+							"explanation": "The Chrome Web Store listing says Elytro creates wallets with a simple passcode.",
+							"url": "https://chromewebstore.google.com/detail/elytro/alkpdbodocedcmhgmhkebanomfeenoik"
+						},
+						"mechanisms": {
+							"PIN": false,
+							"PASSWORD": true,
+							"BIOMETRIC": false,
+							"PATTERN": false
+						}
+					},
+					"duressMode": {
+						"$ref": "notSupported"
+					}
+				},
 				"hardwareWalletSupport": {
 					"ref": {
 						"$ref": "refTodo"
@@ -141,7 +312,17 @@
 				},
 				"keysHandling": null,
 				"lightClient": {
-					"ethereumL1": null
+					"ethereumL1": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Elytro quickstart lists network access to Ethereum RPC providers as a prerequisite for the CLI, which indicates RPC-provider access rather than an embedded Ethereum L1 light client.",
+									"url": "https://elytro.com/docs/quickstart"
+								}
+							}
+						]
+					}
 				},
 				"passkeyVerification": {
 					"$call": "supported",
@@ -159,22 +340,141 @@
 						}
 					]
 				},
-				"publicSecurityAudits": {
-					"$ref": "elytroAudits"
+				"publicSecurityAudits": [
+					{
+						"ref": "https://github.com/Elytro-eth/soul-wallet-contract/blob/develop/audits/SlowMist%20Audit%20Report%20-%20SoulWallet.pdf",
+						"auditDate": "2024-06-04",
+						"auditor": {
+							"$ref": "slowmist"
+						},
+						"codeSnapshot": "preliminary_audit",
+						"unpatchedFlaws": "NO_HIGH_SEVERITY_FLAWS_FOUND",
+						"variantsScope": "SOULWALLET_CORE_AND_UPPER_LAYER_WALLET_CONTRACTS"
+					}
+				],
+				"scamAlerts": {
+					"contractTransactionWarning": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Elytro documents transaction simulation, on-chain 2FA, and spending limits as its transaction-safety controls, but does not document malicious-contract registry checks or contract-risk warnings.",
+										"url": "https://elytro.com/"
+									},
+									{
+										"explanation": "Public Elytro repository search found no Blockaid, Tenderly-risk, phishing, malicious-contract, or scam-alert implementation matching contract-risk warnings.",
+										"url": "https://github.com/Elytro-eth"
+									}
+								]
+							}
+						]
+					},
+					"scamUrlWarning": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Elytro is documented around CLI/agent wallet commands and account policies rather than browser URL reputation checks, and no scam/phishing URL warning feature is described.",
+										"url": "https://elytro.com/docs/cli"
+									},
+									{
+										"explanation": "Public Elytro repository search found no phishing-domain, scam URL, WalletConnect Verify, Blockaid, or URL reputation implementation matching the scam-URL warning metric.",
+										"url": "https://github.com/Elytro-eth"
+									}
+								]
+							}
+						]
+					},
+					"sendTransactionWarning": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Elytro quickstart recommends simulating before sending and checking balances, but does not document risky-recipient, new-recipient, or user-whitelist send warnings.",
+										"url": "https://elytro.com/docs/quickstart"
+									},
+									{
+										"explanation": "Public Elytro repository search found no risky-recipient, whitelist, scam-address, Blockaid, or malicious-address implementation matching risky-send warnings.",
+										"url": "https://github.com/Elytro-eth"
+									}
+								]
+							}
+						]
+					}
 				},
-				"scamAlerts": null,
 				"securityBestPractices": null,
-				"transactionLegibility": null
+				"transactionLegibility": {
+					"ref": {
+						"$ref": "refTodo"
+					},
+					"transactionDetailsDisplay": {
+						"contractInteraction": null,
+						"erc20Approve": null,
+						"erc20Transfer": null,
+						"nftMint": null,
+						"nftTransfer": null,
+						"rawMessageSigning": null
+					},
+					"transactionRiskDetection": null,
+					"transactionSimulations": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Elytro states that agents can \"Simulate, send & batch transactions\" and shows a CLI example for simulating before sending.",
+										"url": "https://elytro.com/"
+									},
+									{
+										"explanation": "Elytro publishes an illustrative \"Simulate & send\" demo flow for the wallet CLI and agent chat scenarios.",
+										"url": "https://elytro.com/demo"
+									}
+								],
+								"insights": "Elytro exposes transaction simulation through its CLI/demo flow before sending transactions."
+							}
+						]
+					}
+				}
 			},
 			"selfSovereignty": {
-				"permissionsManagement": null,
+				"permissionsManagement": {
+					"$call": "notSupportedWithRef",
+					"args": [
+						{
+							"ref": [
+								{
+									"explanation": "Elytro documents account policies such as spending limits and which actions require approval, but does not document wallet-native ERC-20/ERC-721/ERC-1155 token approval inspection or revocation.",
+									"url": "https://elytro.com/"
+								},
+								{
+									"explanation": "Public Elytro repository search found no approval, allowance, revoke, or token-permission management implementation matching the token-approval management metric.",
+									"url": "https://github.com/Elytro-eth"
+								}
+							]
+						}
+					]
+				},
 				"transactionSubmission": {
 					"l1": {
 						"ref": {
-							"$ref": "refTodo"
+							"explanation": "Elytro CLI docs describe transaction, query, and configuration flows through configured Alchemy RPC and Pimlico bundler/paymaster endpoints, with public endpoints as fallbacks.",
+							"url": "https://elytro.com/docs/cli"
 						},
 						"selfBroadcastViaDirectGossip": null,
-						"selfBroadcastViaSelfHostedNode": null
+						"selfBroadcastViaSelfHostedNode": {
+							"$call": "notSupportedWithRef",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Elytro configuration documents only Alchemy RPC and Pimlico bundler/paymaster keys plus public endpoints; it does not expose a custom Ethereum RPC URL or self-hosted-node broadcast setting.",
+										"url": "https://elytro.com/docs/cli"
+									}
+								}
+							]
+						}
 					},
 					"l2": {
 						"ref": {
@@ -188,13 +488,65 @@
 			"transparency": {
 				"operationFees": null,
 				"releaseTransparency": {
-					"artifactSigning": null,
-					"dependencyLocking": null,
+					"artifactSigning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Elytro publishes a browser extension through the Chrome Web Store.",
+										"url": "https://chromewebstore.google.com/detail/elytro/alkpdbodocedcmhgmhkebanomfeenoik"
+									},
+									{
+										"explanation": "Chrome for Developers states that all Chrome Web Store extensions are signed by Google, with signing handled automatically when a package is uploaded.",
+										"url": "https://developer.chrome.com/blog/verified-uploads-cws"
+									}
+								]
+							}
+						]
+					},
+					"dependencyLocking": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "The Soul Wallet Web repository includes a pnpm-lock.yaml lockfile.",
+									"url": "https://github.com/Elytro-eth/soul-wallet-web/blob/develop/pnpm-lock.yaml"
+								}
+							}
+						]
+					},
 					"dependencyVulnerabilityScanning": null,
-					"hasPublicChangelog": null,
+					"hasPublicChangelog": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "The Elytro Chrome Web Store page publishes the current extension version and update date.",
+									"url": "https://chromewebstore.google.com/detail/elytro/alkpdbodocedcmhgmhkebanomfeenoik"
+								}
+							}
+						]
+					},
 					"hermeticBuilds": null,
 					"repositoryChangeControls": null,
-					"reproducibleBuilds": null
+					"reproducibleBuilds": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Elytro/Soul Wallet Web's README documents ordinary dependency installation, development, and production build commands for the web wallet, but does not document an independent deterministic rebuild-and-compare process for matching the published browser extension or web release artifact.",
+										"url": "https://github.com/Elytro-eth/soul-wallet-web/blob/develop/README.md"
+									},
+									{
+										"explanation": "The Soul Wallet Web package scripts build with TypeScript and Vite (`tsc && vite build`); the public scripts describe generating a production build rather than reproducible release-artifact verification.",
+										"url": "https://github.com/Elytro-eth/soul-wallet-web/blob/develop/package.json"
+									}
+								]
+							}
+						]
+					}
 				}
 			}
 		},

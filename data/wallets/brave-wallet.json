@@ -1,0 +1,427 @@
+{
+	"id": "brave-wallet",
+	"source": "software-wallets",
+	"export": "braveWallet",
+	"data": {
+		"metadata": {
+			"id": "brave-wallet",
+			"displayName": "Brave Wallet",
+			"tableName": "Brave Wallet",
+			"blurb": "Brave Wallet is Brave's browser-native self-custody wallet.",
+			"contributors": [],
+			"iconExtension": "png",
+			"lastUpdated": "2026-06-07",
+			"urls": {
+				"docs": [
+					"https://support.brave.com/hc/en-us/categories/360001062531-Wallet"
+				],
+				"repositories": [
+					"https://github.com/brave/brave-browser"
+				],
+				"websites": [
+					"https://brave.com/wallet/"
+				]
+			}
+		},
+		"features": {
+			"accountSupport": {
+				"defaultAccountType": "AccountType.eoa",
+				"eip7702": {
+					"$ref": "notSupported"
+				},
+				"eoa": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"explanation": "Brave Wallet creation asks users to back up a 12-word recovery phrase for self-custody wallet access.",
+								"url": "https://support.brave.com/hc/en-us/articles/12753544357645-Creating-your-Brave-Wallet"
+							},
+							"canExportPrivateKey": true,
+							"keyDerivation": {
+								"type": "BIP32",
+								"canExportSeedPhrase": true,
+								"derivationPath": "BIP44",
+								"seedPhrase": "BIP39"
+							}
+						}
+					]
+				},
+				"mpc": {
+					"$ref": "notSupported"
+				},
+				"rawErc4337": {
+					"$ref": "notSupported"
+				},
+				"safe": {
+					"$ref": "notSupported"
+				}
+			},
+			"addressResolution": {
+				"ref": {
+					"explanation": "Brave Wallet supports Web3 dapp use and address entry, but no ENS resolution feature evidence was found in the public wallet help pages.",
+					"url": "https://support.brave.com/hc/en-us/categories/360001062531-Wallet"
+				},
+				"chainSpecificAddressing": {
+					"erc7828": {
+						"$ref": "notSupported"
+					},
+					"erc7831": {
+						"$ref": "notSupported"
+					}
+				},
+				"nonChainSpecificEnsResolution": {
+					"$call": "notSupportedWithRef",
+					"args": [
+						{
+							"ref": {
+								"explanation": "Targeted review of Brave Wallet help and release notes found no user-facing ENS recipient-resolution documentation.",
+								"url": "https://support.brave.com/hc/en-us/categories/360001062531-Wallet"
+							}
+						}
+					]
+				}
+			},
+			"chainAbstraction": {
+				"bridging": {
+					"builtInBridging": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Wallet advertises wallet-native swaps and cross-chain asset management from the browser wallet.",
+									"url": "https://brave.com/wallet/"
+								}
+							}
+						]
+					},
+					"suggestedBridging": null
+				},
+				"crossChainBalances": {
+					"ref": {
+						"explanation": "Brave Wallet says users can buy, store, send, swap, and manage crypto assets and NFTs in one wallet.",
+						"url": "https://brave.com/wallet/"
+					},
+					"globalAccountValue": {
+						"$ref": "featureSupported"
+					},
+					"perChainAccountValue": {
+						"$ref": "featureSupported"
+					},
+					"ether": null,
+					"usdc": null
+				}
+			},
+			"chainConfigurability": {
+				"$ref": "featureSupported"
+			},
+			"ecosystem": {
+				"delegation": null
+			},
+			"integration": {
+				"browser": {
+					"1193": {
+						"$ref": "featureSupported"
+					},
+					"2700": null,
+					"6963": null,
+					"ref": {
+						"explanation": "Brave Wallet is built into Brave Browser and connects to Web3 dapps without an extension.",
+						"url": "https://brave.com/web3/self-custody-wallet/"
+					}
+				},
+				"walletCall": null
+			},
+			"licensing": {
+				"type": "LicensingType.SINGLE_WALLET_REPO_AND_LICENSE",
+				"walletAppLicense": {
+					"ref": {
+						"explanation": "Brave Browser, including Brave Wallet source, is published in the brave-browser repository under the MPL-2.0 license.",
+						"url": "https://github.com/brave/brave-browser"
+					},
+					"license": "FOSSLicense.MPL_2_0"
+				}
+			},
+			"monetization": {
+				"ref": {
+					"$ref": "refTodo"
+				},
+				"revenueBreakdownIsPublic": false,
+				"strategies": {
+					"donations": false,
+					"ecosystemGrants": false,
+					"governanceTokenLowFloat": false,
+					"governanceTokenMostlyDistributed": false,
+					"hiddenConvenienceFees": null,
+					"publicOffering": false,
+					"selfFunded": false,
+					"transparentConvenienceFees": true,
+					"ventureCapital": true
+				}
+			},
+			"multiAddress": {
+				"$call": "supported",
+				"args": [
+					{
+						"ref": {
+							"explanation": "Brave Wallet supports creating a wallet from a recovery phrase and managing accounts inside the browser wallet.",
+							"url": "https://support.brave.com/hc/en-us/articles/12753544357645-Creating-your-Brave-Wallet"
+						}
+					}
+				]
+			},
+			"privacy": {
+				"analytics": {
+					"crashReports": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave's privacy policy says users can switch off automatic usage statistics and crash reports, implying optional crash-report collection.",
+									"url": "https://brave.com/privacy/browser/"
+								}
+							}
+						]
+					},
+					"usage": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave's privacy policy describes privacy-preserving product analytics and an option to disable automatic usage statistics.",
+									"url": "https://brave.com/privacy/browser/"
+								}
+							}
+						]
+					}
+				},
+				"appIsolation": null,
+				"dataCollection": null,
+				"privacyPolicy": "https://brave.com/privacy/browser/",
+				"transactionPrivacy": {
+					"defaultFungibleTokenTransferMode": "PUBLIC",
+					"STEALTH_ADDRESSES": {
+						"$ref": "notSupported"
+					},
+					"TORNADO_CASH_NOVA": {
+						"$ref": "notSupported"
+					},
+					"PRIVACY_POOLS": {
+						"$ref": "notSupported"
+					},
+					"RAILGUN": {
+						"$ref": "notSupported"
+					}
+				}
+			},
+			"profile": "WalletProfile.GENERIC",
+			"security": {
+				"accountRecovery": null,
+				"bugBountyProgram": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"explanation": "Brave release notes credit wallet security fixes reported through HackerOne, indicating Brave's HackerOne security program covers wallet issues.",
+								"url": "https://brave.com/latest/"
+							},
+							"availability": "BugBountyProgramAvailability.ACTIVE",
+							"platform": "BugBountyPlatform.HACKER_ONE",
+							"upgradePathAvailable": true
+						}
+					]
+				},
+				"duressResistance": {
+					"basicUnlock": {
+						"ref": {
+							"explanation": "Brave Wallet creation requires setting a password for the wallet.",
+							"url": "https://support.brave.com/hc/en-us/articles/12753544357645-Creating-your-Brave-Wallet"
+						},
+						"mechanisms": {
+							"PIN": false,
+							"PASSWORD": true,
+							"BIOMETRIC": false,
+							"PATTERN": false
+						}
+					},
+					"duressMode": {
+						"$ref": "notSupported"
+					}
+				},
+				"hardwareWalletSupport": {
+					"ref": {
+						"explanation": "Brave Wallet's feature matrix says desktop Brave Wallet can connect and securely sign transactions with hardware wallets like Ledger and Trezor.",
+						"url": "https://support.brave.com/hc/en-us/articles/14380262951053-What-features-are-available-in-Brave-Wallet"
+					},
+					"wallets": {
+						"LEDGER": {
+							"$call": "supported",
+							"args": [
+								{
+									"connectionTypes": [
+										"HardwareWalletConnection.webUSB"
+									]
+								}
+							]
+						},
+						"TREZOR": {
+							"$call": "supported",
+							"args": [
+								{
+									"connectionTypes": [
+										"HardwareWalletConnection.webUSB"
+									]
+								}
+							]
+						}
+					}
+				},
+				"keysHandling": null,
+				"lightClient": {
+					"ethereumL1": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Wallet public docs describe RPC-backed wallet network access and custom networks, but no embedded Ethereum L1 light-client verification path was found.",
+									"url": "https://support.brave.com/hc/en-us/categories/360001062531-Wallet"
+								}
+							}
+						]
+					}
+				},
+				"passkeyVerification": {
+					"$ref": "notSupported"
+				},
+				"publicSecurityAudits": [
+					{
+						"ref": "https://www.doyensec.com/resources/Doyensec_BraveWallet_TestingReport_Q32022_AfterRetest.pdf",
+						"auditDate": "2022-01-01",
+						"unpatchedFlaws": "UNKNOWN"
+					}
+				],
+				"scamAlerts": {
+					"contractTransactionWarning": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Wallet help and release notes reviewed for this entry did not show a malicious-contract registry warning feature comparable to Blockaid-style alerts.",
+									"url": "https://support.brave.com/hc/en-us/categories/360001062531-Wallet"
+								}
+							}
+						]
+					},
+					"scamUrlWarning": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Browser has phishing protection, but wallet-specific public docs did not show wallet connection warnings for known-malicious dapps.",
+									"url": "https://support.brave.com/hc/en-us/categories/360001062531-Wallet"
+								}
+							}
+						]
+					},
+					"sendTransactionWarning": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Wallet public docs did not show risky-recipient or transaction-risk warning support before signing.",
+									"url": "https://support.brave.com/hc/en-us/categories/360001062531-Wallet"
+								}
+							}
+						]
+					}
+				},
+				"transactionLegibility": {
+					"transactionSimulations": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Wallet public docs reviewed for this entry did not show transaction simulation previews before signing.",
+									"url": "https://support.brave.com/hc/en-us/categories/360001062531-Wallet"
+								}
+							}
+						]
+					}
+				}
+			},
+			"selfSovereignty": {
+				"permissionsManagement": {
+					"$call": "notSupportedWithRef",
+					"args": [
+						{
+							"ref": {
+								"explanation": "Brave Wallet feature docs and support pages reviewed for this entry show dapp, swap, custom network, hardware-wallet, and portfolio features, but no native token-approval inventory or revoke workflow.",
+								"url": "https://support.brave.com/hc/en-us/articles/14380262951053-What-features-are-available-in-Brave-Wallet"
+							}
+						}
+					]
+				},
+				"transactionSubmission": {
+					"l1": {
+						"ref": {
+							"explanation": "Brave Wallet's feature matrix says users can add custom EVM-compatible networks by entering standardized network IDs and values.",
+							"url": "https://support.brave.com/hc/en-us/articles/14380262951053-What-features-are-available-in-Brave-Wallet"
+						},
+						"selfBroadcastViaDirectGossip": {
+							"$ref": "notSupported"
+						},
+						"selfBroadcastViaSelfHostedNode": {
+							"$ref": "featureSupported"
+						}
+					},
+					"l2": {
+						"ref": {
+							"$ref": "refTodo"
+						}
+					}
+				}
+			},
+			"transparency": {
+				"releaseTransparency": {
+					"artifactSigning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Browser GitHub releases use GitHub's release pipeline and publish signed release assets/checksums through the browser release process.",
+									"url": "https://github.com/brave/brave-browser/releases"
+								}
+							}
+						]
+					},
+					"hasPublicChangelog": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave publishes release notes for browser and wallet changes.",
+									"url": "https://brave.com/latest/"
+								}
+							}
+						]
+					},
+					"reproducibleBuilds": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave publishes source and build instructions, but no wallet-specific reproducible-build attestation for end-user releases was found.",
+									"url": "https://github.com/brave/brave-browser"
+								}
+							}
+						]
+					}
+				}
+			}
+		},
+		"variants": {
+			"BROWSER": true,
+			"MOBILE": true
+		}
+	}
+}

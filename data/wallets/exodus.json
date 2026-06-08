@@ -1,0 +1,423 @@
+{
+	"id": "exodus",
+	"source": "software-wallets",
+	"export": "exodus",
+	"data": {
+		"metadata": {
+			"id": "exodus",
+			"displayName": "Exodus",
+			"tableName": "Exodus",
+			"blurb": "Exodus is a self-custody desktop, mobile, and browser crypto wallet with multi-chain asset support.",
+			"contributors": [],
+			"iconExtension": "png",
+			"lastUpdated": "2026-06-07",
+			"urls": {
+				"docs": [
+					"https://www.exodus.com/support/"
+				],
+				"repositories": [
+					"https://github.com/ExodusMovement"
+				],
+				"websites": [
+					"https://www.exodus.com/"
+				]
+			}
+		},
+		"features": {
+			"accountSupport": {
+				"defaultAccountType": "AccountType.eoa",
+				"eip7702": {
+					"$ref": "notSupported"
+				},
+				"eoa": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"explanation": "Exodus says users fully control their wallet, 12-word secret key, and private keys.",
+								"url": "https://www.exodus.com/support/en/articles/8598688-what-information-does-exodus-have-access-to"
+							},
+							"canExportPrivateKey": true,
+							"keyDerivation": {
+								"type": "BIP32",
+								"canExportSeedPhrase": true,
+								"derivationPath": "BIP44",
+								"seedPhrase": "BIP39"
+							}
+						}
+					]
+				},
+				"mpc": {
+					"$ref": "notSupported"
+				},
+				"rawErc4337": {
+					"$ref": "notSupported"
+				},
+				"safe": {
+					"$ref": "notSupported"
+				}
+			},
+			"addressResolution": {
+				"ref": {
+					"explanation": "Exodus support pages reviewed for this entry did not show ENS-name recipient resolution.",
+					"url": "https://www.exodus.com/support/"
+				},
+				"chainSpecificAddressing": {
+					"erc7828": {
+						"$ref": "notSupported"
+					},
+					"erc7831": {
+						"$ref": "notSupported"
+					}
+				},
+				"nonChainSpecificEnsResolution": {
+					"$call": "notSupportedWithRef",
+					"args": [
+						{
+							"ref": {
+								"explanation": "Targeted review of Exodus support pages found address and QR-code transfer flows, but no ENS recipient-resolution support.",
+								"url": "https://www.exodus.com/support/"
+							}
+						}
+					]
+				}
+			},
+			"chainAbstraction": {
+				"bridging": {
+					"builtInBridging": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus supports swaps for thousands of crypto pairs directly in the wallet.",
+									"url": "https://www.exodus.com/support/en/articles/8598609-getting-started-with-exodus"
+								}
+							}
+						]
+					},
+					"suggestedBridging": null
+				},
+				"crossChainBalances": {
+					"ref": {
+						"explanation": "Exodus describes support for 50+ crypto networks with assets managed from one wallet.",
+						"url": "https://www.exodus.com/support/en/articles/8598611-which-assets-does-exodus-support"
+					},
+					"globalAccountValue": {
+						"$ref": "featureSupported"
+					},
+					"perChainAccountValue": {
+						"$ref": "featureSupported"
+					},
+					"ether": null,
+					"usdc": null
+				}
+			},
+			"chainConfigurability": {
+				"$ref": "notSupported"
+			},
+			"ecosystem": {
+				"delegation": null
+			},
+			"integration": {
+				"browser": {
+					"1193": {
+						"$ref": "featureSupported"
+					},
+					"2700": null,
+					"6963": null,
+					"ref": {
+						"explanation": "Exodus Web3 Wallet connects to dapps and requires signing wallet requests.",
+						"url": "https://www.exodus.com/support/en/articles/8598851-how-do-i-connect-to-dapps-and-web3-apps-with-exodus-web3-wallet"
+					}
+				},
+				"walletCall": null
+			},
+			"licensing": {
+				"type": "LicensingType.PROPRIETARY",
+				"walletAppLicense": {
+					"ref": {
+						"explanation": "Exodus publishes some open-source packages but not the full consumer wallet app source as a single open-source wallet repository.",
+						"url": "https://docs.exodus.com/open-source/"
+					},
+					"license": "SourceNotAvailableLicense.PROPRIETARY"
+				}
+			},
+			"monetization": {
+				"ref": {
+					"$ref": "refTodo"
+				},
+				"revenueBreakdownIsPublic": true,
+				"strategies": {
+					"donations": false,
+					"ecosystemGrants": false,
+					"governanceTokenLowFloat": false,
+					"governanceTokenMostlyDistributed": false,
+					"hiddenConvenienceFees": null,
+					"publicOffering": true,
+					"selfFunded": false,
+					"transparentConvenienceFees": true,
+					"ventureCapital": false
+				}
+			},
+			"multiAddress": {
+				"$call": "supported",
+				"args": [
+					{
+						"ref": {
+							"explanation": "Exodus supports separate Exodus and hardware-wallet portfolios, plus wallet restoration from the same 12-word secret key.",
+							"url": "https://www.exodus.com/support/en/articles/8598656-getting-started-with-exodus-and-trezor"
+						}
+					}
+				]
+			},
+			"privacy": {
+				"analytics": {
+					"crashReports": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus documents product usage and performance data collection, while the App Store privacy label lists Usage Data.",
+									"url": "https://www.exodus.com/support/en/articles/8598688-what-information-does-exodus-have-access-to"
+								}
+							}
+						]
+					},
+					"usage": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus documents product usage and performance data collection.",
+									"url": "https://www.exodus.com/support/en/articles/8598688-what-information-does-exodus-have-access-to"
+								}
+							}
+						]
+					}
+				},
+				"appIsolation": null,
+				"dataCollection": null,
+				"privacyPolicy": "https://www.exodus.com/privacy",
+				"transactionPrivacy": {
+					"defaultFungibleTokenTransferMode": "PUBLIC",
+					"STEALTH_ADDRESSES": {
+						"$ref": "notSupported"
+					},
+					"TORNADO_CASH_NOVA": {
+						"$ref": "notSupported"
+					},
+					"PRIVACY_POOLS": {
+						"$ref": "notSupported"
+					},
+					"RAILGUN": {
+						"$ref": "notSupported"
+					}
+				}
+			},
+			"profile": "WalletProfile.GENERIC",
+			"security": {
+				"accountRecovery": null,
+				"bugBountyProgram": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"explanation": "Exodus says its coordinated vulnerability disclosure program is operated via its HackerOne bug bounty program.",
+								"url": "https://www.exodus.com/security"
+							},
+							"availability": "BugBountyProgramAvailability.ACTIVE",
+							"platform": "BugBountyPlatform.HACKER_ONE",
+							"upgradePathAvailable": true
+						}
+					]
+				},
+				"duressResistance": {
+					"basicUnlock": {
+						"ref": {
+							"explanation": "Exodus says users can set a password to protect the secret key on the device.",
+							"url": "https://www.exodus.com/support/en/articles/8598688-what-information-does-exodus-have-access-to"
+						},
+						"mechanisms": {
+							"PIN": false,
+							"PASSWORD": true,
+							"BIOMETRIC": true,
+							"PATTERN": false
+						}
+					},
+					"duressMode": {
+						"$ref": "notSupported"
+					}
+				},
+				"hardwareWalletSupport": {
+					"ref": {
+						"explanation": "Exodus supports Trezor on desktop and Ledger on mobile.",
+						"url": "https://www.exodus.com/support/en/articles/8598609-getting-started-with-exodus"
+					},
+					"wallets": {
+						"LEDGER": {
+							"$call": "supported",
+							"args": [
+								{
+									"connectionTypes": [
+										"HardwareWalletConnection.bluetooth"
+									]
+								}
+							]
+						},
+						"TREZOR": {
+							"$call": "supported",
+							"args": [
+								{
+									"connectionTypes": [
+										"HardwareWalletConnection.webUSB",
+										"HardwareWalletConnection.bluetooth"
+									]
+								}
+							]
+						}
+					}
+				},
+				"keysHandling": null,
+				"lightClient": {
+					"ethereumL1": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus explains that balance and transaction information is displayed by querying blockchain data providers, not through an embedded Ethereum L1 light client.",
+									"url": "https://www.exodus.com/support/en/articles/8598688-what-information-does-exodus-have-access-to"
+								}
+							}
+						]
+					}
+				},
+				"passkeyVerification": {
+					"$ref": "notSupported"
+				},
+				"publicSecurityAudits": [],
+				"scamAlerts": {
+					"contractTransactionWarning": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus security and Web3 Wallet docs reviewed for this entry did not show malicious-contract registry warnings before signing.",
+									"url": "https://www.exodus.com/security"
+								}
+							}
+						]
+					},
+					"scamUrlWarning": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus Web3 Wallet docs warn users to check official websites, but no wallet-level known-scam URL warning feature was found.",
+									"url": "https://www.exodus.com/support/en/articles/8598851-how-do-i-connect-to-dapps-and-web3-apps-with-exodus-web3-wallet"
+								}
+							}
+						]
+					},
+					"sendTransactionWarning": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus support docs reviewed for this entry did not show risky-recipient warnings before sending.",
+									"url": "https://www.exodus.com/support/"
+								}
+							}
+						]
+					}
+				},
+				"transactionLegibility": {
+					"transactionSimulations": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus Web3 Wallet docs say users approve transaction requests, but no simulation preview feature was found.",
+									"url": "https://www.exodus.com/support/en/articles/8598851-how-do-i-connect-to-dapps-and-web3-apps-with-exodus-web3-wallet"
+								}
+							}
+						]
+					}
+				}
+			},
+			"selfSovereignty": {
+				"permissionsManagement": {
+					"$call": "notSupportedWithRef",
+					"args": [
+						{
+							"ref": {
+								"explanation": "Exodus says it is not yet possible to remove previously approved infinite approvals or adjust the amount a transaction is approving.",
+								"url": "https://www.exodus.com/support/en/articles/8598851-how-do-i-connect-to-dapps-and-web3-apps-with-exodus-web3-wallet"
+							}
+						}
+					]
+				},
+				"transactionSubmission": {
+					"l1": {
+						"ref": {
+							"explanation": "Exodus public docs reviewed for this entry did not show user-selected self-hosted-node transaction broadcast.",
+							"url": "https://www.exodus.com/support/"
+						},
+						"selfBroadcastViaDirectGossip": {
+							"$ref": "notSupported"
+						},
+						"selfBroadcastViaSelfHostedNode": {
+							"$ref": "notSupported"
+						}
+					},
+					"l2": {
+						"ref": {
+							"$ref": "refTodo"
+						}
+					}
+				}
+			},
+			"transparency": {
+				"releaseTransparency": {
+					"artifactSigning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus publishes release hashes for downloadable app releases.",
+									"url": "https://www.exodus.com/releases"
+								}
+							}
+						]
+					},
+					"hasPublicChangelog": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus publishes a public version history and release notes page.",
+									"url": "https://www.exodus.com/releases"
+								}
+							}
+						]
+					},
+					"reproducibleBuilds": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus publishes release hashes, but no reproducible-build instructions or attestations for the full consumer wallet apps were found.",
+									"url": "https://www.exodus.com/releases"
+								}
+							}
+						]
+					}
+				}
+			}
+		},
+		"variants": {
+			"DESKTOP": true,
+			"MOBILE": true,
+			"BROWSER": true
+		}
+	}
+}

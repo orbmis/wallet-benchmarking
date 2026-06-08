@@ -14,6 +14,7 @@ are no external libraries and no server — just open the file in a browser.
 | `benchmark/index.html` | **Comparison matrix** — wallets × features, citation-backed cells, three-state colouring, diff / hide-unknown toggles, CSV export | `build.py` ← `template.html` |
 | `benchmark/privacy.html` | **Privacy data-flow (Sankey)** — Action → Recipient → Data collected, coloured by collection policy and recipient risk | `build_privacy.py` ← `template_privacy.html` |
 | `benchmark/gaps.html` | **"Strengths & Gaps" report** — per baseline + peer set, the metrics where rivals beat you (and where you beat all of them), with evidence drawer and Markdown / CSV export | `build_gaps.py` ← `template_gaps.html` |
+| `benchmark/quadrant.html` | **Positioning quadrant** — plots wallets on two chosen category scores (e.g. Privacy × Security), the "magic quadrant" slide, with median/fixed split, per-wallet score breakdown, and Markdown / CSV export | `build_quadrant.py` ← `template_quadrant.html` |
 
 See `benchmark/IDEAS.md` for the feature backlog and rationale.
 
@@ -41,6 +42,7 @@ cd benchmark
 python3 build.py          # -> index.html (comparison matrix)
 python3 build_privacy.py  # -> privacy.html (privacy Sankey)
 python3 build_gaps.py     # -> gaps.html (gap report; reuses build.py's model)
+python3 build_quadrant.py # -> quadrant.html (positioning quadrant; reuses build.py's model)
 ```
 
 No dependencies beyond the Python 3 standard library.

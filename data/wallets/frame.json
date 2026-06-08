@@ -75,31 +75,113 @@
 			},
 			"addressResolution": {
 				"ref": {
-					"$ref": "refTodo"
+					"explanation": "Frame's companion extension includes ENS name verification.",
+					"url": "https://frame.sh/"
 				},
 				"chainSpecificAddressing": {
 					"erc7828": null,
 					"erc7831": null
 				},
-				"nonChainSpecificEnsResolution": null
+				"nonChainSpecificEnsResolution": {
+					"$call": "supported",
+					"args": [
+						{
+							"medium": "CHAIN_CLIENT"
+						}
+					]
+				}
 			},
-			"chainAbstraction": null,
-			"chainConfigurability": null,
+			"chainAbstraction": {
+				"bridging": {
+					"builtInBridging": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Frame describes itself as a system-wide wallet and dapp access layer for multiple chains rather than a native bridge product.",
+										"url": "https://docs.frame.sh/docs/Introduction/"
+									},
+									{
+										"explanation": "Frame's swap guide routes the user through the external LlamaSwap dapp and has Frame sign the resulting transaction request, indicating swaps/route selection are dapp-driven rather than a built-in Frame bridge flow.",
+										"url": "https://docs.frame.sh/docs/Guides/Swapping%20ETH/"
+									}
+								]
+							}
+						]
+					},
+					"suggestedBridging": null
+				},
+				"crossChainBalances": {
+					"ref": {
+						"explanation": "Frame docs describe an Omnichain Wallet with every chain all at once, removing the need to switch chains while using EVM networks.",
+						"url": "https://docs.frame.sh/"
+					},
+					"globalAccountValue": {
+						"$ref": "featureSupported"
+					},
+					"perChainAccountValue": {
+						"$ref": "featureSupported"
+					}
+				}
+			},
+			"chainConfigurability": {
+				"$call": "supported",
+				"args": [
+					{
+						"ref": {
+							"explanation": "Frame lets users set their own Ethereum and IPFS connections rather than being locked into a centralized gateway.",
+							"url": "https://github.com/floating/frame"
+						},
+						"customChainRpcEndpoint": {
+							"$ref": "featureSupported"
+						},
+						"l1": {
+							"$call": "supported",
+							"args": [
+								{
+									"rpcEndpointConfiguration": "RpcEndpointConfiguration.YES_BEFORE_ANY_REQUEST"
+								}
+							]
+						}
+					}
+				]
+			},
 			"ecosystem": {
 				"delegation": null
 			},
 			"integration": {
 				"browser": {
-					"1193": null,
+					"1193": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Frame's browser extension injects a Frame-connected EIP-1193 provider into web apps as window.ethereum.",
+									"url": "https://github.com/floating/frame"
+								}
+							}
+						]
+					},
 					"2700": null,
 					"6963": null,
 					"ref": {
-						"$ref": "refTodo"
+						"explanation": "Frame can connect natively through local JSON-RPC endpoints and via its injected browser provider.",
+						"url": "https://github.com/floating/frame"
 					}
 				},
 				"walletCall": null
 			},
-			"licensing": null,
+			"licensing": {
+				"type": "LicensingType.SINGLE_WALLET_REPO_AND_LICENSE",
+				"walletAppLicense": {
+					"ref": {
+						"explanation": "The floating/frame GitHub repository is licensed under GPL-3.0.",
+						"url": "https://github.com/floating/frame"
+					},
+					"license": "FOSSLicense.GPL_3_0"
+				}
+			},
 			"monetization": {
 				"ref": {
 					"$ref": "refTodo"
@@ -117,11 +199,47 @@
 					"ventureCapital": null
 				}
 			},
-			"multiAddress": null,
+			"multiAddress": {
+				"$call": "supported",
+				"args": [
+					{
+						"ref": {
+							"explanation": "Frame's README describes managing chains and accounts, and its account docs describe direct seed phrase, private key, keystore, Ledger, Trezor, and GridPlus signers.",
+							"url": "https://docs.frame.sh/docs/Getting%20Started/Basics/Account%20Setup/What%20is%20an%20Account"
+						}
+					}
+				]
+			},
 			"privacy": {
 				"analytics": {
-					"crashReports": null,
-					"usage": null
+					"crashReports": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Frame initializes Sentry error reporting when the privacy errorReporting setting is enabled, removes IP addresses before sending, rate-limits events, and includes network/token crash-report fields.",
+									"url": "https://github.com/floating/frame/blob/dac4378979fe1f490f4d0bf141dc19c201d2cb58/main/errors/index.ts"
+								}
+							}
+						]
+					},
+					"usage": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "The Frame Companion Chrome Web Store listing says the developer will not collect or use user data.",
+										"url": "https://chromewebstore.google.com/detail/frame-companion/ldcoohedfbjoobcadoglnnmmfbdlmmhf"
+									},
+									{
+										"explanation": "Frame describes the wallet as privacy-focused, built to keep user data under user control and configurable toward chosen infrastructure.",
+										"url": "https://frame.sh/"
+									}
+								]
+							}
+						]
+					}
 				},
 				"appIsolation": null,
 				"dataCollection": null,
@@ -145,8 +263,40 @@
 			"profile": "WalletProfile.GENERIC",
 			"security": {
 				"accountRecovery": null,
-				"bugBountyProgram": null,
-				"duressResistance": null,
+				"bugBountyProgram": {
+					"$call": "notSupportedWithRef",
+					"args": [
+						{
+							"ref": [
+								{
+									"explanation": "Frame publishes a historical security audit, but public Frame docs and repository searches found no current bug bounty program, rewards table, safe harbor policy, or vulnerability-disclosure bounty scope.",
+									"url": "https://medium.com/@framehq/frame-security-audit-frm-01-7a90975992af"
+								},
+								{
+									"explanation": "Frame's public repository and docs are the published security/developer surfaces searched for bounty evidence; no bug bounty program is documented there.",
+									"url": "https://github.com/floating/frame"
+								}
+							]
+						}
+					]
+				},
+				"duressResistance": {
+					"basicUnlock": {
+						"ref": {
+							"explanation": "Frame documentation says hot signers are unlocked by entering a password from the signer panel or account interface.",
+							"url": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Unlocking%20Accounts/"
+						},
+						"mechanisms": {
+							"PIN": false,
+							"PASSWORD": true,
+							"BIOMETRIC": false,
+							"PATTERN": false
+						}
+					},
+					"duressMode": {
+						"$ref": "notSupported"
+					}
+				},
 				"hardwareWalletSupport": {
 					"ref": {
 						"$ref": "refTodo"
@@ -206,33 +356,148 @@
 				},
 				"keysHandling": null,
 				"lightClient": {
-					"ethereumL1": null
+					"ethereumL1": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Frame's README documents Ethereum access through user-configured Ethereum connections and local JSON-RPC endpoints (`ws://127.0.0.1:1248` and `http://127.0.0.1:1248`), which is an RPC connection model rather than an embedded Ethereum L1 light client.",
+									"url": "https://github.com/floating/frame/blob/develop/README.md"
+								}
+							}
+						]
+					}
 				},
 				"passkeyVerification": {
 					"$ref": "notSupported"
 				},
-				"publicSecurityAudits": null,
-				"scamAlerts": null,
+				"publicSecurityAudits": [
+					{
+						"ref": "https://medium.com/@framehq/frame-security-audit-frm-01-7a90975992af",
+						"auditDate": "2018-09-26",
+						"unpatchedFlaws": "UNKNOWN",
+						"variantsScope": "DESKTOP"
+					}
+				],
+				"scamAlerts": {
+					"contractTransactionWarning": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Frame documents local calldata decoding and dapp permission controls, but does not document malicious-contract registry checks or contract-risk warnings.",
+										"url": "https://frame.sh/"
+									},
+									{
+										"explanation": "Public Frame repository search found no Blockaid, Tenderly-risk, phishing, malicious-contract, or scam-alert implementation matching contract-risk warnings.",
+										"url": "https://github.com/floating/frame"
+									}
+								]
+							}
+						]
+					},
+					"scamUrlWarning": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Frame's dapp permission docs describe enabling/disabling connected dapps and clearing permissions, not URL reputation or phishing-domain warnings before connection.",
+										"url": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Dapps/"
+									},
+									{
+										"explanation": "Public Frame repository search found no phishing-domain, scam URL, WalletConnect Verify, Blockaid, or URL reputation implementation matching scam-URL warnings.",
+										"url": "https://github.com/floating/frame"
+									}
+								]
+							}
+						]
+					},
+					"sendTransactionWarning": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Frame's request docs show pending approvals and transactions, while its public materials do not document risky-recipient, new-recipient, or user-whitelist send warnings.",
+										"url": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Requests/"
+									},
+									{
+										"explanation": "Public Frame repository search found no risky-recipient, whitelist, scam-address, Blockaid, or malicious-address implementation matching risky-send warnings.",
+										"url": "https://github.com/floating/frame"
+									}
+								]
+							}
+						]
+					}
+				},
 				"securityBestPractices": null,
 				"transactionLegibility": {
 					"ref": {
-						"$ref": "refTodo"
+						"explanation": "Frame decodes transaction calldata locally using verified ABIs to show concise, informative transaction summaries.",
+						"url": "https://frame.sh/"
 					},
 					"erc7730": null,
 					"erc8213": null,
-					"transactionDetailsDisplay": null,
-					"transactionSimulations": null
+					"transactionDetailsDisplay": {
+						"$call": "supported",
+						"args": [
+							{
+								"calldata": "DataDisplayOptions.SHOWN_BY_DEFAULT"
+							}
+						]
+					},
+					"transactionSimulations": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Frame documents decoded calldata summaries for transaction readability, but does not document transaction outcome simulation before signing.",
+										"url": "https://frame.sh/"
+									},
+									{
+										"explanation": "Public Frame repository search found no Tenderly, Blockaid, transaction preview, or transaction-simulation implementation matching the transaction-simulation metric.",
+										"url": "https://github.com/floating/frame"
+									}
+								]
+							}
+						]
+					}
 				}
 			},
 			"selfSovereignty": {
-				"permissionsManagement": null,
+				"permissionsManagement": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": [
+								{
+									"explanation": "Frame documents a Dapps section where connected dapps can be toggled on or off and Clear All Permissions removes approval access for previously used dapps.",
+									"url": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Dapps/"
+								},
+								{
+									"explanation": "Frame documents wallet requests for token approvals and dapp permissions, with pending approvals and transactions shown in the Requests section.",
+									"url": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Requests/"
+								}
+							],
+							"erc20Approvals": null,
+							"erc721Approvals": null,
+							"erc1155Approvals": null
+						}
+					]
+				},
 				"transactionSubmission": {
 					"l1": {
 						"ref": {
-							"$ref": "refTodo"
+							"explanation": "Frame lets users set their own Ethereum connections, avoiding lock-in to centralized gateways.",
+							"url": "https://github.com/floating/frame"
 						},
 						"selfBroadcastViaDirectGossip": null,
-						"selfBroadcastViaSelfHostedNode": null
+						"selfBroadcastViaSelfHostedNode": {
+							"$ref": "featureSupported"
+						}
 					},
 					"l2": {
 						"arbitrum": null,
@@ -246,13 +511,59 @@
 			"transparency": {
 				"operationFees": null,
 				"releaseTransparency": {
-					"artifactSigning": null,
-					"dependencyLocking": null,
+					"artifactSigning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Frame's GitHub releases are created by GitHub Actions and show GitHub verified signatures on release commits.",
+									"url": "https://github.com/floating/frame/releases"
+								}
+							}
+						]
+					},
+					"dependencyLocking": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "The Frame repository includes a package-lock.json lockfile for npm dependency resolution.",
+									"url": "https://github.com/floating/frame/blob/develop/package-lock.json"
+								}
+							}
+						]
+					},
 					"dependencyVulnerabilityScanning": null,
-					"hasPublicChangelog": null,
+					"hasPublicChangelog": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Frame publishes GitHub releases with release notes.",
+									"url": "https://github.com/floating/frame/releases"
+								}
+							}
+						]
+					},
 					"hermeticBuilds": null,
 					"repositoryChangeControls": null,
-					"reproducibleBuilds": null
+					"reproducibleBuilds": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Frame's README documents running from source and building the current platform with `npm run bundle` and `npm run build`, but does not document deterministic release-artifact reproduction and comparison against the published desktop/extension artifacts.",
+										"url": "https://github.com/floating/frame/blob/develop/README.md"
+									},
+									{
+										"explanation": "Frame's package scripts build bundles and platform artifacts through Parcel, TypeScript, and electron-builder; the public scripts describe build generation rather than reproducible release verification for GitHub release assets.",
+										"url": "https://github.com/floating/frame/blob/develop/package.json"
+									}
+								]
+							}
+						]
+					}
 				}
 			}
 		},

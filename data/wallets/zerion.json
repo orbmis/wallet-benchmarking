@@ -48,9 +48,16 @@
 					"$call": "supported",
 					"args": [
 						{
-							"ref": {
-								"$ref": "refTodo"
-							},
+							"ref": [
+								{
+									"explanation": "Zerion describes Zerion Wallet as a self-custody wallet where only the user holds the private keys.",
+									"url": "https://help.zerion.io/en/articles/4771522-what-is-a-wallet"
+								},
+								{
+									"explanation": "Zerion's recovery phrase help article says Zerion creates a 12-word recovery phrase and never sees or stores it.",
+									"url": "https://help.zerion.io/en/articles/6251772-keep-your-recovery-phrase-safe-what-it-is-and-why-it-matters"
+								}
+							],
 							"canExportPrivateKey": true,
 							"keyDerivation": {
 								"type": "BIP32",
@@ -73,31 +80,137 @@
 			},
 			"addressResolution": {
 				"ref": {
-					"$ref": "refTodo"
+					"explanation": "Zerion's portfolio tracking guide says wallet overview entries can include ENS names.",
+					"url": "https://help.zerion.io/en/articles/13831023-understanding-portfolio-tracking-in-zerion"
 				},
 				"chainSpecificAddressing": {
 					"erc7828": null,
 					"erc7831": null
 				},
-				"nonChainSpecificEnsResolution": null
+				"nonChainSpecificEnsResolution": {
+					"$call": "supported",
+					"args": [
+						{
+							"medium": "CHAIN_CLIENT"
+						}
+					]
+				}
 			},
-			"chainAbstraction": null,
-			"chainConfigurability": null,
+			"chainAbstraction": {
+				"bridging": {
+					"builtInBridging": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Zerion's help center says Zerion Wallet can swap and bridge crypto at the best available rates.",
+										"url": "https://help.zerion.io/en/articles/4771522-what-is-a-wallet"
+									},
+									{
+										"explanation": "Zerion's multichain page advertises built-in token swapping and bridging across supported networks.",
+										"url": "https://www.zerion.io/multichain-support"
+									}
+								]
+							}
+						]
+					},
+					"suggestedBridging": null
+				},
+				"crossChainBalances": {
+					"globalAccountValue": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Zerion describes viewing and managing assets across multiple networks in its wallet help page.",
+										"url": "https://help.zerion.io/en/articles/4771522-what-is-a-wallet"
+									},
+									{
+										"explanation": "Zerion's portfolio guide says the mobile dashboard gives a comprehensive view of digital assets across 50+ networks.",
+										"url": "https://help.zerion.io/en/articles/13831023-understanding-portfolio-tracking-in-zerion"
+									}
+								]
+							}
+						]
+					},
+					"perChainAccountValue": null
+				}
+			},
+			"chainConfigurability": {
+				"$call": "supported",
+				"args": [
+					{
+						"ref": {
+							"explanation": "Zerion documents adding any custom network to the extension and mobile app, including manually providing network name, RPC, and chain ID.",
+							"url": "https://help.zerion.io/en/articles/8245267-add-custom-network-and-testnet"
+						},
+						"customChainRpcEndpoint": {
+							"$ref": "featureSupported"
+						},
+						"l1": {
+							"$call": "supported",
+							"args": [
+								{
+									"rpcEndpointConfiguration": "RpcEndpointConfiguration.YES_BEFORE_ANY_REQUEST"
+								}
+							]
+						}
+					}
+				]
+			},
 			"ecosystem": {
 				"delegation": null
 			},
 			"integration": {
 				"browser": {
-					"1193": null,
+					"1193": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion Extension creates an EthereumProvider and assigns it to window.ethereum.",
+									"url": "https://github.com/zeriontech/zerion-wallet-extension/blob/main/src/content-script/in-page.ts"
+								}
+							}
+						]
+					},
 					"2700": null,
-					"6963": null,
+					"6963": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion Extension initializes its EIP-6963 provider discovery flow from the in-page content script.",
+									"url": "https://github.com/zeriontech/zerion-wallet-extension/blob/main/src/content-script/in-page.ts"
+								}
+							}
+						]
+					},
 					"ref": {
-						"$ref": "refTodo"
+						"explanation": "Zerion's public extension repository contains the in-page provider injection code.",
+						"url": "https://github.com/zeriontech/zerion-wallet-extension/blob/main/src/content-script/in-page.ts"
 					}
 				},
 				"walletCall": null
 			},
-			"licensing": null,
+			"licensing": {
+				"type": "LicensingType.SINGLE_WALLET_REPO_AND_LICENSE",
+				"walletAppLicense": {
+					"ref": [
+						{
+							"explanation": "Zerion's extension repository README links to GPL-3.0 as the project license.",
+							"url": "https://github.com/zeriontech/zerion-wallet-extension/blob/main/README.md"
+						},
+						{
+							"explanation": "The extension package.json declares GPL-3.0-only.",
+							"url": "https://github.com/zeriontech/zerion-wallet-extension/blob/main/package.json"
+						}
+					],
+					"license": "FOSSLicense.GPL_3_0"
+				}
+			},
 			"monetization": {
 				"ref": {
 					"$ref": "refTodo"
@@ -115,15 +228,63 @@
 					"ventureCapital": null
 				}
 			},
-			"multiAddress": null,
+			"multiAddress": {
+				"$call": "supported",
+				"args": [
+					{
+						"ref": [
+							{
+								"explanation": "Zerion documents adding additional Solana or Ethereum ecosystem wallets in both the browser extension and mobile app.",
+								"url": "https://help.zerion.io/en/articles/8653430-add-an-additional-wallet-to-zerion"
+							},
+							{
+								"explanation": "Zerion's watch-address guide documents tracking additional wallets and watch-only addresses.",
+								"url": "https://help.zerion.io/en/articles/5464678-difference-between-watch-addresses-and-connected-wallets"
+							}
+						]
+					}
+				]
+			},
 			"privacy": {
 				"analytics": {
-					"crashReports": null,
-					"usage": null
+					"crashReports": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "The App Store privacy label lists Diagnostics / Crash Data as collected but not linked to identity.",
+										"url": "https://apps.apple.com/us/app/zerion-crypto-wallet-defi-nfts/id1456732565"
+									},
+									{
+										"explanation": "Zerion's privacy policy identifies Firebase, Mixpanel, and other analytical tools as optional app usage analytics providers.",
+										"url": "https://zerion.io/privacy-policy"
+									}
+								]
+							}
+						]
+					},
+					"usage": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "The App Store privacy label lists Product Interaction usage data as collected but not linked to identity.",
+										"url": "https://apps.apple.com/us/app/zerion-crypto-wallet-defi-nfts/id1456732565"
+									},
+									{
+										"explanation": "Zerion's privacy policy says users can opt out of Share app usage analytics in the app privacy settings.",
+										"url": "https://zerion.io/privacy-policy"
+									}
+								]
+							}
+						]
+					}
 				},
 				"appIsolation": null,
 				"dataCollection": null,
-				"privacyPolicy": null,
+				"privacyPolicy": "https://zerion.io/privacy-policy",
 				"transactionPrivacy": {
 					"defaultFungibleTokenTransferMode": "PUBLIC",
 					"STEALTH_ADDRESSES": {
@@ -143,8 +304,53 @@
 			"profile": "WalletProfile.GENERIC",
 			"security": {
 				"accountRecovery": null,
-				"bugBountyProgram": null,
-				"duressResistance": null,
+				"bugBountyProgram": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": [
+								{
+									"explanation": "Zerion's security page says Zerion runs an Immunefi bug bounty with rewards up to $25,000.",
+									"url": "https://www.zerion.io/security"
+								},
+								{
+									"explanation": "The Immunefi program lists Zerion's bug bounty, scope, and maximum rewards.",
+									"url": "https://immunefi.com/bug-bounty/zerion/information/"
+								}
+							],
+							"legalProtections": null,
+							"platform": "BugBountyPlatform.IMMUNEFI",
+							"rewards": {
+								"$call": "supported",
+								"args": [
+									{
+										"currency": "USD",
+										"maximum": 25000,
+										"minimum": 0
+									}
+								]
+							},
+							"upgradePathAvailable": true
+						}
+					]
+				},
+				"duressResistance": {
+					"basicUnlock": {
+						"ref": {
+							"explanation": "Zerion's security page says optional cloud backups require an encryption password, and that Zerion cannot restore the password because it is not stored by Zerion.",
+							"url": "https://zerion.io/security"
+						},
+						"mechanisms": {
+							"PIN": false,
+							"PASSWORD": true,
+							"BIOMETRIC": false,
+							"PATTERN": false
+						}
+					},
+					"duressMode": {
+						"$ref": "notSupported"
+					}
+				},
 				"hardwareWalletSupport": {
 					"ref": [
 						{
@@ -199,17 +405,74 @@
 				},
 				"keysHandling": null,
 				"lightClient": {
-					"ethereumL1": null
+					"ethereumL1": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion documents chain access through configured network RPC endpoints, including manually providing RPC and chain ID for custom networks, which is an RPC-backed model rather than an embedded Ethereum L1 light client.",
+									"url": "https://help.zerion.io/en/articles/8245267-add-custom-network-and-testnet"
+								}
+							}
+						]
+					}
 				},
 				"passkeyVerification": {
 					"$ref": "notSupported"
 				},
-				"publicSecurityAudits": null,
-				"scamAlerts": null,
+				"publicSecurityAudits": [
+					{
+						"ref": "https://github.com/zeriontech/zerion-wallet-extension/blob/main/README.md",
+						"auditDate": "UNKNOWN",
+						"unpatchedFlaws": "UNKNOWN",
+						"variantsScope": "BROWSER"
+					}
+				],
+				"scamAlerts": {
+					"contractTransactionWarning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion's security page says the wallet detects known phishing websites and apps and previews transactions before signing.",
+									"url": "https://www.zerion.io/security"
+								},
+								"contractRegistry": null,
+								"previousContractInteractionWarning": null,
+								"recentContractWarning": null
+							}
+						]
+					},
+					"scamUrlWarning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion's security page says the wallet automatically detects known phishing websites and apps.",
+									"url": "https://www.zerion.io/security"
+								}
+							}
+						]
+					},
+					"sendTransactionWarning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion's transaction simulator is enabled automatically for swaps, bridging, minting, and sending assets.",
+									"url": "https://help.zerion.io/en/articles/8245364-transaction-simulator"
+								},
+								"newRecipientWarning": null,
+								"userWhitelist": null
+							}
+						]
+					}
+				},
 				"securityBestPractices": null,
 				"transactionLegibility": {
 					"ref": {
-						"$ref": "refTodo"
+						"explanation": "Zerion's security page says the wallet previews transactions and shows what the user is signing.",
+						"url": "https://www.zerion.io/security"
 					},
 					"erc7730": null,
 					"erc8213": null,
@@ -221,18 +484,70 @@
 						"to": "DataDisplayOptions.SHOWN_BY_DEFAULT",
 						"value": "DataDisplayOptions.SHOWN_BY_DEFAULT"
 					},
-					"transactionSimulations": null
+					"transactionSimulations": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zerion says its Transaction Simulator is enabled automatically for every transaction, including swaps, bridging, minting, and sending assets.",
+									"url": "https://help.zerion.io/en/articles/8245364-transaction-simulator"
+								},
+								"ERC_20_TRANSFER": {
+									"transactionOutcome": "TransactionOutcome.EXPLAINED"
+								},
+								"ERC_721_TRANSFER": {
+									"transactionOutcome": "TransactionOutcome.EXPLAINED"
+								},
+								"ERC_1155_TRANSFER": null,
+								"USDC_APPROVAL": {
+									"transactionOutcome": "TransactionOutcome.EXPLAINED"
+								},
+								"AAVE_SUPPLY": null,
+								"SAFEWALLET_AAVE_SUPPLY_NESTED": null,
+								"SAFEWALLET_AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": null,
+								"ETH_TRANSFER": {
+									"transactionOutcome": "TransactionOutcome.EXPLAINED"
+								},
+								"ZKSYNC_USDC_TRANSFER": null,
+								"AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": null,
+								"FAILED_TRANSACTION": null,
+								"NONDETERMINISTIC_TRANSACTION": null
+							}
+						]
+					}
 				}
 			},
 			"selfSovereignty": {
-				"permissionsManagement": null,
+				"permissionsManagement": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": [
+								{
+									"explanation": "Zerion documents revoking dapp access for specific dapps and multiple connected sites from the extension.",
+									"url": "https://help.zerion.io/en/articles/8245359-how-to-revoke-dapps"
+								},
+								{
+									"explanation": "Zerion's security page says users can set custom token allowances.",
+									"url": "https://www.zerion.io/security"
+								}
+							],
+							"erc1155Approvals": null,
+							"erc20Approvals": "SpendingApprovalsControl.CAN_INSPECT_AND_REVOKE",
+							"erc721Approvals": null
+						}
+					]
+				},
 				"transactionSubmission": {
 					"l1": {
 						"ref": {
-							"$ref": "refTodo"
+							"explanation": "Zerion documents adding any custom network to the extension and mobile app, including manually providing network name, RPC, and chain ID.",
+							"url": "https://help.zerion.io/en/articles/8245267-add-custom-network-and-testnet"
 						},
 						"selfBroadcastViaDirectGossip": null,
-						"selfBroadcastViaSelfHostedNode": null
+						"selfBroadcastViaSelfHostedNode": {
+							"$ref": "featureSupported"
+						}
 					},
 					"l2": {
 						"arbitrum": null,
@@ -246,13 +561,71 @@
 			"transparency": {
 				"operationFees": null,
 				"releaseTransparency": {
-					"artifactSigning": null,
-					"dependencyLocking": null,
+					"artifactSigning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Zerion publishes a browser extension through the Chrome Web Store.",
+										"url": "https://chromewebstore.google.com/detail/zerion-wallet-crypto-defi/klghhnkeealcohjjanjjdaeeggmfmlpl"
+									},
+									{
+										"explanation": "Chrome for Developers states that all Chrome Web Store extensions are signed by Google, with signing handled automatically when a package is uploaded.",
+										"url": "https://developer.chrome.com/blog/verified-uploads-cws"
+									}
+								]
+							}
+						]
+					},
+					"dependencyLocking": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "The Zerion Extension repository includes a package-lock.json lockfile.",
+										"url": "https://github.com/zeriontech/zerion-wallet-extension/blob/main/package-lock.json"
+									},
+									{
+										"explanation": "The README describes the npm package-lock workflow and the repository's npm supply-chain cooldown policy.",
+										"url": "https://github.com/zeriontech/zerion-wallet-extension/blob/main/README.md"
+									}
+								]
+							}
+						]
+					},
 					"dependencyVulnerabilityScanning": null,
-					"hasPublicChangelog": null,
+					"hasPublicChangelog": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									"https://github.com/zeriontech/zerion-wallet-extension/releases",
+									"https://apps.apple.com/us/app/zerion-crypto-wallet-defi-nfts/id1456732565"
+								]
+							}
+						]
+					},
 					"hermeticBuilds": null,
 					"repositoryChangeControls": null,
-					"reproducibleBuilds": null
+					"reproducibleBuilds": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Zerion Extension's README documents installing dependencies, copying `.env.example`, running local development builds into `./dist`, and downloading latest release builds, but it does not document a deterministic rebuild-and-compare process for matching published extension artifacts.",
+										"url": "https://github.com/zeriontech/zerion-wallet-extension/blob/main/README.md"
+									},
+									{
+										"explanation": "Zerion Extension package scripts define local Chrome/Firefox production build commands, but the public scripts describe generating builds rather than reproducible release-artifact verification against published Chrome Web Store or GitHub release assets.",
+										"url": "https://github.com/zeriontech/zerion-wallet-extension/blob/main/package.json"
+									}
+								]
+							}
+						]
+					}
 				}
 			}
 		},

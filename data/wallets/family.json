@@ -37,9 +37,16 @@
 					"$call": "supported",
 					"args": [
 						{
-							"ref": {
-								"$ref": "refTodo"
-							},
+							"ref": [
+								{
+									"explanation": "Family describes itself as a self-custodial wallet where the user has direct access to private keys and sensitive data.",
+									"url": "https://family.co/"
+								},
+								{
+									"explanation": "Family accounts generate a new HD wallet with a 12-word seed phrase and store only an encrypted wallet that only the user can decrypt.",
+									"url": "https://family.co/support/family-account"
+								}
+							],
 							"canExportPrivateKey": true,
 							"keyDerivation": {
 								"type": "BIP32",
@@ -62,15 +69,54 @@
 			},
 			"addressResolution": {
 				"ref": {
-					"$ref": "refTodo"
+					"explanation": "Family's website says watch-only wallets can be added by entering an address or ENS name.",
+					"url": "https://family.co/"
 				},
 				"chainSpecificAddressing": {
 					"erc7828": null,
 					"erc7831": null
 				},
-				"nonChainSpecificEnsResolution": null
+				"nonChainSpecificEnsResolution": {
+					"$call": "supported",
+					"args": [
+						{
+							"medium": "CHAIN_CLIENT"
+						}
+					]
+				}
 			},
-			"chainAbstraction": null,
+			"chainAbstraction": {
+				"bridging": {
+					"builtInBridging": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family documents bridging as integrated into the Swaps feature, including selecting a destination chain and confirming the estimated rate, fees, and received amount.",
+									"url": "https://family.co/support/bridging"
+								}
+							}
+						]
+					},
+					"suggestedBridging": null
+				},
+				"crossChainBalances": {
+					"ref": [
+						{
+							"explanation": "Family says users can view wallets, track tokens, and browse collectibles all in one place, and can transact on Ethereum L2 networks including Optimism, Base, Arbitrum, and zkSync.",
+							"url": "https://family.co/blog/launch"
+						},
+						{
+							"explanation": "Family documents per-wallet token lists with token balances and the dollar value of each balance.",
+							"url": "https://family.co/support/view-your-tokens"
+						}
+					],
+					"globalAccountValue": {
+						"$ref": "featureSupported"
+					},
+					"perChainAccountValue": null
+				}
+			},
 			"chainConfigurability": null,
 			"ecosystem": {
 				"delegation": null
@@ -86,7 +132,15 @@
 				},
 				"walletCall": null
 			},
-			"licensing": null,
+			"licensing": {
+				"type": "LicensingType.PROPRIETARY",
+				"walletAppLicense": {
+					"ref": {
+						"$ref": "refNotNecessary"
+					},
+					"license": "PROPRIETARY"
+				}
+			},
 			"monetization": {
 				"ref": {
 					"$ref": "refTodo"
@@ -104,15 +158,51 @@
 					"ventureCapital": null
 				}
 			},
-			"multiAddress": null,
+			"multiAddress": {
+				"$call": "supported",
+				"args": [
+					{
+						"ref": [
+							{
+								"explanation": "Family's Mission Control support page says users can create and import an infinite number of wallets.",
+								"url": "https://family.co/support/mission-control"
+							},
+							{
+								"explanation": "Family's Wallet Groups documentation says wallet groups manage multiple wallet addresses under a single Secret Recovery Phrase.",
+								"url": "https://family.co/support/wallet-groups"
+							}
+						]
+					}
+				]
+			},
 			"privacy": {
 				"analytics": {
-					"crashReports": null,
-					"usage": null
+					"crashReports": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "The App Store privacy label lists Diagnostics as data that may be collected but not linked to identity.",
+									"url": "https://apps.apple.com/us/app/family-ethereum-wallet/id1606779267"
+								}
+							}
+						]
+					},
+					"usage": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "The App Store privacy label lists Usage Data as data that may be collected but not linked to identity.",
+									"url": "https://apps.apple.com/us/app/family-ethereum-wallet/id1606779267"
+								}
+							}
+						]
+					}
 				},
 				"appIsolation": null,
 				"dataCollection": null,
-				"privacyPolicy": null,
+				"privacyPolicy": "https://family.co/privacy",
 				"transactionPrivacy": {
 					"defaultFungibleTokenTransferMode": "PUBLIC",
 					"STEALTH_ADDRESSES": {
@@ -132,8 +222,40 @@
 			"profile": "WalletProfile.GENERIC",
 			"security": {
 				"accountRecovery": null,
-				"bugBountyProgram": null,
-				"duressResistance": null,
+				"bugBountyProgram": {
+					"$call": "notSupportedWithRef",
+					"args": [
+						{
+							"ref": [
+								{
+									"explanation": "Family publishes a 2024 Zellic audit report, but public Family pages and docs do not publish a bug bounty program, rewards table, safe-harbor terms, or vulnerability-disclosure bounty scope.",
+									"url": "https://family.co/media/family-wallet-audit-report-2024.pdf"
+								},
+								{
+									"explanation": "Targeted searches of Family's public site, docs, HackerOne, Immunefi, and security.txt locations found no public Family wallet bug bounty program.",
+									"url": "https://family.co/"
+								}
+							]
+						}
+					]
+				},
+				"duressResistance": {
+					"basicUnlock": {
+						"ref": {
+							"explanation": "Family says sensitive actions such as signing transactions require two-factor authentication via biometrics.",
+							"url": "https://family.co/blog/launch"
+						},
+						"mechanisms": {
+							"PIN": false,
+							"PASSWORD": true,
+							"BIOMETRIC": true,
+							"PATTERN": false
+						}
+					},
+					"duressMode": {
+						"$ref": "notSupported"
+					}
+				},
 				"hardwareWalletSupport": {
 					"ref": {
 						"$ref": "refTodo"
@@ -142,25 +264,155 @@
 				},
 				"keysHandling": null,
 				"lightClient": {
-					"ethereumL1": null
+					"ethereumL1": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family Wallet's Zellic iOS audit says Ethereum JSON-RPC method names are relayed as-is to an ETH RPC hosted on api.family.co, indicating the wallet relies on Family-hosted RPC infrastructure rather than an embedded Ethereum light client or user-selected self-hosted node broadcast path.",
+									"url": "https://family.co/media/family-wallet-audit-report-2024.pdf"
+								}
+							}
+						]
+					}
 				},
 				"passkeyVerification": {
 					"$ref": "notSupported"
 				},
-				"publicSecurityAudits": null,
-				"scamAlerts": null,
+				"publicSecurityAudits": [
+					{
+						"ref": "https://family.co/media/family-wallet-audit-report-2024.pdf",
+						"auditDate": "2024-01-01",
+						"unpatchedFlaws": "UNKNOWN",
+						"variantsScope": "MOBILE"
+					}
+				],
+				"scamAlerts": {
+					"contractTransactionWarning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family says it helps users understand transactions before submission with warnings and simulations about potentially harmful actions.",
+									"url": "https://family.co/blog/launch"
+								},
+								"contractRegistry": null,
+								"previousContractInteractionWarning": null,
+								"recentContractWarning": null
+							}
+						]
+					},
+					"scamUrlWarning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family says it provides safety information when connecting to dApps, including whether the domain is verified and the dApp's potential impact on the wallet.",
+									"url": "https://family.co/support/transactions"
+								},
+								"leaksDomain": true,
+								"leaksUserIp": null
+							}
+						]
+					},
+					"sendTransactionWarning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family says it helps users understand transactions before submission with warnings and simulations about potentially harmful actions.",
+									"url": "https://family.co/blog/launch"
+								},
+								"newRecipientWarning": null,
+								"userWhitelist": null
+							}
+						]
+					}
+				},
 				"securityBestPractices": null,
-				"transactionLegibility": null
+				"transactionLegibility": {
+					"ref": {
+						"explanation": "Family's launch announcement describes transaction simulations and warnings about potentially harmful actions.",
+						"url": "https://family.co/blog/launch"
+					},
+					"erc7730": null,
+					"erc8213": null,
+					"transactionDetailsDisplay": {
+						"chain": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+						"from": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+						"gas": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+						"nonce": null,
+						"to": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+						"value": "DataDisplayOptions.SHOWN_BY_DEFAULT"
+					},
+					"transactionSimulations": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family's launch announcement says Family provides advanced transaction simulations and warnings before transactions are submitted.",
+									"url": "https://family.co/blog/launch"
+								},
+								"ERC_20_TRANSFER": {
+									"transactionOutcome": "TransactionOutcome.EXPLAINED"
+								},
+								"ERC_721_TRANSFER": {
+									"transactionOutcome": "TransactionOutcome.EXPLAINED"
+								},
+								"ERC_1155_TRANSFER": null,
+								"USDC_APPROVAL": {
+									"transactionOutcome": "TransactionOutcome.EXPLAINED"
+								},
+								"AAVE_SUPPLY": null,
+								"SAFEWALLET_AAVE_SUPPLY_NESTED": null,
+								"SAFEWALLET_AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": null,
+								"ETH_TRANSFER": {
+									"transactionOutcome": "TransactionOutcome.EXPLAINED"
+								},
+								"ZKSYNC_USDC_TRANSFER": null,
+								"AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": null,
+								"FAILED_TRANSACTION": null,
+								"NONDETERMINISTIC_TRANSACTION": null
+							}
+						]
+					}
+				}
 			},
 			"selfSovereignty": {
-				"permissionsManagement": null,
+				"permissionsManagement": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": [
+								{
+									"explanation": "Family documents an Approvals screen that lets users view, modify, and revoke token approvals directly from the wallet; it flags approvals to consider revoking, especially unlimited spending limits.",
+									"url": "https://family.co/support/manage-approvals"
+								}
+							],
+							"erc20Approvals": "SpendingApprovalsControl.CAN_INSPECT_AND_REVOKE",
+							"erc721Approvals": null,
+							"erc1155Approvals": null
+						}
+					]
+				},
 				"transactionSubmission": {
 					"l1": {
 						"ref": {
-							"$ref": "refTodo"
+							"explanation": "Family Wallet's Zellic iOS audit says Ethereum JSON-RPC method names are relayed as-is to an ETH RPC hosted on api.family.co, indicating the wallet relies on Family-hosted RPC infrastructure rather than an embedded Ethereum light client or user-selected self-hosted node broadcast path.",
+							"url": "https://family.co/media/family-wallet-audit-report-2024.pdf"
 						},
 						"selfBroadcastViaDirectGossip": null,
-						"selfBroadcastViaSelfHostedNode": null
+						"selfBroadcastViaSelfHostedNode": {
+							"$call": "notSupportedWithRef",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Family Wallet's Zellic iOS audit says Ethereum JSON-RPC method names are relayed as-is to an ETH RPC hosted on api.family.co, indicating the wallet relies on Family-hosted RPC infrastructure rather than an embedded Ethereum light client or user-selected self-hosted node broadcast path.",
+										"url": "https://family.co/media/family-wallet-audit-report-2024.pdf"
+									}
+								}
+							]
+						}
 					},
 					"l2": {
 						"ref": {
@@ -174,13 +426,49 @@
 			"transparency": {
 				"operationFees": null,
 				"releaseTransparency": {
-					"artifactSigning": null,
+					"artifactSigning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Family is distributed through Apple's App Store under the Family Ethereum Wallet listing.",
+										"url": "https://apps.apple.com/us/app/family-ethereum-wallet/id1606779267"
+									},
+									{
+										"explanation": "Apple documents that App Store distribution verifies the developer signature and then re-signs the app using an Apple identity before download.",
+										"url": "https://developer.apple.com/documentation/Xcode/using-the-latest-code-signature-format"
+									}
+								]
+							}
+						]
+					},
 					"dependencyLocking": null,
 					"dependencyVulnerabilityScanning": null,
-					"hasPublicChangelog": null,
+					"hasPublicChangelog": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									"https://family.co/changelog",
+									"https://apps.apple.com/us/app/family-ethereum-wallet/id1606779267"
+								]
+							}
+						]
+					},
 					"hermeticBuilds": null,
 					"repositoryChangeControls": null,
-					"reproducibleBuilds": null
+					"reproducibleBuilds": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family is recorded as a proprietary wallet app and is distributed through app stores; no public source tree or reproducible-build instructions are published for independently reproducing the release artifact.",
+									"url": "https://apps.apple.com/us/app/family-ethereum-wallet/id1606779267"
+								}
+							}
+						]
+					}
 				}
 			}
 		},

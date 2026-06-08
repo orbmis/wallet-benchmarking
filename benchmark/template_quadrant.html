@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wallet Benchmark — Positioning</title>
+<style>
+  :root{
+    --bg:#0f1115; --panel:#171a21; --panel2:#1d212b; --line:#2a2f3a;
+    --txt:#e6e9ef; --muted:#8b93a7; --accent:#5b8cff; --accentdim:#2a3a6b;
+    --good:#1f8a55; --goodbg:#11271d; --bad:#b5384a; --badbg:#2a1419;
+    --warn:#b07d23; --warnbg:#2a2110; --unknown:#3a4150; --unknownbg:#1b1f28;
+    --valuebg:#162033; --valuetxt:#9fc0ff; --baseline:#3a2a5e;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  a{color:var(--accent)}
+  header{padding:16px 20px;border-bottom:1px solid var(--line);display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+  header h1{font-size:18px;margin:0;font-weight:650}
+  header .sub{color:var(--muted);font-size:12.5px}
+  header .nav{margin-left:auto;display:flex;gap:8px}
+  header .navlink{font-size:13px;text-decoration:none;background:var(--accentdim);border:1px solid var(--accent);color:#cfe0ff;border-radius:7px;padding:5px 11px}
+  header .navlink:hover{background:#33457f}
+
+  .controls{display:flex;gap:18px;flex-wrap:wrap;padding:14px 20px;border-bottom:1px solid var(--line);background:var(--panel);align-items:flex-end}
+  .ctl{display:flex;flex-direction:column;gap:5px}
+  .ctl > label{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+  select{background:var(--panel2);color:var(--txt);border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-size:13px}
+  .toggles{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+  .toggles label{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--txt);cursor:pointer}
+  .btn{background:var(--accentdim);border:1px solid var(--accent);color:#cfe0ff;border-radius:7px;padding:6px 12px;font-size:13px;cursor:pointer}
+  .btn:hover{background:#33457f}
+
+  main{padding:14px 20px 60px}
+  .plotwrap{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:8px 10px}
+  svg{display:block;width:100%;height:auto}
+  /* plot primitives */
+  .grid{stroke:var(--line);stroke-width:1}
+  .axis{stroke:#3c4452;stroke-width:1.5}
+  .split{stroke:#4a5365;stroke-width:1.5;stroke-dasharray:5 5}
+  .tick{fill:var(--muted);font-size:11px}
+  .axislabel{fill:var(--txt);font-size:13px;font-weight:600}
+  .qlabel{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+  .qsub{fill:var(--muted);font-size:10.5px}
+  .pt{cursor:pointer;transition:opacity .12s}
+  .pt circle{stroke:#0f1115;stroke-width:1.5}
+  .pt:hover circle{stroke:#fff;stroke-width:2}
+  .ptlabel{font-size:11px;fill:var(--txt);pointer-events:none}
+  .pt.base circle{stroke:#cdb6ff;stroke-width:2.5}
+  .pt.base .ptlabel{fill:#e3d8ff;font-weight:650}
+  .dim{opacity:.18}
+
+  .legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;align-items:center;color:var(--muted);font-size:12.5px}
+  .legend .sw{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+  .quadcards{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+  .qcard{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 14px;min-width:170px;flex:1}
+  .qcard .nm{font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+  .qcard .cnt{font-size:24px;font-weight:700;margin:5px 0 2px}
+  .qcard .who{color:var(--muted);font-size:12px}
+  .qcard.tr{border-color:#1f5a3c}.qcard.tr .cnt{color:#5fd39a}
+  .qcard.bl{border-color:#5b2733}.qcard.bl .cnt{color:#ef7f8f}
+  .qcard.tl,.qcard.br{border-color:#3f4a66}.qcard.tl .cnt,.qcard.br .cnt{color:#9fc0ff}
+
+  .unplaced{margin-top:20px;color:var(--muted);font-size:12.5px}
+  .unplaced .chip{display:inline-block;padding:3px 9px;border:1px solid var(--line);border-radius:14px;background:var(--panel2);margin:3px 4px 0 0;font-size:12px}
+
+  .pill{display:inline-block;min-width:30px;padding:3px 9px;border-radius:6px;font-size:12.5px;font-weight:600;border:1px solid transparent;white-space:nowrap}
+  .pill.good{background:var(--goodbg);color:#5fd39a}
+  .pill.bad{background:var(--badbg);color:#ef7f8f}
+  .pill.warn{background:var(--warnbg);color:#e7b85c}
+  .pill.unknown{background:var(--unknownbg);color:var(--muted)}
+  .pill.value{background:var(--valuebg);color:var(--valuetxt);font-weight:500}
+
+  /* drawer */
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:.15s}
+  .scrim.on{opacity:1;pointer-events:auto}
+  .drawer{position:fixed;top:0;right:0;height:100%;width:460px;max-width:92vw;background:var(--panel);border-left:1px solid var(--line);transform:translateX(100%);transition:.18s;z-index:20;display:flex;flex-direction:column}
+  .drawer.on{transform:none}
+  .drawer .dh{padding:16px 18px;border-bottom:1px solid var(--line)}
+  .drawer .dh .x{float:right;cursor:pointer;color:var(--muted);font-size:20px;line-height:1}
+  .drawer .dh .mlabel{font-size:16px;font-weight:650}
+  .drawer .dh .wlabel{color:var(--muted);font-size:13px;margin-top:2px}
+  .drawer .body{padding:16px 18px;overflow:auto}
+  .sect{margin-top:18px}
+  .sect h4{margin:0 0 7px;font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+  .axhead{display:flex;justify-content:space-between;align-items:baseline;border:1px solid var(--line);border-radius:8px;padding:9px 12px;background:var(--panel2);margin-top:6px}
+  .axhead .big{font-size:22px;font-weight:700}
+  .axhead .cov{font-size:11.5px;color:var(--muted)}
+  .mrow{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding:7px 2px;font-size:13px;gap:10px}
+  .mrow:last-child{border-bottom:none}
+  .mrow .mn{min-width:0}
+  .mrow .contrib{font-size:11px;color:var(--muted);margin-top:2px}
+
+  /* first-run help */
+  details.help{margin:14px 20px 0;background:var(--panel);border:1px solid var(--line);border-radius:10px}
+  details.help > summary{cursor:pointer;list-style:none;padding:12px 16px;font-weight:600;display:flex;align-items:center;gap:8px}
+  details.help > summary::-webkit-details-marker{display:none}
+  details.help > summary .chev{color:var(--muted);transition:.15s;font-size:12px}
+  details.help[open] > summary .chev{transform:rotate(90deg)}
+  details.help > summary .tagn{font-weight:400;color:var(--muted);font-size:12.5px}
+  .help .inner{padding:2px 18px 16px;border-top:1px solid var(--line)}
+  .help h4{margin:16px 0 6px;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--accent)}
+  .help p{margin:6px 0;color:var(--txt)}
+  .help ul{margin:6px 0;padding-left:18px}
+  .help li{margin:4px 0}
+  .help .muted{color:var(--muted)}
+  .help .key{display:inline-block;background:var(--panel2);border:1px solid var(--line);border-radius:5px;padding:1px 7px;font-size:12px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Positioning Quadrant</h1>
+  <span class="sub">Plot every wallet on two category scores — the "magic quadrant" slide</span>
+  <div class="nav">
+    <a class="navlink" href="index.html">← Matrix</a>
+    <a class="navlink" href="gaps.html">Strengths &amp; Gaps →</a>
+    <a class="navlink" href="privacy.html">Privacy data-flow →</a>
+  </div>
+</header>
+
+<details class="help" open>
+  <summary><span class="chev">▶</span> How to read this chart <span class="tagn">— click to collapse</span></summary>
+  <div class="inner">
+    <p>Each wallet gets a <b>0–100 score per category</b>, then is plotted on the two categories you
+       pick for the X and Y axes. Top-right is the magic quadrant: strong on <i>both</i>.</p>
+    <h4>How a category score is computed</h4>
+    <ul>
+      <li>Every <b>rankable</b> metric in the category scores the wallet on the same
+          <b>better/worse-for-the-user</b> polarity as the matrix:
+          <span class="pill good">Good</span> = 1, <span class="pill warn">Partial</span> = 0.5,
+          <span class="pill bad">Worse</span> = 0.</li>
+      <li><b>Counts</b> are normalised against the field's range — more audits scores higher,
+          more open high-severity flaws scores lower.</li>
+      <li>The category score is the <b>average of the scored metrics ×100</b>.
+          <span class="pill unknown">— Unknown</span> cells are skipped (never counted as 0), and
+          descriptive <span class="pill value">Value</span> metrics (licence, default transfer mode)
+          have no order so they're excluded.</li>
+      <li>A wallet with <b>no data</b> for either chosen axis can't be placed — it's listed under the chart.</li>
+    </ul>
+    <h4>Quadrant split</h4>
+    <p>The dashed crosshair defaults to the <b>median</b> of the plotted wallets (relative positioning), or
+       switch it to a fixed <b>50 / 100</b> line for an absolute read.</p>
+    <p class="muted">Click any point for its full score breakdown. Use <span class="key">Platform</span>
+       to restrict to a fair peer set, and <b>Copy summary</b> / <b>Export CSV</b> for the slide.</p>
+  </div>
+</details>
+
+<div class="controls">
+  <div class="ctl">
+    <label>X axis</label>
+    <select id="xcat"></select>
+  </div>
+  <div class="ctl">
+    <label>Y axis</label>
+    <select id="ycat"></select>
+  </div>
+  <div class="ctl">
+    <label>Highlight</label>
+    <select id="baseline"></select>
+  </div>
+  <div class="ctl">
+    <label>Platform</label>
+    <select id="variant">
+      <option value="">All</option>
+      <option value="BROWSER">Browser</option>
+      <option value="MOBILE">Mobile</option>
+      <option value="DESKTOP">Desktop</option>
+    </select>
+  </div>
+  <div class="ctl">
+    <label>Split</label>
+    <select id="split">
+      <option value="median">Median (relative)</option>
+      <option value="fixed">50 / 100 (absolute)</option>
+    </select>
+  </div>
+  <div class="ctl">
+    <label>Options</label>
+    <div class="toggles">
+      <label><input type="checkbox" id="showLabels" checked> Labels</label>
+    </div>
+  </div>
+  <div class="ctl">
+    <label>Export</label>
+    <div class="toggles">
+      <button class="btn" id="copyMd">Copy summary</button>
+      <button class="btn" id="csv">Export CSV</button>
+    </div>
+  </div>
+</div>
+
+<main>
+  <div class="plotwrap">
+    <svg id="plot" viewBox="0 0 760 560" role="img" aria-label="Positioning quadrant"></svg>
+  </div>
+  <div class="legend">
+    <span><span class="sw" style="background:#5b8cff"></span>Wallet</span>
+    <span><span class="sw" style="background:#3a2a5e;border:1px solid #cdb6ff"></span>Highlighted</span>
+    <span id="legSplit"></span>
+  </div>
+  <div class="quadcards" id="quadcards"></div>
+  <div class="unplaced" id="unplaced"></div>
+</main>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer">
+  <div class="dh">
+    <span class="x" id="dx">×</span>
+    <div class="mlabel" id="dWallet"></div>
+    <div class="wlabel" id="dPos"></div>
+  </div>
+  <div class="body" id="dBody"></div>
+</aside>
+
+<script>
+const DATA = /*__DATA__*/;
+const {wallets, metrics, cats} = DATA;
+const byId = Object.fromEntries(wallets.map(w=>[w.id,w]));
+
+// rankable metrics only (value/licence carry no better/worse order — same rule as the gap report)
+const rankable = metrics.filter(m=>m.type!=='value' && m.type!=='license');
+// categories that actually contain at least one rankable metric
+const scoreCats = cats.filter(c=>rankable.some(m=>m.cat===c));
+
+// per-metric max for count normalisation (computed over ALL wallets so the axis is stable under filtering)
+const maxByKey = {};
+metrics.forEach(m=>{
+  if(m.type==='count_high' || m.type==='count_low'){
+    let mx=0;
+    wallets.forEach(w=>{ const c=w.cells[m.key]; if(c && c.state==='count') mx=Math.max(mx, Number(c.detail)||0); });
+    maxByKey[m.key]=mx;
+  }
+});
+
+let state = {
+  xcat: scoreCats.includes('Privacy') ? 'Privacy' : scoreCats[0],
+  ycat: scoreCats.includes('Security') ? 'Security' : scoreCats[Math.min(1,scoreCats.length-1)],
+  baseline: byId['metamask'] ? 'metamask' : wallets[0].id,
+  variant: '',
+  split: 'median',
+  showLabels: true,
+};
+
+// ---- matrix-shared cell semantics (kept identical to template.html) -------
+function polarityClass(m, cell){
+  const s = cell.state;
+  if(s==='value') return 'value';
+  if(s==='unknown') return 'unknown';
+  if(s==='partial') return 'warn';
+  if(s==='count'){
+    const n = cell.detail||0;
+    if(m.type==='count_low') return n>0 ? 'bad':'good';
+    return n>0 ? 'good':'unknown';
+  }
+  if(!m.good) return s==='yes'?'good':'bad';
+  return s===m.good ? 'good':'bad';
+}
+function cellText(m, cell){
+  switch(cell.state){
+    case 'yes': return 'Yes';
+    case 'no': return 'No';
+    case 'partial': return 'Partial';
+    case 'unknown': return '—';
+    case 'value': return cell.detail || '—';
+    case 'count': return String(cell.detail);
+  }
+  return '—';
+}
+function pillHtml(m, cell){
+  return `<span class="pill ${polarityClass(m,cell)}">${escapeHtml(cellText(m,cell))}</span>`;
+}
+
+// ---- scoring --------------------------------------------------------------
+// Normalise one cell to [0,1] on the user-favourable direction, or null if not scorable.
+function metricNorm(m, cell){
+  if(!cell || cell.state==='unknown' || cell.state==='value') return null;
+  if(cell.state==='count'){
+    const n = Number(cell.detail)||0;
+    const mx = maxByKey[m.key]||0;
+    if(m.type==='count_low') return mx<=0 ? 1 : 1 - n/mx;   // fewer is better
+    return mx<=0 ? 0 : n/mx;                                 // more is better
+  }
+  const cls = polarityClass(m, cell);
+  if(cls==='good') return 1;
+  if(cls==='warn') return 0.5;
+  if(cls==='bad')  return 0;
+  return null;
+}
+// Per (wallet, category): {score|null, cnt, total, parts:[{m,cell,v}]}
+function catBreakdown(w, cat){
+  const ms = rankable.filter(m=>m.cat===cat);
+  let sum=0, cnt=0;
+  const parts = ms.map(m=>{
+    const cell = w.cells[m.key];
+    const v = metricNorm(m, cell);
+    if(v!==null){ sum+=v; cnt++; }
+    return {m, cell, v};
+  });
+  return {score: cnt===0 ? null : 100*sum/cnt, cnt, total: ms.length, parts};
+}
+
+function inVariant(w){ return !state.variant || w.variants.includes(state.variant); }
+function median(arr){
+  if(!arr.length) return 50;
+  const s=[...arr].sort((a,b)=>a-b), mid=s.length>>1;
+  return s.length%2 ? s[mid] : (s[mid-1]+s[mid])/2;
+}
+
+// Build the placed/unplaced model for the current axes + filter.
+function computePlot(){
+  const placed=[], unplaced=[];
+  wallets.filter(inVariant).forEach(w=>{
+    const x = catBreakdown(w, state.xcat);
+    const y = catBreakdown(w, state.ycat);
+    if(x.score===null || y.score===null){
+      unplaced.push({w, x, y});
+    } else {
+      placed.push({w, x, y, sx:x.score, sy:y.score});
+    }
+  });
+  const splitX = state.split==='fixed' ? 50 : median(placed.map(p=>p.sx));
+  const splitY = state.split==='fixed' ? 50 : median(placed.map(p=>p.sy));
+  placed.forEach(p=>{
+    const right = p.sx>=splitX, top = p.sy>=splitY;
+    p.quad = top ? (right?'tr':'tl') : (right?'br':'bl');
+  });
+  return {placed, unplaced, splitX, splitY};
+}
+
+// ---- geometry -------------------------------------------------------------
+const W=760, H=560, ML=58, MR=26, MT=26, MB=50;
+const PW=W-ML-MR, PH=H-MT-MB;
+const sx = v => ML + (v/100)*PW;
+const sy = v => MT + (1 - v/100)*PH;
+
+function quadMeta(){
+  return {
+    tr:{label:'Leaders', sub:`strong ${state.xcat} & ${state.ycat}`},
+    tl:{label:`${state.ycat} specialists`, sub:`strong ${state.ycat}, weaker ${state.xcat}`},
+    br:{label:`${state.xcat} specialists`, sub:`strong ${state.xcat}, weaker ${state.ycat}`},
+    bl:{label:'Laggards', sub:`weaker on both`},
+  };
+}
+
+function declutter(points){
+  // points: [{x,y,half}] in svg coords. Nudge y within each half so labels don't stack.
+  const MINGAP=13;
+  ['L','R'].forEach(half=>{
+    const grp = points.filter(p=>p.half===half).sort((a,b)=>a.ly-b.ly);
+    for(let i=1;i<grp.length;i++){
+      if(grp[i].ly - grp[i-1].ly < MINGAP) grp[i].ly = grp[i-1].ly + MINGAP;
+    }
+    // clamp back into plot if pushed past the bottom
+    const overflow = grp.length ? grp[grp.length-1].ly - (MT+PH) : 0;
+    if(overflow>0) grp.forEach(p=>p.ly-=overflow);
+  });
+}
+
+function render(){
+  syncControls();
+  const {placed, unplaced, splitX, splitY} = computePlot();
+  const qm = quadMeta();
+  const svg = document.getElementById('plot');
+
+  let s = '';
+  // quadrant background tints (faint magic-quadrant shading)
+  const spx=sx(splitX), spy=sy(splitY);
+  s += `<rect x="${spx}" y="${MT}" width="${ML+PW-spx}" height="${spy-MT}" fill="#1f8a55" opacity="0.05"/>`;       // tr
+  s += `<rect x="${ML}" y="${spy}" width="${spx-ML}" height="${MT+PH-spy}" fill="#b5384a" opacity="0.05"/>`;        // bl
+
+  // gridlines + ticks
+  [0,25,50,75,100].forEach(t=>{
+    s += `<line class="grid" x1="${sx(t)}" y1="${MT}" x2="${sx(t)}" y2="${MT+PH}"/>`;
+    s += `<line class="grid" x1="${ML}" y1="${sy(t)}" x2="${ML+PW}" y2="${sy(t)}"/>`;
+    s += `<text class="tick" x="${sx(t)}" y="${MT+PH+16}" text-anchor="middle">${t}</text>`;
+    s += `<text class="tick" x="${ML-8}" y="${sy(t)+4}" text-anchor="end">${t}</text>`;
+  });
+  // frame axes
+  s += `<line class="axis" x1="${ML}" y1="${MT+PH}" x2="${ML+PW}" y2="${MT+PH}"/>`;
+  s += `<line class="axis" x1="${ML}" y1="${MT}" x2="${ML}" y2="${MT+PH}"/>`;
+  // split crosshair
+  s += `<line class="split" x1="${spx}" y1="${MT}" x2="${spx}" y2="${MT+PH}"/>`;
+  s += `<line class="split" x1="${ML}" y1="${spy}" x2="${ML+PW}" y2="${spy}"/>`;
+
+  // quadrant labels (corners)
+  const pad=10;
+  s += `<text class="qlabel" fill="#5fd39a" x="${ML+PW-pad}" y="${MT+16}" text-anchor="end">${escapeHtml(qm.tr.label)}</text>`;
+  s += `<text class="qsub" x="${ML+PW-pad}" y="${MT+30}" text-anchor="end">${escapeHtml(qm.tr.sub)}</text>`;
+  s += `<text class="qlabel" fill="#9fc0ff" x="${ML+pad}" y="${MT+16}" text-anchor="start">${escapeHtml(qm.tl.label)}</text>`;
+  s += `<text class="qlabel" fill="#9fc0ff" x="${ML+PW-pad}" y="${MT+PH-16}" text-anchor="end">${escapeHtml(qm.br.label)}</text>`;
+  s += `<text class="qlabel" fill="#ef7f8f" x="${ML+pad}" y="${MT+PH-16}" text-anchor="start">${escapeHtml(qm.bl.label)}</text>`;
+
+  // axis titles
+  s += `<text class="axislabel" x="${ML+PW/2}" y="${H-12}" text-anchor="middle">${escapeHtml(state.xcat)} score →</text>`;
+  s += `<text class="axislabel" transform="translate(16,${MT+PH/2}) rotate(-90)" text-anchor="middle">${escapeHtml(state.ycat)} score →</text>`;
+
+  // points — precompute label positions for declutter
+  const pts = placed.map(p=>{
+    const px=sx(p.sx), py=sy(p.sy);
+    const half = px > ML+PW/2 ? 'L' : 'R';   // labels go left of right-side points, right of left-side points
+    return {p, px, py, half, ly:py+4};
+  });
+  if(state.showLabels) declutter(pts);
+
+  pts.forEach(({p, px, py, half, ly})=>{
+    const isBase = p.w.id===state.baseline;
+    const r = isBase?7:5.5;
+    const fill = isBase?'#3a2a5e':'#5b8cff';
+    const lx = half==='L' ? px-9 : px+9;
+    const anchor = half==='L' ? 'end' : 'start';
+    const title = `${p.w.name} · ${state.xcat} ${Math.round(p.sx)} · ${state.ycat} ${Math.round(p.sy)}`;
+    s += `<g class="pt ${isBase?'base':''}" data-id="${p.w.id}"><title>${escapeHtml(title)}</title>`;
+    if(state.showLabels){
+      if(Math.abs(ly-(py+4))>1) s += `<line x1="${px}" y1="${py}" x2="${lx + (anchor==='end'?4:-4)}" y2="${ly-4}" stroke="#3c4452" stroke-width="0.8"/>`;
+      s += `<text class="ptlabel" x="${lx}" y="${ly}" text-anchor="${anchor}">${escapeHtml(p.w.name)}</text>`;
+    }
+    s += `<circle cx="${px}" cy="${py}" r="${r}" fill="${fill}"/></g>`;
+  });
+
+  svg.innerHTML = s;
+  svg.querySelectorAll('.pt[data-id]').forEach(g=>g.onclick=()=>openDrawer(g.dataset.id));
+
+  // legend / quad cards / unplaced
+  document.getElementById('legSplit').textContent =
+    state.split==='fixed' ? 'Crosshair: fixed 50 / 100'
+    : `Crosshair: median (${Math.round(splitX)} ${state.xcat}, ${Math.round(splitY)} ${state.ycat})`;
+
+  const counts = {tr:[],tl:[],br:[],bl:[]};
+  placed.forEach(p=>counts[p.quad].push(p.w.name));
+  const order=[['tr','qcard tr'],['tl','qcard tl'],['br','qcard br'],['bl','qcard bl']];
+  document.getElementById('quadcards').innerHTML = order.map(([k,cls])=>`
+    <div class="${cls}">
+      <div class="nm">${escapeHtml(qm[k].label)}</div>
+      <div class="cnt">${counts[k].length}</div>
+      <div class="who">${counts[k].length? escapeHtml(counts[k].slice(0,6).join(', '))+(counts[k].length>6?'…':'') : '—'}</div>
+    </div>`).join('');
+
+  const up = document.getElementById('unplaced');
+  if(unplaced.length){
+    up.innerHTML = `<b>Not plotted (${unplaced.length})</b> — no scorable data for `
+      + `${escapeHtml(state.xcat)} and/or ${escapeHtml(state.ycat)}: `
+      + unplaced.map(u=>`<span class="chip" title="${escapeHtml(state.xcat)}: ${u.x.score===null?'no data':Math.round(u.x.score)} · ${escapeHtml(state.ycat)}: ${u.y.score===null?'no data':Math.round(u.y.score)}">${escapeHtml(u.w.name)}</span>`).join('');
+  } else {
+    up.innerHTML = '';
+  }
+}
+
+// ---- drawer: score breakdown for one wallet -------------------------------
+function axBlock(title, bd){
+  let h = `<div class="sect"><h4>${escapeHtml(title)}</h4>`;
+  h += `<div class="axhead"><span class="big">${bd.score===null?'—':Math.round(bd.score)}</span>`
+     + `<span class="cov">${bd.cnt}/${bd.total} metrics scored</span></div>`;
+  bd.parts.forEach(({m, cell, v})=>{
+    const contrib = v===null ? 'not scored' : `scores ${Math.round(v*100)}`;
+    h += `<div class="mrow"><div class="mn"><div>${escapeHtml(m.label)}</div>`
+       + `<div class="contrib">${contrib}</div></div>${pillHtml(m, cell)}</div>`;
+  });
+  return h + `</div>`;
+}
+function openDrawer(id){
+  const w = byId[id];
+  const x = catBreakdown(w, state.xcat);
+  const y = catBreakdown(w, state.ycat);
+  document.getElementById('dWallet').textContent = w.name;
+  const pos = (x.score===null||y.score===null) ? 'not plotted (missing data)'
+    : `${state.xcat} ${Math.round(x.score)} × ${state.ycat} ${Math.round(y.score)}`;
+  document.getElementById('dPos').textContent = pos;
+  let body = '';
+  if(w.blurb) body += `<div class="sect"><div>${escapeHtml(w.blurb)}</div></div>`;
+  body += axBlock(`${state.xcat} (X)`, x);
+  body += axBlock(`${state.ycat} (Y)`, y);
+  document.getElementById('dBody').innerHTML = body;
+  document.getElementById('drawer').classList.add('on');
+  document.getElementById('scrim').classList.add('on');
+}
+function closeDrawer(){
+  document.getElementById('drawer').classList.remove('on');
+  document.getElementById('scrim').classList.remove('on');
+}
+function escapeHtml(s){return (s==null?'':String(s)).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+
+// ---- controls -------------------------------------------------------------
+function fillCatSelect(el, val){
+  el.innerHTML = scoreCats.map(c=>`<option value="${escapeHtml(c)}" ${c===val?'selected':''}>${escapeHtml(c)}</option>`).join('');
+}
+function syncControls(){
+  fillCatSelect(document.getElementById('xcat'), state.xcat);
+  fillCatSelect(document.getElementById('ycat'), state.ycat);
+  const bsel = document.getElementById('baseline');
+  bsel.innerHTML = `<option value="">— none —</option>` + wallets.map(w=>`<option value="${w.id}" ${w.id===state.baseline?'selected':''}>${escapeHtml(w.name)}</option>`).join('');
+}
+
+// ---- exports --------------------------------------------------------------
+function rowsForExport(){
+  const {placed, unplaced} = computePlot();
+  const qm = quadMeta();
+  const rows = placed.map(p=>({name:p.w.name, x:Math.round(p.sx), y:Math.round(p.sy), quad:qm[p.quad].label}))
+    .sort((a,b)=> b.y-a.y || b.x-a.x);
+  unplaced.forEach(u=>rows.push({name:u.w.name, x:u.x.score===null?'':Math.round(u.x.score), y:u.y.score===null?'':Math.round(u.y.score), quad:'Not plotted'}));
+  return rows;
+}
+function copyMarkdown(){
+  const {placed} = computePlot();
+  const qm = quadMeta();
+  const L = [];
+  L.push(`# Positioning — ${state.xcat} × ${state.ycat}`);
+  if(state.variant) L.push(`_Platform: ${state.variant}._`);
+  L.push('');
+  ['tr','tl','br','bl'].forEach(k=>{
+    const names = placed.filter(p=>p.quad===k)
+      .sort((a,b)=>(b.sx+b.sy)-(a.sx+a.sy))
+      .map(p=>`${p.w.name} (${Math.round(p.sx)}/${Math.round(p.sy)})`);
+    L.push(`## ${qm[k].label} — ${qm[k].sub}`);
+    L.push(names.length ? names.map(n=>`- ${n}`).join('\n') : '_none_');
+    L.push('');
+  });
+  const md = L.join('\n');
+  navigator.clipboard.writeText(md).then(()=>flash('Summary copied to clipboard')).catch(()=>{
+    const ta=document.createElement('textarea'); ta.value=md; document.body.appendChild(ta); ta.select();
+    try{document.execCommand('copy'); flash('Summary copied to clipboard');}catch(e){flash('Copy failed — see console'); console.log(md);}
+    ta.remove();
+  });
+}
+function exportCsv(){
+  const rows = rowsForExport();
+  const head = ['Wallet', `${state.xcat} (X)`, `${state.ycat} (Y)`, 'Quadrant'];
+  const body = rows.map(r=>[r.name, r.x, r.y, r.quad]);
+  const csv = [head, ...body].map(r=>r.map(x=>`"${String(x).replace(/"/g,'""')}"`).join(',')).join('\n');
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));
+  a.download=`positioning-${state.xcat}-x-${state.ycat}.csv`.toLowerCase().replace(/\s+/g,'-'); a.click();
+}
+function flash(msg){
+  const b=document.getElementById('copyMd'); const old=b.textContent;
+  b.textContent='✓ '+msg; setTimeout(()=>b.textContent=old, 1600);
+}
+
+// ---- wire up --------------------------------------------------------------
+document.getElementById('xcat').onchange=e=>{state.xcat=e.target.value; render();};
+document.getElementById('ycat').onchange=e=>{state.ycat=e.target.value; render();};
+document.getElementById('baseline').onchange=e=>{state.baseline=e.target.value; render();};
+document.getElementById('variant').onchange=e=>{state.variant=e.target.value; render();};
+document.getElementById('split').onchange=e=>{state.split=e.target.value; render();};
+document.getElementById('showLabels').onchange=e=>{state.showLabels=e.target.checked; render();};
+document.getElementById('copyMd').onclick=copyMarkdown;
+document.getElementById('csv').onclick=exportCsv;
+document.getElementById('dx').onclick=closeDrawer;
+document.getElementById('scrim').onclick=closeDrawer;
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
+
+render();
+</script>
+</body>
+</html>

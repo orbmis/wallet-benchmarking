@@ -221,8 +221,34 @@
 			},
 			"privacy": {
 				"analytics": {
-					"crashReports": null,
-					"usage": null
+					"crashReports": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Daimo's App Store privacy label lists Identifiers and Usage Data as collected, but does not list Diagnostics or Crash Data.",
+									"url": "https://apps.apple.com/is/app/daimo/id6459700343"
+								}
+							}
+						]
+					},
+					"usage": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Daimo records telemetry events to Honeycomb, including Daimo usernames that are linked to wallet addresses onchain.",
+										"url": "https://github.com/daimo-eth/daimo/blob/e1ddce7c37959d5cec92b05608ce62f93f3316b7/packages/daimo-api/src/server/telemetry.ts#L101-L111"
+									},
+									{
+										"explanation": "Daimo's App Store privacy label lists Usage Data as data that may be collected but not linked to identity.",
+										"url": "https://apps.apple.com/is/app/daimo/id6459700343"
+									}
+								]
+							}
+						]
+					}
 				},
 				"appIsolation": {
 					"$ref": "appConnectionNotSupported"
@@ -446,8 +472,55 @@
 			"profile": "WalletProfile.PAYMENTS",
 			"security": {
 				"accountRecovery": null,
-				"bugBountyProgram": null,
-				"duressResistance": null,
+				"bugBountyProgram": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": [
+								{
+									"explanation": "Immunefi lists a live Daimo Pay bug bounty, live since June 6, 2025 and last updated March 4, 2026, covering the Daimo Pay intent-address contract system.",
+									"url": "https://immunefi.com/bug-bounty/daimo-pay/"
+								}
+							],
+							"availability": "BugBountyProgramAvailability.ACTIVE",
+							"coverageBreadth": "PARTIAL_SCOPE",
+							"dateStarted": "2025-06-06",
+							"disclosure": null,
+							"legalProtections": null,
+							"platform": "BugBountyPlatform.IMMUNEFI",
+							"rewards": {
+								"$call": "supported",
+								"args": [
+									{
+										"currency": "USD",
+										"maximum": 20000,
+										"minimum": 1000
+									}
+								]
+							},
+							"upgradePathAvailable": true
+						}
+					]
+				},
+				"duressResistance": {
+					"duressMode": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Daimo's published P256Verifier security material describes passkey/WebAuthn-style signing keys for safer self-custody, but does not describe a decoy account or duress wallet mode.",
+										"url": "https://daimo.com/blog/p256verifier"
+									},
+									{
+										"explanation": "Daimo's product documentation presents Daimo as a payments platform for sending and accepting payments, with sessions and payment methods, rather than a wallet with an alternate coercion/decoy unlock flow.",
+										"url": "https://docs.daimo.com/introduction"
+									}
+								]
+							}
+						]
+					}
+				},
 				"hardwareWalletSupport": {
 					"ref": {
 						"$ref": "refTodo"
@@ -526,10 +599,49 @@
 					}
 				},
 				"securityBestPractices": null,
-				"transactionLegibility": null
+				"transactionLegibility": {
+					"ref": {
+						"explanation": "Daimo's docs describe a payments/session flow focused on USDC payment methods and wallet execution payloads; public repository search found no Tenderly, Blockaid, transaction preview, or transaction simulation implementation.",
+						"url": "https://docs.daimo.com/guides/sessions"
+					},
+					"transactionDetailsDisplay": null,
+					"transactionSimulations": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Daimo session docs describe creating payment methods and returning recipient addresses or serialized transactions for wallet execution, but do not describe an in-wallet transaction simulation preview before signing.",
+										"url": "https://docs.daimo.com/guides/sessions"
+									},
+									{
+										"explanation": "Daimo's supported-chain docs describe deposit options detected from a connected wallet, not a Daimo-wallet transaction simulation feature.",
+										"url": "https://docs.daimo.com/supported-chains"
+									}
+								]
+							}
+						]
+					}
+				}
 			},
 			"selfSovereignty": {
-				"permissionsManagement": null,
+				"permissionsManagement": {
+					"$call": "notSupportedWithRef",
+					"args": [
+						{
+							"ref": [
+								{
+									"explanation": "Daimo's docs describe payment sessions, payment methods, deposits, and sign-and-send transaction payloads, rather than wallet-native token approval inspection or revocation.",
+									"url": "https://docs.daimo.com/guides/sessions"
+								},
+								{
+									"explanation": "A search of Daimo's public repository found no approval, allowance, revoke, or token-approval management implementation matching the approval-management metric.",
+									"url": "https://github.com/daimo-eth/daimo"
+								}
+							]
+						}
+					]
+				},
 				"transactionSubmission": {
 					"l1": {
 						"ref": {
@@ -554,13 +666,65 @@
 			"transparency": {
 				"operationFees": null,
 				"releaseTransparency": {
-					"artifactSigning": null,
-					"dependencyLocking": null,
+					"artifactSigning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Daimo is distributed through Apple's App Store under the Daimo listing.",
+										"url": "https://apps.apple.com/is/app/daimo/id6459700343"
+									},
+									{
+										"explanation": "Apple documents that App Store distribution verifies the developer signature and then re-signs the app using an Apple identity before download.",
+										"url": "https://developer.apple.com/documentation/Xcode/using-the-latest-code-signature-format"
+									}
+								]
+							}
+						]
+					},
+					"dependencyLocking": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "The Daimo repository includes a package-lock.json lockfile for npm dependency resolution.",
+									"url": "https://github.com/daimo-eth/daimo/blob/master/package-lock.json"
+								}
+							}
+						]
+					},
 					"dependencyVulnerabilityScanning": null,
-					"hasPublicChangelog": null,
+					"hasPublicChangelog": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Daimo's App Store page publishes What's New release notes and current version information.",
+									"url": "https://apps.apple.com/is/app/daimo/id6459700343"
+								}
+							}
+						]
+					},
 					"hermeticBuilds": null,
 					"repositoryChangeControls": null,
-					"reproducibleBuilds": null
+					"reproducibleBuilds": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Daimo's README documents ordinary monorepo builds and mobile development through Expo/internal distribution builds, including hosted API or local API setup, but does not document deterministic rebuild-and-compare verification for published App Store or Play Store artifacts.",
+										"url": "https://github.com/daimo-eth/daimo/blob/master/README.md"
+									},
+									{
+										"explanation": "Daimo's root package scripts build the monorepo with Turbo workspaces; the public scripts describe build generation rather than reproducible mobile release-artifact verification.",
+										"url": "https://github.com/daimo-eth/daimo/blob/master/package.json"
+									}
+								]
+							}
+						]
+					}
 				}
 			}
 		},

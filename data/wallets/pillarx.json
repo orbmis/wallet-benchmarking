@@ -16,6 +16,9 @@
 			"iconExtension": "svg",
 			"lastUpdated": "2025-12-16",
 			"urls": {
+				"repositories": [
+					"https://github.com/pillarwallet/x"
+				],
 				"websites": [
 					"https://pillarx.app"
 				]
@@ -42,9 +45,16 @@
 					"$call": "supported",
 					"args": [
 						{
-							"ref": {
-								"$ref": "refTodo"
-							},
+							"ref": [
+								{
+									"explanation": "PillarX's App Store listing describes PillarX as a self-custodial Web3 wallet for managing crypto across multiple networks.",
+									"url": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238"
+								},
+								{
+									"explanation": "The PillarX repository README says sign-in uses Privy email login, after which PillarX handles account management infrastructure.",
+									"url": "https://github.com/pillarwallet/x/blob/staging/README.md"
+								}
+							],
 							"canExportPrivateKey": false,
 							"keyDerivation": {
 								"type": "BIP32",
@@ -77,9 +87,55 @@
 						"$ref": "notSupported"
 					}
 				},
-				"nonChainSpecificEnsResolution": null
+				"nonChainSpecificEnsResolution": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"explanation": "PillarX App Store version history says version 3.19.9 added a service to resolve FIO, Unstoppable Domains, and ENS names.",
+								"url": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238"
+							},
+							"medium": "CHAIN_CLIENT"
+						}
+					]
+				}
 			},
-			"chainAbstraction": null,
+			"chainAbstraction": {
+				"bridging": {
+					"builtInBridging": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "PillarX says Pulse provides token swaps inside PillarX, powered by Etherspot chain abstraction with no chain switching.",
+										"url": "https://blog.pillarx.app/pulse-is-live-access-instant-swaps-across-22m-tokens-on-pillarx/"
+									},
+									{
+										"explanation": "PillarX says Exolix integration enables cross-chain swaps across 200+ blockchains without leaving PillarX.",
+										"url": "https://blog.pillarx.app/exolix-is-joining-pillarx-fast-secure-swaps-across-200-blockchains/"
+									},
+									{
+										"explanation": "PillarX says StealthEX integration lets users swap tokens across different blockchains without leaving PillarX.",
+										"url": "https://blog.pillarx.app/pillarx-welcomes-stealthex-for-instant-swaps/"
+									}
+								]
+							}
+						]
+					},
+					"suggestedBridging": null
+				},
+				"crossChainBalances": {
+					"ref": {
+						"explanation": "PillarX PnL tracking shows every asset a user holds, using transaction history, balance calculations, and live market data; users can trade tokens on any supported chain and see Unrealised PnL in My Holdings.",
+						"url": "https://blog.pillarx.app/introducing-pnl-track-your-trading-results-on-pillarx/"
+					},
+					"globalAccountValue": {
+						"$ref": "featureSupported"
+					},
+					"perChainAccountValue": null
+				}
+			},
 			"chainConfigurability": null,
 			"ecosystem": {
 				"delegation": null
@@ -135,8 +191,40 @@
 			},
 			"privacy": {
 				"analytics": {
-					"crashReports": null,
-					"usage": null
+					"crashReports": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "PillarX's App Store privacy label lists Crash Data, Performance Data, and Other Diagnostic Data as collected but not linked to identity.",
+										"url": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238"
+									},
+									{
+										"explanation": "The PillarX repository includes Sentry dependencies and a sentry:sourcemaps script for the PillarX project.",
+										"url": "https://github.com/pillarwallet/x/blob/staging/package.json"
+									}
+								]
+							}
+						]
+					},
+					"usage": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "PillarX's App Store privacy label lists Product Interaction usage data for developer advertising/marketing and analytics.",
+										"url": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238"
+									},
+									{
+										"explanation": "The PillarX repository includes plausible-tracker and Hypelab SDK dependencies.",
+										"url": "https://github.com/pillarwallet/x/blob/staging/package.json"
+									}
+								]
+							}
+						]
+					}
 				},
 				"appIsolation": null,
 				"dataCollection": null,
@@ -160,8 +248,53 @@
 			"profile": "WalletProfile.GENERIC",
 			"security": {
 				"accountRecovery": null,
-				"bugBountyProgram": null,
-				"duressResistance": null,
+				"bugBountyProgram": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": [
+								{
+									"explanation": "Immunefi lists a live Pillar bug bounty program, last updated October 29, 2024, covering Pillar smart-contract assets with direct theft, freezing, governance manipulation, MEV, and insolvency impacts in scope.",
+									"url": "https://immunefi.com/bug-bounty/pillar/scope/"
+								}
+							],
+							"availability": "BugBountyProgramAvailability.ACTIVE",
+							"coverageBreadth": "PARTIAL_SCOPE",
+							"dateStarted": "2022-02-11",
+							"disclosure": null,
+							"legalProtections": null,
+							"platform": "BugBountyPlatform.IMMUNEFI",
+							"rewards": {
+								"$call": "supported",
+								"args": [
+									{
+										"currency": "USD",
+										"maximum": 1250,
+										"minimum": 0
+									}
+								]
+							},
+							"upgradePathAvailable": true
+						}
+					]
+				},
+				"duressResistance": {
+					"basicUnlock": {
+						"ref": {
+							"explanation": "PillarX App Store version history documents PIN-code and biometrics-related wallet fixes, including a fixed PIN-code issue and WalletConnect biometrics decision handling.",
+							"url": "https://apps.apple.com/us/app/pillar-wallet-crosschain-defi/id1346582238"
+						},
+						"mechanisms": {
+							"PIN": true,
+							"PASSWORD": false,
+							"BIOMETRIC": true,
+							"PATTERN": false
+						}
+					},
+					"duressMode": {
+						"$ref": "notSupported"
+					}
+				},
 				"hardwareWalletSupport": {
 					"ref": {
 						"$ref": "refTodo"
@@ -170,25 +303,145 @@
 				},
 				"keysHandling": null,
 				"lightClient": {
-					"ethereumL1": null
+					"ethereumL1": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "PillarX's README says local use may require registering Etherspot Bundler API and Etherspot Data Service API keys, indicating hosted account-abstraction/data-service infrastructure rather than an embedded Ethereum L1 light client or a user-selected self-hosted node broadcast path.",
+									"url": "https://github.com/pillarwallet/x/blob/staging/README.md"
+								}
+							}
+						]
+					}
 				},
 				"passkeyVerification": {
 					"$ref": "notSupported"
 				},
-				"publicSecurityAudits": null,
-				"scamAlerts": null,
+				"publicSecurityAudits": [
+					{
+						"ref": "https://1757549899-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Me5QrMSqMI-eFmDUQUk%2Fuploads%2FkMN5FSCooOkgEfL7jubb%2FAudit%20_%20ConsenSys%20Diligence.pdf?alt=media&token=ef40fcde-4bad-476b-9a47-1b7700944f02",
+						"auditDate": "2020-12-04",
+						"auditor": {
+							"$ref": "consensysDiligence"
+						},
+						"codeSnapshot": "55ba306582a007b6e0f9c35bdba92a94dc85829c",
+						"unpatchedFlaws": "NO_HIGH_SEVERITY_FLAWS_FOUND",
+						"variantsScope": "PILLAR_ACCOUNT_WALLET_PAYMENT_SMART_CONTRACTS"
+					}
+				],
+				"scamAlerts": {
+					"contractTransactionWarning": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Pillar's public security copy for PillarX/Pillar Wallet describes an in-app browser that helps avoid scam sites, but does not document malicious-contract registry checks or contract-risk warnings.",
+										"url": "https://pillar.fi/"
+									},
+									{
+										"explanation": "Public PillarX repository search found no Blockaid, Tenderly-risk, phishing, malicious-contract, or scam-alert implementation matching contract-risk warnings.",
+										"url": "https://github.com/pillarwallet/x"
+									}
+								]
+							}
+						]
+					},
+					"scamUrlWarning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "The official Pillar site describes Pillar Wallet/PillarX as including an in-app browser that helps users avoid scam sites.",
+									"url": "https://pillar.fi/"
+								},
+								"leaksIp": null,
+								"leaksUserAddress": null,
+								"leaksVisitedUrl": null
+							}
+						]
+					},
+					"sendTransactionWarning": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "PillarX public product material documents swaps, holdings, and scam-site avoidance, but does not document risky-recipient, new-recipient, or user-whitelist send warnings.",
+										"url": "https://pillar.fi/"
+									},
+									{
+										"explanation": "Public PillarX repository search found no risky-recipient, whitelist, scam-address, Blockaid, or malicious-address implementation matching risky-send warnings.",
+										"url": "https://github.com/pillarwallet/x"
+									}
+								]
+							}
+						]
+					}
+				},
 				"securityBestPractices": null,
-				"transactionLegibility": null
+				"transactionLegibility": {
+					"ref": {
+						"explanation": "PillarX public materials and repository search show swap/holdings flows and scam-site avoidance, but no transaction-outcome simulation before signing.",
+						"url": "https://github.com/pillarwallet/x"
+					},
+					"transactionDetailsDisplay": null,
+					"transactionSimulations": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "PillarX repository search found no Tenderly, Blockaid, transaction preview, or transaction-simulation implementation matching the transaction-simulation metric.",
+										"url": "https://github.com/pillarwallet/x"
+									},
+									{
+										"explanation": "PillarX's public product material emphasizes trading, swapping, and holdings views, but does not describe transaction outcome simulation before signing.",
+										"url": "https://pillarx.app"
+									}
+								]
+							}
+						]
+					}
+				}
 			},
 			"selfSovereignty": {
-				"permissionsManagement": null,
+				"permissionsManagement": {
+					"$call": "notSupportedWithRef",
+					"args": [
+						{
+							"ref": [
+								{
+									"explanation": "PillarX product material describes swaps, holdings, and account management, but does not document wallet-native ERC-20/ERC-721/ERC-1155 approval inspection or revocation.",
+									"url": "https://pillarx.app"
+								},
+								{
+									"explanation": "Public PillarX repository search found no approval, allowance, revoke, or token-permission management implementation matching the token-approval management metric.",
+									"url": "https://github.com/pillarwallet/x"
+								}
+							]
+						}
+					]
+				},
 				"transactionSubmission": {
 					"l1": {
 						"ref": {
-							"$ref": "refTodo"
+							"explanation": "PillarX's README says local use may require registering Etherspot Bundler API and Etherspot Data Service API keys, indicating hosted account-abstraction/data-service infrastructure rather than an embedded Ethereum L1 light client or a user-selected self-hosted node broadcast path.",
+							"url": "https://github.com/pillarwallet/x/blob/staging/README.md"
 						},
 						"selfBroadcastViaDirectGossip": null,
-						"selfBroadcastViaSelfHostedNode": null
+						"selfBroadcastViaSelfHostedNode": {
+							"$call": "notSupportedWithRef",
+							"args": [
+								{
+									"ref": {
+										"explanation": "PillarX's README says local use may require registering Etherspot Bundler API and Etherspot Data Service API keys, indicating hosted account-abstraction/data-service infrastructure rather than an embedded Ethereum L1 light client or a user-selected self-hosted node broadcast path.",
+										"url": "https://github.com/pillarwallet/x/blob/staging/README.md"
+									}
+								}
+							]
+						}
 					},
 					"l2": {
 						"ref": {
@@ -202,13 +455,55 @@
 			"transparency": {
 				"operationFees": null,
 				"releaseTransparency": {
-					"artifactSigning": null,
+					"artifactSigning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "PillarX is distributed through Apple's App Store under the PillarX: Smart DeFi Wallet listing.",
+										"url": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238"
+									},
+									{
+										"explanation": "Apple documents that App Store distribution verifies the developer signature and then re-signs the app using an Apple identity before download.",
+										"url": "https://developer.apple.com/documentation/Xcode/using-the-latest-code-signature-format"
+									}
+								]
+							}
+						]
+					},
 					"dependencyLocking": null,
 					"dependencyVulnerabilityScanning": null,
-					"hasPublicChangelog": null,
+					"hasPublicChangelog": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									"https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+									"https://blog.pillarx.app/"
+								]
+							}
+						]
+					},
 					"hermeticBuilds": null,
 					"repositoryChangeControls": null,
-					"reproducibleBuilds": null
+					"reproducibleBuilds": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "PillarX's README documents running the project locally from a copied `.env` and notes that users may need their own Etherspot and Privy API/app credentials; this does not provide a public deterministic rebuild path for matching released PillarX artifacts.",
+										"url": "https://github.com/pillarwallet/x/blob/staging/README.md"
+									},
+									{
+										"explanation": "PillarX's package scripts build with Vite using deployment-specific values such as `CF_PAGES_COMMIT_SHA` and include Sentry sourcemap upload steps; they document build generation, not reproducible release-artifact verification.",
+										"url": "https://github.com/pillarwallet/x/blob/staging/package.json"
+									}
+								]
+							}
+						]
+					}
 				}
 			}
 		},

@@ -73,15 +73,62 @@
 			},
 			"addressResolution": {
 				"ref": {
-					"$ref": "refTodo"
+					"explanation": "Safe's mobile listing says existing Safe Accounts can be imported by address, ENS name, or QR code scan, and settings show set ENS names.",
+					"url": "https://play.google.com/store/apps/details?id=io.gnosis.safe"
 				},
 				"chainSpecificAddressing": {
 					"erc7828": null,
 					"erc7831": null
 				},
-				"nonChainSpecificEnsResolution": null
+				"nonChainSpecificEnsResolution": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"explanation": "Safe's mobile listing says existing Safe Accounts can be imported by address, ENS name, or QR code scan, and settings show set ENS names.",
+								"url": "https://play.google.com/store/apps/details?id=io.gnosis.safe"
+							},
+							"medium": "CHAIN_CLIENT"
+						}
+					]
+				}
 			},
-			"chainAbstraction": null,
+			"chainAbstraction": {
+				"bridging": {
+					"builtInBridging": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe documents a native Bridge feature in Safe{Wallet}, powered by Li.Fi, for transferring assets between blockchain networks directly within Safe{Wallet}.",
+									"url": "https://help.safe.global/articles/4881073257-safewallet-native-bridge"
+								}
+							}
+						]
+					},
+					"suggestedBridging": null
+				},
+				"crossChainBalances": {
+					"ref": [
+						{
+							"explanation": "Safe's multi-chain deployment guide says users can reserve and deploy the same Safe address across multiple networks and use the sidebar for managing multiple accounts.",
+							"url": "https://help.safe.global/articles/9317165368-deploying-a-multi-chain-safe"
+						},
+						{
+							"explanation": "Safe's February 2026 release notes say Positions provide portfolio visibility and corrected values in the mobile app, matching the web app experience.",
+							"url": "https://safe.global/blog/introducing-trusted-safe-list-and-positions-on-mobile"
+						}
+					],
+					"globalAccountValue": {
+						"$ref": "featureSupported"
+					},
+					"perChainAccountValue": {
+						"$ref": "featureSupported"
+					},
+					"ether": null,
+					"usdc": null
+				}
+			},
 			"chainConfigurability": {
 				"$call": "supported",
 				"args": [
@@ -200,11 +247,41 @@
 					"ventureCapital": false
 				}
 			},
-			"multiAddress": null,
+			"multiAddress": {
+				"$call": "supported",
+				"args": [
+					{
+						"ref": {
+							"explanation": "Safe's multi-chain deployment guide describes creating Safes with the same address across networks and a sidebar interface for managing multiple accounts.",
+							"url": "https://help.safe.global/articles/9317165368-deploying-a-multi-chain-safe"
+						}
+					}
+				]
+			},
 			"privacy": {
 				"analytics": {
-					"crashReports": null,
-					"usage": null
+					"crashReports": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "The Safe Mobile App Store privacy label lists Diagnostics / Crash Data, Performance Data, and Other Diagnostic Data as collected for analytics and app functionality, not linked to identity.",
+									"url": "https://apps.apple.com/us/app/safe-mobile/id6748754793"
+								}
+							}
+						]
+					},
+					"usage": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "The Safe Mobile App Store privacy label lists Usage Data / Product Interaction and Other Usage Data as collected for analytics and app functionality, not linked to identity.",
+									"url": "https://apps.apple.com/us/app/safe-mobile/id6748754793"
+								}
+							}
+						]
+					}
 				},
 				"appIsolation": null,
 				"dataCollection": null,
@@ -228,8 +305,71 @@
 			"profile": "WalletProfile.GENERIC",
 			"security": {
 				"accountRecovery": null,
-				"bugBountyProgram": null,
-				"duressResistance": null,
+				"bugBountyProgram": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": [
+								{
+									"explanation": "Safe Foundation documents a Safe Smart Account bug bounty program covering Safe core contracts and selected officially supported modules, with rewards up to $1,000,000.",
+									"url": "https://docs.safefoundation.org/security/bug-bounty"
+								},
+								{
+									"explanation": "Safe developer docs say severe Safe Wallet security issues should be sent to wallet-reports@safe.global, with rewards voluntary at Safe's discretion.",
+									"url": "https://docs.safe.global/advanced/smart-account-bug-bounty"
+								}
+							],
+							"availability": "BugBountyProgramAvailability.ACTIVE",
+							"coverageBreadth": "PARTIAL_SCOPE",
+							"disclosure": {
+								"$ref": "featureSupported"
+							},
+							"legalProtections": {
+								"$call": "supported",
+								"args": [
+									{
+										"type": "LegalProtectionType.SAFE_HARBOR",
+										"ref": {
+											"explanation": "Safe's bug bounty documentation says Safe will not pursue legal action when researchers follow the responsible disclosure guidelines.",
+											"url": "https://docs.safefoundation.org/security/bug-bounty"
+										}
+									}
+								]
+							},
+							"platform": "BugBountyPlatform.SELF_HOSTED",
+							"rewards": {
+								"$call": "supported",
+								"args": [
+									{
+										"currency": "USD",
+										"maximum": 1000000,
+										"minimum": 0
+									}
+								]
+							},
+							"upgradePathAvailable": true
+						}
+					]
+				},
+				"duressResistance": {
+					"duressMode": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Safe describes its account-security model around multisig thresholds, signer-wallet separation, roles, transaction guards, Safe Shield, and transaction simulation, rather than a decoy or duress wallet mode.",
+										"url": "https://safe.global/security"
+									},
+									{
+										"explanation": "Safe's signer-wallet documentation explains that Safe accounts are controlled by signer keys and external signer wallets; it does not describe an alternate decoy account opened under coercion.",
+										"url": "https://help.safe.global/articles/8997878213-why-do-i-need-to-connect-a-signer-wallet"
+									}
+								]
+							}
+						]
+					}
+				},
 				"hardwareWalletSupport": {
 					"ref": {
 						"$ref": "refTodo"
@@ -279,7 +419,17 @@
 				},
 				"keysHandling": null,
 				"lightClient": {
-					"ethereumL1": null
+					"ethereumL1": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe docs describe Safe Transaction Service chain indexing through Ethereum RPC methods and tracing/log-capable nodes, which is an RPC-backed service architecture rather than an embedded Ethereum L1 light client in Safe Wallet.",
+									"url": "https://docs.safe.global/core-api/api-safe-transaction-service/rpc-requirements"
+								}
+							}
+						]
+					}
 				},
 				"passkeyVerification": {
 					"$call": "supported",
@@ -326,7 +476,8 @@
 						"args": [
 							{
 								"ref": {
-									"$ref": "refTodo"
+									"explanation": "Safe Wallet integrates Tenderly transaction simulation and Blockaid real-time scanning for phishing websites, malicious contracts, fake tokens, suspicious approvals, and risky transfers.",
+									"url": "https://help.safe.global/articles/3902870017-safe-wallet-security-with-tenderly-blockaid"
 								},
 								"contractRegistry": true,
 								"leaksContractAddress": true,
@@ -342,7 +493,8 @@
 						"args": [
 							{
 								"ref": {
-									"$ref": "refTodo"
+									"explanation": "Safe Wallet integrates Tenderly transaction simulation and Blockaid real-time scanning for phishing websites, malicious contracts, fake tokens, suspicious approvals, and risky transfers.",
+									"url": "https://help.safe.global/articles/3902870017-safe-wallet-security-with-tenderly-blockaid"
 								},
 								"leaksIp": true,
 								"leaksUserAddress": true,
@@ -355,7 +507,8 @@
 						"args": [
 							{
 								"ref": {
-									"$ref": "refTodo"
+									"explanation": "Safe Wallet integrates Tenderly transaction simulation and Blockaid real-time scanning for phishing websites, malicious contracts, fake tokens, suspicious approvals, and risky transfers.",
+									"url": "https://help.safe.global/articles/3902870017-safe-wallet-security-with-tenderly-blockaid"
 								},
 								"leaksRecipient": true,
 								"leaksUserAddress": true,
@@ -369,7 +522,8 @@
 				"securityBestPractices": null,
 				"transactionLegibility": {
 					"ref": {
-						"$ref": "refTodo"
+						"explanation": "Safe Wallet integrates Tenderly transaction simulation and Blockaid real-time scanning for phishing websites, malicious contracts, fake tokens, suspicious approvals, and risky transfers.",
+						"url": "https://help.safe.global/articles/3902870017-safe-wallet-security-with-tenderly-blockaid"
 					},
 					"erc7730": null,
 					"erc8213": {
@@ -389,11 +543,57 @@
 					"transactionDetailsDisplay": {
 						"$ref": "displaysFullTransactionDetails"
 					},
-					"transactionSimulations": null
+					"transactionSimulations": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Safe Wallet integrates Tenderly transaction simulation and Blockaid real-time scanning for phishing websites, malicious contracts, fake tokens, suspicious approvals, and risky transfers.",
+									"url": "https://help.safe.global/articles/3902870017-safe-wallet-security-with-tenderly-blockaid"
+								},
+								"ERC_20_TRANSFER": {
+									"transactionOutcome": "TransactionOutcome.EXPLAINED"
+								},
+								"ERC_721_TRANSFER": {
+									"transactionOutcome": "TransactionOutcome.EXPLAINED"
+								},
+								"ERC_1155_TRANSFER": null,
+								"USDC_APPROVAL": {
+									"transactionOutcome": "TransactionOutcome.EXPLAINED"
+								},
+								"AAVE_SUPPLY": null,
+								"SAFEWALLET_AAVE_SUPPLY_NESTED": null,
+								"SAFEWALLET_AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": null,
+								"ETH_TRANSFER": {
+									"transactionOutcome": "TransactionOutcome.EXPLAINED"
+								},
+								"ZKSYNC_USDC_TRANSFER": null,
+								"AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": null,
+								"FAILED_TRANSACTION": null,
+								"NONDETERMINISTIC_TRANSACTION": null
+							}
+						]
+					}
 				}
 			},
 			"selfSovereignty": {
-				"permissionsManagement": null,
+				"permissionsManagement": {
+					"$call": "notSupportedWithRef",
+					"args": [
+						{
+							"ref": [
+								{
+									"explanation": "Safe documents Blockaid-powered simulation and risk warnings for transactions and approval requests, but this is warning/preview coverage rather than a native token-approval inventory or revoke workflow.",
+									"url": "https://safe.global/security"
+								},
+								{
+									"explanation": "Targeted searches of Safe help, docs, and website pages found native bridge, simulation, signing, and app guidance, but no Safe{Wallet} feature for inspecting and revoking existing ERC20, ERC721, or ERC1155 token approvals.",
+									"url": "https://help.safe.global/"
+								}
+							]
+						}
+					]
+				},
 				"transactionSubmission": {
 					"l1": {
 						"ref": {
@@ -471,13 +671,55 @@
 					}
 				},
 				"releaseTransparency": {
-					"artifactSigning": null,
+					"artifactSigning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Safe Mobile is distributed through Apple's App Store under the Safe Mobile listing.",
+										"url": "https://apps.apple.com/us/app/safe-mobile/id6748754793"
+									},
+									{
+										"explanation": "Apple documents that App Store distribution verifies the developer signature and then re-signs the app using an Apple identity before download.",
+										"url": "https://developer.apple.com/documentation/Xcode/using-the-latest-code-signature-format"
+									}
+								]
+							}
+						]
+					},
 					"dependencyLocking": null,
 					"dependencyVulnerabilityScanning": null,
-					"hasPublicChangelog": null,
+					"hasPublicChangelog": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": [
+									"https://apps.apple.com/us/app/safe-mobile/id6748754793",
+									"https://safe.global/blog/introducing-trusted-safe-list-and-positions-on-mobile"
+								]
+							}
+						]
+					},
 					"hermeticBuilds": null,
 					"repositoryChangeControls": null,
-					"reproducibleBuilds": null
+					"reproducibleBuilds": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": [
+									{
+										"explanation": "Safe's wallet monorepo README documents ordinary Yarn workspace setup and points to web/mobile app development docs, but does not document deterministic rebuild-and-compare verification for published Safe Mobile or web wallet release artifacts.",
+										"url": "https://github.com/safe-global/safe-wallet-monorepo/blob/dev/README.md"
+									},
+									{
+										"explanation": "Safe Mobile's README requires local environment variables plus platform files such as `google-services.json` and `GoogleService-Info.plist`, and documents Expo/EAS development workflows rather than reproducible release-artifact verification against App Store or Play Store builds.",
+										"url": "https://github.com/safe-global/safe-wallet-monorepo/blob/dev/apps/mobile/README.md"
+									}
+								]
+							}
+						]
+					}
 				}
 			}
 		},
