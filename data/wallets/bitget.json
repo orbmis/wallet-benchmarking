@@ -525,6 +525,954 @@
 						]
 					}
 				}
+			},
+			"product": {
+				"platformCoverage": {
+					"ref": {
+						"explanation": "Bitget Wallet official product, support, app listing, and repository references were used for the platform coverage product-data pass.",
+						"url": "https://web3.bitget.com/"
+					},
+					"desktopApp": null,
+					"mobileApp": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet has a mobile wallet variant recorded in the dataset.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"browserExtension": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet publishes a browser extension listing.",
+									"url": "https://chromewebstore.google.com/detail/bitget-wallet-crypto-web3/jiidiaalihmmhddjgbnbgdfflelocpak"
+								}
+							}
+						]
+					},
+					"browserNative": {
+						"$ref": "notSupported"
+					},
+					"webApp": null,
+					"ios": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet has a mobile app surface; iOS support should be verified against app-store listings for a deeper pass.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"android": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet has a mobile app surface; Android support should be verified against app-store listings for a deeper pass.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"chrome": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet has a Chrome Web Store extension listing.",
+									"url": "https://chromewebstore.google.com/detail/bitget-wallet-crypto-web3/jiidiaalihmmhddjgbnbgdfflelocpak"
+								}
+							}
+						]
+					},
+					"firefox": null,
+					"safari": null
+				},
+				"supportedEcosystems": {
+					"ref": {
+						"explanation": "Bitget Wallet official product, support, app listing, and repository references were used for the supported ecosystems product-data pass.",
+						"url": "https://web3.bitget.com/"
+					},
+					"evm": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet officially positions itself as supporting the EVM ecosystem or assets in this ecosystem.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"solana": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet officially positions itself as supporting the SOLANA ecosystem or assets in this ecosystem.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"bitcoin": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet officially positions itself as supporting the BITCOIN ecosystem or assets in this ecosystem.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"cosmos": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet officially positions itself as supporting the COSMOS ecosystem or assets in this ecosystem.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"ton": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet officially positions itself as supporting the TON ecosystem or assets in this ecosystem.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"starknet": {
+						"$ref": "notSupported"
+					},
+					"sui": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet officially positions itself as supporting the SUI ecosystem or assets in this ecosystem.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"aptos": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet officially positions itself as supporting the APTOS ecosystem or assets in this ecosystem.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"xrp": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet officially positions itself as supporting the XRP ecosystem or assets in this ecosystem.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"cardano": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet officially positions itself as supporting the CARDANO ecosystem or assets in this ecosystem.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"lightning": {
+						"$ref": "notSupported"
+					},
+					"other": [
+						{
+							"name": "BNB Chain",
+							"ref": {
+								"explanation": "Bitget Wallet official materials describe broader ecosystem support including BNB Chain.",
+								"url": "https://web3.bitget.com/"
+							}
+						},
+						{
+							"name": "Avalanche",
+							"ref": {
+								"explanation": "Bitget Wallet official materials describe broader ecosystem support including Avalanche.",
+								"url": "https://web3.bitget.com/"
+							}
+						},
+						{
+							"name": "TRON",
+							"ref": {
+								"explanation": "Bitget Wallet official materials describe broader ecosystem support including TRON.",
+								"url": "https://web3.bitget.com/"
+							}
+						}
+					]
+				},
+				"dappExperience": {
+					"ref": {
+						"explanation": "Bitget Wallet official product, support, app listing, and repository references were used for the product capabilities product-data pass.",
+						"url": "https://web3.bitget.com/"
+					},
+					"inAppBrowser": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet provides a dapp browser or in-wallet dapp connection surface.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"curatedDappDirectory": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet provides a curated dapp or app discovery surface.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"dappSearch": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet provides search over dapps or app discovery content.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"walletConnectOnlyMode": {
+						"$ref": "notSupported"
+					},
+					"featuredApps": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet features selected dapps or apps in its discovery surface.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"riskRatedDiscovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet provides risk warnings or risk-aware dapp/transaction discovery cues.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					}
+				},
+				"fiatRamps": {
+					"ref": {
+						"explanation": "Bitget Wallet official product, support, app listing, and repository references were used for the fiat ramps product-data pass.",
+						"url": "https://web3.bitget.com/"
+					},
+					"buyCrypto": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet documents or advertises in-wallet crypto purchase support.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"sellCrypto": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet documents or advertises sell/off-ramp support.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"bankTransfer": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet documents bank-transfer or account-provider fiat transfer paths.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"card": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet fiat purchase providers commonly support card purchases where available.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"applePay": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet buy-flow or provider materials include Apple Pay/card-style fast checkout support.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"googlePay": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet buy-flow or provider materials include Google Pay/card-style fast checkout support.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
+					"providers": [
+						{
+							"name": "Bitget",
+							"ref": {
+								"explanation": "Bitget Wallet official product/support materials name or route users through these fiat/on-ramp providers.",
+								"url": "https://web3.bitget.com/"
+							}
+						}
+					],
+					"regionalAvailability": "Provider- and region-dependent availability; not an exhaustive country matrix in this pass."
+				},
+				"gasUx": {
+					"ref": {
+						"explanation": "Bitget Wallet official product, support, app listing, and repository references were used for the gas UX product-data pass.",
+						"url": "https://web3.bitget.com/"
+					},
+					"gasCustomization": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet supports standard EVM transaction sending where gas settings can be inspected or controlled in the wallet flow.",
+									"url": "https://web3.bitget.com/en/docs"
+								}
+							}
+						]
+					},
+					"gasSponsorship": null,
+					"gasAbstraction": null,
+					"payGasInStablecoins": null,
+					"payGasWithReceivedToken": null,
+					"speedPresets": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet supports EVM transaction flows where speed/gas presets are a common wallet control; verify exact UI depth in a future pass.",
+									"url": "https://web3.bitget.com/en/docs"
+								}
+							}
+						]
+					},
+					"stuckTransactionRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet support/product materials include stuck or pending transaction recovery guidance.",
+									"url": "https://web3.bitget.com/en/docs"
+								}
+							}
+						]
+					}
+				},
+				"recoveryUx": {
+					"ref": {
+						"explanation": "Bitget Wallet official product, support, app listing, and repository references were used for the recovery UX product-data pass.",
+						"url": "https://web3.bitget.com/"
+					},
+					"seedOnlyRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet supports recovery/import through a seed or secret recovery phrase.",
+									"url": "https://web3.bitget.com/en/docs"
+								}
+							}
+						]
+					},
+					"cloudBackup": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet supports cloud-backed wallet backup or recovery for at least some account flows.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"socialRecovery": null,
+					"guardianRecovery": null,
+					"passkeyRecovery": null,
+					"emergencyKit": null,
+					"recoveryRehearsal": null
+				},
+				"onboardingFriction": {
+					"ref": {
+						"explanation": "Bitget Wallet official product, support, app listing, and repository references were used for the onboarding friction product-data pass.",
+						"url": "https://web3.bitget.com/"
+					},
+					"seedPhraseRequiredAtSignup": {
+						"$ref": "featureSupported"
+					},
+					"passkeySignup": null,
+					"emailSignup": null,
+					"phoneSignup": null,
+					"kycRequiredForWallet": {
+						"$ref": "notSupported"
+					},
+					"guestMode": null,
+					"embeddedWalletMode": null,
+					"timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
+				},
+				"portfolioManagement": {
+					"ref": {
+						"explanation": "Bitget Wallet official product, support, app listing, and repository references were used for the portfolio management product-data pass.",
+						"url": "https://web3.bitget.com/"
+					},
+					"netWorth": {
+						"$ref": "featureSupported"
+					},
+					"pnl": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet provides profit/loss or performance tracking in portfolio views.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"costBasis": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet provides cost-basis or acquisition-price style portfolio data.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"tokenCategories": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet provides token balance and asset-list portfolio views.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"nftSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet supports NFT display or NFT portfolio management in at least one wallet surface.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"collectionViews": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet provides NFT collection-oriented views or NFT portfolio surfaces.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"watchOnlyWallets": null,
+					"multiWalletAggregation": {
+						"$ref": "featureSupported"
+					}
+				},
+				"notifications": {
+					"ref": {
+						"explanation": "Bitget Wallet official product, support, app listing, and repository references were used for the notifications product-data pass.",
+						"url": "https://web3.bitget.com/"
+					},
+					"sendReceive": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet supports notifications for wallet activity such as sends or receives.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"priceAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet supports price or market alerts.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"approvalAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet supports approval-related alerts, approval review, or permission warnings.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"bridgeCompletion": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet supports bridging plus notifications for wallet activity; exact bridge-completion notification behavior should be deep-audited later.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"failedTransaction": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet supports wallet activity notifications that can include failed or completed transaction status.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"securityAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet supports security alerts or transaction-risk warnings.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"marketAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet supports market or price alerts.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					}
+				},
+				"nftCapabilities": {
+					"ref": {
+						"explanation": "Bitget Wallet official product, support, app listing, and repository references were used for the NFT capabilities product-data pass.",
+						"url": "https://web3.bitget.com/"
+					},
+					"display": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet supports displaying NFTs or collectibles in the wallet.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"send": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet supports wallet NFT transfer flows or NFT asset management.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"mint": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet can connect to dapps and sign NFT mint transactions.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"marketplaceIntegration": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet integrates NFT marketplace or NFT trading/discovery features.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"spamNftHiding": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet supports hiding, filtering, or protecting users from spam NFTs.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"collectionMetadataRefresh": null,
+					"royaltiesOrOffers": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet supports NFT marketplace offer/trading flows where royalties or offers may be surfaced.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					}
+				},
+				"defiPositionAwareness": {
+					"ref": {
+						"explanation": "Bitget Wallet official product, support, app listing, and repository references were used for the DeFi position awareness product-data pass.",
+						"url": "https://web3.bitget.com/"
+					},
+					"lendingPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet surfaces DeFi lending or protocol positions in wallet/portfolio views.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"stakingPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet surfaces staking or earn positions in wallet/portfolio views.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"lpPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet surfaces liquidity-pool or DeFi protocol positions.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"vaultPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet surfaces vault or protocol positions.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"perProtocolBalances": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet groups DeFi holdings by protocol or app.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"claimableRewards": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet surfaces claimable rewards or earn balances.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"liquidationWarnings": null
+				},
+				"stakingEarn": {
+					"ref": {
+						"explanation": "Bitget Wallet official product, support, app listing, and repository references were used for the staking and earn product-data pass.",
+						"url": "https://web3.bitget.com/"
+					},
+					"nativeStaking": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet supports native staking or earn products for at least one supported ecosystem.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"liquidStaking": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet supports liquid staking or liquid staking integrations.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"validatorChoice": null,
+					"apyDisplay": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet displays APY/reward information for staking or earn products.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"rewardsClaiming": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet supports claiming staking or earn rewards.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"providerDependency": "Provider- or protocol-dependent; requires per-asset/provider audit for exact dependency.",
+					"lockupDisclosure": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet staking/earn flows disclose lockup or protocol-specific constraints where applicable.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					}
+				},
+				"customerSupport": {
+					"ref": {
+						"explanation": "Bitget Wallet official product, support, app listing, and repository references were used for the customer support product-data pass.",
+						"url": "https://web3.bitget.com/"
+					},
+					"liveChat": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet provides live chat or real-time support for wallet users.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"emailSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet publishes support, help center, or contact paths for wallet users.",
+									"url": "https://web3.bitget.com/en/docs"
+								}
+							}
+						]
+					},
+					"aiSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet provides AI-assisted support or assistant-style help.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					},
+					"publishedSla": null,
+					"inAppHelpCenter": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet provides in-app or product-linked help/support content.",
+									"url": "https://web3.bitget.com/en/docs"
+								}
+							}
+						]
+					},
+					"transactionTroubleshooting": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet support docs include transaction or wallet troubleshooting material.",
+									"url": "https://web3.bitget.com/en/docs"
+								}
+							}
+						]
+					},
+					"scamRecoveryGuidance": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet support/security materials include scam, compromise, or recovery guidance.",
+									"url": "https://web3.bitget.com/"
+								}
+							}
+						]
+					}
+				},
+				"developerOffering": {
+					"ref": {
+						"explanation": "Bitget Wallet official product, support, app listing, and repository references were used for the developer offering product-data pass.",
+						"url": "https://web3.bitget.com/"
+					},
+					"walletSdk": null,
+					"embeddedWalletSdk": null,
+					"whiteLabelOffering": null,
+					"walletConnectSupport": {
+						"$ref": "featureSupported"
+					},
+					"eip6963": {
+						"$ref": "featureSupported"
+					},
+					"eip5792": {
+						"$ref": "notSupported"
+					},
+					"deepLinks": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Bitget Wallet documents mobile deep links, universal links, or app-link connection flows.",
+									"url": "https://web3.bitget.com/en/docs"
+								}
+							}
+						]
+					},
+					"mobileLinkingQuality": "Mobile linking documented or product-supported; quality requires hands-on UX testing."
+				},
+				"pricingFeeModel": {
+					"ref": {
+						"explanation": "Bitget Wallet official product, support, app listing, and repository references were used for the pricing and fee model product-data pass.",
+						"url": "https://web3.bitget.com/"
+					},
+					"swapFees": "Wallet swap/bridge fees are provider-, route-, or spread-dependent; exact bps require flow-level audit.",
+					"bridgeFees": "Bridge fees are route/provider-dependent; exact bps require flow-level audit.",
+					"onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
+					"spreadDisclosure": {
+						"$ref": "featureSupported"
+					},
+					"subscriptionFeatures": null,
+					"cardFees": "Card fees are provider-dependent where card purchase is available.",
+					"hiddenPartnerRevenue": null
+				},
+				"releaseVelocity": {
+					"ref": {
+						"explanation": "Bitget Wallet official product, support, app listing, and repository references were used for the release velocity product-data pass.",
+						"url": "https://web3.bitget.com/"
+					},
+					"latestReleaseDate": "2026-01-17",
+					"releaseFrequency": "ReleaseFrequency.IRREGULAR",
+					"appStoreUpdateCadence": "App-store cadence should be measured from current app-store release history in a deeper pass.",
+					"githubActivity": null,
+					"changelogDetail": "ChangelogDetail.BASIC"
+				},
+				"deviceSync": {
+					"ref": {
+						"explanation": "Bitget Wallet official product, support, app listing, and repository references were used for the device sync product-data pass.",
+						"url": "https://web3.bitget.com/"
+					},
+					"syncsAccounts": null,
+					"syncsSettings": null,
+					"syncsContactsOrAddressBook": null,
+					"desktopMobileSync": null,
+					"cloudBackedSync": null,
+					"requiresSameSeedImport": {
+						"$ref": "featureSupported"
+					}
+				}
 			}
 		},
 		"variants": {

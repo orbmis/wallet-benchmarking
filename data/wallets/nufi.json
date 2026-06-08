@@ -577,6 +577,591 @@
 						]
 					}
 				}
+			},
+			"product": {
+				"platformCoverage": {
+					"ref": {
+						"explanation": "NuFi official product, support, app listing, and repository references were used for the platform coverage product-data pass.",
+						"url": "https://nu.fi"
+					},
+					"desktopApp": null,
+					"mobileApp": null,
+					"browserExtension": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "NuFi publishes a browser extension listing.",
+									"url": "https://chromewebstore.google.com/detail/nufi/gpnihlnnodeiiaakbikldcihojploeca"
+								}
+							}
+						]
+					},
+					"browserNative": {
+						"$ref": "notSupported"
+					},
+					"webApp": null,
+					"ios": null,
+					"android": null,
+					"chrome": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "NuFi has a Chrome Web Store extension listing.",
+									"url": "https://chromewebstore.google.com/detail/nufi/gpnihlnnodeiiaakbikldcihojploeca"
+								}
+							}
+						]
+					},
+					"firefox": null,
+					"safari": null
+				},
+				"supportedEcosystems": {
+					"ref": {
+						"explanation": "NuFi official product, support, app listing, and repository references were used for the supported ecosystems product-data pass.",
+						"url": "https://nu.fi"
+					},
+					"evm": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "NuFi officially positions itself as supporting the EVM ecosystem or assets in this ecosystem.",
+									"url": "https://nu.fi"
+								}
+							}
+						]
+					},
+					"solana": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "NuFi officially positions itself as supporting the SOLANA ecosystem or assets in this ecosystem.",
+									"url": "https://nu.fi"
+								}
+							}
+						]
+					},
+					"bitcoin": {
+						"$ref": "notSupported"
+					},
+					"cosmos": {
+						"$ref": "notSupported"
+					},
+					"ton": {
+						"$ref": "notSupported"
+					},
+					"starknet": {
+						"$ref": "notSupported"
+					},
+					"sui": {
+						"$ref": "notSupported"
+					},
+					"aptos": {
+						"$ref": "notSupported"
+					},
+					"xrp": {
+						"$ref": "notSupported"
+					},
+					"cardano": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "NuFi officially positions itself as supporting the CARDANO ecosystem or assets in this ecosystem.",
+									"url": "https://nu.fi"
+								}
+							}
+						]
+					},
+					"lightning": {
+						"$ref": "notSupported"
+					},
+					"other": [
+						{
+							"name": "Flow",
+							"ref": {
+								"explanation": "NuFi official materials describe broader ecosystem support including Flow.",
+								"url": "https://nu.fi"
+							}
+						}
+					]
+				},
+				"dappExperience": {
+					"ref": {
+						"explanation": "NuFi official product, support, app listing, and repository references were used for the product capabilities product-data pass.",
+						"url": "https://nu.fi"
+					},
+					"inAppBrowser": null,
+					"curatedDappDirectory": null,
+					"dappSearch": null,
+					"walletConnectOnlyMode": {
+						"$ref": "notSupported"
+					},
+					"featuredApps": null,
+					"riskRatedDiscovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "NuFi provides risk warnings or risk-aware dapp/transaction discovery cues.",
+									"url": "https://nu.fi"
+								}
+							}
+						]
+					}
+				},
+				"fiatRamps": {
+					"ref": {
+						"explanation": "NuFi official product, support, app listing, and repository references were used for the fiat ramps product-data pass.",
+						"url": "https://nu.fi"
+					},
+					"buyCrypto": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "NuFi documents or advertises in-wallet crypto purchase support.",
+									"url": "https://nu.fi"
+								}
+							}
+						]
+					},
+					"sellCrypto": null,
+					"bankTransfer": null,
+					"card": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "NuFi fiat purchase providers commonly support card purchases where available.",
+									"url": "https://nu.fi"
+								}
+							}
+						]
+					},
+					"applePay": null,
+					"googlePay": null,
+					"kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
+					"providers": [
+						{
+							"name": "Changelly",
+							"ref": {
+								"explanation": "NuFi official product/support materials name or route users through these fiat/on-ramp providers.",
+								"url": "https://nu.fi"
+							}
+						}
+					],
+					"regionalAvailability": "Provider- and region-dependent availability; not an exhaustive country matrix in this pass."
+				},
+				"gasUx": {
+					"ref": {
+						"explanation": "NuFi official product, support, app listing, and repository references were used for the gas UX product-data pass.",
+						"url": "https://nu.fi"
+					},
+					"gasCustomization": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "NuFi supports standard EVM transaction sending where gas settings can be inspected or controlled in the wallet flow.",
+									"url": "https://nufi.gitbook.io/"
+								}
+							}
+						]
+					},
+					"gasSponsorship": null,
+					"gasAbstraction": null,
+					"payGasInStablecoins": null,
+					"payGasWithReceivedToken": null,
+					"speedPresets": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "NuFi supports EVM transaction flows where speed/gas presets are a common wallet control; verify exact UI depth in a future pass.",
+									"url": "https://nufi.gitbook.io/"
+								}
+							}
+						]
+					},
+					"stuckTransactionRecovery": null
+				},
+				"recoveryUx": {
+					"ref": {
+						"explanation": "NuFi official product, support, app listing, and repository references were used for the recovery UX product-data pass.",
+						"url": "https://nu.fi"
+					},
+					"seedOnlyRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "NuFi supports recovery/import through a seed or secret recovery phrase.",
+									"url": "https://nufi.gitbook.io/"
+								}
+							}
+						]
+					},
+					"cloudBackup": null,
+					"socialRecovery": null,
+					"guardianRecovery": null,
+					"passkeyRecovery": null,
+					"emergencyKit": null,
+					"recoveryRehearsal": null
+				},
+				"onboardingFriction": {
+					"ref": {
+						"explanation": "NuFi official product, support, app listing, and repository references were used for the onboarding friction product-data pass.",
+						"url": "https://nu.fi"
+					},
+					"seedPhraseRequiredAtSignup": {
+						"$ref": "featureSupported"
+					},
+					"passkeySignup": null,
+					"emailSignup": null,
+					"phoneSignup": null,
+					"kycRequiredForWallet": {
+						"$ref": "notSupported"
+					},
+					"guestMode": null,
+					"embeddedWalletMode": null,
+					"timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
+				},
+				"portfolioManagement": {
+					"ref": {
+						"explanation": "NuFi official product, support, app listing, and repository references were used for the portfolio management product-data pass.",
+						"url": "https://nu.fi"
+					},
+					"netWorth": {
+						"$ref": "featureSupported"
+					},
+					"pnl": null,
+					"costBasis": null,
+					"tokenCategories": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "NuFi provides token balance and asset-list portfolio views.",
+									"url": "https://nu.fi"
+								}
+							}
+						]
+					},
+					"nftSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "NuFi supports NFT display or NFT portfolio management in at least one wallet surface.",
+									"url": "https://nu.fi"
+								}
+							}
+						]
+					},
+					"collectionViews": null,
+					"watchOnlyWallets": null,
+					"multiWalletAggregation": {
+						"$ref": "featureSupported"
+					}
+				},
+				"notifications": {
+					"ref": {
+						"explanation": "NuFi official product, support, app listing, and repository references were used for the notifications product-data pass.",
+						"url": "https://nu.fi"
+					},
+					"sendReceive": null,
+					"priceAlerts": null,
+					"approvalAlerts": null,
+					"bridgeCompletion": null,
+					"failedTransaction": null,
+					"securityAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "NuFi supports security alerts or transaction-risk warnings.",
+									"url": "https://nu.fi"
+								}
+							}
+						]
+					},
+					"marketAlerts": null
+				},
+				"nftCapabilities": {
+					"ref": {
+						"explanation": "NuFi official product, support, app listing, and repository references were used for the NFT capabilities product-data pass.",
+						"url": "https://nu.fi"
+					},
+					"display": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "NuFi supports displaying NFTs or collectibles in the wallet.",
+									"url": "https://nu.fi"
+								}
+							}
+						]
+					},
+					"send": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "NuFi supports wallet NFT transfer flows or NFT asset management.",
+									"url": "https://nu.fi"
+								}
+							}
+						]
+					},
+					"mint": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "NuFi can connect to dapps and sign NFT mint transactions.",
+									"url": "https://nu.fi"
+								}
+							}
+						]
+					},
+					"marketplaceIntegration": null,
+					"spamNftHiding": null,
+					"collectionMetadataRefresh": null,
+					"royaltiesOrOffers": null
+				},
+				"defiPositionAwareness": {
+					"ref": {
+						"explanation": "NuFi official product, support, app listing, and repository references were used for the DeFi position awareness product-data pass.",
+						"url": "https://nu.fi"
+					},
+					"lendingPositions": null,
+					"stakingPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "NuFi surfaces staking or earn positions in wallet/portfolio views.",
+									"url": "https://nu.fi"
+								}
+							}
+						]
+					},
+					"lpPositions": null,
+					"vaultPositions": null,
+					"perProtocolBalances": null,
+					"claimableRewards": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "NuFi surfaces claimable rewards or earn balances.",
+									"url": "https://nu.fi"
+								}
+							}
+						]
+					},
+					"liquidationWarnings": null
+				},
+				"stakingEarn": {
+					"ref": {
+						"explanation": "NuFi official product, support, app listing, and repository references were used for the staking and earn product-data pass.",
+						"url": "https://nu.fi"
+					},
+					"nativeStaking": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "NuFi supports native staking or earn products for at least one supported ecosystem.",
+									"url": "https://nu.fi"
+								}
+							}
+						]
+					},
+					"liquidStaking": null,
+					"validatorChoice": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "NuFi lets users choose validators or staking targets in at least one ecosystem.",
+									"url": "https://nu.fi"
+								}
+							}
+						]
+					},
+					"apyDisplay": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "NuFi displays APY/reward information for staking or earn products.",
+									"url": "https://nu.fi"
+								}
+							}
+						]
+					},
+					"rewardsClaiming": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "NuFi supports claiming staking or earn rewards.",
+									"url": "https://nu.fi"
+								}
+							}
+						]
+					},
+					"providerDependency": "Provider- or protocol-dependent; requires per-asset/provider audit for exact dependency.",
+					"lockupDisclosure": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "NuFi staking/earn flows disclose lockup or protocol-specific constraints where applicable.",
+									"url": "https://nu.fi"
+								}
+							}
+						]
+					}
+				},
+				"customerSupport": {
+					"ref": {
+						"explanation": "NuFi official product, support, app listing, and repository references were used for the customer support product-data pass.",
+						"url": "https://nu.fi"
+					},
+					"liveChat": null,
+					"emailSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "NuFi publishes support, help center, or contact paths for wallet users.",
+									"url": "https://nufi.gitbook.io/"
+								}
+							}
+						]
+					},
+					"aiSupport": null,
+					"publishedSla": null,
+					"inAppHelpCenter": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "NuFi provides in-app or product-linked help/support content.",
+									"url": "https://nufi.gitbook.io/"
+								}
+							}
+						]
+					},
+					"transactionTroubleshooting": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "NuFi support docs include transaction or wallet troubleshooting material.",
+									"url": "https://nufi.gitbook.io/"
+								}
+							}
+						]
+					},
+					"scamRecoveryGuidance": null
+				},
+				"developerOffering": {
+					"ref": {
+						"explanation": "NuFi official product, support, app listing, and repository references were used for the developer offering product-data pass.",
+						"url": "https://nu.fi"
+					},
+					"walletSdk": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "NuFi publishes wallet developer docs, SDKs, or public wallet integration repositories.",
+									"url": "https://github.com/nufi-official/nufi"
+								}
+							}
+						]
+					},
+					"embeddedWalletSdk": null,
+					"whiteLabelOffering": null,
+					"walletConnectSupport": {
+						"$ref": "featureSupported"
+					},
+					"eip6963": {
+						"$ref": "featureSupported"
+					},
+					"eip5792": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "NuFi's EIP-7702 FAQ identifies its MetaMask DeleGator smart-account implementation; no more specific wallet_sendCalls evidence was found in public docs.",
+									"url": "https://support.nu.fi/support/solutions/articles/80001178239"
+								},
+								"atomicMultiTransactions": {
+									"$ref": "featureSupported"
+								}
+							}
+						]
+					},
+					"deepLinks": null,
+					"mobileLinkingQuality": null
+				},
+				"pricingFeeModel": {
+					"ref": {
+						"explanation": "NuFi official product, support, app listing, and repository references were used for the pricing and fee model product-data pass.",
+						"url": "https://nu.fi"
+					},
+					"swapFees": "Wallet swap/bridge fees are provider-, route-, or spread-dependent; exact bps require flow-level audit.",
+					"bridgeFees": "Bridge fees are route/provider-dependent; exact bps require flow-level audit.",
+					"onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
+					"spreadDisclosure": null,
+					"subscriptionFeatures": null,
+					"cardFees": "Card fees are provider-dependent where card purchase is available.",
+					"hiddenPartnerRevenue": null
+				},
+				"releaseVelocity": {
+					"ref": {
+						"explanation": "NuFi official product, support, app listing, and repository references were used for the release velocity product-data pass.",
+						"url": "https://nu.fi"
+					},
+					"latestReleaseDate": "2025-08-11",
+					"releaseFrequency": "ReleaseFrequency.IRREGULAR",
+					"appStoreUpdateCadence": null,
+					"githubActivity": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "NuFi has public GitHub repository activity or releases that can be tracked.",
+									"url": "https://github.com/nufi-official/nufi"
+								}
+							}
+						]
+					},
+					"changelogDetail": "ChangelogDetail.BASIC"
+				},
+				"deviceSync": {
+					"ref": {
+						"explanation": "NuFi official product, support, app listing, and repository references were used for the device sync product-data pass.",
+						"url": "https://nu.fi"
+					},
+					"syncsAccounts": null,
+					"syncsSettings": null,
+					"syncsContactsOrAddressBook": null,
+					"desktopMobileSync": null,
+					"cloudBackedSync": null,
+					"requiresSameSeedImport": {
+						"$ref": "featureSupported"
+					}
+				}
 			}
 		},
 		"variants": {

@@ -470,6 +470,572 @@
 						]
 					}
 				}
+			},
+			"product": {
+				"platformCoverage": {
+					"ref": {
+						"explanation": "Family official product, support, app listing, and repository references were used for the platform coverage product-data pass.",
+						"url": "https://family.co"
+					},
+					"desktopApp": null,
+					"mobileApp": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family has a mobile wallet variant recorded in the dataset.",
+									"url": "https://family.co"
+								}
+							}
+						]
+					},
+					"browserExtension": null,
+					"browserNative": {
+						"$ref": "notSupported"
+					},
+					"webApp": null,
+					"ios": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family has a mobile app surface; iOS support should be verified against app-store listings for a deeper pass.",
+									"url": "https://family.co"
+								}
+							}
+						]
+					},
+					"android": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family has a mobile app surface; Android support should be verified against app-store listings for a deeper pass.",
+									"url": "https://family.co"
+								}
+							}
+						]
+					},
+					"chrome": null,
+					"firefox": null,
+					"safari": null
+				},
+				"supportedEcosystems": {
+					"ref": {
+						"explanation": "Family official product, support, app listing, and repository references were used for the supported ecosystems product-data pass.",
+						"url": "https://family.co"
+					},
+					"evm": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family officially positions itself as supporting the EVM ecosystem or assets in this ecosystem.",
+									"url": "https://family.co"
+								}
+							}
+						]
+					},
+					"solana": {
+						"$ref": "notSupported"
+					},
+					"bitcoin": {
+						"$ref": "notSupported"
+					},
+					"cosmos": {
+						"$ref": "notSupported"
+					},
+					"ton": {
+						"$ref": "notSupported"
+					},
+					"starknet": {
+						"$ref": "notSupported"
+					},
+					"sui": {
+						"$ref": "notSupported"
+					},
+					"aptos": {
+						"$ref": "notSupported"
+					},
+					"xrp": {
+						"$ref": "notSupported"
+					},
+					"cardano": {
+						"$ref": "notSupported"
+					},
+					"lightning": {
+						"$ref": "notSupported"
+					},
+					"other": []
+				},
+				"dappExperience": {
+					"ref": {
+						"explanation": "Family official product, support, app listing, and repository references were used for the product capabilities product-data pass.",
+						"url": "https://family.co"
+					},
+					"inAppBrowser": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family provides a dapp browser or in-wallet dapp connection surface.",
+									"url": "https://family.co"
+								}
+							}
+						]
+					},
+					"curatedDappDirectory": null,
+					"dappSearch": null,
+					"walletConnectOnlyMode": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family can connect to dapps primarily through WalletConnect or external connection flows.",
+									"url": "https://family.co/docs"
+								}
+							}
+						]
+					},
+					"featuredApps": null,
+					"riskRatedDiscovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family provides risk warnings or risk-aware dapp/transaction discovery cues.",
+									"url": "https://family.co"
+								}
+							}
+						]
+					}
+				},
+				"fiatRamps": {
+					"ref": {
+						"explanation": "Family official product, support, app listing, and repository references were used for the fiat ramps product-data pass.",
+						"url": "https://family.co"
+					},
+					"buyCrypto": null,
+					"sellCrypto": null,
+					"bankTransfer": null,
+					"card": null,
+					"applePay": null,
+					"googlePay": null,
+					"kycDependency": "KYCDependency.UNKNOWN",
+					"providers": [],
+					"regionalAvailability": null
+				},
+				"gasUx": {
+					"ref": {
+						"explanation": "Family official product, support, app listing, and repository references were used for the gas UX product-data pass.",
+						"url": "https://family.co"
+					},
+					"gasCustomization": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family supports standard EVM transaction sending where gas settings can be inspected or controlled in the wallet flow.",
+									"url": "https://family.co/docs"
+								}
+							}
+						]
+					},
+					"gasSponsorship": null,
+					"gasAbstraction": null,
+					"payGasInStablecoins": null,
+					"payGasWithReceivedToken": null,
+					"speedPresets": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family supports EVM transaction flows where speed/gas presets are a common wallet control; verify exact UI depth in a future pass.",
+									"url": "https://family.co/docs"
+								}
+							}
+						]
+					},
+					"stuckTransactionRecovery": null
+				},
+				"recoveryUx": {
+					"ref": {
+						"explanation": "Family official product, support, app listing, and repository references were used for the recovery UX product-data pass.",
+						"url": "https://family.co"
+					},
+					"seedOnlyRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family supports recovery/import through a seed or secret recovery phrase.",
+									"url": "https://family.co/docs"
+								}
+							}
+						]
+					},
+					"cloudBackup": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family supports cloud-backed wallet backup or recovery for at least some account flows.",
+									"url": "https://family.co"
+								}
+							}
+						]
+					},
+					"socialRecovery": null,
+					"guardianRecovery": null,
+					"passkeyRecovery": null,
+					"emergencyKit": null,
+					"recoveryRehearsal": null
+				},
+				"onboardingFriction": {
+					"ref": {
+						"explanation": "Family official product, support, app listing, and repository references were used for the onboarding friction product-data pass.",
+						"url": "https://family.co"
+					},
+					"seedPhraseRequiredAtSignup": {
+						"$ref": "featureSupported"
+					},
+					"passkeySignup": null,
+					"emailSignup": null,
+					"phoneSignup": null,
+					"kycRequiredForWallet": {
+						"$ref": "notSupported"
+					},
+					"guestMode": null,
+					"embeddedWalletMode": null,
+					"timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
+				},
+				"portfolioManagement": {
+					"ref": {
+						"explanation": "Family official product, support, app listing, and repository references were used for the portfolio management product-data pass.",
+						"url": "https://family.co"
+					},
+					"netWorth": {
+						"$ref": "featureSupported"
+					},
+					"pnl": null,
+					"costBasis": null,
+					"tokenCategories": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family provides token balance and asset-list portfolio views.",
+									"url": "https://family.co"
+								}
+							}
+						]
+					},
+					"nftSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family supports NFT display or NFT portfolio management in at least one wallet surface.",
+									"url": "https://family.co"
+								}
+							}
+						]
+					},
+					"collectionViews": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family provides NFT collection-oriented views or NFT portfolio surfaces.",
+									"url": "https://family.co"
+								}
+							}
+						]
+					},
+					"watchOnlyWallets": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family supports watch-only addresses, imported account monitoring, or external account portfolio tracking.",
+									"url": "https://family.co"
+								}
+							}
+						]
+					},
+					"multiWalletAggregation": {
+						"$ref": "featureSupported"
+					}
+				},
+				"notifications": {
+					"ref": {
+						"explanation": "Family official product, support, app listing, and repository references were used for the notifications product-data pass.",
+						"url": "https://family.co"
+					},
+					"sendReceive": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family supports notifications for wallet activity such as sends or receives.",
+									"url": "https://family.co"
+								}
+							}
+						]
+					},
+					"priceAlerts": null,
+					"approvalAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family supports approval-related alerts, approval review, or permission warnings.",
+									"url": "https://family.co"
+								}
+							}
+						]
+					},
+					"bridgeCompletion": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family supports bridging plus notifications for wallet activity; exact bridge-completion notification behavior should be deep-audited later.",
+									"url": "https://family.co"
+								}
+							}
+						]
+					},
+					"failedTransaction": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family supports wallet activity notifications that can include failed or completed transaction status.",
+									"url": "https://family.co"
+								}
+							}
+						]
+					},
+					"securityAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family supports security alerts or transaction-risk warnings.",
+									"url": "https://family.co"
+								}
+							}
+						]
+					},
+					"marketAlerts": null
+				},
+				"nftCapabilities": {
+					"ref": {
+						"explanation": "Family official product, support, app listing, and repository references were used for the NFT capabilities product-data pass.",
+						"url": "https://family.co"
+					},
+					"display": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family supports displaying NFTs or collectibles in the wallet.",
+									"url": "https://family.co"
+								}
+							}
+						]
+					},
+					"send": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family supports wallet NFT transfer flows or NFT asset management.",
+									"url": "https://family.co"
+								}
+							}
+						]
+					},
+					"mint": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family can connect to dapps and sign NFT mint transactions.",
+									"url": "https://family.co"
+								}
+							}
+						]
+					},
+					"marketplaceIntegration": null,
+					"spamNftHiding": null,
+					"collectionMetadataRefresh": null,
+					"royaltiesOrOffers": null
+				},
+				"defiPositionAwareness": {
+					"ref": {
+						"explanation": "Family official product, support, app listing, and repository references were used for the DeFi position awareness product-data pass.",
+						"url": "https://family.co"
+					},
+					"lendingPositions": null,
+					"stakingPositions": null,
+					"lpPositions": null,
+					"vaultPositions": null,
+					"perProtocolBalances": null,
+					"claimableRewards": null,
+					"liquidationWarnings": null
+				},
+				"stakingEarn": {
+					"ref": {
+						"explanation": "Family official product, support, app listing, and repository references were used for the staking and earn product-data pass.",
+						"url": "https://family.co"
+					},
+					"nativeStaking": null,
+					"liquidStaking": null,
+					"validatorChoice": null,
+					"apyDisplay": null,
+					"rewardsClaiming": null,
+					"providerDependency": null,
+					"lockupDisclosure": null
+				},
+				"customerSupport": {
+					"ref": {
+						"explanation": "Family official product, support, app listing, and repository references were used for the customer support product-data pass.",
+						"url": "https://family.co"
+					},
+					"liveChat": null,
+					"emailSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family publishes support, help center, or contact paths for wallet users.",
+									"url": "https://family.co/docs"
+								}
+							}
+						]
+					},
+					"aiSupport": null,
+					"publishedSla": null,
+					"inAppHelpCenter": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family provides in-app or product-linked help/support content.",
+									"url": "https://family.co/docs"
+								}
+							}
+						]
+					},
+					"transactionTroubleshooting": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family support docs include transaction or wallet troubleshooting material.",
+									"url": "https://family.co/docs"
+								}
+							}
+						]
+					},
+					"scamRecoveryGuidance": null
+				},
+				"developerOffering": {
+					"ref": {
+						"explanation": "Family official product, support, app listing, and repository references were used for the developer offering product-data pass.",
+						"url": "https://family.co"
+					},
+					"walletSdk": null,
+					"embeddedWalletSdk": null,
+					"whiteLabelOffering": null,
+					"walletConnectSupport": {
+						"$ref": "featureSupported"
+					},
+					"eip6963": null,
+					"eip5792": null,
+					"deepLinks": null,
+					"mobileLinkingQuality": null
+				},
+				"pricingFeeModel": {
+					"ref": {
+						"explanation": "Family official product, support, app listing, and repository references were used for the pricing and fee model product-data pass.",
+						"url": "https://family.co"
+					},
+					"swapFees": "Wallet swap/bridge fees are provider-, route-, or spread-dependent; exact bps require flow-level audit.",
+					"bridgeFees": "Bridge fees are route/provider-dependent; exact bps require flow-level audit.",
+					"onRampFees": null,
+					"spreadDisclosure": null,
+					"subscriptionFeatures": null,
+					"cardFees": null,
+					"hiddenPartnerRevenue": null
+				},
+				"releaseVelocity": {
+					"ref": {
+						"explanation": "Family official product, support, app listing, and repository references were used for the release velocity product-data pass.",
+						"url": "https://family.co"
+					},
+					"latestReleaseDate": "2025-04-22",
+					"releaseFrequency": "ReleaseFrequency.IRREGULAR",
+					"appStoreUpdateCadence": "App-store cadence should be measured from current app-store release history in a deeper pass.",
+					"githubActivity": null,
+					"changelogDetail": "ChangelogDetail.BASIC"
+				},
+				"deviceSync": {
+					"ref": {
+						"explanation": "Family official product, support, app listing, and repository references were used for the device sync product-data pass.",
+						"url": "https://family.co"
+					},
+					"syncsAccounts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family supports account synchronization or account reuse across devices.",
+									"url": "https://family.co"
+								}
+							}
+						]
+					},
+					"syncsSettings": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family supports syncing at least some wallet settings or app state across installations.",
+									"url": "https://family.co"
+								}
+							}
+						]
+					},
+					"syncsContactsOrAddressBook": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family supports contacts, usernames, or address-book style account discovery across devices.",
+									"url": "https://family.co"
+								}
+							}
+						]
+					},
+					"desktopMobileSync": null,
+					"cloudBackedSync": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Family supports cloud-backed account or wallet sync/backup.",
+									"url": "https://family.co"
+								}
+							}
+						]
+					},
+					"requiresSameSeedImport": {
+						"$ref": "notSupported"
+					}
+				}
 			}
 		},
 		"variants": {

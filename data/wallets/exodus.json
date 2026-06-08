@@ -412,6 +412,820 @@
 						]
 					}
 				}
+			},
+			"product": {
+				"platformCoverage": {
+					"ref": {
+						"explanation": "Exodus official product, support, app listing, and repository references were used for the platform coverage product-data pass.",
+						"url": "https://www.exodus.com/"
+					},
+					"desktopApp": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus has a desktop wallet variant recorded in the dataset.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"mobileApp": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus has a mobile wallet variant recorded in the dataset.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"browserExtension": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus has a browser wallet variant recorded in the dataset.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"browserNative": {
+						"$ref": "notSupported"
+					},
+					"webApp": null,
+					"ios": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus has a mobile app surface; iOS support should be verified against app-store listings for a deeper pass.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"android": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus has a mobile app surface; Android support should be verified against app-store listings for a deeper pass.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"chrome": null,
+					"firefox": null,
+					"safari": null
+				},
+				"supportedEcosystems": {
+					"ref": {
+						"explanation": "Exodus official product, support, app listing, and repository references were used for the supported ecosystems product-data pass.",
+						"url": "https://www.exodus.com/"
+					},
+					"evm": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus officially positions itself as supporting the EVM ecosystem or assets in this ecosystem.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"solana": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus officially positions itself as supporting the SOLANA ecosystem or assets in this ecosystem.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"bitcoin": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus officially positions itself as supporting the BITCOIN ecosystem or assets in this ecosystem.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"cosmos": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus officially positions itself as supporting the COSMOS ecosystem or assets in this ecosystem.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"ton": {
+						"$ref": "notSupported"
+					},
+					"starknet": {
+						"$ref": "notSupported"
+					},
+					"sui": {
+						"$ref": "notSupported"
+					},
+					"aptos": {
+						"$ref": "notSupported"
+					},
+					"xrp": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus officially positions itself as supporting the XRP ecosystem or assets in this ecosystem.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"cardano": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus officially positions itself as supporting the CARDANO ecosystem or assets in this ecosystem.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"lightning": {
+						"$ref": "notSupported"
+					},
+					"other": [
+						{
+							"name": "Algorand",
+							"ref": {
+								"explanation": "Exodus official materials describe broader ecosystem support including Algorand.",
+								"url": "https://www.exodus.com/"
+							}
+						},
+						{
+							"name": "Tezos",
+							"ref": {
+								"explanation": "Exodus official materials describe broader ecosystem support including Tezos.",
+								"url": "https://www.exodus.com/"
+							}
+						},
+						{
+							"name": "Polkadot",
+							"ref": {
+								"explanation": "Exodus official materials describe broader ecosystem support including Polkadot.",
+								"url": "https://www.exodus.com/"
+							}
+						}
+					]
+				},
+				"dappExperience": {
+					"ref": {
+						"explanation": "Exodus official product, support, app listing, and repository references were used for the product capabilities product-data pass.",
+						"url": "https://www.exodus.com/"
+					},
+					"inAppBrowser": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus provides a dapp browser or in-wallet dapp connection surface.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"curatedDappDirectory": null,
+					"dappSearch": null,
+					"walletConnectOnlyMode": {
+						"$ref": "notSupported"
+					},
+					"featuredApps": null,
+					"riskRatedDiscovery": null
+				},
+				"fiatRamps": {
+					"ref": {
+						"explanation": "Exodus official product, support, app listing, and repository references were used for the fiat ramps product-data pass.",
+						"url": "https://www.exodus.com/"
+					},
+					"buyCrypto": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus documents or advertises in-wallet crypto purchase support.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"sellCrypto": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus documents or advertises sell/off-ramp support.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"bankTransfer": null,
+					"card": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus fiat purchase providers commonly support card purchases where available.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"applePay": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus buy-flow or provider materials include Apple Pay/card-style fast checkout support.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"googlePay": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus buy-flow or provider materials include Google Pay/card-style fast checkout support.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
+					"providers": [
+						{
+							"name": "MoonPay",
+							"ref": {
+								"explanation": "Exodus official product/support materials name or route users through these fiat/on-ramp providers.",
+								"url": "https://www.exodus.com/"
+							}
+						},
+						{
+							"name": "Ramp Network",
+							"ref": {
+								"explanation": "Exodus official product/support materials name or route users through these fiat/on-ramp providers.",
+								"url": "https://www.exodus.com/"
+							}
+						},
+						{
+							"name": "Sardine",
+							"ref": {
+								"explanation": "Exodus official product/support materials name or route users through these fiat/on-ramp providers.",
+								"url": "https://www.exodus.com/"
+							}
+						}
+					],
+					"regionalAvailability": "Provider- and region-dependent availability; not an exhaustive country matrix in this pass."
+				},
+				"gasUx": {
+					"ref": {
+						"explanation": "Exodus official product, support, app listing, and repository references were used for the gas UX product-data pass.",
+						"url": "https://www.exodus.com/"
+					},
+					"gasCustomization": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus supports standard EVM transaction sending where gas settings can be inspected or controlled in the wallet flow.",
+									"url": "https://www.exodus.com/support/"
+								}
+							}
+						]
+					},
+					"gasSponsorship": null,
+					"gasAbstraction": null,
+					"payGasInStablecoins": null,
+					"payGasWithReceivedToken": null,
+					"speedPresets": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus supports EVM transaction flows where speed/gas presets are a common wallet control; verify exact UI depth in a future pass.",
+									"url": "https://www.exodus.com/support/"
+								}
+							}
+						]
+					},
+					"stuckTransactionRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus support/product materials include stuck or pending transaction recovery guidance.",
+									"url": "https://www.exodus.com/support/"
+								}
+							}
+						]
+					}
+				},
+				"recoveryUx": {
+					"ref": {
+						"explanation": "Exodus official product, support, app listing, and repository references were used for the recovery UX product-data pass.",
+						"url": "https://www.exodus.com/"
+					},
+					"seedOnlyRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus supports recovery/import through a seed or secret recovery phrase.",
+									"url": "https://www.exodus.com/support/"
+								}
+							}
+						]
+					},
+					"cloudBackup": null,
+					"socialRecovery": null,
+					"guardianRecovery": null,
+					"passkeyRecovery": null,
+					"emergencyKit": null,
+					"recoveryRehearsal": null
+				},
+				"onboardingFriction": {
+					"ref": {
+						"explanation": "Exodus official product, support, app listing, and repository references were used for the onboarding friction product-data pass.",
+						"url": "https://www.exodus.com/"
+					},
+					"seedPhraseRequiredAtSignup": {
+						"$ref": "featureSupported"
+					},
+					"passkeySignup": null,
+					"emailSignup": null,
+					"phoneSignup": null,
+					"kycRequiredForWallet": {
+						"$ref": "notSupported"
+					},
+					"guestMode": null,
+					"embeddedWalletMode": null,
+					"timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
+				},
+				"portfolioManagement": {
+					"ref": {
+						"explanation": "Exodus official product, support, app listing, and repository references were used for the portfolio management product-data pass.",
+						"url": "https://www.exodus.com/"
+					},
+					"netWorth": {
+						"$ref": "featureSupported"
+					},
+					"pnl": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus provides profit/loss or performance tracking in portfolio views.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"costBasis": null,
+					"tokenCategories": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus provides token balance and asset-list portfolio views.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"nftSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus supports NFT display or NFT portfolio management in at least one wallet surface.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"collectionViews": null,
+					"watchOnlyWallets": null,
+					"multiWalletAggregation": {
+						"$ref": "featureSupported"
+					}
+				},
+				"notifications": {
+					"ref": {
+						"explanation": "Exodus official product, support, app listing, and repository references were used for the notifications product-data pass.",
+						"url": "https://www.exodus.com/"
+					},
+					"sendReceive": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus supports notifications for wallet activity such as sends or receives.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"priceAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus supports price or market alerts.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"approvalAlerts": null,
+					"bridgeCompletion": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus supports bridging plus notifications for wallet activity; exact bridge-completion notification behavior should be deep-audited later.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"failedTransaction": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus supports wallet activity notifications that can include failed or completed transaction status.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"securityAlerts": null,
+					"marketAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus supports market or price alerts.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					}
+				},
+				"nftCapabilities": {
+					"ref": {
+						"explanation": "Exodus official product, support, app listing, and repository references were used for the NFT capabilities product-data pass.",
+						"url": "https://www.exodus.com/"
+					},
+					"display": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus supports displaying NFTs or collectibles in the wallet.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"send": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus supports wallet NFT transfer flows or NFT asset management.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"mint": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus can connect to dapps and sign NFT mint transactions.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"marketplaceIntegration": null,
+					"spamNftHiding": null,
+					"collectionMetadataRefresh": null,
+					"royaltiesOrOffers": null
+				},
+				"defiPositionAwareness": {
+					"ref": {
+						"explanation": "Exodus official product, support, app listing, and repository references were used for the DeFi position awareness product-data pass.",
+						"url": "https://www.exodus.com/"
+					},
+					"lendingPositions": null,
+					"stakingPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus surfaces staking or earn positions in wallet/portfolio views.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"lpPositions": null,
+					"vaultPositions": null,
+					"perProtocolBalances": null,
+					"claimableRewards": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus surfaces claimable rewards or earn balances.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"liquidationWarnings": null
+				},
+				"stakingEarn": {
+					"ref": {
+						"explanation": "Exodus official product, support, app listing, and repository references were used for the staking and earn product-data pass.",
+						"url": "https://www.exodus.com/"
+					},
+					"nativeStaking": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus supports native staking or earn products for at least one supported ecosystem.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"liquidStaking": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus supports liquid staking or liquid staking integrations.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"validatorChoice": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus lets users choose validators or staking targets in at least one ecosystem.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"apyDisplay": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus displays APY/reward information for staking or earn products.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"rewardsClaiming": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus supports claiming staking or earn rewards.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"providerDependency": "Provider- or protocol-dependent; requires per-asset/provider audit for exact dependency.",
+					"lockupDisclosure": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus staking/earn flows disclose lockup or protocol-specific constraints where applicable.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					}
+				},
+				"customerSupport": {
+					"ref": {
+						"explanation": "Exodus official product, support, app listing, and repository references were used for the customer support product-data pass.",
+						"url": "https://www.exodus.com/"
+					},
+					"liveChat": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus provides live chat or real-time support for wallet users.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"emailSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus publishes support, help center, or contact paths for wallet users.",
+									"url": "https://www.exodus.com/support/"
+								}
+							}
+						]
+					},
+					"aiSupport": null,
+					"publishedSla": null,
+					"inAppHelpCenter": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus provides in-app or product-linked help/support content.",
+									"url": "https://www.exodus.com/support/"
+								}
+							}
+						]
+					},
+					"transactionTroubleshooting": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus support docs include transaction or wallet troubleshooting material.",
+									"url": "https://www.exodus.com/support/"
+								}
+							}
+						]
+					},
+					"scamRecoveryGuidance": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus support/security materials include scam, compromise, or recovery guidance.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					}
+				},
+				"developerOffering": {
+					"ref": {
+						"explanation": "Exodus official product, support, app listing, and repository references were used for the developer offering product-data pass.",
+						"url": "https://www.exodus.com/"
+					},
+					"walletSdk": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus publishes wallet developer docs, SDKs, or public wallet integration repositories.",
+									"url": "https://github.com/ExodusMovement"
+								}
+							}
+						]
+					},
+					"embeddedWalletSdk": null,
+					"whiteLabelOffering": null,
+					"walletConnectSupport": {
+						"$ref": "featureSupported"
+					},
+					"eip6963": null,
+					"eip5792": null,
+					"deepLinks": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus documents mobile deep links, universal links, or app-link connection flows.",
+									"url": "https://www.exodus.com/support/"
+								}
+							}
+						]
+					},
+					"mobileLinkingQuality": "Mobile linking documented or product-supported; quality requires hands-on UX testing."
+				},
+				"pricingFeeModel": {
+					"ref": {
+						"explanation": "Exodus official product, support, app listing, and repository references were used for the pricing and fee model product-data pass.",
+						"url": "https://www.exodus.com/"
+					},
+					"swapFees": "Wallet swap/bridge fees are provider-, route-, or spread-dependent; exact bps require flow-level audit.",
+					"bridgeFees": "Bridge fees are route/provider-dependent; exact bps require flow-level audit.",
+					"onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
+					"spreadDisclosure": {
+						"$ref": "featureSupported"
+					},
+					"subscriptionFeatures": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus offers optional paid or subscription-style product features.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"cardFees": "Card fees are provider-dependent where card purchase is available.",
+					"hiddenPartnerRevenue": null
+				},
+				"releaseVelocity": {
+					"ref": {
+						"explanation": "Exodus official product, support, app listing, and repository references were used for the release velocity product-data pass.",
+						"url": "https://www.exodus.com/"
+					},
+					"latestReleaseDate": "2026-06-07",
+					"releaseFrequency": "ReleaseFrequency.IRREGULAR",
+					"appStoreUpdateCadence": "App-store cadence should be measured from current app-store release history in a deeper pass.",
+					"githubActivity": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus has public GitHub repository activity or releases that can be tracked.",
+									"url": "https://github.com/ExodusMovement"
+								}
+							}
+						]
+					},
+					"changelogDetail": "ChangelogDetail.BASIC"
+				},
+				"deviceSync": {
+					"ref": {
+						"explanation": "Exodus official product, support, app listing, and repository references were used for the device sync product-data pass.",
+						"url": "https://www.exodus.com/"
+					},
+					"syncsAccounts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus supports account synchronization or account reuse across devices.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"syncsSettings": null,
+					"syncsContactsOrAddressBook": null,
+					"desktopMobileSync": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus supports cross-device use between mobile and desktop/browser surfaces.",
+									"url": "https://www.exodus.com/"
+								}
+							}
+						]
+					},
+					"cloudBackedSync": null,
+					"requiresSameSeedImport": {
+						"$ref": "notSupported"
+					}
+				}
 			}
 		},
 		"variants": {

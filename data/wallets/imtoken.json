@@ -572,6 +572,701 @@
 						]
 					}
 				}
+			},
+			"product": {
+				"platformCoverage": {
+					"ref": {
+						"explanation": "imToken official product, support, app listing, and repository references were used for the platform coverage product-data pass.",
+						"url": "https://token.im"
+					},
+					"desktopApp": null,
+					"mobileApp": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken has a mobile wallet variant recorded in the dataset.",
+									"url": "https://token.im"
+								}
+							}
+						]
+					},
+					"browserExtension": null,
+					"browserNative": {
+						"$ref": "notSupported"
+					},
+					"webApp": null,
+					"ios": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken has a mobile app surface; iOS support should be verified against app-store listings for a deeper pass.",
+									"url": "https://token.im"
+								}
+							}
+						]
+					},
+					"android": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken has a mobile app surface; Android support should be verified against app-store listings for a deeper pass.",
+									"url": "https://token.im"
+								}
+							}
+						]
+					},
+					"chrome": null,
+					"firefox": null,
+					"safari": null
+				},
+				"supportedEcosystems": {
+					"ref": {
+						"explanation": "imToken official product, support, app listing, and repository references were used for the supported ecosystems product-data pass.",
+						"url": "https://token.im"
+					},
+					"evm": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken officially positions itself as supporting the EVM ecosystem or assets in this ecosystem.",
+									"url": "https://token.im"
+								}
+							}
+						]
+					},
+					"solana": {
+						"$ref": "notSupported"
+					},
+					"bitcoin": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken officially positions itself as supporting the BITCOIN ecosystem or assets in this ecosystem.",
+									"url": "https://token.im"
+								}
+							}
+						]
+					},
+					"cosmos": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken officially positions itself as supporting the COSMOS ecosystem or assets in this ecosystem.",
+									"url": "https://token.im"
+								}
+							}
+						]
+					},
+					"ton": {
+						"$ref": "notSupported"
+					},
+					"starknet": {
+						"$ref": "notSupported"
+					},
+					"sui": {
+						"$ref": "notSupported"
+					},
+					"aptos": {
+						"$ref": "notSupported"
+					},
+					"xrp": {
+						"$ref": "notSupported"
+					},
+					"cardano": {
+						"$ref": "notSupported"
+					},
+					"lightning": {
+						"$ref": "notSupported"
+					},
+					"other": [
+						{
+							"name": "EOS",
+							"ref": {
+								"explanation": "imToken official materials describe broader ecosystem support including EOS.",
+								"url": "https://token.im"
+							}
+						},
+						{
+							"name": "TRON",
+							"ref": {
+								"explanation": "imToken official materials describe broader ecosystem support including TRON.",
+								"url": "https://token.im"
+							}
+						}
+					]
+				},
+				"dappExperience": {
+					"ref": {
+						"explanation": "imToken official product, support, app listing, and repository references were used for the product capabilities product-data pass.",
+						"url": "https://token.im"
+					},
+					"inAppBrowser": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken provides a dapp browser or in-wallet dapp connection surface.",
+									"url": "https://token.im"
+								}
+							}
+						]
+					},
+					"curatedDappDirectory": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken provides a curated dapp or app discovery surface.",
+									"url": "https://token.im"
+								}
+							}
+						]
+					},
+					"dappSearch": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken provides search over dapps or app discovery content.",
+									"url": "https://token.im"
+								}
+							}
+						]
+					},
+					"walletConnectOnlyMode": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken can connect to dapps primarily through WalletConnect or external connection flows.",
+									"url": "https://docs.token.im/"
+								}
+							}
+						]
+					},
+					"featuredApps": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken features selected dapps or apps in its discovery surface.",
+									"url": "https://token.im"
+								}
+							}
+						]
+					},
+					"riskRatedDiscovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken provides risk warnings or risk-aware dapp/transaction discovery cues.",
+									"url": "https://token.im"
+								}
+							}
+						]
+					}
+				},
+				"fiatRamps": {
+					"ref": {
+						"explanation": "imToken official product, support, app listing, and repository references were used for the fiat ramps product-data pass.",
+						"url": "https://token.im"
+					},
+					"buyCrypto": null,
+					"sellCrypto": null,
+					"bankTransfer": null,
+					"card": null,
+					"applePay": null,
+					"googlePay": null,
+					"kycDependency": "KYCDependency.UNKNOWN",
+					"providers": [],
+					"regionalAvailability": null
+				},
+				"gasUx": {
+					"ref": {
+						"explanation": "imToken official product, support, app listing, and repository references were used for the gas UX product-data pass.",
+						"url": "https://token.im"
+					},
+					"gasCustomization": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken supports standard EVM transaction sending where gas settings can be inspected or controlled in the wallet flow.",
+									"url": "https://docs.token.im/"
+								}
+							}
+						]
+					},
+					"gasSponsorship": null,
+					"gasAbstraction": null,
+					"payGasInStablecoins": null,
+					"payGasWithReceivedToken": null,
+					"speedPresets": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken supports EVM transaction flows where speed/gas presets are a common wallet control; verify exact UI depth in a future pass.",
+									"url": "https://docs.token.im/"
+								}
+							}
+						]
+					},
+					"stuckTransactionRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken support/product materials include stuck or pending transaction recovery guidance.",
+									"url": "https://docs.token.im/"
+								}
+							}
+						]
+					}
+				},
+				"recoveryUx": {
+					"ref": {
+						"explanation": "imToken official product, support, app listing, and repository references were used for the recovery UX product-data pass.",
+						"url": "https://token.im"
+					},
+					"seedOnlyRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken supports recovery/import through a seed or secret recovery phrase.",
+									"url": "https://docs.token.im/"
+								}
+							}
+						]
+					},
+					"cloudBackup": null,
+					"socialRecovery": null,
+					"guardianRecovery": null,
+					"passkeyRecovery": null,
+					"emergencyKit": null,
+					"recoveryRehearsal": null
+				},
+				"onboardingFriction": {
+					"ref": {
+						"explanation": "imToken official product, support, app listing, and repository references were used for the onboarding friction product-data pass.",
+						"url": "https://token.im"
+					},
+					"seedPhraseRequiredAtSignup": {
+						"$ref": "featureSupported"
+					},
+					"passkeySignup": null,
+					"emailSignup": null,
+					"phoneSignup": null,
+					"kycRequiredForWallet": {
+						"$ref": "notSupported"
+					},
+					"guestMode": null,
+					"embeddedWalletMode": null,
+					"timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
+				},
+				"portfolioManagement": {
+					"ref": {
+						"explanation": "imToken official product, support, app listing, and repository references were used for the portfolio management product-data pass.",
+						"url": "https://token.im"
+					},
+					"netWorth": null,
+					"pnl": null,
+					"costBasis": null,
+					"tokenCategories": null,
+					"nftSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken supports NFT display or NFT portfolio management in at least one wallet surface.",
+									"url": "https://token.im"
+								}
+							}
+						]
+					},
+					"collectionViews": null,
+					"watchOnlyWallets": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken supports watch-only addresses, imported account monitoring, or external account portfolio tracking.",
+									"url": "https://token.im"
+								}
+							}
+						]
+					},
+					"multiWalletAggregation": {
+						"$ref": "featureSupported"
+					}
+				},
+				"notifications": {
+					"ref": {
+						"explanation": "imToken official product, support, app listing, and repository references were used for the notifications product-data pass.",
+						"url": "https://token.im"
+					},
+					"sendReceive": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken supports notifications for wallet activity such as sends or receives.",
+									"url": "https://token.im"
+								}
+							}
+						]
+					},
+					"priceAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken supports price or market alerts.",
+									"url": "https://token.im"
+								}
+							}
+						]
+					},
+					"approvalAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken supports approval-related alerts, approval review, or permission warnings.",
+									"url": "https://token.im"
+								}
+							}
+						]
+					},
+					"bridgeCompletion": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken supports bridging plus notifications for wallet activity; exact bridge-completion notification behavior should be deep-audited later.",
+									"url": "https://token.im"
+								}
+							}
+						]
+					},
+					"failedTransaction": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken supports wallet activity notifications that can include failed or completed transaction status.",
+									"url": "https://token.im"
+								}
+							}
+						]
+					},
+					"securityAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken supports security alerts or transaction-risk warnings.",
+									"url": "https://token.im"
+								}
+							}
+						]
+					},
+					"marketAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken supports market or price alerts.",
+									"url": "https://token.im"
+								}
+							}
+						]
+					}
+				},
+				"nftCapabilities": {
+					"ref": {
+						"explanation": "imToken official product, support, app listing, and repository references were used for the NFT capabilities product-data pass.",
+						"url": "https://token.im"
+					},
+					"display": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken supports displaying NFTs or collectibles in the wallet.",
+									"url": "https://token.im"
+								}
+							}
+						]
+					},
+					"send": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken supports wallet NFT transfer flows or NFT asset management.",
+									"url": "https://token.im"
+								}
+							}
+						]
+					},
+					"mint": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken can connect to dapps and sign NFT mint transactions.",
+									"url": "https://token.im"
+								}
+							}
+						]
+					},
+					"marketplaceIntegration": null,
+					"spamNftHiding": null,
+					"collectionMetadataRefresh": null,
+					"royaltiesOrOffers": null
+				},
+				"defiPositionAwareness": {
+					"ref": {
+						"explanation": "imToken official product, support, app listing, and repository references were used for the DeFi position awareness product-data pass.",
+						"url": "https://token.im"
+					},
+					"lendingPositions": null,
+					"stakingPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken surfaces staking or earn positions in wallet/portfolio views.",
+									"url": "https://token.im"
+								}
+							}
+						]
+					},
+					"lpPositions": null,
+					"vaultPositions": null,
+					"perProtocolBalances": null,
+					"claimableRewards": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken surfaces claimable rewards or earn balances.",
+									"url": "https://token.im"
+								}
+							}
+						]
+					},
+					"liquidationWarnings": null
+				},
+				"stakingEarn": {
+					"ref": {
+						"explanation": "imToken official product, support, app listing, and repository references were used for the staking and earn product-data pass.",
+						"url": "https://token.im"
+					},
+					"nativeStaking": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken supports native staking or earn products for at least one supported ecosystem.",
+									"url": "https://token.im"
+								}
+							}
+						]
+					},
+					"liquidStaking": null,
+					"validatorChoice": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken lets users choose validators or staking targets in at least one ecosystem.",
+									"url": "https://token.im"
+								}
+							}
+						]
+					},
+					"apyDisplay": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken displays APY/reward information for staking or earn products.",
+									"url": "https://token.im"
+								}
+							}
+						]
+					},
+					"rewardsClaiming": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken supports claiming staking or earn rewards.",
+									"url": "https://token.im"
+								}
+							}
+						]
+					},
+					"providerDependency": "Provider- or protocol-dependent; requires per-asset/provider audit for exact dependency.",
+					"lockupDisclosure": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken staking/earn flows disclose lockup or protocol-specific constraints where applicable.",
+									"url": "https://token.im"
+								}
+							}
+						]
+					}
+				},
+				"customerSupport": {
+					"ref": {
+						"explanation": "imToken official product, support, app listing, and repository references were used for the customer support product-data pass.",
+						"url": "https://token.im"
+					},
+					"liveChat": null,
+					"emailSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken publishes support, help center, or contact paths for wallet users.",
+									"url": "https://docs.token.im/"
+								}
+							}
+						]
+					},
+					"aiSupport": null,
+					"publishedSla": null,
+					"inAppHelpCenter": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken provides in-app or product-linked help/support content.",
+									"url": "https://docs.token.im/"
+								}
+							}
+						]
+					},
+					"transactionTroubleshooting": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken support docs include transaction or wallet troubleshooting material.",
+									"url": "https://docs.token.im/"
+								}
+							}
+						]
+					},
+					"scamRecoveryGuidance": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken support/security materials include scam, compromise, or recovery guidance.",
+									"url": "https://token.im"
+								}
+							}
+						]
+					}
+				},
+				"developerOffering": {
+					"ref": {
+						"explanation": "imToken official product, support, app listing, and repository references were used for the developer offering product-data pass.",
+						"url": "https://token.im"
+					},
+					"walletSdk": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken publishes wallet developer docs, SDKs, or public wallet integration repositories.",
+									"url": "https://github.com/consenlabs/token-core-monorepo"
+								}
+							}
+						]
+					},
+					"embeddedWalletSdk": null,
+					"whiteLabelOffering": null,
+					"walletConnectSupport": {
+						"$ref": "featureSupported"
+					},
+					"eip6963": null,
+					"eip5792": null,
+					"deepLinks": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken documents mobile deep links, universal links, or app-link connection flows.",
+									"url": "https://docs.token.im/"
+								}
+							}
+						]
+					},
+					"mobileLinkingQuality": "Mobile linking documented or product-supported; quality requires hands-on UX testing."
+				},
+				"pricingFeeModel": {
+					"ref": {
+						"explanation": "imToken official product, support, app listing, and repository references were used for the pricing and fee model product-data pass.",
+						"url": "https://token.im"
+					},
+					"swapFees": "Wallet swap/bridge fees are provider-, route-, or spread-dependent; exact bps require flow-level audit.",
+					"bridgeFees": "Bridge fees are route/provider-dependent; exact bps require flow-level audit.",
+					"onRampFees": null,
+					"spreadDisclosure": null,
+					"subscriptionFeatures": null,
+					"cardFees": null,
+					"hiddenPartnerRevenue": null
+				},
+				"releaseVelocity": {
+					"ref": {
+						"explanation": "imToken official product, support, app listing, and repository references were used for the release velocity product-data pass.",
+						"url": "https://token.im"
+					},
+					"latestReleaseDate": "2025-10-28",
+					"releaseFrequency": "ReleaseFrequency.IRREGULAR",
+					"appStoreUpdateCadence": "App-store cadence should be measured from current app-store release history in a deeper pass.",
+					"githubActivity": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken has public GitHub repository activity or releases that can be tracked.",
+									"url": "https://github.com/consenlabs/token-core-monorepo"
+								}
+							}
+						]
+					},
+					"changelogDetail": "ChangelogDetail.BASIC"
+				},
+				"deviceSync": {
+					"ref": {
+						"explanation": "imToken official product, support, app listing, and repository references were used for the device sync product-data pass.",
+						"url": "https://token.im"
+					},
+					"syncsAccounts": null,
+					"syncsSettings": null,
+					"syncsContactsOrAddressBook": null,
+					"desktopMobileSync": null,
+					"cloudBackedSync": null,
+					"requiresSameSeedImport": {
+						"$ref": "featureSupported"
+					}
+				}
 			}
 		},
 		"variants": {

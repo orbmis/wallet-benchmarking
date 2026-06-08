@@ -921,6 +921,899 @@
 						]
 					}
 				}
+			},
+			"product": {
+				"platformCoverage": {
+					"ref": {
+						"explanation": "MetaMask official product, support, app listing, and repository references were used for the platform coverage product-data pass.",
+						"url": "https://metamask.io"
+					},
+					"desktopApp": null,
+					"mobileApp": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask has a mobile wallet variant recorded in the dataset.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"browserExtension": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask publishes a browser extension listing.",
+									"url": "https://chromewebstore.google.com/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn"
+								}
+							}
+						]
+					},
+					"browserNative": {
+						"$ref": "notSupported"
+					},
+					"webApp": null,
+					"ios": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask has a mobile app surface; iOS support should be verified against app-store listings for a deeper pass.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"android": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask has a mobile app surface; Android support should be verified against app-store listings for a deeper pass.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"chrome": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask has a Chrome Web Store extension listing.",
+									"url": "https://chromewebstore.google.com/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn"
+								}
+							}
+						]
+					},
+					"firefox": null,
+					"safari": null
+				},
+				"supportedEcosystems": {
+					"ref": {
+						"explanation": "MetaMask official product, support, app listing, and repository references were used for the supported ecosystems product-data pass.",
+						"url": "https://metamask.io"
+					},
+					"evm": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask officially positions itself as supporting the EVM ecosystem or assets in this ecosystem.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"solana": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask officially positions itself as supporting the SOLANA ecosystem or assets in this ecosystem.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"bitcoin": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask officially positions itself as supporting the BITCOIN ecosystem or assets in this ecosystem.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"cosmos": {
+						"$ref": "notSupported"
+					},
+					"ton": {
+						"$ref": "notSupported"
+					},
+					"starknet": {
+						"$ref": "notSupported"
+					},
+					"sui": {
+						"$ref": "notSupported"
+					},
+					"aptos": {
+						"$ref": "notSupported"
+					},
+					"xrp": {
+						"$ref": "notSupported"
+					},
+					"cardano": {
+						"$ref": "notSupported"
+					},
+					"lightning": {
+						"$ref": "notSupported"
+					},
+					"other": []
+				},
+				"dappExperience": {
+					"ref": {
+						"explanation": "MetaMask official product, support, app listing, and repository references were used for the product capabilities product-data pass.",
+						"url": "https://metamask.io"
+					},
+					"inAppBrowser": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask provides a dapp browser or in-wallet dapp connection surface.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"curatedDappDirectory": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask provides a curated dapp or app discovery surface.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"dappSearch": null,
+					"walletConnectOnlyMode": {
+						"$ref": "notSupported"
+					},
+					"featuredApps": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask features selected dapps or apps in its discovery surface.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"riskRatedDiscovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask provides risk warnings or risk-aware dapp/transaction discovery cues.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					}
+				},
+				"fiatRamps": {
+					"ref": {
+						"explanation": "MetaMask official product, support, app listing, and repository references were used for the fiat ramps product-data pass.",
+						"url": "https://metamask.io"
+					},
+					"buyCrypto": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask documents or advertises in-wallet crypto purchase support.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"sellCrypto": null,
+					"bankTransfer": null,
+					"card": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask fiat purchase providers commonly support card purchases where available.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"applePay": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask buy-flow or provider materials include Apple Pay/card-style fast checkout support.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"googlePay": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask buy-flow or provider materials include Google Pay/card-style fast checkout support.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
+					"providers": [
+						{
+							"name": "Transak",
+							"ref": {
+								"explanation": "MetaMask official product/support materials name or route users through these fiat/on-ramp providers.",
+								"url": "https://metamask.io"
+							}
+						},
+						{
+							"name": "MoonPay",
+							"ref": {
+								"explanation": "MetaMask official product/support materials name or route users through these fiat/on-ramp providers.",
+								"url": "https://metamask.io"
+							}
+						},
+						{
+							"name": "Sardine",
+							"ref": {
+								"explanation": "MetaMask official product/support materials name or route users through these fiat/on-ramp providers.",
+								"url": "https://metamask.io"
+							}
+						},
+						{
+							"name": "Banxa",
+							"ref": {
+								"explanation": "MetaMask official product/support materials name or route users through these fiat/on-ramp providers.",
+								"url": "https://metamask.io"
+							}
+						},
+						{
+							"name": "Mercuryo",
+							"ref": {
+								"explanation": "MetaMask official product/support materials name or route users through these fiat/on-ramp providers.",
+								"url": "https://metamask.io"
+							}
+						},
+						{
+							"name": "Ramp Network",
+							"ref": {
+								"explanation": "MetaMask official product/support materials name or route users through these fiat/on-ramp providers.",
+								"url": "https://metamask.io"
+							}
+						}
+					],
+					"regionalAvailability": "Provider- and region-dependent availability; not an exhaustive country matrix in this pass."
+				},
+				"gasUx": {
+					"ref": {
+						"explanation": "MetaMask official product, support, app listing, and repository references were used for the gas UX product-data pass.",
+						"url": "https://metamask.io"
+					},
+					"gasCustomization": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask supports standard EVM transaction sending where gas settings can be inspected or controlled in the wallet flow.",
+									"url": "https://docs.metamask.io/"
+								}
+							}
+						]
+					},
+					"gasSponsorship": null,
+					"gasAbstraction": null,
+					"payGasInStablecoins": null,
+					"payGasWithReceivedToken": null,
+					"speedPresets": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask supports EVM transaction flows where speed/gas presets are a common wallet control; verify exact UI depth in a future pass.",
+									"url": "https://docs.metamask.io/"
+								}
+							}
+						]
+					},
+					"stuckTransactionRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask support/product materials include stuck or pending transaction recovery guidance.",
+									"url": "https://docs.metamask.io/"
+								}
+							}
+						]
+					}
+				},
+				"recoveryUx": {
+					"ref": {
+						"explanation": "MetaMask official product, support, app listing, and repository references were used for the recovery UX product-data pass.",
+						"url": "https://metamask.io"
+					},
+					"seedOnlyRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask supports recovery/import through a seed or secret recovery phrase.",
+									"url": "https://docs.metamask.io/"
+								}
+							}
+						]
+					},
+					"cloudBackup": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask supports cloud-backed wallet backup or recovery for at least some account flows.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"socialRecovery": null,
+					"guardianRecovery": null,
+					"passkeyRecovery": null,
+					"emergencyKit": null,
+					"recoveryRehearsal": null
+				},
+				"onboardingFriction": {
+					"ref": {
+						"explanation": "MetaMask official product, support, app listing, and repository references were used for the onboarding friction product-data pass.",
+						"url": "https://metamask.io"
+					},
+					"seedPhraseRequiredAtSignup": {
+						"$ref": "featureSupported"
+					},
+					"passkeySignup": null,
+					"emailSignup": null,
+					"phoneSignup": null,
+					"kycRequiredForWallet": {
+						"$ref": "notSupported"
+					},
+					"guestMode": null,
+					"embeddedWalletMode": null,
+					"timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
+				},
+				"portfolioManagement": {
+					"ref": {
+						"explanation": "MetaMask official product, support, app listing, and repository references were used for the portfolio management product-data pass.",
+						"url": "https://metamask.io"
+					},
+					"netWorth": {
+						"$ref": "featureSupported"
+					},
+					"pnl": null,
+					"costBasis": null,
+					"tokenCategories": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask provides token balance and asset-list portfolio views.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"nftSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask supports NFT display or NFT portfolio management in at least one wallet surface.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"collectionViews": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask provides NFT collection-oriented views or NFT portfolio surfaces.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"watchOnlyWallets": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask supports watch-only addresses, imported account monitoring, or external account portfolio tracking.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"multiWalletAggregation": {
+						"$ref": "featureSupported"
+					}
+				},
+				"notifications": {
+					"ref": {
+						"explanation": "MetaMask official product, support, app listing, and repository references were used for the notifications product-data pass.",
+						"url": "https://metamask.io"
+					},
+					"sendReceive": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask supports notifications for wallet activity such as sends or receives.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"priceAlerts": null,
+					"approvalAlerts": null,
+					"bridgeCompletion": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask supports bridging plus notifications for wallet activity; exact bridge-completion notification behavior should be deep-audited later.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"failedTransaction": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask supports wallet activity notifications that can include failed or completed transaction status.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"securityAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask supports security alerts or transaction-risk warnings.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"marketAlerts": null
+				},
+				"nftCapabilities": {
+					"ref": {
+						"explanation": "MetaMask official product, support, app listing, and repository references were used for the NFT capabilities product-data pass.",
+						"url": "https://metamask.io"
+					},
+					"display": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask supports displaying NFTs or collectibles in the wallet.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"send": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask supports wallet NFT transfer flows or NFT asset management.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"mint": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask can connect to dapps and sign NFT mint transactions.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"marketplaceIntegration": null,
+					"spamNftHiding": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask supports hiding, filtering, or protecting users from spam NFTs.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"collectionMetadataRefresh": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask supports NFT metadata refresh or collection metadata updates in its NFT experience.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"royaltiesOrOffers": null
+				},
+				"defiPositionAwareness": {
+					"ref": {
+						"explanation": "MetaMask official product, support, app listing, and repository references were used for the DeFi position awareness product-data pass.",
+						"url": "https://metamask.io"
+					},
+					"lendingPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask surfaces DeFi lending or protocol positions in wallet/portfolio views.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"stakingPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask surfaces staking or earn positions in wallet/portfolio views.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"lpPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask surfaces liquidity-pool or DeFi protocol positions.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"vaultPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask surfaces vault or protocol positions.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"perProtocolBalances": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask groups DeFi holdings by protocol or app.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"claimableRewards": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask surfaces claimable rewards or earn balances.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"liquidationWarnings": null
+				},
+				"stakingEarn": {
+					"ref": {
+						"explanation": "MetaMask official product, support, app listing, and repository references were used for the staking and earn product-data pass.",
+						"url": "https://metamask.io"
+					},
+					"nativeStaking": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask supports native staking or earn products for at least one supported ecosystem.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"liquidStaking": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask supports liquid staking or liquid staking integrations.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"validatorChoice": null,
+					"apyDisplay": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask displays APY/reward information for staking or earn products.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"rewardsClaiming": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask supports claiming staking or earn rewards.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"providerDependency": "Provider- or protocol-dependent; requires per-asset/provider audit for exact dependency.",
+					"lockupDisclosure": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask staking/earn flows disclose lockup or protocol-specific constraints where applicable.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					}
+				},
+				"customerSupport": {
+					"ref": {
+						"explanation": "MetaMask official product, support, app listing, and repository references were used for the customer support product-data pass.",
+						"url": "https://metamask.io"
+					},
+					"liveChat": null,
+					"emailSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask publishes support, help center, or contact paths for wallet users.",
+									"url": "https://docs.metamask.io/"
+								}
+							}
+						]
+					},
+					"aiSupport": null,
+					"publishedSla": null,
+					"inAppHelpCenter": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask provides in-app or product-linked help/support content.",
+									"url": "https://docs.metamask.io/"
+								}
+							}
+						]
+					},
+					"transactionTroubleshooting": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask support docs include transaction or wallet troubleshooting material.",
+									"url": "https://docs.metamask.io/"
+								}
+							}
+						]
+					},
+					"scamRecoveryGuidance": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask support/security materials include scam, compromise, or recovery guidance.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					}
+				},
+				"developerOffering": {
+					"ref": {
+						"explanation": "MetaMask official product, support, app listing, and repository references were used for the developer offering product-data pass.",
+						"url": "https://metamask.io"
+					},
+					"walletSdk": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask publishes wallet developer docs, SDKs, or public wallet integration repositories.",
+									"url": "https://github.com/MetaMask/metamask-extension"
+								}
+							}
+						]
+					},
+					"embeddedWalletSdk": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask offers embedded wallet or embedded account SDK capabilities.",
+									"url": "https://github.com/MetaMask/metamask-extension"
+								}
+							}
+						]
+					},
+					"whiteLabelOffering": null,
+					"walletConnectSupport": {
+						"$ref": "featureSupported"
+					},
+					"eip6963": {
+						"$ref": "featureSupported"
+					},
+					"eip5792": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"$ref": "refTodo"
+								},
+								"atomicMultiTransactions": {
+									"$ref": "featureSupported"
+								}
+							}
+						]
+					},
+					"deepLinks": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask documents mobile deep links, universal links, or app-link connection flows.",
+									"url": "https://docs.metamask.io/"
+								}
+							}
+						]
+					},
+					"mobileLinkingQuality": "Mobile linking documented or product-supported; quality requires hands-on UX testing."
+				},
+				"pricingFeeModel": {
+					"ref": {
+						"explanation": "MetaMask official product, support, app listing, and repository references were used for the pricing and fee model product-data pass.",
+						"url": "https://metamask.io"
+					},
+					"swapFees": "Wallet swap/bridge fees are provider-, route-, or spread-dependent; exact bps require flow-level audit.",
+					"bridgeFees": "Bridge fees are route/provider-dependent; exact bps require flow-level audit.",
+					"onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
+					"spreadDisclosure": {
+						"$ref": "featureSupported"
+					},
+					"subscriptionFeatures": null,
+					"cardFees": "Card fees are provider-dependent where card purchase is available.",
+					"hiddenPartnerRevenue": null
+				},
+				"releaseVelocity": {
+					"ref": {
+						"explanation": "MetaMask official product, support, app listing, and repository references were used for the release velocity product-data pass.",
+						"url": "https://metamask.io"
+					},
+					"latestReleaseDate": "2026-05-06",
+					"releaseFrequency": "ReleaseFrequency.IRREGULAR",
+					"appStoreUpdateCadence": "App-store cadence should be measured from current app-store release history in a deeper pass.",
+					"githubActivity": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask has public GitHub repository activity or releases that can be tracked.",
+									"url": "https://github.com/MetaMask/metamask-extension"
+								}
+							}
+						]
+					},
+					"changelogDetail": "ChangelogDetail.BASIC"
+				},
+				"deviceSync": {
+					"ref": {
+						"explanation": "MetaMask official product, support, app listing, and repository references were used for the device sync product-data pass.",
+						"url": "https://metamask.io"
+					},
+					"syncsAccounts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask supports account synchronization or account reuse across devices.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"syncsSettings": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask supports syncing at least some wallet settings or app state across installations.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"syncsContactsOrAddressBook": null,
+					"desktopMobileSync": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask supports cross-device use between mobile and desktop/browser surfaces.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"cloudBackedSync": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "MetaMask supports cloud-backed account or wallet sync/backup.",
+									"url": "https://metamask.io"
+								}
+							}
+						]
+					},
+					"requiresSameSeedImport": {
+						"$ref": "notSupported"
+					}
+				}
 			}
 		},
 		"overrides": {

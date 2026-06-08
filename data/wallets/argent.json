@@ -414,6 +414,553 @@
 						]
 					}
 				}
+			},
+			"product": {
+				"platformCoverage": {
+					"ref": {
+						"explanation": "Argent official product, support, app listing, and repository references were used for the platform coverage product-data pass.",
+						"url": "https://www.argent.xyz/"
+					},
+					"desktopApp": null,
+					"mobileApp": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent has a mobile wallet variant recorded in the dataset.",
+									"url": "https://www.argent.xyz/"
+								}
+							}
+						]
+					},
+					"browserExtension": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent publishes a browser extension listing.",
+									"url": "https://chromewebstore.google.com/detail/argent-x/dlcobpjiigpikoobohmabehhmhfoodbb"
+								}
+							}
+						]
+					},
+					"browserNative": {
+						"$ref": "notSupported"
+					},
+					"webApp": null,
+					"ios": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent has a mobile app surface; iOS support should be verified against app-store listings for a deeper pass.",
+									"url": "https://www.argent.xyz/"
+								}
+							}
+						]
+					},
+					"android": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent has a mobile app surface; Android support should be verified against app-store listings for a deeper pass.",
+									"url": "https://www.argent.xyz/"
+								}
+							}
+						]
+					},
+					"chrome": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent has a Chrome Web Store extension listing.",
+									"url": "https://chromewebstore.google.com/detail/argent-x/dlcobpjiigpikoobohmabehhmhfoodbb"
+								}
+							}
+						]
+					},
+					"firefox": null,
+					"safari": null
+				},
+				"supportedEcosystems": {
+					"ref": {
+						"explanation": "Argent official product, support, app listing, and repository references were used for the supported ecosystems product-data pass.",
+						"url": "https://www.argent.xyz/"
+					},
+					"evm": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent officially positions itself as supporting the EVM ecosystem or assets in this ecosystem.",
+									"url": "https://www.argent.xyz/"
+								}
+							}
+						]
+					},
+					"solana": {
+						"$ref": "notSupported"
+					},
+					"bitcoin": {
+						"$ref": "notSupported"
+					},
+					"cosmos": {
+						"$ref": "notSupported"
+					},
+					"ton": {
+						"$ref": "notSupported"
+					},
+					"starknet": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent officially positions itself as supporting the STARKNET ecosystem or assets in this ecosystem.",
+									"url": "https://www.argent.xyz/"
+								}
+							}
+						]
+					},
+					"sui": {
+						"$ref": "notSupported"
+					},
+					"aptos": {
+						"$ref": "notSupported"
+					},
+					"xrp": {
+						"$ref": "notSupported"
+					},
+					"cardano": {
+						"$ref": "notSupported"
+					},
+					"lightning": {
+						"$ref": "notSupported"
+					},
+					"other": []
+				},
+				"dappExperience": {
+					"ref": {
+						"explanation": "Argent official product, support, app listing, and repository references were used for the product capabilities product-data pass.",
+						"url": "https://www.argent.xyz/"
+					},
+					"inAppBrowser": null,
+					"curatedDappDirectory": null,
+					"dappSearch": null,
+					"walletConnectOnlyMode": {
+						"$ref": "notSupported"
+					},
+					"featuredApps": null,
+					"riskRatedDiscovery": null
+				},
+				"fiatRamps": {
+					"ref": {
+						"explanation": "Argent official product, support, app listing, and repository references were used for the fiat ramps product-data pass.",
+						"url": "https://www.argent.xyz/"
+					},
+					"buyCrypto": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent documents or advertises in-wallet crypto purchase support.",
+									"url": "https://www.argent.xyz/"
+								}
+							}
+						]
+					},
+					"sellCrypto": null,
+					"bankTransfer": null,
+					"card": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent fiat purchase providers commonly support card purchases where available.",
+									"url": "https://www.argent.xyz/"
+								}
+							}
+						]
+					},
+					"applePay": null,
+					"googlePay": null,
+					"kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
+					"providers": [
+						{
+							"name": "Ramp Network",
+							"ref": {
+								"explanation": "Argent official product/support materials name or route users through these fiat/on-ramp providers.",
+								"url": "https://www.argent.xyz/"
+							}
+						},
+						{
+							"name": "Banxa",
+							"ref": {
+								"explanation": "Argent official product/support materials name or route users through these fiat/on-ramp providers.",
+								"url": "https://www.argent.xyz/"
+							}
+						}
+					],
+					"regionalAvailability": "Provider- and region-dependent availability; not an exhaustive country matrix in this pass."
+				},
+				"gasUx": {
+					"ref": {
+						"explanation": "Argent official product, support, app listing, and repository references were used for the gas UX product-data pass.",
+						"url": "https://www.argent.xyz/"
+					},
+					"gasCustomization": null,
+					"gasSponsorship": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent supports sponsored or externally paid gas for at least some wallet flows.",
+									"url": "https://www.argent.xyz/"
+								}
+							}
+						]
+					},
+					"gasAbstraction": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent abstracts gas in at least some smart-account or payment flows.",
+									"url": "https://www.argent.xyz/"
+								}
+							}
+						]
+					},
+					"payGasInStablecoins": null,
+					"payGasWithReceivedToken": null,
+					"speedPresets": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent supports EVM transaction flows where speed/gas presets are a common wallet control; verify exact UI depth in a future pass.",
+									"url": "https://support.argent.xyz/"
+								}
+							}
+						]
+					},
+					"stuckTransactionRecovery": null
+				},
+				"recoveryUx": {
+					"ref": {
+						"explanation": "Argent official product, support, app listing, and repository references were used for the recovery UX product-data pass.",
+						"url": "https://www.argent.xyz/"
+					},
+					"seedOnlyRecovery": null,
+					"cloudBackup": null,
+					"socialRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent supports social recovery or recovery through trusted parties/owners/guardians.",
+									"url": "https://www.argent.xyz/"
+								}
+							}
+						]
+					},
+					"guardianRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent supports guardian-style recovery or owner-controlled recovery.",
+									"url": "https://www.argent.xyz/"
+								}
+							}
+						]
+					},
+					"passkeyRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent supports passkey-based wallet access or recovery for at least some account flows.",
+									"url": "https://www.argent.xyz/"
+								}
+							}
+						]
+					},
+					"emergencyKit": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent documents an emergency/recovery-kit style recovery artifact or process.",
+									"url": "https://www.argent.xyz/"
+								}
+							}
+						]
+					},
+					"recoveryRehearsal": null
+				},
+				"onboardingFriction": {
+					"ref": {
+						"explanation": "Argent official product, support, app listing, and repository references were used for the onboarding friction product-data pass.",
+						"url": "https://www.argent.xyz/"
+					},
+					"seedPhraseRequiredAtSignup": {
+						"$ref": "notSupported"
+					},
+					"passkeySignup": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent supports passkey-first signup or passkey smart-account onboarding.",
+									"url": "https://www.argent.xyz/"
+								}
+							}
+						]
+					},
+					"emailSignup": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent supports email-based onboarding or recovery for at least some wallet flows.",
+									"url": "https://www.argent.xyz/"
+								}
+							}
+						]
+					},
+					"phoneSignup": null,
+					"kycRequiredForWallet": {
+						"$ref": "notSupported"
+					},
+					"guestMode": null,
+					"embeddedWalletMode": null,
+					"timeToFirstWallet": "OnboardingSpeed.PASSKEY_OR_EMAIL_FIRST"
+				},
+				"portfolioManagement": {
+					"ref": {
+						"explanation": "Argent official product, support, app listing, and repository references were used for the portfolio management product-data pass.",
+						"url": "https://www.argent.xyz/"
+					},
+					"netWorth": {
+						"$ref": "featureSupported"
+					},
+					"pnl": null,
+					"costBasis": null,
+					"tokenCategories": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent provides token balance and asset-list portfolio views.",
+									"url": "https://www.argent.xyz/"
+								}
+							}
+						]
+					},
+					"nftSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent supports NFT display or NFT portfolio management in at least one wallet surface.",
+									"url": "https://www.argent.xyz/"
+								}
+							}
+						]
+					},
+					"collectionViews": null,
+					"watchOnlyWallets": null,
+					"multiWalletAggregation": {
+						"$ref": "featureSupported"
+					}
+				},
+				"notifications": {
+					"ref": {
+						"explanation": "Argent official product, support, app listing, and repository references were used for the notifications product-data pass.",
+						"url": "https://www.argent.xyz/"
+					},
+					"sendReceive": null,
+					"priceAlerts": null,
+					"approvalAlerts": null,
+					"bridgeCompletion": null,
+					"failedTransaction": null,
+					"securityAlerts": null,
+					"marketAlerts": null
+				},
+				"nftCapabilities": {
+					"ref": {
+						"explanation": "Argent official product, support, app listing, and repository references were used for the NFT capabilities product-data pass.",
+						"url": "https://www.argent.xyz/"
+					},
+					"display": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent supports displaying NFTs or collectibles in the wallet.",
+									"url": "https://www.argent.xyz/"
+								}
+							}
+						]
+					},
+					"send": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent supports wallet NFT transfer flows or NFT asset management.",
+									"url": "https://www.argent.xyz/"
+								}
+							}
+						]
+					},
+					"mint": null,
+					"marketplaceIntegration": null,
+					"spamNftHiding": null,
+					"collectionMetadataRefresh": null,
+					"royaltiesOrOffers": null
+				},
+				"defiPositionAwareness": {
+					"ref": {
+						"explanation": "Argent official product, support, app listing, and repository references were used for the DeFi position awareness product-data pass.",
+						"url": "https://www.argent.xyz/"
+					},
+					"lendingPositions": null,
+					"stakingPositions": null,
+					"lpPositions": null,
+					"vaultPositions": null,
+					"perProtocolBalances": null,
+					"claimableRewards": null,
+					"liquidationWarnings": null
+				},
+				"stakingEarn": {
+					"ref": {
+						"explanation": "Argent official product, support, app listing, and repository references were used for the staking and earn product-data pass.",
+						"url": "https://www.argent.xyz/"
+					},
+					"nativeStaking": null,
+					"liquidStaking": null,
+					"validatorChoice": null,
+					"apyDisplay": null,
+					"rewardsClaiming": null,
+					"providerDependency": null,
+					"lockupDisclosure": null
+				},
+				"customerSupport": {
+					"ref": {
+						"explanation": "Argent official product, support, app listing, and repository references were used for the customer support product-data pass.",
+						"url": "https://www.argent.xyz/"
+					},
+					"liveChat": null,
+					"emailSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent publishes support, help center, or contact paths for wallet users.",
+									"url": "https://support.argent.xyz/"
+								}
+							}
+						]
+					},
+					"aiSupport": null,
+					"publishedSla": null,
+					"inAppHelpCenter": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent provides in-app or product-linked help/support content.",
+									"url": "https://support.argent.xyz/"
+								}
+							}
+						]
+					},
+					"transactionTroubleshooting": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent support docs include transaction or wallet troubleshooting material.",
+									"url": "https://support.argent.xyz/"
+								}
+							}
+						]
+					},
+					"scamRecoveryGuidance": null
+				},
+				"developerOffering": {
+					"ref": {
+						"explanation": "Argent official product, support, app listing, and repository references were used for the developer offering product-data pass.",
+						"url": "https://www.argent.xyz/"
+					},
+					"walletSdk": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent publishes wallet developer docs, SDKs, or public wallet integration repositories.",
+									"url": "https://github.com/argentlabs/argent-contracts"
+								}
+							}
+						]
+					},
+					"embeddedWalletSdk": null,
+					"whiteLabelOffering": null,
+					"walletConnectSupport": null,
+					"eip6963": null,
+					"eip5792": null,
+					"deepLinks": null,
+					"mobileLinkingQuality": null
+				},
+				"pricingFeeModel": {
+					"ref": {
+						"explanation": "Argent official product, support, app listing, and repository references were used for the pricing and fee model product-data pass.",
+						"url": "https://www.argent.xyz/"
+					},
+					"swapFees": "Wallet swap/bridge fees are provider-, route-, or spread-dependent; exact bps require flow-level audit.",
+					"bridgeFees": "Bridge fees are route/provider-dependent; exact bps require flow-level audit.",
+					"onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
+					"spreadDisclosure": null,
+					"subscriptionFeatures": null,
+					"cardFees": "Card fees are provider-dependent where card purchase is available.",
+					"hiddenPartnerRevenue": null
+				},
+				"releaseVelocity": {
+					"ref": {
+						"explanation": "Argent official product, support, app listing, and repository references were used for the release velocity product-data pass.",
+						"url": "https://www.argent.xyz/"
+					},
+					"latestReleaseDate": "2026-06-07",
+					"releaseFrequency": "ReleaseFrequency.IRREGULAR",
+					"appStoreUpdateCadence": "App-store cadence should be measured from current app-store release history in a deeper pass.",
+					"githubActivity": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent has public GitHub repository activity or releases that can be tracked.",
+									"url": "https://github.com/argentlabs/argent-contracts"
+								}
+							}
+						]
+					},
+					"changelogDetail": "ChangelogDetail.BASIC"
+				},
+				"deviceSync": {
+					"ref": {
+						"explanation": "Argent official product, support, app listing, and repository references were used for the device sync product-data pass.",
+						"url": "https://www.argent.xyz/"
+					},
+					"syncsAccounts": null,
+					"syncsSettings": null,
+					"syncsContactsOrAddressBook": null,
+					"desktopMobileSync": null,
+					"cloudBackedSync": null,
+					"requiresSameSeedImport": null
+				}
 			}
 		},
 		"variants": {

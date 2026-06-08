@@ -1,785 +1,1840 @@
-# Wallet data — property tree
+# Wallet data schema
 
-Merged across all 37 files in `data/wallets/*.json`. Each record is `{id, source, export, data}`.
+Generated from the current JSON files in `data/wallets/*.json`. Each wallet record is `{id, source, export, data}`. Counts show how many records contain a property.
 
-**Legend** — `<type>` leaf · `[]` array · `(n/37)` = key present in *n* of 37 wallets (no count = all).
-`‹val›` = DSL-encoded value (`$ref`/`$call`/bool) · `⟐cited` = carries a `ref` citation.
-The repeated citation plumbing (`$ref`/`$call`/`ref`) is collapsed into those two markers; `args[ ]`
-(extra detail attached to a value) is expanded.
+## Product namespace
 
+The PM-oriented product namespace is populated on software-wallet records only. Current software-wallet coverage: 26/37 records. Hardware-wallet records intentionally do not carry this namespace.
+
+```text
+- features.product <object>
+  - customerSupport <object>
+    - aiSupport <null|object>
+      - $call <string> (3/26)
+      - args <array> (3/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - emailSupport <object>
+      - $call <string>
+      - args <array>
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - inAppHelpCenter <null|object>
+      - $call <string> (25/26)
+      - args <array> (25/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - liveChat <null|object>
+      - $call <string> (4/26)
+      - args <array> (4/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - publishedSla <null>
+    - ref <object>
+      - explanation <string>
+      - url <string>
+    - scamRecoveryGuidance <null|object>
+      - $call <string> (9/26)
+      - args <array> (9/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - transactionTroubleshooting <object>
+      - $call <string>
+      - args <array>
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+  - dappExperience <object>
+    - curatedDappDirectory <null|object>
+      - $call <string> (9/26)
+      - args <array> (9/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - dappSearch <null|object>
+      - $call <string> (7/26)
+      - args <array> (7/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - featuredApps <null|object>
+      - $call <string> (9/26)
+      - args <array> (9/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - inAppBrowser <null|object>
+      - $call <string> (14/26)
+      - args <array> (14/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - ref <object>
+      - explanation <string>
+      - url <string>
+    - riskRatedDiscovery <null|object>
+      - $call <string> (21/26)
+      - args <array> (21/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - walletConnectOnlyMode <object>
+      - $call <string> (3/26)
+      - $ref <string> (23/26)
+      - args <array> (3/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+  - defiPositionAwareness <object>
+    - claimableRewards <null|object>
+      - $call <string> (13/26)
+      - args <array> (13/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - lendingPositions <null|object>
+      - $call <string> (9/26)
+      - args <array> (9/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - liquidationWarnings <null>
+    - lpPositions <null|object>
+      - $call <string> (9/26)
+      - args <array> (9/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - perProtocolBalances <null|object>
+      - $call <string> (9/26)
+      - args <array> (9/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - ref <object>
+      - explanation <string>
+      - url <string>
+    - stakingPositions <null|object>
+      - $call <string> (13/26)
+      - args <array> (13/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - vaultPositions <null|object>
+      - $call <string> (9/26)
+      - args <array> (9/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+  - developerOffering <object>
+    - deepLinks <null|object>
+      - $call <string> (10/26)
+      - args <array> (10/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - eip5792 <null|object>
+      - $call <string> (6/26)
+      - $ref <string> (3/26)
+      - args <array> (6/26)
+        - [] <object>
+          - atomicMultiTransactions <object> (5/6)
+            - $ref <string> (5/6)
+          - ref <object|string>
+            - $ref <string> (1/6)
+            - explanation <string> (3/6)
+            - url <string> (3/6)
+    - eip6963 <null|object>
+      - $call <string> (2/26)
+      - $ref <string> (9/26)
+      - args <array> (2/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - embeddedWalletSdk <null|object>
+      - $call <string> (4/26)
+      - args <array> (4/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - mobileLinkingQuality <null|string>
+    - ref <object>
+      - explanation <string>
+      - url <string>
+    - walletConnectSupport <null|object>
+      - $ref <string> (18/26)
+    - walletSdk <null|object>
+      - $call <string> (23/26)
+      - args <array> (23/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - whiteLabelOffering <null|object>
+      - $call <string> (2/26)
+      - args <array> (2/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+  - deviceSync <object>
+    - cloudBackedSync <null|object>
+      - $call <string> (6/26)
+      - args <array> (6/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - desktopMobileSync <null|object>
+      - $call <string> (7/26)
+      - args <array> (7/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - ref <object>
+      - explanation <string>
+      - url <string>
+    - requiresSameSeedImport <null|object>
+      - $ref <string> (23/26)
+    - syncsAccounts <null|object>
+      - $call <string> (9/26)
+      - args <array> (9/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - syncsContactsOrAddressBook <null|object>
+      - $call <string> (4/26)
+      - args <array> (4/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - syncsSettings <null|object>
+      - $call <string> (5/26)
+      - args <array> (5/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+  - fiatRamps <object>
+    - applePay <null|object>
+      - $call <string> (7/26)
+      - args <array> (7/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - bankTransfer <null|object>
+      - $call <string> (5/26)
+      - args <array> (5/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - buyCrypto <null|object>
+      - $call <string> (16/26)
+      - args <array> (16/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - card <null|object>
+      - $call <string> (16/26)
+      - args <array> (16/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - googlePay <null|object>
+      - $call <string> (7/26)
+      - args <array> (7/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - kycDependency <string>
+    - providers <array>
+      - [] <object>
+        - name <string>
+        - ref <object>
+          - explanation <string>
+          - url <string>
+    - ref <object>
+      - explanation <string>
+      - url <string>
+    - regionalAvailability <null|string>
+    - sellCrypto <null|object>
+      - $call <string> (6/26)
+      - args <array> (6/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+  - gasUx <object>
+    - gasAbstraction <null|object>
+      - $call <string> (6/26)
+      - args <array> (6/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - gasCustomization <null|object>
+      - $call <string> (19/26)
+      - args <array> (19/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - gasSponsorship <null|object>
+      - $call <string> (6/26)
+      - args <array> (6/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - payGasInStablecoins <null|object>
+      - $call <string> (4/26)
+      - args <array> (4/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - payGasWithReceivedToken <null|object>
+      - $call <string> (2/26)
+      - args <array> (2/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - ref <object>
+      - explanation <string>
+      - url <string>
+    - speedPresets <null|object>
+      - $call <string> (25/26)
+      - args <array> (25/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - stuckTransactionRecovery <null|object>
+      - $call <string> (11/26)
+      - args <array> (11/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+  - nftCapabilities <object>
+    - collectionMetadataRefresh <null|object>
+      - $call <string> (6/26)
+      - args <array> (6/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - display <null|object>
+      - $call <string> (25/26)
+      - args <array> (25/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - marketplaceIntegration <null|object>
+      - $call <string> (7/26)
+      - args <array> (7/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - mint <null|object>
+      - $call <string> (18/26)
+      - args <array> (18/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - ref <object>
+      - explanation <string>
+      - url <string>
+    - royaltiesOrOffers <null|object>
+      - $call <string> (4/26)
+      - args <array> (4/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - send <null|object>
+      - $call <string> (25/26)
+      - args <array> (25/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - spamNftHiding <null|object>
+      - $call <string> (8/26)
+      - args <array> (8/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+  - notifications <object>
+    - approvalAlerts <null|object>
+      - $call <string> (13/26)
+      - args <array> (13/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - bridgeCompletion <null|object>
+      - $call <string> (12/26)
+      - args <array> (12/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - failedTransaction <null|object>
+      - $call <string> (12/26)
+      - args <array> (12/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - marketAlerts <null|object>
+      - $call <string> (8/26)
+      - args <array> (8/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - priceAlerts <null|object>
+      - $call <string> (8/26)
+      - args <array> (8/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - ref <object>
+      - explanation <string>
+      - url <string>
+    - securityAlerts <null|object>
+      - $call <string> (22/26)
+      - args <array> (22/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - sendReceive <null|object>
+      - $call <string> (12/26)
+      - args <array> (12/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+  - onboardingFriction <object>
+    - emailSignup <null|object>
+      - $call <string> (4/26)
+      - args <array> (4/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - embeddedWalletMode <null|object>
+      - $call <string> (2/26)
+      - args <array> (2/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - guestMode <null|object>
+      - $call <string> (2/26)
+      - args <array> (2/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - kycRequiredForWallet <object>
+      - $ref <string>
+    - passkeySignup <null|object>
+      - $call <string> (4/26)
+      - args <array> (4/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - phoneSignup <null|object>
+      - $call <string> (2/26)
+      - args <array> (2/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - ref <object>
+      - explanation <string>
+      - url <string>
+    - seedPhraseRequiredAtSignup <null|object>
+      - $ref <string> (25/26)
+    - timeToFirstWallet <string>
+  - platformCoverage <object>
+    - android <null|object>
+      - $call <string> (22/26)
+      - args <array> (22/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - browserExtension <null|object>
+      - $call <string> (18/26)
+      - args <array> (18/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - browserNative <object>
+      - $call <string> (1/26)
+      - $ref <string> (25/26)
+      - args <array> (1/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - chrome <null|object>
+      - $call <string> (14/26)
+      - args <array> (14/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - desktopApp <null|object>
+      - $call <string> (5/26)
+      - args <array> (5/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - firefox <null>
+    - ios <null|object>
+      - $call <string> (22/26)
+      - args <array> (22/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - mobileApp <null|object>
+      - $call <string> (22/26)
+      - args <array> (22/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - ref <object>
+      - explanation <string>
+      - url <string>
+    - safari <null>
+    - webApp <null|object>
+      - $call <string> (7/26)
+      - args <array> (7/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+  - portfolioManagement <object>
+    - collectionViews <null|object>
+      - $call <string> (10/26)
+      - args <array> (10/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - costBasis <null|object>
+      - $call <string> (3/26)
+      - args <array> (3/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - multiWalletAggregation <null|object>
+      - $ref <string> (24/26)
+    - netWorth <null|object>
+      - $ref <string> (23/26)
+    - nftSupport <null|object>
+      - $call <string> (25/26)
+      - args <array> (25/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - pnl <null|object>
+      - $call <string> (5/26)
+      - args <array> (5/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - ref <object>
+      - explanation <string>
+      - url <string>
+    - tokenCategories <null|object>
+      - $call <string> (23/26)
+      - args <array> (23/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - watchOnlyWallets <null|object>
+      - $call <string> (9/26)
+      - args <array> (9/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+  - pricingFeeModel <object>
+    - bridgeFees <null|string>
+    - cardFees <null|string>
+    - hiddenPartnerRevenue <null>
+    - onRampFees <null|string>
+    - ref <object>
+      - explanation <string>
+      - url <string>
+    - spreadDisclosure <null|object>
+      - $ref <string> (8/26)
+    - subscriptionFeatures <null|object>
+      - $call <string> (2/26)
+      - args <array> (2/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - swapFees <null|string>
+  - recoveryUx <object>
+    - cloudBackup <null|object>
+      - $call <string> (9/26)
+      - args <array> (9/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - emergencyKit <null|object>
+      - $call <string> (3/26)
+      - args <array> (3/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - guardianRecovery <null|object>
+      - $call <string> (3/26)
+      - args <array> (3/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - passkeyRecovery <null|object>
+      - $call <string> (4/26)
+      - args <array> (4/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - recoveryRehearsal <null>
+    - ref <object>
+      - explanation <string>
+      - url <string>
+    - seedOnlyRecovery <null|object>
+      - $call <string> (22/26)
+      - args <array> (22/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - socialRecovery <null|object>
+      - $call <string> (3/26)
+      - args <array> (3/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+  - releaseVelocity <object>
+    - appStoreUpdateCadence <null|string>
+    - changelogDetail <string>
+    - githubActivity <null|object>
+      - $call <string> (22/26)
+      - args <array> (22/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - latestReleaseDate <string>
+    - ref <object>
+      - explanation <string>
+      - url <string>
+    - releaseFrequency <string>
+  - stakingEarn <object>
+    - apyDisplay <null|object>
+      - $call <string> (9/26)
+      - args <array> (9/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - liquidStaking <null|object>
+      - $call <string> (6/26)
+      - args <array> (6/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - lockupDisclosure <null|object>
+      - $call <string> (9/26)
+      - args <array> (9/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - nativeStaking <null|object>
+      - $call <string> (9/26)
+      - args <array> (9/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - providerDependency <null|string>
+    - ref <object>
+      - explanation <string>
+      - url <string>
+    - rewardsClaiming <null|object>
+      - $call <string> (9/26)
+      - args <array> (9/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - validatorChoice <null|object>
+      - $call <string> (5/26)
+      - args <array> (5/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+  - supportedEcosystems <object>
+    - aptos <object>
+      - $call <string> (3/26)
+      - $ref <string> (23/26)
+      - args <array> (3/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - bitcoin <object>
+      - $call <string> (12/26)
+      - $ref <string> (14/26)
+      - args <array> (12/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - cardano <object>
+      - $call <string> (5/26)
+      - $ref <string> (21/26)
+      - args <array> (5/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - cosmos <object>
+      - $call <string> (5/26)
+      - $ref <string> (21/26)
+      - args <array> (5/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - evm <object>
+      - $call <string> (25/26)
+      - $ref <string> (1/26)
+      - args <array> (25/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - lightning <object>
+      - $call <string> (1/26)
+      - $ref <string> (25/26)
+      - args <array> (1/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - other <array>
+      - [] <object>
+        - name <string>
+        - ref <object>
+          - explanation <string>
+          - url <string>
+    - ref <object>
+      - explanation <string>
+      - url <string>
+    - solana <object>
+      - $call <string> (10/26)
+      - $ref <string> (16/26)
+      - args <array> (10/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - starknet <object>
+      - $call <string> (1/26)
+      - $ref <string> (25/26)
+      - args <array> (1/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - sui <object>
+      - $call <string> (4/26)
+      - $ref <string> (22/26)
+      - args <array> (4/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - ton <object>
+      - $call <string> (3/26)
+      - $ref <string> (23/26)
+      - args <array> (3/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
+    - xrp <object>
+      - $call <string> (4/26)
+      - $ref <string> (22/26)
+      - args <array> (4/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
 ```
-wallet
-├── data
-│   ├── features
-│   │   ├── accountSupport
-│   │   │   ├── defaultAccountType <string>  (27/37)
-│   │   │   ├── eip7702 ‹val›  (27/37)
-│   │   │   │   └── args[ ]  (9/27)
-│   │   │   │       └── contract ‹val›  (6/9)
-│   │   │   ├── eoa ‹val›  (27/37)
-│   │   │   │   └── args[ ]  (23/27)
-│   │   │   │       ├── canExportPrivateKey <bool>  (21/23)
-│   │   │   │       ├── canExportSeedPhrase <bool>  (3/23)
-│   │   │   │       └── keyDerivation
-│   │   │   │           ├── canExportSeedPhrase <bool>  (21/23)
-│   │   │   │           ├── derivationPath <string>  (21/23)
-│   │   │   │           ├── seedPhrase <string>
-│   │   │   │           └── type <string>  (21/23)
-│   │   │   ├── mpc ‹val›  (27/37)
-│   │   │   │   └── args[ ]  (2/27)
-│   │   │   ├── rawErc4337 ‹val›  (27/37)
-│   │   │   │   └── args[ ]  (8/27)
-│   │   │   │       ├── contract ‹val›  (6/8)
-│   │   │   │       ├── controllingSharesInSelfCustodyByDefault <string>  (6/8)
-│   │   │   │       ├── keyRotationTransactionGeneration <string>  (6/8)
-│   │   │   │       └── tokenTransferTransactionGeneration <string>  (6/8)
-│   │   │   └── safe ‹val›  (27/37)
-│   │   │       └── args[ ]  (5/27)
-│   │   │           ├── canDeployNew <bool>  (3/5)
-│   │   │           ├── controllingSharesInSelfCustodyByDefault <string>  (3/5)
-│   │   │           ├── keyRotationTransactionGeneration <string>  (3/5)
-│   │   │           ├── supportedOwners <string>  (3/5)
-│   │   │           ├── supportsAddingOrRemovingSigners <bool>  (3/5)
-│   │   │           ├── supportsKeyRotationWithoutModules <bool>  (3/5)
-│   │   │           └── tokenTransferTransactionGeneration <string>  (3/5)
-│   │   ├── addressResolution ⟐cited  (26/37)
-│   │   │   ├── chainSpecificAddressing
-│   │   │   │   ├── erc7828 ‹val›
-│   │   │   │   └── erc7831 ‹val›
-│   │   │   └── nonChainSpecificEnsResolution ‹val›
-│   │   │       └── args[ ]  (24/26)
-│   │   │           └── medium <string>  (18/24)
-│   │   ├── appConnectionSupport ‹val›  (11/37)
-│   │   │   └── args[ ]  (9/11)
-│   │   │       ├── requiresManufacturerConsent ⟐cited
-│   │   │       │   └── type <string>  (1/9)
-│   │   │       └── supportedConnections
-│   │   │           ├── AMBIRE <bool>  (2/9)
-│   │   │           ├── FRAME <bool>  (3/9)
-│   │   │           ├── METAMASK <bool>  (7/9)
-│   │   │           ├── OTHER <bool>  (6/9)
-│   │   │           ├── RABBY <bool>  (8/9)
-│   │   │           └── VENDOR_OPEN_SOURCE_APP <bool>  (5/9)
-│   │   ├── chainAbstraction  (26/37)
-│   │   │   ├── bridging
-│   │   │   │   ├── bridgingViaTransactionGeneration <null>  (1/26)
-│   │   │   │   ├── builtInBridging ‹val›
-│   │   │   │   │   └── args[ ]
-│   │   │   │   │       ├── feesLargerThan1bps ‹val›  (8/26)
-│   │   │   │   │       │   ├── afterSingleAction <string>  (6/8)
-│   │   │   │   │       │   ├── byDefault <string>  (6/8)
-│   │   │   │   │       │   └── fullySponsored <bool>  (6/8)
-│   │   │   │   │       ├── fromChainGas <string>  (2/26)
-│   │   │   │   │       ├── liquidityProvider <string>  (2/26)
-│   │   │   │   │       └── risksExplained <string>  (8/26)
-│   │   │   │   ├── suggestedBridging ‹val›  (25/26)
-│   │   │   │   └── trustMinimizedBridging <null>  (1/26)
-│   │   │   ├── crossChainBalances ⟐cited
-│   │   │   │   ├── ether ‹val›  (16/26)
-│   │   │   │   │   ├── crossChainSumView ‹val›  (6/16)
-│   │   │   │   │   ├── perChainBalanceViewAcrossMultipleChains ‹val›  (6/16)
-│   │   │   │   │   └── args[ ]  (3/16)
-│   │   │   │   │       ├── crossChainSumView ‹val›
-│   │   │   │   │       └── perChainBalanceViewAcrossMultipleChains ‹val›
-│   │   │   │   ├── globalAccountValue ‹val›
-│   │   │   │   │   └── args[ ]  (3/26)
-│   │   │   │   ├── perChainAccountValue ‹val›
-│   │   │   │   └── usdc ‹val›  (16/26)
-│   │   │   │       ├── crossChainSumView ‹val›  (6/16)
-│   │   │   │       ├── perChainBalanceViewAcrossMultipleChains ‹val›  (6/16)
-│   │   │   │       └── args[ ]  (3/16)
-│   │   │   │           ├── crossChainSumView ‹val›
-│   │   │   │           └── perChainBalanceViewAcrossMultipleChains ‹val›
-│   │   │   └── gasSubsidies  (1/26)
-│   │   │       ├── l1GasRelay <null>
-│   │   │       ├── l1GasTank <null>
-│   │   │       └── l2GasRelay <null>
-│   │   ├── chainConfigurability ‹val› ⟐cited  (26/37)
-│   │   │   ├── BROWSER ‹val›  (1/26)
-│   │   │   │   └── args[ ]
-│   │   │   │       ├── customChainRpcEndpoint ‹val›
-│   │   │   │       ├── l1 ‹val›
-│   │   │   │       │   └── args[ ]
-│   │   │   │       │       ├── rpcEndpointConfiguration <string>
-│   │   │   │       │       └── withNoConnectivityExceptL1RPCEndpoint
-│   │   │   │       │           ├── accountCreation ‹val›
-│   │   │   │       │           ├── accountImport ‹val›
-│   │   │   │       │           ├── erc20BalanceLookup ‹val›
-│   │   │   │       │           ├── erc20TokenSend ‹val›
-│   │   │   │       │           └── etherBalanceLookup ‹val›
-│   │   │   │       └── nonL1 ‹val›
-│   │   │   │           └── args[ ]
-│   │   │   │               └── rpcEndpointConfiguration <string>
-│   │   │   ├── customNetworks ‹val›  (1/26)
-│   │   │   ├── MOBILE <null>  (1/26)
-│   │   │   └── args[ ]  (13/26)
-│   │   │       ├── customChainRpcEndpoint ‹val›
-│   │   │       │   └── args[ ]  (2/13)
-│   │   │       ├── l1 ‹val›
-│   │   │       │   └── args[ ]  (12/13)
-│   │   │       │       ├── rpcEndpointConfiguration <string>  (11/12)
-│   │   │       │       └── withNoConnectivityExceptL1RPCEndpoint  (5/12)
-│   │   │       │           ├── accountCreation ‹val›
-│   │   │       │           ├── accountImport ‹val›
-│   │   │       │           ├── erc20BalanceLookup ‹val›
-│   │   │       │           ├── erc20TokenSend ‹val›
-│   │   │       │           └── etherBalanceLookup ‹val›
-│   │   │       └── nonL1 ‹val›  (6/13)
-│   │   │           └── args[ ]
-│   │   │               └── rpcEndpointConfiguration <string>
-│   │   ├── ecosystem  (26/37)
-│   │   │   └── delegation
-│   │   │       ├── duringEOACreation <string>  (3/26)
-│   │   │       ├── duringEOAImport <string>  (3/26)
-│   │   │       ├── duringFirst7702Operation ‹val›  (3/26)
-│   │   │       │   └── args[ ]
-│   │   │       │       ├── nonDelegationTransactionDetailsIdenticalToNormalFlow <bool>
-│   │   │       │       └── type <string>
-│   │   │       └── fee  (3/26)
-│   │   │           ├── crossChainGas ‹val›
-│   │   │           └── walletSponsored ‹val›
-│   │   ├── integration  (26/37)
-│   │   │   ├── browser ⟐cited
-│   │   │   │   ├── 1193 ‹val›  (22/26)
-│   │   │   │   │   └── args[ ]  (3/22)
-│   │   │   │   ├── 2700 ‹val›  (22/26)
-│   │   │   │   └── 6963 ‹val›  (22/26)
-│   │   │   │       └── args[ ]  (2/22)
-│   │   │   └── walletCall ‹val›
-│   │   │       └── args[ ]  (6/26)
-│   │   │           └── atomicMultiTransactions ‹val›  (5/6)
-│   │   ├── licensing ‹val›
-│   │   │   ├── coreLicense ⟐cited  (5/37)
-│   │   │   │   └── license <string>
-│   │   │   ├── type <string>  (32/37)
-│   │   │   └── walletAppLicense ⟐cited  (32/37)
-│   │   │       ├── BROWSER ⟐cited  (3/32)
-│   │   │       │   └── license <string>
-│   │   │       ├── DESKTOP ⟐cited  (1/32)
-│   │   │       │   └── license <string>
-│   │   │       ├── HARDWARE ⟐cited  (1/32)
-│   │   │       │   └── license <string>
-│   │   │       ├── license <string>  (27/32)
-│   │   │       └── MOBILE ⟐cited  (4/32)
-│   │   │           └── license <string>  (3/4)
-│   │   ├── monetization ⟐cited
-│   │   │   ├── revenueBreakdownIsPublic <bool>
-│   │   │   └── strategies
-│   │   │       ├── donations <bool|null>
-│   │   │       ├── ecosystemGrants <bool|null>
-│   │   │       ├── governanceTokenLowFloat <bool|null>
-│   │   │       ├── governanceTokenMostlyDistributed <bool|null>
-│   │   │       ├── hiddenConvenienceFees <bool|null>
-│   │   │       ├── publicOffering <bool|null>
-│   │   │       ├── selfFunded <bool|null>
-│   │   │       ├── transparentConvenienceFees <bool|null>
-│   │   │       └── ventureCapital <bool|null>
-│   │   ├── multiAddress ‹val›
-│   │   │   └── args[ ]  (13/37)
-│   │   ├── privacy
-│   │   │   ├── analytics
-│   │   │   │   ├── crashReports ‹val›
-│   │   │   │   │   └── args[ ]  (26/37)
-│   │   │   │   │       ├── entity ‹val›  (2/26)
-│   │   │   │   │       └── policy <string>  (2/26)
-│   │   │   │   └── usage ‹val›
-│   │   │   │       ├── BROWSER ‹val›  (1/37)
-│   │   │   │       │   └── args[ ]
-│   │   │   │       │       ├── entity ‹val›
-│   │   │   │       │       └── policy <string>
-│   │   │   │       ├── DESKTOP <null>  (1/37)
-│   │   │   │       ├── MOBILE <null>  (1/37)
-│   │   │   │       └── args[ ]  (24/37)
-│   │   │   │           ├── entity ‹val›  (1/24)
-│   │   │   │           └── policy <string>  (1/24)
-│   │   │   ├── appIsolation ‹val›  (26/37)
-│   │   │   │   ├── BROWSER  (2/26)
-│   │   │   │   │   ├── createInAppConnectionFlow ‹val›
-│   │   │   │   │   ├── erc7846WalletConnect ‹val›
-│   │   │   │   │   ├── ethAccounts ‹val›
-│   │   │   │   │   │   └── args[ ]
-│   │   │   │   │   │       └── defaultBehavior <string>
-│   │   │   │   │   └── useAppSpecificLastConnectedAddresses ‹val›
-│   │   │   │   ├── createInAppConnectionFlow ‹val›  (1/26)
-│   │   │   │   │   └── args[ ]
-│   │   │   │   ├── DESKTOP  (3/26)
-│   │   │   │   │   ├── createInAppConnectionFlow ‹val›  (1/3)
-│   │   │   │   │   ├── erc7846WalletConnect ‹val›  (1/3)
-│   │   │   │   │   ├── ethAccounts ‹val›  (1/3)
-│   │   │   │   │   │   └── args[ ]
-│   │   │   │   │   │       └── defaultBehavior <string>
-│   │   │   │   │   └── useAppSpecificLastConnectedAddresses ‹val›  (1/3)
-│   │   │   │   ├── erc7846WalletConnect ‹val›  (1/26)
-│   │   │   │   ├── ethAccounts ‹val›  (1/26)
-│   │   │   │   │   └── args[ ]
-│   │   │   │   │       └── defaultBehavior <string>
-│   │   │   │   ├── MOBILE <null>  (3/26)
-│   │   │   │   └── useAppSpecificLastConnectedAddresses ‹val›  (1/26)
-│   │   │   ├── dataCollection
-│   │   │   │   ├── APP_CONNECTION  (4/37)
-│   │   │   │   │   └── collected  (2/4)
-│   │   │   │   ├── BROWSER  (1/37)
-│   │   │   │   │   ├── APP_CONNECTION
-│   │   │   │   │   │   └── collected
-│   │   │   │   │   │       ├── byEntity ‹val›
-│   │   │   │   │   │       ├── dataCollection
-│   │   │   │   │   │       │   ├── ACCOUNT_ADDRESS <string>
-│   │   │   │   │   │       │   ├── endpoint ‹val›
-│   │   │   │   │   │       │   ├── IP_ADDRESS <string>
-│   │   │   │   │   │       │   ├── multiAddress
-│   │   │   │   │   │       │   │   └── type <string>
-│   │   │   │   │   │       │   ├── TRACKING_IDENTIFIER <string>
-│   │   │   │   │   │       │   └── WALLET_CONNECTED_DOMAINS <string>
-│   │   │   │   │   │       └── purposes
-│   │   │   │   │   ├── INSTALL <null>
-│   │   │   │   │   ├── MAKE_TRANSACTION
-│   │   │   │   │   │   └── collected
-│   │   │   │   │   ├── NATIVE_SWAP
-│   │   │   │   │   │   └── collected
-│   │   │   │   │   ├── ONBOARDING_IMPORT <null>
-│   │   │   │   │   ├── ONBOARDING_NEW
-│   │   │   │   │   │   ├── collected
-│   │   │   │   │   │   └── publishedOnchain <string>
-│   │   │   │   │   ├── SEND_ETHER
-│   │   │   │   │   │   └── collected
-│   │   │   │   │   ├── SEND_USDC <null>
-│   │   │   │   │   └── UNCLASSIFIED
-│   │   │   │   │       └── collected
-│   │   │   │   │           ├── byEntity ‹val›
-│   │   │   │   │           ├── dataCollection
-│   │   │   │   │           │   ├── ACCOUNT_ADDRESS <string>
-│   │   │   │   │           │   ├── CEX_ACCOUNT <string>
-│   │   │   │   │           │   ├── endpoint ‹val›
-│   │   │   │   │           │   ├── IP_ADDRESS <string>
-│   │   │   │   │           │   ├── MEMPOOL_TRANSACTIONS <string>
-│   │   │   │   │           │   ├── multiAddress
-│   │   │   │   │           │   │   └── type <string>
-│   │   │   │   │           │   ├── TRACKING_IDENTIFIER <string>
-│   │   │   │   │           │   └── USER_ACTIONS <string>
-│   │   │   │   │           └── purposes
-│   │   │   │   ├── DESKTOP <null>  (1/37)
-│   │   │   │   ├── INSTALL  (4/37)
-│   │   │   │   │   └── collected  (1/4)
-│   │   │   │   ├── MAKE_TRANSACTION  (4/37)
-│   │   │   │   │   └── collected
-│   │   │   │   │       ├── byEntity ‹val›
-│   │   │   │   │       ├── dataCollection
-│   │   │   │   │       │   ├── ACCOUNT_ADDRESS <string>
-│   │   │   │   │       │   ├── endpoint ‹val›
-│   │   │   │   │       │   ├── IP_ADDRESS <string>  (4/5)
-│   │   │   │   │       │   ├── MEMPOOL_TRANSACTIONS <string>  (4/5)
-│   │   │   │   │       │   └── multiAddress
-│   │   │   │   │       │       └── type <string>
-│   │   │   │   │       └── purposes
-│   │   │   │   ├── MOBILE <null>  (1/37)
-│   │   │   │   ├── NATIVE_SWAP  (4/37)
-│   │   │   │   │   └── collected  (2/4)
-│   │   │   │   │       ├── byEntity ‹val›
-│   │   │   │   │       ├── dataCollection
-│   │   │   │   │       │   ├── endpoint ‹val›
-│   │   │   │   │       │   └── IP_ADDRESS <string>
-│   │   │   │   │       └── purposes
-│   │   │   │   ├── ONBOARDING_IMPORT  (4/37)
-│   │   │   │   │   ├── collected  (1/4)
-│   │   │   │   │   │   ├── byEntity ‹val›
-│   │   │   │   │   │   ├── dataCollection
-│   │   │   │   │   │   │   ├── ACCOUNT_ADDRESS <string>
-│   │   │   │   │   │   │   ├── ASSETS <string>  (1/3)
-│   │   │   │   │   │   │   ├── BALANCE <string>  (1/3)
-│   │   │   │   │   │   │   ├── endpoint ‹val›
-│   │   │   │   │   │   │   ├── IP_ADDRESS <string>
-│   │   │   │   │   │   │   └── multiAddress
-│   │   │   │   │   │   │       └── type <string>
-│   │   │   │   │   │   └── purposes
-│   │   │   │   │   └── publishedOnchain <string>  (1/4)
-│   │   │   │   ├── ONBOARDING_NEW  (4/37)
-│   │   │   │   │   ├── collected
-│   │   │   │   │   │   ├── byEntity ‹val›
-│   │   │   │   │   │   ├── dataCollection
-│   │   │   │   │   │   │   ├── ACCOUNT_ADDRESS <string>
-│   │   │   │   │   │   │   ├── ASSETS <string>  (1/6)
-│   │   │   │   │   │   │   ├── BALANCE <string>  (1/6)
-│   │   │   │   │   │   │   ├── CEX_ACCOUNT <string>  (1/6)
-│   │   │   │   │   │   │   ├── endpoint ‹val›
-│   │   │   │   │   │   │   ├── FARCASTER_ACCOUNT <string>  (2/6)
-│   │   │   │   │   │   │   ├── IP_ADDRESS <string>
-│   │   │   │   │   │   │   └── multiAddress  (4/6)
-│   │   │   │   │   │   │       └── type <string>
-│   │   │   │   │   │   └── purposes
-│   │   │   │   │   └── publishedOnchain ⟐cited
-│   │   │   │   │       ├── PSEUDONYM <string>  (1/4)
-│   │   │   │   │       └── purposes  (1/4)
-│   │   │   │   ├── SEND_ETHER  (4/37)
-│   │   │   │   │   └── collected
-│   │   │   │   ├── SEND_USDC  (4/37)
-│   │   │   │   │   └── collected  (1/4)
-│   │   │   │   │       ├── byEntity ‹val›
-│   │   │   │   │       ├── dataCollection
-│   │   │   │   │       │   ├── ACCOUNT_ADDRESS <string>
-│   │   │   │   │       │   ├── ASSETS <string>
-│   │   │   │   │       │   ├── BALANCE <string>
-│   │   │   │   │       │   ├── endpoint ‹val›
-│   │   │   │   │       │   ├── IP_ADDRESS <string>
-│   │   │   │   │       │   └── multiAddress
-│   │   │   │   │       │       └── type <string>
-│   │   │   │   │       └── purposes
-│   │   │   │   └── UNCLASSIFIED  (3/37)
-│   │   │   │       └── collected
-│   │   │   │           ├── byEntity ‹val›
-│   │   │   │           ├── dataCollection
-│   │   │   │           │   ├── ACCOUNT_ADDRESS <string>  (4/6)
-│   │   │   │           │   ├── BALANCE <string>  (1/6)
-│   │   │   │           │   ├── endpoint ‹val›
-│   │   │   │           │   ├── IP_ADDRESS <string>
-│   │   │   │           │   ├── MEMPOOL_TRANSACTIONS <string>  (1/6)
-│   │   │   │           │   ├── multiAddress  (2/6)
-│   │   │   │           │   │   └── type <string>
-│   │   │   │           │   ├── PSEUDONYM <string>  (2/6)
-│   │   │   │           │   └── USER_ACTIONS <string>  (1/6)
-│   │   │   │           └── purposes
-│   │   │   ├── hardwarePrivacy ‹val›  (11/37)
-│   │   │   │   ├── details <string>  (2/11)
-│   │   │   │   ├── inspectableRemoteCalls <string>  (2/11)
-│   │   │   │   ├── phoningHome <string>  (2/11)
-│   │   │   │   ├── type <string>  (2/11)
-│   │   │   │   ├── url <string>  (1/11)
-│   │   │   │   ├── wirelessPrivacy <string>  (2/11)
-│   │   │   │   └── args[ ]  (1/11)
-│   │   │   │       ├── inspectableRemoteCalls <string>
-│   │   │   │       ├── phoningHome <string>
-│   │   │   │       ├── type <string>
-│   │   │   │       └── wirelessPrivacy <string>
-│   │   │   ├── privacyPolicy <string|null>
-│   │   │   └── transactionPrivacy
-│   │   │       ├── defaultFungibleTokenTransferMode <string>  (26/37)
-│   │   │       ├── PRIVACY_POOLS ‹val›  (26/37)
-│   │   │       │   └── args[ ]  (1/26)
-│   │   │       ├── RAILGUN ‹val›  (26/37)
-│   │   │       ├── STEALTH_ADDRESSES ‹val›  (26/37)
-│   │   │       │   └── args[ ]  (1/26)
-│   │   │       └── TORNADO_CASH_NOVA ‹val›  (26/37)
-│   │   ├── profile <string>
-│   │   ├── security
-│   │   │   ├── accountRecovery ‹val›
-│   │   │   │   ├── guardianRecovery ‹val›  (8/37)
-│   │   │   │   │   └── args[ ]  (2/8)
-│   │   │   │   │       └── minimumGuardianPolicy
-│   │   │   │   │           ├── descriptionMarkdown <string>
-│   │   │   │   │           ├── optionalGuardians
-│   │   │   │   │           │   ├── description <string>
-│   │   │   │   │           │   ├── entity ‹val›
-│   │   │   │   │           │   └── type <string>
-│   │   │   │   │           ├── optionalGuardiansMinimumConfigurable <number>
-│   │   │   │   │           ├── optionalGuardiansMinimumNeededForRecovery <number>
-│   │   │   │   │           ├── requiredGuardians
-│   │   │   │   │           │   ├── description <string>  (1/3)
-│   │   │   │   │           │   ├── entity ‹val›  (1/3)
-│   │   │   │   │           │   └── type <string>
-│   │   │   │   │           ├── secretReconstitution <string>
-│   │   │   │   │           └── type <string>
-│   │   │   │   └── args[ ]  (1/37)
-│   │   │   │       └── guardianRecovery ‹val›
-│   │   │   ├── bugBountyProgram ‹val›
-│   │   │   │   └── args[ ]  (32/37)
-│   │   │   │       ├── availability <string>  (26/32)
-│   │   │   │       ├── coverageBreadth <string>  (22/32)
-│   │   │   │       ├── dateStarted <string>  (19/32)
-│   │   │   │       ├── disclosure ‹val›  (21/32)
-│   │   │   │       │   └── args[ ]  (2/21)
-│   │   │   │       │       └── numberOfDays <number>
-│   │   │   │       ├── legalProtections ‹val›  (23/32)
-│   │   │   │       │   └── args[ ]  (9/23)
-│   │   │   │       │       └── type <string>
-│   │   │   │       ├── platform <string|null>  (26/32)
-│   │   │   │       ├── rewards ‹val›  (23/32)
-│   │   │   │       │   └── args[ ]  (16/23)
-│   │   │   │       │       ├── currency <string>
-│   │   │   │       │       ├── maximum <number>
-│   │   │   │       │       └── minimum <number>
-│   │   │   │       └── upgradePathAvailable <bool>  (28/32)
-│   │   │   ├── duressResistance
-│   │   │   │   ├── basicUnlock ⟐cited  (25/37)
-│   │   │   │   │   └── mechanisms  (24/25)
-│   │   │   │   │       ├── BIOMETRIC <bool>
-│   │   │   │   │       ├── PASSWORD <bool>
-│   │   │   │   │       ├── PATTERN <bool>
-│   │   │   │   │       └── PIN <bool>
-│   │   │   │   └── duressMode ‹val›  (27/37)
-│   │   │   │       └── args[ ]  (3/27)
-│   │   │   │           └── actions  (1/3)
-│   │   │   │               ├── DECOY_WALLET <bool>
-│   │   │   │               ├── ONCHAIN_LOCKDOWN <bool>
-│   │   │   │               ├── SELF_DESTRUCT <bool>
-│   │   │   │               └── WIPE_AND_FORWARD <bool>
-│   │   │   ├── firmware  (11/37)
-│   │   │   │   ├── customFirmware <string|null>  (7/11)
-│   │   │   │   ├── details <string>  (3/11)
-│   │   │   │   ├── firmwareOpenSource <string>  (7/11)
-│   │   │   │   ├── reproducibleBuilds <string>  (7/11)
-│   │   │   │   ├── silentUpdateProtection <string|null>  (7/11)
-│   │   │   │   ├── type <string>  (7/11)
-│   │   │   │   └── url <string>  (2/11)
-│   │   │   ├── hardwareWalletSupport ‹val› ⟐cited  (26/37)
-│   │   │   │   ├── BROWSER ⟐cited  (1/26)
-│   │   │   │   │   └── wallets
-│   │   │   │   │       ├── GRIDPLUS ‹val›
-│   │   │   │   │       │   └── args[ ]
-│   │   │   │   │       │       └── connectionTypes
-│   │   │   │   │       ├── IMKEY ‹val›
-│   │   │   │   │       │   └── args[ ]
-│   │   │   │   │       │       └── connectionTypes
-│   │   │   │   │       ├── KEYSTONE ‹val›
-│   │   │   │   │       │   └── args[ ]
-│   │   │   │   │       │       └── connectionTypes
-│   │   │   │   │       ├── LEDGER ‹val›
-│   │   │   │   │       │   └── args[ ]
-│   │   │   │   │       │       └── connectionTypes
-│   │   │   │   │       ├── ONEKEY ‹val›
-│   │   │   │   │       │   └── args[ ]
-│   │   │   │   │       │       └── connectionTypes
-│   │   │   │   │       └── TREZOR ‹val›
-│   │   │   │   │           └── args[ ]
-│   │   │   │   │               └── connectionTypes
-│   │   │   │   ├── DESKTOP ⟐cited  (1/26)
-│   │   │   │   │   └── wallets
-│   │   │   │   │       ├── GRIDPLUS ‹val›
-│   │   │   │   │       │   └── args[ ]
-│   │   │   │   │       │       └── connectionTypes
-│   │   │   │   │       ├── KEYSTONE ‹val›
-│   │   │   │   │       │   └── args[ ]
-│   │   │   │   │       │       └── connectionTypes
-│   │   │   │   │       ├── LEDGER ‹val›
-│   │   │   │   │       │   └── args[ ]
-│   │   │   │   │       │       └── connectionTypes
-│   │   │   │   │       ├── OTHER ‹val›
-│   │   │   │   │       │   └── args[ ]
-│   │   │   │   │       │       └── connectionTypes
-│   │   │   │   │       └── TREZOR ‹val›
-│   │   │   │   │           └── args[ ]
-│   │   │   │   │               └── connectionTypes
-│   │   │   │   ├── MOBILE ⟐cited  (2/26)
-│   │   │   │   │   └── wallets  (1/2)
-│   │   │   │   │       ├── IMKEY ‹val›
-│   │   │   │   │       │   └── args[ ]
-│   │   │   │   │       │       └── connectionTypes
-│   │   │   │   │       └── KEYSTONE ‹val›
-│   │   │   │   │           └── args[ ]
-│   │   │   │   │               └── connectionTypes
-│   │   │   │   ├── wallets  (22/26)
-│   │   │   │   │   ├── BITBOX ‹val›  (1/22)
-│   │   │   │   │   │   └── args[ ]
-│   │   │   │   │   │       └── connectionTypes
-│   │   │   │   │   ├── GRIDPLUS ‹val›  (6/22)
-│   │   │   │   │   │   └── args[ ]
-│   │   │   │   │   │       └── connectionTypes
-│   │   │   │   │   ├── KEYSTONE ‹val›  (8/22)
-│   │   │   │   │   │   └── args[ ]  (7/8)
-│   │   │   │   │   │       └── connectionTypes
-│   │   │   │   │   ├── LEDGER ‹val›  (14/22)
-│   │   │   │   │   │   └── args[ ]
-│   │   │   │   │   │       └── connectionTypes
-│   │   │   │   │   ├── ONEKEY ‹val›  (1/22)
-│   │   │   │   │   │   └── args[ ]
-│   │   │   │   │   │       └── connectionTypes
-│   │   │   │   │   ├── OTHER ‹val›  (1/22)
-│   │   │   │   │   │   └── args[ ]
-│   │   │   │   │   │       └── connectionTypes
-│   │   │   │   │   └── TREZOR ‹val›  (9/22)
-│   │   │   │   │       └── args[ ]
-│   │   │   │   │           └── connectionTypes
-│   │   │   │   └── args[ ]  (2/26)
-│   │   │   ├── keysHandling ⟐cited
-│   │   │   │   ├── keyGeneration <string>  (10/37)
-│   │   │   │   └── multipartyKeyReconstruction <string>  (10/37)
-│   │   │   ├── lightClient
-│   │   │   │   └── ethereumL1 ‹val›
-│   │   │   │       └── args[ ]  (15/37)
-│   │   │   ├── passkeyVerification ‹val›  (26/37)
-│   │   │   │   └── args[ ]  (6/26)
-│   │   │   │       ├── details <string>  (4/6)
-│   │   │   │       ├── library <string>  (4/6)
-│   │   │   │       └── libraryUrl <string>  (4/6)
-│   │   │   ├── publicSecurityAudits
-│   │   │   │   ├── auditDate <string>
-│   │   │   │   ├── auditor ‹val›  (37/46)
-│   │   │   │   ├── codeSnapshot  (29/46)
-│   │   │   │   │   ├── commit <string>  (13/29)
-│   │   │   │   │   ├── date <string>  (19/29)
-│   │   │   │   │   └── tag <string>  (3/29)
-│   │   │   │   ├── unpatchedFlaws
-│   │   │   │   │   ├── name <string>
-│   │   │   │   │   ├── presentStatus <string>
-│   │   │   │   │   └── severityAtAuditPublication <string>
-│   │   │   │   └── variantsScope  (43/46)
-│   │   │   │       ├── BROWSER <bool>  (2/43)
-│   │   │   │       ├── DESKTOP <bool>  (1/43)
-│   │   │   │       ├── HARDWARE <bool>  (4/43)
-│   │   │   │       └── MOBILE <bool>  (9/43)
-│   │   │   ├── scamAlerts  (26/37)
-│   │   │   │   ├── contractTransactionWarning ‹val›
-│   │   │   │   │   └── args[ ]  (24/26)
-│   │   │   │   │       ├── contractRegistry <bool|null>  (14/24)
-│   │   │   │   │       ├── leaksContractAddress <bool>  (9/24)
-│   │   │   │   │       ├── leaksUserAddress <bool>  (9/24)
-│   │   │   │   │       ├── leaksUserIp <bool>  (9/24)
-│   │   │   │   │       ├── previousContractInteractionWarning <bool|null>  (14/24)
-│   │   │   │   │       └── recentContractWarning <bool|null>  (14/24)
-│   │   │   │   ├── scamUrlWarning ‹val›
-│   │   │   │   │   └── args[ ]  (22/26)
-│   │   │   │   │       ├── leaksDomain <bool>  (2/22)
-│   │   │   │   │       ├── leaksIp <bool|null>  (7/22)
-│   │   │   │   │       ├── leaksUserAddress <bool|null>  (7/22)
-│   │   │   │   │       ├── leaksUserIp <bool|null>  (2/22)
-│   │   │   │   │       └── leaksVisitedUrl <string|null>  (7/22)
-│   │   │   │   └── sendTransactionWarning ‹val›
-│   │   │   │       └── args[ ]  (24/26)
-│   │   │   │           ├── leaksRecipient <bool>  (8/24)
-│   │   │   │           ├── leaksUserAddress <bool>  (8/24)
-│   │   │   │           ├── leaksUserIp <bool>  (8/24)
-│   │   │   │           ├── newRecipientWarning <bool|null>  (15/24)
-│   │   │   │           └── userWhitelist <bool|null>  (15/24)
-│   │   │   ├── secureElement ‹val›  (11/37)
-│   │   │   │   └── args[ ]  (8/11)
-│   │   │   │       └── secureElementType <string>
-│   │   │   ├── securityBestPractices  (32/37)
-│   │   │   │   ├── browser ⟐cited  (2/32)
-│   │   │   │   │   ├── browserExtensionHardening ‹val›
-│   │   │   │   │   │   └── args[ ]
-│   │   │   │   │   ├── keyStorageMechanism <string>
-│   │   │   │   │   └── secureRng <string>
-│   │   │   │   ├── desktop <string>  (2/32)
-│   │   │   │   └── mobile ⟐cited  (2/32)
-│   │   │   │       ├── keyStorageMechanism <string>  (1/2)
-│   │   │   │       ├── mobileAppHardening ‹val›  (1/2)
-│   │   │   │       │   └── args[ ]
-│   │   │   │       └── secureRng <string>  (1/2)
-│   │   │   ├── supplyChainDIY  (11/37)
-│   │   │   │   ├── componentSourcingComplexity <string>  (1/11)
-│   │   │   │   ├── details <string>  (1/11)
-│   │   │   │   ├── diyNoNda <string>  (1/11)
-│   │   │   │   ├── type <string>  (1/11)
-│   │   │   │   └── url <string>  (1/11)
-│   │   │   ├── supplyChainFactory  (11/37)
-│   │   │   │   ├── details <string>  (1/11)
-│   │   │   │   ├── factoryOpsecAudit <string>  (1/11)
-│   │   │   │   ├── factoryOpsecDocs <string>  (1/11)
-│   │   │   │   ├── genuineCheck <string>  (1/11)
-│   │   │   │   ├── hardwareVerification <string>  (1/11)
-│   │   │   │   ├── tamperEvidence <string>  (1/11)
-│   │   │   │   ├── tamperResistance <string>  (1/11)
-│   │   │   │   ├── type <string>  (1/11)
-│   │   │   │   └── url <string>  (1/11)
-│   │   │   ├── transactionLegibility ⟐cited
-│   │   │   │   ├── dataExtraction ‹val›  (11/37)
-│   │   │   │   │   ├── EYES <bool>  (9/11)
-│   │   │   │   │   ├── HASHES <bool>  (9/11)
-│   │   │   │   │   └── QRCODE <bool>  (9/11)
-│   │   │   │   ├── detailsDisplayed ‹val›  (11/37)
-│   │   │   │   │   ├── $spread:displaysFullTransactionDetails ‹val›  (4/11)
-│   │   │   │   │   ├── chain <string>  (6/11)
-│   │   │   │   │   ├── from <string>  (4/11)
-│   │   │   │   │   ├── gas <string>  (4/11)
-│   │   │   │   │   ├── nonce <string>  (8/11)
-│   │   │   │   │   ├── to <string>  (4/11)
-│   │   │   │   │   └── value <string>  (4/11)
-│   │   │   │   ├── erc7730 ‹val›  (26/37)
-│   │   │   │   │   └── args[ ]  (7/26)
-│   │   │   │   │       ├── AAVE_SUPPLY
-│   │   │   │   │       │   └── decoded <string>  (4/7)
-│   │   │   │   │       ├── AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND
-│   │   │   │   │       │   └── decoded <string>  (1/7)
-│   │   │   │   │       ├── SAFEWALLET_AAVE_SUPPLY_NESTED
-│   │   │   │   │       │   └── decoded <string>  (4/7)
-│   │   │   │   │       ├── SAFEWALLET_AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND
-│   │   │   │   │       │   └── decoded <string>  (4/7)
-│   │   │   │   │       └── USDC_APPROVAL
-│   │   │   │   │           └── decoded <string>  (4/7)
-│   │   │   │   ├── erc8213 ‹val›  (26/37)
-│   │   │   │   │   └── args[ ]  (8/26)
-│   │   │   │   │       ├── calldataDisplay
-│   │   │   │   │       │   ├── CALLDATA_DIGEST <string>  (7/8)
-│   │   │   │   │       │   ├── COPY_HEX_TO_CLIPBOARD <string>  (7/8)
-│   │   │   │   │       │   ├── FORMATTED <string>  (7/8)
-│   │   │   │   │       │   └── RAW_HEX <string>  (7/8)
-│   │   │   │   │       └── messageSigningLegibility
-│   │   │   │   │           ├── DOMAIN_HASH <string>  (7/8)
-│   │   │   │   │           ├── EIP712_DIGEST <string>  (7/8)
-│   │   │   │   │           ├── EIP712_STRUCT <string>  (7/8)
-│   │   │   │   │           └── MESSAGE_HASH <string>  (7/8)
-│   │   │   │   ├── transactionDetailsDisplay ‹val›  (20/37)
-│   │   │   │   │   ├── chain <string>  (9/20)
-│   │   │   │   │   ├── contractInteraction <null>  (1/20)
-│   │   │   │   │   ├── erc20Approve <null>  (1/20)
-│   │   │   │   │   ├── erc20Transfer <null>  (1/20)
-│   │   │   │   │   ├── from <string>  (9/20)
-│   │   │   │   │   ├── gas <string>  (9/20)
-│   │   │   │   │   ├── nftMint <null>  (1/20)
-│   │   │   │   │   ├── nftTransfer <null>  (1/20)
-│   │   │   │   │   ├── nonce <string|null>  (9/20)
-│   │   │   │   │   ├── rawMessageSigning <null>  (1/20)
-│   │   │   │   │   ├── to <string>  (9/20)
-│   │   │   │   │   ├── value <string>  (9/20)
-│   │   │   │   │   └── args[ ]  (3/20)
-│   │   │   │   │       ├── calldata <string>  (2/3)
-│   │   │   │   │       ├── chain <null>  (1/3)
-│   │   │   │   │       ├── from <null>  (2/3)
-│   │   │   │   │       ├── gas <null>  (1/3)
-│   │   │   │   │       ├── nonce <null>  (1/3)
-│   │   │   │   │       ├── to <null>  (2/3)
-│   │   │   │   │       └── value <null>  (2/3)
-│   │   │   │   ├── transactionRiskDetection <null>  (1/37)
-│   │   │   │   └── transactionSimulations ‹val›  (26/37)
-│   │   │   │       └── args[ ]
-│   │   │   │           ├── AAVE_SUPPLY  (13/26)
-│   │   │   │           │   └── transactionOutcome <string>  (4/13)
-│   │   │   │           ├── AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND  (12/26)
-│   │   │   │           │   └── transactionOutcome <string>  (1/12)
-│   │   │   │           ├── ERC_1155_TRANSFER  (13/26)
-│   │   │   │           │   └── transactionOutcome <string>  (4/13)
-│   │   │   │           ├── ERC_20_TRANSFER  (13/26)
-│   │   │   │           │   └── transactionOutcome <string>  (11/13)
-│   │   │   │           ├── ERC_721_TRANSFER  (13/26)
-│   │   │   │           │   └── transactionOutcome <string>  (9/13)
-│   │   │   │           ├── ETH_TRANSFER  (13/26)
-│   │   │   │           │   └── transactionOutcome <string>  (8/13)
-│   │   │   │           ├── FAILED_TRANSACTION  (12/26)
-│   │   │   │           │   ├── failure <string>  (5/12)
-│   │   │   │           │   └── transactionOutcome <string>  (1/12)
-│   │   │   │           ├── insights <string>  (3/26)
-│   │   │   │           ├── NONDETERMINISTIC_TRANSACTION  (12/26)
-│   │   │   │           │   └── nondeterminism <string>  (4/12)
-│   │   │   │           ├── SAFEWALLET_AAVE_SUPPLY_NESTED  (13/26)
-│   │   │   │           │   └── transactionOutcome <string>  (4/13)
-│   │   │   │           ├── SAFEWALLET_AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND  (13/26)
-│   │   │   │           │   └── transactionOutcome <string>  (4/13)
-│   │   │   │           ├── USDC_APPROVAL  (13/26)
-│   │   │   │           │   └── transactionOutcome <string>  (11/13)
-│   │   │   │           └── ZKSYNC_USDC_TRANSFER  (12/26)
-│   │   │   │               └── transactionOutcome <string>  (1/12)
-│   │   │   └── userSafety <null>  (11/37)
-│   │   ├── selfSovereignty
-│   │   │   ├── interoperability  (11/37)
-│   │   │   │   ├── details <string>  (2/11)
-│   │   │   │   ├── interoperability <string>  (2/11)
-│   │   │   │   ├── noSupplierLinkage <string>  (2/11)
-│   │   │   │   ├── type <string>  (2/11)
-│   │   │   │   └── url <string>  (2/11)
-│   │   │   ├── permissionsManagement ‹val› ⟐cited  (26/37)
-│   │   │   │   ├── BROWSER ‹val›  (1/26)
-│   │   │   │   │   └── args[ ]
-│   │   │   │   │       ├── erc1155Approvals <string>
-│   │   │   │   │       ├── erc20Approvals <string>
-│   │   │   │   │       └── erc721Approvals <string>
-│   │   │   │   ├── canRevokeApprovals ‹val›  (1/26)
-│   │   │   │   ├── DESKTOP <null>  (1/26)
-│   │   │   │   ├── inWalletApprovalManagement ‹val›  (1/26)
-│   │   │   │   ├── MOBILE <null>  (1/26)
-│   │   │   │   └── args[ ]  (21/26)
-│   │   │   │       ├── erc1155Approvals <string|null>  (7/21)
-│   │   │   │       ├── erc20Approvals <string|null>  (7/21)
-│   │   │   │       └── erc721Approvals <string|null>  (7/21)
-│   │   │   └── transactionSubmission  (26/37)
-│   │   │       ├── l1 ⟐cited
-│   │   │       │   ├── selfBroadcastViaDirectGossip ‹val›
-│   │   │       │   └── selfBroadcastViaSelfHostedNode ‹val›
-│   │   │       │       └── args[ ]  (7/26)
-│   │   │       └── l2 ⟐cited
-│   │   │           ├── arbitrum <string|null>  (21/26)
-│   │   │           └── opStack <string|null>  (21/26)
-│   │   └── transparency
-│   │       ├── maintenance <null>  (11/37)
-│   │       ├── operationFees  (32/37)
-│   │       │   ├── builtInErc20Swap ‹val›  (8/32)
-│   │       │   │   └── args[ ]  (7/8)
-│   │       │   │       ├── afterSingleAction <string>  (4/7)
-│   │       │   │       ├── byDefault <string>  (4/7)
-│   │       │   │       └── fullySponsored <string|bool>  (4/7)
-│   │       │   ├── erc20L1Transfer ‹val›  (8/32)
-│   │       │   │   └── args[ ]  (7/8)
-│   │       │   │       ├── afterSingleAction <string>  (3/7)
-│   │       │   │       ├── byDefault <string>  (3/7)
-│   │       │   │       └── fullySponsored <string|bool>  (3/7)
-│   │       │   ├── ethL1Transfer ‹val›  (8/32)
-│   │       │   │   └── args[ ]  (7/8)
-│   │       │   │       ├── afterSingleAction <string>  (3/7)
-│   │       │   │       ├── byDefault <string>  (3/7)
-│   │       │   │       └── fullySponsored <string|bool>  (3/7)
-│   │       │   └── uniswapUSDCToEtherSwap ‹val›  (8/32)
-│   │       │       └── args[ ]  (6/8)
-│   │       │           ├── afterSingleAction <string>  (2/6)
-│   │       │           ├── byDefault <string>  (2/6)
-│   │       │           └── fullySponsored <string|bool>  (2/6)
-│   │       ├── releaseTransparency
-│   │       │   ├── artifactSigning ‹val›
-│   │       │   │   └── args[ ]  (26/37)
-│   │       │   │       ├── publication <string>  (2/26)
-│   │       │   │       └── signer <string>  (2/26)
-│   │       │   ├── dependencyLocking ‹val›  (32/37)
-│   │       │   │   └── args[ ]  (7/32)
-│   │       │   ├── dependencyVulnerabilityScanning ‹val›  (32/37)
-│   │       │   ├── hasPublicChangelog ‹val›
-│   │       │   │   └── args[ ]  (26/37)
-│   │       │   ├── hermeticBuilds ‹val›  (32/37)
-│   │       │   │   └── args[ ]  (1/32)
-│   │       │   ├── repositoryChangeControls <null>  (32/37)
-│   │       │   └── reproducibleBuilds ‹val› ⟐cited
-│   │       │       ├── notes <string>  (1/37)
-│   │       │       ├── scope  (1/37)
-│   │       │       │   ├── ANDROID <bool>
-│   │       │       │   └── IOS <null>
-│   │       │       ├── status <string>  (1/37)
-│   │       │       └── args[ ]  (25/37)
-│   │       └── reputation <null>  (11/37)
-│   ├── metadata ‹val›
-│   │   ├── blurb <string>  (36/37)
-│   │   ├── contributors  (36/37)
-│   │   ├── displayName <string>  (36/37)
-│   │   ├── hardwareWalletManufactureType <string>  (10/37)
-│   │   ├── hardwareWalletModels  (10/37)
-│   │   │   ├── id <string>
-│   │   │   ├── isFlagship <bool>
-│   │   │   ├── name <string>
-│   │   │   └── url <string>
-│   │   ├── iconExtension <string>  (36/37)
-│   │   ├── id <string>  (36/37)
-│   │   ├── lastUpdated <string>  (36/37)
-│   │   ├── pseudonymType  (1/37)
-│   │   │   ├── plural <string>
-│   │   │   └── singular <string>
-│   │   ├── tableName <string>  (36/37)
-│   │   └── urls  (36/37)
-│   │       ├── androidManifestXml <string>  (1/36)
-│   │       ├── docs  (29/36)
-│   │       ├── extensions  (15/36)
-│   │       ├── iosInfoPlist <string>  (1/36)
-│   │       ├── repositories  (30/36)
-│   │       ├── socials  (26/36)
-│   │       │   ├── discord <string>  (11/26)
-│   │       │   ├── facebook <string>  (6/26)
-│   │       │   ├── farcaster <string>  (7/26)
-│   │       │   ├── instagram <string>  (7/26)
-│   │       │   ├── linkedin <string>  (11/26)
-│   │       │   ├── reddit <string>  (8/26)
-│   │       │   ├── telegram <string>  (5/26)
-│   │       │   ├── tiktok <string>  (2/26)
-│   │       │   ├── x <string>
-│   │       │   └── youtube <string>  (7/26)
-│   │       └── websites
-│   ├── overrides  (2/37)
-│   │   └── attributes
-│   │       ├── privacy  (1/2)
-│   │       │   └── addressCorrelation
-│   │       │       └── note <string>
-│   │       └── security  (1/2)
-│   │           └── scamPrevention
-│   │               └── note <string>
-│   └── variants
-│       ├── BROWSER <bool>  (18/37)
-│       ├── DESKTOP <bool>  (4/37)
-│       ├── HARDWARE <bool>  (11/37)
-│       └── MOBILE <bool>  (22/37)
-├── export <string>
-├── id <string>
-└── source <string>
-```
 
+## Full merged tree
+
+```text
+- wallet <object>
+  - data <object>
+    - features <object>
+      - product <object> (26/37)
+        - customerSupport <object> (26/37)
+          - aiSupport <null|object> (26/37)
+            - $call <string> (3/37)
+            - args <array> (3/37)
+          - emailSupport <object> (26/37)
+            - $call <string> (26/37)
+            - args <array> (26/37)
+          - inAppHelpCenter <null|object> (26/37)
+            - $call <string> (25/37)
+            - args <array> (25/37)
+          - liveChat <null|object> (26/37)
+            - $call <string> (4/37)
+            - args <array> (4/37)
+          - publishedSla <null> (26/37)
+          - ref <object> (26/37)
+            - explanation <string> (26/37)
+            - url <string> (26/37)
+          - scamRecoveryGuidance <null|object> (26/37)
+            - $call <string> (9/37)
+            - args <array> (9/37)
+          - transactionTroubleshooting <object> (26/37)
+            - $call <string> (26/37)
+            - args <array> (26/37)
+        - dappExperience <object> (26/37)
+          - curatedDappDirectory <null|object> (26/37)
+            - $call <string> (9/37)
+            - args <array> (9/37)
+          - dappSearch <null|object> (26/37)
+            - $call <string> (7/37)
+            - args <array> (7/37)
+          - featuredApps <null|object> (26/37)
+            - $call <string> (9/37)
+            - args <array> (9/37)
+          - inAppBrowser <null|object> (26/37)
+            - $call <string> (14/37)
+            - args <array> (14/37)
+          - ref <object> (26/37)
+            - explanation <string> (26/37)
+            - url <string> (26/37)
+          - riskRatedDiscovery <null|object> (26/37)
+            - $call <string> (21/37)
+            - args <array> (21/37)
+          - walletConnectOnlyMode <object> (26/37)
+            - $call <string> (3/37)
+            - $ref <string> (23/37)
+            - args <array> (3/37)
+        - defiPositionAwareness <object> (26/37)
+          - claimableRewards <null|object> (26/37)
+            - $call <string> (13/37)
+            - args <array> (13/37)
+          - lendingPositions <null|object> (26/37)
+            - $call <string> (9/37)
+            - args <array> (9/37)
+          - liquidationWarnings <null> (26/37)
+          - lpPositions <null|object> (26/37)
+            - $call <string> (9/37)
+            - args <array> (9/37)
+          - perProtocolBalances <null|object> (26/37)
+            - $call <string> (9/37)
+            - args <array> (9/37)
+          - ref <object> (26/37)
+            - explanation <string> (26/37)
+            - url <string> (26/37)
+          - stakingPositions <null|object> (26/37)
+            - $call <string> (13/37)
+            - args <array> (13/37)
+          - vaultPositions <null|object> (26/37)
+            - $call <string> (9/37)
+            - args <array> (9/37)
+        - developerOffering <object> (26/37)
+          - deepLinks <null|object> (26/37)
+            - $call <string> (10/37)
+            - args <array> (10/37)
+          - eip5792 <null|object> (26/37)
+            - $call <string> (6/37)
+            - $ref <string> (3/37)
+            - args <array> (6/37)
+          - eip6963 <null|object> (26/37)
+            - $call <string> (2/37)
+            - $ref <string> (9/37)
+            - args <array> (2/37)
+          - embeddedWalletSdk <null|object> (26/37)
+            - $call <string> (4/37)
+            - args <array> (4/37)
+          - mobileLinkingQuality <null|string> (26/37)
+          - ref <object> (26/37)
+            - explanation <string> (26/37)
+            - url <string> (26/37)
+          - walletConnectSupport <null|object> (26/37)
+            - $ref <string> (18/37)
+          - walletSdk <null|object> (26/37)
+            - $call <string> (23/37)
+            - args <array> (23/37)
+          - whiteLabelOffering <null|object> (26/37)
+            - $call <string> (2/37)
+            - args <array> (2/37)
+        - deviceSync <object> (26/37)
+          - cloudBackedSync <null|object> (26/37)
+            - $call <string> (6/37)
+            - args <array> (6/37)
+          - desktopMobileSync <null|object> (26/37)
+            - $call <string> (7/37)
+            - args <array> (7/37)
+          - ref <object> (26/37)
+            - explanation <string> (26/37)
+            - url <string> (26/37)
+          - requiresSameSeedImport <null|object> (26/37)
+            - $ref <string> (23/37)
+          - syncsAccounts <null|object> (26/37)
+            - $call <string> (9/37)
+            - args <array> (9/37)
+          - syncsContactsOrAddressBook <null|object> (26/37)
+            - $call <string> (4/37)
+            - args <array> (4/37)
+          - syncsSettings <null|object> (26/37)
+            - $call <string> (5/37)
+            - args <array> (5/37)
+        - fiatRamps <object> (26/37)
+          - applePay <null|object> (26/37)
+            - $call <string> (7/37)
+            - args <array> (7/37)
+          - bankTransfer <null|object> (26/37)
+            - $call <string> (5/37)
+            - args <array> (5/37)
+          - buyCrypto <null|object> (26/37)
+            - $call <string> (16/37)
+            - args <array> (16/37)
+          - card <null|object> (26/37)
+            - $call <string> (16/37)
+            - args <array> (16/37)
+          - googlePay <null|object> (26/37)
+            - $call <string> (7/37)
+            - args <array> (7/37)
+          - kycDependency <string> (26/37)
+          - providers <array> (26/37)
+          - ref <object> (26/37)
+            - explanation <string> (26/37)
+            - url <string> (26/37)
+          - regionalAvailability <null|string> (26/37)
+          - sellCrypto <null|object> (26/37)
+            - $call <string> (6/37)
+            - args <array> (6/37)
+        - gasUx <object> (26/37)
+          - gasAbstraction <null|object> (26/37)
+            - $call <string> (6/37)
+            - args <array> (6/37)
+          - gasCustomization <null|object> (26/37)
+            - $call <string> (19/37)
+            - args <array> (19/37)
+          - gasSponsorship <null|object> (26/37)
+            - $call <string> (6/37)
+            - args <array> (6/37)
+          - payGasInStablecoins <null|object> (26/37)
+            - $call <string> (4/37)
+            - args <array> (4/37)
+          - payGasWithReceivedToken <null|object> (26/37)
+            - $call <string> (2/37)
+            - args <array> (2/37)
+          - ref <object> (26/37)
+            - explanation <string> (26/37)
+            - url <string> (26/37)
+          - speedPresets <null|object> (26/37)
+            - $call <string> (25/37)
+            - args <array> (25/37)
+          - stuckTransactionRecovery <null|object> (26/37)
+            - $call <string> (11/37)
+            - args <array> (11/37)
+        - nftCapabilities <object> (26/37)
+          - collectionMetadataRefresh <null|object> (26/37)
+            - $call <string> (6/37)
+            - args <array> (6/37)
+          - display <null|object> (26/37)
+            - $call <string> (25/37)
+            - args <array> (25/37)
+          - marketplaceIntegration <null|object> (26/37)
+            - $call <string> (7/37)
+            - args <array> (7/37)
+          - mint <null|object> (26/37)
+            - $call <string> (18/37)
+            - args <array> (18/37)
+          - ref <object> (26/37)
+            - explanation <string> (26/37)
+            - url <string> (26/37)
+          - royaltiesOrOffers <null|object> (26/37)
+            - $call <string> (4/37)
+            - args <array> (4/37)
+          - send <null|object> (26/37)
+            - $call <string> (25/37)
+            - args <array> (25/37)
+          - spamNftHiding <null|object> (26/37)
+            - $call <string> (8/37)
+            - args <array> (8/37)
+        - notifications <object> (26/37)
+          - approvalAlerts <null|object> (26/37)
+            - $call <string> (13/37)
+            - args <array> (13/37)
+          - bridgeCompletion <null|object> (26/37)
+            - $call <string> (12/37)
+            - args <array> (12/37)
+          - failedTransaction <null|object> (26/37)
+            - $call <string> (12/37)
+            - args <array> (12/37)
+          - marketAlerts <null|object> (26/37)
+            - $call <string> (8/37)
+            - args <array> (8/37)
+          - priceAlerts <null|object> (26/37)
+            - $call <string> (8/37)
+            - args <array> (8/37)
+          - ref <object> (26/37)
+            - explanation <string> (26/37)
+            - url <string> (26/37)
+          - securityAlerts <null|object> (26/37)
+            - $call <string> (22/37)
+            - args <array> (22/37)
+          - sendReceive <null|object> (26/37)
+            - $call <string> (12/37)
+            - args <array> (12/37)
+        - onboardingFriction <object> (26/37)
+          - emailSignup <null|object> (26/37)
+            - $call <string> (4/37)
+            - args <array> (4/37)
+          - embeddedWalletMode <null|object> (26/37)
+            - $call <string> (2/37)
+            - args <array> (2/37)
+          - guestMode <null|object> (26/37)
+            - $call <string> (2/37)
+            - args <array> (2/37)
+          - kycRequiredForWallet <object> (26/37)
+            - $ref <string> (26/37)
+          - passkeySignup <null|object> (26/37)
+            - $call <string> (4/37)
+            - args <array> (4/37)
+          - phoneSignup <null|object> (26/37)
+            - $call <string> (2/37)
+            - args <array> (2/37)
+          - ref <object> (26/37)
+            - explanation <string> (26/37)
+            - url <string> (26/37)
+          - seedPhraseRequiredAtSignup <null|object> (26/37)
+            - $ref <string> (25/37)
+          - timeToFirstWallet <string> (26/37)
+        - platformCoverage <object> (26/37)
+          - android <null|object> (26/37)
+            - $call <string> (22/37)
+            - args <array> (22/37)
+          - browserExtension <null|object> (26/37)
+            - $call <string> (18/37)
+            - args <array> (18/37)
+          - browserNative <object> (26/37)
+            - $call <string> (1/37)
+            - $ref <string> (25/37)
+            - args <array> (1/37)
+          - chrome <null|object> (26/37)
+            - $call <string> (14/37)
+            - args <array> (14/37)
+          - desktopApp <null|object> (26/37)
+            - $call <string> (5/37)
+            - args <array> (5/37)
+          - firefox <null> (26/37)
+          - ios <null|object> (26/37)
+            - $call <string> (22/37)
+            - args <array> (22/37)
+          - mobileApp <null|object> (26/37)
+            - $call <string> (22/37)
+            - args <array> (22/37)
+          - ref <object> (26/37)
+            - explanation <string> (26/37)
+            - url <string> (26/37)
+          - safari <null> (26/37)
+          - webApp <null|object> (26/37)
+            - $call <string> (7/37)
+            - args <array> (7/37)
+        - portfolioManagement <object> (26/37)
+          - collectionViews <null|object> (26/37)
+            - $call <string> (10/37)
+            - args <array> (10/37)
+          - costBasis <null|object> (26/37)
+            - $call <string> (3/37)
+            - args <array> (3/37)
+          - multiWalletAggregation <null|object> (26/37)
+            - $ref <string> (24/37)
+          - netWorth <null|object> (26/37)
+            - $ref <string> (23/37)
+          - nftSupport <null|object> (26/37)
+            - $call <string> (25/37)
+            - args <array> (25/37)
+          - pnl <null|object> (26/37)
+            - $call <string> (5/37)
+            - args <array> (5/37)
+          - ref <object> (26/37)
+            - explanation <string> (26/37)
+            - url <string> (26/37)
+          - tokenCategories <null|object> (26/37)
+            - $call <string> (23/37)
+            - args <array> (23/37)
+          - watchOnlyWallets <null|object> (26/37)
+            - $call <string> (9/37)
+            - args <array> (9/37)
+        - pricingFeeModel <object> (26/37)
+          - bridgeFees <null|string> (26/37)
+          - cardFees <null|string> (26/37)
+          - hiddenPartnerRevenue <null> (26/37)
+          - onRampFees <null|string> (26/37)
+          - ref <object> (26/37)
+            - explanation <string> (26/37)
+            - url <string> (26/37)
+          - spreadDisclosure <null|object> (26/37)
+            - $ref <string> (8/37)
+          - subscriptionFeatures <null|object> (26/37)
+            - $call <string> (2/37)
+            - args <array> (2/37)
+          - swapFees <null|string> (26/37)
+        - recoveryUx <object> (26/37)
+          - cloudBackup <null|object> (26/37)
+            - $call <string> (9/37)
+            - args <array> (9/37)
+          - emergencyKit <null|object> (26/37)
+            - $call <string> (3/37)
+            - args <array> (3/37)
+          - guardianRecovery <null|object> (26/37)
+            - $call <string> (3/37)
+            - args <array> (3/37)
+          - passkeyRecovery <null|object> (26/37)
+            - $call <string> (4/37)
+            - args <array> (4/37)
+          - recoveryRehearsal <null> (26/37)
+          - ref <object> (26/37)
+            - explanation <string> (26/37)
+            - url <string> (26/37)
+          - seedOnlyRecovery <null|object> (26/37)
+            - $call <string> (22/37)
+            - args <array> (22/37)
+          - socialRecovery <null|object> (26/37)
+            - $call <string> (3/37)
+            - args <array> (3/37)
+        - releaseVelocity <object> (26/37)
+          - appStoreUpdateCadence <null|string> (26/37)
+          - changelogDetail <string> (26/37)
+          - githubActivity <null|object> (26/37)
+            - $call <string> (22/37)
+            - args <array> (22/37)
+          - latestReleaseDate <string> (26/37)
+          - ref <object> (26/37)
+            - explanation <string> (26/37)
+            - url <string> (26/37)
+          - releaseFrequency <string> (26/37)
+        - stakingEarn <object> (26/37)
+          - apyDisplay <null|object> (26/37)
+            - $call <string> (9/37)
+            - args <array> (9/37)
+          - liquidStaking <null|object> (26/37)
+            - $call <string> (6/37)
+            - args <array> (6/37)
+          - lockupDisclosure <null|object> (26/37)
+            - $call <string> (9/37)
+            - args <array> (9/37)
+          - nativeStaking <null|object> (26/37)
+            - $call <string> (9/37)
+            - args <array> (9/37)
+          - providerDependency <null|string> (26/37)
+          - ref <object> (26/37)
+            - explanation <string> (26/37)
+            - url <string> (26/37)
+          - rewardsClaiming <null|object> (26/37)
+            - $call <string> (9/37)
+            - args <array> (9/37)
+          - validatorChoice <null|object> (26/37)
+            - $call <string> (5/37)
+            - args <array> (5/37)
+        - supportedEcosystems <object> (26/37)
+          - aptos <object> (26/37)
+            - $call <string> (3/37)
+            - $ref <string> (23/37)
+            - args <array> (3/37)
+          - bitcoin <object> (26/37)
+            - $call <string> (12/37)
+            - $ref <string> (14/37)
+            - args <array> (12/37)
+          - cardano <object> (26/37)
+            - $call <string> (5/37)
+            - $ref <string> (21/37)
+            - args <array> (5/37)
+          - cosmos <object> (26/37)
+            - $call <string> (5/37)
+            - $ref <string> (21/37)
+            - args <array> (5/37)
+          - evm <object> (26/37)
+            - $call <string> (25/37)
+            - $ref <string> (1/37)
+            - args <array> (25/37)
+          - lightning <object> (26/37)
+            - $call <string> (1/37)
+            - $ref <string> (25/37)
+            - args <array> (1/37)
+          - other <array> (26/37)
+          - ref <object> (26/37)
+            - explanation <string> (26/37)
+            - url <string> (26/37)
+          - solana <object> (26/37)
+            - $call <string> (10/37)
+            - $ref <string> (16/37)
+            - args <array> (10/37)
+          - starknet <object> (26/37)
+            - $call <string> (1/37)
+            - $ref <string> (25/37)
+            - args <array> (1/37)
+          - sui <object> (26/37)
+            - $call <string> (4/37)
+            - $ref <string> (22/37)
+            - args <array> (4/37)
+          - ton <object> (26/37)
+            - $call <string> (3/37)
+            - $ref <string> (23/37)
+            - args <array> (3/37)
+          - xrp <object> (26/37)
+            - $call <string> (4/37)
+            - $ref <string> (22/37)
+            - args <array> (4/37)
+      - accountSupport <null|object>
+        - defaultAccountType <string> (27/37)
+        - eip7702 <object> (27/37)
+          - $call <string> (9/37)
+          - $ref <string> (18/37)
+          - args <array> (9/37)
+        - eoa <object> (27/37)
+          - $call <string> (23/37)
+          - $ref <string> (4/37)
+          - args <array> (23/37)
+        - mpc <object> (27/37)
+          - $call <string> (2/37)
+          - $ref <string> (25/37)
+          - args <array> (2/37)
+        - rawErc4337 <object> (27/37)
+          - $call <string> (8/37)
+          - $ref <string> (19/37)
+          - args <array> (8/37)
+        - safe <object> (27/37)
+          - $call <string> (5/37)
+          - $ref <string> (22/37)
+          - args <array> (5/37)
+      - addressResolution <object> (26/37)
+        - chainSpecificAddressing <object> (26/37)
+          - erc7828 <null|object> (26/37)
+            - $ref <string> (15/37)
+          - erc7831 <null|object> (26/37)
+            - $ref <string> (15/37)
+        - nonChainSpecificEnsResolution <object> (26/37)
+          - $call <string> (24/37)
+          - $ref <string> (2/37)
+          - args <array> (24/37)
+        - ref <array|object> (26/37)
+          - $ref <string> (5/37)
+          - explanation <string> (15/37)
+          - url <string> (15/37)
+          - [] <object>
+            - explanation <string>
+            - url <string>
+      - appConnectionSupport <null|object> (11/37)
+        - $call <string> (9/37)
+        - args <array> (9/37)
+          - [] <object>
+            - ref <array|string>
+            - requiresManufacturerConsent <null|object>
+            - supportedConnections <object>
+      - chainAbstraction <object> (26/37)
+        - bridging <object> (26/37)
+          - bridgingViaTransactionGeneration <null> (1/37)
+          - builtInBridging <object> (26/37)
+            - $call <string> (26/37)
+            - args <array> (26/37)
+          - suggestedBridging <null|object> (25/37)
+            - $ref <string> (9/37)
+          - trustMinimizedBridging <null> (1/37)
+        - crossChainBalances <object> (26/37)
+          - ether <null|object> (16/37)
+            - $call <string> (3/37)
+            - args <array> (3/37)
+            - crossChainSumView <object> (6/37)
+            - perChainBalanceViewAcrossMultipleChains <object> (6/37)
+          - globalAccountValue <object> (26/37)
+            - $call <string> (3/37)
+            - $ref <string> (23/37)
+            - args <array> (3/37)
+          - perChainAccountValue <null|object> (26/37)
+            - $ref <string> (18/37)
+          - ref <array|object> (25/37)
+            - $ref <string> (6/37)
+            - explanation <string> (14/37)
+            - label <string> (1/37)
+            - url <string> (14/37)
+          - usdc <null|object> (16/37)
+            - $call <string> (3/37)
+            - args <array> (3/37)
+            - crossChainSumView <object> (6/37)
+            - perChainBalanceViewAcrossMultipleChains <object> (6/37)
+        - gasSubsidies <object> (1/37)
+          - l1GasRelay <null> (1/37)
+          - l1GasTank <null> (1/37)
+          - l2GasRelay <null> (1/37)
+      - chainConfigurability <null|object> (26/37)
+        - $call <string> (13/37)
+        - $ref <string> (6/37)
+        - args <array> (13/37)
+          - [] <object>
+            - customChainRpcEndpoint <object>
+            - l1 <object>
+            - nonL1 <object> (6/13)
+            - ref <array|object>
+        - BROWSER <object> (1/37)
+          - $call <string> (1/37)
+          - args <array> (1/37)
+        - customNetworks <object> (1/37)
+          - $ref <string> (1/37)
+        - MOBILE <null> (1/37)
+        - ref <object> (1/37)
+          - explanation <string> (1/37)
+          - url <string> (1/37)
+      - ecosystem <object> (26/37)
+        - delegation <null|object|string> (26/37)
+          - duringEOACreation <string> (3/37)
+          - duringEOAImport <string> (3/37)
+          - duringFirst7702Operation <object> (3/37)
+            - $call <string> (3/37)
+            - args <array> (3/37)
+          - fee <object> (3/37)
+            - crossChainGas <object> (3/37)
+            - walletSponsored <object> (3/37)
+      - integration <object> (26/37)
+        - browser <object|string> (26/37)
+          - 1193 <null|object> (22/37)
+            - $call <string> (3/37)
+            - $ref <string> (13/37)
+            - args <array> (3/37)
+          - 2700 <null|object> (22/37)
+            - $ref <string> (9/37)
+          - 6963 <null|object> (22/37)
+            - $call <string> (2/37)
+            - $ref <string> (9/37)
+            - args <array> (2/37)
+          - ref <array|object> (22/37)
+            - $ref <string> (9/37)
+            - explanation <string> (10/37)
+            - url <string> (11/37)
+        - walletCall <null|object> (26/37)
+          - $call <string> (6/37)
+          - $ref <string> (3/37)
+          - args <array> (6/37)
+      - licensing <null|object>
+        - $ref <string> (1/37)
+        - coreLicense <object> (5/37)
+          - license <string> (5/37)
+          - ref <array|object> (5/37)
+            - explanation <string> (2/37)
+            - url <string> (2/37)
+        - type <string> (32/37)
+        - walletAppLicense <object> (32/37)
+          - BROWSER <object> (3/37)
+            - license <string> (3/37)
+            - ref <array|object> (3/37)
+          - DESKTOP <object> (1/37)
+            - license <string> (1/37)
+            - ref <array> (1/37)
+          - HARDWARE <object> (1/37)
+            - license <string> (1/37)
+            - ref <array> (1/37)
+          - license <string> (27/37)
+          - MOBILE <null|object> (4/37)
+            - license <string> (3/37)
+            - ref <array|object> (3/37)
+          - ref <array|object|string> (27/37)
+            - $ref <string> (7/37)
+            - explanation <string> (8/37)
+            - url <string> (8/37)
+      - monetization <object>
+        - ref <array|object|string>
+          - $ref <string> (19/37)
+          - explanation <string> (1/37)
+          - url <string> (1/37)
+          - [] <object>
+            - explanation <string>
+            - url <array|string>
+        - revenueBreakdownIsPublic <boolean>
+        - strategies <object>
+          - donations <boolean|null>
+          - ecosystemGrants <boolean|null>
+          - governanceTokenLowFloat <boolean|null>
+          - governanceTokenMostlyDistributed <boolean|null>
+          - hiddenConvenienceFees <boolean|null>
+          - publicOffering <boolean|null>
+          - selfFunded <boolean|null>
+          - transparentConvenienceFees <boolean|null>
+          - ventureCapital <boolean|null>
+      - multiAddress <null|object>
+        - $call <string> (13/37)
+        - $ref <string> (15/37)
+        - args <array> (13/37)
+          - [] <object>
+            - ref <array|object>
+      - privacy <object>
+        - analytics <object>
+          - crashReports <null|object>
+            - $call <string> (26/37)
+            - $ref <string> (1/37)
+            - args <array> (26/37)
+          - usage <null|object>
+            - $call <string> (24/37)
+            - $ref <string> (2/37)
+            - args <array> (24/37)
+            - BROWSER <object> (1/37)
+            - DESKTOP <null> (1/37)
+            - MOBILE <null> (1/37)
+        - appIsolation <null|object> (26/37)
+          - $ref <string> (1/37)
+          - BROWSER <object> (2/37)
+            - createInAppConnectionFlow <object> (2/37)
+            - erc7846WalletConnect <object> (2/37)
+            - ethAccounts <object> (2/37)
+            - useAppSpecificLastConnectedAddresses <object> (2/37)
+          - createInAppConnectionFlow <object> (1/37)
+            - $call <string> (1/37)
+            - args <array> (1/37)
+          - DESKTOP <null|object> (3/37)
+            - createInAppConnectionFlow <object> (1/37)
+            - erc7846WalletConnect <object> (1/37)
+            - ethAccounts <object> (1/37)
+            - useAppSpecificLastConnectedAddresses <object> (1/37)
+          - erc7846WalletConnect <object> (1/37)
+            - $ref <string> (1/37)
+          - ethAccounts <object> (1/37)
+            - $call <string> (1/37)
+            - args <array> (1/37)
+          - MOBILE <null> (3/37)
+          - useAppSpecificLastConnectedAddresses <object> (1/37)
+            - $ref <string> (1/37)
+        - dataCollection <null|object>
+          - APP_CONNECTION <object|string> (4/37)
+            - collected <array> (2/37)
+          - BROWSER <object> (1/37)
+            - APP_CONNECTION <object> (1/37)
+            - INSTALL <null> (1/37)
+            - MAKE_TRANSACTION <object> (1/37)
+            - NATIVE_SWAP <object> (1/37)
+            - ONBOARDING_IMPORT <null> (1/37)
+            - ONBOARDING_NEW <object> (1/37)
+            - SEND_ETHER <object> (1/37)
+            - SEND_USDC <null> (1/37)
+            - UNCLASSIFIED <object> (1/37)
+          - DESKTOP <null> (1/37)
+          - INSTALL <null|object> (4/37)
+            - collected <array> (1/37)
+          - MAKE_TRANSACTION <object> (4/37)
+            - collected <array> (4/37)
+          - MOBILE <null> (1/37)
+          - NATIVE_SWAP <object|string> (4/37)
+            - collected <array> (2/37)
+          - ONBOARDING_IMPORT <null|object> (4/37)
+            - collected <array> (1/37)
+            - publishedOnchain <string> (1/37)
+          - ONBOARDING_NEW <object> (4/37)
+            - collected <array> (4/37)
+            - publishedOnchain <object|string> (4/37)
+          - SEND_ETHER <object> (4/37)
+            - collected <array> (4/37)
+          - SEND_USDC <null|object> (4/37)
+            - collected <array> (1/37)
+          - UNCLASSIFIED <object> (3/37)
+            - collected <array> (3/37)
+        - hardwarePrivacy <null|object> (11/37)
+          - $call <string> (1/37)
+          - args <array> (1/37)
+          - details <string> (2/37)
+          - inspectableRemoteCalls <string> (2/37)
+          - phoningHome <string> (2/37)
+          - type <string> (2/37)
+          - url <string> (1/37)
+          - wirelessPrivacy <string> (2/37)
+        - privacyPolicy <null|string>
+        - transactionPrivacy <null|object>
+          - defaultFungibleTokenTransferMode <string> (26/37)
+          - PRIVACY_POOLS <object> (26/37)
+            - $call <string> (1/37)
+            - $ref <string> (25/37)
+            - args <array> (1/37)
+          - RAILGUN <null|object> (26/37)
+            - $ref <string> (25/37)
+          - STEALTH_ADDRESSES <object> (26/37)
+            - $call <string> (1/37)
+            - $ref <string> (25/37)
+            - args <array> (1/37)
+          - TORNADO_CASH_NOVA <null|object> (26/37)
+            - $ref <string> (25/37)
+      - profile <string>
+      - security <object>
+        - accountRecovery <null|object>
+          - $call <string> (1/37)
+          - args <array> (1/37)
+          - guardianRecovery <object> (8/37)
+            - $call <string> (2/37)
+            - $ref <string> (6/37)
+            - args <array> (2/37)
+        - bugBountyProgram <null|object>
+          - $call <string> (32/37)
+          - $ref <string> (3/37)
+          - args <array> (32/37)
+        - duressResistance <null|object>
+          - basicUnlock <object|string> (25/37)
+            - mechanisms <object> (24/37)
+            - ref <array|object> (24/37)
+          - duressMode <object> (27/37)
+            - $call <string> (3/37)
+            - $ref <string> (24/37)
+            - args <array> (3/37)
+        - firmware <null|object> (11/37)
+          - customFirmware <null|string> (7/37)
+          - details <string> (3/37)
+          - firmwareOpenSource <string> (7/37)
+          - reproducibleBuilds <string> (7/37)
+          - silentUpdateProtection <null|string> (7/37)
+          - type <string> (7/37)
+          - url <string> (2/37)
+        - hardwareWalletSupport <object> (26/37)
+          - $call <string> (2/37)
+          - args <array> (2/37)
+          - BROWSER <object> (1/37)
+            - ref <array> (1/37)
+            - wallets <object> (1/37)
+          - DESKTOP <object> (1/37)
+            - ref <array> (1/37)
+            - wallets <object> (1/37)
+          - MOBILE <null|object> (2/37)
+            - ref <array> (1/37)
+            - wallets <object> (1/37)
+          - ref <array|object> (22/37)
+            - $ref <string> (12/37)
+            - explanation <string> (6/37)
+            - url <string> (6/37)
+          - wallets <object> (22/37)
+            - BITBOX <object> (1/37)
+            - GRIDPLUS <object> (6/37)
+            - KEYSTONE <object> (8/37)
+            - LEDGER <object> (14/37)
+            - ONEKEY <object> (1/37)
+            - OTHER <object> (1/37)
+            - TREZOR <object> (9/37)
+        - keysHandling <null|object>
+          - keyGeneration <string> (10/37)
+          - multipartyKeyReconstruction <string> (10/37)
+          - ref <array|object> (10/37)
+            - $ref <string> (5/37)
+        - lightClient <object>
+          - ethereumL1 <null|object>
+            - $call <string> (15/37)
+            - $ref <string> (11/37)
+            - args <array> (15/37)
+        - passkeyVerification <object> (26/37)
+          - $call <string> (6/37)
+          - $ref <string> (20/37)
+          - args <array> (6/37)
+        - publicSecurityAudits <array|null>
+          - [] <object>
+            - auditDate <string>
+            - auditor <object> (37/46)
+            - codeSnapshot <null|object|string> (29/46)
+            - ref <array|string>
+            - unpatchedFlaws <array|string>
+            - variantsScope <object|string> (43/46)
+        - scamAlerts <object> (26/37)
+          - contractTransactionWarning <object> (26/37)
+            - $call <string> (24/37)
+            - $ref <string> (2/37)
+            - args <array> (24/37)
+          - scamUrlWarning <object> (26/37)
+            - $call <string> (22/37)
+            - $ref <string> (4/37)
+            - args <array> (22/37)
+          - sendTransactionWarning <object> (26/37)
+            - $call <string> (24/37)
+            - $ref <string> (2/37)
+            - args <array> (24/37)
+        - secureElement <null|object> (11/37)
+          - $call <string> (8/37)
+          - args <array> (8/37)
+        - securityBestPractices <null|object> (32/37)
+          - browser <object> (2/37)
+            - browserExtensionHardening <object> (2/37)
+            - keyStorageMechanism <string> (2/37)
+            - ref <object> (2/37)
+            - secureRng <string> (2/37)
+          - desktop <string> (2/37)
+          - mobile <object|string> (2/37)
+            - keyStorageMechanism <string> (1/37)
+            - mobileAppHardening <object> (1/37)
+            - ref <object> (1/37)
+            - secureRng <string> (1/37)
+        - supplyChainDIY <null|object> (11/37)
+          - componentSourcingComplexity <string> (1/37)
+          - details <string> (1/37)
+          - diyNoNda <string> (1/37)
+          - type <string> (1/37)
+          - url <string> (1/37)
+        - supplyChainFactory <null|object> (11/37)
+          - details <string> (1/37)
+          - factoryOpsecAudit <string> (1/37)
+          - factoryOpsecDocs <string> (1/37)
+          - genuineCheck <string> (1/37)
+          - hardwareVerification <string> (1/37)
+          - tamperEvidence <string> (1/37)
+          - tamperResistance <string> (1/37)
+          - type <string> (1/37)
+          - url <string> (1/37)
+        - transactionLegibility <object>
+          - dataExtraction <object> (11/37)
+            - $ref <string> (2/37)
+            - EYES <boolean> (9/37)
+            - HASHES <boolean> (9/37)
+            - QRCODE <boolean> (9/37)
+          - detailsDisplayed <null|object> (11/37)
+            - $ref <string> (2/37)
+            - $spread:displaysFullTransactionDetails <object> (4/37)
+            - chain <string> (6/37)
+            - from <string> (4/37)
+            - gas <string> (4/37)
+            - nonce <string> (8/37)
+            - to <string> (4/37)
+            - value <string> (4/37)
+          - erc7730 <null|object> (26/37)
+            - $call <string> (7/37)
+            - $ref <string> (8/37)
+            - args <array> (7/37)
+          - erc8213 <null|object> (26/37)
+            - $call <string> (8/37)
+            - args <array> (8/37)
+          - ref <array|object> (32/37)
+            - $ref <string> (9/37)
+            - explanation <string> (11/37)
+            - url <string> (11/37)
+          - transactionDetailsDisplay <null|object> (20/37)
+            - $call <string> (3/37)
+            - $ref <string> (1/37)
+            - args <array> (3/37)
+            - chain <string> (9/37)
+            - contractInteraction <null> (1/37)
+            - erc20Approve <null> (1/37)
+            - erc20Transfer <null> (1/37)
+            - from <string> (9/37)
+            - gas <string> (9/37)
+            - nftMint <null> (1/37)
+            - nftTransfer <null> (1/37)
+            - nonce <null|string> (9/37)
+            - rawMessageSigning <null> (1/37)
+            - to <string> (9/37)
+            - value <string> (9/37)
+          - transactionRiskDetection <null> (1/37)
+          - transactionSimulations <object> (26/37)
+            - $call <string> (26/37)
+            - args <array> (26/37)
+        - userSafety <null> (11/37)
+      - selfSovereignty <object>
+        - interoperability <null|object> (11/37)
+          - details <string> (2/37)
+          - interoperability <string> (2/37)
+          - noSupplierLinkage <string> (2/37)
+          - type <string> (2/37)
+          - url <string> (2/37)
+        - permissionsManagement <object> (26/37)
+          - $call <string> (21/37)
+          - $ref <string> (3/37)
+          - args <array> (21/37)
+          - BROWSER <object> (1/37)
+            - $call <string> (1/37)
+            - args <array> (1/37)
+          - canRevokeApprovals <object> (1/37)
+            - $ref <string> (1/37)
+          - DESKTOP <null> (1/37)
+          - inWalletApprovalManagement <object> (1/37)
+            - $ref <string> (1/37)
+          - MOBILE <null> (1/37)
+          - ref <object> (1/37)
+            - explanation <string> (1/37)
+            - url <string> (1/37)
+        - transactionSubmission <object> (26/37)
+          - l1 <object> (26/37)
+            - ref <array|object> (26/37)
+            - selfBroadcastViaDirectGossip <null|object> (26/37)
+            - selfBroadcastViaSelfHostedNode <object> (26/37)
+          - l2 <object> (26/37)
+            - arbitrum <null|string> (21/37)
+            - opStack <null|string> (21/37)
+            - ref <array|object> (26/37)
+      - transparency <object>
+        - maintenance <null> (11/37)
+        - operationFees <null|object> (32/37)
+          - builtInErc20Swap <object> (8/37)
+            - $call <string> (7/37)
+            - $ref <string> (1/37)
+            - args <array> (7/37)
+          - erc20L1Transfer <null|object> (8/37)
+            - $call <string> (7/37)
+            - args <array> (7/37)
+          - ethL1Transfer <null|object> (8/37)
+            - $call <string> (7/37)
+            - args <array> (7/37)
+          - uniswapUSDCToEtherSwap <null|object> (8/37)
+            - $call <string> (6/37)
+            - $ref <string> (1/37)
+            - args <array> (6/37)
+        - releaseTransparency <object>
+          - artifactSigning <null|object>
+            - $call <string> (26/37)
+            - args <array> (26/37)
+          - dependencyLocking <null|object> (32/37)
+            - $call <string> (7/37)
+            - args <array> (7/37)
+          - dependencyVulnerabilityScanning <null|object> (32/37)
+            - $ref <string> (1/37)
+          - hasPublicChangelog <null|object>
+            - $call <string> (26/37)
+            - args <array> (26/37)
+          - hermeticBuilds <null|object> (32/37)
+            - $call <string> (1/37)
+            - args <array> (1/37)
+          - repositoryChangeControls <null> (32/37)
+          - reproducibleBuilds <null|object>
+            - $call <string> (25/37)
+            - args <array> (25/37)
+            - notes <string> (1/37)
+            - ref <array> (1/37)
+            - scope <object> (1/37)
+            - status <string> (1/37)
+        - reputation <null> (11/37)
+    - metadata <object>
+      - $ref <string> (1/37)
+      - blurb <string> (36/37)
+      - contributors <array> (36/37)
+        - [] <object>
+          - $ref <string>
+      - displayName <string> (36/37)
+      - hardwareWalletManufactureType <string> (10/37)
+      - hardwareWalletModels <array> (10/37)
+        - [] <object>
+          - id <string>
+          - isFlagship <boolean>
+          - name <string>
+          - url <string>
+      - iconExtension <string> (36/37)
+      - id <string> (36/37)
+      - lastUpdated <string> (36/37)
+      - pseudonymType <object> (1/37)
+        - plural <string> (1/37)
+        - singular <string> (1/37)
+      - tableName <string> (36/37)
+      - urls <object> (36/37)
+        - androidManifestXml <string> (1/37)
+        - docs <array> (29/37)
+          - [] <string>
+        - extensions <array> (15/37)
+          - [] <string>
+        - iosInfoPlist <string> (1/37)
+        - repositories <array> (30/37)
+          - [] <string>
+        - socials <object> (26/37)
+          - discord <string> (11/37)
+          - facebook <string> (6/37)
+          - farcaster <string> (7/37)
+          - instagram <string> (7/37)
+          - linkedin <string> (11/37)
+          - reddit <string> (8/37)
+          - telegram <string> (5/37)
+          - tiktok <string> (2/37)
+          - x <string> (26/37)
+          - youtube <string> (7/37)
+        - websites <array> (36/37)
+          - [] <string>
+    - overrides <object> (2/37)
+      - attributes <object> (2/37)
+        - privacy <object> (1/37)
+          - addressCorrelation <object> (1/37)
+            - note <string> (1/37)
+        - security <object> (1/37)
+          - scamPrevention <object> (1/37)
+            - note <string> (1/37)
+    - variants <object>
+      - BROWSER <boolean> (18/37)
+      - DESKTOP <boolean> (4/37)
+      - HARDWARE <boolean> (11/37)
+      - MOBILE <boolean> (22/37)
+  - export <string>
+  - id <string>
+  - source <string>
+```

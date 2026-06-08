@@ -645,6 +645,380 @@
 						]
 					}
 				}
+			},
+			"product": {
+				"platformCoverage": {
+					"ref": {
+						"explanation": "Zeus official product, support, app listing, and repository references were used for the platform coverage product-data pass.",
+						"url": "https://github.com/greekfetacheese/zeus"
+					},
+					"desktopApp": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zeus has a desktop wallet variant recorded in the dataset.",
+									"url": "https://github.com/greekfetacheese/zeus"
+								}
+							}
+						]
+					},
+					"mobileApp": null,
+					"browserExtension": null,
+					"browserNative": {
+						"$ref": "notSupported"
+					},
+					"webApp": null,
+					"ios": null,
+					"android": null,
+					"chrome": null,
+					"firefox": null,
+					"safari": null
+				},
+				"supportedEcosystems": {
+					"ref": {
+						"explanation": "Zeus official product, support, app listing, and repository references were used for the supported ecosystems product-data pass.",
+						"url": "https://github.com/greekfetacheese/zeus"
+					},
+					"evm": {
+						"$ref": "notSupported"
+					},
+					"solana": {
+						"$ref": "notSupported"
+					},
+					"bitcoin": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zeus officially positions itself as supporting the BITCOIN ecosystem or assets in this ecosystem.",
+									"url": "https://github.com/greekfetacheese/zeus"
+								}
+							}
+						]
+					},
+					"cosmos": {
+						"$ref": "notSupported"
+					},
+					"ton": {
+						"$ref": "notSupported"
+					},
+					"starknet": {
+						"$ref": "notSupported"
+					},
+					"sui": {
+						"$ref": "notSupported"
+					},
+					"aptos": {
+						"$ref": "notSupported"
+					},
+					"xrp": {
+						"$ref": "notSupported"
+					},
+					"cardano": {
+						"$ref": "notSupported"
+					},
+					"lightning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zeus officially positions itself as supporting the LIGHTNING ecosystem or assets in this ecosystem.",
+									"url": "https://github.com/greekfetacheese/zeus"
+								}
+							}
+						]
+					},
+					"other": []
+				},
+				"dappExperience": {
+					"ref": {
+						"explanation": "Zeus official product, support, app listing, and repository references were used for the product capabilities product-data pass.",
+						"url": "https://github.com/greekfetacheese/zeus"
+					},
+					"inAppBrowser": null,
+					"curatedDappDirectory": null,
+					"dappSearch": null,
+					"walletConnectOnlyMode": {
+						"$ref": "notSupported"
+					},
+					"featuredApps": null,
+					"riskRatedDiscovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zeus provides risk warnings or risk-aware dapp/transaction discovery cues.",
+									"url": "https://github.com/greekfetacheese/zeus"
+								}
+							}
+						]
+					}
+				},
+				"fiatRamps": {
+					"ref": {
+						"explanation": "Zeus official product, support, app listing, and repository references were used for the fiat ramps product-data pass.",
+						"url": "https://github.com/greekfetacheese/zeus"
+					},
+					"buyCrypto": null,
+					"sellCrypto": null,
+					"bankTransfer": null,
+					"card": null,
+					"applePay": null,
+					"googlePay": null,
+					"kycDependency": "KYCDependency.UNKNOWN",
+					"providers": [],
+					"regionalAvailability": null
+				},
+				"gasUx": {
+					"ref": {
+						"explanation": "Zeus official product, support, app listing, and repository references were used for the gas UX product-data pass.",
+						"url": "https://github.com/greekfetacheese/zeus"
+					},
+					"gasCustomization": null,
+					"gasSponsorship": null,
+					"gasAbstraction": null,
+					"payGasInStablecoins": null,
+					"payGasWithReceivedToken": null,
+					"speedPresets": null,
+					"stuckTransactionRecovery": null
+				},
+				"recoveryUx": {
+					"ref": {
+						"explanation": "Zeus official product, support, app listing, and repository references were used for the recovery UX product-data pass.",
+						"url": "https://github.com/greekfetacheese/zeus"
+					},
+					"seedOnlyRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zeus supports recovery/import through a seed or secret recovery phrase.",
+									"url": "https://github.com/greekfetacheese/zeus"
+								}
+							}
+						]
+					},
+					"cloudBackup": null,
+					"socialRecovery": null,
+					"guardianRecovery": null,
+					"passkeyRecovery": null,
+					"emergencyKit": null,
+					"recoveryRehearsal": null
+				},
+				"onboardingFriction": {
+					"ref": {
+						"explanation": "Zeus official product, support, app listing, and repository references were used for the onboarding friction product-data pass.",
+						"url": "https://github.com/greekfetacheese/zeus"
+					},
+					"seedPhraseRequiredAtSignup": {
+						"$ref": "featureSupported"
+					},
+					"passkeySignup": null,
+					"emailSignup": null,
+					"phoneSignup": null,
+					"kycRequiredForWallet": {
+						"$ref": "notSupported"
+					},
+					"guestMode": null,
+					"embeddedWalletMode": null,
+					"timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
+				},
+				"portfolioManagement": {
+					"ref": {
+						"explanation": "Zeus official product, support, app listing, and repository references were used for the portfolio management product-data pass.",
+						"url": "https://github.com/greekfetacheese/zeus"
+					},
+					"netWorth": {
+						"$ref": "featureSupported"
+					},
+					"pnl": null,
+					"costBasis": null,
+					"tokenCategories": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zeus provides token balance and asset-list portfolio views.",
+									"url": "https://github.com/greekfetacheese/zeus"
+								}
+							}
+						]
+					},
+					"nftSupport": null,
+					"collectionViews": null,
+					"watchOnlyWallets": null,
+					"multiWalletAggregation": {
+						"$ref": "featureSupported"
+					}
+				},
+				"notifications": {
+					"ref": {
+						"explanation": "Zeus official product, support, app listing, and repository references were used for the notifications product-data pass.",
+						"url": "https://github.com/greekfetacheese/zeus"
+					},
+					"sendReceive": null,
+					"priceAlerts": null,
+					"approvalAlerts": null,
+					"bridgeCompletion": null,
+					"failedTransaction": null,
+					"securityAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zeus supports security alerts or transaction-risk warnings.",
+									"url": "https://github.com/greekfetacheese/zeus"
+								}
+							}
+						]
+					},
+					"marketAlerts": null
+				},
+				"nftCapabilities": {
+					"ref": {
+						"explanation": "Zeus official product, support, app listing, and repository references were used for the NFT capabilities product-data pass.",
+						"url": "https://github.com/greekfetacheese/zeus"
+					},
+					"display": null,
+					"send": null,
+					"mint": null,
+					"marketplaceIntegration": null,
+					"spamNftHiding": null,
+					"collectionMetadataRefresh": null,
+					"royaltiesOrOffers": null
+				},
+				"defiPositionAwareness": {
+					"ref": {
+						"explanation": "Zeus official product, support, app listing, and repository references were used for the DeFi position awareness product-data pass.",
+						"url": "https://github.com/greekfetacheese/zeus"
+					},
+					"lendingPositions": null,
+					"stakingPositions": null,
+					"lpPositions": null,
+					"vaultPositions": null,
+					"perProtocolBalances": null,
+					"claimableRewards": null,
+					"liquidationWarnings": null
+				},
+				"stakingEarn": {
+					"ref": {
+						"explanation": "Zeus official product, support, app listing, and repository references were used for the staking and earn product-data pass.",
+						"url": "https://github.com/greekfetacheese/zeus"
+					},
+					"nativeStaking": null,
+					"liquidStaking": null,
+					"validatorChoice": null,
+					"apyDisplay": null,
+					"rewardsClaiming": null,
+					"providerDependency": null,
+					"lockupDisclosure": null
+				},
+				"customerSupport": {
+					"ref": {
+						"explanation": "Zeus official product, support, app listing, and repository references were used for the customer support product-data pass.",
+						"url": "https://github.com/greekfetacheese/zeus"
+					},
+					"liveChat": null,
+					"emailSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zeus publishes support, help center, or contact paths for wallet users.",
+									"url": "https://github.com/greekfetacheese/zeus"
+								}
+							}
+						]
+					},
+					"aiSupport": null,
+					"publishedSla": null,
+					"inAppHelpCenter": null,
+					"transactionTroubleshooting": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zeus support docs include transaction or wallet troubleshooting material.",
+									"url": "https://github.com/greekfetacheese/zeus"
+								}
+							}
+						]
+					},
+					"scamRecoveryGuidance": null
+				},
+				"developerOffering": {
+					"ref": {
+						"explanation": "Zeus official product, support, app listing, and repository references were used for the developer offering product-data pass.",
+						"url": "https://github.com/greekfetacheese/zeus"
+					},
+					"walletSdk": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zeus publishes wallet developer docs, SDKs, or public wallet integration repositories.",
+									"url": "https://github.com/greekfetacheese/zeus"
+								}
+							}
+						]
+					},
+					"embeddedWalletSdk": null,
+					"whiteLabelOffering": null,
+					"walletConnectSupport": null,
+					"eip6963": null,
+					"eip5792": null,
+					"deepLinks": null,
+					"mobileLinkingQuality": null
+				},
+				"pricingFeeModel": {
+					"ref": {
+						"explanation": "Zeus official product, support, app listing, and repository references were used for the pricing and fee model product-data pass.",
+						"url": "https://github.com/greekfetacheese/zeus"
+					},
+					"swapFees": "Wallet swap/bridge fees are provider-, route-, or spread-dependent; exact bps require flow-level audit.",
+					"bridgeFees": "Bridge fees are route/provider-dependent; exact bps require flow-level audit.",
+					"onRampFees": null,
+					"spreadDisclosure": null,
+					"subscriptionFeatures": null,
+					"cardFees": null,
+					"hiddenPartnerRevenue": null
+				},
+				"releaseVelocity": {
+					"ref": {
+						"explanation": "Zeus official product, support, app listing, and repository references were used for the release velocity product-data pass.",
+						"url": "https://github.com/greekfetacheese/zeus"
+					},
+					"latestReleaseDate": "2026-01-12",
+					"releaseFrequency": "ReleaseFrequency.IRREGULAR",
+					"appStoreUpdateCadence": null,
+					"githubActivity": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Zeus has public GitHub repository activity or releases that can be tracked.",
+									"url": "https://github.com/greekfetacheese/zeus"
+								}
+							}
+						]
+					},
+					"changelogDetail": "ChangelogDetail.BASIC"
+				},
+				"deviceSync": {
+					"ref": {
+						"explanation": "Zeus official product, support, app listing, and repository references were used for the device sync product-data pass.",
+						"url": "https://github.com/greekfetacheese/zeus"
+					},
+					"syncsAccounts": null,
+					"syncsSettings": null,
+					"syncsContactsOrAddressBook": null,
+					"desktopMobileSync": null,
+					"cloudBackedSync": null,
+					"requiresSameSeedImport": {
+						"$ref": "featureSupported"
+					}
+				}
 			}
 		},
 		"variants": {

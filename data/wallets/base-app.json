@@ -578,6 +578,742 @@
 						]
 					}
 				}
+			},
+			"product": {
+				"platformCoverage": {
+					"ref": {
+						"explanation": "Base App official product, support, app listing, and repository references were used for the platform coverage product-data pass.",
+						"url": "https://base.app/"
+					},
+					"desktopApp": null,
+					"mobileApp": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App has a mobile wallet variant recorded in the dataset.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"browserExtension": null,
+					"browserNative": {
+						"$ref": "notSupported"
+					},
+					"webApp": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App offers a web app or web-first wallet surface.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"ios": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App has a mobile app surface; iOS support should be verified against app-store listings for a deeper pass.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"android": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App has a mobile app surface; Android support should be verified against app-store listings for a deeper pass.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"chrome": null,
+					"firefox": null,
+					"safari": null
+				},
+				"supportedEcosystems": {
+					"ref": {
+						"explanation": "Base App official product, support, app listing, and repository references were used for the supported ecosystems product-data pass.",
+						"url": "https://base.app/"
+					},
+					"evm": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App officially positions itself as supporting the EVM ecosystem or assets in this ecosystem.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"solana": {
+						"$ref": "notSupported"
+					},
+					"bitcoin": {
+						"$ref": "notSupported"
+					},
+					"cosmos": {
+						"$ref": "notSupported"
+					},
+					"ton": {
+						"$ref": "notSupported"
+					},
+					"starknet": {
+						"$ref": "notSupported"
+					},
+					"sui": {
+						"$ref": "notSupported"
+					},
+					"aptos": {
+						"$ref": "notSupported"
+					},
+					"xrp": {
+						"$ref": "notSupported"
+					},
+					"cardano": {
+						"$ref": "notSupported"
+					},
+					"lightning": {
+						"$ref": "notSupported"
+					},
+					"other": []
+				},
+				"dappExperience": {
+					"ref": {
+						"explanation": "Base App official product, support, app listing, and repository references were used for the product capabilities product-data pass.",
+						"url": "https://base.app/"
+					},
+					"inAppBrowser": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App provides a dapp browser or in-wallet dapp connection surface.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"curatedDappDirectory": null,
+					"dappSearch": null,
+					"walletConnectOnlyMode": {
+						"$ref": "notSupported"
+					},
+					"featuredApps": null,
+					"riskRatedDiscovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App provides risk warnings or risk-aware dapp/transaction discovery cues.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					}
+				},
+				"fiatRamps": {
+					"ref": {
+						"explanation": "Base App official product, support, app listing, and repository references were used for the fiat ramps product-data pass.",
+						"url": "https://base.app/"
+					},
+					"buyCrypto": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App documents or advertises in-wallet crypto purchase support.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"sellCrypto": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App documents or advertises sell/off-ramp support.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"bankTransfer": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App documents bank-transfer or account-provider fiat transfer paths.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"card": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App fiat purchase providers commonly support card purchases where available.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"applePay": null,
+					"googlePay": null,
+					"kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
+					"providers": [
+						{
+							"name": "Coinbase",
+							"ref": {
+								"explanation": "Base App official product/support materials name or route users through these fiat/on-ramp providers.",
+								"url": "https://base.app/"
+							}
+						}
+					],
+					"regionalAvailability": "Provider- and region-dependent availability; not an exhaustive country matrix in this pass."
+				},
+				"gasUx": {
+					"ref": {
+						"explanation": "Base App official product, support, app listing, and repository references were used for the gas UX product-data pass.",
+						"url": "https://base.app/"
+					},
+					"gasCustomization": null,
+					"gasSponsorship": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App supports sponsored or externally paid gas for at least some wallet flows.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"gasAbstraction": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App abstracts gas in at least some smart-account or payment flows.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"payGasInStablecoins": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App supports paying gas or wallet operation fees with stablecoin or non-native assets in at least some flows.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"payGasWithReceivedToken": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App supports flows where incoming/target assets can cover gas or payment operation costs.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"speedPresets": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App supports EVM transaction flows where speed/gas presets are a common wallet control; verify exact UI depth in a future pass.",
+									"url": "https://docs.base.org/get-started/base"
+								}
+							}
+						]
+					},
+					"stuckTransactionRecovery": null
+				},
+				"recoveryUx": {
+					"ref": {
+						"explanation": "Base App official product, support, app listing, and repository references were used for the recovery UX product-data pass.",
+						"url": "https://base.app/"
+					},
+					"seedOnlyRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App supports recovery/import through a seed or secret recovery phrase.",
+									"url": "https://docs.base.org/get-started/base"
+								}
+							}
+						]
+					},
+					"cloudBackup": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App supports cloud-backed wallet backup or recovery for at least some account flows.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"socialRecovery": null,
+					"guardianRecovery": null,
+					"passkeyRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App supports passkey-based wallet access or recovery for at least some account flows.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"emergencyKit": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App documents an emergency/recovery-kit style recovery artifact or process.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"recoveryRehearsal": null
+				},
+				"onboardingFriction": {
+					"ref": {
+						"explanation": "Base App official product, support, app listing, and repository references were used for the onboarding friction product-data pass.",
+						"url": "https://base.app/"
+					},
+					"seedPhraseRequiredAtSignup": {
+						"$ref": "notSupported"
+					},
+					"passkeySignup": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App supports passkey-first signup or passkey smart-account onboarding.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"emailSignup": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App supports email-based onboarding or recovery for at least some wallet flows.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"phoneSignup": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App supports phone-number-based onboarding or payment/account discovery for at least some flows.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"kycRequiredForWallet": {
+						"$ref": "notSupported"
+					},
+					"guestMode": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App supports lightweight account creation before seed-phrase style setup.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"embeddedWalletMode": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App supports an embedded or app-integrated wallet mode.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"timeToFirstWallet": "OnboardingSpeed.PASSKEY_OR_EMAIL_FIRST"
+				},
+				"portfolioManagement": {
+					"ref": {
+						"explanation": "Base App official product, support, app listing, and repository references were used for the portfolio management product-data pass.",
+						"url": "https://base.app/"
+					},
+					"netWorth": {
+						"$ref": "featureSupported"
+					},
+					"pnl": null,
+					"costBasis": null,
+					"tokenCategories": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App provides token balance and asset-list portfolio views.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"nftSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App supports NFT display or NFT portfolio management in at least one wallet surface.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"collectionViews": null,
+					"watchOnlyWallets": null,
+					"multiWalletAggregation": null
+				},
+				"notifications": {
+					"ref": {
+						"explanation": "Base App official product, support, app listing, and repository references were used for the notifications product-data pass.",
+						"url": "https://base.app/"
+					},
+					"sendReceive": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App supports notifications for wallet activity such as sends or receives.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"priceAlerts": null,
+					"approvalAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App supports approval-related alerts, approval review, or permission warnings.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"bridgeCompletion": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App supports bridging plus notifications for wallet activity; exact bridge-completion notification behavior should be deep-audited later.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"failedTransaction": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App supports wallet activity notifications that can include failed or completed transaction status.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"securityAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App supports security alerts or transaction-risk warnings.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"marketAlerts": null
+				},
+				"nftCapabilities": {
+					"ref": {
+						"explanation": "Base App official product, support, app listing, and repository references were used for the NFT capabilities product-data pass.",
+						"url": "https://base.app/"
+					},
+					"display": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App supports displaying NFTs or collectibles in the wallet.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"send": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App supports wallet NFT transfer flows or NFT asset management.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"mint": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App can connect to dapps and sign NFT mint transactions.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"marketplaceIntegration": null,
+					"spamNftHiding": null,
+					"collectionMetadataRefresh": null,
+					"royaltiesOrOffers": null
+				},
+				"defiPositionAwareness": {
+					"ref": {
+						"explanation": "Base App official product, support, app listing, and repository references were used for the DeFi position awareness product-data pass.",
+						"url": "https://base.app/"
+					},
+					"lendingPositions": null,
+					"stakingPositions": null,
+					"lpPositions": null,
+					"vaultPositions": null,
+					"perProtocolBalances": null,
+					"claimableRewards": null,
+					"liquidationWarnings": null
+				},
+				"stakingEarn": {
+					"ref": {
+						"explanation": "Base App official product, support, app listing, and repository references were used for the staking and earn product-data pass.",
+						"url": "https://base.app/"
+					},
+					"nativeStaking": null,
+					"liquidStaking": null,
+					"validatorChoice": null,
+					"apyDisplay": null,
+					"rewardsClaiming": null,
+					"providerDependency": null,
+					"lockupDisclosure": null
+				},
+				"customerSupport": {
+					"ref": {
+						"explanation": "Base App official product, support, app listing, and repository references were used for the customer support product-data pass.",
+						"url": "https://base.app/"
+					},
+					"liveChat": null,
+					"emailSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App publishes support, help center, or contact paths for wallet users.",
+									"url": "https://docs.base.org/get-started/base"
+								}
+							}
+						]
+					},
+					"aiSupport": null,
+					"publishedSla": null,
+					"inAppHelpCenter": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App provides in-app or product-linked help/support content.",
+									"url": "https://docs.base.org/get-started/base"
+								}
+							}
+						]
+					},
+					"transactionTroubleshooting": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App support docs include transaction or wallet troubleshooting material.",
+									"url": "https://docs.base.org/get-started/base"
+								}
+							}
+						]
+					},
+					"scamRecoveryGuidance": null
+				},
+				"developerOffering": {
+					"ref": {
+						"explanation": "Base App official product, support, app listing, and repository references were used for the developer offering product-data pass.",
+						"url": "https://base.app/"
+					},
+					"walletSdk": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App publishes wallet developer docs, SDKs, or public wallet integration repositories.",
+									"url": "https://github.com/coinbase/smart-wallet"
+								}
+							}
+						]
+					},
+					"embeddedWalletSdk": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App offers embedded wallet or embedded account SDK capabilities.",
+									"url": "https://github.com/coinbase/smart-wallet"
+								}
+							}
+						]
+					},
+					"whiteLabelOffering": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App offers white-label or app-embedded wallet infrastructure.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"walletConnectSupport": {
+						"$ref": "featureSupported"
+					},
+					"eip6963": {
+						"$ref": "featureSupported"
+					},
+					"eip5792": null,
+					"deepLinks": null,
+					"mobileLinkingQuality": null
+				},
+				"pricingFeeModel": {
+					"ref": {
+						"explanation": "Base App official product, support, app listing, and repository references were used for the pricing and fee model product-data pass.",
+						"url": "https://base.app/"
+					},
+					"swapFees": "Wallet swap/bridge fees are provider-, route-, or spread-dependent; exact bps require flow-level audit.",
+					"bridgeFees": "Bridge fees are route/provider-dependent; exact bps require flow-level audit.",
+					"onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
+					"spreadDisclosure": null,
+					"subscriptionFeatures": null,
+					"cardFees": "Card fees are provider-dependent where card purchase is available.",
+					"hiddenPartnerRevenue": null
+				},
+				"releaseVelocity": {
+					"ref": {
+						"explanation": "Base App official product, support, app listing, and repository references were used for the release velocity product-data pass.",
+						"url": "https://base.app/"
+					},
+					"latestReleaseDate": "2026-03-19",
+					"releaseFrequency": "ReleaseFrequency.IRREGULAR",
+					"appStoreUpdateCadence": "App-store cadence should be measured from current app-store release history in a deeper pass.",
+					"githubActivity": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App has public GitHub repository activity or releases that can be tracked.",
+									"url": "https://github.com/coinbase/smart-wallet"
+								}
+							}
+						]
+					},
+					"changelogDetail": "ChangelogDetail.BASIC"
+				},
+				"deviceSync": {
+					"ref": {
+						"explanation": "Base App official product, support, app listing, and repository references were used for the device sync product-data pass.",
+						"url": "https://base.app/"
+					},
+					"syncsAccounts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App supports account synchronization or account reuse across devices.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"syncsSettings": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App supports syncing at least some wallet settings or app state across installations.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"syncsContactsOrAddressBook": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App supports contacts, usernames, or address-book style account discovery across devices.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"desktopMobileSync": null,
+					"cloudBackedSync": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Base App supports cloud-backed account or wallet sync/backup.",
+									"url": "https://base.app/"
+								}
+							}
+						]
+					},
+					"requiresSameSeedImport": {
+						"$ref": "notSupported"
+					}
+				}
 			}
 		},
 		"variants": {

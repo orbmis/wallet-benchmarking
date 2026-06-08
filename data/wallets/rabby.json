@@ -1156,6 +1156,603 @@
 						]
 					}
 				}
+			},
+			"product": {
+				"platformCoverage": {
+					"ref": {
+						"explanation": "Rabby official product, support, app listing, and repository references were used for the platform coverage product-data pass.",
+						"url": "https://rabby.io"
+					},
+					"desktopApp": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby has a desktop wallet variant recorded in the dataset.",
+									"url": "https://rabby.io"
+								}
+							}
+						]
+					},
+					"mobileApp": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby has a mobile wallet variant recorded in the dataset.",
+									"url": "https://rabby.io"
+								}
+							}
+						]
+					},
+					"browserExtension": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby publishes a browser extension listing.",
+									"url": "https://chromewebstore.google.com/detail/rabby-wallet/acmacodkjbdgmoleebolmdjonilkdbch"
+								}
+							}
+						]
+					},
+					"browserNative": {
+						"$ref": "notSupported"
+					},
+					"webApp": null,
+					"ios": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby has a mobile app surface; iOS support should be verified against app-store listings for a deeper pass.",
+									"url": "https://rabby.io"
+								}
+							}
+						]
+					},
+					"android": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby has a mobile app surface; Android support should be verified against app-store listings for a deeper pass.",
+									"url": "https://rabby.io"
+								}
+							}
+						]
+					},
+					"chrome": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby has a Chrome Web Store extension listing.",
+									"url": "https://chromewebstore.google.com/detail/rabby-wallet/acmacodkjbdgmoleebolmdjonilkdbch"
+								}
+							}
+						]
+					},
+					"firefox": null,
+					"safari": null
+				},
+				"supportedEcosystems": {
+					"ref": {
+						"explanation": "Rabby official product, support, app listing, and repository references were used for the supported ecosystems product-data pass.",
+						"url": "https://rabby.io"
+					},
+					"evm": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby officially positions itself as supporting the EVM ecosystem or assets in this ecosystem.",
+									"url": "https://rabby.io"
+								}
+							}
+						]
+					},
+					"solana": {
+						"$ref": "notSupported"
+					},
+					"bitcoin": {
+						"$ref": "notSupported"
+					},
+					"cosmos": {
+						"$ref": "notSupported"
+					},
+					"ton": {
+						"$ref": "notSupported"
+					},
+					"starknet": {
+						"$ref": "notSupported"
+					},
+					"sui": {
+						"$ref": "notSupported"
+					},
+					"aptos": {
+						"$ref": "notSupported"
+					},
+					"xrp": {
+						"$ref": "notSupported"
+					},
+					"cardano": {
+						"$ref": "notSupported"
+					},
+					"lightning": {
+						"$ref": "notSupported"
+					},
+					"other": []
+				},
+				"dappExperience": {
+					"ref": {
+						"explanation": "Rabby official product, support, app listing, and repository references were used for the product capabilities product-data pass.",
+						"url": "https://rabby.io"
+					},
+					"inAppBrowser": null,
+					"curatedDappDirectory": null,
+					"dappSearch": null,
+					"walletConnectOnlyMode": {
+						"$ref": "notSupported"
+					},
+					"featuredApps": null,
+					"riskRatedDiscovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby provides risk warnings or risk-aware dapp/transaction discovery cues.",
+									"url": "https://rabby.io"
+								}
+							}
+						]
+					}
+				},
+				"fiatRamps": {
+					"ref": {
+						"explanation": "Rabby official product, support, app listing, and repository references were used for the fiat ramps product-data pass.",
+						"url": "https://rabby.io"
+					},
+					"buyCrypto": null,
+					"sellCrypto": null,
+					"bankTransfer": null,
+					"card": null,
+					"applePay": null,
+					"googlePay": null,
+					"kycDependency": "KYCDependency.UNKNOWN",
+					"providers": [],
+					"regionalAvailability": null
+				},
+				"gasUx": {
+					"ref": {
+						"explanation": "Rabby official product, support, app listing, and repository references were used for the gas UX product-data pass.",
+						"url": "https://rabby.io"
+					},
+					"gasCustomization": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby supports standard EVM transaction sending where gas settings can be inspected or controlled in the wallet flow.",
+									"url": "https://rabbykit.rabby.io/"
+								}
+							}
+						]
+					},
+					"gasSponsorship": null,
+					"gasAbstraction": null,
+					"payGasInStablecoins": null,
+					"payGasWithReceivedToken": null,
+					"speedPresets": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby supports EVM transaction flows where speed/gas presets are a common wallet control; verify exact UI depth in a future pass.",
+									"url": "https://rabbykit.rabby.io/"
+								}
+							}
+						]
+					},
+					"stuckTransactionRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby support/product materials include stuck or pending transaction recovery guidance.",
+									"url": "https://rabbykit.rabby.io/"
+								}
+							}
+						]
+					}
+				},
+				"recoveryUx": {
+					"ref": {
+						"explanation": "Rabby official product, support, app listing, and repository references were used for the recovery UX product-data pass.",
+						"url": "https://rabby.io"
+					},
+					"seedOnlyRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby supports recovery/import through a seed or secret recovery phrase.",
+									"url": "https://rabbykit.rabby.io/"
+								}
+							}
+						]
+					},
+					"cloudBackup": null,
+					"socialRecovery": null,
+					"guardianRecovery": null,
+					"passkeyRecovery": null,
+					"emergencyKit": null,
+					"recoveryRehearsal": null
+				},
+				"onboardingFriction": {
+					"ref": {
+						"explanation": "Rabby official product, support, app listing, and repository references were used for the onboarding friction product-data pass.",
+						"url": "https://rabby.io"
+					},
+					"seedPhraseRequiredAtSignup": {
+						"$ref": "featureSupported"
+					},
+					"passkeySignup": null,
+					"emailSignup": null,
+					"phoneSignup": null,
+					"kycRequiredForWallet": {
+						"$ref": "notSupported"
+					},
+					"guestMode": null,
+					"embeddedWalletMode": null,
+					"timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
+				},
+				"portfolioManagement": {
+					"ref": {
+						"explanation": "Rabby official product, support, app listing, and repository references were used for the portfolio management product-data pass.",
+						"url": "https://rabby.io"
+					},
+					"netWorth": {
+						"$ref": "featureSupported"
+					},
+					"pnl": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby provides profit/loss or performance tracking in portfolio views.",
+									"url": "https://rabby.io"
+								}
+							}
+						]
+					},
+					"costBasis": null,
+					"tokenCategories": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby provides token balance and asset-list portfolio views.",
+									"url": "https://rabby.io"
+								}
+							}
+						]
+					},
+					"nftSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby supports NFT display or NFT portfolio management in at least one wallet surface.",
+									"url": "https://rabby.io"
+								}
+							}
+						]
+					},
+					"collectionViews": null,
+					"watchOnlyWallets": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby supports watch-only addresses, imported account monitoring, or external account portfolio tracking.",
+									"url": "https://rabby.io"
+								}
+							}
+						]
+					},
+					"multiWalletAggregation": {
+						"$ref": "featureSupported"
+					}
+				},
+				"notifications": {
+					"ref": {
+						"explanation": "Rabby official product, support, app listing, and repository references were used for the notifications product-data pass.",
+						"url": "https://rabby.io"
+					},
+					"sendReceive": null,
+					"priceAlerts": null,
+					"approvalAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby supports approval-related alerts, approval review, or permission warnings.",
+									"url": "https://rabby.io"
+								}
+							}
+						]
+					},
+					"bridgeCompletion": null,
+					"failedTransaction": null,
+					"securityAlerts": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby supports security alerts or transaction-risk warnings.",
+									"url": "https://rabby.io"
+								}
+							}
+						]
+					},
+					"marketAlerts": null
+				},
+				"nftCapabilities": {
+					"ref": {
+						"explanation": "Rabby official product, support, app listing, and repository references were used for the NFT capabilities product-data pass.",
+						"url": "https://rabby.io"
+					},
+					"display": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby supports displaying NFTs or collectibles in the wallet.",
+									"url": "https://rabby.io"
+								}
+							}
+						]
+					},
+					"send": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby supports wallet NFT transfer flows or NFT asset management.",
+									"url": "https://rabby.io"
+								}
+							}
+						]
+					},
+					"mint": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby can connect to dapps and sign NFT mint transactions.",
+									"url": "https://rabby.io"
+								}
+							}
+						]
+					},
+					"marketplaceIntegration": null,
+					"spamNftHiding": null,
+					"collectionMetadataRefresh": null,
+					"royaltiesOrOffers": null
+				},
+				"defiPositionAwareness": {
+					"ref": {
+						"explanation": "Rabby official product, support, app listing, and repository references were used for the DeFi position awareness product-data pass.",
+						"url": "https://rabby.io"
+					},
+					"lendingPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby surfaces DeFi lending or protocol positions in wallet/portfolio views.",
+									"url": "https://rabby.io"
+								}
+							}
+						]
+					},
+					"stakingPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby surfaces staking or earn positions in wallet/portfolio views.",
+									"url": "https://rabby.io"
+								}
+							}
+						]
+					},
+					"lpPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby surfaces liquidity-pool or DeFi protocol positions.",
+									"url": "https://rabby.io"
+								}
+							}
+						]
+					},
+					"vaultPositions": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby surfaces vault or protocol positions.",
+									"url": "https://rabby.io"
+								}
+							}
+						]
+					},
+					"perProtocolBalances": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby groups DeFi holdings by protocol or app.",
+									"url": "https://rabby.io"
+								}
+							}
+						]
+					},
+					"claimableRewards": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby surfaces claimable rewards or earn balances.",
+									"url": "https://rabby.io"
+								}
+							}
+						]
+					},
+					"liquidationWarnings": null
+				},
+				"stakingEarn": {
+					"ref": {
+						"explanation": "Rabby official product, support, app listing, and repository references were used for the staking and earn product-data pass.",
+						"url": "https://rabby.io"
+					},
+					"nativeStaking": null,
+					"liquidStaking": null,
+					"validatorChoice": null,
+					"apyDisplay": null,
+					"rewardsClaiming": null,
+					"providerDependency": null,
+					"lockupDisclosure": null
+				},
+				"customerSupport": {
+					"ref": {
+						"explanation": "Rabby official product, support, app listing, and repository references were used for the customer support product-data pass.",
+						"url": "https://rabby.io"
+					},
+					"liveChat": null,
+					"emailSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby publishes support, help center, or contact paths for wallet users.",
+									"url": "https://rabbykit.rabby.io/"
+								}
+							}
+						]
+					},
+					"aiSupport": null,
+					"publishedSla": null,
+					"inAppHelpCenter": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby provides in-app or product-linked help/support content.",
+									"url": "https://rabbykit.rabby.io/"
+								}
+							}
+						]
+					},
+					"transactionTroubleshooting": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby support docs include transaction or wallet troubleshooting material.",
+									"url": "https://rabbykit.rabby.io/"
+								}
+							}
+						]
+					},
+					"scamRecoveryGuidance": null
+				},
+				"developerOffering": {
+					"ref": {
+						"explanation": "Rabby official product, support, app listing, and repository references were used for the developer offering product-data pass.",
+						"url": "https://rabby.io"
+					},
+					"walletSdk": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby publishes wallet developer docs, SDKs, or public wallet integration repositories.",
+									"url": "https://github.com/RabbyHub/Rabby"
+								}
+							}
+						]
+					},
+					"embeddedWalletSdk": null,
+					"whiteLabelOffering": null,
+					"walletConnectSupport": {
+						"$ref": "featureSupported"
+					},
+					"eip6963": {
+						"$ref": "featureSupported"
+					},
+					"eip5792": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": "https://github.com/RabbyHub/Rabby/blob/fa9d0988e944f67e70da67d852cf3041d3b162da/src/background/controller/provider/controller.ts#L402-L407"
+							}
+						]
+					},
+					"deepLinks": null,
+					"mobileLinkingQuality": null
+				},
+				"pricingFeeModel": {
+					"ref": {
+						"explanation": "Rabby official product, support, app listing, and repository references were used for the pricing and fee model product-data pass.",
+						"url": "https://rabby.io"
+					},
+					"swapFees": "Wallet swap/bridge fees are provider-, route-, or spread-dependent; exact bps require flow-level audit.",
+					"bridgeFees": "Bridge fees are route/provider-dependent; exact bps require flow-level audit.",
+					"onRampFees": null,
+					"spreadDisclosure": null,
+					"subscriptionFeatures": null,
+					"cardFees": null,
+					"hiddenPartnerRevenue": null
+				},
+				"releaseVelocity": {
+					"ref": {
+						"explanation": "Rabby official product, support, app listing, and repository references were used for the release velocity product-data pass.",
+						"url": "https://rabby.io"
+					},
+					"latestReleaseDate": "2026-05-06",
+					"releaseFrequency": "ReleaseFrequency.IRREGULAR",
+					"appStoreUpdateCadence": "App-store cadence should be measured from current app-store release history in a deeper pass.",
+					"githubActivity": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby has public GitHub repository activity or releases that can be tracked.",
+									"url": "https://github.com/RabbyHub/Rabby"
+								}
+							}
+						]
+					},
+					"changelogDetail": "ChangelogDetail.BASIC"
+				},
+				"deviceSync": {
+					"ref": {
+						"explanation": "Rabby official product, support, app listing, and repository references were used for the device sync product-data pass.",
+						"url": "https://rabby.io"
+					},
+					"syncsAccounts": null,
+					"syncsSettings": null,
+					"syncsContactsOrAddressBook": null,
+					"desktopMobileSync": null,
+					"cloudBackedSync": null,
+					"requiresSameSeedImport": {
+						"$ref": "featureSupported"
+					}
+				}
 			}
 		},
 		"variants": {

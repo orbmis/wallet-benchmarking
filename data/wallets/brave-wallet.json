@@ -417,6 +417,540 @@
 						]
 					}
 				}
+			},
+			"product": {
+				"platformCoverage": {
+					"ref": {
+						"explanation": "Brave Wallet official product, support, app listing, and repository references were used for the platform coverage product-data pass.",
+						"url": "https://brave.com/wallet/"
+					},
+					"desktopApp": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Wallet is included in Brave Browser for desktop users.",
+									"url": "https://brave.com/wallet/"
+								}
+							}
+						]
+					},
+					"mobileApp": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Wallet has a mobile wallet variant recorded in the dataset.",
+									"url": "https://brave.com/wallet/"
+								}
+							}
+						]
+					},
+					"browserExtension": null,
+					"browserNative": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Wallet is built into Brave Browser rather than installed as a separate extension.",
+									"url": "https://brave.com/web3/self-custody-wallet/"
+								}
+							}
+						]
+					},
+					"webApp": null,
+					"ios": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Wallet has a mobile app surface; iOS support should be verified against app-store listings for a deeper pass.",
+									"url": "https://brave.com/wallet/"
+								}
+							}
+						]
+					},
+					"android": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Wallet has a mobile app surface; Android support should be verified against app-store listings for a deeper pass.",
+									"url": "https://brave.com/wallet/"
+								}
+							}
+						]
+					},
+					"chrome": null,
+					"firefox": null,
+					"safari": null
+				},
+				"supportedEcosystems": {
+					"ref": {
+						"explanation": "Brave Wallet official product, support, app listing, and repository references were used for the supported ecosystems product-data pass.",
+						"url": "https://brave.com/wallet/"
+					},
+					"evm": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Wallet officially positions itself as supporting the EVM ecosystem or assets in this ecosystem.",
+									"url": "https://brave.com/wallet/"
+								}
+							}
+						]
+					},
+					"solana": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Wallet officially positions itself as supporting the SOLANA ecosystem or assets in this ecosystem.",
+									"url": "https://brave.com/wallet/"
+								}
+							}
+						]
+					},
+					"bitcoin": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Wallet officially positions itself as supporting the BITCOIN ecosystem or assets in this ecosystem.",
+									"url": "https://brave.com/wallet/"
+								}
+							}
+						]
+					},
+					"cosmos": {
+						"$ref": "notSupported"
+					},
+					"ton": {
+						"$ref": "notSupported"
+					},
+					"starknet": {
+						"$ref": "notSupported"
+					},
+					"sui": {
+						"$ref": "notSupported"
+					},
+					"aptos": {
+						"$ref": "notSupported"
+					},
+					"xrp": {
+						"$ref": "notSupported"
+					},
+					"cardano": {
+						"$ref": "notSupported"
+					},
+					"lightning": {
+						"$ref": "notSupported"
+					},
+					"other": []
+				},
+				"dappExperience": {
+					"ref": {
+						"explanation": "Brave Wallet official product, support, app listing, and repository references were used for the product capabilities product-data pass.",
+						"url": "https://brave.com/wallet/"
+					},
+					"inAppBrowser": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Wallet provides a dapp browser or in-wallet dapp connection surface.",
+									"url": "https://brave.com/wallet/"
+								}
+							}
+						]
+					},
+					"curatedDappDirectory": null,
+					"dappSearch": null,
+					"walletConnectOnlyMode": {
+						"$ref": "notSupported"
+					},
+					"featuredApps": null,
+					"riskRatedDiscovery": null
+				},
+				"fiatRamps": {
+					"ref": {
+						"explanation": "Brave Wallet official product, support, app listing, and repository references were used for the fiat ramps product-data pass.",
+						"url": "https://brave.com/wallet/"
+					},
+					"buyCrypto": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Wallet documents or advertises in-wallet crypto purchase support.",
+									"url": "https://brave.com/wallet/"
+								}
+							}
+						]
+					},
+					"sellCrypto": null,
+					"bankTransfer": null,
+					"card": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Wallet fiat purchase providers commonly support card purchases where available.",
+									"url": "https://brave.com/wallet/"
+								}
+							}
+						]
+					},
+					"applePay": null,
+					"googlePay": null,
+					"kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
+					"providers": [
+						{
+							"name": "Ramp Network",
+							"ref": {
+								"explanation": "Brave Wallet official product/support materials name or route users through these fiat/on-ramp providers.",
+								"url": "https://brave.com/wallet/"
+							}
+						},
+						{
+							"name": "Sardine",
+							"ref": {
+								"explanation": "Brave Wallet official product/support materials name or route users through these fiat/on-ramp providers.",
+								"url": "https://brave.com/wallet/"
+							}
+						},
+						{
+							"name": "Transak",
+							"ref": {
+								"explanation": "Brave Wallet official product/support materials name or route users through these fiat/on-ramp providers.",
+								"url": "https://brave.com/wallet/"
+							}
+						}
+					],
+					"regionalAvailability": "Provider- and region-dependent availability; not an exhaustive country matrix in this pass."
+				},
+				"gasUx": {
+					"ref": {
+						"explanation": "Brave Wallet official product, support, app listing, and repository references were used for the gas UX product-data pass.",
+						"url": "https://brave.com/wallet/"
+					},
+					"gasCustomization": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Wallet supports standard EVM transaction sending where gas settings can be inspected or controlled in the wallet flow.",
+									"url": "https://support.brave.com/hc/en-us/categories/360001062531-Wallet"
+								}
+							}
+						]
+					},
+					"gasSponsorship": null,
+					"gasAbstraction": null,
+					"payGasInStablecoins": null,
+					"payGasWithReceivedToken": null,
+					"speedPresets": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Wallet supports EVM transaction flows where speed/gas presets are a common wallet control; verify exact UI depth in a future pass.",
+									"url": "https://support.brave.com/hc/en-us/categories/360001062531-Wallet"
+								}
+							}
+						]
+					},
+					"stuckTransactionRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Wallet support/product materials include stuck or pending transaction recovery guidance.",
+									"url": "https://support.brave.com/hc/en-us/categories/360001062531-Wallet"
+								}
+							}
+						]
+					}
+				},
+				"recoveryUx": {
+					"ref": {
+						"explanation": "Brave Wallet official product, support, app listing, and repository references were used for the recovery UX product-data pass.",
+						"url": "https://brave.com/wallet/"
+					},
+					"seedOnlyRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Wallet supports recovery/import through a seed or secret recovery phrase.",
+									"url": "https://support.brave.com/hc/en-us/categories/360001062531-Wallet"
+								}
+							}
+						]
+					},
+					"cloudBackup": null,
+					"socialRecovery": null,
+					"guardianRecovery": null,
+					"passkeyRecovery": null,
+					"emergencyKit": null,
+					"recoveryRehearsal": null
+				},
+				"onboardingFriction": {
+					"ref": {
+						"explanation": "Brave Wallet official product, support, app listing, and repository references were used for the onboarding friction product-data pass.",
+						"url": "https://brave.com/wallet/"
+					},
+					"seedPhraseRequiredAtSignup": {
+						"$ref": "featureSupported"
+					},
+					"passkeySignup": null,
+					"emailSignup": null,
+					"phoneSignup": null,
+					"kycRequiredForWallet": {
+						"$ref": "notSupported"
+					},
+					"guestMode": null,
+					"embeddedWalletMode": null,
+					"timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
+				},
+				"portfolioManagement": {
+					"ref": {
+						"explanation": "Brave Wallet official product, support, app listing, and repository references were used for the portfolio management product-data pass.",
+						"url": "https://brave.com/wallet/"
+					},
+					"netWorth": {
+						"$ref": "featureSupported"
+					},
+					"pnl": null,
+					"costBasis": null,
+					"tokenCategories": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Wallet provides token balance and asset-list portfolio views.",
+									"url": "https://brave.com/wallet/"
+								}
+							}
+						]
+					},
+					"nftSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Wallet supports NFT display or NFT portfolio management in at least one wallet surface.",
+									"url": "https://brave.com/wallet/"
+								}
+							}
+						]
+					},
+					"collectionViews": null,
+					"watchOnlyWallets": null,
+					"multiWalletAggregation": {
+						"$ref": "featureSupported"
+					}
+				},
+				"notifications": {
+					"ref": {
+						"explanation": "Brave Wallet official product, support, app listing, and repository references were used for the notifications product-data pass.",
+						"url": "https://brave.com/wallet/"
+					},
+					"sendReceive": null,
+					"priceAlerts": null,
+					"approvalAlerts": null,
+					"bridgeCompletion": null,
+					"failedTransaction": null,
+					"securityAlerts": null,
+					"marketAlerts": null
+				},
+				"nftCapabilities": {
+					"ref": {
+						"explanation": "Brave Wallet official product, support, app listing, and repository references were used for the NFT capabilities product-data pass.",
+						"url": "https://brave.com/wallet/"
+					},
+					"display": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Wallet supports displaying NFTs or collectibles in the wallet.",
+									"url": "https://brave.com/wallet/"
+								}
+							}
+						]
+					},
+					"send": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Wallet supports wallet NFT transfer flows or NFT asset management.",
+									"url": "https://brave.com/wallet/"
+								}
+							}
+						]
+					},
+					"mint": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Wallet can connect to dapps and sign NFT mint transactions.",
+									"url": "https://brave.com/wallet/"
+								}
+							}
+						]
+					},
+					"marketplaceIntegration": null,
+					"spamNftHiding": null,
+					"collectionMetadataRefresh": null,
+					"royaltiesOrOffers": null
+				},
+				"defiPositionAwareness": {
+					"ref": {
+						"explanation": "Brave Wallet official product, support, app listing, and repository references were used for the DeFi position awareness product-data pass.",
+						"url": "https://brave.com/wallet/"
+					},
+					"lendingPositions": null,
+					"stakingPositions": null,
+					"lpPositions": null,
+					"vaultPositions": null,
+					"perProtocolBalances": null,
+					"claimableRewards": null,
+					"liquidationWarnings": null
+				},
+				"stakingEarn": {
+					"ref": {
+						"explanation": "Brave Wallet official product, support, app listing, and repository references were used for the staking and earn product-data pass.",
+						"url": "https://brave.com/wallet/"
+					},
+					"nativeStaking": null,
+					"liquidStaking": null,
+					"validatorChoice": null,
+					"apyDisplay": null,
+					"rewardsClaiming": null,
+					"providerDependency": null,
+					"lockupDisclosure": null
+				},
+				"customerSupport": {
+					"ref": {
+						"explanation": "Brave Wallet official product, support, app listing, and repository references were used for the customer support product-data pass.",
+						"url": "https://brave.com/wallet/"
+					},
+					"liveChat": null,
+					"emailSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Wallet publishes support, help center, or contact paths for wallet users.",
+									"url": "https://support.brave.com/hc/en-us/categories/360001062531-Wallet"
+								}
+							}
+						]
+					},
+					"aiSupport": null,
+					"publishedSla": null,
+					"inAppHelpCenter": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Wallet provides in-app or product-linked help/support content.",
+									"url": "https://support.brave.com/hc/en-us/categories/360001062531-Wallet"
+								}
+							}
+						]
+					},
+					"transactionTroubleshooting": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Wallet support docs include transaction or wallet troubleshooting material.",
+									"url": "https://support.brave.com/hc/en-us/categories/360001062531-Wallet"
+								}
+							}
+						]
+					},
+					"scamRecoveryGuidance": null
+				},
+				"developerOffering": {
+					"ref": {
+						"explanation": "Brave Wallet official product, support, app listing, and repository references were used for the developer offering product-data pass.",
+						"url": "https://brave.com/wallet/"
+					},
+					"walletSdk": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Wallet publishes wallet developer docs, SDKs, or public wallet integration repositories.",
+									"url": "https://github.com/brave/brave-browser"
+								}
+							}
+						]
+					},
+					"embeddedWalletSdk": null,
+					"whiteLabelOffering": null,
+					"walletConnectSupport": {
+						"$ref": "featureSupported"
+					},
+					"eip6963": null,
+					"eip5792": null,
+					"deepLinks": null,
+					"mobileLinkingQuality": null
+				},
+				"pricingFeeModel": {
+					"ref": {
+						"explanation": "Brave Wallet official product, support, app listing, and repository references were used for the pricing and fee model product-data pass.",
+						"url": "https://brave.com/wallet/"
+					},
+					"swapFees": "Wallet swap/bridge fees are provider-, route-, or spread-dependent; exact bps require flow-level audit.",
+					"bridgeFees": "Bridge fees are route/provider-dependent; exact bps require flow-level audit.",
+					"onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
+					"spreadDisclosure": null,
+					"subscriptionFeatures": null,
+					"cardFees": "Card fees are provider-dependent where card purchase is available.",
+					"hiddenPartnerRevenue": null
+				},
+				"releaseVelocity": {
+					"ref": {
+						"explanation": "Brave Wallet official product, support, app listing, and repository references were used for the release velocity product-data pass.",
+						"url": "https://brave.com/wallet/"
+					},
+					"latestReleaseDate": "2026-06-07",
+					"releaseFrequency": "ReleaseFrequency.IRREGULAR",
+					"appStoreUpdateCadence": "App-store cadence should be measured from current app-store release history in a deeper pass.",
+					"githubActivity": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Wallet has public GitHub repository activity or releases that can be tracked.",
+									"url": "https://github.com/brave/brave-browser"
+								}
+							}
+						]
+					},
+					"changelogDetail": "ChangelogDetail.BASIC"
+				},
+				"deviceSync": {
+					"ref": {
+						"explanation": "Brave Wallet official product, support, app listing, and repository references were used for the device sync product-data pass.",
+						"url": "https://brave.com/wallet/"
+					},
+					"syncsAccounts": null,
+					"syncsSettings": null,
+					"syncsContactsOrAddressBook": null,
+					"desktopMobileSync": null,
+					"cloudBackedSync": null,
+					"requiresSameSeedImport": {
+						"$ref": "featureSupported"
+					}
+				}
 			}
 		},
 		"variants": {
