@@ -418,17 +418,27 @@
 			"product": {
 				"platformCoverage": {
 					"ref": {
-						"explanation": "Argent official product, support, app listing, and repository references were used for the platform coverage product-data pass.",
-						"url": "https://www.argent.xyz/"
+						"explanation": "Argent support says Argent X is available as a Chrome/Chromium, Edge, and Firefox extension; recovery docs link iOS and Android mobile app downloads.",
+						"url": "https://support.argent.xyz/hc/en-us/articles/5975462914961-Argent-X"
 					},
-					"desktopApp": null,
+					"desktopApp": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent sources list mobile app and browser extension, not standalone desktop app.",
+									"url": "https://support.argent.xyz/hc/en-us/articles/5975462914961-Argent-X"
+								}
+							}
+						]
+					},
 					"mobileApp": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Argent has a mobile wallet variant recorded in the dataset.",
-									"url": "https://www.argent.xyz/"
+									"explanation": "Argent recovery support links iOS and Android app downloads.",
+									"url": "https://support.argent.xyz/hc/en-us/articles/360007339057-I-deleted-the-Argent-app-but-want-to-regain-access-to-my-account"
 								}
 							}
 						]
@@ -438,14 +448,22 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Argent publishes a browser extension listing.",
-									"url": "https://chromewebstore.google.com/detail/argent-x/dlcobpjiigpikoobohmabehhmhfoodbb"
+									"explanation": "Argent X support says it is a browser extension.",
+									"url": "https://support.argent.xyz/hc/en-us/articles/5975462914961-Argent-X"
 								}
 							}
 						]
 					},
 					"browserNative": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent is app/extension based, not browser-native.",
+									"url": "https://support.argent.xyz/hc/en-us/articles/5975462914961-Argent-X"
+								}
+							}
+						]
 					},
 					"webApp": null,
 					"ios": {
@@ -453,8 +471,8 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Argent has a mobile app surface; iOS support should be verified against app-store listings for a deeper pass.",
-									"url": "https://www.argent.xyz/"
+									"explanation": "Argent recovery support links the iOS app.",
+									"url": "https://support.argent.xyz/hc/en-us/articles/360007339057-I-deleted-the-Argent-app-but-want-to-regain-access-to-my-account"
 								}
 							}
 						]
@@ -464,8 +482,8 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Argent has a mobile app surface; Android support should be verified against app-store listings for a deeper pass.",
-									"url": "https://www.argent.xyz/"
+									"explanation": "Argent recovery support links the Android app.",
+									"url": "https://support.argent.xyz/hc/en-us/articles/360007339057-I-deleted-the-Argent-app-but-want-to-regain-access-to-my-account"
 								}
 							}
 						]
@@ -475,88 +493,146 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Argent has a Chrome Web Store extension listing.",
-									"url": "https://chromewebstore.google.com/detail/argent-x/dlcobpjiigpikoobohmabehhmhfoodbb"
+									"explanation": "Argent X support says it is available for Chrome/Chromium.",
+									"url": "https://support.argent.xyz/hc/en-us/articles/5975462914961-Argent-X"
 								}
 							}
 						]
 					},
-					"firefox": null,
+					"firefox": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent X support says it is available for Firefox Add-ons.",
+									"url": "https://support.argent.xyz/hc/en-us/articles/5975462914961-Argent-X"
+								}
+							}
+						]
+					},
 					"safari": null
 				},
 				"supportedEcosystems": {
 					"ref": {
-						"explanation": "Argent official product, support, app listing, and repository references were used for the supported ecosystems product-data pass.",
-						"url": "https://www.argent.xyz/"
+						"explanation": "Argent X support says Argent X operates on Starknet; recovery docs also refer to Argent Ethereum, zkSync Lite, and zkSync Era account states.",
+						"url": "https://support.argent.xyz/hc/en-us/articles/5975462914961-Argent-X"
 					},
 					"evm": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Argent officially positions itself as supporting the EVM ecosystem or assets in this ecosystem.",
-									"url": "https://www.argent.xyz/"
+									"explanation": "Argent recovery docs refer to Argent Ethereum account and zkSync account recovery.",
+									"url": "https://support.argent.xyz/hc/en-us/articles/360022631412-About-wallet-recovery"
 								}
 							}
 						]
 					},
 					"solana": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent sources reviewed describe Starknet/Ethereum/zkSync, not Solana.",
+									"url": "https://support.argent.xyz/hc/en-us/articles/5975462914961-Argent-X"
+								}
+							}
+						]
 					},
 					"bitcoin": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent sources reviewed describe Starknet/Ethereum/zkSync, not Bitcoin.",
+									"url": "https://support.argent.xyz/hc/en-us/articles/5975462914961-Argent-X"
+								}
+							}
+						]
 					},
 					"cosmos": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent sources reviewed describe Starknet/Ethereum/zkSync, not Cosmos.",
+									"url": "https://support.argent.xyz/hc/en-us/articles/5975462914961-Argent-X"
+								}
+							}
+						]
 					},
 					"ton": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent sources reviewed describe Starknet/Ethereum/zkSync, not TON.",
+									"url": "https://support.argent.xyz/hc/en-us/articles/5975462914961-Argent-X"
+								}
+							}
+						]
 					},
 					"starknet": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Argent officially positions itself as supporting the STARKNET ecosystem or assets in this ecosystem.",
-									"url": "https://www.argent.xyz/"
+									"explanation": "Argent X support says Argent X operates on Starknet.",
+									"url": "https://support.argent.xyz/hc/en-us/articles/5975462914961-Argent-X"
 								}
 							}
 						]
 					},
-					"sui": {
-						"$ref": "notSupported"
-					},
-					"aptos": {
-						"$ref": "notSupported"
-					},
-					"xrp": {
-						"$ref": "notSupported"
-					},
-					"cardano": {
-						"$ref": "notSupported"
-					},
-					"lightning": {
-						"$ref": "notSupported"
-					},
-					"other": []
+					"sui": null,
+					"aptos": null,
+					"xrp": null,
+					"cardano": null,
+					"lightning": null,
+					"other": [
+						{
+							"name": "zkSync Lite",
+							"ref": {
+								"explanation": "Argent recovery docs reference zkSync Lite account recovery.",
+								"url": "https://support.argent.xyz/hc/en-us/articles/360022631412-About-wallet-recovery"
+							}
+						}
+					]
 				},
 				"dappExperience": {
 					"ref": {
-						"explanation": "Argent official product, support, app listing, and repository references were used for the product capabilities product-data pass.",
-						"url": "https://www.argent.xyz/"
+						"explanation": "Argent X support says it connects to Starknet dapps and references Dappland for available apps.",
+						"url": "https://support.argent.xyz/hc/en-us/articles/5975462914961-Argent-X"
 					},
 					"inAppBrowser": null,
-					"curatedDappDirectory": null,
+					"curatedDappDirectory": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent X support references Dappland.com for available Starknet dapps.",
+									"url": "https://support.argent.xyz/hc/en-us/articles/5975462914961-Argent-X"
+								}
+							}
+						]
+					},
 					"dappSearch": null,
 					"walletConnectOnlyMode": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent X connects directly to Starknet dapps; WalletConnect-only mode was not documented.",
+									"url": "https://support.argent.xyz/hc/en-us/articles/5975462914961-Argent-X"
+								}
+							}
+						]
 					},
 					"featuredApps": null,
 					"riskRatedDiscovery": null
 				},
 				"fiatRamps": {
 					"ref": {
-						"explanation": "Argent official product, support, app listing, and repository references were used for the fiat ramps product-data pass.",
+						"explanation": "Argent source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://www.argent.xyz/"
 					},
 					"buyCrypto": {
@@ -606,7 +682,7 @@
 				},
 				"gasUx": {
 					"ref": {
-						"explanation": "Argent official product, support, app listing, and repository references were used for the gas UX product-data pass.",
+						"explanation": "Argent source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://www.argent.xyz/"
 					},
 					"gasCustomization": null,
@@ -639,7 +715,7 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Argent supports EVM transaction flows where speed/gas presets are a common wallet control; verify exact UI depth in a future pass.",
+									"explanation": null,
 									"url": "https://support.argent.xyz/"
 								}
 							}
@@ -649,18 +725,38 @@
 				},
 				"recoveryUx": {
 					"ref": {
-						"explanation": "Argent official product, support, app listing, and repository references were used for the recovery UX product-data pass.",
-						"url": "https://www.argent.xyz/"
+						"explanation": "Argent recovery support describes off-chain encrypted recovery key, onchain guardian/2FA recovery, and seed phrase recovery for Argent X.",
+						"url": "https://support.argent.xyz/hc/en-us/articles/360022631412-About-wallet-recovery"
 					},
-					"seedOnlyRecovery": null,
-					"cloudBackup": null,
+					"seedOnlyRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent X can recover using a 12-word seed phrase.",
+									"url": "https://support.argent.xyz/hc/en-us/articles/360022631412-About-wallet-recovery"
+								}
+							}
+						]
+					},
+					"cloudBackup": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent mobile recovery uses an encrypted recovery kit for off-chain recovery.",
+									"url": "https://support.argent.xyz/hc/en-us/articles/360022631412-About-wallet-recovery"
+								}
+							}
+						]
+					},
 					"socialRecovery": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Argent supports social recovery or recovery through trusted parties/owners/guardians.",
-									"url": "https://www.argent.xyz/"
+									"explanation": "Argent onchain recovery can use trusted people/devices as guardians.",
+									"url": "https://support.argent.xyz/hc/en-us/articles/360022631412-About-wallet-recovery"
 								}
 							}
 						]
@@ -670,30 +766,20 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Argent supports guardian-style recovery or owner-controlled recovery.",
-									"url": "https://www.argent.xyz/"
+									"explanation": "Argent recovery docs describe guardian-based recovery and approval thresholds.",
+									"url": "https://support.argent.xyz/hc/en-us/articles/360022631412-About-wallet-recovery"
 								}
 							}
 						]
 					},
-					"passkeyRecovery": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Argent supports passkey-based wallet access or recovery for at least some account flows.",
-									"url": "https://www.argent.xyz/"
-								}
-							}
-						]
-					},
+					"passkeyRecovery": null,
 					"emergencyKit": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Argent documents an emergency/recovery-kit style recovery artifact or process.",
-									"url": "https://www.argent.xyz/"
+									"explanation": "Argent docs refer to an encrypted recovery kit.",
+									"url": "https://support.argent.xyz/hc/en-us/articles/360007339057-I-deleted-the-Argent-app-but-want-to-regain-access-to-my-account"
 								}
 							}
 						]
@@ -702,45 +788,51 @@
 				},
 				"onboardingFriction": {
 					"ref": {
-						"explanation": "Argent official product, support, app listing, and repository references were used for the onboarding friction product-data pass.",
-						"url": "https://www.argent.xyz/"
+						"explanation": "Argent recovery guide starts recovery by email and optional phone verification; Argent X setup uses seed phrase recovery.",
+						"url": "https://support.argent.xyz/hc/en-us/articles/360022631412-About-wallet-recovery"
 					},
-					"seedPhraseRequiredAtSignup": {
-						"$ref": "notSupported"
-					},
-					"passkeySignup": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Argent supports passkey-first signup or passkey smart-account onboarding.",
-									"url": "https://www.argent.xyz/"
-								}
-							}
-						]
-					},
+					"seedPhraseRequiredAtSignup": null,
+					"passkeySignup": null,
 					"emailSignup": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Argent supports email-based onboarding or recovery for at least some wallet flows.",
-									"url": "https://www.argent.xyz/"
+									"explanation": "Argent recovery flow uses email verification and can use email as a guardian/2FA.",
+									"url": "https://support.argent.xyz/hc/en-us/articles/360022631412-About-wallet-recovery"
 								}
 							}
 						]
 					},
-					"phoneSignup": null,
+					"phoneSignup": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent recovery guide references phone-number verification where configured.",
+									"url": "https://support.argent.xyz/hc/en-us/articles/360022631412-About-wallet-recovery"
+								}
+							}
+						]
+					},
 					"kycRequiredForWallet": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent support docs reviewed cover email/phone/security recovery, not KYC wallet setup.",
+									"url": "https://support.argent.xyz/hc/en-us/articles/360022631412-About-wallet-recovery"
+								}
+							}
+						]
 					},
 					"guestMode": null,
 					"embeddedWalletMode": null,
-					"timeToFirstWallet": "OnboardingSpeed.PASSKEY_OR_EMAIL_FIRST"
+					"timeToFirstWallet": "OnboardingSpeed.UNKNOWN"
 				},
 				"portfolioManagement": {
 					"ref": {
-						"explanation": "Argent official product, support, app listing, and repository references were used for the portfolio management product-data pass.",
+						"explanation": "Argent source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://www.argent.xyz/"
 					},
 					"netWorth": {
@@ -778,7 +870,7 @@
 				},
 				"notifications": {
 					"ref": {
-						"explanation": "Argent official product, support, app listing, and repository references were used for the notifications product-data pass.",
+						"explanation": "Argent source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://www.argent.xyz/"
 					},
 					"sendReceive": null,
@@ -791,7 +883,7 @@
 				},
 				"nftCapabilities": {
 					"ref": {
-						"explanation": "Argent official product, support, app listing, and repository references were used for the NFT capabilities product-data pass.",
+						"explanation": "Argent source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://www.argent.xyz/"
 					},
 					"display": {
@@ -824,7 +916,7 @@
 				},
 				"defiPositionAwareness": {
 					"ref": {
-						"explanation": "Argent official product, support, app listing, and repository references were used for the DeFi position awareness product-data pass.",
+						"explanation": "Argent source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://www.argent.xyz/"
 					},
 					"lendingPositions": null,
@@ -837,7 +929,7 @@
 				},
 				"stakingEarn": {
 					"ref": {
-						"explanation": "Argent official product, support, app listing, and repository references were used for the staking and earn product-data pass.",
+						"explanation": "Argent source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://www.argent.xyz/"
 					},
 					"nativeStaking": null,
@@ -850,7 +942,7 @@
 				},
 				"customerSupport": {
 					"ref": {
-						"explanation": "Argent official product, support, app listing, and repository references were used for the customer support product-data pass.",
+						"explanation": "Argent source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://www.argent.xyz/"
 					},
 					"liveChat": null,
@@ -893,7 +985,7 @@
 				},
 				"developerOffering": {
 					"ref": {
-						"explanation": "Argent official product, support, app listing, and repository references were used for the developer offering product-data pass.",
+						"explanation": "Argent source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://www.argent.xyz/"
 					},
 					"walletSdk": {
@@ -917,11 +1009,11 @@
 				},
 				"pricingFeeModel": {
 					"ref": {
-						"explanation": "Argent official product, support, app listing, and repository references were used for the pricing and fee model product-data pass.",
+						"explanation": "Argent source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://www.argent.xyz/"
 					},
-					"swapFees": "Wallet swap/bridge fees are provider-, route-, or spread-dependent; exact bps require flow-level audit.",
-					"bridgeFees": "Bridge fees are route/provider-dependent; exact bps require flow-level audit.",
+					"swapFees": null,
+					"bridgeFees": null,
 					"onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
 					"spreadDisclosure": null,
 					"subscriptionFeatures": null,
@@ -930,7 +1022,7 @@
 				},
 				"releaseVelocity": {
 					"ref": {
-						"explanation": "Argent official product, support, app listing, and repository references were used for the release velocity product-data pass.",
+						"explanation": "Argent source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://www.argent.xyz/"
 					},
 					"latestReleaseDate": "2026-06-07",
@@ -951,7 +1043,7 @@
 				},
 				"deviceSync": {
 					"ref": {
-						"explanation": "Argent official product, support, app listing, and repository references were used for the device sync product-data pass.",
+						"explanation": "Argent source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://www.argent.xyz/"
 					},
 					"syncsAccounts": null,

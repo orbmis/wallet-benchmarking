@@ -509,8 +509,8 @@
 			"product": {
 				"platformCoverage": {
 					"ref": {
-						"explanation": "PillarX official product, support, app listing, and repository references were used for the platform coverage product-data pass.",
-						"url": "https://pillarx.app"
+						"explanation": "Pillar/PillarX sources describe logging in at pillarx.app or launching from Pillar Wallet, and Google Play listing for the mobile wallet.",
+						"url": "https://blog.pillarx.app/pulse-is-live-access-instant-swaps-across-22m-tokens-on-pillarx/"
 					},
 					"desktopApp": null,
 					"mobileApp": {
@@ -518,55 +518,33 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "PillarX has a mobile wallet variant recorded in the dataset.",
-									"url": "https://pillarx.app"
+									"explanation": "Pillar Wallet Google Play listing covers the mobile app rebranding to PillarX.",
+									"url": "https://play.google.com/store/apps/details?hl=en_GB&id=com.pillarproject.wallet"
 								}
 							}
 						]
 					},
-					"browserExtension": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "PillarX has a browser wallet variant recorded in the dataset.",
-									"url": "https://pillarx.app"
-								}
-							}
-						]
-					},
-					"browserNative": {
-						"$ref": "notSupported"
-					},
+					"browserExtension": null,
+					"browserNative": null,
 					"webApp": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "PillarX offers a web app or web-first wallet surface.",
-									"url": "https://pillarx.app"
+									"explanation": "PillarX blog says users can log in at pillarx.app.",
+									"url": "https://blog.pillarx.app/pulse-is-live-access-instant-swaps-across-22m-tokens-on-pillarx/"
 								}
 							}
 						]
 					},
-					"ios": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "PillarX has a mobile app surface; iOS support should be verified against app-store listings for a deeper pass.",
-									"url": "https://pillarx.app"
-								}
-							}
-						]
-					},
+					"ios": null,
 					"android": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "PillarX has a mobile app surface; Android support should be verified against app-store listings for a deeper pass.",
-									"url": "https://pillarx.app"
+									"explanation": "Pillar Wallet Google Play listing covers Android.",
+									"url": "https://play.google.com/store/apps/details?hl=en_GB&id=com.pillarproject.wallet"
 								}
 							}
 						]
@@ -577,62 +555,100 @@
 				},
 				"supportedEcosystems": {
 					"ref": {
-						"explanation": "PillarX official product, support, app listing, and repository references were used for the supported ecosystems product-data pass.",
-						"url": "https://pillarx.app"
+						"explanation": "Pillar Wallet listing says it supports Ethereum and EVM-compatible chains.",
+						"url": "https://play.google.com/store/apps/details?hl=en_GB&id=com.pillarproject.wallet"
 					},
 					"evm": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "PillarX officially positions itself as supporting the EVM ecosystem or assets in this ecosystem.",
-									"url": "https://pillarx.app"
+									"explanation": "Pillar supports Ethereum and EVM-compatible chains.",
+									"url": "https://play.google.com/store/apps/details?hl=en_GB&id=com.pillarproject.wallet"
 								}
 							}
 						]
 					},
 					"solana": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Pillar listing scopes support to Ethereum and EVM-compatible chains.",
+									"url": "https://play.google.com/store/apps/details?hl=en_GB&id=com.pillarproject.wallet"
+								}
+							}
+						]
 					},
 					"bitcoin": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Pillar listing scopes support to Ethereum and EVM-compatible chains.",
+									"url": "https://play.google.com/store/apps/details?hl=en_GB&id=com.pillarproject.wallet"
+								}
+							}
+						]
 					},
 					"cosmos": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Pillar listing scopes support to Ethereum and EVM-compatible chains.",
+									"url": "https://play.google.com/store/apps/details?hl=en_GB&id=com.pillarproject.wallet"
+								}
+							}
+						]
 					},
 					"ton": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Pillar listing scopes support to Ethereum and EVM-compatible chains.",
+									"url": "https://play.google.com/store/apps/details?hl=en_GB&id=com.pillarproject.wallet"
+								}
+							}
+						]
 					},
-					"starknet": {
-						"$ref": "notSupported"
-					},
-					"sui": {
-						"$ref": "notSupported"
-					},
-					"aptos": {
-						"$ref": "notSupported"
-					},
-					"xrp": {
-						"$ref": "notSupported"
-					},
-					"cardano": {
-						"$ref": "notSupported"
-					},
-					"lightning": {
-						"$ref": "notSupported"
-					},
+					"starknet": null,
+					"sui": null,
+					"aptos": null,
+					"xrp": null,
+					"cardano": null,
+					"lightning": null,
 					"other": []
 				},
 				"dappExperience": {
 					"ref": {
-						"explanation": "PillarX official product, support, app listing, and repository references were used for the product capabilities product-data pass.",
-						"url": "https://pillarx.app"
+						"explanation": "Pillar Wallet listing says it is one wallet for tokens, dapps, DeFi services and DAOs; PillarX blog says everything is accessible in one app.",
+						"url": "https://play.google.com/store/apps/details?hl=en_GB&id=com.pillarproject.wallet"
 					},
-					"inAppBrowser": null,
+					"inAppBrowser": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Pillar Wallet/PillarX is positioned as one app for dapps and DeFi services.",
+									"url": "https://play.google.com/store/apps/details?hl=en_GB&id=com.pillarproject.wallet"
+								}
+							}
+						]
+					},
 					"curatedDappDirectory": null,
 					"dappSearch": null,
 					"walletConnectOnlyMode": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Pillar Wallet listing describes WalletConnect to favorite dapps but not as the only access model.",
+									"url": "https://play.google.com/store/apps/details?hl=en_GB&id=com.pillarproject.wallet"
+								}
+							}
+						]
 					},
 					"featuredApps": null,
 					"riskRatedDiscovery": {
@@ -640,8 +656,8 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "PillarX provides risk warnings or risk-aware dapp/transaction discovery cues.",
-									"url": "https://pillarx.app"
+									"explanation": "Pillar.fi says the in-app browser helps avoid scam sites.",
+									"url": "https://pillar.fi/"
 								}
 							}
 						]
@@ -649,7 +665,7 @@
 				},
 				"fiatRamps": {
 					"ref": {
-						"explanation": "PillarX official product, support, app listing, and repository references were used for the fiat ramps product-data pass.",
+						"explanation": "PillarX source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://pillarx.app"
 					},
 					"buyCrypto": null,
@@ -664,40 +680,40 @@
 				},
 				"gasUx": {
 					"ref": {
-						"explanation": "PillarX official product, support, app listing, and repository references were used for the gas UX product-data pass.",
-						"url": "https://pillarx.app"
+						"explanation": "PillarX Pulse and Pillar Wallet sources describe account/chain abstraction, no chain switching, and paying gas with stablecoins.",
+						"url": "https://blog.pillarx.app/pulse-is-live-access-instant-swaps-across-22m-tokens-on-pillarx/"
 					},
-					"gasCustomization": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "PillarX supports standard EVM transaction sending where gas settings can be inspected or controlled in the wallet flow.",
-									"url": "https://pillarx.app"
-								}
-							}
-						]
-					},
+					"gasCustomization": null,
 					"gasSponsorship": null,
-					"gasAbstraction": null,
-					"payGasInStablecoins": null,
-					"payGasWithReceivedToken": null,
-					"speedPresets": {
+					"gasAbstraction": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "PillarX supports EVM transaction flows where speed/gas presets are a common wallet control; verify exact UI depth in a future pass.",
-									"url": "https://pillarx.app"
+									"explanation": "PillarX Pulse is powered by Etherspot chain abstraction and abstracts chain/gas complexity.",
+									"url": "https://blog.pillarx.app/pulse-is-live-access-instant-swaps-across-22m-tokens-on-pillarx/"
 								}
 							}
 						]
 					},
+					"payGasInStablecoins": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Pillar Wallet listing says users can pay gas fees on any chain with stablecoins.",
+									"url": "https://play.google.com/store/apps/details?hl=en_GB&id=com.pillarproject.wallet"
+								}
+							}
+						]
+					},
+					"payGasWithReceivedToken": null,
+					"speedPresets": null,
 					"stuckTransactionRecovery": null
 				},
 				"recoveryUx": {
 					"ref": {
-						"explanation": "PillarX official product, support, app listing, and repository references were used for the recovery UX product-data pass.",
+						"explanation": "PillarX source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://pillarx.app"
 					},
 					"seedOnlyRecovery": {
@@ -720,7 +736,7 @@
 				},
 				"onboardingFriction": {
 					"ref": {
-						"explanation": "PillarX official product, support, app listing, and repository references were used for the onboarding friction product-data pass.",
+						"explanation": "PillarX source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://pillarx.app"
 					},
 					"seedPhraseRequiredAtSignup": {
@@ -738,7 +754,7 @@
 				},
 				"portfolioManagement": {
 					"ref": {
-						"explanation": "PillarX official product, support, app listing, and repository references were used for the portfolio management product-data pass.",
+						"explanation": "PillarX source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://pillarx.app"
 					},
 					"netWorth": {
@@ -774,7 +790,7 @@
 				},
 				"notifications": {
 					"ref": {
-						"explanation": "PillarX official product, support, app listing, and repository references were used for the notifications product-data pass.",
+						"explanation": "PillarX source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://pillarx.app"
 					},
 					"sendReceive": null,
@@ -797,7 +813,7 @@
 				},
 				"nftCapabilities": {
 					"ref": {
-						"explanation": "PillarX official product, support, app listing, and repository references were used for the NFT capabilities product-data pass.",
+						"explanation": "PillarX source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://pillarx.app"
 					},
 					"display": {
@@ -830,7 +846,7 @@
 				},
 				"defiPositionAwareness": {
 					"ref": {
-						"explanation": "PillarX official product, support, app listing, and repository references were used for the DeFi position awareness product-data pass.",
+						"explanation": "PillarX source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://pillarx.app"
 					},
 					"lendingPositions": null,
@@ -843,7 +859,7 @@
 				},
 				"stakingEarn": {
 					"ref": {
-						"explanation": "PillarX official product, support, app listing, and repository references were used for the staking and earn product-data pass.",
+						"explanation": "PillarX source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://pillarx.app"
 					},
 					"nativeStaking": null,
@@ -856,7 +872,7 @@
 				},
 				"customerSupport": {
 					"ref": {
-						"explanation": "PillarX official product, support, app listing, and repository references were used for the customer support product-data pass.",
+						"explanation": "PillarX source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://pillarx.app"
 					},
 					"liveChat": null,
@@ -899,7 +915,7 @@
 				},
 				"developerOffering": {
 					"ref": {
-						"explanation": "PillarX official product, support, app listing, and repository references were used for the developer offering product-data pass.",
+						"explanation": "PillarX source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://pillarx.app"
 					},
 					"walletSdk": {
@@ -925,11 +941,11 @@
 				},
 				"pricingFeeModel": {
 					"ref": {
-						"explanation": "PillarX official product, support, app listing, and repository references were used for the pricing and fee model product-data pass.",
+						"explanation": "PillarX source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://pillarx.app"
 					},
-					"swapFees": "Wallet swap/bridge fees are provider-, route-, or spread-dependent; exact bps require flow-level audit.",
-					"bridgeFees": "Bridge fees are route/provider-dependent; exact bps require flow-level audit.",
+					"swapFees": null,
+					"bridgeFees": null,
 					"onRampFees": null,
 					"spreadDisclosure": null,
 					"subscriptionFeatures": null,
@@ -938,7 +954,7 @@
 				},
 				"releaseVelocity": {
 					"ref": {
-						"explanation": "PillarX official product, support, app listing, and repository references were used for the release velocity product-data pass.",
+						"explanation": "PillarX source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://pillarx.app"
 					},
 					"latestReleaseDate": "2025-12-16",
@@ -959,7 +975,7 @@
 				},
 				"deviceSync": {
 					"ref": {
-						"explanation": "PillarX official product, support, app listing, and repository references were used for the device sync product-data pass.",
+						"explanation": "PillarX source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://pillarx.app"
 					},
 					"syncsAccounts": null,

@@ -730,113 +730,79 @@
 			"product": {
 				"platformCoverage": {
 					"ref": {
-						"explanation": "Daimo official product, support, app listing, and repository references were used for the platform coverage product-data pass.",
-						"url": "https://daimo.com"
+						"explanation": "Daimo docs describe Modal SDK/API integration paths and web-based deposit sessions rather than a consumer wallet app surface.",
+						"url": "https://docs.daimo.com/"
 					},
 					"desktopApp": null,
-					"mobileApp": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo has a mobile wallet variant recorded in the dataset.",
-									"url": "https://daimo.com"
-								}
-							}
-						]
-					},
+					"mobileApp": null,
 					"browserExtension": null,
-					"browserNative": {
-						"$ref": "notSupported"
-					},
+					"browserNative": null,
 					"webApp": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Daimo offers a web app or web-first wallet surface.",
-									"url": "https://daimo.com"
+									"explanation": "Daimo docs describe web modal/API deposit flows and a login web surface.",
+									"url": "https://docs.daimo.com/"
 								}
 							}
 						]
 					},
-					"ios": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo has a mobile app surface; iOS support should be verified against app-store listings for a deeper pass.",
-									"url": "https://daimo.com"
-								}
-							}
-						]
-					},
-					"android": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo has a mobile app surface; Android support should be verified against app-store listings for a deeper pass.",
-									"url": "https://daimo.com"
-								}
-							}
-						]
-					},
+					"ios": null,
+					"android": null,
 					"chrome": null,
 					"firefox": null,
 					"safari": null
 				},
 				"supportedEcosystems": {
 					"ref": {
-						"explanation": "Daimo official product, support, app listing, and repository references were used for the supported ecosystems product-data pass.",
-						"url": "https://daimo.com"
+						"explanation": "Daimo homepage shows stablecoin rails settling on Ethereum, Solana, Base, Arbitrum, Polygon, BSC, Celo, Linea, Optimism, World, Monad and others.",
+						"url": "https://daimo.com/"
 					},
 					"evm": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Daimo officially positions itself as supporting the EVM ecosystem or assets in this ecosystem.",
-									"url": "https://daimo.com"
+									"explanation": "Daimo rails list includes Ethereum, Base, Arbitrum, Polygon, BSC, Celo, Linea, Optimism, World, and Monad.",
+									"url": "https://daimo.com/"
 								}
 							}
 						]
 					},
 					"solana": {
-						"$ref": "notSupported"
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Daimo rails list includes Solana.",
+									"url": "https://daimo.com/"
+								}
+							}
+						]
 					},
-					"bitcoin": {
-						"$ref": "notSupported"
-					},
-					"cosmos": {
-						"$ref": "notSupported"
-					},
-					"ton": {
-						"$ref": "notSupported"
-					},
-					"starknet": {
-						"$ref": "notSupported"
-					},
-					"sui": {
-						"$ref": "notSupported"
-					},
-					"aptos": {
-						"$ref": "notSupported"
-					},
-					"xrp": {
-						"$ref": "notSupported"
-					},
-					"cardano": {
-						"$ref": "notSupported"
-					},
-					"lightning": {
-						"$ref": "notSupported"
-					},
-					"other": []
+					"bitcoin": null,
+					"cosmos": null,
+					"ton": null,
+					"starknet": null,
+					"sui": null,
+					"aptos": null,
+					"xrp": null,
+					"cardano": null,
+					"lightning": null,
+					"other": [
+						{
+							"name": "Stablecoin payment rails",
+							"ref": {
+								"explanation": "Daimo docs frame the product as a stablecoin ramp for apps.",
+								"url": "https://docs.daimo.com/"
+							}
+						}
+					]
 				},
 				"dappExperience": {
 					"ref": {
-						"explanation": "Daimo official product, support, app listing, and repository references were used for the product capabilities product-data pass.",
+						"explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://daimo.com"
 					},
 					"inAppBrowser": null,
@@ -860,22 +826,52 @@
 				},
 				"fiatRamps": {
 					"ref": {
-						"explanation": "Daimo official product, support, app listing, and repository references were used for the fiat ramps product-data pass.",
-						"url": "https://daimo.com"
+						"explanation": "Daimo homepage and docs describe fiat/payment rails including ACH, Pix, Interac, SEPA, Apple Pay, Cash App, exchange deposits, and bank rails for stablecoin apps.",
+						"url": "https://daimo.com/"
 					},
-					"buyCrypto": null,
+					"buyCrypto": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Daimo is a ramp for stablecoin deposits into apps.",
+									"url": "https://docs.daimo.com/"
+								}
+							}
+						]
+					},
 					"sellCrypto": null,
-					"bankTransfer": null,
+					"bankTransfer": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Daimo supports bank rails such as ACH, SEPA, Pix, Interac, SPEI and local bank rails.",
+									"url": "https://daimo.com/"
+								}
+							}
+						]
+					},
 					"card": null,
-					"applePay": null,
+					"applePay": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Daimo homepage lists Apple Pay as a supported rail.",
+									"url": "https://daimo.com/"
+								}
+							}
+						]
+					},
 					"googlePay": null,
-					"kycDependency": "KYCDependency.UNKNOWN",
+					"kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
 					"providers": [],
-					"regionalAvailability": null
+					"regionalAvailability": "Daimo lists payment rails by country/fiat corridor for stablecoin apps; many rails are live or TBA."
 				},
 				"gasUx": {
 					"ref": {
-						"explanation": "Daimo official product, support, app listing, and repository references were used for the gas UX product-data pass.",
+						"explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://daimo.com"
 					},
 					"gasCustomization": null,
@@ -928,7 +924,7 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Daimo supports EVM transaction flows where speed/gas presets are a common wallet control; verify exact UI depth in a future pass.",
+									"explanation": null,
 									"url": "https://paydocs.daimo.com/"
 								}
 							}
@@ -938,7 +934,7 @@
 				},
 				"recoveryUx": {
 					"ref": {
-						"explanation": "Daimo official product, support, app listing, and repository references were used for the recovery UX product-data pass.",
+						"explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://daimo.com"
 					},
 					"seedOnlyRecovery": null,
@@ -961,7 +957,7 @@
 				},
 				"onboardingFriction": {
 					"ref": {
-						"explanation": "Daimo official product, support, app listing, and repository references were used for the onboarding friction product-data pass.",
+						"explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://daimo.com"
 					},
 					"seedPhraseRequiredAtSignup": {
@@ -1029,7 +1025,7 @@
 				},
 				"portfolioManagement": {
 					"ref": {
-						"explanation": "Daimo official product, support, app listing, and repository references were used for the portfolio management product-data pass.",
+						"explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://daimo.com"
 					},
 					"netWorth": null,
@@ -1055,7 +1051,7 @@
 				},
 				"notifications": {
 					"ref": {
-						"explanation": "Daimo official product, support, app listing, and repository references were used for the notifications product-data pass.",
+						"explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://daimo.com"
 					},
 					"sendReceive": null,
@@ -1078,7 +1074,7 @@
 				},
 				"nftCapabilities": {
 					"ref": {
-						"explanation": "Daimo official product, support, app listing, and repository references were used for the NFT capabilities product-data pass.",
+						"explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://daimo.com"
 					},
 					"display": {
@@ -1111,7 +1107,7 @@
 				},
 				"defiPositionAwareness": {
 					"ref": {
-						"explanation": "Daimo official product, support, app listing, and repository references were used for the DeFi position awareness product-data pass.",
+						"explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://daimo.com"
 					},
 					"lendingPositions": null,
@@ -1124,7 +1120,7 @@
 				},
 				"stakingEarn": {
 					"ref": {
-						"explanation": "Daimo official product, support, app listing, and repository references were used for the staking and earn product-data pass.",
+						"explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://daimo.com"
 					},
 					"nativeStaking": null,
@@ -1137,7 +1133,7 @@
 				},
 				"customerSupport": {
 					"ref": {
-						"explanation": "Daimo official product, support, app listing, and repository references were used for the customer support product-data pass.",
+						"explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://daimo.com"
 					},
 					"liveChat": null,
@@ -1180,37 +1176,65 @@
 				},
 				"developerOffering": {
 					"ref": {
-						"explanation": "Daimo official product, support, app listing, and repository references were used for the developer offering product-data pass.",
-						"url": "https://daimo.com"
+						"explanation": "Daimo docs describe Modal SDK, API, webhooks, WebView, custom integration, and session-based API.",
+						"url": "https://docs.daimo.com/"
 					},
 					"walletSdk": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Daimo publishes wallet developer docs, SDKs, or public wallet integration repositories.",
-									"url": "https://github.com/daimo-eth/daimo"
+									"explanation": "Daimo provides a Modal SDK and session API for deposits.",
+									"url": "https://docs.daimo.com/"
 								}
 							}
 						]
 					},
-					"embeddedWalletSdk": null,
-					"whiteLabelOffering": null,
-					"walletConnectSupport": null,
-					"eip6963": null,
-					"eip5792": {
-						"$ref": "notSupported"
+					"embeddedWalletSdk": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Daimo Modal SDK supports embedded and overlay modes.",
+									"url": "https://docs.daimo.com/"
+								}
+							}
+						]
 					},
+					"whiteLabelOffering": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Daimo supports custom integration/API flows for apps.",
+									"url": "https://docs.daimo.com/"
+								}
+							}
+						]
+					},
+					"walletConnectSupport": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Daimo Modal SDK handles wallet connection and transaction signing.",
+									"url": "https://docs.daimo.com/"
+								}
+							}
+						]
+					},
+					"eip6963": null,
+					"eip5792": null,
 					"deepLinks": null,
 					"mobileLinkingQuality": null
 				},
 				"pricingFeeModel": {
 					"ref": {
-						"explanation": "Daimo official product, support, app listing, and repository references were used for the pricing and fee model product-data pass.",
+						"explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://daimo.com"
 					},
-					"swapFees": "Wallet swap/bridge fees are provider-, route-, or spread-dependent; exact bps require flow-level audit.",
-					"bridgeFees": "Bridge fees are route/provider-dependent; exact bps require flow-level audit.",
+					"swapFees": null,
+					"bridgeFees": null,
 					"onRampFees": null,
 					"spreadDisclosure": null,
 					"subscriptionFeatures": null,
@@ -1219,7 +1243,7 @@
 				},
 				"releaseVelocity": {
 					"ref": {
-						"explanation": "Daimo official product, support, app listing, and repository references were used for the release velocity product-data pass.",
+						"explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://daimo.com"
 					},
 					"latestReleaseDate": "2025-03-12",
@@ -1240,7 +1264,7 @@
 				},
 				"deviceSync": {
 					"ref": {
-						"explanation": "Daimo official product, support, app listing, and repository references were used for the device sync product-data pass.",
+						"explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://daimo.com"
 					},
 					"syncsAccounts": null,

@@ -1160,16 +1160,16 @@
 			"product": {
 				"platformCoverage": {
 					"ref": {
-						"explanation": "Rabby official product, support, app listing, and repository references were used for the platform coverage product-data pass.",
-						"url": "https://rabby.io"
+						"explanation": "Rabby official guides cover mobile, extension, and desktop onboarding; mobile guide says App Store and Google Play are supported, while extension guide says desktop browsers such as Chrome or Brave are required.",
+						"url": "https://support.rabby.io/hc/en-us"
 					},
 					"desktopApp": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Rabby has a desktop wallet variant recorded in the dataset.",
-									"url": "https://rabby.io"
+									"explanation": "Rabby Help Center includes a Get started with Rabby Desktop guide.",
+									"url": "https://support.rabby.io/hc/en-us"
 								}
 							}
 						]
@@ -1179,8 +1179,8 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Rabby has a mobile wallet variant recorded in the dataset.",
-									"url": "https://rabby.io"
+									"explanation": "Rabby Mobile guide describes Rabby Mobile.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11577447913231-Get-Started-with-Rabby-Mobile"
 								}
 							}
 						]
@@ -1190,14 +1190,22 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Rabby publishes a browser extension listing.",
-									"url": "https://chromewebstore.google.com/detail/rabby-wallet/acmacodkjbdgmoleebolmdjonilkdbch"
+									"explanation": "Rabby extension guide describes installing the Rabby Wallet extension.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11476915889807-Get-started-with-Rabby-extension"
 								}
 							}
 						]
 					},
 					"browserNative": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby is provided as app/desktop/extension, not as a browser-native wallet.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11476915889807-Get-started-with-Rabby-extension"
+								}
+							}
+						]
 					},
 					"webApp": null,
 					"ios": {
@@ -1205,8 +1213,8 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Rabby has a mobile app surface; iOS support should be verified against app-store listings for a deeper pass.",
-									"url": "https://rabby.io"
+									"explanation": "Rabby Mobile guide says the app is available on the App Store.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11577447913231-Get-Started-with-Rabby-Mobile"
 								}
 							}
 						]
@@ -1216,8 +1224,8 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Rabby has a mobile app surface; Android support should be verified against app-store listings for a deeper pass.",
-									"url": "https://rabby.io"
+									"explanation": "Rabby Mobile guide says the app is available on Google Play.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11577447913231-Get-Started-with-Rabby-Mobile"
 								}
 							}
 						]
@@ -1227,8 +1235,8 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Rabby has a Chrome Web Store extension listing.",
-									"url": "https://chromewebstore.google.com/detail/rabby-wallet/acmacodkjbdgmoleebolmdjonilkdbch"
+									"explanation": "Rabby extension guide says to use a desktop browser such as Chrome or Brave.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11476915889807-Get-started-with-Rabby-extension"
 								}
 							}
 						]
@@ -1238,62 +1246,178 @@
 				},
 				"supportedEcosystems": {
 					"ref": {
-						"explanation": "Rabby official product, support, app listing, and repository references were used for the supported ecosystems product-data pass.",
-						"url": "https://rabby.io"
+						"explanation": "Rabby supported-chains guide says Rabby supports all EVM-compatible networks and has integrated 90 networks.",
+						"url": "https://support.rabby.io/hc/en-us/articles/11319672399247-List-of-supported-chains-and-tokens"
 					},
 					"evm": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Rabby officially positions itself as supporting the EVM ecosystem or assets in this ecosystem.",
-									"url": "https://rabby.io"
+									"explanation": "Rabby says it supports all EVM-compatible networks.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11319672399247-List-of-supported-chains-and-tokens"
 								}
 							}
 						]
 					},
 					"solana": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby supported-chains guide scopes support to EVM-compatible networks.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11319672399247-List-of-supported-chains-and-tokens"
+								}
+							}
+						]
 					},
 					"bitcoin": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby supported-chains guide scopes support to EVM-compatible networks.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11319672399247-List-of-supported-chains-and-tokens"
+								}
+							}
+						]
 					},
 					"cosmos": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby supported-chains guide scopes support to EVM-compatible networks.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11319672399247-List-of-supported-chains-and-tokens"
+								}
+							}
+						]
 					},
 					"ton": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby supported-chains guide scopes support to EVM-compatible networks.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11319672399247-List-of-supported-chains-and-tokens"
+								}
+							}
+						]
 					},
 					"starknet": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby supported-chains guide scopes support to EVM-compatible networks.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11319672399247-List-of-supported-chains-and-tokens"
+								}
+							}
+						]
 					},
 					"sui": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby supported-chains guide scopes support to EVM-compatible networks.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11319672399247-List-of-supported-chains-and-tokens"
+								}
+							}
+						]
 					},
 					"aptos": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby supported-chains guide scopes support to EVM-compatible networks.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11319672399247-List-of-supported-chains-and-tokens"
+								}
+							}
+						]
 					},
 					"xrp": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby supported-chains guide scopes support to EVM-compatible networks.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11319672399247-List-of-supported-chains-and-tokens"
+								}
+							}
+						]
 					},
 					"cardano": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby supported-chains guide scopes support to EVM-compatible networks.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11319672399247-List-of-supported-chains-and-tokens"
+								}
+							}
+						]
 					},
 					"lightning": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby supported-chains guide scopes support to EVM-compatible networks.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11319672399247-List-of-supported-chains-and-tokens"
+								}
+							}
+						]
 					},
-					"other": []
+					"other": [
+						{
+							"name": "Custom EVM networks",
+							"ref": {
+								"explanation": "Rabby says users can add custom networks for testnets and networks not yet integrated.",
+								"url": "https://support.rabby.io/hc/en-us/articles/11319672399247-List-of-supported-chains-and-tokens"
+							}
+						}
+					]
 				},
 				"dappExperience": {
 					"ref": {
-						"explanation": "Rabby official product, support, app listing, and repository references were used for the product capabilities product-data pass.",
-						"url": "https://rabby.io"
+						"explanation": "Rabby Mobile and extension getting-started guides describe connecting to dapps, browsing Websites, and falling back to MetaMask/browser-wallet connection options.",
+						"url": "https://support.rabby.io/hc/en-us/articles/11577447913231-Get-Started-with-Rabby-Mobile"
 					},
-					"inAppBrowser": null,
+					"inAppBrowser": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby Mobile guide says users can tap Websites and search for a website to connect to dapps.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11577447913231-Get-Started-with-Rabby-Mobile"
+								}
+							}
+						]
+					},
 					"curatedDappDirectory": null,
-					"dappSearch": null,
+					"dappSearch": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby Mobile guide says users can search for the website they want to use.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11577447913231-Get-Started-with-Rabby-Mobile"
+								}
+							}
+						]
+					},
 					"walletConnectOnlyMode": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby documents direct injected-wallet dapp connection and MetaMask/browser-wallet fallback, not WalletConnect-only operation.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11577447913231-Get-Started-with-Rabby-Mobile"
+								}
+							}
+						]
 					},
 					"featuredApps": null,
 					"riskRatedDiscovery": {
@@ -1301,8 +1425,8 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Rabby provides risk warnings or risk-aware dapp/transaction discovery cues.",
-									"url": "https://rabby.io"
+									"explanation": "Rabby supported-chains guide says integrated chains include transaction simulation and a security engine.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11319672399247-List-of-supported-chains-and-tokens"
 								}
 							}
 						]
@@ -1310,7 +1434,7 @@
 				},
 				"fiatRamps": {
 					"ref": {
-						"explanation": "Rabby official product, support, app listing, and repository references were used for the fiat ramps product-data pass.",
+						"explanation": "Rabby source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://rabby.io"
 					},
 					"buyCrypto": null,
@@ -1325,42 +1449,52 @@
 				},
 				"gasUx": {
 					"ref": {
-						"explanation": "Rabby official product, support, app listing, and repository references were used for the gas UX product-data pass.",
-						"url": "https://rabby.io"
+						"explanation": "Rabby GasAccount guide says users can deposit USDT/USDC and use it to pay gas fees across Rabby-integrated networks; it also documents fee details.",
+						"url": "https://support.rabby.io/hc/en-us/articles/11477594883599-How-does-Rabby-GasAccount-work"
 					},
-					"gasCustomization": {
-						"$call": "supported",
+					"gasCustomization": null,
+					"gasSponsorship": {
+						"$call": "notSupportedWithRef",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Rabby supports standard EVM transaction sending where gas settings can be inspected or controlled in the wallet flow.",
-									"url": "https://rabbykit.rabby.io/"
+									"explanation": "Rabby GasAccount is prepaid by the user; the guide says it debits maximum gas and relay gas fees rather than sponsoring fees.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11477594883599-How-does-Rabby-GasAccount-work"
 								}
 							}
 						]
 					},
-					"gasSponsorship": null,
-					"gasAbstraction": null,
-					"payGasInStablecoins": null,
+					"gasAbstraction": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby GasAccount abstracts native-token gas by allowing a USDT/USDC balance to pay fees across integrated networks.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11477594883599-How-does-Rabby-GasAccount-work"
+								}
+							}
+						]
+					},
+					"payGasInStablecoins": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby GasAccount allows deposits of USDT or USDC for gas payments.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11477594883599-How-does-Rabby-GasAccount-work"
+								}
+							}
+						]
+					},
 					"payGasWithReceivedToken": null,
-					"speedPresets": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Rabby supports EVM transaction flows where speed/gas presets are a common wallet control; verify exact UI depth in a future pass.",
-									"url": "https://rabbykit.rabby.io/"
-								}
-							}
-						]
-					},
+					"speedPresets": null,
 					"stuckTransactionRecovery": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Rabby support/product materials include stuck or pending transaction recovery guidance.",
-									"url": "https://rabbykit.rabby.io/"
+									"explanation": "Rabby Help Center has a transaction guide for speeding up or canceling a pending transaction.",
+									"url": "https://support.rabby.io/hc/en-us"
 								}
 							}
 						]
@@ -1368,83 +1502,147 @@
 				},
 				"recoveryUx": {
 					"ref": {
-						"explanation": "Rabby official product, support, app listing, and repository references were used for the recovery UX product-data pass.",
-						"url": "https://rabby.io"
+						"explanation": "Rabby Mobile and extension setup guides document seed phrase backup, iCloud/Google Drive backup on mobile, password-protected local encryption, and import methods.",
+						"url": "https://support.rabby.io/hc/en-us/articles/11577447913231-Get-Started-with-Rabby-Mobile"
 					},
 					"seedOnlyRecovery": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Rabby supports recovery/import through a seed or secret recovery phrase.",
-									"url": "https://rabbykit.rabby.io/"
+									"explanation": "Rabby extension guide creates and backs up a seed phrase, and Rabby Mobile can import a seed phrase.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11476915889807-Get-started-with-Rabby-extension"
 								}
 							}
 						]
 					},
-					"cloudBackup": null,
-					"socialRecovery": null,
-					"guardianRecovery": null,
+					"cloudBackup": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby Mobile guide offers iCloud or Google Drive seed phrase backup.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11577447913231-Get-Started-with-Rabby-Mobile"
+								}
+							}
+						]
+					},
+					"socialRecovery": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby official recovery/setup guides describe seed, private-key, cloud backup, and hardware import, not social recovery.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11577447913231-Get-Started-with-Rabby-Mobile"
+								}
+							}
+						]
+					},
+					"guardianRecovery": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby official recovery/setup guides do not describe guardian recovery.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11577447913231-Get-Started-with-Rabby-Mobile"
+								}
+							}
+						]
+					},
 					"passkeyRecovery": null,
 					"emergencyKit": null,
 					"recoveryRehearsal": null
 				},
 				"onboardingFriction": {
 					"ref": {
-						"explanation": "Rabby official product, support, app listing, and repository references were used for the onboarding friction product-data pass.",
-						"url": "https://rabby.io"
+						"explanation": "Rabby setup guides document create/import flows, seed phrase backup, password setup, and no wallet-level KYC.",
+						"url": "https://support.rabby.io/hc/en-us/articles/11476915889807-Get-started-with-Rabby-extension"
 					},
 					"seedPhraseRequiredAtSignup": {
-						"$ref": "featureSupported"
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby extension setup requires showing and backing up a seed phrase when creating a new address.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11476915889807-Get-started-with-Rabby-extension"
+								}
+							}
+						]
 					},
 					"passkeySignup": null,
-					"emailSignup": null,
-					"phoneSignup": null,
+					"emailSignup": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby setup guides describe seed phrase/private key/import flows, not email signup.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11476915889807-Get-started-with-Rabby-extension"
+								}
+							}
+						]
+					},
+					"phoneSignup": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby setup guides describe seed phrase/private key/import flows, not phone signup.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11476915889807-Get-started-with-Rabby-extension"
+								}
+							}
+						]
+					},
 					"kycRequiredForWallet": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby is a non-custodial wallet setup using local password and seed/private key, with no KYC step in setup guides.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11476915889807-Get-started-with-Rabby-extension"
+								}
+							}
+						]
 					},
 					"guestMode": null,
-					"embeddedWalletMode": null,
+					"embeddedWalletMode": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby setup guides are for first-party wallet app/extension/desktop flows, not embedded-wallet signup.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11476915889807-Get-started-with-Rabby-extension"
+								}
+							}
+						]
+					},
 					"timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
 				},
 				"portfolioManagement": {
 					"ref": {
-						"explanation": "Rabby official product, support, app listing, and repository references were used for the portfolio management product-data pass.",
-						"url": "https://rabby.io"
+						"explanation": "Rabby supported-chains guide says Rabby displays tokens automatically and DeFi assets such as LPs, lending positions, staking, and more.",
+						"url": "https://support.rabby.io/hc/en-us/articles/11319672399247-List-of-supported-chains-and-tokens"
 					},
 					"netWorth": {
-						"$ref": "featureSupported"
-					},
-					"pnl": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Rabby provides profit/loss or performance tracking in portfolio views.",
-									"url": "https://rabby.io"
+									"explanation": "Rabby automatically displays wallet assets across integrated EVM networks.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11319672399247-List-of-supported-chains-and-tokens"
 								}
 							}
 						]
 					},
+					"pnl": null,
 					"costBasis": null,
-					"tokenCategories": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Rabby provides token balance and asset-list portfolio views.",
-									"url": "https://rabby.io"
-								}
-							}
-						]
-					},
+					"tokenCategories": null,
 					"nftSupport": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Rabby supports NFT display or NFT portfolio management in at least one wallet surface.",
-									"url": "https://rabby.io"
+									"explanation": "Rabby supported-chains guide includes requesting support for tokens/NFTs/chains/DeFi assets and says integrated chains offer portfolio tracking.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11319672399247-List-of-supported-chains-and-tokens"
 								}
 							}
 						]
@@ -1455,19 +1653,27 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Rabby supports watch-only addresses, imported account monitoring, or external account portfolio tracking.",
-									"url": "https://rabby.io"
+									"explanation": "Rabby Help Center includes a watch-only address article.",
+									"url": "https://support.rabby.io/hc/en-us"
 								}
 							}
 						]
 					},
 					"multiWalletAggregation": {
-						"$ref": "featureSupported"
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby Mobile setup supports adding/importing more addresses and pinning an address to the homepage.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11577447913231-Get-Started-with-Rabby-Mobile"
+								}
+							}
+						]
 					}
 				},
 				"notifications": {
 					"ref": {
-						"explanation": "Rabby official product, support, app listing, and repository references were used for the notifications product-data pass.",
+						"explanation": "Rabby source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://rabby.io"
 					},
 					"sendReceive": null,
@@ -1500,7 +1706,7 @@
 				},
 				"nftCapabilities": {
 					"ref": {
-						"explanation": "Rabby official product, support, app listing, and repository references were used for the NFT capabilities product-data pass.",
+						"explanation": "Rabby source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://rabby.io"
 					},
 					"display": {
@@ -1543,16 +1749,16 @@
 				},
 				"defiPositionAwareness": {
 					"ref": {
-						"explanation": "Rabby official product, support, app listing, and repository references were used for the DeFi position awareness product-data pass.",
-						"url": "https://rabby.io"
+						"explanation": "Rabby supported-chains guide says Rabby automatically displays DeFi assets including LPs, lending positions, staking, and more.",
+						"url": "https://support.rabby.io/hc/en-us/articles/11319672399247-List-of-supported-chains-and-tokens"
 					},
 					"lendingPositions": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Rabby surfaces DeFi lending or protocol positions in wallet/portfolio views.",
-									"url": "https://rabby.io"
+									"explanation": "Rabby says it displays lending positions.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11319672399247-List-of-supported-chains-and-tokens"
 								}
 							}
 						]
@@ -1562,8 +1768,8 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Rabby surfaces staking or earn positions in wallet/portfolio views.",
-									"url": "https://rabby.io"
+									"explanation": "Rabby says it displays staking positions.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11319672399247-List-of-supported-chains-and-tokens"
 								}
 							}
 						]
@@ -1573,50 +1779,30 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Rabby surfaces liquidity-pool or DeFi protocol positions.",
-									"url": "https://rabby.io"
+									"explanation": "Rabby says it displays liquidity-pool positions.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11319672399247-List-of-supported-chains-and-tokens"
 								}
 							}
 						]
 					},
-					"vaultPositions": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Rabby surfaces vault or protocol positions.",
-									"url": "https://rabby.io"
-								}
-							}
-						]
-					},
+					"vaultPositions": null,
 					"perProtocolBalances": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Rabby groups DeFi holdings by protocol or app.",
-									"url": "https://rabby.io"
+									"explanation": "Rabby says it automatically displays DeFi assets across protocols on integrated chains.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11319672399247-List-of-supported-chains-and-tokens"
 								}
 							}
 						]
 					},
-					"claimableRewards": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Rabby surfaces claimable rewards or earn balances.",
-									"url": "https://rabby.io"
-								}
-							}
-						]
-					},
+					"claimableRewards": null,
 					"liquidationWarnings": null
 				},
 				"stakingEarn": {
 					"ref": {
-						"explanation": "Rabby official product, support, app listing, and repository references were used for the staking and earn product-data pass.",
+						"explanation": "Rabby source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://rabby.io"
 					},
 					"nativeStaking": null,
@@ -1629,8 +1815,8 @@
 				},
 				"customerSupport": {
 					"ref": {
-						"explanation": "Rabby official product, support, app listing, and repository references were used for the customer support product-data pass.",
-						"url": "https://rabby.io"
+						"explanation": "Rabby Help Center includes support articles and contact options including email/support request/direct message.",
+						"url": "https://support.rabby.io/hc/en-us"
 					},
 					"liveChat": null,
 					"emailSupport": {
@@ -1638,41 +1824,41 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Rabby publishes support, help center, or contact paths for wallet users.",
-									"url": "https://rabbykit.rabby.io/"
+									"explanation": "Rabby Help Center contact area includes Email and support@rabby.io is listed in GasAccount troubleshooting.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11477594883599-How-does-Rabby-GasAccount-work"
 								}
 							}
 						]
 					},
 					"aiSupport": null,
 					"publishedSla": null,
-					"inAppHelpCenter": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Rabby provides in-app or product-linked help/support content.",
-									"url": "https://rabbykit.rabby.io/"
-								}
-							}
-						]
-					},
+					"inAppHelpCenter": null,
 					"transactionTroubleshooting": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Rabby support docs include transaction or wallet troubleshooting material.",
-									"url": "https://rabbykit.rabby.io/"
+									"explanation": "Rabby Help Center has a Transactions section covering pending, replacement, gas, and refund/reversal issues.",
+									"url": "https://support.rabby.io/hc/en-us"
 								}
 							}
 						]
 					},
-					"scamRecoveryGuidance": null
+					"scamRecoveryGuidance": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby Help Center includes privacy/security articles on scam transactions, wallet safety checks, and avoiding crypto scams.",
+									"url": "https://support.rabby.io/hc/en-us"
+								}
+							}
+						]
+					}
 				},
 				"developerOffering": {
 					"ref": {
-						"explanation": "Rabby official product, support, app listing, and repository references were used for the developer offering product-data pass.",
+						"explanation": "Rabby source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://rabby.io"
 					},
 					"walletSdk": {
@@ -1707,11 +1893,11 @@
 				},
 				"pricingFeeModel": {
 					"ref": {
-						"explanation": "Rabby official product, support, app listing, and repository references were used for the pricing and fee model product-data pass.",
-						"url": "https://rabby.io"
+						"explanation": "Rabby GasAccount guide states Rabby does not charge additional fees for GasAccount and explains gas charges; Perps Fees has a dedicated support article.",
+						"url": "https://support.rabby.io/hc/en-us/articles/11477594883599-How-does-Rabby-GasAccount-work"
 					},
-					"swapFees": "Wallet swap/bridge fees are provider-, route-, or spread-dependent; exact bps require flow-level audit.",
-					"bridgeFees": "Bridge fees are route/provider-dependent; exact bps require flow-level audit.",
+					"swapFees": null,
+					"bridgeFees": null,
 					"onRampFees": null,
 					"spreadDisclosure": null,
 					"subscriptionFeatures": null,
@@ -1720,7 +1906,7 @@
 				},
 				"releaseVelocity": {
 					"ref": {
-						"explanation": "Rabby official product, support, app listing, and repository references were used for the release velocity product-data pass.",
+						"explanation": "Rabby source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://rabby.io"
 					},
 					"latestReleaseDate": "2026-05-06",
@@ -1741,16 +1927,44 @@
 				},
 				"deviceSync": {
 					"ref": {
-						"explanation": "Rabby official product, support, app listing, and repository references were used for the device sync product-data pass.",
-						"url": "https://rabby.io"
+						"explanation": "Rabby GasAccount guide says using the same address across Extension, Mobile, and Desktop restores GasAccount balance; recovery guides otherwise rely on seed/import/cloud backup.",
+						"url": "https://support.rabby.io/hc/en-us/articles/11477594883599-How-does-Rabby-GasAccount-work"
 					},
 					"syncsAccounts": null,
 					"syncsSettings": null,
 					"syncsContactsOrAddressBook": null,
-					"desktopMobileSync": null,
-					"cloudBackedSync": null,
+					"desktopMobileSync": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby supports the same address across Extension, Mobile, and Desktop for GasAccount balance restoration.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11477594883599-How-does-Rabby-GasAccount-work"
+								}
+							}
+						]
+					},
+					"cloudBackedSync": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby Mobile supports iCloud/Google Drive backup for seed phrase restoration.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11577447913231-Get-Started-with-Rabby-Mobile"
+								}
+							}
+						]
+					},
 					"requiresSameSeedImport": {
-						"$ref": "featureSupported"
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Rabby setup/import docs require seed phrase/private key/import method to add an existing address on another installation.",
+									"url": "https://support.rabby.io/hc/en-us/articles/11577447913231-Get-Started-with-Rabby-Mobile"
+								}
+							}
+						]
 					}
 				}
 			}

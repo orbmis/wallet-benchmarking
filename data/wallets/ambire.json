@@ -1161,8 +1161,8 @@
 			"product": {
 				"platformCoverage": {
 					"ref": {
-						"explanation": "Ambire official product, support, app listing, and repository references were used for the platform coverage product-data pass.",
-						"url": "https://www.ambire.com"
+						"explanation": "Ambire product update describes Ambire Extension as a browser extension; no mobile app was found in the official feature article.",
+						"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
 					},
 					"desktopApp": null,
 					"mobileApp": null,
@@ -1171,22 +1171,30 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Ambire publishes a browser extension listing.",
-									"url": "https://chromewebstore.google.com/detail/ambire-web3-wallet/ehgjhhccekdedpbkifaojjaefeohnoea"
+									"explanation": "Ambire describes the Ambire Extension as a self-custodial wallet browser extension.",
+									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
 								}
 							}
 						]
 					},
 					"browserNative": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Ambire is a browser extension wallet, not browser-native.",
+									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+								}
+							}
+						]
 					},
 					"webApp": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Ambire offers a web app or web-first wallet surface.",
-									"url": "https://www.ambire.com"
+									"explanation": "Ambire Help Center covers the Web version of Ambire Wallet.",
+									"url": "https://help.ambire.com/hc/en-us/articles/4410827841298-Which-networks-are-supported-by-Ambire-Wallet-"
 								}
 							}
 						]
@@ -1198,8 +1206,8 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Ambire has a Chrome Web Store extension listing.",
-									"url": "https://chromewebstore.google.com/detail/ambire-web3-wallet/ehgjhhccekdedpbkifaojjaefeohnoea"
+									"explanation": "Ambire Extension is a browser extension for EVM-chain wallet use.",
+									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
 								}
 							}
 						]
@@ -1209,71 +1217,187 @@
 				},
 				"supportedEcosystems": {
 					"ref": {
-						"explanation": "Ambire official product, support, app listing, and repository references were used for the supported ecosystems product-data pass.",
-						"url": "https://www.ambire.com"
+						"explanation": "Ambire describes the extension as supporting all EVM chains including Ethereum, Arbitrum, Polygon, and Base.",
+						"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
 					},
 					"evm": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Ambire officially positions itself as supporting the EVM ecosystem or assets in this ecosystem.",
-									"url": "https://www.ambire.com"
+									"explanation": "Ambire Extension is for all EVM chains.",
+									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
 								}
 							}
 						]
 					},
 					"solana": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Ambire feature article scopes the wallet to EVM chains.",
+									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+								}
+							}
+						]
 					},
 					"bitcoin": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Ambire feature article scopes the wallet to EVM chains.",
+									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+								}
+							}
+						]
 					},
 					"cosmos": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Ambire feature article scopes the wallet to EVM chains.",
+									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+								}
+							}
+						]
 					},
 					"ton": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Ambire feature article scopes the wallet to EVM chains.",
+									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+								}
+							}
+						]
 					},
 					"starknet": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Ambire feature article scopes the wallet to EVM chains.",
+									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+								}
+							}
+						]
 					},
 					"sui": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Ambire feature article scopes the wallet to EVM chains.",
+									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+								}
+							}
+						]
 					},
 					"aptos": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Ambire feature article scopes the wallet to EVM chains.",
+									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+								}
+							}
+						]
 					},
 					"xrp": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Ambire feature article scopes the wallet to EVM chains.",
+									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+								}
+							}
+						]
 					},
 					"cardano": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Ambire feature article scopes the wallet to EVM chains.",
+									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+								}
+							}
+						]
 					},
 					"lightning": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Ambire feature article scopes the wallet to EVM chains.",
+									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+								}
+							}
+						]
 					},
-					"other": []
+					"other": [
+						{
+							"name": "EIP-7702 smart features",
+							"ref": {
+								"explanation": "Ambire says EOAs can adopt smart features via EIP-7702.",
+								"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+							}
+						}
+					]
 				},
 				"dappExperience": {
 					"ref": {
-						"explanation": "Ambire official product, support, app listing, and repository references were used for the product capabilities product-data pass.",
-						"url": "https://www.ambire.com"
+						"explanation": "Ambire says users can connect to any apps easily and has a built-in verified app catalog.",
+						"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
 					},
 					"inAppBrowser": null,
-					"curatedDappDirectory": null,
+					"curatedDappDirectory": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Ambire documents a built-in app catalog of pre-integrated verified apps.",
+									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+								}
+							}
+						]
+					},
 					"dappSearch": null,
 					"walletConnectOnlyMode": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Ambire supports direct extension connections to apps, not WalletConnect-only mode.",
+									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+								}
+							}
+						]
 					},
-					"featuredApps": null,
+					"featuredApps": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Ambire built-in app catalog includes pre-integrated apps and user perks.",
+									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+								}
+							}
+						]
+					},
 					"riskRatedDiscovery": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Ambire provides risk warnings or risk-aware dapp/transaction discovery cues.",
-									"url": "https://www.ambire.com"
+									"explanation": "Ambire runs checks before connecting and warns about fake websites.",
+									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
 								}
 							}
 						]
@@ -1281,7 +1405,7 @@
 				},
 				"fiatRamps": {
 					"ref": {
-						"explanation": "Ambire official product, support, app listing, and repository references were used for the fiat ramps product-data pass.",
+						"explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://www.ambire.com"
 					},
 					"buyCrypto": null,
@@ -1296,28 +1420,18 @@
 				},
 				"gasUx": {
 					"ref": {
-						"explanation": "Ambire official product, support, app listing, and repository references were used for the gas UX product-data pass.",
-						"url": "https://www.ambire.com"
+						"explanation": "Ambire documents smart features, transaction batching, Gas Tank, stablecoin/non-native gas payment, and future-balance transactions.",
+						"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
 					},
 					"gasCustomization": null,
-					"gasSponsorship": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire supports sponsored or externally paid gas for at least some wallet flows.",
-									"url": "https://www.ambire.com"
-								}
-							}
-						]
-					},
+					"gasSponsorship": null,
 					"gasAbstraction": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Ambire abstracts gas in at least some smart-account or payment flows.",
-									"url": "https://www.ambire.com"
+									"explanation": "Ambire says users can pay gas through smart features and the Gas Tank without native gas on every chain.",
+									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
 								}
 							}
 						]
@@ -1327,29 +1441,39 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Ambire supports paying gas or wallet operation fees with stablecoin or non-native assets in at least some flows.",
-									"url": "https://www.ambire.com"
+									"explanation": "Ambire says users can pay gas fees in stablecoins or other non-native tokens.",
+									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
 								}
 							}
 						]
 					},
-					"payGasWithReceivedToken": null,
-					"speedPresets": {
+					"payGasWithReceivedToken": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Ambire supports EVM transaction flows where speed/gas presets are a common wallet control; verify exact UI depth in a future pass.",
-									"url": "https://help.ambire.com/hc/en-us"
+									"explanation": "Ambire says users can pay gas directly in USDC or other tokens held in the account.",
+									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
 								}
 							}
 						]
 					},
-					"stuckTransactionRecovery": null
+					"speedPresets": null,
+					"stuckTransactionRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Ambire activity tab includes repeating transactions; stuck-tx recovery was not separately proven.",
+									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+								}
+							}
+						]
+					}
 				},
 				"recoveryUx": {
 					"ref": {
-						"explanation": "Ambire official product, support, app listing, and repository references were used for the recovery UX product-data pass.",
+						"explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://www.ambire.com"
 					},
 					"seedOnlyRecovery": {
@@ -1392,7 +1516,7 @@
 				},
 				"onboardingFriction": {
 					"ref": {
-						"explanation": "Ambire official product, support, app listing, and repository references were used for the onboarding friction product-data pass.",
+						"explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://www.ambire.com"
 					},
 					"seedPhraseRequiredAtSignup": {
@@ -1410,55 +1534,71 @@
 				},
 				"portfolioManagement": {
 					"ref": {
-						"explanation": "Ambire official product, support, app listing, and repository references were used for the portfolio management product-data pass.",
-						"url": "https://www.ambire.com"
+						"explanation": "Ambire describes watch-only accounts, DeFi position tracking, NFT storage, activity history, and multi-account recovery phrase management.",
+						"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
 					},
 					"netWorth": {
-						"$ref": "featureSupported"
-					},
-					"pnl": null,
-					"costBasis": null,
-					"tokenCategories": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Ambire provides token balance and asset-list portfolio views.",
-									"url": "https://www.ambire.com"
+									"explanation": "Ambire dashboard shows token balances and USD values for DeFi positions.",
+									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
 								}
 							}
 						]
 					},
+					"pnl": null,
+					"costBasis": null,
+					"tokenCategories": null,
 					"nftSupport": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Ambire supports NFT display or NFT portfolio management in at least one wallet surface.",
-									"url": "https://www.ambire.com"
+									"explanation": "Ambire says users can store/check NFTs inside the extension.",
+									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
 								}
 							}
 						]
 					},
-					"collectionViews": null,
+					"collectionViews": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Ambire says NFT collections are displayed inside the extension.",
+									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+								}
+							}
+						]
+					},
 					"watchOnlyWallets": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Ambire supports watch-only addresses, imported account monitoring, or external account portfolio tracking.",
-									"url": "https://www.ambire.com"
+									"explanation": "Ambire says users can watch an address such as an ENS name.",
+									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
 								}
 							}
 						]
 					},
 					"multiWalletAggregation": {
-						"$ref": "featureSupported"
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Ambire lets users manage multiple recovery phrases/accounts in one extension.",
+									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+								}
+							}
+						]
 					}
 				},
 				"notifications": {
 					"ref": {
-						"explanation": "Ambire official product, support, app listing, and repository references were used for the notifications product-data pass.",
+						"explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://www.ambire.com"
 					},
 					"sendReceive": null,
@@ -1481,7 +1621,7 @@
 				},
 				"nftCapabilities": {
 					"ref": {
-						"explanation": "Ambire official product, support, app listing, and repository references were used for the NFT capabilities product-data pass.",
+						"explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://www.ambire.com"
 					},
 					"display": {
@@ -1524,16 +1664,16 @@
 				},
 				"defiPositionAwareness": {
 					"ref": {
-						"explanation": "Ambire official product, support, app listing, and repository references were used for the DeFi position awareness product-data pass.",
-						"url": "https://www.ambire.com"
+						"explanation": "Ambire says users can track DeFi positions directly in the extension dashboard, including supplied tokens, amount, USD value, and investment health.",
+						"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
 					},
 					"lendingPositions": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Ambire surfaces DeFi lending or protocol positions in wallet/portfolio views.",
-									"url": "https://www.ambire.com"
+									"explanation": "Ambire cites AAVE supply positions as dashboard-tracked DeFi positions.",
+									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
 								}
 							}
 						]
@@ -1543,61 +1683,41 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Ambire surfaces staking or earn positions in wallet/portfolio views.",
-									"url": "https://www.ambire.com"
+									"explanation": "Ambire says tracked DeFi positions include staked tokens.",
+									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
 								}
 							}
 						]
 					},
-					"lpPositions": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire surfaces liquidity-pool or DeFi protocol positions.",
-									"url": "https://www.ambire.com"
-								}
-							}
-						]
-					},
-					"vaultPositions": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire surfaces vault or protocol positions.",
-									"url": "https://www.ambire.com"
-								}
-							}
-						]
-					},
+					"lpPositions": null,
+					"vaultPositions": null,
 					"perProtocolBalances": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Ambire groups DeFi holdings by protocol or app.",
-									"url": "https://www.ambire.com"
+									"explanation": "Ambire dashboard tracks supplied token, amount, USD value, and health.",
+									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
 								}
 							}
 						]
 					},
-					"claimableRewards": {
+					"claimableRewards": null,
+					"liquidationWarnings": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Ambire surfaces claimable rewards or earn balances.",
-									"url": "https://www.ambire.com"
+									"explanation": "Ambire references investment health information for DeFi positions.",
+									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
 								}
 							}
 						]
-					},
-					"liquidationWarnings": null
+					}
 				},
 				"stakingEarn": {
 					"ref": {
-						"explanation": "Ambire official product, support, app listing, and repository references were used for the staking and earn product-data pass.",
+						"explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://www.ambire.com"
 					},
 					"nativeStaking": null,
@@ -1610,7 +1730,7 @@
 				},
 				"customerSupport": {
 					"ref": {
-						"explanation": "Ambire official product, support, app listing, and repository references were used for the customer support product-data pass.",
+						"explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://www.ambire.com"
 					},
 					"liveChat": null,
@@ -1653,7 +1773,7 @@
 				},
 				"developerOffering": {
 					"ref": {
-						"explanation": "Ambire official product, support, app listing, and repository references were used for the developer offering product-data pass.",
+						"explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://www.ambire.com"
 					},
 					"walletSdk": {
@@ -1691,11 +1811,11 @@
 				},
 				"pricingFeeModel": {
 					"ref": {
-						"explanation": "Ambire official product, support, app listing, and repository references were used for the pricing and fee model product-data pass.",
-						"url": "https://www.ambire.com"
+						"explanation": "Ambire states built-in swap and bridge has a flat 0.25% fee and uses fee revenue for WALLET token buybacks.",
+						"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
 					},
-					"swapFees": "Wallet swap/bridge fees are provider-, route-, or spread-dependent; exact bps require flow-level audit.",
-					"bridgeFees": "Bridge fees are route/provider-dependent; exact bps require flow-level audit.",
+					"swapFees": "Built-in swap and bridge has a flat 0.25% fee.",
+					"bridgeFees": "Built-in swap and bridge has a flat 0.25% fee.",
 					"onRampFees": null,
 					"spreadDisclosure": null,
 					"subscriptionFeatures": null,
@@ -1704,7 +1824,7 @@
 				},
 				"releaseVelocity": {
 					"ref": {
-						"explanation": "Ambire official product, support, app listing, and repository references were used for the release velocity product-data pass.",
+						"explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://www.ambire.com"
 					},
 					"latestReleaseDate": "2026-01-29",
@@ -1725,7 +1845,7 @@
 				},
 				"deviceSync": {
 					"ref": {
-						"explanation": "Ambire official product, support, app listing, and repository references were used for the device sync product-data pass.",
+						"explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://www.ambire.com"
 					},
 					"syncsAccounts": null,

@@ -552,17 +552,27 @@
 			"product": {
 				"platformCoverage": {
 					"ref": {
-						"explanation": "Elytro official product, support, app listing, and repository references were used for the platform coverage product-data pass.",
-						"url": "https://elytro.com"
+						"explanation": "Elytro homepage describes CLI/agent-driven wallet setup and says the Chrome extension stays available for existing users while a new interface is built.",
+						"url": "https://elytro.com/"
 					},
-					"desktopApp": null,
-					"mobileApp": {
+					"desktopApp": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Elytro has a mobile wallet variant recorded in the dataset.",
-									"url": "https://elytro.com"
+									"explanation": "Elytro is installed and used through CLI/agent workflows.",
+									"url": "https://elytro.com/"
+								}
+							}
+						]
+					},
+					"mobileApp": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Elytro homepage does not describe mobile app support.",
+									"url": "https://elytro.com/"
 								}
 							}
 						]
@@ -572,34 +582,42 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Elytro publishes a browser extension listing.",
-									"url": "https://chromewebstore.google.com/detail/elytro/alkpdbodocedcmhgmhkebanomfeenoik"
+									"explanation": "Elytro says the Chrome extension stays available for existing users.",
+									"url": "https://elytro.com/"
 								}
 							}
 						]
 					},
 					"browserNative": {
-						"$ref": "notSupported"
-					},
-					"webApp": null,
-					"ios": {
-						"$call": "supported",
+						"$call": "notSupportedWithRef",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Elytro has a mobile app surface; iOS support should be verified against app-store listings for a deeper pass.",
-									"url": "https://elytro.com"
+									"explanation": "Elytro is not browser-native.",
+									"url": "https://elytro.com/"
+								}
+							}
+						]
+					},
+					"webApp": null,
+					"ios": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Elytro homepage does not describe iOS support.",
+									"url": "https://elytro.com/"
 								}
 							}
 						]
 					},
 					"android": {
-						"$call": "supported",
+						"$call": "notSupportedWithRef",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Elytro has a mobile app surface; Android support should be verified against app-store listings for a deeper pass.",
-									"url": "https://elytro.com"
+									"explanation": "Elytro homepage does not describe Android support.",
+									"url": "https://elytro.com/"
 								}
 							}
 						]
@@ -609,8 +627,8 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Elytro has a Chrome Web Store extension listing.",
-									"url": "https://chromewebstore.google.com/detail/elytro/alkpdbodocedcmhgmhkebanomfeenoik"
+									"explanation": "Elytro says the Chrome extension remains available for existing users.",
+									"url": "https://elytro.com/"
 								}
 							}
 						]
@@ -620,55 +638,143 @@
 				},
 				"supportedEcosystems": {
 					"ref": {
-						"explanation": "Elytro official product, support, app listing, and repository references were used for the supported ecosystems product-data pass.",
-						"url": "https://elytro.com"
+						"explanation": "Elytro homepage describes Ethereum smart accounts, mainnet-first roadmap, and Arbitrum setup examples.",
+						"url": "https://elytro.com/"
 					},
 					"evm": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Elytro officially positions itself as supporting the EVM ecosystem or assets in this ecosystem.",
-									"url": "https://elytro.com"
+									"explanation": "Elytro is built for Ethereum smart accounts and Arbitrum examples.",
+									"url": "https://elytro.com/"
 								}
 							}
 						]
 					},
 					"solana": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Elytro homepage scopes product to Ethereum smart accounts.",
+									"url": "https://elytro.com/"
+								}
+							}
+						]
 					},
 					"bitcoin": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Elytro homepage scopes product to Ethereum smart accounts.",
+									"url": "https://elytro.com/"
+								}
+							}
+						]
 					},
 					"cosmos": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Elytro homepage scopes product to Ethereum smart accounts.",
+									"url": "https://elytro.com/"
+								}
+							}
+						]
 					},
 					"ton": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Elytro homepage scopes product to Ethereum smart accounts.",
+									"url": "https://elytro.com/"
+								}
+							}
+						]
 					},
 					"starknet": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Elytro homepage scopes product to Ethereum smart accounts.",
+									"url": "https://elytro.com/"
+								}
+							}
+						]
 					},
 					"sui": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Elytro homepage scopes product to Ethereum smart accounts.",
+									"url": "https://elytro.com/"
+								}
+							}
+						]
 					},
 					"aptos": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Elytro homepage scopes product to Ethereum smart accounts.",
+									"url": "https://elytro.com/"
+								}
+							}
+						]
 					},
 					"xrp": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Elytro homepage scopes product to Ethereum smart accounts.",
+									"url": "https://elytro.com/"
+								}
+							}
+						]
 					},
 					"cardano": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Elytro homepage scopes product to Ethereum smart accounts.",
+									"url": "https://elytro.com/"
+								}
+							}
+						]
 					},
 					"lightning": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Elytro homepage scopes product to Ethereum smart accounts.",
+									"url": "https://elytro.com/"
+								}
+							}
+						]
 					},
-					"other": []
+					"other": [
+						{
+							"name": "Arbitrum",
+							"ref": {
+								"explanation": "Elytro setup example creates and activates an account on Arbitrum.",
+								"url": "https://elytro.com/"
+							}
+						}
+					]
 				},
 				"dappExperience": {
 					"ref": {
-						"explanation": "Elytro official product, support, app listing, and repository references were used for the product capabilities product-data pass.",
+						"explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://elytro.com"
 					},
 					"inAppBrowser": null,
@@ -682,7 +788,7 @@
 				},
 				"fiatRamps": {
 					"ref": {
-						"explanation": "Elytro official product, support, app listing, and repository references were used for the fiat ramps product-data pass.",
+						"explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://elytro.com"
 					},
 					"buyCrypto": null,
@@ -697,8 +803,8 @@
 				},
 				"gasUx": {
 					"ref": {
-						"explanation": "Elytro official product, support, app listing, and repository references were used for the gas UX product-data pass.",
-						"url": "https://elytro.com"
+						"explanation": "Elytro homepage demonstrates simulation, sponsored gas, UserOp building, and smart-account policy controls.",
+						"url": "https://elytro.com/"
 					},
 					"gasCustomization": null,
 					"gasSponsorship": {
@@ -706,8 +812,8 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Elytro supports sponsored or externally paid gas for at least some wallet flows.",
-									"url": "https://elytro.com"
+									"explanation": "Elytro demo output shows Gas: 21,000 Sponsored.",
+									"url": "https://elytro.com/"
 								}
 							}
 						]
@@ -717,43 +823,53 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Elytro abstracts gas in at least some smart-account or payment flows.",
-									"url": "https://elytro.com"
+									"explanation": "Elytro uses EIP-4337 smart accounts/UserOps.",
+									"url": "https://elytro.com/"
 								}
 							}
 						]
 					},
 					"payGasInStablecoins": null,
 					"payGasWithReceivedToken": null,
-					"speedPresets": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Elytro supports EVM transaction flows where speed/gas presets are a common wallet control; verify exact UI depth in a future pass.",
-									"url": "https://elytro.com"
-								}
-							}
-						]
-					},
+					"speedPresets": null,
 					"stuckTransactionRecovery": null
 				},
 				"recoveryUx": {
 					"ref": {
-						"explanation": "Elytro official product, support, app listing, and repository references were used for the recovery UX product-data pass.",
-						"url": "https://elytro.com"
+						"explanation": "Elytro homepage lists Social Recovery and demonstrates recovery status/access restored.",
+						"url": "https://elytro.com/"
 					},
 					"seedOnlyRecovery": null,
 					"cloudBackup": null,
-					"socialRecovery": null,
-					"guardianRecovery": null,
+					"socialRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Elytro lists Social Recovery.",
+									"url": "https://elytro.com/"
+								}
+							}
+						]
+					},
+					"guardianRecovery": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Elytro social recovery restores access through smart-account recovery flow.",
+									"url": "https://elytro.com/"
+								}
+							}
+						]
+					},
 					"passkeyRecovery": null,
 					"emergencyKit": null,
 					"recoveryRehearsal": null
 				},
 				"onboardingFriction": {
 					"ref": {
-						"explanation": "Elytro official product, support, app listing, and repository references were used for the onboarding friction product-data pass.",
+						"explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://elytro.com"
 					},
 					"seedPhraseRequiredAtSignup": null,
@@ -769,7 +885,7 @@
 				},
 				"portfolioManagement": {
 					"ref": {
-						"explanation": "Elytro official product, support, app listing, and repository references were used for the portfolio management product-data pass.",
+						"explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://elytro.com"
 					},
 					"netWorth": null,
@@ -795,7 +911,7 @@
 				},
 				"notifications": {
 					"ref": {
-						"explanation": "Elytro official product, support, app listing, and repository references were used for the notifications product-data pass.",
+						"explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://elytro.com"
 					},
 					"sendReceive": null,
@@ -818,7 +934,7 @@
 				},
 				"nftCapabilities": {
 					"ref": {
-						"explanation": "Elytro official product, support, app listing, and repository references were used for the NFT capabilities product-data pass.",
+						"explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://elytro.com"
 					},
 					"display": {
@@ -851,7 +967,7 @@
 				},
 				"defiPositionAwareness": {
 					"ref": {
-						"explanation": "Elytro official product, support, app listing, and repository references were used for the DeFi position awareness product-data pass.",
+						"explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://elytro.com"
 					},
 					"lendingPositions": null,
@@ -864,7 +980,7 @@
 				},
 				"stakingEarn": {
 					"ref": {
-						"explanation": "Elytro official product, support, app listing, and repository references were used for the staking and earn product-data pass.",
+						"explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://elytro.com"
 					},
 					"nativeStaking": null,
@@ -877,7 +993,7 @@
 				},
 				"customerSupport": {
 					"ref": {
-						"explanation": "Elytro official product, support, app listing, and repository references were used for the customer support product-data pass.",
+						"explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://elytro.com"
 					},
 					"liveChat": null,
@@ -920,21 +1036,21 @@
 				},
 				"developerOffering": {
 					"ref": {
-						"explanation": "Elytro official product, support, app listing, and repository references were used for the developer offering product-data pass.",
-						"url": "https://elytro.com"
+						"explanation": "Elytro homepage links agent integration docs, CLI reference, GitHub skills, npm, and agent setup prompts.",
+						"url": "https://elytro.com/"
 					},
-					"walletSdk": {
+					"walletSdk": null,
+					"embeddedWalletSdk": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Elytro publishes wallet developer docs, SDKs, or public wallet integration repositories.",
-									"url": "https://github.com/Elytro-eth"
+									"explanation": "Elytro provides agent-facing wallet integration docs and setup prompts.",
+									"url": "https://elytro.com/"
 								}
 							}
 						]
 					},
-					"embeddedWalletSdk": null,
 					"whiteLabelOffering": null,
 					"walletConnectSupport": null,
 					"eip6963": null,
@@ -944,11 +1060,11 @@
 				},
 				"pricingFeeModel": {
 					"ref": {
-						"explanation": "Elytro official product, support, app listing, and repository references were used for the pricing and fee model product-data pass.",
+						"explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://elytro.com"
 					},
-					"swapFees": "Wallet swap/bridge fees are provider-, route-, or spread-dependent; exact bps require flow-level audit.",
-					"bridgeFees": "Bridge fees are route/provider-dependent; exact bps require flow-level audit.",
+					"swapFees": null,
+					"bridgeFees": null,
 					"onRampFees": null,
 					"spreadDisclosure": null,
 					"subscriptionFeatures": null,
@@ -957,7 +1073,7 @@
 				},
 				"releaseVelocity": {
 					"ref": {
-						"explanation": "Elytro official product, support, app listing, and repository references were used for the release velocity product-data pass.",
+						"explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://elytro.com"
 					},
 					"latestReleaseDate": "2025-03-12",
@@ -978,7 +1094,7 @@
 				},
 				"deviceSync": {
 					"ref": {
-						"explanation": "Elytro official product, support, app listing, and repository references were used for the device sync product-data pass.",
+						"explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://elytro.com"
 					},
 					"syncsAccounts": null,

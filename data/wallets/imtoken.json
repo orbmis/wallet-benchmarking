@@ -576,8 +576,8 @@
 			"product": {
 				"platformCoverage": {
 					"ref": {
-						"explanation": "imToken official product, support, app listing, and repository references were used for the platform coverage product-data pass.",
-						"url": "https://token.im"
+						"explanation": "imToken homepage describes a non-custodial wallet and links Try imToken; app-store platform specifics were not separately captured.",
+						"url": "https://token.im/"
 					},
 					"desktopApp": null,
 					"mobileApp": {
@@ -585,197 +585,129 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "imToken has a mobile wallet variant recorded in the dataset.",
-									"url": "https://token.im"
+									"explanation": "imToken presents itself as an app wallet for millions of users.",
+									"url": "https://token.im/"
 								}
 							}
 						]
 					},
 					"browserExtension": null,
 					"browserNative": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "imToken is an app wallet, not browser-native.",
+									"url": "https://token.im/"
+								}
+							}
+						]
 					},
 					"webApp": null,
-					"ios": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken has a mobile app surface; iOS support should be verified against app-store listings for a deeper pass.",
-									"url": "https://token.im"
-								}
-							}
-						]
-					},
-					"android": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken has a mobile app surface; Android support should be verified against app-store listings for a deeper pass.",
-									"url": "https://token.im"
-								}
-							}
-						]
-					},
+					"ios": null,
+					"android": null,
 					"chrome": null,
 					"firefox": null,
 					"safari": null
 				},
 				"supportedEcosystems": {
 					"ref": {
-						"explanation": "imToken official product, support, app listing, and repository references were used for the supported ecosystems product-data pass.",
-						"url": "https://token.im"
+						"explanation": "imToken homepage says it supports BTC, ETH, DOGE, A, TRX, TON, EVM-compatible and Layer 2 networks, with 50+ networks and 20M+ tokens.",
+						"url": "https://token.im/"
 					},
 					"evm": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "imToken officially positions itself as supporting the EVM ecosystem or assets in this ecosystem.",
-									"url": "https://token.im"
+									"explanation": "imToken supports tokens across EVM-compatible and Layer 2 networks.",
+									"url": "https://token.im/"
 								}
 							}
 						]
 					},
-					"solana": {
-						"$ref": "notSupported"
-					},
+					"solana": null,
 					"bitcoin": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "imToken officially positions itself as supporting the BITCOIN ecosystem or assets in this ecosystem.",
-									"url": "https://token.im"
+									"explanation": "imToken lists BTC support.",
+									"url": "https://token.im/"
 								}
 							}
 						]
 					},
-					"cosmos": {
+					"cosmos": null,
+					"ton": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "imToken officially positions itself as supporting the COSMOS ecosystem or assets in this ecosystem.",
-									"url": "https://token.im"
+									"explanation": "imToken lists TON support.",
+									"url": "https://token.im/"
 								}
 							}
 						]
 					},
-					"ton": {
-						"$ref": "notSupported"
-					},
-					"starknet": {
-						"$ref": "notSupported"
-					},
-					"sui": {
-						"$ref": "notSupported"
-					},
-					"aptos": {
-						"$ref": "notSupported"
-					},
-					"xrp": {
-						"$ref": "notSupported"
-					},
-					"cardano": {
-						"$ref": "notSupported"
-					},
-					"lightning": {
-						"$ref": "notSupported"
-					},
+					"starknet": null,
+					"sui": null,
+					"aptos": null,
+					"xrp": null,
+					"cardano": null,
+					"lightning": null,
 					"other": [
-						{
-							"name": "EOS",
-							"ref": {
-								"explanation": "imToken official materials describe broader ecosystem support including EOS.",
-								"url": "https://token.im"
-							}
-						},
 						{
 							"name": "TRON",
 							"ref": {
-								"explanation": "imToken official materials describe broader ecosystem support including TRON.",
-								"url": "https://token.im"
+								"explanation": "imToken lists TRX support.",
+								"url": "https://token.im/"
+							}
+						},
+						{
+							"name": "Dogecoin",
+							"ref": {
+								"explanation": "imToken lists DOGE support.",
+								"url": "https://token.im/"
 							}
 						}
 					]
 				},
 				"dappExperience": {
 					"ref": {
-						"explanation": "imToken official product, support, app listing, and repository references were used for the product capabilities product-data pass.",
-						"url": "https://token.im"
+						"explanation": "imToken homepage links DApp Browser as a product feature and lists WalletConnect among friends/partners.",
+						"url": "https://token.im/"
 					},
 					"inAppBrowser": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "imToken provides a dapp browser or in-wallet dapp connection surface.",
-									"url": "https://token.im"
+									"explanation": "imToken lists DApp Browser as a feature.",
+									"url": "https://token.im/"
 								}
 							}
 						]
 					},
-					"curatedDappDirectory": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken provides a curated dapp or app discovery surface.",
-									"url": "https://token.im"
-								}
-							}
-						]
-					},
-					"dappSearch": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken provides search over dapps or app discovery content.",
-									"url": "https://token.im"
-								}
-							}
-						]
-					},
+					"curatedDappDirectory": null,
+					"dappSearch": null,
 					"walletConnectOnlyMode": {
-						"$call": "supported",
+						"$call": "notSupportedWithRef",
 						"args": [
 							{
 								"ref": {
-									"explanation": "imToken can connect to dapps primarily through WalletConnect or external connection flows.",
-									"url": "https://docs.token.im/"
+									"explanation": "imToken lists DApp Browser, so it is not WalletConnect-only.",
+									"url": "https://token.im/"
 								}
 							}
 						]
 					},
-					"featuredApps": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken features selected dapps or apps in its discovery surface.",
-									"url": "https://token.im"
-								}
-							}
-						]
-					},
-					"riskRatedDiscovery": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken provides risk warnings or risk-aware dapp/transaction discovery cues.",
-									"url": "https://token.im"
-								}
-							}
-						]
-					}
+					"featuredApps": null,
+					"riskRatedDiscovery": null
 				},
 				"fiatRamps": {
 					"ref": {
-						"explanation": "imToken official product, support, app listing, and repository references were used for the fiat ramps product-data pass.",
+						"explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://token.im"
 					},
 					"buyCrypto": null,
@@ -790,7 +722,7 @@
 				},
 				"gasUx": {
 					"ref": {
-						"explanation": "imToken official product, support, app listing, and repository references were used for the gas UX product-data pass.",
+						"explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://token.im"
 					},
 					"gasCustomization": {
@@ -813,7 +745,7 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "imToken supports EVM transaction flows where speed/gas presets are a common wallet control; verify exact UI depth in a future pass.",
+									"explanation": null,
 									"url": "https://docs.token.im/"
 								}
 							}
@@ -833,7 +765,7 @@
 				},
 				"recoveryUx": {
 					"ref": {
-						"explanation": "imToken official product, support, app listing, and repository references were used for the recovery UX product-data pass.",
+						"explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://token.im"
 					},
 					"seedOnlyRecovery": {
@@ -856,7 +788,7 @@
 				},
 				"onboardingFriction": {
 					"ref": {
-						"explanation": "imToken official product, support, app listing, and repository references were used for the onboarding friction product-data pass.",
+						"explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://token.im"
 					},
 					"seedPhraseRequiredAtSignup": {
@@ -874,7 +806,7 @@
 				},
 				"portfolioManagement": {
 					"ref": {
-						"explanation": "imToken official product, support, app listing, and repository references were used for the portfolio management product-data pass.",
+						"explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://token.im"
 					},
 					"netWorth": null,
@@ -910,7 +842,7 @@
 				},
 				"notifications": {
 					"ref": {
-						"explanation": "imToken official product, support, app listing, and repository references were used for the notifications product-data pass.",
+						"explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://token.im"
 					},
 					"sendReceive": {
@@ -951,7 +883,7 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "imToken supports bridging plus notifications for wallet activity; exact bridge-completion notification behavior should be deep-audited later.",
+									"explanation": null,
 									"url": "https://token.im"
 								}
 							}
@@ -993,7 +925,7 @@
 				},
 				"nftCapabilities": {
 					"ref": {
-						"explanation": "imToken official product, support, app listing, and repository references were used for the NFT capabilities product-data pass.",
+						"explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://token.im"
 					},
 					"display": {
@@ -1036,7 +968,7 @@
 				},
 				"defiPositionAwareness": {
 					"ref": {
-						"explanation": "imToken official product, support, app listing, and repository references were used for the DeFi position awareness product-data pass.",
+						"explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://token.im"
 					},
 					"lendingPositions": null,
@@ -1069,7 +1001,7 @@
 				},
 				"stakingEarn": {
 					"ref": {
-						"explanation": "imToken official product, support, app listing, and repository references were used for the staking and earn product-data pass.",
+						"explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://token.im"
 					},
 					"nativeStaking": {
@@ -1132,8 +1064,8 @@
 				},
 				"customerSupport": {
 					"ref": {
-						"explanation": "imToken official product, support, app listing, and repository references were used for the customer support product-data pass.",
-						"url": "https://token.im"
+						"explanation": "imToken homepage provides Discord, feedback email, and Help Center links.",
+						"url": "https://token.im/"
 					},
 					"liveChat": null,
 					"emailSupport": {
@@ -1141,8 +1073,8 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "imToken publishes support, help center, or contact paths for wallet users.",
-									"url": "https://docs.token.im/"
+									"explanation": "imToken homepage lists feedback email for product trouble.",
+									"url": "https://token.im/"
 								}
 							}
 						]
@@ -1154,38 +1086,18 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "imToken provides in-app or product-linked help/support content.",
-									"url": "https://docs.token.im/"
+									"explanation": "imToken homepage links a Help Center.",
+									"url": "https://token.im/"
 								}
 							}
 						]
 					},
-					"transactionTroubleshooting": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken support docs include transaction or wallet troubleshooting material.",
-									"url": "https://docs.token.im/"
-								}
-							}
-						]
-					},
-					"scamRecoveryGuidance": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken support/security materials include scam, compromise, or recovery guidance.",
-									"url": "https://token.im"
-								}
-							}
-						]
-					}
+					"transactionTroubleshooting": null,
+					"scamRecoveryGuidance": null
 				},
 				"developerOffering": {
 					"ref": {
-						"explanation": "imToken official product, support, app listing, and repository references were used for the developer offering product-data pass.",
+						"explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://token.im"
 					},
 					"walletSdk": {
@@ -1221,11 +1133,11 @@
 				},
 				"pricingFeeModel": {
 					"ref": {
-						"explanation": "imToken official product, support, app listing, and repository references were used for the pricing and fee model product-data pass.",
+						"explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://token.im"
 					},
-					"swapFees": "Wallet swap/bridge fees are provider-, route-, or spread-dependent; exact bps require flow-level audit.",
-					"bridgeFees": "Bridge fees are route/provider-dependent; exact bps require flow-level audit.",
+					"swapFees": null,
+					"bridgeFees": null,
 					"onRampFees": null,
 					"spreadDisclosure": null,
 					"subscriptionFeatures": null,
@@ -1234,7 +1146,7 @@
 				},
 				"releaseVelocity": {
 					"ref": {
-						"explanation": "imToken official product, support, app listing, and repository references were used for the release velocity product-data pass.",
+						"explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://token.im"
 					},
 					"latestReleaseDate": "2025-10-28",
@@ -1255,7 +1167,7 @@
 				},
 				"deviceSync": {
 					"ref": {
-						"explanation": "imToken official product, support, app listing, and repository references were used for the device sync product-data pass.",
+						"explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://token.im"
 					},
 					"syncsAccounts": null,

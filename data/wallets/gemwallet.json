@@ -525,24 +525,52 @@
 			"product": {
 				"platformCoverage": {
 					"ref": {
-						"explanation": "Gem Wallet official product, support, app listing, and repository references were used for the platform coverage product-data pass.",
-						"url": "https://gemwallet.com"
+						"explanation": "Gem Wallet docs identify the codebase as Wallet for iOS, Android & Core and describe the product as a crypto wallet app.",
+						"url": "https://docs.gemwallet.com/features/"
 					},
-					"desktopApp": null,
+					"desktopApp": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Gem Wallet docs reviewed describe iOS/Android app and core codebase, not desktop app.",
+									"url": "https://docs.gemwallet.com/features/"
+								}
+							}
+						]
+					},
 					"mobileApp": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Gem Wallet has a mobile wallet variant recorded in the dataset.",
-									"url": "https://gemwallet.com"
+									"explanation": "Gem Wallet docs describe the wallet app for iOS and Android.",
+									"url": "https://docs.gemwallet.com/features/"
 								}
 							}
 						]
 					},
-					"browserExtension": null,
+					"browserExtension": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Gem Wallet dapp access is via WalletConnect in the app, eliminating browser extensions.",
+									"url": "https://docs.gemwallet.com/features/"
+								}
+							}
+						]
+					},
 					"browserNative": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Gem Wallet is a mobile app, not browser-native.",
+									"url": "https://docs.gemwallet.com/features/"
+								}
+							}
+						]
 					},
 					"webApp": null,
 					"ios": {
@@ -550,8 +578,8 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Gem Wallet has a mobile app surface; iOS support should be verified against app-store listings for a deeper pass.",
-									"url": "https://gemwallet.com"
+									"explanation": "Gem Wallet docs identify Wallet (iOS, Android & Core).",
+									"url": "https://docs.gemwallet.com/features/"
 								}
 							}
 						]
@@ -561,8 +589,8 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Gem Wallet has a mobile app surface; Android support should be verified against app-store listings for a deeper pass.",
-									"url": "https://gemwallet.com"
+									"explanation": "Gem Wallet docs identify Wallet (iOS, Android & Core).",
+									"url": "https://docs.gemwallet.com/features/"
 								}
 							}
 						]
@@ -573,16 +601,16 @@
 				},
 				"supportedEcosystems": {
 					"ref": {
-						"explanation": "Gem Wallet official product, support, app listing, and repository references were used for the supported ecosystems product-data pass.",
-						"url": "https://gemwallet.com"
+						"explanation": "Gem Wallet supported-blockchains docs list 100+ networks including Bitcoin, Ethereum, Solana, Osmosis, TON, Cosmos, Aptos, Sui, XRP Ledger, Cardano, and many EVM networks.",
+						"url": "https://docs.gemwallet.com/blockchains/"
 					},
 					"evm": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Gem Wallet officially positions itself as supporting the EVM ecosystem or assets in this ecosystem.",
-									"url": "https://gemwallet.com"
+									"explanation": "Gem Wallet lists Ethereum, BNB Chain, Polygon, Arbitrum, Optimism, Base, Avalanche, and other EVM chains.",
+									"url": "https://docs.gemwallet.com/blockchains/"
 								}
 							}
 						]
@@ -592,8 +620,8 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Gem Wallet officially positions itself as supporting the SOLANA ecosystem or assets in this ecosystem.",
-									"url": "https://gemwallet.com"
+									"explanation": "Gem Wallet lists Solana.",
+									"url": "https://docs.gemwallet.com/blockchains/"
 								}
 							}
 						]
@@ -603,73 +631,122 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Gem Wallet officially positions itself as supporting the BITCOIN ecosystem or assets in this ecosystem.",
-									"url": "https://gemwallet.com"
+									"explanation": "Gem Wallet lists Bitcoin.",
+									"url": "https://docs.gemwallet.com/blockchains/"
 								}
 							}
 						]
 					},
 					"cosmos": {
-						"$ref": "notSupported"
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Gem Wallet lists Cosmos and Osmosis.",
+									"url": "https://docs.gemwallet.com/blockchains/"
+								}
+							}
+						]
 					},
 					"ton": {
-						"$ref": "notSupported"
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Gem Wallet lists TON.",
+									"url": "https://docs.gemwallet.com/blockchains/"
+								}
+							}
+						]
 					},
-					"starknet": {
-						"$ref": "notSupported"
-					},
+					"starknet": null,
 					"sui": {
-						"$ref": "notSupported"
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Gem Wallet lists Sui.",
+									"url": "https://docs.gemwallet.com/blockchains/"
+								}
+							}
+						]
 					},
 					"aptos": {
-						"$ref": "notSupported"
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Gem Wallet lists Aptos.",
+									"url": "https://docs.gemwallet.com/blockchains/"
+								}
+							}
+						]
 					},
 					"xrp": {
-						"$ref": "notSupported"
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Gem Wallet lists XRP Ledger.",
+									"url": "https://docs.gemwallet.com/blockchains/"
+								}
+							}
+						]
 					},
 					"cardano": {
-						"$ref": "notSupported"
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Gem Wallet lists Cardano.",
+									"url": "https://docs.gemwallet.com/blockchains/"
+								}
+							}
+						]
 					},
-					"lightning": {
-						"$ref": "notSupported"
-					},
+					"lightning": null,
 					"other": [
 						{
 							"name": "TRON",
 							"ref": {
-								"explanation": "Gem Wallet official materials describe broader ecosystem support including TRON.",
-								"url": "https://gemwallet.com"
+								"explanation": "Gem Wallet lists TRON.",
+								"url": "https://docs.gemwallet.com/blockchains/"
+							}
+						},
+						{
+							"name": "Hyperliquid",
+							"ref": {
+								"explanation": "Gem Wallet lists Hyperliquid.",
+								"url": "https://docs.gemwallet.com/blockchains/"
 							}
 						}
 					]
 				},
 				"dappExperience": {
 					"ref": {
-						"explanation": "Gem Wallet official product, support, app listing, and repository references were used for the product capabilities product-data pass.",
-						"url": "https://gemwallet.com"
+						"explanation": "Gem Wallet docs say WalletConnect is integrated for DApp access via QR/paste connection.",
+						"url": "https://docs.gemwallet.com/features/"
 					},
 					"inAppBrowser": null,
 					"curatedDappDirectory": null,
 					"dappSearch": null,
 					"walletConnectOnlyMode": {
-						"$ref": "notSupported"
-					},
-					"featuredApps": null,
-					"riskRatedDiscovery": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Gem Wallet provides risk warnings or risk-aware dapp/transaction discovery cues.",
-									"url": "https://gemwallet.com"
+									"explanation": "Gem Wallet DApp access is documented through WalletConnect QR/paste flow.",
+									"url": "https://docs.gemwallet.com/features/"
 								}
 							}
 						]
-					}
+					},
+					"featuredApps": null,
+					"riskRatedDiscovery": null
 				},
 				"fiatRamps": {
 					"ref": {
-						"explanation": "Gem Wallet official product, support, app listing, and repository references were used for the fiat ramps product-data pass.",
+						"explanation": "Gem Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://gemwallet.com"
 					},
 					"buyCrypto": null,
@@ -684,7 +761,7 @@
 				},
 				"gasUx": {
 					"ref": {
-						"explanation": "Gem Wallet official product, support, app listing, and repository references were used for the gas UX product-data pass.",
+						"explanation": "Gem Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://gemwallet.com"
 					},
 					"gasCustomization": {
@@ -707,7 +784,7 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Gem Wallet supports EVM transaction flows where speed/gas presets are a common wallet control; verify exact UI depth in a future pass.",
+									"explanation": null,
 									"url": "https://docs.gemwallet.com/"
 								}
 							}
@@ -717,7 +794,7 @@
 				},
 				"recoveryUx": {
 					"ref": {
-						"explanation": "Gem Wallet official product, support, app listing, and repository references were used for the recovery UX product-data pass.",
+						"explanation": "Gem Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://gemwallet.com"
 					},
 					"seedOnlyRecovery": {
@@ -740,7 +817,7 @@
 				},
 				"onboardingFriction": {
 					"ref": {
-						"explanation": "Gem Wallet official product, support, app listing, and repository references were used for the onboarding friction product-data pass.",
+						"explanation": "Gem Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://gemwallet.com"
 					},
 					"seedPhraseRequiredAtSignup": {
@@ -758,45 +835,61 @@
 				},
 				"portfolioManagement": {
 					"ref": {
-						"explanation": "Gem Wallet official product, support, app listing, and repository references were used for the portfolio management product-data pass.",
-						"url": "https://gemwallet.com"
+						"explanation": "Gem Wallet features include multi-wallet mode, watch wallet mode, NFT trading/collection management, and multi-chain wallet support.",
+						"url": "https://docs.gemwallet.com/features/"
 					},
-					"netWorth": {
-						"$ref": "featureSupported"
-					},
+					"netWorth": null,
 					"pnl": null,
 					"costBasis": null,
-					"tokenCategories": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Gem Wallet provides token balance and asset-list portfolio views.",
-									"url": "https://gemwallet.com"
-								}
-							}
-						]
-					},
+					"tokenCategories": null,
 					"nftSupport": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Gem Wallet supports NFT display or NFT portfolio management in at least one wallet surface.",
-									"url": "https://gemwallet.com"
+									"explanation": "Gem Wallet docs include NFT trading and collection management.",
+									"url": "https://docs.gemwallet.com/features/"
 								}
 							}
 						]
 					},
-					"collectionViews": null,
-					"watchOnlyWallets": null,
+					"collectionViews": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Gem Wallet lets users keep track of NFT collections across blockchains.",
+									"url": "https://docs.gemwallet.com/features/"
+								}
+							}
+						]
+					},
+					"watchOnlyWallets": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Gem Wallet supports Watch Wallet Mode.",
+									"url": "https://docs.gemwallet.com/features/"
+								}
+							}
+						]
+					},
 					"multiWalletAggregation": {
-						"$ref": "featureSupported"
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Gem Wallet supports Multi-Wallet Mode with multiple wallets and recovery phrases.",
+									"url": "https://docs.gemwallet.com/features/"
+								}
+							}
+						]
 					}
 				},
 				"notifications": {
 					"ref": {
-						"explanation": "Gem Wallet official product, support, app listing, and repository references were used for the notifications product-data pass.",
+						"explanation": "Gem Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://gemwallet.com"
 					},
 					"sendReceive": null,
@@ -829,7 +922,7 @@
 				},
 				"nftCapabilities": {
 					"ref": {
-						"explanation": "Gem Wallet official product, support, app listing, and repository references were used for the NFT capabilities product-data pass.",
+						"explanation": "Gem Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://gemwallet.com"
 					},
 					"display": {
@@ -862,7 +955,7 @@
 				},
 				"defiPositionAwareness": {
 					"ref": {
-						"explanation": "Gem Wallet official product, support, app listing, and repository references were used for the DeFi position awareness product-data pass.",
+						"explanation": "Gem Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://gemwallet.com"
 					},
 					"lendingPositions": null,
@@ -875,20 +968,50 @@
 				},
 				"stakingEarn": {
 					"ref": {
-						"explanation": "Gem Wallet official product, support, app listing, and repository references were used for the staking and earn product-data pass.",
-						"url": "https://gemwallet.com"
+						"explanation": "Gem Wallet docs describe native staking, validator selection, and rewards; supported-chain table marks staking support per chain.",
+						"url": "https://docs.gemwallet.com/features/"
 					},
-					"nativeStaking": null,
+					"nativeStaking": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Gem Wallet supports native staking.",
+									"url": "https://docs.gemwallet.com/features/"
+								}
+							}
+						]
+					},
 					"liquidStaking": null,
-					"validatorChoice": null,
+					"validatorChoice": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Gem Wallet says users choose a validator.",
+									"url": "https://docs.gemwallet.com/features/"
+								}
+							}
+						]
+					},
 					"apyDisplay": null,
-					"rewardsClaiming": null,
-					"providerDependency": null,
+					"rewardsClaiming": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Gem Wallet says users can start earning rewards through staking.",
+									"url": "https://docs.gemwallet.com/features/"
+								}
+							}
+						]
+					},
+					"providerDependency": "Staking support varies by chain and validator.",
 					"lockupDisclosure": null
 				},
 				"customerSupport": {
 					"ref": {
-						"explanation": "Gem Wallet official product, support, app listing, and repository references were used for the customer support product-data pass.",
+						"explanation": "Gem Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://gemwallet.com"
 					},
 					"liveChat": null,
@@ -931,7 +1054,7 @@
 				},
 				"developerOffering": {
 					"ref": {
-						"explanation": "Gem Wallet official product, support, app listing, and repository references were used for the developer offering product-data pass.",
+						"explanation": "Gem Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://gemwallet.com"
 					},
 					"walletSdk": {
@@ -955,11 +1078,11 @@
 				},
 				"pricingFeeModel": {
 					"ref": {
-						"explanation": "Gem Wallet official product, support, app listing, and repository references were used for the pricing and fee model product-data pass.",
+						"explanation": "Gem Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://gemwallet.com"
 					},
-					"swapFees": "Wallet swap/bridge fees are provider-, route-, or spread-dependent; exact bps require flow-level audit.",
-					"bridgeFees": "Bridge fees are route/provider-dependent; exact bps require flow-level audit.",
+					"swapFees": null,
+					"bridgeFees": null,
 					"onRampFees": null,
 					"spreadDisclosure": null,
 					"subscriptionFeatures": null,
@@ -968,7 +1091,7 @@
 				},
 				"releaseVelocity": {
 					"ref": {
-						"explanation": "Gem Wallet official product, support, app listing, and repository references were used for the release velocity product-data pass.",
+						"explanation": "Gem Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://gemwallet.com"
 					},
 					"latestReleaseDate": "2025-10-14",
@@ -989,7 +1112,7 @@
 				},
 				"deviceSync": {
 					"ref": {
-						"explanation": "Gem Wallet official product, support, app listing, and repository references were used for the device sync product-data pass.",
+						"explanation": "Gem Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://gemwallet.com"
 					},
 					"syncsAccounts": null,

@@ -569,107 +569,233 @@
 			"product": {
 				"platformCoverage": {
 					"ref": {
-						"explanation": "Frame official product, support, app listing, and repository references were used for the platform coverage product-data pass.",
-						"url": "https://frame.sh"
+						"explanation": "Frame website describes Frame as modern web3 for desktop and docs mention the Frame Companion browser extension.",
+						"url": "https://frame.sh/"
 					},
 					"desktopApp": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Frame has a desktop wallet variant recorded in the dataset.",
-									"url": "https://frame.sh"
+									"explanation": "Frame website says Frame is for desktop and links Download Frame.",
+									"url": "https://frame.sh/"
 								}
 							}
 						]
 					},
-					"mobileApp": null,
+					"mobileApp": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Frame docs/website reviewed describe desktop/browser workflows, not mobile app support.",
+									"url": "https://frame.sh/"
+								}
+							}
+						]
+					},
 					"browserExtension": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Frame has a browser wallet variant recorded in the dataset.",
-									"url": "https://frame.sh"
+									"explanation": "Frame docs describe the Frame Companion browser extension.",
+									"url": "https://docs.frame.sh/docs/Getting%20Started/Frame%20Companion/Browser%20Extension"
 								}
 							}
 						]
 					},
 					"browserNative": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Frame is a desktop app plus companion extension, not browser-native.",
+									"url": "https://docs.frame.sh/"
+								}
+							}
+						]
 					},
 					"webApp": null,
-					"ios": null,
-					"android": null,
+					"ios": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Frame docs/website reviewed do not describe iOS app support.",
+									"url": "https://frame.sh/"
+								}
+							}
+						]
+					},
+					"android": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Frame docs/website reviewed do not describe Android app support.",
+									"url": "https://frame.sh/"
+								}
+							}
+						]
+					},
 					"chrome": null,
 					"firefox": null,
 					"safari": null
 				},
 				"supportedEcosystems": {
 					"ref": {
-						"explanation": "Frame official product, support, app listing, and repository references were used for the supported ecosystems product-data pass.",
-						"url": "https://frame.sh"
+						"explanation": "Frame docs describe it as an Ethereum wallet for any EVM network.",
+						"url": "https://docs.frame.sh/"
 					},
 					"evm": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Frame officially positions itself as supporting the EVM ecosystem or assets in this ecosystem.",
-									"url": "https://frame.sh"
+									"explanation": "Frame docs say Frame works on any EVM network.",
+									"url": "https://docs.frame.sh/"
 								}
 							}
 						]
 					},
 					"solana": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Frame docs scope chain support to Ethereum/EVM.",
+									"url": "https://docs.frame.sh/"
+								}
+							}
+						]
 					},
 					"bitcoin": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Frame docs scope chain support to Ethereum/EVM.",
+									"url": "https://docs.frame.sh/"
+								}
+							}
+						]
 					},
 					"cosmos": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Frame docs scope chain support to Ethereum/EVM.",
+									"url": "https://docs.frame.sh/"
+								}
+							}
+						]
 					},
 					"ton": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Frame docs scope chain support to Ethereum/EVM.",
+									"url": "https://docs.frame.sh/"
+								}
+							}
+						]
 					},
 					"starknet": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Frame docs scope chain support to Ethereum/EVM.",
+									"url": "https://docs.frame.sh/"
+								}
+							}
+						]
 					},
 					"sui": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Frame docs scope chain support to Ethereum/EVM.",
+									"url": "https://docs.frame.sh/"
+								}
+							}
+						]
 					},
 					"aptos": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Frame docs scope chain support to Ethereum/EVM.",
+									"url": "https://docs.frame.sh/"
+								}
+							}
+						]
 					},
 					"xrp": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Frame docs scope chain support to Ethereum/EVM.",
+									"url": "https://docs.frame.sh/"
+								}
+							}
+						]
 					},
 					"cardano": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Frame docs scope chain support to Ethereum/EVM.",
+									"url": "https://docs.frame.sh/"
+								}
+							}
+						]
 					},
 					"lightning": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Frame docs scope chain support to Ethereum/EVM.",
+									"url": "https://docs.frame.sh/"
+								}
+							}
+						]
 					},
 					"other": []
 				},
 				"dappExperience": {
 					"ref": {
-						"explanation": "Frame official product, support, app listing, and repository references were used for the product capabilities product-data pass.",
-						"url": "https://frame.sh"
+						"explanation": "Frame docs say Frame supports any browser, command-line, or native app and any dapp through hardware/software signers.",
+						"url": "https://docs.frame.sh/"
 					},
 					"inAppBrowser": null,
 					"curatedDappDirectory": null,
 					"dappSearch": null,
 					"walletConnectOnlyMode": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Frame supports any browser/native app and dapp access through its platform, not WalletConnect-only mode.",
+									"url": "https://docs.frame.sh/"
+								}
+							}
+						]
 					},
 					"featuredApps": null,
 					"riskRatedDiscovery": null
 				},
 				"fiatRamps": {
 					"ref": {
-						"explanation": "Frame official product, support, app listing, and repository references were used for the fiat ramps product-data pass.",
+						"explanation": "Frame source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://frame.sh"
 					},
 					"buyCrypto": null,
@@ -684,7 +810,7 @@
 				},
 				"gasUx": {
 					"ref": {
-						"explanation": "Frame official product, support, app listing, and repository references were used for the gas UX product-data pass.",
+						"explanation": "Frame source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://frame.sh"
 					},
 					"gasCustomization": {
@@ -707,7 +833,7 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Frame supports EVM transaction flows where speed/gas presets are a common wallet control; verify exact UI depth in a future pass.",
+									"explanation": null,
 									"url": "https://docs.frame.sh/"
 								}
 							}
@@ -717,7 +843,7 @@
 				},
 				"recoveryUx": {
 					"ref": {
-						"explanation": "Frame official product, support, app listing, and repository references were used for the recovery UX product-data pass.",
+						"explanation": "Frame source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://frame.sh"
 					},
 					"seedOnlyRecovery": {
@@ -740,7 +866,7 @@
 				},
 				"onboardingFriction": {
 					"ref": {
-						"explanation": "Frame official product, support, app listing, and repository references were used for the onboarding friction product-data pass.",
+						"explanation": "Frame source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://frame.sh"
 					},
 					"seedPhraseRequiredAtSignup": {
@@ -758,7 +884,7 @@
 				},
 				"portfolioManagement": {
 					"ref": {
-						"explanation": "Frame official product, support, app listing, and repository references were used for the portfolio management product-data pass.",
+						"explanation": "Frame source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://frame.sh"
 					},
 					"netWorth": {
@@ -796,7 +922,7 @@
 				},
 				"notifications": {
 					"ref": {
-						"explanation": "Frame official product, support, app listing, and repository references were used for the notifications product-data pass.",
+						"explanation": "Frame source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://frame.sh"
 					},
 					"sendReceive": null,
@@ -819,7 +945,7 @@
 				},
 				"nftCapabilities": {
 					"ref": {
-						"explanation": "Frame official product, support, app listing, and repository references were used for the NFT capabilities product-data pass.",
+						"explanation": "Frame source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://frame.sh"
 					},
 					"display": {
@@ -862,7 +988,7 @@
 				},
 				"defiPositionAwareness": {
 					"ref": {
-						"explanation": "Frame official product, support, app listing, and repository references were used for the DeFi position awareness product-data pass.",
+						"explanation": "Frame source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://frame.sh"
 					},
 					"lendingPositions": null,
@@ -875,7 +1001,7 @@
 				},
 				"stakingEarn": {
 					"ref": {
-						"explanation": "Frame official product, support, app listing, and repository references were used for the staking and earn product-data pass.",
+						"explanation": "Frame source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://frame.sh"
 					},
 					"nativeStaking": null,
@@ -888,7 +1014,7 @@
 				},
 				"customerSupport": {
 					"ref": {
-						"explanation": "Frame official product, support, app listing, and repository references were used for the customer support product-data pass.",
+						"explanation": "Frame source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://frame.sh"
 					},
 					"liveChat": null,
@@ -931,7 +1057,7 @@
 				},
 				"developerOffering": {
 					"ref": {
-						"explanation": "Frame official product, support, app listing, and repository references were used for the developer offering product-data pass.",
+						"explanation": "Frame source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://frame.sh"
 					},
 					"walletSdk": {
@@ -957,7 +1083,7 @@
 				},
 				"pricingFeeModel": {
 					"ref": {
-						"explanation": "Frame official product, support, app listing, and repository references were used for the pricing and fee model product-data pass.",
+						"explanation": "Frame source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://frame.sh"
 					},
 					"swapFees": null,
@@ -970,7 +1096,7 @@
 				},
 				"releaseVelocity": {
 					"ref": {
-						"explanation": "Frame official product, support, app listing, and repository references were used for the release velocity product-data pass.",
+						"explanation": "Frame source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://frame.sh"
 					},
 					"latestReleaseDate": "2025-03-13",
@@ -991,7 +1117,7 @@
 				},
 				"deviceSync": {
 					"ref": {
-						"explanation": "Frame official product, support, app listing, and repository references were used for the device sync product-data pass.",
+						"explanation": "Frame source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://frame.sh"
 					},
 					"syncsAccounts": null,

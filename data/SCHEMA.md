@@ -231,15 +231,15 @@ The PM-oriented product namespace is populated on software-wallet records only. 
             - explanation <string>
             - url <string>
     - syncsContactsOrAddressBook <null|object>
-      - $call <string> (4/26)
-      - args <array> (4/26)
+      - $call <string> (5/26)
+      - args <array> (5/26)
         - [] <object>
           - ref <object>
             - explanation <string>
             - url <string>
     - syncsSettings <null|object>
-      - $call <string> (5/26)
-      - args <array> (5/26)
+      - $call <string> (4/26)
+      - args <array> (4/26)
         - [] <object>
           - ref <object>
             - explanation <string>
@@ -253,8 +253,8 @@ The PM-oriented product namespace is populated on software-wallet records only. 
             - explanation <string>
             - url <string>
     - bankTransfer <null|object>
-      - $call <string> (5/26)
-      - args <array> (5/26)
+      - $call <string> (6/26)
+      - args <array> (6/26)
         - [] <object>
           - ref <object>
             - explanation <string>
@@ -420,8 +420,8 @@ The PM-oriented product namespace is populated on software-wallet records only. 
             - explanation <string>
             - url <string>
     - failedTransaction <null|object>
-      - $call <string> (12/26)
-      - args <array> (12/26)
+      - $call <string> (11/26)
+      - args <array> (11/26)
         - [] <object>
           - ref <object>
             - explanation <string>
@@ -532,13 +532,19 @@ The PM-oriented product namespace is populated on software-wallet records only. 
             - explanation <string>
             - url <string>
     - desktopApp <null|object>
-      - $call <string> (5/26)
-      - args <array> (5/26)
+      - $call <string> (6/26)
+      - args <array> (6/26)
         - [] <object>
           - ref <object>
             - explanation <string>
             - url <string>
-    - firefox <null>
+    - firefox <null|object>
+      - $call <string> (1/26)
+      - args <array> (1/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
     - ios <null|object>
       - $call <string> (22/26)
       - args <array> (22/26)
@@ -558,8 +564,8 @@ The PM-oriented product namespace is populated on software-wallet records only. 
       - url <string>
     - safari <null>
     - webApp <null|object>
-      - $call <string> (7/26)
-      - args <array> (7/26)
+      - $call <string> (8/26)
+      - args <array> (8/26)
         - [] <object>
           - ref <object>
             - explanation <string>
@@ -582,7 +588,13 @@ The PM-oriented product namespace is populated on software-wallet records only. 
     - multiWalletAggregation <null|object>
       - $ref <string> (24/26)
     - netWorth <null|object>
-      - $ref <string> (23/26)
+      - $call <string> (1/26)
+      - $ref <string> (22/26)
+      - args <array> (1/26)
+        - [] <object>
+          - ref <object>
+            - explanation <string>
+            - url <string>
     - nftSupport <null|object>
       - $call <string> (25/26)
       - args <array> (25/26)
@@ -648,8 +660,9 @@ The PM-oriented product namespace is populated on software-wallet records only. 
             - explanation <string>
             - url <string>
     - guardianRecovery <null|object>
-      - $call <string> (3/26)
-      - args <array> (3/26)
+      - $call <string> (4/26)
+      - $ref <string> (1/26)
+      - args <array> (4/26)
         - [] <object>
           - ref <object>
             - explanation <string>
@@ -673,8 +686,9 @@ The PM-oriented product namespace is populated on software-wallet records only. 
             - explanation <string>
             - url <string>
     - socialRecovery <null|object>
-      - $call <string> (3/26)
-      - args <array> (3/26)
+      - $call <string> (4/26)
+      - $ref <string> (1/26)
+      - args <array> (4/26)
         - [] <object>
           - ref <object>
             - explanation <string>
@@ -683,8 +697,8 @@ The PM-oriented product namespace is populated on software-wallet records only. 
     - appStoreUpdateCadence <null|string>
     - changelogDetail <string>
     - githubActivity <null|object>
-      - $call <string> (22/26)
-      - args <array> (22/26)
+      - $call <string> (21/26)
+      - args <array> (21/26)
         - [] <object>
           - ref <object>
             - explanation <string>
@@ -710,8 +724,8 @@ The PM-oriented product namespace is populated on software-wallet records only. 
             - explanation <string>
             - url <string>
     - lockupDisclosure <null|object>
-      - $call <string> (9/26)
-      - args <array> (9/26)
+      - $call <string> (8/26)
+      - args <array> (8/26)
         - [] <object>
           - ref <object>
             - explanation <string>
@@ -832,9 +846,9 @@ The PM-oriented product namespace is populated on software-wallet records only. 
             - explanation <string>
             - url <string>
     - xrp <object>
-      - $call <string> (4/26)
-      - $ref <string> (22/26)
-      - args <array> (4/26)
+      - $call <string> (5/26)
+      - $ref <string> (21/26)
+      - args <array> (5/26)
         - [] <object>
           - ref <object>
             - explanation <string>
@@ -960,18 +974,18 @@ The PM-oriented product namespace is populated on software-wallet records only. 
             - $call <string> (9/37)
             - args <array> (9/37)
           - syncsContactsOrAddressBook <null|object> (26/37)
-            - $call <string> (4/37)
-            - args <array> (4/37)
-          - syncsSettings <null|object> (26/37)
             - $call <string> (5/37)
             - args <array> (5/37)
+          - syncsSettings <null|object> (26/37)
+            - $call <string> (4/37)
+            - args <array> (4/37)
         - fiatRamps <object> (26/37)
           - applePay <null|object> (26/37)
             - $call <string> (7/37)
             - args <array> (7/37)
           - bankTransfer <null|object> (26/37)
-            - $call <string> (5/37)
-            - args <array> (5/37)
+            - $call <string> (6/37)
+            - args <array> (6/37)
           - buyCrypto <null|object> (26/37)
             - $call <string> (16/37)
             - args <array> (16/37)
@@ -1048,8 +1062,8 @@ The PM-oriented product namespace is populated on software-wallet records only. 
             - $call <string> (12/37)
             - args <array> (12/37)
           - failedTransaction <null|object> (26/37)
-            - $call <string> (12/37)
-            - args <array> (12/37)
+            - $call <string> (11/37)
+            - args <array> (11/37)
           - marketAlerts <null|object> (26/37)
             - $call <string> (8/37)
             - args <array> (8/37)
@@ -1104,9 +1118,11 @@ The PM-oriented product namespace is populated on software-wallet records only. 
             - $call <string> (14/37)
             - args <array> (14/37)
           - desktopApp <null|object> (26/37)
-            - $call <string> (5/37)
-            - args <array> (5/37)
-          - firefox <null> (26/37)
+            - $call <string> (6/37)
+            - args <array> (6/37)
+          - firefox <null|object> (26/37)
+            - $call <string> (1/37)
+            - args <array> (1/37)
           - ios <null|object> (26/37)
             - $call <string> (22/37)
             - args <array> (22/37)
@@ -1118,8 +1134,8 @@ The PM-oriented product namespace is populated on software-wallet records only. 
             - url <string> (26/37)
           - safari <null> (26/37)
           - webApp <null|object> (26/37)
-            - $call <string> (7/37)
-            - args <array> (7/37)
+            - $call <string> (8/37)
+            - args <array> (8/37)
         - portfolioManagement <object> (26/37)
           - collectionViews <null|object> (26/37)
             - $call <string> (10/37)
@@ -1130,7 +1146,9 @@ The PM-oriented product namespace is populated on software-wallet records only. 
           - multiWalletAggregation <null|object> (26/37)
             - $ref <string> (24/37)
           - netWorth <null|object> (26/37)
-            - $ref <string> (23/37)
+            - $call <string> (1/37)
+            - $ref <string> (22/37)
+            - args <array> (1/37)
           - nftSupport <null|object> (26/37)
             - $call <string> (25/37)
             - args <array> (25/37)
@@ -1168,8 +1186,9 @@ The PM-oriented product namespace is populated on software-wallet records only. 
             - $call <string> (3/37)
             - args <array> (3/37)
           - guardianRecovery <null|object> (26/37)
-            - $call <string> (3/37)
-            - args <array> (3/37)
+            - $call <string> (4/37)
+            - $ref <string> (1/37)
+            - args <array> (4/37)
           - passkeyRecovery <null|object> (26/37)
             - $call <string> (4/37)
             - args <array> (4/37)
@@ -1181,14 +1200,15 @@ The PM-oriented product namespace is populated on software-wallet records only. 
             - $call <string> (22/37)
             - args <array> (22/37)
           - socialRecovery <null|object> (26/37)
-            - $call <string> (3/37)
-            - args <array> (3/37)
+            - $call <string> (4/37)
+            - $ref <string> (1/37)
+            - args <array> (4/37)
         - releaseVelocity <object> (26/37)
           - appStoreUpdateCadence <null|string> (26/37)
           - changelogDetail <string> (26/37)
           - githubActivity <null|object> (26/37)
-            - $call <string> (22/37)
-            - args <array> (22/37)
+            - $call <string> (21/37)
+            - args <array> (21/37)
           - latestReleaseDate <string> (26/37)
           - ref <object> (26/37)
             - explanation <string> (26/37)
@@ -1202,8 +1222,8 @@ The PM-oriented product namespace is populated on software-wallet records only. 
             - $call <string> (6/37)
             - args <array> (6/37)
           - lockupDisclosure <null|object> (26/37)
-            - $call <string> (9/37)
-            - args <array> (9/37)
+            - $call <string> (8/37)
+            - args <array> (8/37)
           - nativeStaking <null|object> (26/37)
             - $call <string> (9/37)
             - args <array> (9/37)
@@ -1263,9 +1283,9 @@ The PM-oriented product namespace is populated on software-wallet records only. 
             - $ref <string> (23/37)
             - args <array> (3/37)
           - xrp <object> (26/37)
-            - $call <string> (4/37)
-            - $ref <string> (22/37)
-            - args <array> (4/37)
+            - $call <string> (5/37)
+            - $ref <string> (21/37)
+            - args <array> (5/37)
       - accountSupport <null|object>
         - defaultAccountType <string> (27/37)
         - eip7702 <object> (27/37)

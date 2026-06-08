@@ -406,17 +406,27 @@
 			"product": {
 				"platformCoverage": {
 					"ref": {
-						"explanation": "Trust Wallet official product, support, app listing, and repository references were used for the platform coverage product-data pass.",
-						"url": "https://trustwallet.com/"
+						"explanation": "Trust Wallet download page explicitly lists the mobile app, iOS, Android, APK, and Chrome browser extension channels.",
+						"url": "https://trustwallet.com/download"
 					},
-					"desktopApp": null,
+					"desktopApp": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Trust Wallet describes itself as available as a mobile app and desktop browser extension; no native desktop app is listed on the download page.",
+									"url": "https://trustwallet.com/download"
+								}
+							}
+						]
+					},
 					"mobileApp": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Trust Wallet has a mobile wallet variant recorded in the dataset.",
-									"url": "https://trustwallet.com/"
+									"explanation": "Trust Wallet download page says the wallet is available as a mobile app.",
+									"url": "https://trustwallet.com/download"
 								}
 							}
 						]
@@ -426,14 +436,22 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Trust Wallet publishes a browser extension listing.",
-									"url": "https://chromewebstore.google.com/detail/trust-wallet/egjidjbpglichdcondbcbdnbeeppgdph"
+									"explanation": "Trust Wallet download page says the wallet is available as a desktop browser extension.",
+									"url": "https://trustwallet.com/download"
 								}
 							}
 						]
 					},
 					"browserNative": {
-						"$ref": "notSupported"
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Trust Wallet is delivered as an app or extension, not as a browser-native wallet built into a browser.",
+									"url": "https://trustwallet.com/download"
+								}
+							}
+						]
 					},
 					"webApp": null,
 					"ios": {
@@ -441,8 +459,8 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Trust Wallet has a mobile app surface; iOS support should be verified against app-store listings for a deeper pass.",
-									"url": "https://trustwallet.com/"
+									"explanation": "Trust Wallet download page links an iOS App Store build.",
+									"url": "https://trustwallet.com/download"
 								}
 							}
 						]
@@ -452,8 +470,8 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Trust Wallet has a mobile app surface; Android support should be verified against app-store listings for a deeper pass.",
-									"url": "https://trustwallet.com/"
+									"explanation": "Trust Wallet download page links Google Play and Android APK builds.",
+									"url": "https://trustwallet.com/download"
 								}
 							}
 						]
@@ -463,8 +481,8 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Trust Wallet has a Chrome Web Store extension listing.",
-									"url": "https://chromewebstore.google.com/detail/trust-wallet/egjidjbpglichdcondbcbdnbeeppgdph"
+									"explanation": "Trust Wallet download page links the Chrome Web Store extension.",
+									"url": "https://trustwallet.com/download"
 								}
 							}
 						]
@@ -474,16 +492,16 @@
 				},
 				"supportedEcosystems": {
 					"ref": {
-						"explanation": "Trust Wallet official product, support, app listing, and repository references were used for the supported ecosystems product-data pass.",
-						"url": "https://trustwallet.com/"
+						"explanation": "Trust Wallet browser-extension page lists 100+ supported blockchains, including Ethereum/EVM, Bitcoin, Cosmos, Aptos, Solana, Sui, TON, XRP, Cardano, and many others.",
+						"url": "https://trustwallet.com/browser-extension"
 					},
 					"evm": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Trust Wallet officially positions itself as supporting the EVM ecosystem or assets in this ecosystem.",
-									"url": "https://trustwallet.com/"
+									"explanation": "Trust Wallet lists Ethereum, Base, Arbitrum, Optimism, Polygon, BNB Smart Chain, Avalanche C-Chain, and other EVM networks.",
+									"url": "https://trustwallet.com/browser-extension"
 								}
 							}
 						]
@@ -493,8 +511,8 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Trust Wallet officially positions itself as supporting the SOLANA ecosystem or assets in this ecosystem.",
-									"url": "https://trustwallet.com/"
+									"explanation": "Trust Wallet lists Solana as a supported blockchain.",
+									"url": "https://trustwallet.com/browser-extension"
 								}
 							}
 						]
@@ -504,8 +522,8 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Trust Wallet officially positions itself as supporting the BITCOIN ecosystem or assets in this ecosystem.",
-									"url": "https://trustwallet.com/"
+									"explanation": "Trust Wallet lists Bitcoin as a supported blockchain.",
+									"url": "https://trustwallet.com/browser-extension"
 								}
 							}
 						]
@@ -515,8 +533,8 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Trust Wallet officially positions itself as supporting the COSMOS ecosystem or assets in this ecosystem.",
-									"url": "https://trustwallet.com/"
+									"explanation": "Trust Wallet lists Cosmos and related Cosmos ecosystem chains such as Osmosis and Juno.",
+									"url": "https://trustwallet.com/browser-extension"
 								}
 							}
 						]
@@ -526,22 +544,20 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Trust Wallet officially positions itself as supporting the TON ecosystem or assets in this ecosystem.",
-									"url": "https://trustwallet.com/"
+									"explanation": "Trust Wallet lists TON as a supported blockchain.",
+									"url": "https://trustwallet.com/browser-extension"
 								}
 							}
 						]
 					},
-					"starknet": {
-						"$ref": "notSupported"
-					},
+					"starknet": null,
 					"sui": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Trust Wallet officially positions itself as supporting the SUI ecosystem or assets in this ecosystem.",
-									"url": "https://trustwallet.com/"
+									"explanation": "Trust Wallet lists Sui as a supported blockchain.",
+									"url": "https://trustwallet.com/browser-extension"
 								}
 							}
 						]
@@ -551,8 +567,8 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Trust Wallet officially positions itself as supporting the APTOS ecosystem or assets in this ecosystem.",
-									"url": "https://trustwallet.com/"
+									"explanation": "Trust Wallet lists Aptos as a supported blockchain.",
+									"url": "https://trustwallet.com/browser-extension"
 								}
 							}
 						]
@@ -562,8 +578,8 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Trust Wallet officially positions itself as supporting the XRP ecosystem or assets in this ecosystem.",
-									"url": "https://trustwallet.com/"
+									"explanation": "Trust Wallet lists XRP as a supported blockchain.",
+									"url": "https://trustwallet.com/browser-extension"
 								}
 							}
 						]
@@ -573,65 +589,84 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Trust Wallet officially positions itself as supporting the CARDANO ecosystem or assets in this ecosystem.",
-									"url": "https://trustwallet.com/"
+									"explanation": "Trust Wallet lists Cardano as a supported blockchain.",
+									"url": "https://trustwallet.com/browser-extension"
 								}
 							}
 						]
 					},
-					"lightning": {
-						"$ref": "notSupported"
-					},
+					"lightning": null,
 					"other": [
 						{
-							"name": "BNB Chain",
+							"name": "Acala",
 							"ref": {
-								"explanation": "Trust Wallet official materials describe broader ecosystem support including BNB Chain.",
-								"url": "https://trustwallet.com/"
-							}
-						},
-						{
-							"name": "Polkadot",
-							"ref": {
-								"explanation": "Trust Wallet official materials describe broader ecosystem support including Polkadot.",
-								"url": "https://trustwallet.com/"
-							}
-						},
-						{
-							"name": "Avalanche",
-							"ref": {
-								"explanation": "Trust Wallet official materials describe broader ecosystem support including Avalanche.",
-								"url": "https://trustwallet.com/"
+								"explanation": "Trust Wallet supported-chain list includes Acala.",
+								"url": "https://trustwallet.com/browser-extension"
 							}
 						},
 						{
 							"name": "Algorand",
 							"ref": {
-								"explanation": "Trust Wallet official materials describe broader ecosystem support including Algorand.",
-								"url": "https://trustwallet.com/"
+								"explanation": "Trust Wallet supported-chain list includes Algorand.",
+								"url": "https://trustwallet.com/browser-extension"
 							}
 						},
 						{
-							"name": "Tezos",
+							"name": "Avalanche",
 							"ref": {
-								"explanation": "Trust Wallet official materials describe broader ecosystem support including Tezos.",
-								"url": "https://trustwallet.com/"
+								"explanation": "Trust Wallet supported-chain list includes Avalanche.",
+								"url": "https://trustwallet.com/browser-extension"
+							}
+						},
+						{
+							"name": "BNB Chain",
+							"ref": {
+								"explanation": "Trust Wallet supported-chain list includes BNB Chain.",
+								"url": "https://trustwallet.com/browser-extension"
+							}
+						},
+						{
+							"name": "Polkadot",
+							"ref": {
+								"explanation": "Trust Wallet supported-chain list includes Polkadot.",
+								"url": "https://trustwallet.com/browser-extension"
+							}
+						},
+						{
+							"name": "Stellar",
+							"ref": {
+								"explanation": "Trust Wallet supported-chain list includes Stellar.",
+								"url": "https://trustwallet.com/browser-extension"
+							}
+						},
+						{
+							"name": "TRON",
+							"ref": {
+								"explanation": "Trust Wallet supported-chain list includes TRON.",
+								"url": "https://trustwallet.com/browser-extension"
+							}
+						},
+						{
+							"name": "VeChain",
+							"ref": {
+								"explanation": "Trust Wallet supported-chain list includes VeChain.",
+								"url": "https://trustwallet.com/browser-extension"
 							}
 						}
 					]
 				},
 				"dappExperience": {
 					"ref": {
-						"explanation": "Trust Wallet official product, support, app listing, and repository references were used for the product capabilities product-data pass.",
-						"url": "https://trustwallet.com/"
+						"explanation": "Trust Wallet browser-extension page describes the extension as a gateway to thousands of Web3 dApps and references developer dApp submission.",
+						"url": "https://trustwallet.com/browser-extension"
 					},
 					"inAppBrowser": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Trust Wallet provides a dapp browser or in-wallet dapp connection surface.",
-									"url": "https://trustwallet.com/"
+									"explanation": "Trust Wallet positions the extension as a gateway to thousands of Web3 dApps.",
+									"url": "https://trustwallet.com/browser-extension"
 								}
 							}
 						]
@@ -641,143 +676,75 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Trust Wallet provides a curated dapp or app discovery surface.",
-									"url": "https://trustwallet.com/"
+									"explanation": "Trust Wallet navigation includes Submit dApp and the extension page describes discovery across Web3 dApps.",
+									"url": "https://trustwallet.com/browser-extension"
 								}
 							}
 						]
 					},
-					"dappSearch": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet provides search over dapps or app discovery content.",
-									"url": "https://trustwallet.com/"
-								}
-							}
-						]
-					},
+					"dappSearch": null,
 					"walletConnectOnlyMode": {
-						"$ref": "notSupported"
-					},
-					"featuredApps": {
-						"$call": "supported",
+						"$call": "notSupportedWithRef",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Trust Wallet features selected dapps or apps in its discovery surface.",
-									"url": "https://trustwallet.com/"
+									"explanation": "Trust Wallet supports direct dApp access through its app/extension surface rather than only WalletConnect.",
+									"url": "https://trustwallet.com/browser-extension"
 								}
 							}
 						]
 					},
-					"riskRatedDiscovery": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet provides risk warnings or risk-aware dapp/transaction discovery cues.",
-									"url": "https://trustwallet.com/"
-								}
-							}
-						]
-					}
+					"featuredApps": null,
+					"riskRatedDiscovery": null
 				},
 				"fiatRamps": {
 					"ref": {
-						"explanation": "Trust Wallet official product, support, app listing, and repository references were used for the fiat ramps product-data pass.",
-						"url": "https://trustwallet.com/"
+						"explanation": "Trust Wallet browser-extension page states users can buy crypto using debit or credit card, mobile payments, or bank transfers.",
+						"url": "https://trustwallet.com/browser-extension"
 					},
 					"buyCrypto": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Trust Wallet documents or advertises in-wallet crypto purchase support.",
-									"url": "https://trustwallet.com/"
+									"explanation": "Trust Wallet lists buy crypto as a feature and says crypto can be bought with debit/credit card, mobile payments, or bank transfers.",
+									"url": "https://trustwallet.com/browser-extension"
 								}
 							}
 						]
 					},
 					"sellCrypto": null,
-					"bankTransfer": null,
+					"bankTransfer": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Trust Wallet says buy crypto supports bank transfers.",
+									"url": "https://trustwallet.com/browser-extension"
+								}
+							}
+						]
+					},
 					"card": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Trust Wallet fiat purchase providers commonly support card purchases where available.",
-									"url": "https://trustwallet.com/"
+									"explanation": "Trust Wallet says buy crypto supports debit or credit card.",
+									"url": "https://trustwallet.com/browser-extension"
 								}
 							}
 						]
 					},
-					"applePay": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet buy-flow or provider materials include Apple Pay/card-style fast checkout support.",
-									"url": "https://trustwallet.com/"
-								}
-							}
-						]
-					},
-					"googlePay": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet buy-flow or provider materials include Google Pay/card-style fast checkout support.",
-									"url": "https://trustwallet.com/"
-								}
-							}
-						]
-					},
+					"applePay": null,
+					"googlePay": null,
 					"kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
-					"providers": [
-						{
-							"name": "Mercuryo",
-							"ref": {
-								"explanation": "Trust Wallet official product/support materials name or route users through these fiat/on-ramp providers.",
-								"url": "https://trustwallet.com/"
-							}
-						},
-						{
-							"name": "MoonPay",
-							"ref": {
-								"explanation": "Trust Wallet official product/support materials name or route users through these fiat/on-ramp providers.",
-								"url": "https://trustwallet.com/"
-							}
-						},
-						{
-							"name": "Ramp Network",
-							"ref": {
-								"explanation": "Trust Wallet official product/support materials name or route users through these fiat/on-ramp providers.",
-								"url": "https://trustwallet.com/"
-							}
-						},
-						{
-							"name": "Simplex",
-							"ref": {
-								"explanation": "Trust Wallet official product/support materials name or route users through these fiat/on-ramp providers.",
-								"url": "https://trustwallet.com/"
-							}
-						},
-						{
-							"name": "Transak",
-							"ref": {
-								"explanation": "Trust Wallet official product/support materials name or route users through these fiat/on-ramp providers.",
-								"url": "https://trustwallet.com/"
-							}
-						}
-					],
-					"regionalAvailability": "Provider- and region-dependent availability; not an exhaustive country matrix in this pass."
+					"providers": [],
+					"regionalAvailability": "Trust Wallet publishes buy functionality but provider and country availability were not resolved in this pass."
 				},
 				"gasUx": {
 					"ref": {
-						"explanation": "Trust Wallet official product, support, app listing, and repository references were used for the gas UX product-data pass.",
+						"explanation": "Trust Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://trustwallet.com/"
 					},
 					"gasCustomization": {
@@ -800,7 +767,7 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Trust Wallet supports EVM transaction flows where speed/gas presets are a common wallet control; verify exact UI depth in a future pass.",
+									"explanation": null,
 									"url": "https://support.trustwallet.com/"
 								}
 							}
@@ -820,7 +787,7 @@
 				},
 				"recoveryUx": {
 					"ref": {
-						"explanation": "Trust Wallet official product, support, app listing, and repository references were used for the recovery UX product-data pass.",
+						"explanation": "Trust Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://trustwallet.com/"
 					},
 					"seedOnlyRecovery": {
@@ -853,7 +820,7 @@
 				},
 				"onboardingFriction": {
 					"ref": {
-						"explanation": "Trust Wallet official product, support, app listing, and repository references were used for the onboarding friction product-data pass.",
+						"explanation": "Trust Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://trustwallet.com/"
 					},
 					"seedPhraseRequiredAtSignup": {
@@ -871,32 +838,20 @@
 				},
 				"portfolioManagement": {
 					"ref": {
-						"explanation": "Trust Wallet official product, support, app listing, and repository references were used for the portfolio management product-data pass.",
-						"url": "https://trustwallet.com/"
+						"explanation": "Trust Wallet browser-extension page describes earning rewards, managing NFTs, swapping, and multi-wallet management.",
+						"url": "https://trustwallet.com/browser-extension"
 					},
-					"netWorth": {
-						"$ref": "featureSupported"
-					},
+					"netWorth": null,
 					"pnl": null,
 					"costBasis": null,
-					"tokenCategories": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet provides token balance and asset-list portfolio views.",
-									"url": "https://trustwallet.com/"
-								}
-							}
-						]
-					},
+					"tokenCategories": null,
 					"nftSupport": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Trust Wallet supports NFT display or NFT portfolio management in at least one wallet surface.",
-									"url": "https://trustwallet.com/"
+									"explanation": "Trust Wallet says users can explore and manage NFTs.",
+									"url": "https://trustwallet.com/browser-extension"
 								}
 							}
 						]
@@ -906,20 +861,28 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Trust Wallet provides NFT collection-oriented views or NFT portfolio surfaces.",
-									"url": "https://trustwallet.com/"
+									"explanation": "Trust Wallet says users can explore top NFT marketplaces and manage NFTs.",
+									"url": "https://trustwallet.com/browser-extension"
 								}
 							}
 						]
 					},
 					"watchOnlyWallets": null,
 					"multiWalletAggregation": {
-						"$ref": "featureSupported"
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Trust Wallet says its multi-wallet feature lets users add, import, and manage wallets in one place.",
+									"url": "https://trustwallet.com/browser-extension"
+								}
+							}
+						]
 					}
 				},
 				"notifications": {
 					"ref": {
-						"explanation": "Trust Wallet official product, support, app listing, and repository references were used for the notifications product-data pass.",
+						"explanation": "Trust Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://trustwallet.com/"
 					},
 					"sendReceive": {
@@ -960,7 +923,7 @@
 						"args": [
 							{
 								"ref": {
-									"explanation": "Trust Wallet supports bridging plus notifications for wallet activity; exact bridge-completion notification behavior should be deep-audited later.",
+									"explanation": null,
 									"url": "https://trustwallet.com/"
 								}
 							}
@@ -1002,70 +965,40 @@
 				},
 				"nftCapabilities": {
 					"ref": {
-						"explanation": "Trust Wallet official product, support, app listing, and repository references were used for the NFT capabilities product-data pass.",
-						"url": "https://trustwallet.com/"
+						"explanation": "Trust Wallet browser-extension page says users can explore top NFT marketplaces and manage NFTs securely.",
+						"url": "https://trustwallet.com/browser-extension"
 					},
 					"display": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Trust Wallet supports displaying NFTs or collectibles in the wallet.",
-									"url": "https://trustwallet.com/"
+									"explanation": "Trust Wallet says users can manage NFTs.",
+									"url": "https://trustwallet.com/browser-extension"
 								}
 							}
 						]
 					},
-					"send": {
+					"send": null,
+					"mint": null,
+					"marketplaceIntegration": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Trust Wallet supports wallet NFT transfer flows or NFT asset management.",
-									"url": "https://trustwallet.com/"
+									"explanation": "Trust Wallet references top NFT marketplaces from the extension page.",
+									"url": "https://trustwallet.com/browser-extension"
 								}
 							}
 						]
 					},
-					"mint": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet can connect to dapps and sign NFT mint transactions.",
-									"url": "https://trustwallet.com/"
-								}
-							}
-						]
-					},
-					"marketplaceIntegration": null,
-					"spamNftHiding": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet supports hiding, filtering, or protecting users from spam NFTs.",
-									"url": "https://trustwallet.com/"
-								}
-							}
-						]
-					},
-					"collectionMetadataRefresh": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet supports NFT metadata refresh or collection metadata updates in its NFT experience.",
-									"url": "https://trustwallet.com/"
-								}
-							}
-						]
-					},
+					"spamNftHiding": null,
+					"collectionMetadataRefresh": null,
 					"royaltiesOrOffers": null
 				},
 				"defiPositionAwareness": {
 					"ref": {
-						"explanation": "Trust Wallet official product, support, app listing, and repository references were used for the DeFi position awareness product-data pass.",
+						"explanation": "Trust Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://trustwallet.com/"
 					},
 					"lendingPositions": {
@@ -1138,80 +1071,40 @@
 				},
 				"stakingEarn": {
 					"ref": {
-						"explanation": "Trust Wallet official product, support, app listing, and repository references were used for the staking and earn product-data pass.",
-						"url": "https://trustwallet.com/"
+						"explanation": "Trust Wallet browser-extension page lists earning rewards and staking as supported features.",
+						"url": "https://trustwallet.com/browser-extension"
 					},
 					"nativeStaking": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Trust Wallet supports native staking or earn products for at least one supported ecosystem.",
-									"url": "https://trustwallet.com/"
+									"explanation": "Trust Wallet lists staking/earn rewards as a wallet feature.",
+									"url": "https://trustwallet.com/browser-extension"
 								}
 							}
 						]
 					},
-					"liquidStaking": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet supports liquid staking or liquid staking integrations.",
-									"url": "https://trustwallet.com/"
-								}
-							}
-						]
-					},
-					"validatorChoice": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet lets users choose validators or staking targets in at least one ecosystem.",
-									"url": "https://trustwallet.com/"
-								}
-							}
-						]
-					},
+					"liquidStaking": null,
+					"validatorChoice": null,
 					"apyDisplay": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Trust Wallet displays APY/reward information for staking or earn products.",
-									"url": "https://trustwallet.com/"
+									"explanation": "Trust Wallet says users can earn rewards up to 70% APR via providers.",
+									"url": "https://trustwallet.com/browser-extension"
 								}
 							}
 						]
 					},
-					"rewardsClaiming": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet supports claiming staking or earn rewards.",
-									"url": "https://trustwallet.com/"
-								}
-							}
-						]
-					},
-					"providerDependency": "Provider- or protocol-dependent; requires per-asset/provider audit for exact dependency.",
-					"lockupDisclosure": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet staking/earn flows disclose lockup or protocol-specific constraints where applicable.",
-									"url": "https://trustwallet.com/"
-								}
-							}
-						]
-					}
+					"rewardsClaiming": null,
+					"providerDependency": "Trust Wallet says earn rewards are available via trusted providers.",
+					"lockupDisclosure": null
 				},
 				"customerSupport": {
 					"ref": {
-						"explanation": "Trust Wallet official product, support, app listing, and repository references were used for the customer support product-data pass.",
+						"explanation": "Trust Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://trustwallet.com/"
 					},
 					"liveChat": null,
@@ -1264,47 +1157,35 @@
 				},
 				"developerOffering": {
 					"ref": {
-						"explanation": "Trust Wallet official product, support, app listing, and repository references were used for the developer offering product-data pass.",
-						"url": "https://trustwallet.com/"
+						"explanation": "Trust Wallet site navigation links developer docs, Wallet Core, dApp submission, asset listing, and Agent Kit.",
+						"url": "https://trustwallet.com/download"
 					},
 					"walletSdk": {
 						"$call": "supported",
 						"args": [
 							{
 								"ref": {
-									"explanation": "Trust Wallet publishes wallet developer docs, SDKs, or public wallet integration repositories.",
-									"url": "https://github.com/trustwallet/wallet-core"
+									"explanation": "Trust Wallet links developer documentation for Web3 applications.",
+									"url": "https://trustwallet.com/download"
 								}
 							}
 						]
 					},
 					"embeddedWalletSdk": null,
 					"whiteLabelOffering": null,
-					"walletConnectSupport": {
-						"$ref": "featureSupported"
-					},
+					"walletConnectSupport": null,
 					"eip6963": null,
 					"eip5792": null,
-					"deepLinks": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet documents mobile deep links, universal links, or app-link connection flows.",
-									"url": "https://support.trustwallet.com/"
-								}
-							}
-						]
-					},
-					"mobileLinkingQuality": "Mobile linking documented or product-supported; quality requires hands-on UX testing."
+					"deepLinks": null,
+					"mobileLinkingQuality": null
 				},
 				"pricingFeeModel": {
 					"ref": {
-						"explanation": "Trust Wallet official product, support, app listing, and repository references were used for the pricing and fee model product-data pass.",
+						"explanation": "Trust Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://trustwallet.com/"
 					},
-					"swapFees": "Wallet swap/bridge fees are provider-, route-, or spread-dependent; exact bps require flow-level audit.",
-					"bridgeFees": "Bridge fees are route/provider-dependent; exact bps require flow-level audit.",
+					"swapFees": null,
+					"bridgeFees": null,
 					"onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
 					"spreadDisclosure": {
 						"$ref": "featureSupported"
@@ -1315,7 +1196,7 @@
 				},
 				"releaseVelocity": {
 					"ref": {
-						"explanation": "Trust Wallet official product, support, app listing, and repository references were used for the release velocity product-data pass.",
+						"explanation": "Trust Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://trustwallet.com/"
 					},
 					"latestReleaseDate": "2026-06-07",
@@ -1336,7 +1217,7 @@
 				},
 				"deviceSync": {
 					"ref": {
-						"explanation": "Trust Wallet official product, support, app listing, and repository references were used for the device sync product-data pass.",
+						"explanation": "Trust Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
 						"url": "https://trustwallet.com/"
 					},
 					"syncsAccounts": {
