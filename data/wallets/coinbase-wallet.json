@@ -1,0 +1,414 @@
+{
+	"id": "coinbase-wallet",
+	"source": "software-wallets",
+	"export": "coinbaseWallet",
+	"data": {
+		"metadata": {
+			"id": "coinbase-wallet",
+			"displayName": "Coinbase Wallet",
+			"tableName": "Coinbase Wallet",
+			"blurb": "Coinbase Wallet is Coinbase's self-custody wallet for managing crypto, NFTs, DeFi, and dapp connections.",
+			"contributors": [],
+			"iconExtension": "png",
+			"lastUpdated": "2026-06-07",
+			"urls": {
+				"docs": [
+					"https://help.coinbase.com/en/wallet"
+				],
+				"extensions": [
+					"https://chromewebstore.google.com/detail/coinbase-wallet-extension/hnfanknocfeofbddgcijnmhnfnkdnaad"
+				],
+				"repositories": [
+					"https://github.com/coinbase/coinbase-wallet-sdk"
+				],
+				"websites": [
+					"https://wallet.coinbase.com/"
+				]
+			}
+		},
+		"features": {
+			"accountSupport": {
+				"defaultAccountType": "AccountType.eoa",
+				"eip7702": {
+					"$ref": "notSupported"
+				},
+				"eoa": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"explanation": "Coinbase Wallet help says users can create or import a self-custody wallet and use a recovery phrase to move assets between self-custody wallets.",
+								"url": "https://help.coinbase.com/en-au/wallet/getting-started/create-a-coinbase-wallet"
+							},
+							"canExportPrivateKey": true,
+							"keyDerivation": {
+								"type": "BIP32",
+								"canExportSeedPhrase": true,
+								"derivationPath": "BIP44",
+								"seedPhrase": "BIP39"
+							}
+						}
+					]
+				},
+				"mpc": {
+					"$ref": "notSupported"
+				},
+				"rawErc4337": {
+					"$ref": "notSupported"
+				},
+				"safe": {
+					"$ref": "notSupported"
+				}
+			},
+			"addressResolution": {
+				"ref": {
+					"explanation": "Coinbase documents Coinbase Wallet support for ENS usernames and cb.id ENS subdomains.",
+					"url": "https://help.coinbase.com/en-gb/wallet/managing-account/coinbase-ens-support"
+				},
+				"chainSpecificAddressing": {
+					"erc7828": {
+						"$ref": "notSupported"
+					},
+					"erc7831": {
+						"$ref": "notSupported"
+					}
+				},
+				"nonChainSpecificEnsResolution": {
+					"$call": "supported",
+					"args": [
+						{
+							"medium": "CHAIN_CLIENT"
+						}
+					]
+				}
+			},
+			"chainAbstraction": {
+				"bridging": {
+					"builtInBridging": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet's app listing describes support for buying, selling, swapping, bridging, and minting from the wallet.",
+									"url": "https://apps.apple.com/us/app/coinbase-wallet-nfts-crypto/id1278383455"
+								}
+							}
+						]
+					},
+					"suggestedBridging": {
+						"$ref": "notSupported"
+					}
+				},
+				"crossChainBalances": {
+					"ref": {
+						"explanation": "Coinbase Wallet's app listing describes managing crypto and NFTs across supported networks from one wallet.",
+						"url": "https://apps.apple.com/us/app/coinbase-wallet-nfts-crypto/id1278383455"
+					},
+					"globalAccountValue": {
+						"$ref": "featureSupported"
+					},
+					"perChainAccountValue": {
+						"$ref": "featureSupported"
+					},
+					"ether": null,
+					"usdc": null
+				}
+			},
+			"chainConfigurability": {
+				"$ref": "notSupported"
+			},
+			"ecosystem": {
+				"delegation": null
+			},
+			"integration": {
+				"browser": {
+					"1193": {
+						"$ref": "featureSupported"
+					},
+					"2700": null,
+					"6963": null,
+					"ref": {
+						"explanation": "The Coinbase Wallet SDK repository describes an open protocol for connecting Coinbase Wallet to dapps.",
+						"url": "https://github.com/coinbase/coinbase-wallet-sdk"
+					}
+				},
+				"walletCall": null
+			},
+			"licensing": {
+				"type": "LicensingType.PROPRIETARY",
+				"walletAppLicense": {
+					"ref": {
+						"explanation": "Coinbase Wallet's consumer app source is not published as a full open-source wallet repository; the public Coinbase Wallet SDK is separate infrastructure under its own license.",
+						"url": "https://github.com/coinbase/coinbase-wallet-sdk"
+					},
+					"license": "SourceNotAvailableLicense.PROPRIETARY"
+				}
+			},
+			"monetization": {
+				"ref": {
+					"$ref": "refTodo"
+				},
+				"revenueBreakdownIsPublic": true,
+				"strategies": {
+					"donations": false,
+					"ecosystemGrants": false,
+					"governanceTokenLowFloat": false,
+					"governanceTokenMostlyDistributed": false,
+					"hiddenConvenienceFees": false,
+					"publicOffering": true,
+					"selfFunded": false,
+					"transparentConvenienceFees": true,
+					"ventureCapital": false
+				}
+			},
+			"multiAddress": {
+				"$call": "supported",
+				"args": [
+					{
+						"ref": {
+							"explanation": "Coinbase Wallet supports creating or importing wallets and managing wallet accounts in the self-custody wallet app.",
+							"url": "https://help.coinbase.com/en-au/wallet/getting-started/create-a-coinbase-wallet"
+						}
+					}
+				]
+			},
+			"privacy": {
+				"analytics": {
+					"crashReports": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "The Coinbase Wallet App Store privacy label lists Diagnostics as data that may be collected but not linked to identity.",
+									"url": "https://apps.apple.com/us/app/coinbase-wallet-nfts-crypto/id1278383455"
+								}
+							}
+						]
+					},
+					"usage": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "The Coinbase Wallet App Store privacy label lists Usage Data as data that may be collected but not linked to identity.",
+									"url": "https://apps.apple.com/us/app/coinbase-wallet-nfts-crypto/id1278383455"
+								}
+							}
+						]
+					}
+				},
+				"appIsolation": null,
+				"dataCollection": null,
+				"privacyPolicy": "https://www.coinbase.com/legal/privacy",
+				"transactionPrivacy": {
+					"defaultFungibleTokenTransferMode": "PUBLIC",
+					"STEALTH_ADDRESSES": {
+						"$ref": "notSupported"
+					},
+					"TORNADO_CASH_NOVA": {
+						"$ref": "notSupported"
+					},
+					"PRIVACY_POOLS": {
+						"$ref": "notSupported"
+					},
+					"RAILGUN": {
+						"$ref": "notSupported"
+					}
+				}
+			},
+			"profile": "WalletProfile.GENERIC",
+			"security": {
+				"accountRecovery": null,
+				"bugBountyProgram": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"explanation": "Coinbase runs a HackerOne bug bounty program for Coinbase products and security reports.",
+								"url": "https://hackerone.com/coinbase"
+							},
+							"availability": "BugBountyProgramAvailability.ACTIVE",
+							"platform": "BugBountyPlatform.HACKER_ONE",
+							"upgradePathAvailable": true
+						}
+					]
+				},
+				"duressResistance": {
+					"basicUnlock": {
+						"ref": {
+							"$ref": "refTodo"
+						},
+						"mechanisms": {
+							"PIN": true,
+							"PASSWORD": true,
+							"BIOMETRIC": true,
+							"PATTERN": false
+						}
+					},
+					"duressMode": {
+						"$ref": "notSupported"
+					}
+				},
+				"hardwareWalletSupport": {
+					"ref": {
+						"$ref": "refTodo"
+					},
+					"wallets": {
+						"LEDGER": {
+							"$call": "supported",
+							"args": [
+								{
+									"connectionTypes": [
+										"HardwareWalletConnection.webUSB"
+									]
+								}
+							]
+						}
+					}
+				},
+				"keysHandling": null,
+				"lightClient": {
+					"ethereumL1": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet public docs describe app-managed network access and dapp connection flows, but no embedded Ethereum L1 light-client verification path was found.",
+									"url": "https://help.coinbase.com/en/wallet"
+								}
+							}
+						]
+					}
+				},
+				"passkeyVerification": {
+					"$ref": "notSupported"
+				},
+				"publicSecurityAudits": [],
+				"scamAlerts": {
+					"contractTransactionWarning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet's security page describes token approval alerts and dapp blocklist protection for malicious dapps.",
+									"url": "https://www.coinbase.com/security/wallet-security"
+								}
+							}
+						]
+					},
+					"scamUrlWarning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet's security page describes a dapp blocklist that warns before users proceed to applications identified as dangerous.",
+									"url": "https://www.coinbase.com/security/wallet-security"
+								}
+							}
+						]
+					},
+					"sendTransactionWarning": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet's security page describes token approval alerts before users complete dapp transactions.",
+									"url": "https://www.coinbase.com/security/wallet-security"
+								}
+							}
+						]
+					}
+				},
+				"transactionLegibility": {
+					"transactionSimulations": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet's security page says transaction previews estimate token-balance changes before users complete a dapp transaction.",
+									"url": "https://www.coinbase.com/security/wallet-security"
+								}
+							}
+						]
+					}
+				}
+			},
+			"selfSovereignty": {
+				"permissionsManagement": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"explanation": "Coinbase Wallet help documents reviewing and revoking dapp permissions and token approvals from the browser extension or mobile app.",
+								"url": "https://help.coinbase.com/en/wallet/security/dapp-permissions-token-approvals"
+							},
+							"erc20Approvals": "SpendingApprovalsControl.CAN_INSPECT_AND_REVOKE",
+							"erc721Approvals": null,
+							"erc1155Approvals": null
+						}
+					]
+				},
+				"transactionSubmission": {
+					"l1": {
+						"ref": {
+							"explanation": "Coinbase Wallet public docs describe the Coinbase Wallet app and service as the transaction interface; no user-selected self-hosted-node broadcast path was found.",
+							"url": "https://help.coinbase.com/en/wallet"
+						},
+						"selfBroadcastViaDirectGossip": {
+							"$ref": "notSupported"
+						},
+						"selfBroadcastViaSelfHostedNode": {
+							"$ref": "notSupported"
+						}
+					},
+					"l2": {
+						"ref": {
+							"$ref": "refTodo"
+						}
+					}
+				}
+			},
+			"transparency": {
+				"releaseTransparency": {
+					"artifactSigning": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet public release channels and app listings do not publish independently verifiable signed application artifacts for users.",
+									"url": "https://apps.apple.com/us/app/coinbase-wallet-nfts-crypto/id1278383455"
+								}
+							}
+						]
+					},
+					"hasPublicChangelog": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet publishes app-store update notes, but no stable public wallet changelog page was found.",
+									"url": "https://apps.apple.com/us/app/coinbase-wallet-nfts-crypto/id1278383455"
+								}
+							}
+						]
+					},
+					"reproducibleBuilds": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet does not publish reproducible build instructions for the full consumer wallet app.",
+									"url": "https://github.com/coinbase/coinbase-wallet-sdk"
+								}
+							}
+						]
+					}
+				}
+			}
+		},
+		"variants": {
+			"MOBILE": true,
+			"BROWSER": true
+		}
+	}
+}

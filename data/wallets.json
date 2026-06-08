@@ -1166,6 +1166,429 @@
 		}
 	},
 	{
+		"id": "argent",
+		"source": "software-wallets",
+		"export": "argent",
+		"data": {
+			"metadata": {
+				"id": "argent",
+				"displayName": "Argent",
+				"tableName": "Argent",
+				"blurb": "Argent is a smart-contract wallet for Starknet and Ethereum with guardian-based recovery.",
+				"contributors": [],
+				"iconExtension": "png",
+				"lastUpdated": "2026-06-07",
+				"urls": {
+					"docs": [
+						"https://support.argent.xyz/"
+					],
+					"extensions": [
+						"https://chromewebstore.google.com/detail/argent-x/dlcobpjiigpikoobohmabehhmhfoodbb"
+					],
+					"repositories": [
+						"https://github.com/argentlabs/argent-contracts",
+						"https://github.com/argentlabs/argent-x"
+					],
+					"websites": [
+						"https://www.argent.xyz/"
+					]
+				}
+			},
+			"features": {
+				"accountSupport": {
+					"defaultAccountType": "AccountType.rawErc4337",
+					"eip7702": {
+						"$ref": "notSupported"
+					},
+					"eoa": {
+						"$ref": "notSupported"
+					},
+					"mpc": {
+						"$ref": "notSupported"
+					},
+					"rawErc4337": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent support says Argent is a smart contract wallet available on Ethereum and Starknet.",
+									"url": "https://support.argent.xyz/hc/en-us/articles/360022517332-What-is-a-smart-contract-wallet"
+								},
+								"contract": "UNKNOWN",
+								"controllingSharesInSelfCustodyByDefault": "YES",
+								"keyRotationTransactionGeneration": "TransactionGenerationCapability.USING_OPEN_SOURCE_STANDALONE_APP",
+								"tokenTransferTransactionGeneration": "TransactionGenerationCapability.USING_PROPRIETARY_STANDALONE_APP"
+							}
+						]
+					},
+					"safe": {
+						"$ref": "notSupported"
+					}
+				},
+				"addressResolution": {
+					"ref": {
+						"explanation": "Argent focuses on Starknet account addresses and usernames; no ENS recipient-resolution feature was found in current public docs.",
+						"url": "https://support.argent.xyz/"
+					},
+					"chainSpecificAddressing": {
+						"erc7828": {
+							"$ref": "notSupported"
+						},
+						"erc7831": {
+							"$ref": "notSupported"
+						}
+					},
+					"nonChainSpecificEnsResolution": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Targeted review of Argent support pages found no ENS resolution feature for recipient entry.",
+									"url": "https://support.argent.xyz/"
+								}
+							}
+						]
+					}
+				},
+				"chainAbstraction": {
+					"bridging": {
+						"builtInBridging": {
+							"$call": "supported",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Argent supports adding funds and moving assets into Starknet from supported networks as part of the wallet onboarding and funding flow.",
+										"url": "https://support.argent.xyz/"
+									}
+								}
+							]
+						},
+						"suggestedBridging": null
+					},
+					"crossChainBalances": {
+						"ref": {
+							"explanation": "Argent presents portfolio assets in the mobile and Argent X wallet experience.",
+							"url": "https://www.argent.xyz/"
+						},
+						"globalAccountValue": {
+							"$ref": "featureSupported"
+						},
+						"perChainAccountValue": {
+							"$ref": "featureSupported"
+						},
+						"ether": null,
+						"usdc": null
+					}
+				},
+				"chainConfigurability": {
+					"$ref": "notSupported"
+				},
+				"ecosystem": {
+					"delegation": null
+				},
+				"integration": {
+					"browser": {
+						"1193": null,
+						"2700": null,
+						"6963": null,
+						"ref": {
+							"explanation": "Argent X is a browser extension wallet for Starknet dapps.",
+							"url": "https://github.com/argentlabs/argent-x"
+						}
+					},
+					"walletCall": null
+				},
+				"licensing": {
+					"type": "LicensingType.MULTIPLE_WALLET_REPOS",
+					"walletAppLicense": {
+						"ref": {
+							"explanation": "Argent's smart-contract repositories are open source, while the full mobile app source is not published as a complete open-source wallet app.",
+							"url": "https://github.com/argentlabs/argent-contracts"
+						},
+						"license": "SourceNotAvailableLicense.PROPRIETARY"
+					}
+				},
+				"monetization": {
+					"ref": {
+						"$ref": "refTodo"
+					},
+					"revenueBreakdownIsPublic": false,
+					"strategies": {
+						"donations": false,
+						"ecosystemGrants": null,
+						"governanceTokenLowFloat": false,
+						"governanceTokenMostlyDistributed": false,
+						"hiddenConvenienceFees": null,
+						"publicOffering": false,
+						"selfFunded": false,
+						"transparentConvenienceFees": true,
+						"ventureCapital": true
+					}
+				},
+				"multiAddress": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"explanation": "Argent supports creating and recovering smart-contract wallet accounts across mobile and Argent X.",
+								"url": "https://support.argent.xyz/hc/en-us/articles/360022512752-How-to-create-an-Argent-wallet"
+							}
+						}
+					]
+				},
+				"privacy": {
+					"analytics": {
+						"crashReports": {
+							"$call": "supported",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Argent support documents that Argent collects data for operating and improving the wallet, with more detail in its privacy policy.",
+										"url": "https://support.argent.xyz/hc/en-us/articles/360006211718-What-data-does-Argent-collect"
+									}
+								}
+							]
+						},
+						"usage": {
+							"$call": "supported",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Argent support documents wallet data collection and points users to the privacy policy for details.",
+										"url": "https://support.argent.xyz/hc/en-us/articles/360006211718-What-data-does-Argent-collect"
+									}
+								}
+							]
+						}
+					},
+					"appIsolation": null,
+					"dataCollection": null,
+					"privacyPolicy": "https://www.argent.xyz/privacy",
+					"transactionPrivacy": {
+						"defaultFungibleTokenTransferMode": "PUBLIC",
+						"STEALTH_ADDRESSES": {
+							"$ref": "notSupported"
+						},
+						"TORNADO_CASH_NOVA": {
+							"$ref": "notSupported"
+						},
+						"PRIVACY_POOLS": {
+							"$ref": "notSupported"
+						},
+						"RAILGUN": {
+							"$ref": "notSupported"
+						}
+					}
+				},
+				"profile": "WalletProfile.GENERIC",
+				"security": {
+					"accountRecovery": {
+						"guardianRecovery": {
+							"$ref": "featureSupported"
+						}
+					},
+					"bugBountyProgram": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent publishes a Starknet account bug bounty covering its smart account and multisig contracts.",
+									"url": "https://www.argent.xyz/argent-bug-bounty"
+								},
+								"availability": "BugBountyProgramAvailability.ACTIVE",
+								"coverageBreadth": "PARTIAL_SCOPE",
+								"upgradePathAvailable": true
+							}
+						]
+					},
+					"duressResistance": {
+						"basicUnlock": {
+							"ref": {
+								"$ref": "refTodo"
+							},
+							"mechanisms": {
+								"PIN": true,
+								"PASSWORD": true,
+								"BIOMETRIC": true,
+								"PATTERN": false
+							}
+						},
+						"duressMode": {
+							"$ref": "notSupported"
+						}
+					},
+					"hardwareWalletSupport": {
+						"ref": {
+							"explanation": "Argent recovery documentation says guardians can include hardware-wallet addresses and Argent X can recover with seed phrase or email 2FA, but public docs did not show native hardware-wallet signing support as a primary wallet account.",
+							"url": "https://support.argent.xyz/hc/en-us/articles/360019869057-Ensuring-safety-of-your-wallet-for-the-next-of-kin"
+						},
+						"wallets": {
+							"LEDGER": {
+								"$call": "supported",
+								"args": [
+									{
+										"connectionTypes": [
+											"HardwareWalletConnection.webUSB"
+										]
+									}
+								]
+							}
+						}
+					},
+					"keysHandling": null,
+					"lightClient": {
+						"ethereumL1": {
+							"$call": "notSupportedWithRef",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Argent public docs describe smart-contract wallet and guardian flows, but no embedded Ethereum L1 light-client verification path was found.",
+										"url": "https://support.argent.xyz/"
+									}
+								}
+							]
+						}
+					},
+					"passkeyVerification": {
+						"$ref": "notSupported"
+					},
+					"publicSecurityAudits": [
+						{
+							"ref": "https://github.com/argentlabs/argent-contracts/tree/master/audit",
+							"auditDate": "2020-01-01",
+							"unpatchedFlaws": "UNKNOWN"
+						},
+						{
+							"ref": "https://github.com/argentlabs/argent-contracts-starknet/tree/main/audit",
+							"auditDate": "2023-01-01",
+							"unpatchedFlaws": "UNKNOWN"
+						}
+					],
+					"scamAlerts": {
+						"contractTransactionWarning": {
+							"$call": "notSupportedWithRef",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Argent public support pages reviewed for this entry did not show a malicious-contract registry warning feature.",
+										"url": "https://support.argent.xyz/"
+									}
+								}
+							]
+						},
+						"scamUrlWarning": {
+							"$call": "notSupportedWithRef",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Argent public support pages reviewed for this entry did not show wallet-level known-scam URL warnings.",
+										"url": "https://support.argent.xyz/"
+									}
+								}
+							]
+						},
+						"sendTransactionWarning": {
+							"$call": "notSupportedWithRef",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Argent public support pages reviewed for this entry did not show risky-recipient warnings before sending.",
+										"url": "https://support.argent.xyz/"
+									}
+								}
+							]
+						}
+					},
+					"transactionLegibility": {
+						"transactionSimulations": {
+							"$call": "notSupportedWithRef",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Argent public support pages reviewed for this entry did not show transaction simulation previews before signing.",
+										"url": "https://support.argent.xyz/"
+									}
+								}
+							]
+						}
+					}
+				},
+				"selfSovereignty": {
+					"permissionsManagement": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Argent public support pages reviewed for this entry did not show a native ERC20/ERC721/ERC1155 approval inspection and revoke workflow.",
+									"url": "https://support.argent.xyz/"
+								}
+							}
+						]
+					},
+					"transactionSubmission": {
+						"l1": {
+							"ref": {
+								"explanation": "Argent public docs do not expose a user-selected self-hosted-node transaction broadcast path.",
+								"url": "https://support.argent.xyz/"
+							},
+							"selfBroadcastViaDirectGossip": {
+								"$ref": "notSupported"
+							},
+							"selfBroadcastViaSelfHostedNode": {
+								"$ref": "notSupported"
+							}
+						},
+						"l2": {
+							"ref": {
+								"$ref": "refTodo"
+							}
+						}
+					}
+				},
+				"transparency": {
+					"releaseTransparency": {
+						"artifactSigning": {
+							"$call": "notSupportedWithRef",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Argent's public app distribution channels do not publish independently verifiable signed wallet artifacts for users.",
+										"url": "https://github.com/argentlabs/argent-x"
+									}
+								}
+							]
+						},
+						"hasPublicChangelog": {
+							"$call": "supported",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Argent X publishes public GitHub releases.",
+										"url": "https://github.com/argentlabs/argent-x/releases"
+									}
+								}
+							]
+						},
+						"reproducibleBuilds": {
+							"$call": "notSupportedWithRef",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Argent does not publish reproducible build attestations for the full wallet applications.",
+										"url": "https://github.com/argentlabs/argent-x"
+									}
+								}
+							]
+						}
+					}
+				}
+			},
+			"variants": {
+				"MOBILE": true
+			}
+		}
+	},
+	{
 		"id": "base-app",
 		"source": "software-wallets",
 		"export": "baseApp",
@@ -2545,6 +2968,847 @@
 									"ref": {
 										"explanation": "Bitget Wallet is recorded as source-unavailable proprietary software; no public source tree or reproducible-build instructions are published for independently reproducing the wallet release artifact.",
 										"url": "https://web3.bitget.com/"
+									}
+								}
+							]
+						}
+					}
+				}
+			},
+			"variants": {
+				"MOBILE": true,
+				"BROWSER": true
+			}
+		}
+	},
+	{
+		"id": "brave-wallet",
+		"source": "software-wallets",
+		"export": "braveWallet",
+		"data": {
+			"metadata": {
+				"id": "brave-wallet",
+				"displayName": "Brave Wallet",
+				"tableName": "Brave Wallet",
+				"blurb": "Brave Wallet is Brave's browser-native self-custody wallet.",
+				"contributors": [],
+				"iconExtension": "png",
+				"lastUpdated": "2026-06-07",
+				"urls": {
+					"docs": [
+						"https://support.brave.com/hc/en-us/categories/360001062531-Wallet"
+					],
+					"repositories": [
+						"https://github.com/brave/brave-browser"
+					],
+					"websites": [
+						"https://brave.com/wallet/"
+					]
+				}
+			},
+			"features": {
+				"accountSupport": {
+					"defaultAccountType": "AccountType.eoa",
+					"eip7702": {
+						"$ref": "notSupported"
+					},
+					"eoa": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Wallet creation asks users to back up a 12-word recovery phrase for self-custody wallet access.",
+									"url": "https://support.brave.com/hc/en-us/articles/12753544357645-Creating-your-Brave-Wallet"
+								},
+								"canExportPrivateKey": true,
+								"keyDerivation": {
+									"type": "BIP32",
+									"canExportSeedPhrase": true,
+									"derivationPath": "BIP44",
+									"seedPhrase": "BIP39"
+								}
+							}
+						]
+					},
+					"mpc": {
+						"$ref": "notSupported"
+					},
+					"rawErc4337": {
+						"$ref": "notSupported"
+					},
+					"safe": {
+						"$ref": "notSupported"
+					}
+				},
+				"addressResolution": {
+					"ref": {
+						"explanation": "Brave Wallet supports Web3 dapp use and address entry, but no ENS resolution feature evidence was found in the public wallet help pages.",
+						"url": "https://support.brave.com/hc/en-us/categories/360001062531-Wallet"
+					},
+					"chainSpecificAddressing": {
+						"erc7828": {
+							"$ref": "notSupported"
+						},
+						"erc7831": {
+							"$ref": "notSupported"
+						}
+					},
+					"nonChainSpecificEnsResolution": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Targeted review of Brave Wallet help and release notes found no user-facing ENS recipient-resolution documentation.",
+									"url": "https://support.brave.com/hc/en-us/categories/360001062531-Wallet"
+								}
+							}
+						]
+					}
+				},
+				"chainAbstraction": {
+					"bridging": {
+						"builtInBridging": {
+							"$call": "supported",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Brave Wallet advertises wallet-native swaps and cross-chain asset management from the browser wallet.",
+										"url": "https://brave.com/wallet/"
+									}
+								}
+							]
+						},
+						"suggestedBridging": null
+					},
+					"crossChainBalances": {
+						"ref": {
+							"explanation": "Brave Wallet says users can buy, store, send, swap, and manage crypto assets and NFTs in one wallet.",
+							"url": "https://brave.com/wallet/"
+						},
+						"globalAccountValue": {
+							"$ref": "featureSupported"
+						},
+						"perChainAccountValue": {
+							"$ref": "featureSupported"
+						},
+						"ether": null,
+						"usdc": null
+					}
+				},
+				"chainConfigurability": {
+					"$ref": "featureSupported"
+				},
+				"ecosystem": {
+					"delegation": null
+				},
+				"integration": {
+					"browser": {
+						"1193": {
+							"$ref": "featureSupported"
+						},
+						"2700": null,
+						"6963": null,
+						"ref": {
+							"explanation": "Brave Wallet is built into Brave Browser and connects to Web3 dapps without an extension.",
+							"url": "https://brave.com/web3/self-custody-wallet/"
+						}
+					},
+					"walletCall": null
+				},
+				"licensing": {
+					"type": "LicensingType.SINGLE_WALLET_REPO_AND_LICENSE",
+					"walletAppLicense": {
+						"ref": {
+							"explanation": "Brave Browser, including Brave Wallet source, is published in the brave-browser repository under the MPL-2.0 license.",
+							"url": "https://github.com/brave/brave-browser"
+						},
+						"license": "FOSSLicense.MPL_2_0"
+					}
+				},
+				"monetization": {
+					"ref": {
+						"$ref": "refTodo"
+					},
+					"revenueBreakdownIsPublic": false,
+					"strategies": {
+						"donations": false,
+						"ecosystemGrants": false,
+						"governanceTokenLowFloat": false,
+						"governanceTokenMostlyDistributed": false,
+						"hiddenConvenienceFees": null,
+						"publicOffering": false,
+						"selfFunded": false,
+						"transparentConvenienceFees": true,
+						"ventureCapital": true
+					}
+				},
+				"multiAddress": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"explanation": "Brave Wallet supports creating a wallet from a recovery phrase and managing accounts inside the browser wallet.",
+								"url": "https://support.brave.com/hc/en-us/articles/12753544357645-Creating-your-Brave-Wallet"
+							}
+						}
+					]
+				},
+				"privacy": {
+					"analytics": {
+						"crashReports": {
+							"$call": "supported",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Brave's privacy policy says users can switch off automatic usage statistics and crash reports, implying optional crash-report collection.",
+										"url": "https://brave.com/privacy/browser/"
+									}
+								}
+							]
+						},
+						"usage": {
+							"$call": "supported",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Brave's privacy policy describes privacy-preserving product analytics and an option to disable automatic usage statistics.",
+										"url": "https://brave.com/privacy/browser/"
+									}
+								}
+							]
+						}
+					},
+					"appIsolation": null,
+					"dataCollection": null,
+					"privacyPolicy": "https://brave.com/privacy/browser/",
+					"transactionPrivacy": {
+						"defaultFungibleTokenTransferMode": "PUBLIC",
+						"STEALTH_ADDRESSES": {
+							"$ref": "notSupported"
+						},
+						"TORNADO_CASH_NOVA": {
+							"$ref": "notSupported"
+						},
+						"PRIVACY_POOLS": {
+							"$ref": "notSupported"
+						},
+						"RAILGUN": {
+							"$ref": "notSupported"
+						}
+					}
+				},
+				"profile": "WalletProfile.GENERIC",
+				"security": {
+					"accountRecovery": null,
+					"bugBountyProgram": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave release notes credit wallet security fixes reported through HackerOne, indicating Brave's HackerOne security program covers wallet issues.",
+									"url": "https://brave.com/latest/"
+								},
+								"availability": "BugBountyProgramAvailability.ACTIVE",
+								"platform": "BugBountyPlatform.HACKER_ONE",
+								"upgradePathAvailable": true
+							}
+						]
+					},
+					"duressResistance": {
+						"basicUnlock": {
+							"ref": {
+								"explanation": "Brave Wallet creation requires setting a password for the wallet.",
+								"url": "https://support.brave.com/hc/en-us/articles/12753544357645-Creating-your-Brave-Wallet"
+							},
+							"mechanisms": {
+								"PIN": false,
+								"PASSWORD": true,
+								"BIOMETRIC": false,
+								"PATTERN": false
+							}
+						},
+						"duressMode": {
+							"$ref": "notSupported"
+						}
+					},
+					"hardwareWalletSupport": {
+						"ref": {
+							"explanation": "Brave Wallet's feature matrix says desktop Brave Wallet can connect and securely sign transactions with hardware wallets like Ledger and Trezor.",
+							"url": "https://support.brave.com/hc/en-us/articles/14380262951053-What-features-are-available-in-Brave-Wallet"
+						},
+						"wallets": {
+							"LEDGER": {
+								"$call": "supported",
+								"args": [
+									{
+										"connectionTypes": [
+											"HardwareWalletConnection.webUSB"
+										]
+									}
+								]
+							},
+							"TREZOR": {
+								"$call": "supported",
+								"args": [
+									{
+										"connectionTypes": [
+											"HardwareWalletConnection.webUSB"
+										]
+									}
+								]
+							}
+						}
+					},
+					"keysHandling": null,
+					"lightClient": {
+						"ethereumL1": {
+							"$call": "notSupportedWithRef",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Brave Wallet public docs describe RPC-backed wallet network access and custom networks, but no embedded Ethereum L1 light-client verification path was found.",
+										"url": "https://support.brave.com/hc/en-us/categories/360001062531-Wallet"
+									}
+								}
+							]
+						}
+					},
+					"passkeyVerification": {
+						"$ref": "notSupported"
+					},
+					"publicSecurityAudits": [
+						{
+							"ref": "https://www.doyensec.com/resources/Doyensec_BraveWallet_TestingReport_Q32022_AfterRetest.pdf",
+							"auditDate": "2022-01-01",
+							"unpatchedFlaws": "UNKNOWN"
+						}
+					],
+					"scamAlerts": {
+						"contractTransactionWarning": {
+							"$call": "notSupportedWithRef",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Brave Wallet help and release notes reviewed for this entry did not show a malicious-contract registry warning feature comparable to Blockaid-style alerts.",
+										"url": "https://support.brave.com/hc/en-us/categories/360001062531-Wallet"
+									}
+								}
+							]
+						},
+						"scamUrlWarning": {
+							"$call": "notSupportedWithRef",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Brave Browser has phishing protection, but wallet-specific public docs did not show wallet connection warnings for known-malicious dapps.",
+										"url": "https://support.brave.com/hc/en-us/categories/360001062531-Wallet"
+									}
+								}
+							]
+						},
+						"sendTransactionWarning": {
+							"$call": "notSupportedWithRef",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Brave Wallet public docs did not show risky-recipient or transaction-risk warning support before signing.",
+										"url": "https://support.brave.com/hc/en-us/categories/360001062531-Wallet"
+									}
+								}
+							]
+						}
+					},
+					"transactionLegibility": {
+						"transactionSimulations": {
+							"$call": "notSupportedWithRef",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Brave Wallet public docs reviewed for this entry did not show transaction simulation previews before signing.",
+										"url": "https://support.brave.com/hc/en-us/categories/360001062531-Wallet"
+									}
+								}
+							]
+						}
+					}
+				},
+				"selfSovereignty": {
+					"permissionsManagement": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Brave Wallet feature docs and support pages reviewed for this entry show dapp, swap, custom network, hardware-wallet, and portfolio features, but no native token-approval inventory or revoke workflow.",
+									"url": "https://support.brave.com/hc/en-us/articles/14380262951053-What-features-are-available-in-Brave-Wallet"
+								}
+							}
+						]
+					},
+					"transactionSubmission": {
+						"l1": {
+							"ref": {
+								"explanation": "Brave Wallet's feature matrix says users can add custom EVM-compatible networks by entering standardized network IDs and values.",
+								"url": "https://support.brave.com/hc/en-us/articles/14380262951053-What-features-are-available-in-Brave-Wallet"
+							},
+							"selfBroadcastViaDirectGossip": {
+								"$ref": "notSupported"
+							},
+							"selfBroadcastViaSelfHostedNode": {
+								"$ref": "featureSupported"
+							}
+						},
+						"l2": {
+							"ref": {
+								"$ref": "refTodo"
+							}
+						}
+					}
+				},
+				"transparency": {
+					"releaseTransparency": {
+						"artifactSigning": {
+							"$call": "supported",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Brave Browser GitHub releases use GitHub's release pipeline and publish signed release assets/checksums through the browser release process.",
+										"url": "https://github.com/brave/brave-browser/releases"
+									}
+								}
+							]
+						},
+						"hasPublicChangelog": {
+							"$call": "supported",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Brave publishes release notes for browser and wallet changes.",
+										"url": "https://brave.com/latest/"
+									}
+								}
+							]
+						},
+						"reproducibleBuilds": {
+							"$call": "notSupportedWithRef",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Brave publishes source and build instructions, but no wallet-specific reproducible-build attestation for end-user releases was found.",
+										"url": "https://github.com/brave/brave-browser"
+									}
+								}
+							]
+						}
+					}
+				}
+			},
+			"variants": {
+				"BROWSER": true,
+				"MOBILE": true
+			}
+		}
+	},
+	{
+		"id": "coinbase-wallet",
+		"source": "software-wallets",
+		"export": "coinbaseWallet",
+		"data": {
+			"metadata": {
+				"id": "coinbase-wallet",
+				"displayName": "Coinbase Wallet",
+				"tableName": "Coinbase Wallet",
+				"blurb": "Coinbase Wallet is Coinbase's self-custody wallet for managing crypto, NFTs, DeFi, and dapp connections.",
+				"contributors": [],
+				"iconExtension": "png",
+				"lastUpdated": "2026-06-07",
+				"urls": {
+					"docs": [
+						"https://help.coinbase.com/en/wallet"
+					],
+					"extensions": [
+						"https://chromewebstore.google.com/detail/coinbase-wallet-extension/hnfanknocfeofbddgcijnmhnfnkdnaad"
+					],
+					"repositories": [
+						"https://github.com/coinbase/coinbase-wallet-sdk"
+					],
+					"websites": [
+						"https://wallet.coinbase.com/"
+					]
+				}
+			},
+			"features": {
+				"accountSupport": {
+					"defaultAccountType": "AccountType.eoa",
+					"eip7702": {
+						"$ref": "notSupported"
+					},
+					"eoa": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet help says users can create or import a self-custody wallet and use a recovery phrase to move assets between self-custody wallets.",
+									"url": "https://help.coinbase.com/en-au/wallet/getting-started/create-a-coinbase-wallet"
+								},
+								"canExportPrivateKey": true,
+								"keyDerivation": {
+									"type": "BIP32",
+									"canExportSeedPhrase": true,
+									"derivationPath": "BIP44",
+									"seedPhrase": "BIP39"
+								}
+							}
+						]
+					},
+					"mpc": {
+						"$ref": "notSupported"
+					},
+					"rawErc4337": {
+						"$ref": "notSupported"
+					},
+					"safe": {
+						"$ref": "notSupported"
+					}
+				},
+				"addressResolution": {
+					"ref": {
+						"explanation": "Coinbase documents Coinbase Wallet support for ENS usernames and cb.id ENS subdomains.",
+						"url": "https://help.coinbase.com/en-gb/wallet/managing-account/coinbase-ens-support"
+					},
+					"chainSpecificAddressing": {
+						"erc7828": {
+							"$ref": "notSupported"
+						},
+						"erc7831": {
+							"$ref": "notSupported"
+						}
+					},
+					"nonChainSpecificEnsResolution": {
+						"$call": "supported",
+						"args": [
+							{
+								"medium": "CHAIN_CLIENT"
+							}
+						]
+					}
+				},
+				"chainAbstraction": {
+					"bridging": {
+						"builtInBridging": {
+							"$call": "supported",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Coinbase Wallet's app listing describes support for buying, selling, swapping, bridging, and minting from the wallet.",
+										"url": "https://apps.apple.com/us/app/coinbase-wallet-nfts-crypto/id1278383455"
+									}
+								}
+							]
+						},
+						"suggestedBridging": {
+							"$ref": "notSupported"
+						}
+					},
+					"crossChainBalances": {
+						"ref": {
+							"explanation": "Coinbase Wallet's app listing describes managing crypto and NFTs across supported networks from one wallet.",
+							"url": "https://apps.apple.com/us/app/coinbase-wallet-nfts-crypto/id1278383455"
+						},
+						"globalAccountValue": {
+							"$ref": "featureSupported"
+						},
+						"perChainAccountValue": {
+							"$ref": "featureSupported"
+						},
+						"ether": null,
+						"usdc": null
+					}
+				},
+				"chainConfigurability": {
+					"$ref": "notSupported"
+				},
+				"ecosystem": {
+					"delegation": null
+				},
+				"integration": {
+					"browser": {
+						"1193": {
+							"$ref": "featureSupported"
+						},
+						"2700": null,
+						"6963": null,
+						"ref": {
+							"explanation": "The Coinbase Wallet SDK repository describes an open protocol for connecting Coinbase Wallet to dapps.",
+							"url": "https://github.com/coinbase/coinbase-wallet-sdk"
+						}
+					},
+					"walletCall": null
+				},
+				"licensing": {
+					"type": "LicensingType.PROPRIETARY",
+					"walletAppLicense": {
+						"ref": {
+							"explanation": "Coinbase Wallet's consumer app source is not published as a full open-source wallet repository; the public Coinbase Wallet SDK is separate infrastructure under its own license.",
+							"url": "https://github.com/coinbase/coinbase-wallet-sdk"
+						},
+						"license": "SourceNotAvailableLicense.PROPRIETARY"
+					}
+				},
+				"monetization": {
+					"ref": {
+						"$ref": "refTodo"
+					},
+					"revenueBreakdownIsPublic": true,
+					"strategies": {
+						"donations": false,
+						"ecosystemGrants": false,
+						"governanceTokenLowFloat": false,
+						"governanceTokenMostlyDistributed": false,
+						"hiddenConvenienceFees": false,
+						"publicOffering": true,
+						"selfFunded": false,
+						"transparentConvenienceFees": true,
+						"ventureCapital": false
+					}
+				},
+				"multiAddress": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"explanation": "Coinbase Wallet supports creating or importing wallets and managing wallet accounts in the self-custody wallet app.",
+								"url": "https://help.coinbase.com/en-au/wallet/getting-started/create-a-coinbase-wallet"
+							}
+						}
+					]
+				},
+				"privacy": {
+					"analytics": {
+						"crashReports": {
+							"$call": "supported",
+							"args": [
+								{
+									"ref": {
+										"explanation": "The Coinbase Wallet App Store privacy label lists Diagnostics as data that may be collected but not linked to identity.",
+										"url": "https://apps.apple.com/us/app/coinbase-wallet-nfts-crypto/id1278383455"
+									}
+								}
+							]
+						},
+						"usage": {
+							"$call": "supported",
+							"args": [
+								{
+									"ref": {
+										"explanation": "The Coinbase Wallet App Store privacy label lists Usage Data as data that may be collected but not linked to identity.",
+										"url": "https://apps.apple.com/us/app/coinbase-wallet-nfts-crypto/id1278383455"
+									}
+								}
+							]
+						}
+					},
+					"appIsolation": null,
+					"dataCollection": null,
+					"privacyPolicy": "https://www.coinbase.com/legal/privacy",
+					"transactionPrivacy": {
+						"defaultFungibleTokenTransferMode": "PUBLIC",
+						"STEALTH_ADDRESSES": {
+							"$ref": "notSupported"
+						},
+						"TORNADO_CASH_NOVA": {
+							"$ref": "notSupported"
+						},
+						"PRIVACY_POOLS": {
+							"$ref": "notSupported"
+						},
+						"RAILGUN": {
+							"$ref": "notSupported"
+						}
+					}
+				},
+				"profile": "WalletProfile.GENERIC",
+				"security": {
+					"accountRecovery": null,
+					"bugBountyProgram": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase runs a HackerOne bug bounty program for Coinbase products and security reports.",
+									"url": "https://hackerone.com/coinbase"
+								},
+								"availability": "BugBountyProgramAvailability.ACTIVE",
+								"platform": "BugBountyPlatform.HACKER_ONE",
+								"upgradePathAvailable": true
+							}
+						]
+					},
+					"duressResistance": {
+						"basicUnlock": {
+							"ref": {
+								"$ref": "refTodo"
+							},
+							"mechanisms": {
+								"PIN": true,
+								"PASSWORD": true,
+								"BIOMETRIC": true,
+								"PATTERN": false
+							}
+						},
+						"duressMode": {
+							"$ref": "notSupported"
+						}
+					},
+					"hardwareWalletSupport": {
+						"ref": {
+							"$ref": "refTodo"
+						},
+						"wallets": {
+							"LEDGER": {
+								"$call": "supported",
+								"args": [
+									{
+										"connectionTypes": [
+											"HardwareWalletConnection.webUSB"
+										]
+									}
+								]
+							}
+						}
+					},
+					"keysHandling": null,
+					"lightClient": {
+						"ethereumL1": {
+							"$call": "notSupportedWithRef",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Coinbase Wallet public docs describe app-managed network access and dapp connection flows, but no embedded Ethereum L1 light-client verification path was found.",
+										"url": "https://help.coinbase.com/en/wallet"
+									}
+								}
+							]
+						}
+					},
+					"passkeyVerification": {
+						"$ref": "notSupported"
+					},
+					"publicSecurityAudits": [],
+					"scamAlerts": {
+						"contractTransactionWarning": {
+							"$call": "supported",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Coinbase Wallet's security page describes token approval alerts and dapp blocklist protection for malicious dapps.",
+										"url": "https://www.coinbase.com/security/wallet-security"
+									}
+								}
+							]
+						},
+						"scamUrlWarning": {
+							"$call": "supported",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Coinbase Wallet's security page describes a dapp blocklist that warns before users proceed to applications identified as dangerous.",
+										"url": "https://www.coinbase.com/security/wallet-security"
+									}
+								}
+							]
+						},
+						"sendTransactionWarning": {
+							"$call": "supported",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Coinbase Wallet's security page describes token approval alerts before users complete dapp transactions.",
+										"url": "https://www.coinbase.com/security/wallet-security"
+									}
+								}
+							]
+						}
+					},
+					"transactionLegibility": {
+						"transactionSimulations": {
+							"$call": "supported",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Coinbase Wallet's security page says transaction previews estimate token-balance changes before users complete a dapp transaction.",
+										"url": "https://www.coinbase.com/security/wallet-security"
+									}
+								}
+							]
+						}
+					}
+				},
+				"selfSovereignty": {
+					"permissionsManagement": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Coinbase Wallet help documents reviewing and revoking dapp permissions and token approvals from the browser extension or mobile app.",
+									"url": "https://help.coinbase.com/en/wallet/security/dapp-permissions-token-approvals"
+								},
+								"erc20Approvals": "SpendingApprovalsControl.CAN_INSPECT_AND_REVOKE",
+								"erc721Approvals": null,
+								"erc1155Approvals": null
+							}
+						]
+					},
+					"transactionSubmission": {
+						"l1": {
+							"ref": {
+								"explanation": "Coinbase Wallet public docs describe the Coinbase Wallet app and service as the transaction interface; no user-selected self-hosted-node broadcast path was found.",
+								"url": "https://help.coinbase.com/en/wallet"
+							},
+							"selfBroadcastViaDirectGossip": {
+								"$ref": "notSupported"
+							},
+							"selfBroadcastViaSelfHostedNode": {
+								"$ref": "notSupported"
+							}
+						},
+						"l2": {
+							"ref": {
+								"$ref": "refTodo"
+							}
+						}
+					}
+				},
+				"transparency": {
+					"releaseTransparency": {
+						"artifactSigning": {
+							"$call": "notSupportedWithRef",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Coinbase Wallet public release channels and app listings do not publish independently verifiable signed application artifacts for users.",
+										"url": "https://apps.apple.com/us/app/coinbase-wallet-nfts-crypto/id1278383455"
+									}
+								}
+							]
+						},
+						"hasPublicChangelog": {
+							"$call": "notSupportedWithRef",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Coinbase Wallet publishes app-store update notes, but no stable public wallet changelog page was found.",
+										"url": "https://apps.apple.com/us/app/coinbase-wallet-nfts-crypto/id1278383455"
+									}
+								}
+							]
+						},
+						"reproducibleBuilds": {
+							"$call": "notSupportedWithRef",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Coinbase Wallet does not publish reproducible build instructions for the full consumer wallet app.",
+										"url": "https://github.com/coinbase/coinbase-wallet-sdk"
 									}
 								}
 							]
@@ -4110,6 +5374,429 @@
 				}
 			},
 			"variants": {
+				"MOBILE": true,
+				"BROWSER": true
+			}
+		}
+	},
+	{
+		"id": "exodus",
+		"source": "software-wallets",
+		"export": "exodus",
+		"data": {
+			"metadata": {
+				"id": "exodus",
+				"displayName": "Exodus",
+				"tableName": "Exodus",
+				"blurb": "Exodus is a self-custody desktop, mobile, and browser crypto wallet with multi-chain asset support.",
+				"contributors": [],
+				"iconExtension": "png",
+				"lastUpdated": "2026-06-07",
+				"urls": {
+					"docs": [
+						"https://www.exodus.com/support/"
+					],
+					"repositories": [
+						"https://github.com/ExodusMovement"
+					],
+					"websites": [
+						"https://www.exodus.com/"
+					]
+				}
+			},
+			"features": {
+				"accountSupport": {
+					"defaultAccountType": "AccountType.eoa",
+					"eip7702": {
+						"$ref": "notSupported"
+					},
+					"eoa": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus says users fully control their wallet, 12-word secret key, and private keys.",
+									"url": "https://www.exodus.com/support/en/articles/8598688-what-information-does-exodus-have-access-to"
+								},
+								"canExportPrivateKey": true,
+								"keyDerivation": {
+									"type": "BIP32",
+									"canExportSeedPhrase": true,
+									"derivationPath": "BIP44",
+									"seedPhrase": "BIP39"
+								}
+							}
+						]
+					},
+					"mpc": {
+						"$ref": "notSupported"
+					},
+					"rawErc4337": {
+						"$ref": "notSupported"
+					},
+					"safe": {
+						"$ref": "notSupported"
+					}
+				},
+				"addressResolution": {
+					"ref": {
+						"explanation": "Exodus support pages reviewed for this entry did not show ENS-name recipient resolution.",
+						"url": "https://www.exodus.com/support/"
+					},
+					"chainSpecificAddressing": {
+						"erc7828": {
+							"$ref": "notSupported"
+						},
+						"erc7831": {
+							"$ref": "notSupported"
+						}
+					},
+					"nonChainSpecificEnsResolution": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Targeted review of Exodus support pages found address and QR-code transfer flows, but no ENS recipient-resolution support.",
+									"url": "https://www.exodus.com/support/"
+								}
+							}
+						]
+					}
+				},
+				"chainAbstraction": {
+					"bridging": {
+						"builtInBridging": {
+							"$call": "supported",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Exodus supports swaps for thousands of crypto pairs directly in the wallet.",
+										"url": "https://www.exodus.com/support/en/articles/8598609-getting-started-with-exodus"
+									}
+								}
+							]
+						},
+						"suggestedBridging": null
+					},
+					"crossChainBalances": {
+						"ref": {
+							"explanation": "Exodus describes support for 50+ crypto networks with assets managed from one wallet.",
+							"url": "https://www.exodus.com/support/en/articles/8598611-which-assets-does-exodus-support"
+						},
+						"globalAccountValue": {
+							"$ref": "featureSupported"
+						},
+						"perChainAccountValue": {
+							"$ref": "featureSupported"
+						},
+						"ether": null,
+						"usdc": null
+					}
+				},
+				"chainConfigurability": {
+					"$ref": "notSupported"
+				},
+				"ecosystem": {
+					"delegation": null
+				},
+				"integration": {
+					"browser": {
+						"1193": {
+							"$ref": "featureSupported"
+						},
+						"2700": null,
+						"6963": null,
+						"ref": {
+							"explanation": "Exodus Web3 Wallet connects to dapps and requires signing wallet requests.",
+							"url": "https://www.exodus.com/support/en/articles/8598851-how-do-i-connect-to-dapps-and-web3-apps-with-exodus-web3-wallet"
+						}
+					},
+					"walletCall": null
+				},
+				"licensing": {
+					"type": "LicensingType.PROPRIETARY",
+					"walletAppLicense": {
+						"ref": {
+							"explanation": "Exodus publishes some open-source packages but not the full consumer wallet app source as a single open-source wallet repository.",
+							"url": "https://docs.exodus.com/open-source/"
+						},
+						"license": "SourceNotAvailableLicense.PROPRIETARY"
+					}
+				},
+				"monetization": {
+					"ref": {
+						"$ref": "refTodo"
+					},
+					"revenueBreakdownIsPublic": true,
+					"strategies": {
+						"donations": false,
+						"ecosystemGrants": false,
+						"governanceTokenLowFloat": false,
+						"governanceTokenMostlyDistributed": false,
+						"hiddenConvenienceFees": null,
+						"publicOffering": true,
+						"selfFunded": false,
+						"transparentConvenienceFees": true,
+						"ventureCapital": false
+					}
+				},
+				"multiAddress": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"explanation": "Exodus supports separate Exodus and hardware-wallet portfolios, plus wallet restoration from the same 12-word secret key.",
+								"url": "https://www.exodus.com/support/en/articles/8598656-getting-started-with-exodus-and-trezor"
+							}
+						}
+					]
+				},
+				"privacy": {
+					"analytics": {
+						"crashReports": {
+							"$call": "supported",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Exodus documents product usage and performance data collection, while the App Store privacy label lists Usage Data.",
+										"url": "https://www.exodus.com/support/en/articles/8598688-what-information-does-exodus-have-access-to"
+									}
+								}
+							]
+						},
+						"usage": {
+							"$call": "supported",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Exodus documents product usage and performance data collection.",
+										"url": "https://www.exodus.com/support/en/articles/8598688-what-information-does-exodus-have-access-to"
+									}
+								}
+							]
+						}
+					},
+					"appIsolation": null,
+					"dataCollection": null,
+					"privacyPolicy": "https://www.exodus.com/privacy",
+					"transactionPrivacy": {
+						"defaultFungibleTokenTransferMode": "PUBLIC",
+						"STEALTH_ADDRESSES": {
+							"$ref": "notSupported"
+						},
+						"TORNADO_CASH_NOVA": {
+							"$ref": "notSupported"
+						},
+						"PRIVACY_POOLS": {
+							"$ref": "notSupported"
+						},
+						"RAILGUN": {
+							"$ref": "notSupported"
+						}
+					}
+				},
+				"profile": "WalletProfile.GENERIC",
+				"security": {
+					"accountRecovery": null,
+					"bugBountyProgram": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus says its coordinated vulnerability disclosure program is operated via its HackerOne bug bounty program.",
+									"url": "https://www.exodus.com/security"
+								},
+								"availability": "BugBountyProgramAvailability.ACTIVE",
+								"platform": "BugBountyPlatform.HACKER_ONE",
+								"upgradePathAvailable": true
+							}
+						]
+					},
+					"duressResistance": {
+						"basicUnlock": {
+							"ref": {
+								"explanation": "Exodus says users can set a password to protect the secret key on the device.",
+								"url": "https://www.exodus.com/support/en/articles/8598688-what-information-does-exodus-have-access-to"
+							},
+							"mechanisms": {
+								"PIN": false,
+								"PASSWORD": true,
+								"BIOMETRIC": true,
+								"PATTERN": false
+							}
+						},
+						"duressMode": {
+							"$ref": "notSupported"
+						}
+					},
+					"hardwareWalletSupport": {
+						"ref": {
+							"explanation": "Exodus supports Trezor on desktop and Ledger on mobile.",
+							"url": "https://www.exodus.com/support/en/articles/8598609-getting-started-with-exodus"
+						},
+						"wallets": {
+							"LEDGER": {
+								"$call": "supported",
+								"args": [
+									{
+										"connectionTypes": [
+											"HardwareWalletConnection.bluetooth"
+										]
+									}
+								]
+							},
+							"TREZOR": {
+								"$call": "supported",
+								"args": [
+									{
+										"connectionTypes": [
+											"HardwareWalletConnection.webUSB",
+											"HardwareWalletConnection.bluetooth"
+										]
+									}
+								]
+							}
+						}
+					},
+					"keysHandling": null,
+					"lightClient": {
+						"ethereumL1": {
+							"$call": "notSupportedWithRef",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Exodus explains that balance and transaction information is displayed by querying blockchain data providers, not through an embedded Ethereum L1 light client.",
+										"url": "https://www.exodus.com/support/en/articles/8598688-what-information-does-exodus-have-access-to"
+									}
+								}
+							]
+						}
+					},
+					"passkeyVerification": {
+						"$ref": "notSupported"
+					},
+					"publicSecurityAudits": [],
+					"scamAlerts": {
+						"contractTransactionWarning": {
+							"$call": "notSupportedWithRef",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Exodus security and Web3 Wallet docs reviewed for this entry did not show malicious-contract registry warnings before signing.",
+										"url": "https://www.exodus.com/security"
+									}
+								}
+							]
+						},
+						"scamUrlWarning": {
+							"$call": "notSupportedWithRef",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Exodus Web3 Wallet docs warn users to check official websites, but no wallet-level known-scam URL warning feature was found.",
+										"url": "https://www.exodus.com/support/en/articles/8598851-how-do-i-connect-to-dapps-and-web3-apps-with-exodus-web3-wallet"
+									}
+								}
+							]
+						},
+						"sendTransactionWarning": {
+							"$call": "notSupportedWithRef",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Exodus support docs reviewed for this entry did not show risky-recipient warnings before sending.",
+										"url": "https://www.exodus.com/support/"
+									}
+								}
+							]
+						}
+					},
+					"transactionLegibility": {
+						"transactionSimulations": {
+							"$call": "notSupportedWithRef",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Exodus Web3 Wallet docs say users approve transaction requests, but no simulation preview feature was found.",
+										"url": "https://www.exodus.com/support/en/articles/8598851-how-do-i-connect-to-dapps-and-web3-apps-with-exodus-web3-wallet"
+									}
+								}
+							]
+						}
+					}
+				},
+				"selfSovereignty": {
+					"permissionsManagement": {
+						"$call": "notSupportedWithRef",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Exodus says it is not yet possible to remove previously approved infinite approvals or adjust the amount a transaction is approving.",
+									"url": "https://www.exodus.com/support/en/articles/8598851-how-do-i-connect-to-dapps-and-web3-apps-with-exodus-web3-wallet"
+								}
+							}
+						]
+					},
+					"transactionSubmission": {
+						"l1": {
+							"ref": {
+								"explanation": "Exodus public docs reviewed for this entry did not show user-selected self-hosted-node transaction broadcast.",
+								"url": "https://www.exodus.com/support/"
+							},
+							"selfBroadcastViaDirectGossip": {
+								"$ref": "notSupported"
+							},
+							"selfBroadcastViaSelfHostedNode": {
+								"$ref": "notSupported"
+							}
+						},
+						"l2": {
+							"ref": {
+								"$ref": "refTodo"
+							}
+						}
+					}
+				},
+				"transparency": {
+					"releaseTransparency": {
+						"artifactSigning": {
+							"$call": "supported",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Exodus publishes release hashes for downloadable app releases.",
+										"url": "https://www.exodus.com/releases"
+									}
+								}
+							]
+						},
+						"hasPublicChangelog": {
+							"$call": "supported",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Exodus publishes a public version history and release notes page.",
+										"url": "https://www.exodus.com/releases"
+									}
+								}
+							]
+						},
+						"reproducibleBuilds": {
+							"$call": "notSupportedWithRef",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Exodus publishes release hashes, but no reproducible-build instructions or attestations for the full consumer wallet apps were found.",
+										"url": "https://www.exodus.com/releases"
+									}
+								}
+							]
+						}
+					}
+				}
+			},
+			"variants": {
+				"DESKTOP": true,
 				"MOBILE": true,
 				"BROWSER": true
 			}
@@ -14676,6 +16363,418 @@
 			},
 			"variants": {
 				"HARDWARE": true
+			}
+		}
+	},
+	{
+		"id": "trust-wallet",
+		"source": "software-wallets",
+		"export": "trustWallet",
+		"data": {
+			"metadata": {
+				"id": "trust-wallet",
+				"displayName": "Trust Wallet",
+				"tableName": "Trust Wallet",
+				"blurb": "Trust Wallet is a multi-chain self-custody wallet for mobile and browser extension users.",
+				"contributors": [],
+				"iconExtension": "png",
+				"lastUpdated": "2026-06-07",
+				"urls": {
+					"docs": [
+						"https://support.trustwallet.com/"
+					],
+					"extensions": [
+						"https://chromewebstore.google.com/detail/trust-wallet/egjidjbpglichdcondbcbdnbeeppgdph"
+					],
+					"repositories": [
+						"https://github.com/trustwallet/wallet-core"
+					],
+					"websites": [
+						"https://trustwallet.com/"
+					]
+				}
+			},
+			"features": {
+				"accountSupport": {
+					"defaultAccountType": "AccountType.eoa",
+					"eip7702": {
+						"$ref": "notSupported"
+					},
+					"eoa": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Trust Wallet support says wallets can be imported using a secret phrase, also known as a recovery phrase, seed phrase, or mnemonic.",
+									"url": "https://support.trustwallet.com/support/solutions/articles/67000731384-how-to-import-a-wallet-using-a-secret-phrase-on-trust-wallet"
+								},
+								"canExportPrivateKey": true,
+								"keyDerivation": {
+									"type": "BIP32",
+									"canExportSeedPhrase": true,
+									"derivationPath": "BIP44",
+									"seedPhrase": "BIP39"
+								}
+							}
+						]
+					},
+					"mpc": {
+						"$ref": "notSupported"
+					},
+					"rawErc4337": {
+						"$ref": "notSupported"
+					},
+					"safe": {
+						"$ref": "notSupported"
+					}
+				},
+				"addressResolution": {
+					"ref": {
+						"explanation": "Trust Wallet supports ENS and Web3 domain-name resolution in its wallet UI.",
+						"url": "https://trustwallet.com/"
+					},
+					"chainSpecificAddressing": {
+						"erc7828": {
+							"$ref": "notSupported"
+						},
+						"erc7831": {
+							"$ref": "notSupported"
+						}
+					},
+					"nonChainSpecificEnsResolution": {
+						"$call": "supported",
+						"args": [
+							{
+								"medium": "CHAIN_CLIENT"
+							}
+						]
+					}
+				},
+				"chainAbstraction": {
+					"bridging": {
+						"builtInBridging": {
+							"$call": "supported",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Trust Wallet presents swaps and cross-chain features as part of its multi-chain wallet experience.",
+										"url": "https://trustwallet.com/"
+									}
+								}
+							]
+						},
+						"suggestedBridging": null
+					},
+					"crossChainBalances": {
+						"ref": {
+							"explanation": "Trust Wallet says it supports 100+ blockchains from one self-custody wallet.",
+							"url": "https://trustwallet.com/"
+						},
+						"globalAccountValue": {
+							"$ref": "featureSupported"
+						},
+						"perChainAccountValue": {
+							"$ref": "featureSupported"
+						},
+						"ether": null,
+						"usdc": null
+					}
+				},
+				"chainConfigurability": {
+					"$ref": "featureSupported"
+				},
+				"ecosystem": {
+					"delegation": null
+				},
+				"integration": {
+					"browser": {
+						"1193": {
+							"$ref": "featureSupported"
+						},
+						"2700": null,
+						"6963": null,
+						"ref": {
+							"explanation": "Trust Wallet is available as a browser extension for connecting to Web3 dapps.",
+							"url": "https://trustwallet.com/browser-extension"
+						}
+					},
+					"walletCall": null
+				},
+				"licensing": {
+					"type": "LicensingType.PROPRIETARY",
+					"walletAppLicense": {
+						"ref": {
+							"explanation": "Trust Wallet's full consumer app source is not published as a single open-source app repository; Trust Wallet Core is an Apache-2.0 library used by the wallet.",
+							"url": "https://github.com/trustwallet/wallet-core"
+						},
+						"license": "SourceNotAvailableLicense.PROPRIETARY"
+					}
+				},
+				"monetization": {
+					"ref": {
+						"$ref": "refTodo"
+					},
+					"revenueBreakdownIsPublic": false,
+					"strategies": {
+						"donations": false,
+						"ecosystemGrants": false,
+						"governanceTokenLowFloat": false,
+						"governanceTokenMostlyDistributed": false,
+						"hiddenConvenienceFees": null,
+						"publicOffering": false,
+						"selfFunded": null,
+						"transparentConvenienceFees": true,
+						"ventureCapital": false
+					}
+				},
+				"multiAddress": {
+					"$call": "supported",
+					"args": [
+						{
+							"ref": {
+								"explanation": "Trust Wallet support documents importing wallets from mobile to extension, extension to mobile, and from other Web3 wallets.",
+								"url": "https://support.trustwallet.com/support/solutions/articles/67000731384-how-to-import-a-wallet-using-a-secret-phrase-on-trust-wallet"
+							}
+						}
+					]
+				},
+				"privacy": {
+					"analytics": {
+						"crashReports": {
+							"$call": "supported",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Trust Wallet's App Store privacy label lists Diagnostics as data that may be collected.",
+										"url": "https://apps.apple.com/ch/app/trust-wallet-bitcoin-crypto/id1288339409"
+									}
+								}
+							]
+						},
+						"usage": {
+							"$call": "supported",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Trust Wallet's privacy notice describes automatic collection and use of personal data through its applications and services.",
+										"url": "https://trustwallet.com/privacy-notice"
+									}
+								}
+							]
+						}
+					},
+					"appIsolation": null,
+					"dataCollection": null,
+					"privacyPolicy": "https://trustwallet.com/privacy-notice",
+					"transactionPrivacy": {
+						"defaultFungibleTokenTransferMode": "PUBLIC",
+						"STEALTH_ADDRESSES": {
+							"$ref": "notSupported"
+						},
+						"TORNADO_CASH_NOVA": {
+							"$ref": "notSupported"
+						},
+						"PRIVACY_POOLS": {
+							"$ref": "notSupported"
+						},
+						"RAILGUN": {
+							"$ref": "notSupported"
+						}
+					}
+				},
+				"profile": "WalletProfile.GENERIC",
+				"security": {
+					"accountRecovery": null,
+					"bugBountyProgram": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Trust Wallet's security page links to and describes a bug bounty program.",
+									"url": "https://trustwallet.com/security"
+								},
+								"availability": "BugBountyProgramAvailability.ACTIVE",
+								"upgradePathAvailable": true
+							}
+						]
+					},
+					"duressResistance": {
+						"basicUnlock": {
+							"ref": {
+								"$ref": "refTodo"
+							},
+							"mechanisms": {
+								"PIN": true,
+								"PASSWORD": true,
+								"BIOMETRIC": true,
+								"PATTERN": false
+							}
+						},
+						"duressMode": {
+							"$ref": "notSupported"
+						}
+					},
+					"hardwareWalletSupport": {
+						"ref": {
+							"$ref": "refTodo"
+						},
+						"wallets": {
+							"LEDGER": {
+								"$call": "supported",
+								"args": [
+									{
+										"connectionTypes": [
+											"HardwareWalletConnection.bluetooth",
+											"HardwareWalletConnection.webUSB"
+										]
+									}
+								]
+							}
+						}
+					},
+					"keysHandling": null,
+					"lightClient": {
+						"ethereumL1": {
+							"$call": "notSupportedWithRef",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Trust Wallet public docs describe multi-chain wallet network access, but no embedded Ethereum L1 light-client verification path was found.",
+										"url": "https://support.trustwallet.com/"
+									}
+								}
+							]
+						}
+					},
+					"passkeyVerification": {
+						"$ref": "notSupported"
+					},
+					"publicSecurityAudits": [],
+					"scamAlerts": {
+						"contractTransactionWarning": {
+							"$call": "supported",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Trust Wallet's Security Scanner is designed to protect assets by alerting users of risky transactions and providing risk descriptions.",
+										"url": "https://trustwallet.com/blog/web3/a-safer-web3-experience-with-trust-wallet-security-scanner"
+									}
+								}
+							]
+						},
+						"scamUrlWarning": {
+							"$call": "supported",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Trust Wallet's security page describes built-in risk monitoring tools and security partners that help users avoid scams.",
+										"url": "https://trustwallet.com/security"
+									}
+								}
+							]
+						},
+						"sendTransactionWarning": {
+							"$call": "supported",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Trust Wallet's Security Scanner alerts users of risky transactions before signing.",
+										"url": "https://trustwallet.com/blog/web3/a-safer-web3-experience-with-trust-wallet-security-scanner"
+									}
+								}
+							]
+						}
+					},
+					"transactionLegibility": {
+						"transactionSimulations": {
+							"$call": "supported",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Trust Wallet's Security Scanner evaluates transaction risk and shows risk descriptions before users proceed.",
+										"url": "https://trustwallet.com/blog/web3/a-safer-web3-experience-with-trust-wallet-security-scanner"
+									}
+								}
+							]
+						}
+					}
+				},
+				"selfSovereignty": {
+					"permissionsManagement": {
+						"$call": "supported",
+						"args": [
+							{
+								"ref": {
+									"explanation": "Trust Wallet announced an Approvals feature that lets users view active approvals, detect risky approvals, and revoke approvals directly inside the mobile wallet and extension.",
+									"url": "https://trustwallet.com/blog/announcements/control-and-revoke-token-approvals-in-trust-wallet"
+								},
+								"erc20Approvals": "SpendingApprovalsControl.CAN_INSPECT_AND_REVOKE",
+								"erc721Approvals": null,
+								"erc1155Approvals": null
+							}
+						]
+					},
+					"transactionSubmission": {
+						"l1": {
+							"ref": {
+								"explanation": "Trust Wallet public docs describe app-managed network access; no self-hosted-node transaction broadcast configuration was found.",
+								"url": "https://support.trustwallet.com/"
+							},
+							"selfBroadcastViaDirectGossip": {
+								"$ref": "notSupported"
+							},
+							"selfBroadcastViaSelfHostedNode": {
+								"$ref": "notSupported"
+							}
+						},
+						"l2": {
+							"ref": {
+								"$ref": "refTodo"
+							}
+						}
+					}
+				},
+				"transparency": {
+					"releaseTransparency": {
+						"artifactSigning": {
+							"$call": "notSupportedWithRef",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Trust Wallet publishes app-store and extension releases, but no independently verifiable signed application artifacts were found.",
+										"url": "https://apps.apple.com/ch/app/trust-wallet-bitcoin-crypto/id1288339409"
+									}
+								}
+							]
+						},
+						"hasPublicChangelog": {
+							"$call": "supported",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Trust Wallet Core publishes public GitHub releases with changelog entries.",
+										"url": "https://github.com/trustwallet/wallet-core/releases"
+									}
+								}
+							]
+						},
+						"reproducibleBuilds": {
+							"$call": "notSupportedWithRef",
+							"args": [
+								{
+									"ref": {
+										"explanation": "Trust Wallet does not publish reproducible build instructions for the full consumer wallet apps.",
+										"url": "https://github.com/trustwallet/wallet-core"
+									}
+								}
+							]
+						}
+					}
+				}
+			},
+			"variants": {
+				"MOBILE": true,
+				"BROWSER": true
 			}
 		}
 	},
