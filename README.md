@@ -98,3 +98,9 @@ with additional metrics, evidence, and the interactive HTML views described
 above. Many thanks to the Walletbeat contributors for making their work openly
 available. Please refer to the upstream repository for its own licensing and
 contribution terms.
+
+## License
+
+This project is released under the [MIT License](LICENSE). Note that the seed
+data originates from [Walletbeat](https://github.com/walletbeat/walletbeat); refer
+to that project for the terms governing the upstream data.
