@@ -26,6 +26,8 @@
   .ctl{display:flex;flex-direction:column;gap:5px}
   .ctl > label{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
   select,input[type=text]{background:var(--panel2);color:var(--txt);border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-size:13px}
+  .chipgroups{display:flex;flex-direction:column;gap:9px}
+  .chipgroup .grphead{font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:4px}
   .chips{display:flex;gap:6px;flex-wrap:wrap;max-width:620px}
   .chip{padding:4px 10px;border:1px solid var(--line);border-radius:20px;background:var(--panel2);cursor:pointer;font-size:12.5px;user-select:none;white-space:nowrap}
   .chip.on{background:var(--accentdim);border-color:var(--accent);color:#cfe0ff}
@@ -128,8 +130,8 @@
   </div>
 </header>
 
-<details class="help" open>
-  <summary><span class="chev">▶</span> How to read this report <span class="tagn">— click to collapse</span></summary>
+<details class="help">
+  <summary><span class="chev">▶</span> How to read this report <span class="tagn">— click to expand</span></summary>
   <div class="inner">
     <p>This flips the comparison matrix into a <b>decision</b>. Pick <b>your wallet</b> and a set of
        <b>rivals</b>; the page auto-derives the two lists a PM actually needs:</p>
@@ -159,12 +161,12 @@
 
 <div class="controls">
   <div class="ctl">
-    <label>Your wallet (baseline)</label>
+    <label>Baseline wallet</label>
     <select id="baseline"></select>
   </div>
   <div class="ctl" style="flex:1">
-    <label>Rivals to compare</label>
-    <div class="chips" id="rivalChips"></div>
+    <label>Wallets to compare</label>
+    <div class="chipgroups" id="rivalChips"></div>
   </div>
   <div class="ctl">
     <label>Platform</label>
@@ -314,16 +316,24 @@ function computeGaps(){
 }
 
 // ---- controls -------------------------------------------------------------
+const isHardware = w => w.variants.includes('HARDWARE');
 function renderControls(){
+  const hw = wallets.filter(isHardware), sw = wallets.filter(w=>!isHardware(w));
+  const opt = w => `<option value="${w.id}" ${w.id===state.baseline?'selected':''}>${escapeHtml(w.name)}</option>`;
   const bsel = document.getElementById('baseline');
-  bsel.innerHTML = wallets.map(w=>`<option value="${w.id}" ${w.id===state.baseline?'selected':''}>${escapeHtml(w.name)}</option>`).join('');
-  const chips = document.getElementById('rivalChips');
-  chips.innerHTML = wallets.map(w=>{
+  bsel.innerHTML =
+    (hw.length?`<optgroup label="Hardware wallets">${hw.map(opt).join('')}</optgroup>`:'') +
+    (sw.length?`<optgroup label="Software wallets">${sw.map(opt).join('')}</optgroup>`:'');
+  const chipFor = w => {
     if(w.id===state.baseline) return `<span class="chip base" title="baseline">${escapeHtml(w.name)} ★</span>`;
     const on = state.rivals.includes(w.id);
     const dim = state.variant && !w.variants.includes(state.variant);
     return `<span class="chip ${on?'on':''}" data-id="${w.id}" style="${dim?'opacity:.4':''}">${escapeHtml(w.name)}</span>`;
-  }).join('');
+  };
+  const grp = (title, list) => list.length
+    ? `<div class="chipgroup"><div class="grphead">${title}</div><div class="chips">${list.map(chipFor).join('')}</div></div>` : '';
+  const chips = document.getElementById('rivalChips');
+  chips.innerHTML = grp('Hardware Wallets', hw) + grp('Software Wallets', sw);
   chips.querySelectorAll('.chip[data-id]').forEach(c=>c.onclick=()=>{
     const id=c.dataset.id;
     state.rivals = state.rivals.includes(id) ? state.rivals.filter(x=>x!==id) : [...state.rivals,id];
