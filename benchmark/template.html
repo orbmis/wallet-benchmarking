@@ -24,6 +24,8 @@
   .ctl{display:flex;flex-direction:column;gap:5px}
   .ctl > label{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
   select,input[type=text]{background:var(--panel2);color:var(--txt);border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-size:13px}
+  .chipgroups{display:flex;flex-direction:column;gap:9px}
+  .chipgroup .grphead{font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:4px}
   .chips{display:flex;gap:6px;flex-wrap:wrap;max-width:560px}
   .chip{padding:4px 10px;border:1px solid var(--line);border-radius:20px;background:var(--panel2);cursor:pointer;font-size:12.5px;user-select:none;white-space:nowrap}
   .chip.on{background:var(--accentdim);border-color:var(--accent);color:#cfe0ff}
@@ -126,8 +128,8 @@
   </span>
 </header>
 
-<details class="help" open>
-  <summary><span class="chev">▶</span> How to read this benchmark <span class="tagn">— click to collapse</span></summary>
+<details class="help">
+  <summary><span class="chev">▶</span> How to read this benchmark <span class="tagn">— click to expand</span></summary>
   <div class="inner">
     <p>A feature-by-feature scorecard comparing wallets. You pick <b>your wallet</b> (the baseline) and a set of
        <b>rivals</b>; every row is one capability, and each cell shows where each wallet stands —
@@ -166,7 +168,7 @@
 
     <h4>How to use it</h4>
     <ul>
-      <li><b>Set your wallet</b> in "Your wallet (baseline)", then toggle <b>rival chips</b> to compare against.</li>
+      <li><b>Set your wallet</b> in "Baseline wallet", then toggle the <b>wallet chips</b> (split into Hardware and Software) to compare against.</li>
       <li><b>Platform</b> filters to wallets that ship on Browser / Mobile / Desktop, so you compare a fair peer set.</li>
       <li><span class="key">Only differences</span> hides rows where every rival matches you; <span class="key">Hide unknowns</span> declutters un-recorded rows.</li>
       <li><b>Search</b> filters rows by name; category headers collapse; <b>Export CSV</b> dumps the current view for slides/sheets.</li>
@@ -178,12 +180,12 @@
 
 <div class="controls">
   <div class="ctl">
-    <label>Your wallet (baseline)</label>
+    <label>Baseline wallet</label>
     <select id="baseline"></select>
   </div>
   <div class="ctl" style="flex:1">
-    <label>Rivals to compare</label>
-    <div class="chips" id="rivalChips"></div>
+    <label>Wallets to compare</label>
+    <div class="chipgroups" id="rivalChips"></div>
   </div>
   <div class="ctl">
     <label>Platform</label>
@@ -236,22 +238,159 @@
 </aside>
 
 <script>
-const DATA = /*__DATA__*/;
-const {wallets, metrics, cats} = DATA;
-const byId = Object.fromEntries(wallets.map(w=>[w.id,w]));
+// ---- metric catalog (config; kept in sync with build.py's M — regenerate with
+//      python3 -c "import json,build; print(json.dumps([dict(zip(('key','label','cat','path','type','good','desc'),m)) for m in build.M]))" )
+const METRIC_CATALOG = /*__METRICS__*/;
 
-// ---- state
-const def = (id)=>byId[id]?id:null;
-let state = {
-  baseline: def('metamask') || wallets[0].id,
-  rivals: ['rabby','rainbow','phantom','okx'].filter(id=>byId[id]),
-  variant: '',
-  search: '',
-  onlyDiff: false,
-  hideUnknown: false,
-  collapsed: {},
-};
-if(state.rivals.length===0) state.rivals = wallets.slice(0,4).map(w=>w.id).filter(id=>id!==state.baseline).slice(0,3);
+// ---- data resolved at runtime from data/wallets/*.json (ports build.py's DSL resolver)
+let wallets = [], metrics = [], cats = [], byId = {};
+
+const isObj = x => x!==null && typeof x==='object' && !Array.isArray(x);
+function shortEnum(s){ return (typeof s==='string' && s.includes('.')) ? s.slice(s.lastIndexOf('.')+1) : s; }
+function trunc(s, n=400){ return (typeof s==='string' && s.length>n) ? s.slice(0,n-1)+'…' : s; }
+function normUrls(u){
+  const out=[];
+  if(typeof u==='string'){ out.push({url:u}); }
+  else if(Array.isArray(u)){
+    for(const it of u){
+      if(typeof it==='string') out.push({url:it});
+      else if(isObj(it) && 'url' in it){
+        let url=it.url; if(Array.isArray(url)) url = url.length?url[0]:'';
+        out.push({url, label:it.label});
+      }
+    }
+  } else if(isObj(u) && 'url' in u){ return normUrls(u.url); }
+  return out;
+}
+function extractRef(node){
+  if(node==null) return null;
+  if(typeof node==='string'){
+    if(node.startsWith('http')) return {sourced:true, citations:[{url:node}]};
+    return {sourced:false, named:node};
+  }
+  if(Array.isArray(node)){
+    let cites=[], sourced=false;
+    for(const it of node){ const r=extractRef(it); if(r && r.citations){ cites=cites.concat(r.citations); sourced=true; } }
+    return cites.length?{sourced, citations:cites}:null;
+  }
+  if(isObj(node)){
+    if('$ref' in node) return {sourced:false, named:node['$ref']};
+    const expl=trunc(node.explanation), lab=node.label;
+    const urls = ('url' in node)?normUrls(node.url):[];
+    const cites=[];
+    for(const u of urls) cites.push({url:u.url, label:u.label||lab, explanation:expl});
+    if(!cites.length && expl) cites.push({explanation:expl, label:lab});
+    return cites.length?{sourced: urls.length>0, citations:cites}:null;
+  }
+  return null;
+}
+function findRef(node, depth=0){
+  if(depth>6 || node==null) return null;
+  if(isObj(node)){
+    if('ref' in node){ const r=extractRef(node.ref); if(r) return r; }
+    for(const v of Object.values(node)){ const r=findRef(v, depth+1); if(r) return r; }
+  } else if(Array.isArray(node)){
+    for(const v of node){ const r=findRef(v, depth+1); if(r) return r; }
+  }
+  return null;
+}
+function hasSupport(node, depth=0){
+  if(depth>6 || node==null) return false;
+  if(isObj(node)){
+    if(['supported','featureSupported'].includes(node['$call'])) return true;
+    if(['featureSupported','supported'].includes(node['$ref'])) return true;
+    return Object.values(node).some(v=>hasSupport(v, depth+1));
+  }
+  if(Array.isArray(node)) return node.some(v=>hasSupport(v, depth+1));
+  return false;
+}
+function classify(node){
+  if(node==null) return ['unknown', null];
+  if(typeof node==='boolean') return [node?'yes':'no', null];
+  if(typeof node==='string') return ['value', shortEnum(node)];
+  if(isObj(node)){
+    if('$ref' in node) return [node['$ref']==='notSupported' ? 'no' : 'yes', null];
+    if('$call' in node){
+      const c=node['$call'];
+      if(c.startsWith('not') || c.includes('notSupported')) return ['no', null];
+      return ['yes', null];
+    }
+    return ['partial', null];
+  }
+  return ['unknown', null];
+}
+function getPath(root, dotted){
+  let cur=root;
+  for(const k of dotted.split('.')){ if(!isObj(cur)) return null; cur=cur[k]; }
+  return cur===undefined?null:cur;
+}
+function countOpenHigh(node){
+  if(!Array.isArray(node)) return null;
+  let n=0;
+  for(const a of node){
+    const flaws=isObj(a)?a.unpatchedFlaws:null;
+    if(Array.isArray(flaws)) for(const fl of flaws){
+      if(shortEnum(fl.severityAtAuditPublication||'')==='HIGH' && fl.presentStatus==='NOT_FIXED') n++;
+    }
+  }
+  return n;
+}
+function licenseValue(node){
+  if(!isObj(node)) return null;
+  if('license' in node) return shortEnum(node.license);
+  const parts=new Set();
+  for(const v of Object.values(node)) if(isObj(v) && 'license' in v) parts.add(shortEnum(v.license));
+  return parts.size ? [...parts].sort().join(' / ') : null;
+}
+function buildPayload(walletsRaw){
+  const ws=[];
+  for(const w of walletsRaw){
+    const feats=w.data.features, meta=w.data.metadata||{};
+    const cells={};
+    for(const m of METRIC_CATALOG){
+      const node=getPath(feats, m.path);
+      const ref=(isObj(node)||Array.isArray(node))?findRef(node):null;
+      let st='unknown', detail=null;
+      if(m.type==='state'){ [st,detail]=classify(node); }
+      else if(m.type==='value'){ if(typeof node==='string'){ st='value'; detail=shortEnum(node); } }
+      else if(m.type==='support'){ if(node!=null){ st=hasSupport(node)?'yes':'no'; } }
+      else if(m.type==='count_high'){ if(Array.isArray(node)){ st='count'; detail=node.length; } }
+      else if(m.type==='count_low'){ const c=countOpenHigh(node); if(c!=null){ st='count'; detail=c; } }
+      else if(m.type==='license'){ const lv=licenseValue(node); if(lv){ st='value'; detail=lv; } }
+      cells[m.key]={state:st, detail, ref};
+    }
+    const variantsObj=w.data.variants||{};
+    ws.push({
+      id:w.id,
+      name: meta.displayName || w.id,
+      blurb: meta.blurb || '',
+      lastUpdated: meta.lastUpdated || '',
+      variants: Object.keys(variantsObj).filter(k=>variantsObj[k]),
+      cells,
+    });
+  }
+  ws.sort((a,b)=>a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
+  const cs=[];
+  for(const m of METRIC_CATALOG) if(!cs.includes(m.cat)) cs.push(m.cat);
+  return {wallets:ws, metrics:METRIC_CATALOG, cats:cs};
+}
+async function loadData(){
+  const base='../data/wallets/';
+  const manifest=await fetch(base+'manifest.json').then(r=>{ if(!r.ok) throw new Error('manifest '+r.status); return r.json(); });
+  const files=manifest.wallets||manifest;
+  const raw=await Promise.all(files.map(f=>fetch(base+f).then(r=>{ if(!r.ok) throw new Error(f+' '+r.status); return r.json(); })));
+  return buildPayload(raw);
+}
+
+// ---- state (persisted to localStorage)
+const LS_KEY='walletBenchmark.v1';
+let state = { baseline:null, rivals:[], variant:'', search:'', onlyDiff:false, hideUnknown:false, collapsed:{} };
+function loadState(){
+  try{ const s=JSON.parse(localStorage.getItem(LS_KEY)); if(s && typeof s==='object') Object.assign(state, s); }catch(e){}
+}
+function saveState(){
+  try{ localStorage.setItem(LS_KEY, JSON.stringify(state)); }catch(e){}
+}
 
 // ---- helpers
 function selected(){
@@ -295,16 +434,24 @@ function sameAsBaseline(m, w){
 }
 
 // ---- rendering
+const isHardware = w => w.variants.includes('HARDWARE');
 function renderControls(){
+  const hw = wallets.filter(isHardware), sw = wallets.filter(w=>!isHardware(w));
+  const opt = w => `<option value="${w.id}" ${w.id===state.baseline?'selected':''}>${w.name}</option>`;
   const bsel = document.getElementById('baseline');
-  bsel.innerHTML = wallets.map(w=>`<option value="${w.id}" ${w.id===state.baseline?'selected':''}>${w.name}</option>`).join('');
-  const chips = document.getElementById('rivalChips');
-  chips.innerHTML = wallets.map(w=>{
+  bsel.innerHTML =
+    (hw.length?`<optgroup label="Hardware wallets">${hw.map(opt).join('')}</optgroup>`:'') +
+    (sw.length?`<optgroup label="Software wallets">${sw.map(opt).join('')}</optgroup>`:'');
+  const chipFor = w => {
     if(w.id===state.baseline) return `<span class="chip base" title="baseline">${w.name} ★</span>`;
     const on = state.rivals.includes(w.id);
     const dim = state.variant && !w.variants.includes(state.variant);
     return `<span class="chip ${on?'on':''}" data-id="${w.id}" style="${dim?'opacity:.4':''}">${w.name}</span>`;
-  }).join('');
+  };
+  const grp = (title, list) => list.length
+    ? `<div class="chipgroup"><div class="grphead">${title}</div><div class="chips">${list.map(chipFor).join('')}</div></div>` : '';
+  const chips = document.getElementById('rivalChips');
+  chips.innerHTML = grp('Hardware Wallets', hw) + grp('Software Wallets', sw);
   chips.querySelectorAll('.chip[data-id]').forEach(c=>c.onclick=()=>{
     const id=c.dataset.id;
     state.rivals = state.rivals.includes(id) ? state.rivals.filter(x=>x!==id) : [...state.rivals,id];
@@ -352,6 +499,7 @@ function renderSummary(cols){
 }
 
 function render(){
+  saveState();
   renderControls();
   const cols = selected();
   renderSummary(cols);
@@ -469,7 +617,34 @@ document.getElementById('dx').onclick=closeDrawer;
 document.getElementById('scrim').onclick=closeDrawer;
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
 
-render();
+// ---- bootstrap: restore selection, fetch data, render
+function syncControls(){
+  document.getElementById('variant').value = state.variant || '';
+  document.getElementById('search').value = state.search || '';
+  document.getElementById('onlyDiff').checked = !!state.onlyDiff;
+  document.getElementById('hideUnknown').checked = !!state.hideUnknown;
+}
+(async function init(){
+  loadState();
+  const empty = document.getElementById('empty');
+  empty.style.display='block'; empty.textContent='Loading wallet data…';
+  let payload;
+  try{ payload = await loadData(); }
+  catch(err){
+    empty.textContent = 'Could not load wallet data ('+err.message+'). Serve the repository over http — e.g. run `python3 -m http.server` in the project root and open http://localhost:8000/benchmark/index.html.';
+    return;
+  }
+  empty.style.display='none';
+  wallets = payload.wallets; metrics = payload.metrics; cats = payload.cats;
+  byId = Object.fromEntries(wallets.map(w=>[w.id,w]));
+  // validate persisted selection against the data that actually loaded
+  if(!byId[state.baseline]) state.baseline = byId['metamask'] ? 'metamask' : wallets[0].id;
+  state.rivals = (state.rivals||[]).filter(id=>byId[id] && id!==state.baseline);
+  if(state.rivals.length===0)
+    state.rivals = ['rabby','rainbow','phantom','okx'].filter(id=>byId[id] && id!==state.baseline);
+  syncControls();
+  render();
+})();
 </script>
 </body>
 </html>

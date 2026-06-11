@@ -495,16 +495,33 @@ def build_payload():
 
 # --- emit HTML -------------------------------------------------------------
 
+def write_manifest():
+    """List the wallet JSON files so the dynamic page can fetch them client-side
+    (no directory listing is available over http)."""
+    wdir = os.path.join(DATA, "wallets")
+    files = sorted(f for f in os.listdir(wdir)
+                   if f.endswith(".json") and f != "manifest.json")
+    path = os.path.join(wdir, "manifest.json")
+    with open(path, "w") as f:
+        json.dump({"wallets": files}, f, indent=2)
+    return files
+
+
 def main():
-    payload = build_payload()
     here = os.path.dirname(os.path.abspath(__file__))
+    # index.html loads the wallet data dynamically at runtime and resolves the
+    # $ref / $call DSL in the browser; build.py only bakes in the metric catalog
+    # (the single source of truth shared with the gaps/quadrant generators) and
+    # refreshes the manifest the page fetches.
+    metrics = [{"key": k, "label": l, "cat": c, "path": p, "type": t, "good": g, "desc": d}
+               for (k, l, c, p, t, g, d) in M]
     template = open(os.path.join(here, "template.html")).read()
-    out = template.replace("/*__DATA__*/", json.dumps(payload))
+    out = template.replace("/*__METRICS__*/", json.dumps(metrics, ensure_ascii=False))
     with open(os.path.join(here, "index.html"), "w") as f:
         f.write(out)
-    print("wallets:", len(payload["wallets"]), "metrics:", len(payload["metrics"]),
-          "cats:", len(payload["cats"]))
-    print("wrote benchmark/index.html")
+    files = write_manifest()
+    print("metrics:", len(metrics), "cats:", len(CATS), "wallet files:", len(files))
+    print("wrote benchmark/index.html and data/wallets/manifest.json")
 
 
 if __name__ == "__main__":
