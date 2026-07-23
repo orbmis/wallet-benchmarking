@@ -1,210 +1,351 @@
 {
-	"id": "ngrave",
-	"source": "hardware-wallets",
-	"export": "ngrave",
-	"data": {
-		"metadata": {
-			"id": "ngrave",
-			"displayName": "NGRAVE Zero",
-			"tableName": "NGRAVE",
-			"blurb": "NGRAVE Zero is a hardware wallet with EAL7+ secure element, biometric authentication, and QR code scanning capabilities. However, it fails to properly display transaction and message data for verification.",
-			"contributors": [
-				{
-					"$ref": "patrickalphac"
-				},
-				{
-					"$ref": "mattmatt"
-				}
-			],
-			"hardwareWalletManufactureType": "HardwareWalletManufactureType.FACTORY_MADE",
-			"hardwareWalletModels": [
-				{
-					"id": "ngrave-zero",
-					"name": "NGRAVE Zero",
-					"isFlagship": true,
-					"url": "https://ngrave.io/zero"
-				}
-			],
-			"iconExtension": "svg",
-			"lastUpdated": "2025-01-07",
-			"urls": {
-				"socials": {
-					"discord": "https://discord.com/invite/gapxmWEBNJ",
-					"facebook": "https://web.facebook.com/ngrave.io/",
-					"instagram": "https://www.instagram.com/ngrave.io/",
-					"linkedin": "https://www.linkedin.com/company/ngrave/",
-					"x": "https://x.com/ngrave_official"
-				},
-				"websites": [
-					"https://ngrave.io/"
-				]
-			}
-		},
-		"features": {
-			"accountSupport": null,
-			"appConnectionSupport": {
-				"$call": "supported",
-				"args": [
-					{
-						"ref": "https://support.ngrave.io/hc/en-us/articles/20045312764701-How-to-stay-safe-on-web3",
-						"requiresManufacturerConsent": null,
-						"supportedConnections": {
-							"METAMASK": true,
-							"RABBY": true
-						}
-					}
-				]
-			},
-			"licensing": {
-				"type": "LicensingType.SINGLE_WALLET_REPO_AND_LICENSE",
-				"walletAppLicense": {
-					"ref": [
-						{
-							"explanation": "NGRAVE is not open source",
-							"url": "https://youtu.be/-m1jcBFS0dc?t=701"
-						}
-					],
-					"license": "SourceNotAvailableLicense.PROPRIETARY"
-				}
-			},
-			"monetization": {
-				"ref": [
-					{
-						"explanation": "Crypto hardware wallet NGRAVE raises $6M seed round",
-						"url": "https://ngrave.io/en/crypto-hardware-wallet-ngrave-raises-6m-seed-round"
-					}
-				],
-				"revenueBreakdownIsPublic": false,
-				"strategies": {
-					"donations": null,
-					"ecosystemGrants": null,
-					"governanceTokenLowFloat": null,
-					"governanceTokenMostlyDistributed": null,
-					"hiddenConvenienceFees": null,
-					"publicOffering": null,
-					"selfFunded": null,
-					"transparentConvenienceFees": null,
-					"ventureCapital": true
-				}
-			},
-			"multiAddress": null,
-			"privacy": {
-				"analytics": {
-					"crashReports": null,
-					"usage": null
-				},
-				"dataCollection": null,
-				"hardwarePrivacy": null,
-				"privacyPolicy": "https://ngrave.io/privacy-policy",
-				"transactionPrivacy": null
-			},
-			"profile": "WalletProfile.GENERIC",
-			"security": {
-				"accountRecovery": null,
-				"bugBountyProgram": {
-					"$call": "supported",
-					"args": [
-						{
-							"ref": {
-								"$ref": "refTodo"
-							},
-							"availability": "BugBountyProgramAvailability.ACTIVE",
-							"coverageBreadth": "FULL_SCOPE",
-							"dateStarted": "2025-01-18",
-							"disclosure": {
-								"$ref": "notSupported"
-							},
-							"legalProtections": {
-								"$call": "supported",
-								"args": [
-									{
-										"type": "LegalProtectionType.SAFE_HARBOR",
-										"ref": [
-											{
-												"explanation": "We ensure that security researchers who follow our guidelines are protected from legal action and are acknowledged for their contributions.",
-												"url": "https://ngrave.io/en/bug-bounty-program"
-											}
-										]
-									}
-								]
-							},
-							"platform": "BugBountyPlatform.SELF_HOSTED",
-							"rewards": {
-								"$ref": "notSupported"
-							},
-							"upgradePathAvailable": false
-						}
-					]
-				},
-				"duressResistance": null,
-				"firmware": null,
-				"keysHandling": null,
-				"lightClient": {
-					"ethereumL1": null
-				},
-				"publicSecurityAudits": null,
-				"secureElement": {
-					"$call": "supported",
-					"args": [
-						{
-							"ref": [
-								{
-									"explanation": "The only crypto hardware wallet that achieved EAL7 certification.",
-									"url": "https://ngrave.io/en/zero"
-								}
-							],
-							"secureElementType": "SecureElementType.EAL_7"
-						}
-					]
-				},
-				"securityBestPractices": null,
-				"supplyChainDIY": null,
-				"supplyChainFactory": null,
-				"transactionLegibility": {
-					"ref": [
-						{
-							"explanation": "Independent video demonstration of NGRAVE Zero signing issues",
-							"url": "https://youtu.be/-m1jcBFS0dc?t=701"
-						}
-					],
-					"dataExtraction": {
-						"$ref": "noDataExtraction"
-					},
-					"detailsDisplayed": {
-						"chain": "DataDisplayOptions.NOT_IN_UI",
-						"from": "DataDisplayOptions.SHOWN_BY_DEFAULT",
-						"gas": "DataDisplayOptions.SHOWN_BY_DEFAULT",
-						"nonce": "DataDisplayOptions.NOT_IN_UI",
-						"to": "DataDisplayOptions.SHOWN_BY_DEFAULT",
-						"value": "DataDisplayOptions.SHOWN_BY_DEFAULT"
-					},
-					"erc7730": {
-						"$ref": "notSupported"
-					},
-					"erc8213": null
-				},
-				"userSafety": null
-			},
-			"selfSovereignty": {
-				"interoperability": null
-			},
-			"transparency": {
-				"maintenance": null,
-				"operationFees": null,
-				"releaseTransparency": {
-					"artifactSigning": null,
-					"dependencyLocking": null,
-					"dependencyVulnerabilityScanning": null,
-					"hasPublicChangelog": null,
-					"hermeticBuilds": null,
-					"repositoryChangeControls": null,
-					"reproducibleBuilds": null
-				},
-				"reputation": null
-			}
-		},
-		"variants": {
-			"HARDWARE": true
-		}
-	}
+  "id": "ngrave",
+  "source": "hardware-wallets",
+  "export": "ngrave",
+  "data": {
+    "metadata": {
+      "id": "ngrave",
+      "displayName": "NGRAVE Zero",
+      "tableName": "NGRAVE",
+      "blurb": "NGRAVE Zero is a hardware wallet with EAL7+ secure element, biometric authentication, and QR code scanning capabilities. However, it fails to properly display transaction and message data for verification.",
+      "contributors": [
+        {
+          "$ref": "patrickalphac"
+        },
+        {
+          "$ref": "mattmatt"
+        }
+      ],
+      "hardwareWalletManufactureType": "HardwareWalletManufactureType.FACTORY_MADE",
+      "hardwareWalletModels": [
+        {
+          "id": "ngrave-zero",
+          "name": "NGRAVE Zero",
+          "isFlagship": true,
+          "url": "https://ngrave.io/zero"
+        }
+      ],
+      "iconExtension": "svg",
+      "lastUpdated": "2025-01-07",
+      "urls": {
+        "socials": {
+          "discord": "https://discord.com/invite/gapxmWEBNJ",
+          "facebook": "https://web.facebook.com/ngrave.io/",
+          "instagram": "https://www.instagram.com/ngrave.io/",
+          "linkedin": "https://www.linkedin.com/company/ngrave/",
+          "x": "https://x.com/ngrave_official"
+        },
+        "websites": [
+          "https://ngrave.io/"
+        ]
+      }
+    },
+    "features": {
+      "accountSupport": null,
+      "appConnectionSupport": {
+        "$call": "supported",
+        "args": [
+          {
+            "ref": "https://support.ngrave.io/hc/en-us/articles/20045312764701-How-to-stay-safe-on-web3",
+            "requiresManufacturerConsent": null,
+            "supportedConnections": {
+              "METAMASK": true,
+              "RABBY": true
+            }
+          }
+        ]
+      },
+      "licensing": {
+        "type": "LicensingType.SINGLE_WALLET_REPO_AND_LICENSE",
+        "walletAppLicense": {
+          "ref": [
+            {
+              "explanation": "NGRAVE is not open source",
+              "url": "https://youtu.be/-m1jcBFS0dc?t=701"
+            }
+          ],
+          "license": "SourceNotAvailableLicense.PROPRIETARY"
+        }
+      },
+      "monetization": {
+        "ref": [
+          {
+            "explanation": "Crypto hardware wallet NGRAVE raises $6M seed round",
+            "url": "https://ngrave.io/en/crypto-hardware-wallet-ngrave-raises-6m-seed-round"
+          }
+        ],
+        "revenueBreakdownIsPublic": false,
+        "strategies": {
+          "donations": null,
+          "ecosystemGrants": null,
+          "governanceTokenLowFloat": null,
+          "governanceTokenMostlyDistributed": null,
+          "hiddenConvenienceFees": null,
+          "publicOffering": null,
+          "selfFunded": null,
+          "transparentConvenienceFees": null,
+          "ventureCapital": true
+        }
+      },
+      "multiAddress": null,
+      "privacy": {
+        "analytics": {
+          "crashReports": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://apps.apple.com/us/app/ngrave-liquid-the-crypto-app/id1485844818",
+                  "explanation": "The App Store privacy section lists Diagnostics including 'Crash Data' and 'Performance Data' collected and used for Analytics."
+                }
+              }
+            ]
+          },
+          "usage": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://apps.apple.com/us/app/ngrave-liquid-the-crypto-app/id1485844818",
+                  "explanation": "Apple App Store privacy disclosure for NGRAVE LIQUID lists 'Product Interaction' and 'Usage Data' collected and used for Analytics."
+                }
+              }
+            ]
+          }
+        },
+        "dataCollection": null,
+        "hardwarePrivacy": null,
+        "privacyPolicy": "https://ngrave.io/privacy-policy",
+        "transactionPrivacy": {
+          "STEALTH_ADDRESSES": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://ngrave.io/en/liquid",
+                  "explanation": "NGRAVE ZERO/LIQUID supports only standard coins/EVM tokens with QR-signed transactions and offers no stealth-address receiving feature."
+                }
+              }
+            ]
+          },
+          "PRIVACY_POOLS": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://ngrave.io/en/roadmap",
+                  "explanation": "No NGRAVE documentation or roadmap mentions any Privacy Pools integration."
+                }
+              }
+            ]
+          },
+          "defaultFungibleTokenTransferMode": "PUBLIC"
+        }
+      },
+      "profile": "WalletProfile.GENERIC",
+      "security": {
+        "accountRecovery": null,
+        "bugBountyProgram": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "$ref": "refTodo"
+              },
+              "availability": "BugBountyProgramAvailability.ACTIVE",
+              "coverageBreadth": "FULL_SCOPE",
+              "dateStarted": "2025-01-18",
+              "disclosure": {
+                "$ref": "notSupported"
+              },
+              "legalProtections": {
+                "$call": "supported",
+                "args": [
+                  {
+                    "type": "LegalProtectionType.SAFE_HARBOR",
+                    "ref": [
+                      {
+                        "explanation": "We ensure that security researchers who follow our guidelines are protected from legal action and are acknowledged for their contributions.",
+                        "url": "https://ngrave.io/en/bug-bounty-program"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "platform": "BugBountyPlatform.SELF_HOSTED",
+              "rewards": {
+                "$ref": "notSupported"
+              },
+              "upgradePathAvailable": false
+            }
+          ]
+        },
+        "duressResistance": null,
+        "firmware": null,
+        "keysHandling": null,
+        "lightClient": {
+          "ethereumL1": null
+        },
+        "publicSecurityAudits": null,
+        "secureElement": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": [
+                {
+                  "explanation": "The only crypto hardware wallet that achieved EAL7 certification.",
+                  "url": "https://ngrave.io/en/zero"
+                }
+              ],
+              "secureElementType": "SecureElementType.EAL_7"
+            }
+          ]
+        },
+        "securityBestPractices": null,
+        "supplyChainDIY": null,
+        "supplyChainFactory": null,
+        "transactionLegibility": {
+          "ref": [
+            {
+              "explanation": "Independent video demonstration of NGRAVE Zero signing issues",
+              "url": "https://youtu.be/-m1jcBFS0dc?t=701"
+            }
+          ],
+          "dataExtraction": {
+            "$ref": "noDataExtraction"
+          },
+          "detailsDisplayed": {
+            "chain": "DataDisplayOptions.NOT_IN_UI",
+            "from": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+            "gas": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+            "nonce": "DataDisplayOptions.NOT_IN_UI",
+            "to": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+            "value": "DataDisplayOptions.SHOWN_BY_DEFAULT"
+          },
+          "erc7730": {
+            "$ref": "notSupported"
+          },
+          "erc8213": null
+        },
+        "userSafety": null
+      },
+      "selfSovereignty": {
+        "interoperability": null,
+        "permissionsManagement": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://support.ngrave.io/hc/en-us/articles/20045312764701-How-to-stay-safe-on-web3",
+                "explanation": "LIQUID provides no token-approval inspect/revoke feature; NGRAVE's own guidance directs users to external tools like revoke.cash."
+              }
+            }
+          ]
+        },
+        "transactionSubmission": {
+          "l1": {
+            "selfBroadcastViaSelfHostedNode": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://ngrave.io/en/liquid",
+                    "explanation": "The air-gapped ZERO relies on the LIQUID companion app to fetch data and broadcast transactions, with no option to connect a self-hosted node."
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "transparency": {
+        "maintenance": null,
+        "operationFees": null,
+        "releaseTransparency": {
+          "artifactSigning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.ngrave.io/hc/en-us/articles/9709388172061-How-safe-are-ZERO-firmware-updates",
+                  "explanation": "NGRAVE states firmware updates are cryptographically checked and only installed if signed by NGRAVE."
+                }
+              }
+            ]
+          },
+          "dependencyLocking": null,
+          "dependencyVulnerabilityScanning": null,
+          "hasPublicChangelog": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://apps.apple.com/us/app/ngrave-liquid-the-crypto-app/id1485844818",
+                  "explanation": "NGRAVE publishes versioned release notes/'What's New' for the LIQUID app on the app stores (e.g. v2.11.1 fixes)."
+                }
+              }
+            ]
+          },
+          "hermeticBuilds": null,
+          "repositoryChangeControls": null,
+          "reproducibleBuilds": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://walletscrutiny.com/hardware/ngravezero/",
+                  "explanation": "The ZERO firmware is proprietary/closed-source (WalletScrutiny/Walletbeat rate it non-FOSS with an empty public repo), so builds are not independently reproducible."
+                }
+              }
+            ]
+          }
+        },
+        "reputation": null
+      },
+      "chainAbstraction": {
+        "bridging": {
+          "builtInBridging": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.ngrave.io/hc/en-us/articles/17575955145117-What-is-swapping",
+                  "explanation": "NGRAVE offers third-party Changelly swaps and MetaMask/Rabby integration but native in-app bridging is listed as still in development, not available."
+                }
+              }
+            ]
+          }
+        },
+        "crossChainBalances": {
+          "globalAccountValue": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://ngrave.io/en/liquid",
+                  "explanation": "LIQUID provides a real-time portfolio overview showing total account value across all supported coins and tokens."
+                }
+              }
+            ]
+          }
+        }
+      },
+      "addressResolution": {
+        "nonChainSpecificEnsResolution": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://ngrave.io/en/roadmap",
+                "explanation": "NGRAVE's roadmap lists 'Use ENS names in LIQUID' under Already Available features."
+              }
+            }
+          ]
+        }
+      }
+    },
+    "variants": {
+      "HARDWARE": true
+    }
+  }
 }
