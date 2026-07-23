@@ -69,6 +69,7 @@
   .pill.bad{background:var(--badbg);color:#ef7f8f}
   .pill.warn{background:var(--warnbg);color:#e7b85c}
   .pill.unknown{background:var(--unknownbg);color:var(--muted)}
+  .pill.na{background:transparent;color:#565b6b;border:1px dashed var(--line);font-weight:500}
   .pill.value{background:var(--valuebg);color:var(--valuetxt);font-weight:500}
 
   /* drawer */
@@ -246,6 +247,7 @@ function polarityClass(m, cell){
   const s = cell.state;
   if(s==='value') return 'value';
   if(s==='unknown') return 'unknown';
+  if(s==='na') return 'na';
   if(s==='partial') return 'warn';
   if(s==='count'){
     const n = cell.detail||0;
@@ -261,6 +263,7 @@ function cellText(m, cell){
     case 'no': return 'No';
     case 'partial': return 'Partial';
     case 'unknown': return '—';
+    case 'na': return 'N/A';
     case 'value': return cell.detail || '—';
     case 'count': return String(cell.detail);
   }
@@ -273,7 +276,7 @@ function pillHtml(m, cell){
 // ---- scoring --------------------------------------------------------------
 // Normalise one cell to [0,1] on the user-favourable direction, or null if not scorable.
 function metricNorm(m, cell){
-  if(!cell || cell.state==='unknown' || cell.state==='value') return null;
+  if(!cell || cell.state==='unknown' || cell.state==='na' || cell.state==='value') return null;
   if(cell.state==='count'){
     const n = Number(cell.detail)||0;
     const mx = maxByKey[m.key]||0;

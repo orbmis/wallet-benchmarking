@@ -52,6 +52,31 @@ python3 build_quadrant.py # -> quadrant.html (positioning quadrant; reuses build
 
 No dependencies beyond the Python 3 standard library.
 
+### Finding and filling data gaps
+
+A cell renders **"—"** when a datapoint is genuinely missing, and **"N/A"** when
+it doesn't apply to that wallet type (e.g. `product.*` features on a hardware-only
+wallet, which intentionally omit that namespace). The two are distinct states in
+the model (`unknown` vs `na`).
+
+```sh
+python3 build_gaps_report.py   # -> data/gaps.json + a completeness summary (only real "—" gaps)
+```
+
+`data/gaps.json` is a per-cell worklist (`walletId`, `path`, `label`, …). Once a
+gap has been researched, record a verdict in `data/gaps-proposals.json` (shape
+documented in `apply_proposals.py`) and apply it:
+
+```sh
+python3 apply_proposals.py            # dry run — shows what would change
+python3 apply_proposals.py --apply    # writes per-wallet JSON + regenerates data/wallets.json
+python3 build.py                      # refresh the manifest
+```
+
+`apply_proposals.py` translates each verdict into the `$ref` / `$call` DSL,
+requires a citation for any positive claim (never writes `refTodo`), and keeps
+`data/wallets.json` and `data/wallets/*.json` in sync.
+
 `index.html` no longer inlines the wallet data: `build.py` bakes only the metric
 catalog into it and refreshes `data/wallets/manifest.json` (the file list the page
 fetches). The page resolves the `$ref` / `$call` DSL **in the browser** at load

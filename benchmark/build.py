@@ -116,6 +116,8 @@ def classify(node):
             r = node["$ref"]
             if r == "notSupported":
                 return ("no", None)
+            if r == "notApplicable":
+                return ("na", None)
             return ("yes", None)  # featureSupported / named configured object
         if "$call" in node:
             c = node["$call"]
@@ -452,6 +454,9 @@ def build_payload():
     for w in wallets_raw:
         feats = w["data"]["features"]
         meta = w["data"]["metadata"]
+        # Hardware-wallet records intentionally omit the product.* namespace
+        # (see data/SCHEMA.md). Those cells are Not Applicable, not unknown.
+        has_product = "product" in feats
         cells = {}
         for key, label, cat, path, typ, good, desc in M:
             node = get_path(feats, path)
@@ -476,6 +481,10 @@ def build_payload():
                 state, detail = ("value", lv) if lv else ("unknown", None)
             else:
                 state, detail = "unknown", None
+            # Namespace rule: a missing product.* datapoint on a record without
+            # the product namespace is Not Applicable rather than an open gap.
+            if state == "unknown" and path.startswith("product.") and not has_product:
+                state = "na"
             cells[key] = {"state": state, "detail": detail, "ref": ref}
         wallets.append({
             "id": w["id"],
