@@ -145,8 +145,30 @@
       "profile": "WalletProfile.GENERIC",
       "security": {
         "accountRecovery": null,
-        "bugBountyProgram": null,
-        "duressResistance": null,
+        "bugBountyProgram": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://slowmist.io/imtoken/",
+                "explanation": "imKey runs a public 'Vulnerability and Threat Intelligence Bounty Program' and imToken runs a bounty program with SlowMist."
+              }
+            }
+          ]
+        },
+        "duressResistance": {
+          "duressMode": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://imkey.im/products/imkey-pro-crypto-hardware-wallet",
+                  "explanation": "imKey Pro documentation describes only a standard 6-8 digit PIN (auto-reset after 5 failed attempts) with no passphrase-based hidden wallet or decoy/duress mode."
+                }
+              }
+            ]
+          }
+        },
         "firmware": {
           "type": "FirmwareType.PASS",
           "customFirmware": null,
@@ -158,7 +180,17 @@
         },
         "keysHandling": null,
         "lightClient": {
-          "ethereumL1": null
+          "ethereumL1": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/31423984023961-Scam-Warning-Fraudulent-RPC-Node-Adjustments",
+                  "explanation": "imToken/imKey rely on RPC nodes for chain state with no indication of a trust-minimized Ethereum L1 light client."
+                }
+              }
+            ]
+          }
         },
         "publicSecurityAudits": null,
         "secureElement": null,
@@ -199,9 +231,69 @@
           "erc7730": {
             "$ref": "notSupported"
           },
-          "erc8213": null
+          "erc8213": null,
+          "transactionSimulations": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.imkey.im/hc/en-001/categories/35745879900057-imKey-Pro-Instructions",
+                  "explanation": "imKey Pro shows amount, recipient and fee for manual verification before signing, but no transaction simulation of net effects is documented."
+                }
+              }
+            ]
+          }
         },
-        "userSafety": null
+        "userSafety": null,
+        "hardwareWalletSupport": {
+          "$ref": "notApplicable"
+        },
+        "scamAlerts": {
+          "sendTransactionWarning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/23417185602841-Inventory-of-Common-Address-Phishing-Tactics",
+                  "explanation": "imToken automatically hides high-risk address-poisoning transactions and shows a security reminder when a user copies an address from transaction history."
+                }
+              }
+            ]
+          },
+          "contractTransactionWarning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/360039457914-Why-is-the-token-tagged-as-Warning",
+                  "explanation": "imToken tags risky tokens/contracts as 'Warning' (pops a security alert on transfer) and hides 'Risk/High Risk' tokens to protect users from malicious contracts."
+                }
+              }
+            ]
+          },
+          "scamUrlWarning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://medium.com/imtoken/imtoken-2-9-2-out-now-with-updated-dapp-security-risk-control-and-more-551ca40f86c1",
+                  "explanation": "imKey's companion app imToken bans risky dApp URLs and shows DApp access risk reminders for high-risk sites, providing blocklist-based scam URL warnings."
+                }
+              }
+            ]
+          }
+        },
+        "passkeyVerification": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://imkey.im/products/imkey-pro-crypto-hardware-wallet",
+                "explanation": "imKey Pro authenticates via PIN and Bluetooth/USB; no WebAuthn/FIDO2 passkey support is documented for the crypto wallet (the imKey Pass S6 is a separate FIDO2 product)."
+              }
+            }
+          ]
+        }
       },
       "selfSovereignty": {
         "interoperability": {

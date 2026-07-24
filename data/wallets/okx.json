@@ -1591,15 +1591,55 @@
             "explanation": "OKX Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://web3.okx.com/"
           },
-          "swapFees": null,
-          "bridgeFees": null,
+          "swapFees": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://web3.okx.com/dex-fees",
+                  "explanation": "OKX publishes a DEX fees page disclosing the interface fee on in-app swaps (0% to 0.5% depending on token group)."
+                }
+              }
+            ]
+          },
+          "bridgeFees": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.okx.com/en-us/learn/what-is-okx-bridge",
+                  "explanation": "OKX's official OKX Bridge guide states all costs — bridge fee (0.08–0.2%) and network gas — are displayed before confirming the transaction."
+                }
+              }
+            ]
+          },
           "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
           "spreadDisclosure": {
             "$ref": "featureSupported"
           },
-          "subscriptionFeatures": null,
+          "subscriptionFeatures": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://web3.okx.com/dex-fees",
+                  "explanation": "No evidence of an optional paid subscription or premium tier for OKX Wallet was found across official pages and reviews; it is a free self-custody wallet monetized via swap fees."
+                }
+              }
+            ]
+          },
           "cardFees": "Card fees are provider-dependent where card purchase is available.",
-          "hiddenPartnerRevenue": null
+          "hiddenPartnerRevenue": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://web3.okx.com/dex-fees",
+                  "explanation": "OKX transparently publishes its DEX/interface fee schedule and shows all costs before confirmation, indicating no undisclosed partner/referral markup."
+                }
+              }
+            ]
+          }
         },
         "releaseVelocity": {
           "ref": {

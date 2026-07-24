@@ -1303,11 +1303,19 @@
             "explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://elytro.com"
           },
-          "swapFees": null,
-          "bridgeFees": null,
+          "swapFees": {
+            "$ref": "notSupported"
+          },
+          "bridgeFees": {
+            "$ref": "notSupported"
+          },
           "onRampFees": null,
-          "spreadDisclosure": null,
-          "subscriptionFeatures": null,
+          "spreadDisclosure": {
+            "$ref": "notSupported"
+          },
+          "subscriptionFeatures": {
+            "$ref": "notSupported"
+          },
           "cardFees": null,
           "hiddenPartnerRevenue": null
         },

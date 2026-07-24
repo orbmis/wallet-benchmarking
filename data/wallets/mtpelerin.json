@@ -1307,13 +1307,63 @@
             "explanation": "Bridge Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://www.mtpelerin.com/"
           },
-          "swapFees": null,
-          "bridgeFees": null,
+          "swapFees": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/pricing",
+                  "explanation": "Mt Pelerin's pricing page discloses swap fees: first CHF 500/year free, then 0.5% commission (0.1% for USDC-to-USDC swaps)."
+                }
+              }
+            ]
+          },
+          "bridgeFees": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/bridge/usdt",
+                  "explanation": "Bridging is disclosed as using the same swap fee model (free up to CHF 500/year, or CHF 1,000 if referred, then standard exchange fees) on the bridge/USDT pages."
+                }
+              }
+            ]
+          },
           "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
-          "spreadDisclosure": null,
-          "subscriptionFeatures": null,
+          "spreadDisclosure": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/swap-crypto",
+                  "explanation": "The swap page explicitly discloses its spread policy, stating swaps occur 'with no spread, no slippage, and no price impact' at the real market price minus a transparent service fee."
+                }
+              }
+            ]
+          },
+          "subscriptionFeatures": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/pricing",
+                  "explanation": "Mt Pelerin offers an MPS shareholder token tier that raises the free-volume allowance up to CHF 50,000/year and grants discounted fees, functioning as an optional premium tier."
+                }
+              }
+            ]
+          },
           "cardFees": "Card fees are provider-dependent where card purchase is available.",
-          "hiddenPartnerRevenue": null
+          "hiddenPartnerRevenue": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/swap-crypto",
+                  "explanation": "Mt Pelerin discloses its fee model transparently ('zero hidden costs minus a small, transparent service fee') with published commission percentages, and no evidence of undisclosed partner/referral markup was found."
+                }
+              }
+            ]
+          }
         },
         "releaseVelocity": {
           "ref": {

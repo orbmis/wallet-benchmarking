@@ -1400,13 +1400,63 @@
             "explanation": "ZEUS docs say ZEUS has no processing fees.",
             "url": "https://docs.zeusln.app/"
           },
-          "swapFees": null,
-          "bridgeFees": null,
+          "swapFees": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/greekfetacheese/zeus",
+                  "explanation": "Zeus is an open-source self-custodial wallet that routes swaps directly through Uniswap's Universal Router with no wallet-level swap fee documented and no fees page disclosing one."
+                }
+              }
+            ]
+          },
+          "bridgeFees": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/greekfetacheese/zeus",
+                  "explanation": "Bridging is done directly via the Across protocol with no wallet-level bridge fee documented or disclosed in the repository."
+                }
+              }
+            ]
+          },
           "onRampFees": null,
-          "spreadDisclosure": null,
-          "subscriptionFeatures": null,
+          "spreadDisclosure": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/greekfetacheese/zeus",
+                  "explanation": "The wallet uses on-chain Uniswap quotes directly and there is no disclosed price spread or markup applied to quotes."
+                }
+              }
+            ]
+          },
+          "subscriptionFeatures": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/greekfetacheese/zeus",
+                  "explanation": "Zeus is a free MIT-licensed open-source wallet with no optional paid subscription or premium tier offered."
+                }
+              }
+            ]
+          },
           "cardFees": null,
-          "hiddenPartnerRevenue": null
+          "hiddenPartnerRevenue": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/greekfetacheese/zeus",
+                  "explanation": "The open-source code routes swaps/bridges directly to Uniswap and Across with no referral/partner code documented, showing no evidence of undisclosed partner revenue."
+                }
+              }
+            ]
+          }
         },
         "releaseVelocity": {
           "ref": {

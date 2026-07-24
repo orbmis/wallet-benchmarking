@@ -1350,15 +1350,55 @@
             "explanation": "Coinbase Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://wallet.coinbase.com/"
           },
-          "swapFees": null,
-          "bridgeFees": null,
+          "swapFees": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://milkroad.com/reviews/coinbase-wallet/",
+                  "explanation": "Coinbase Wallet clearly discloses and charges a 1% fee on in-app token swaps, shown before confirming and documented across Coinbase Wallet fee references."
+                }
+              }
+            ]
+          },
+          "bridgeFees": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.coinbase.com/en/wallet/bridging",
+                  "explanation": "Coinbase Wallet shows a Bridge Fee and Coinbase Fee in the transaction summary before the user confirms a cross-chain bridge, per the official Coinbase Help bridging page."
+                }
+              }
+            ]
+          },
           "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
           "spreadDisclosure": {
             "$ref": "featureSupported"
           },
-          "subscriptionFeatures": null,
+          "subscriptionFeatures": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.coinbase.com/en/coinbase/other-topics/coinbase-one/account",
+                  "explanation": "The self-custody Coinbase Wallet does not offer its own paid premium tier; Coinbase One is a subscription for the separate Coinbase exchange app rather than the wallet's features."
+                }
+              }
+            ]
+          },
           "cardFees": "Card fees are provider-dependent where card purchase is available.",
-          "hiddenPartnerRevenue": null
+          "hiddenPartnerRevenue": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://milkroad.com/reviews/coinbase-wallet/",
+                  "explanation": "The swap fee model is transparent (flat 1% disclosed at transaction time), with no evidence of undisclosed partner markup or referral kickbacks."
+                }
+              }
+            ]
+          }
         },
         "releaseVelocity": {
           "ref": {

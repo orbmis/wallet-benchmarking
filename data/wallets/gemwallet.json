@@ -1261,13 +1261,63 @@
             "explanation": "Gem Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://gemwallet.com"
           },
-          "swapFees": null,
-          "bridgeFees": null,
+          "swapFees": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.gemwallet.com/faq/swap-fees/",
+                  "explanation": "Gem Wallet's swap-fees FAQ explicitly discloses it takes no service/handling fees or commissions and that swap provider/protocol fees are factored into the quoted rate visible before confirming."
+                }
+              }
+            ]
+          },
+          "bridgeFees": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.gemwallet.com/faq/crosschain-swap/",
+                  "explanation": "Gem Wallet integrates cross-chain bridges (Across, THORChain) but its docs do not itemize or disclose any specific bridge fee it charges, only a general 'save on fees' claim."
+                }
+              }
+            ]
+          },
           "onRampFees": null,
-          "spreadDisclosure": null,
-          "subscriptionFeatures": null,
+          "spreadDisclosure": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://gemwallet.com/swap/",
+                  "explanation": "The swap page states 'There are no hidden charges or inflated spreads - you can see all costs before confirming the transaction,' explicitly addressing spread/markup."
+                }
+              }
+            ]
+          },
+          "subscriptionFeatures": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.gemwallet.com/features/",
+                  "explanation": "Gem Wallet is a free open-source self-custody wallet with no premium/paid subscription tier documented across its site and knowledge base."
+                }
+              }
+            ]
+          },
           "cardFees": null,
-          "hiddenPartnerRevenue": null
+          "hiddenPartnerRevenue": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.gemwallet.com/faq/swap-fees/",
+                  "explanation": "Gem Wallet's docs state it takes no commissions/markup and no affiliate program, and quotes disclose all costs before confirmation, indicating no undisclosed partner revenue."
+                }
+              }
+            ]
+          }
         },
         "releaseVelocity": {
           "ref": {

@@ -2066,13 +2066,63 @@
             "explanation": "Rabby GasAccount guide states Rabby does not charge additional fees for GasAccount and explains gas charges; Perps Fees has a dedicated support article.",
             "url": "https://support.rabby.io/hc/en-us/articles/11477594883599-How-does-Rabby-GasAccount-work"
           },
-          "swapFees": null,
-          "bridgeFees": null,
+          "swapFees": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://x.com/Rabby_io/status/1809154330622140734",
+                  "explanation": "Rabby officially announced and displays a 0.25% fee on its built-in swap, shown in the quote before execution."
+                }
+              }
+            ]
+          },
+          "bridgeFees": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://li.fi/knowledge-hub/rabby-wallet-integrates-li-fi-to-power-bridge-feature",
+                  "explanation": "Rabby uses LI.FI bridge aggregation with a 0.25% fee, and its pre-confirmation simulation surfaces the expected fee cost before the user bridges."
+                }
+              }
+            ]
+          },
           "onRampFees": null,
-          "spreadDisclosure": null,
-          "subscriptionFeatures": null,
+          "spreadDisclosure": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://x.com/Rabby_io/status/1809154330622140734",
+                  "explanation": "Rabby's official account announced a 0.25% built-in swap fee, and the swap flow previews the expected received amount including fee before confirmation."
+                }
+              }
+            ]
+          },
+          "subscriptionFeatures": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://defillama.com/protocol/rabby-wallet",
+                  "explanation": "Rabby is a free wallet monetized via the 0.25% swap fee and gas top-up service fee, with no optional paid subscription or premium tier found."
+                }
+              }
+            ]
+          },
           "cardFees": null,
-          "hiddenPartnerRevenue": null
+          "hiddenPartnerRevenue": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://x.com/Rabby_io/status/1809154330622140734",
+                  "explanation": "Rabby's fee model is transparent (explicit 0.25% swap fee disclosed publicly and in-app), with no evidence of undisclosed partner/referral markups."
+                }
+              }
+            ]
+          }
         },
         "releaseVelocity": {
           "ref": {

@@ -1998,10 +1998,40 @@
             "swapFees": "Built-in swap and bridge has a flat 0.25% fee.",
             "bridgeFees": "Built-in swap and bridge has a flat 0.25% fee.",
             "onRampFees": null,
-            "spreadDisclosure": null,
-            "subscriptionFeatures": null,
+            "spreadDisclosure": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://blog.ambire.com/swap-bridge-fee-increase/",
+                    "explanation": "Ambire publicly discloses a 0.5% swap and bridge fee and states wallet fees are made transparent to the user before confirmation."
+                  }
+                }
+              ]
+            },
+            "subscriptionFeatures": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://blog.ambire.com/reduce-swap-bridge-fees-proposal/",
+                    "explanation": "Ambire has no optional paid subscription or premium tier; fee reductions are tied to holding/staking $WALLET tokens rather than a paid subscription product."
+                  }
+                }
+              ]
+            },
             "cardFees": null,
-            "hiddenPartnerRevenue": null
+            "hiddenPartnerRevenue": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://blog.ambire.com/swap-bridge-fee-increase/",
+                    "explanation": "Ambire's fee model is transparent, disclosing a flat swap/bridge fee with 100% of revenue used for $WALLET buybacks, with no evidence of undisclosed partner/referral markup."
+                  }
+                }
+              ]
+            }
           },
           "releaseVelocity": {
             "ref": {
@@ -3229,13 +3259,63 @@
               "explanation": "Argent source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://www.argent.xyz/"
             },
-            "swapFees": null,
-            "bridgeFees": null,
+            "swapFees": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.argent.xyz/hc/en-us/articles/360012726038-How-does-Argent-make-money",
+                    "explanation": "Argent's support pages ('How does Argent make money' and 'All fees') disclose that it takes a share of the exchange fee on in-app crypto-to-crypto swaps via Paraswap/AVNU, with secondary sources citing ~0.5%."
+                  }
+                }
+              ]
+            },
+            "bridgeFees": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.argent.xyz/hc/en-us/articles/10441581423133-All-fees-for-using-Argent-Starknet-mobile-wallet",
+                    "explanation": "Argent bridging relies on third-party bridges (Layerswap, Rhino.fi, StarkGate) and its docs state only network gas fees apply, with no disclosed Argent-charged bridge fee."
+                  }
+                }
+              ]
+            },
             "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
-            "spreadDisclosure": null,
-            "subscriptionFeatures": null,
+            "spreadDisclosure": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.argent.xyz/hc/en-us/articles/360006147378-What-is-the-crypto-to-crypto-exchange-fee-in-Argent-s-Ethereum-account",
+                    "explanation": "Argent's official support page discloses a 0.5% exchange fee on swaps, shown in-app before confirming."
+                  }
+                }
+              ]
+            },
+            "subscriptionFeatures": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://cryptocashbackcards.com/ready-card-review/",
+                    "explanation": "Argent/Ready offers an optional paid premium tier, Ready Metal, at 120 USDC/year with higher cashback and 0% FX vs the free Lite tier."
+                  }
+                }
+              ]
+            },
             "cardFees": "Card fees are provider-dependent where card purchase is available.",
-            "hiddenPartnerRevenue": null
+            "hiddenPartnerRevenue": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.argent.xyz/hc/en-us/articles/360012726038-How-does-Argent-make-money",
+                    "explanation": "Argent transparently discloses its revenue as a share of the DEX-aggregator exchange fee, so partner/swap revenue is not undisclosed."
+                  }
+                }
+              ]
+            }
           },
           "releaseVelocity": {
             "ref": {
@@ -4742,13 +4822,63 @@
               "explanation": "Base App source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://base.app/"
             },
-            "swapFees": null,
-            "bridgeFees": null,
+            "swapFees": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://university.cex.io/coinbase-wallet-base-review/",
+                    "explanation": "Base App (formerly Coinbase Wallet) shows swap fees (up to ~1% Coinbase fee) on the confirmation screen before the user confirms the swap."
+                  }
+                }
+              ]
+            },
+            "bridgeFees": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.coinbase.com/en/wallet/bridging",
+                    "explanation": "Coinbase's bridging help page discloses a 'Coinbase Fee' charged for bridging to networks other than Base, plus network transaction fees."
+                  }
+                }
+              ]
+            },
             "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
-            "spreadDisclosure": null,
-            "subscriptionFeatures": null,
+            "spreadDisclosure": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://cryptoslate.com/crypto-wallets/base-wallet-review/",
+                    "explanation": "Reviews note the swap fee is embedded in the quoted rate rather than shown as a separate line item, and no official page discloses a specific spread/markup on quotes."
+                  }
+                }
+              ]
+            },
+            "subscriptionFeatures": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://cryptoslate.com/crypto-wallets/base-wallet-review/",
+                    "explanation": "Base App is free with no subscription/premium tier within the wallet; Coinbase One is a separate Coinbase product not offered inside the app."
+                  }
+                }
+              ]
+            },
             "cardFees": "Card fees are provider-dependent where card purchase is available.",
-            "hiddenPartnerRevenue": null
+            "hiddenPartnerRevenue": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.coinbase.com/en/wallet/getting-started/dex-swap",
+                    "explanation": "The 1% Coinbase swap fee and DEX-aggregator fees are documented on Coinbase's official pages, with no evidence of undisclosed partner/referral revenue."
+                  }
+                }
+              ]
+            }
           },
           "releaseVelocity": {
             "ref": {
@@ -5080,7 +5210,19 @@
               }
             ]
           },
-          "duressResistance": null,
+          "duressResistance": {
+            "duressMode": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.bitbox.swiss/en_US/optional-passphrase/understanding-bitbox02-optional-passphrase",
+                    "explanation": "BitBox02's optional passphrase creates hidden wallets and can be used to set up a duress/decoy wallet with a small balance to reveal under coercion."
+                  }
+                }
+              ]
+            }
+          },
           "firmware": {
             "type": "FirmwareType.PASS",
             "customFirmware": null,
@@ -5090,7 +5232,17 @@
           },
           "keysHandling": null,
           "lightClient": {
-            "ethereumL1": null
+            "ethereumL1": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://bitbox.swiss/bitbox02/security-features/",
+                    "explanation": "BitBoxApp connects to backend/RPC nodes (or a user's own full node for Bitcoin) and provides no trust-minimized Ethereum L1 light client verification."
+                  }
+                }
+              ]
+            }
           },
           "publicSecurityAudits": null,
           "secureElement": null,
@@ -5120,9 +5272,69 @@
             "erc7730": {
               "$ref": "notSupported"
             },
-            "erc8213": null
+            "erc8213": null,
+            "transactionSimulations": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.bitbox.swiss/en_US/ethereum-co/send-eth-erc20-tokens",
+                    "explanation": "BitBoxApp shows raw transaction details for on-device confirmation but does not simulate/preview net balance changes (no Blockaid/Blowfish-style simulation)."
+                  }
+                }
+              ]
+            }
           },
-          "userSafety": null
+          "userSafety": null,
+          "hardwareWalletSupport": {
+            "$ref": "notApplicable"
+          },
+          "scamAlerts": {
+            "scamUrlWarning": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://bitbox.swiss/bitbox02/security-features/",
+                    "explanation": "BitBoxApp provides no known-malicious/phishing URL warning feature; its security model relies on manual on-device verification and its security-features page lists no such detection."
+                  }
+                }
+              ]
+            },
+            "sendTransactionWarning": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.bitbox.swiss/en_US/ethereum-co/send-eth-erc20-tokens",
+                    "explanation": "BitBoxApp does not warn on risky sends such as address poisoning or unknown recipients, instead instructing users to manually verify all transaction details on the device screen."
+                  }
+                }
+              ]
+            },
+            "contractTransactionWarning": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://bitbox.swiss/bitbox02/security-features/",
+                    "explanation": "No evidence BitBoxApp flags interactions with known-malicious contracts; its security-features and send docs describe only on-device detail verification, not contract reputation checks."
+                  }
+                }
+              ]
+            }
+          },
+          "passkeyVerification": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.bitbox.swiss/en_US/using-the-bitbox02-as-a-fido-u2f-authenticator",
+                  "explanation": "The BitBox02 Multi edition functions as a FIDO U2F authenticator for two-factor authentication on websites like Google and GitHub."
+                }
+              }
+            ]
+          }
         },
         "selfSovereignty": {
           "interoperability": null,
@@ -6697,15 +6909,55 @@
               "explanation": "Bitget Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://web3.bitget.com/"
             },
-            "swapFees": null,
-            "bridgeFees": null,
+            "swapFees": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://coinbureau.com/review/bitget-wallet-review",
+                    "explanation": "Bitget Wallet discloses a swap service fee (~0.3% via its Super DEX aggregator) with transparent quotes shown before transactions, per the Coin Bureau review and Bitget's own swap materials stating the fee is shown before completing any transaction."
+                  }
+                }
+              ]
+            },
+            "bridgeFees": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://coinbureau.com/review/bitget-wallet-review",
+                    "explanation": "Bridge/provider fees for cross-chain transactions are displayed transparently in the quote before execution in Bitget Wallet's Super DEX interface, per the Coin Bureau review."
+                  }
+                }
+              ]
+            },
             "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
             "spreadDisclosure": {
               "$ref": "featureSupported"
             },
-            "subscriptionFeatures": null,
+            "subscriptionFeatures": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://coinbureau.com/review/bitget-wallet-review",
+                    "explanation": "Reviews of Bitget Wallet describe no optional paid subscription or premium membership tier for the wallet itself (only a tiered card cashback program), indicating no subscription features."
+                  }
+                }
+              ]
+            },
             "cardFees": "Card fees are provider-dependent where card purchase is available.",
-            "hiddenPartnerRevenue": null
+            "hiddenPartnerRevenue": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://coinbureau.com/review/bitget-wallet-review",
+                    "explanation": "Sources indicate Bitget Wallet uses transparent upfront quotes for swap/bridge fees with no evidence of undisclosed partner markups or rate mark-ups, so no hidden partner revenue is indicated."
+                  }
+                }
+              ]
+            }
           },
           "releaseVelocity": {
             "ref": {
@@ -7956,13 +8208,63 @@
               "explanation": "Brave Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://brave.com/wallet/"
             },
-            "swapFees": null,
-            "bridgeFees": null,
+            "swapFees": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/brave/brave-browser/issues/38566",
+                    "explanation": "Brave discloses its swap fee policy, stating in its help center and blog that Brave does not add its own fees to in-wallet swaps (its former swap fee was removed in v1.67.x, tracked in brave-browser issue #38566)."
+                  }
+                }
+              ]
+            },
+            "bridgeFees": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://brave.com/blog/cross-chain-swaps/",
+                    "explanation": "Brave's cross-chain swaps blog and help center clearly state 'Brave does not add fees to swaps or bridges performed within Brave Wallet,' disclosing its bridge fee policy."
+                  }
+                }
+              ]
+            },
             "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
-            "spreadDisclosure": null,
-            "subscriptionFeatures": null,
+            "spreadDisclosure": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.brave.app/hc/en-us/articles/13397025065357-What-are-Brave-Swaps",
+                    "explanation": "Brave's official support docs state swap fees are displayed transparently, with only network gas and the disclosed swap fee applied."
+                  }
+                }
+              ]
+            },
+            "subscriptionFeatures": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.brave.app/hc/en-us/articles/4415497656461-Brave-Wallet-FAQ",
+                    "explanation": "Brave Wallet is entirely free with no paid subscription or premium tier for the wallet itself (Brave's premium products like VPN/Leo are separate non-wallet services)."
+                  }
+                }
+              ]
+            },
             "cardFees": "Card fees are provider-dependent where card purchase is available.",
-            "hiddenPartnerRevenue": null
+            "hiddenPartnerRevenue": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://brave.com/blog/cross-chain-swaps/",
+                    "explanation": "Brave publicly states it does not add fees to swaps or bridges and removed its former swap fee, indicating a transparent fee model with no evidence of undisclosed partner/referral revenue."
+                  }
+                }
+              ]
+            }
           },
           "releaseVelocity": {
             "ref": {
@@ -9359,15 +9661,55 @@
               "explanation": "Coinbase Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://wallet.coinbase.com/"
             },
-            "swapFees": null,
-            "bridgeFees": null,
+            "swapFees": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://milkroad.com/reviews/coinbase-wallet/",
+                    "explanation": "Coinbase Wallet clearly discloses and charges a 1% fee on in-app token swaps, shown before confirming and documented across Coinbase Wallet fee references."
+                  }
+                }
+              ]
+            },
+            "bridgeFees": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.coinbase.com/en/wallet/bridging",
+                    "explanation": "Coinbase Wallet shows a Bridge Fee and Coinbase Fee in the transaction summary before the user confirms a cross-chain bridge, per the official Coinbase Help bridging page."
+                  }
+                }
+              ]
+            },
             "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
             "spreadDisclosure": {
               "$ref": "featureSupported"
             },
-            "subscriptionFeatures": null,
+            "subscriptionFeatures": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.coinbase.com/en/coinbase/other-topics/coinbase-one/account",
+                    "explanation": "The self-custody Coinbase Wallet does not offer its own paid premium tier; Coinbase One is a subscription for the separate Coinbase exchange app rather than the wallet's features."
+                  }
+                }
+              ]
+            },
             "cardFees": "Card fees are provider-dependent where card purchase is available.",
-            "hiddenPartnerRevenue": null
+            "hiddenPartnerRevenue": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://milkroad.com/reviews/coinbase-wallet/",
+                    "explanation": "The swap fee model is transparent (flat 1% disclosed at transaction time), with no evidence of undisclosed partner markup or referral kickbacks."
+                  }
+                }
+              ]
+            }
           },
           "releaseVelocity": {
             "ref": {
@@ -9637,7 +9979,19 @@
               }
             ]
           },
-          "duressResistance": null,
+          "duressResistance": {
+            "duressMode": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://thebitcoinhole.com/hardware-wallets/cypherock-x1",
+                    "explanation": "Cypherock X1's feature spec lists a Dummy/Decoy/Duress wallet enabled via multiple BIP-39 passphrase-derived wallets with separate PINs, for coercion protection."
+                  }
+                }
+              ]
+            }
+          },
           "firmware": {
             "type": "FirmwareType.PASS",
             "customFirmware": null,
@@ -9647,7 +10001,17 @@
           },
           "keysHandling": null,
           "lightClient": {
-            "ethereumL1": null
+            "ethereumL1": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.cypherock.com/cysync",
+                    "explanation": "cySync relies on standard RPC/backend for account and history data with no trust-minimized Ethereum L1 light client."
+                  }
+                }
+              ]
+            }
           },
           "publicSecurityAudits": [
             {
@@ -9714,9 +10078,69 @@
             "erc7730": {
               "$ref": "notSupported"
             },
-            "erc8213": null
+            "erc8213": null,
+            "transactionSimulations": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.cypherock.com/cysync",
+                    "explanation": "cySync shows transaction details for on-device verification but does not simulate/preview net balance changes before signing."
+                  }
+                }
+              ]
+            }
           },
-          "userSafety": null
+          "userSafety": null,
+          "hardwareWalletSupport": {
+            "$ref": "notApplicable"
+          },
+          "scamAlerts": {
+            "sendTransactionWarning": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.cypherock.com/cysync",
+                    "explanation": "cySync provides on-device address verification but no automated risky-send warnings such as address poisoning or new-recipient alerts are documented."
+                  }
+                }
+              ]
+            },
+            "contractTransactionWarning": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://coinbureau.com/review/cypherock-review",
+                    "explanation": "cySync relies on manual review of permissions on the Vault screen and offers no automated malicious-contract flagging."
+                  }
+                }
+              ]
+            },
+            "scamUrlWarning": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.cypherock.com/security-overview/remote-attacks",
+                    "explanation": "Cypherock's security docs focus on seedless design and secure elements; no blocklist-based phishing/dApp URL warning is documented for the X1 or cySync app."
+                  }
+                }
+              ]
+            }
+          },
+          "passkeyVerification": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.cypherock.com/cysync",
+                  "explanation": "No evidence Cypherock X1 or cySync uses passkeys/WebAuthn/FIDO; it uses card-tap plus PIN for verification."
+                }
+              }
+            ]
+          }
         },
         "selfSovereignty": {
           "interoperability": null
@@ -11264,11 +11688,51 @@
               "explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://daimo.com"
             },
-            "swapFees": null,
-            "bridgeFees": null,
+            "swapFees": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://beta.walletbeat.eth.limo/daimo/",
+                    "explanation": "Daimo (Daimo Pay) explicitly hides swap costs for a clean checkout and publishes no consumer-facing swap-fee disclosure; Walletbeat rates its fee transparency as unrated/unknown."
+                  }
+                }
+              ]
+            },
+            "bridgeFees": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://beta.walletbeat.eth.limo/daimo/",
+                    "explanation": "Daimo states swaps, bridges, and gas are hidden from users for a clean checkout and discloses no explicit bridging fee to the user."
+                  }
+                }
+              ]
+            },
             "onRampFees": null,
-            "spreadDisclosure": null,
-            "subscriptionFeatures": null,
+            "spreadDisclosure": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://beta.walletbeat.eth.limo/daimo/",
+                    "explanation": "No spread/markup disclosure is provided; the docs and site describe fees as hidden rather than showing any quote markup, and Walletbeat lists fee transparency as unrated."
+                  }
+                }
+              ]
+            },
+            "subscriptionFeatures": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.daimo.com/",
+                    "explanation": "No paid subscription or premium tier is offered on Daimo's site or docs; it is a per-transaction ramp/payment product with no subscription features."
+                  }
+                }
+              ]
+            },
             "cardFees": null,
             "hiddenPartnerRevenue": null
           },
@@ -12626,11 +13090,19 @@
               "explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://elytro.com"
             },
-            "swapFees": null,
-            "bridgeFees": null,
+            "swapFees": {
+              "$ref": "notSupported"
+            },
+            "bridgeFees": {
+              "$ref": "notSupported"
+            },
             "onRampFees": null,
-            "spreadDisclosure": null,
-            "subscriptionFeatures": null,
+            "spreadDisclosure": {
+              "$ref": "notSupported"
+            },
+            "subscriptionFeatures": {
+              "$ref": "notSupported"
+            },
             "cardFees": null,
             "hiddenPartnerRevenue": null
           },
@@ -13919,8 +14391,28 @@
               "explanation": "Exodus source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://www.exodus.com/"
             },
-            "swapFees": null,
-            "bridgeFees": null,
+            "swapFees": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.exodus.com/support/en/articles/8598637-how-does-exodus-make-money",
+                    "explanation": "Exodus's official 'How does Exodus make money' support page and swap UI disclose that it earns via the spread and shows the exact amount you pay/receive (fixed rate from ~0.5%) before confirming a swap."
+                  }
+                }
+              ]
+            },
+            "bridgeFees": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.exodus.com/investors/news-events/press-releases/detail/82/exodus-and-metamask-partner-to-bring-xo-swaps-bridge-functionality-to-millions-of-wallet-users",
+                    "explanation": "Exodus XO Swap displays the full quote and fixed rate before the user confirms a cross-chain swap/bridge, so users see the amount received beforehand."
+                  }
+                }
+              ]
+            },
             "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
             "spreadDisclosure": {
               "$ref": "featureSupported"
@@ -13937,7 +14429,17 @@
               ]
             },
             "cardFees": "Card fees are provider-dependent where card purchase is available.",
-            "hiddenPartnerRevenue": null
+            "hiddenPartnerRevenue": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.exodus.com/support/en/articles/8598637-how-does-exodus-make-money",
+                    "explanation": "Exodus openly discloses on its official support page that it earns from the swap spread and receives a small share of third-party fiat providers' processing fees, and it shows the full quote (spread) before confirmation, so the revenue is not undisclosed."
+                  }
+                }
+              ]
+            }
           },
           "releaseVelocity": {
             "ref": {
@@ -15258,13 +15760,63 @@
               "explanation": "Family source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://family.co"
             },
-            "swapFees": null,
-            "bridgeFees": null,
+            "swapFees": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://family.co/faqs",
+                    "explanation": "Family's FAQ states it \"does not charge any additional fees for using the wallet\" and the swap-tokens support page only says users see \"fees\" without disclosing any specific swap-fee amount or percentage."
+                  }
+                }
+              ]
+            },
+            "bridgeFees": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://family.co/faqs",
+                    "explanation": "Family discloses no bridge/refuel fee; its FAQ states only network fees apply and no in-app bridge fee is published on its support pages."
+                  }
+                }
+              ]
+            },
             "onRampFees": null,
-            "spreadDisclosure": null,
-            "subscriptionFeatures": null,
+            "spreadDisclosure": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://family.co/faqs",
+                    "explanation": "Family's FAQ states it charges no additional wallet fees and shows estimated fees before confirmation, but does not disclose any platform spread or markup percentage."
+                  }
+                }
+              ]
+            },
+            "subscriptionFeatures": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://family.co/faqs",
+                    "explanation": "Family is offered as a free non-custodial wallet with no paid subscription or premium tier disclosed on its site, FAQ, or App Store listing."
+                  }
+                }
+              ]
+            },
             "cardFees": null,
-            "hiddenPartnerRevenue": null
+            "hiddenPartnerRevenue": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://family.co/faqs",
+                    "explanation": "Family publicly states it charges no additional wallet fees and sources best prices from various exchanges, with no evidence of undisclosed partner/referral markup on swaps or ramps."
+                  }
+                }
+              ]
+            }
           },
           "releaseVelocity": {
             "ref": {
@@ -15463,11 +16015,33 @@
           "bugBountyProgram": {
             "$ref": "notSupported"
           },
-          "duressResistance": null,
+          "duressResistance": {
+            "duressMode": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/firefly/wallet",
+                    "explanation": "Firefly's repository and documentation contain no mention of a duress mode, decoy PIN, or passphrase-derived hidden wallet."
+                  }
+                }
+              ]
+            }
+          },
           "firmware": null,
           "keysHandling": null,
           "lightClient": {
-            "ethereumL1": null
+            "ethereumL1": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://firefly.city",
+                    "explanation": "Firefly is an offline air-gapped signer that relies on the paired browser/phone for network data and has no trust-minimized L1 light client."
+                  }
+                }
+              ]
+            }
           },
           "publicSecurityAudits": null,
           "secureElement": null,
@@ -15485,9 +16059,69 @@
             "erc7730": {
               "$ref": "notSupported"
             },
-            "erc8213": null
+            "erc8213": null,
+            "transactionSimulations": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/firefly/wallet",
+                    "explanation": "The Firefly DIY wallet displays only raw transaction parameters on its OLED screen; no transaction simulation or balance-change preview is documented."
+                  }
+                }
+              ]
+            }
           },
-          "userSafety": null
+          "userSafety": null,
+          "hardwareWalletSupport": {
+            "$ref": "notApplicable"
+          },
+          "passkeyVerification": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://firefly.city",
+                  "explanation": "Firefly is an air-gapped Ethereum signing device with no documented passkey/WebAuthn/FIDO verification factor."
+                }
+              }
+            ]
+          },
+          "scamAlerts": {
+            "contractTransactionWarning": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://hackaday.io/project/146319-firefly-hardware-wallet",
+                    "explanation": "Firefly is a minimal DIY air-gapped Ethereum signer; its documented feature set (multi-sig, offline signing, recovery) includes no malicious-contract registry or blocklist."
+                  }
+                }
+              ]
+            },
+            "sendTransactionWarning": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://hackaday.io/project/146319-firefly-hardware-wallet",
+                    "explanation": "Firefly's documented features cover multi-sig, offline signing and recovery only; no flagged-address blacklist or address-poisoning detection is described."
+                  }
+                }
+              ]
+            },
+            "scamUrlWarning": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://hackaday.io/project/146319-firefly-hardware-wallet",
+                    "explanation": "Firefly is a bare DIY signer with no network connectivity or companion app implementing URL scanning."
+                  }
+                }
+              ]
+            }
+          }
         },
         "selfSovereignty": {
           "interoperability": null
@@ -16901,13 +17535,39 @@
               "explanation": "Frame source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://frame.sh"
             },
-            "swapFees": null,
-            "bridgeFees": null,
+            "swapFees": {
+              "$ref": "notApplicable"
+            },
+            "bridgeFees": {
+              "$ref": "notApplicable"
+            },
             "onRampFees": null,
-            "spreadDisclosure": null,
-            "subscriptionFeatures": null,
+            "spreadDisclosure": {
+              "$ref": "notApplicable"
+            },
+            "subscriptionFeatures": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://frame.sh/",
+                    "explanation": "Frame is offered as a free wallet with no subscription or premium paid tier mentioned on its site or docs (https://frame.sh/)."
+                  }
+                }
+              ]
+            },
             "cardFees": null,
-            "hiddenPartnerRevenue": null
+            "hiddenPartnerRevenue": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://frame.sh/",
+                    "explanation": "Frame is a free, open-source wallet that connects users directly to dApps/DEXs without an in-app swap/ramp order flow, so there is no evidence of undisclosed partner/referral revenue (https://frame.sh/)."
+                  }
+                }
+              ]
+            }
           },
           "releaseVelocity": {
             "ref": {
@@ -18215,13 +18875,63 @@
               "explanation": "Gem Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://gemwallet.com"
             },
-            "swapFees": null,
-            "bridgeFees": null,
+            "swapFees": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.gemwallet.com/faq/swap-fees/",
+                    "explanation": "Gem Wallet's swap-fees FAQ explicitly discloses it takes no service/handling fees or commissions and that swap provider/protocol fees are factored into the quoted rate visible before confirming."
+                  }
+                }
+              ]
+            },
+            "bridgeFees": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.gemwallet.com/faq/crosschain-swap/",
+                    "explanation": "Gem Wallet integrates cross-chain bridges (Across, THORChain) but its docs do not itemize or disclose any specific bridge fee it charges, only a general 'save on fees' claim."
+                  }
+                }
+              ]
+            },
             "onRampFees": null,
-            "spreadDisclosure": null,
-            "subscriptionFeatures": null,
+            "spreadDisclosure": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://gemwallet.com/swap/",
+                    "explanation": "The swap page states 'There are no hidden charges or inflated spreads - you can see all costs before confirming the transaction,' explicitly addressing spread/markup."
+                  }
+                }
+              ]
+            },
+            "subscriptionFeatures": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.gemwallet.com/features/",
+                    "explanation": "Gem Wallet is a free open-source self-custody wallet with no premium/paid subscription tier documented across its site and knowledge base."
+                  }
+                }
+              ]
+            },
             "cardFees": null,
-            "hiddenPartnerRevenue": null
+            "hiddenPartnerRevenue": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.gemwallet.com/faq/swap-fees/",
+                    "explanation": "Gem Wallet's docs state it takes no commissions/markup and no affiliate program, and quotes disclose all costs before confirmation, indicating no undisclosed partner revenue."
+                  }
+                }
+              ]
+            }
           },
           "releaseVelocity": {
             "ref": {
@@ -18504,7 +19214,19 @@
               }
             ]
           },
-          "duressResistance": null,
+          "duressResistance": {
+            "duressMode": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.gridplus.io/lattice1/how-to-manage-your-seed-phrase",
+                    "explanation": "The Lattice1 supports an optional BIP39 passphrase (a 25th word) that generates a separate hidden wallet, functioning as a decoy/hidden-wallet mechanism."
+                  }
+                }
+              ]
+            }
+          },
           "firmware": {
             "type": "FirmwareType.FAIL",
             "customFirmware": "FirmwareType.FAIL",
@@ -18524,7 +19246,17 @@
             "multipartyKeyReconstruction": "MultiPartyKeyReconstruction.NON_MULTIPARTY"
           },
           "lightClient": {
-            "ethereumL1": null
+            "ethereumL1": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.gridplus.io/lattice1/security-features",
+                    "explanation": "The Lattice1 relies on connected software wallets/RPCs for chain state and provides no trust-minimized Ethereum L1 light client."
+                  }
+                }
+              ]
+            }
           },
           "publicSecurityAudits": null,
           "secureElement": {
@@ -18575,9 +19307,69 @@
                 }
               ]
             },
-            "erc8213": null
+            "erc8213": null,
+            "transactionSimulations": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.gridplus.io/lattice1/how-the-lattice1-makes-transactions-readable-with-abi-decoding",
+                    "explanation": "The Lattice1 provides ABI-decoded clear signing of raw transaction data but does not simulate/predict net balance changes before signing."
+                  }
+                }
+              ]
+            }
           },
-          "userSafety": null
+          "userSafety": null,
+          "hardwareWalletSupport": {
+            "$ref": "notApplicable"
+          },
+          "scamAlerts": {
+            "contractTransactionWarning": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.gridplus.io/lattice1/how-the-lattice1-makes-transactions-readable-with-abi-decoding",
+                    "explanation": "The Lattice1 uses ABI decoding to make calldata human-readable but does not flag/blocklist known-malicious contracts; it relies on the user reading the decoded data."
+                  }
+                }
+              ]
+            },
+            "sendTransactionWarning": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.gridplus.io/lattice1/security-features",
+                    "explanation": "GridPlus Lattice1 security docs describe clear signing and tamper protection but no blacklisted-address or address-poisoning send warning."
+                  }
+                }
+              ]
+            },
+            "scamUrlWarning": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.gridplus.io/lattice1/security-features",
+                    "explanation": "GridPlus Lattice1 security docs cover hardware protection and clear signing only; no phishing-URL blocklist or dApp scam warning is described."
+                  }
+                }
+              ]
+            }
+          },
+          "passkeyVerification": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.gridplus.io/lattice1/security-features",
+                  "explanation": "The Lattice1 uses a device PIN and SafeCard PIN for authentication with no mention of passkeys/WebAuthn/FIDO in its security documentation."
+                }
+              }
+            ]
+          }
         },
         "selfSovereignty": {
           "interoperability": null,
@@ -18823,8 +19615,30 @@
         "profile": "WalletProfile.GENERIC",
         "security": {
           "accountRecovery": null,
-          "bugBountyProgram": null,
-          "duressResistance": null,
+          "bugBountyProgram": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://slowmist.io/imtoken/",
+                  "explanation": "imKey runs a public 'Vulnerability and Threat Intelligence Bounty Program' and imToken runs a bounty program with SlowMist."
+                }
+              }
+            ]
+          },
+          "duressResistance": {
+            "duressMode": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://imkey.im/products/imkey-pro-crypto-hardware-wallet",
+                    "explanation": "imKey Pro documentation describes only a standard 6-8 digit PIN (auto-reset after 5 failed attempts) with no passphrase-based hidden wallet or decoy/duress mode."
+                  }
+                }
+              ]
+            }
+          },
           "firmware": {
             "type": "FirmwareType.PASS",
             "customFirmware": null,
@@ -18836,7 +19650,17 @@
           },
           "keysHandling": null,
           "lightClient": {
-            "ethereumL1": null
+            "ethereumL1": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.token.im/hc/en-us/articles/31423984023961-Scam-Warning-Fraudulent-RPC-Node-Adjustments",
+                    "explanation": "imToken/imKey rely on RPC nodes for chain state with no indication of a trust-minimized Ethereum L1 light client."
+                  }
+                }
+              ]
+            }
           },
           "publicSecurityAudits": null,
           "secureElement": null,
@@ -18877,9 +19701,69 @@
             "erc7730": {
               "$ref": "notSupported"
             },
-            "erc8213": null
+            "erc8213": null,
+            "transactionSimulations": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.imkey.im/hc/en-001/categories/35745879900057-imKey-Pro-Instructions",
+                    "explanation": "imKey Pro shows amount, recipient and fee for manual verification before signing, but no transaction simulation of net effects is documented."
+                  }
+                }
+              ]
+            }
           },
-          "userSafety": null
+          "userSafety": null,
+          "hardwareWalletSupport": {
+            "$ref": "notApplicable"
+          },
+          "scamAlerts": {
+            "sendTransactionWarning": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.token.im/hc/en-us/articles/23417185602841-Inventory-of-Common-Address-Phishing-Tactics",
+                    "explanation": "imToken automatically hides high-risk address-poisoning transactions and shows a security reminder when a user copies an address from transaction history."
+                  }
+                }
+              ]
+            },
+            "contractTransactionWarning": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.token.im/hc/en-us/articles/360039457914-Why-is-the-token-tagged-as-Warning",
+                    "explanation": "imToken tags risky tokens/contracts as 'Warning' (pops a security alert on transfer) and hides 'Risk/High Risk' tokens to protect users from malicious contracts."
+                  }
+                }
+              ]
+            },
+            "scamUrlWarning": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://medium.com/imtoken/imtoken-2-9-2-out-now-with-updated-dapp-security-risk-control-and-more-551ca40f86c1",
+                    "explanation": "imKey's companion app imToken bans risky dApp URLs and shows DApp access risk reminders for high-risk sites, providing blocklist-based scam URL warnings."
+                  }
+                }
+              ]
+            }
+          },
+          "passkeyVerification": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://imkey.im/products/imkey-pro-crypto-hardware-wallet",
+                  "explanation": "imKey Pro authenticates via PIN and Bluetooth/USB; no WebAuthn/FIDO2 passkey support is documented for the crypto wallet (the imKey Pass S6 is a separate FIDO2 product)."
+                }
+              }
+            ]
+          }
         },
         "selfSovereignty": {
           "interoperability": {
@@ -20305,13 +21189,53 @@
               "explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://token.im"
             },
-            "swapFees": null,
-            "bridgeFees": null,
+            "swapFees": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.tokenlon.im/hc/en-us/articles/360037260272-Tokenlon-Fees",
+                    "explanation": "imToken's in-app swaps run through Tokenlon, whose published fees page discloses a 0.3% trade fee (0.04% for stablecoins, tiered down to 0.10%)."
+                  }
+                }
+              ]
+            },
+            "bridgeFees": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.token.im/hc/en-us/articles/7539476790681-Token-bridging-across-different-blockchains-with-Celer-cBridge",
+                    "explanation": "imToken's help center documents cross-chain bridging via Celer cBridge (0%–0.04%) and other bridges with their fee structures explained per protocol."
+                  }
+                }
+              ]
+            },
             "onRampFees": null,
             "spreadDisclosure": null,
-            "subscriptionFeatures": null,
+            "subscriptionFeatures": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://token.im/",
+                    "explanation": "imToken is a free wallet with no paid subscription or premium tier; reviews and its site indicate no subscription requirement or premium features."
+                  }
+                }
+              ]
+            },
             "cardFees": null,
-            "hiddenPartnerRevenue": null
+            "hiddenPartnerRevenue": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.tokenlon.im/hc/en-us/articles/360037260272-Tokenlon-Fees",
+                    "explanation": "imToken's swap fee model is transparently published via Tokenlon's public fees page and its help center, with no evidence of undisclosed partner/referral markups."
+                  }
+                }
+              ]
+            }
           },
           "releaseVelocity": {
             "ref": {
@@ -20510,7 +21434,17 @@
         "profile": "WalletProfile.GENERIC",
         "security": {
           "accountRecovery": null,
-          "bugBountyProgram": null,
+          "bugBountyProgram": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.keycard.tech/en/about",
+                  "explanation": "Keycard's About page links a 'Security & vulnerability disclosure (IFT)' program run under the Institute of Free Technology, which operates a HackenProof bug bounty covering its projects."
+                }
+              }
+            ]
+          },
           "duressResistance": {
             "basicUnlock": {
               "ref": [
@@ -20566,7 +21500,17 @@
             "multipartyKeyReconstruction": "MultiPartyKeyReconstruction.NON_MULTIPARTY"
           },
           "lightClient": {
-            "ethereumL1": null
+            "ethereumL1": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://keycard.tech/pages/keycard-shell",
+                    "explanation": "As an offline air-gapped signer with no companion app, Keycard Shell provides no Ethereum L1 light-client verification and relies on the connected software wallet's RPC."
+                  }
+                }
+              ]
+            }
           },
           "publicSecurityAudits": null,
           "secureElement": {
@@ -20638,9 +21582,69 @@
                 }
               ]
             },
-            "erc8213": null
+            "erc8213": null,
+            "transactionSimulations": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/keycard-tech/keycard-shell",
+                    "explanation": "Keycard Shell shows transaction details for verification on-device but does not simulate net balance changes, and it has no companion app providing simulation."
+                  }
+                }
+              ]
+            }
           },
-          "userSafety": null
+          "userSafety": null,
+          "hardwareWalletSupport": {
+            "$ref": "notApplicable"
+          },
+          "scamAlerts": {
+            "scamUrlWarning": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.keycard.tech/en/about",
+                    "explanation": "Keycard Shell has no companion app and its docs/security pages describe only air-gapped signing and blind-signing minimization, with no known-malicious/phishing URL warning feature."
+                  }
+                }
+              ]
+            },
+            "sendTransactionWarning": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.keycard.tech/en/about",
+                    "explanation": "The device offers on-screen transaction verification but no documented risky-send/address-poisoning warnings, and it has no companion app to provide them."
+                  }
+                }
+              ]
+            },
+            "contractTransactionWarning": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.keycard.tech/en/about",
+                    "explanation": "No malicious/flagged-contract warning feature is documented for Keycard Shell, which relies on third-party wallets for such checks and only aims to 'minimize blind signing'."
+                  }
+                }
+              ]
+            }
+          },
+          "passkeyVerification": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.keycard.tech/en/about",
+                  "explanation": "Neither Keycard's security/about pages nor its GitHub repo mention passkey/WebAuthn/FIDO verification; the device uses PIN plus secure-element key storage."
+                }
+              }
+            ]
+          }
         },
         "selfSovereignty": {
           "interoperability": {
@@ -20942,7 +21946,19 @@
               }
             ]
           },
-          "duressResistance": null,
+          "duressResistance": {
+            "duressMode": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.keyst.one/advanced-features/passphrase",
+                    "explanation": "Keystone supports an optional passphrase 'hidden vault' for plausible deniability, with a default sentinel wallet shown under duress while assets stay in passphrase-protected wallets."
+                  }
+                }
+              ]
+            }
+          },
           "firmware": {
             "type": "FirmwareType.PASS",
             "customFirmware": null,
@@ -20952,7 +21968,17 @@
           },
           "keysHandling": null,
           "lightClient": {
-            "ethereumL1": null
+            "ethereumL1": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://shop.keyst.one/products/keystone-3-pro",
+                    "explanation": "Keystone is an air-gapped cold signer relying on connected third-party wallets/RPCs and provides no trust-minimized Ethereum L1 light client."
+                  }
+                }
+              ]
+            }
           },
           "publicSecurityAudits": [
             {
@@ -21041,9 +22067,69 @@
                 }
               ]
             },
-            "erc8213": null
+            "erc8213": null,
+            "transactionSimulations": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://blog.keyst.one/blind-signing-a-security-black-hole-for-the-ethereum-community-13f909b848b6",
+                    "explanation": "Keystone decodes and displays full transaction/contract details on-device (anti-blind-signing) but there is no evidence of net-balance-change simulation like Blockaid/Blowfish."
+                  }
+                }
+              ]
+            }
           },
-          "userSafety": null
+          "userSafety": null,
+          "hardwareWalletSupport": {
+            "$ref": "notApplicable"
+          },
+          "passkeyVerification": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://keyst.one/authentication",
+                  "explanation": "Keystone 3 Pro uses PIN/fingerprint and QR-based device verification; no source indicates passkey/WebAuthn/FIDO2 as a verification factor."
+                }
+              }
+            ]
+          },
+          "scamAlerts": {
+            "contractTransactionWarning": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://keyst.one/",
+                    "explanation": "Keystone's documentation focuses on air-gapped clear-signing and secure elements; no blocklist-based malicious-contract warning is described for the device or companion apps."
+                  }
+                }
+              ]
+            },
+            "sendTransactionWarning": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.bitget.com/amp/academy/keystone-wallet-safe",
+                    "explanation": "Keystone firmware includes address-poisoning detection that flags transactions to addresses resembling previous destinations before signing."
+                  }
+                }
+              ]
+            },
+            "scamUrlWarning": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://blog.keyst.one/from-evm-to-solana-how-to-avoid-phishing-scams",
+                    "explanation": "Keystone's own blog recommends third-party tools like ScamSniffer for phishing protection rather than a built-in URL blocklist in the device or companion apps."
+                  }
+                }
+              ]
+            }
+          }
         },
         "selfSovereignty": {
           "interoperability": null,
@@ -21292,11 +22378,33 @@
               }
             ]
           },
-          "duressResistance": null,
+          "duressResistance": {
+            "duressMode": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.ledger.com/academy/passphrase-an-advanced-security-feature",
+                    "explanation": "Ledger's passphrase feature creates hidden wallets for plausible deniability, letting a user reveal only a decoy standard account under coercion."
+                  }
+                }
+              ]
+            }
+          },
           "firmware": null,
           "keysHandling": null,
           "lightClient": {
-            "ethereumL1": null
+            "ethereumL1": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.ledger.com/article/how-to-enhance-the-safety-of-your-ethereum-transactions-with-transaction-check",
+                    "explanation": "Ledger Live relies on standard/third-party RPC providers and Ledger's own backend rather than a trust-minimized Ethereum L1 light client; no such feature is documented."
+                  }
+                }
+              ]
+            }
           },
           "publicSecurityAudits": null,
           "secureElement": {
@@ -21334,9 +22442,69 @@
             "erc7730": {
               "$ref": "notSupported"
             },
-            "erc8213": null
+            "erc8213": null,
+            "transactionSimulations": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.blockaid.io/blog/how-blockaid-helps-ledgers-transaction-check-mitigate-blind-signing-risks",
+                    "explanation": "Ledger's Transaction Check simulates the transaction and validates its outcomes (via Blockaid/Tenderly/Cyvers) before signing."
+                  }
+                }
+              ]
+            }
           },
-          "userSafety": null
+          "userSafety": null,
+          "hardwareWalletSupport": {
+            "$ref": "notApplicable"
+          },
+          "scamAlerts": {
+            "scamUrlWarning": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.blockaid.io/blog/how-blockaid-helps-ledgers-transaction-check-mitigate-blind-signing-risks",
+                    "explanation": "Ledger Live's Transaction Check (powered by Blockaid) flags interactions with questionable dApps/scam sites as potential risks or critical threats before signing."
+                  }
+                }
+              ]
+            },
+            "sendTransactionWarning": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.ledger.com/article/how-to-enhance-the-safety-of-your-ethereum-transactions-with-transaction-check",
+                    "explanation": "Transaction Check flags sending assets to an unknown address as a potential risk before the transaction is signed."
+                  }
+                }
+              ]
+            },
+            "contractTransactionWarning": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.blockaid.io/blog/how-blockaid-helps-ledgers-transaction-check-mitigate-blind-signing-risks",
+                    "explanation": "Transaction Check via Blockaid identifies transactions involving malicious contracts or stolen funds and flags them as critical threats."
+                  }
+                }
+              ]
+            }
+          },
+          "passkeyVerification": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.ledger.com/blog/strengthen-the-security-of-your-accounts-with-webauthn",
+                  "explanation": "Ledger devices run a Security Key application implementing FIDO U2F/FIDO2/WebAuthn for use as a 2FA/MFA authentication factor."
+                }
+              }
+            ]
+          }
         },
         "selfSovereignty": {
           "interoperability": null,
@@ -23303,15 +24471,55 @@
               "explanation": "MetaMask buy/sell and card fee docs publish provider/region fee dependency and specific MetaMask fees where applicable.",
               "url": "https://support.metamask.io/manage-crypto/move-crypto/sell/how-to-sell-your-crypto-assets-for-fiat-currency-in-metamask"
             },
-            "swapFees": null,
-            "bridgeFees": null,
+            "swapFees": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.metamask.io/trade/swap/user-guide-swaps/",
+                    "explanation": "MetaMask's support user-guide page explicitly discloses a 0.875% MetaMask swap service fee in its fee breakdown."
+                  }
+                }
+              ]
+            },
+            "bridgeFees": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.metamask.io/metamask-portfolio/bridge/how-are-bridge-fees-calculated/",
+                    "explanation": "MetaMask's support page 'How are bridge fees calculated?' discloses a 0.875% MetaMask fee applied on each bridge transaction."
+                  }
+                }
+              ]
+            },
             "onRampFees": "On-ramp fees are provider-, payment-method-, token-, and region-dependent.",
             "spreadDisclosure": {
               "$ref": "featureSupported"
             },
-            "subscriptionFeatures": null,
+            "subscriptionFeatures": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://metamask.io/transaction-shield",
+                    "explanation": "MetaMask offers paid subscription tiers including Transaction Shield ($9.99/month security subscription) and the Metal Card annual membership ($199/yr)."
+                  }
+                }
+              ]
+            },
             "cardFees": "MetaMask sell docs say MetaMask receives a 1% fee on sell transactions from providers; MetaMask Card docs list card fee rows such as 0.875% for some non-stablecoin spending contexts.",
-            "hiddenPartnerRevenue": null
+            "hiddenPartnerRevenue": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.metamask.io/trade/swap/user-guide-swaps/",
+                    "explanation": "MetaMask openly publishes its 0.875% swap and bridge fees in support docs, indicating a transparent fee model rather than undisclosed partner markup."
+                  }
+                }
+              ]
+            }
           },
           "releaseVelocity": {
             "ref": {
@@ -24714,13 +25922,63 @@
               "explanation": "Bridge Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://www.mtpelerin.com/"
             },
-            "swapFees": null,
-            "bridgeFees": null,
+            "swapFees": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.mtpelerin.com/pricing",
+                    "explanation": "Mt Pelerin's pricing page discloses swap fees: first CHF 500/year free, then 0.5% commission (0.1% for USDC-to-USDC swaps)."
+                  }
+                }
+              ]
+            },
+            "bridgeFees": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.mtpelerin.com/bridge/usdt",
+                    "explanation": "Bridging is disclosed as using the same swap fee model (free up to CHF 500/year, or CHF 1,000 if referred, then standard exchange fees) on the bridge/USDT pages."
+                  }
+                }
+              ]
+            },
             "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
-            "spreadDisclosure": null,
-            "subscriptionFeatures": null,
+            "spreadDisclosure": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.mtpelerin.com/swap-crypto",
+                    "explanation": "The swap page explicitly discloses its spread policy, stating swaps occur 'with no spread, no slippage, and no price impact' at the real market price minus a transparent service fee."
+                  }
+                }
+              ]
+            },
+            "subscriptionFeatures": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.mtpelerin.com/pricing",
+                    "explanation": "Mt Pelerin offers an MPS shareholder token tier that raises the free-volume allowance up to CHF 50,000/year and grants discounted fees, functioning as an optional premium tier."
+                  }
+                }
+              ]
+            },
             "cardFees": "Card fees are provider-dependent where card purchase is available.",
-            "hiddenPartnerRevenue": null
+            "hiddenPartnerRevenue": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.mtpelerin.com/swap-crypto",
+                    "explanation": "Mt Pelerin discloses its fee model transparently ('zero hidden costs minus a small, transparent service fee') with published commission percentages, and no evidence of undisclosed partner/referral markup was found."
+                  }
+                }
+              ]
+            }
           },
           "releaseVelocity": {
             "ref": {
@@ -24947,11 +26205,33 @@
               }
             ]
           },
-          "duressResistance": null,
+          "duressResistance": {
+            "duressMode": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.ngrave.io/hc/en-us/articles/14915071703581-Passphrase-FAQ",
+                    "explanation": "NGRAVE documents that a passphrase creates a hidden wallet and a small-balance passphrase wallet can act as a duress/decoy wallet surrendered under coercion."
+                  }
+                }
+              ]
+            }
+          },
           "firmware": null,
           "keysHandling": null,
           "lightClient": {
-            "ethereumL1": null
+            "ethereumL1": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://ngrave.io/en/liquid",
+                    "explanation": "LIQUID is a portfolio/broadcast app relying on standard RPC/QR flow with no documented trust-minimized Ethereum L1 light client."
+                  }
+                }
+              ]
+            }
           },
           "publicSecurityAudits": null,
           "secureElement": {
@@ -24992,9 +26272,69 @@
             "erc7730": {
               "$ref": "notSupported"
             },
-            "erc8213": null
+            "erc8213": null,
+            "transactionSimulations": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.ngrave.io/hc/en-us/articles/19966506197021-Blind-signing",
+                    "explanation": "NGRAVE's own blind-signing article notes smart-contract details cannot always be decoded on ZERO; simulation is not a feature of the device itself."
+                  }
+                }
+              ]
+            }
           },
-          "userSafety": null
+          "userSafety": null,
+          "hardwareWalletSupport": {
+            "$ref": "notApplicable"
+          },
+          "scamAlerts": {
+            "contractTransactionWarning": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://ngrave.io/en/zero",
+                    "explanation": "NGRAVE ZERO is fully air-gapped and relies on manual QR-based verification; no malicious-contract registry/blocklist warning is documented."
+                  }
+                }
+              ]
+            },
+            "sendTransactionWarning": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://ngrave.io/en/zero",
+                    "explanation": "NGRAVE ZERO documentation describes no blacklisted-address or address-poisoning warning; it relies on manual verification on the secure display before QR signing."
+                  }
+                }
+              ]
+            },
+            "scamUrlWarning": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://ngrave.io/en/zero",
+                    "explanation": "NGRAVE ZERO is fully air-gapped; neither the device nor the LIQUID companion app documents a blocklist-based phishing/scam URL warning."
+                  }
+                }
+              ]
+            }
+          },
+          "passkeyVerification": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://ngrave.io/en/zero",
+                  "explanation": "NGRAVE ZERO authenticates via an 8-digit PIN and fingerprint; no passkey/WebAuthn/FIDO2 authentication is documented."
+                }
+              }
+            ]
+          }
         },
         "selfSovereignty": {
           "interoperability": null,
@@ -26426,13 +27766,53 @@
               "explanation": "NuFi source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://nu.fi"
             },
-            "swapFees": null,
+            "swapFees": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.nu.fi/support/solutions/articles/80001148272-exchange-cardano-tokens",
+                    "explanation": "NuFi's Cardano exchange support article states users need ADA to pay a transaction fee 'plus a service fee for using the swap functionality,' but no fee amount or percentage is disclosed, and the Jupiter DEX swap article discloses no NuFi fee at all."
+                  }
+                }
+              ]
+            },
             "bridgeFees": null,
             "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
-            "spreadDisclosure": null,
-            "subscriptionFeatures": null,
+            "spreadDisclosure": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://nu.fi/blog/what-is-the-best-crypto-wallet",
+                    "explanation": "NuFi states it charges no swap fees (only network fees), routing through aggregators; the underlying aggregator spread is not separately surfaced to the user."
+                  }
+                }
+              ]
+            },
+            "subscriptionFeatures": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://reviewnexa.com/nufi-wallet-review/",
+                    "explanation": "Multiple reviews indicate NuFi is free with no premium tiers or subscription features, and no official NuFi page advertises a paid tier."
+                  }
+                }
+              ]
+            },
             "cardFees": "Card fees are provider-dependent where card purchase is available.",
-            "hiddenPartnerRevenue": null
+            "hiddenPartnerRevenue": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://reviewnexa.com/nufi-wallet-review/",
+                    "explanation": "NuFi discloses that it earns referral fees from integrated on-ramps and swap aggregators; no evidence of undisclosed/hidden partner revenue was found."
+                  }
+                }
+              ]
+            }
           },
           "releaseVelocity": {
             "ref": {
@@ -28069,15 +29449,55 @@
               "explanation": "OKX Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://web3.okx.com/"
             },
-            "swapFees": null,
-            "bridgeFees": null,
+            "swapFees": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://web3.okx.com/dex-fees",
+                    "explanation": "OKX publishes a DEX fees page disclosing the interface fee on in-app swaps (0% to 0.5% depending on token group)."
+                  }
+                }
+              ]
+            },
+            "bridgeFees": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.okx.com/en-us/learn/what-is-okx-bridge",
+                    "explanation": "OKX's official OKX Bridge guide states all costs — bridge fee (0.08–0.2%) and network gas — are displayed before confirming the transaction."
+                  }
+                }
+              ]
+            },
             "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
             "spreadDisclosure": {
               "$ref": "featureSupported"
             },
-            "subscriptionFeatures": null,
+            "subscriptionFeatures": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://web3.okx.com/dex-fees",
+                    "explanation": "No evidence of an optional paid subscription or premium tier for OKX Wallet was found across official pages and reviews; it is a free self-custody wallet monetized via swap fees."
+                  }
+                }
+              ]
+            },
             "cardFees": "Card fees are provider-dependent where card purchase is available.",
-            "hiddenPartnerRevenue": null
+            "hiddenPartnerRevenue": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://web3.okx.com/dex-fees",
+                    "explanation": "OKX transparently publishes its DEX/interface fee schedule and shows all costs before confirmation, indicating no undisclosed partner/referral markup."
+                  }
+                }
+              ]
+            }
           },
           "releaseVelocity": {
             "ref": {
@@ -28293,7 +29713,19 @@
               }
             ]
           },
-          "duressResistance": null,
+          "duressResistance": {
+            "duressMode": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.onekey.so/en/articles/11461220-passphrases-and-hidden-wallets",
+                    "explanation": "OneKey supports passphrase-based hidden wallets attachable to a secondary PIN, providing plausible deniability under coercion."
+                  }
+                }
+              ]
+            }
+          },
           "firmware": {
             "type": "FirmwareType.FAIL",
             "customFirmware": "FirmwareType.FAIL",
@@ -28303,7 +29735,9 @@
           },
           "keysHandling": null,
           "lightClient": {
-            "ethereumL1": null
+            "ethereumL1": {
+              "$ref": "notSupported"
+            }
           },
           "publicSecurityAudits": [
             {
@@ -28367,9 +29801,69 @@
             "erc7730": {
               "$ref": "notSupported"
             },
-            "erc8213": null
+            "erc8213": null,
+            "transactionSimulations": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://onekey.so/blog/ecosystem/sign-guard-by-one-key-clear-signing-preview-with-real-time-scam-detection/",
+                    "explanation": "The OneKey app simulates transactions and displays key details (methods, approval amounts, target addresses) with Blockaid-powered clear signing before signing."
+                  }
+                }
+              ]
+            }
           },
-          "userSafety": null
+          "userSafety": null,
+          "hardwareWalletSupport": {
+            "$ref": "notApplicable"
+          },
+          "scamAlerts": {
+            "contractTransactionWarning": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.onekey.so/en/articles/12058229-signguard-and-clear-signing-how-they-protect-you-from-web3-phishing-and-scams",
+                    "explanation": "SignGuard integrates GoPlus, Blockaid and ScamSniffer to warn on interaction with malicious/flagged contracts before signing."
+                  }
+                }
+              ]
+            },
+            "sendTransactionWarning": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.onekey.so/en/articles/12058229-signguard-and-clear-signing-how-they-protect-you-from-web3-phishing-and-scams",
+                    "explanation": "OneKey's SignGuard (GoPlus/Blockaid/ScamSniffer) detects hidden malicious addresses and flags suspicious approvals with risk alerts before signing."
+                  }
+                }
+              ]
+            },
+            "scamUrlWarning": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.onekey.so/en/articles/12058229-signguard-and-clear-signing-how-they-protect-you-from-web3-phishing-and-scams",
+                    "explanation": "OneKey's SignGuard integrates GoPlus/Blockaid/ScamSniffer to detect phishing sites and malicious dApps in real time with alerts before signing."
+                  }
+                }
+              ]
+            }
+          },
+          "passkeyVerification": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.onekey.so/en/articles/11461109-onekey-supports-fido-and-fido2-authentication",
+                  "explanation": "OneKey hardware wallets support FIDO and FIDO2 (WebAuthn/passkey) authentication as a security key."
+                }
+              }
+            ]
+          }
         },
         "selfSovereignty": {
           "interoperability": null,
@@ -30029,8 +31523,28 @@
               "explanation": "Phantom source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://phantom.com"
             },
-            "swapFees": null,
-            "bridgeFees": null,
+            "swapFees": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.phantom.com/hc/en-us/articles/6048249796243-How-to-swap-tokens-in-Phantom",
+                    "explanation": "Phantom's official help documentation discloses a 0.85% swap fee (shown in the fee disclosure before confirmation) on in-app swaps."
+                  }
+                }
+              ]
+            },
+            "bridgeFees": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.phantom.com/hc/en-us/articles/51384804802195-Bridge-crypto-in-Phantom",
+                    "explanation": "Phantom's cross-chain swap/bridge quote screen discloses Phantom's fee plus the bridge provider fee and network fees before the user confirms."
+                  }
+                }
+              ]
+            },
             "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
             "spreadDisclosure": {
               "$ref": "featureSupported"
@@ -30047,7 +31561,17 @@
               ]
             },
             "cardFees": "Card fees are provider-dependent where card purchase is available.",
-            "hiddenPartnerRevenue": null
+            "hiddenPartnerRevenue": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.phantom.com/hc/en-us/articles/6048249796243-How-to-swap-tokens-in-Phantom",
+                    "explanation": "Phantom transparently discloses its 0.85% platform fee and bridge/aggregator fees in-app and in help docs, so there is no evidence of undisclosed partner revenue."
+                  }
+                }
+              ]
+            }
           },
           "releaseVelocity": {
             "ref": {
@@ -31328,11 +32852,51 @@
               "explanation": "PillarX source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://pillarx.app"
             },
-            "swapFees": null,
-            "bridgeFees": null,
+            "swapFees": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.pillarx.app/",
+                    "explanation": "Neither PillarX's site, developer docs (docs.pillarx.app), nor its App Store listing disclose any fee charged on in-app swaps/Offers Engine, so the swap fee is not clearly disclosed."
+                  }
+                }
+              ]
+            },
+            "bridgeFees": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.pillarx.app/",
+                    "explanation": "PillarX offers cross-chain swaps but no official page discloses any bridging fee it charges; the docs cover only dapp development, not fees."
+                  }
+                }
+              ]
+            },
             "onRampFees": null,
-            "spreadDisclosure": null,
-            "subscriptionFeatures": null,
+            "spreadDisclosure": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://pillarx.app/",
+                    "explanation": "No PillarX page discloses any price spread or markup applied on swap quotes from its aggregator/Offers Engine."
+                  }
+                }
+              ]
+            },
+            "subscriptionFeatures": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+                    "explanation": "The App Store listing shows PillarX as free with no in-app purchases, and no site/docs material mentions any paid subscription or premium tier."
+                  }
+                }
+              ]
+            },
             "cardFees": null,
             "hiddenPartnerRevenue": null
           },
@@ -33447,13 +35011,63 @@
               "explanation": "Rabby GasAccount guide states Rabby does not charge additional fees for GasAccount and explains gas charges; Perps Fees has a dedicated support article.",
               "url": "https://support.rabby.io/hc/en-us/articles/11477594883599-How-does-Rabby-GasAccount-work"
             },
-            "swapFees": null,
-            "bridgeFees": null,
+            "swapFees": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://x.com/Rabby_io/status/1809154330622140734",
+                    "explanation": "Rabby officially announced and displays a 0.25% fee on its built-in swap, shown in the quote before execution."
+                  }
+                }
+              ]
+            },
+            "bridgeFees": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://li.fi/knowledge-hub/rabby-wallet-integrates-li-fi-to-power-bridge-feature",
+                    "explanation": "Rabby uses LI.FI bridge aggregation with a 0.25% fee, and its pre-confirmation simulation surfaces the expected fee cost before the user bridges."
+                  }
+                }
+              ]
+            },
             "onRampFees": null,
-            "spreadDisclosure": null,
-            "subscriptionFeatures": null,
+            "spreadDisclosure": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://x.com/Rabby_io/status/1809154330622140734",
+                    "explanation": "Rabby's official account announced a 0.25% built-in swap fee, and the swap flow previews the expected received amount including fee before confirmation."
+                  }
+                }
+              ]
+            },
+            "subscriptionFeatures": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://defillama.com/protocol/rabby-wallet",
+                    "explanation": "Rabby is a free wallet monetized via the 0.25% swap fee and gas top-up service fee, with no optional paid subscription or premium tier found."
+                  }
+                }
+              ]
+            },
             "cardFees": null,
-            "hiddenPartnerRevenue": null
+            "hiddenPartnerRevenue": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://x.com/Rabby_io/status/1809154330622140734",
+                    "explanation": "Rabby's fee model is transparent (explicit 0.25% swap fee disclosed publicly and in-app), with no evidence of undisclosed partner/referral markups."
+                  }
+                }
+              ]
+            }
           },
           "releaseVelocity": {
             "ref": {
@@ -34897,13 +36511,63 @@
               "explanation": "Rainbow source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://rainbow.me"
             },
-            "swapFees": null,
-            "bridgeFees": null,
+            "swapFees": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://rainbow.me/en/support/app/bridge-and-swap-tokens",
+                    "explanation": "Rainbow's support page states the \"Rainbow Fee\" (the percentage/amount Rainbow applies) is always visible on the review screen before swapping."
+                  }
+                }
+              ]
+            },
+            "bridgeFees": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://rainbow.me/en/support/app/bridge-and-swap-tokens",
+                    "explanation": "The same Bridge and Swap support page discloses that the Rainbow Fee is shown on the review screen for both bridging and swapping transactions."
+                  }
+                }
+              ]
+            },
             "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
-            "spreadDisclosure": null,
-            "subscriptionFeatures": null,
+            "spreadDisclosure": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://rainbow.me/support/app/bridge-and-swap-tokens",
+                    "explanation": "Rainbow's official support page states the Rainbow Fee is always visible on the review page before confirming a swap."
+                  }
+                }
+              ]
+            },
+            "subscriptionFeatures": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://learn.rainbow.me/swap-with-confidence-with-rainbow",
+                    "explanation": "Rainbow is a free wallet with no paid subscription or premium tier; only network gas and disclosed swap fees apply."
+                  }
+                }
+              ]
+            },
             "cardFees": "Card fees are provider-dependent where card purchase is available.",
-            "hiddenPartnerRevenue": null
+            "hiddenPartnerRevenue": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://rainbow.me/en/support/app/bridge-and-swap-tokens",
+                    "explanation": "Rainbow presents its fee transparently as a visible \"Rainbow Fee\" line item on the review screen, with no evidence of undisclosed partner/referral markup."
+                  }
+                }
+              ]
+            }
           },
           "releaseVelocity": {
             "ref": {
@@ -36533,13 +38197,63 @@
               "explanation": "Safe source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://safe.global"
             },
-            "swapFees": null,
-            "bridgeFees": null,
+            "swapFees": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.safe.global/en/articles/178530-how-does-the-widget-fee-work-for-native-swaps",
+                    "explanation": "Safe{Wallet} help center discloses tiered native-swap widget fees (0.70% down to 0.1% for general pairs, 0.15%-0.05% for stablecoins) and states the fee percentage is always visible in the interface with a breakdown before approval."
+                  }
+                }
+              ]
+            },
+            "bridgeFees": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.safe.global/en/articles/310879-how-does-the-widget-fee-work-for-native-bridge-transactions",
+                    "explanation": "Safe's native-bridge widget fee article discloses that the exact fee percentage is always known and displayed before confirming (e.g. a 0.1% widget fee = 1 USDT on a 1,000 USDT bridge)."
+                  }
+                }
+              ]
+            },
             "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
-            "spreadDisclosure": null,
-            "subscriptionFeatures": null,
+            "spreadDisclosure": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.safe.global/en/articles/178530-how-does-the-widget-fee-work-for-native-swaps",
+                    "explanation": "The swap fee article discloses the pricing mechanics including price improvement/surplus (extra found by CoW Protocol is split between trader and protocol) and that network/liquidity-pool costs apply, rather than applying an undisclosed markup."
+                  }
+                }
+              ]
+            },
+            "subscriptionFeatures": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://milkroad.com/reviews/safe-wallet/",
+                    "explanation": "Safe Wallet is free for core functionality (signer management, transaction proposal/execution) and does not charge for wallet use per the reviewed pricing."
+                  }
+                }
+              ]
+            },
             "cardFees": "Card fees are provider-dependent where card purchase is available.",
-            "hiddenPartnerRevenue": null
+            "hiddenPartnerRevenue": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.safe.global/en/articles/310879-how-does-the-widget-fee-work-for-native-bridge-transactions",
+                    "explanation": "Fee revenue is transparently documented: the widget fee is paid to CoW Swap/LiFi with a portion going to the Safe Foundation as a license fee, and percentages are shown to the user, so there is no undisclosed partner/referral revenue."
+                  }
+                }
+              ]
+            }
           },
           "releaseVelocity": {
             "ref": {
@@ -36811,11 +38525,33 @@
               }
             ]
           },
-          "duressResistance": null,
+          "duressResistance": {
+            "duressMode": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://blog.trezor.io/passphrase-the-ultimate-protection-for-your-accounts-3a311990925b",
+                    "explanation": "SatoshiLabs' official Trezor blog names plausible deniability as a benefit of the passphrase/hidden-wallet feature, describing revealing a decoy wallet under coercion."
+                  }
+                }
+              ]
+            }
+          },
           "firmware": null,
           "keysHandling": null,
           "lightClient": {
-            "ethereumL1": null
+            "ethereumL1": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://trezor.io/learn/supported-assets/ethereum-layer-2-EVM/ethereum-erc-20-tokens-on-trezor",
+                    "explanation": "Trezor Suite relies on backend/RPC data rather than an embedded trust-minimized Ethereum L1 light client to verify state."
+                  }
+                }
+              ]
+            }
           },
           "publicSecurityAudits": null,
           "secureElement": {
@@ -36861,9 +38597,69 @@
             "erc7730": {
               "$ref": "notSupported"
             },
-            "erc8213": null
+            "erc8213": null,
+            "transactionSimulations": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://trezor.io/learn/supported-assets/ethereum-layer-2-EVM/ethereum-erc-20-tokens-on-trezor",
+                    "explanation": "Trezor Suite has users review raw transaction/EIP-712 data on the device but does not simulate net balance changes before signing."
+                  }
+                }
+              ]
+            }
           },
-          "userSafety": null
+          "userSafety": null,
+          "hardwareWalletSupport": {
+            "$ref": "notApplicable"
+          },
+          "scamAlerts": {
+            "sendTransactionWarning": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://trezor.io/support/troubleshooting/coins-tokens/address-poisoning-attacks",
+                    "explanation": "Trezor Suite detects address-poisoning and airdrop scam tokens, blurring them and labeling transactions as unverified/phishing."
+                  }
+                }
+              ]
+            },
+            "contractTransactionWarning": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://trezor.io/support/troubleshooting/coins-tokens/malicious-smart-contracts",
+                    "explanation": "Trezor's guidance directs users to external tools like Etherscan's token approval checker and offers no built-in flagged/malicious-contract warning before signing."
+                  }
+                }
+              ]
+            },
+            "scamUrlWarning": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://trezor.io/guides/trezor-suite/wallet-connect-in-trezor-suite",
+                    "explanation": "Trezor Suite's WalletConnect integration warns when a dApp is unverified or flagged as dangerous before the user connects/signs."
+                  }
+                }
+              ]
+            }
+          },
+          "passkeyVerification": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trezor.io/guides/bonus-tools/using-your-trezor-as-a-security-key-fido-2-and-u2f",
+                  "explanation": "Trezor Model T and Safe family devices work as FIDO2/passkey security keys for phishing-resistant 2FA and passwordless login."
+                }
+              }
+            ]
+          }
         },
         "selfSovereignty": {
           "interoperability": null,
@@ -38298,13 +40094,43 @@
               "explanation": "Trust Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://trustwallet.com/"
             },
-            "swapFees": null,
-            "bridgeFees": null,
+            "swapFees": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://chaincost.app/guides/trust-wallet-fees/",
+                    "explanation": "Trust Wallet publicly markets swaps as having no wallet fee (only DEX spread ~0.5-1% baked into the rate), yet its Premium program offers 'swap fee discounts,' so the actual wallet swap fee is not clearly disclosed as a stated percentage."
+                  }
+                }
+              ]
+            },
+            "bridgeFees": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://trustwallet.com/blog/guides/how-to-bridge-to-bnb-chain-using-trust-wallet",
+                    "explanation": "Trust Wallet's official bridging guide instructs users to review the fees associated with the transaction before confirming."
+                  }
+                }
+              ]
+            },
             "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
             "spreadDisclosure": {
               "$ref": "featureSupported"
             },
-            "subscriptionFeatures": null,
+            "subscriptionFeatures": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://trustwallet.com/blog/announcements/introducing-trust-premium",
+                    "explanation": "Trust Premium is a free loyalty/rewards program that explicitly states 'There are no subscriptions or hidden fees,' so there is no optional paid subscription or premium paid tier."
+                  }
+                }
+              ]
+            },
             "cardFees": "Card fees are provider-dependent where card purchase is available.",
             "hiddenPartnerRevenue": null
           },
@@ -39846,10 +41672,40 @@
             "swapFees": "Uniswap Wallet advertises zero app fees on the official wallet page.",
             "bridgeFees": "Crosschain swaps include Across bridging fees and network costs, reflected in the quote before confirmation.",
             "onRampFees": null,
-            "spreadDisclosure": null,
-            "subscriptionFeatures": null,
+            "spreadDisclosure": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.uniswap.org/hc/en-us/articles/20131678274957-What-are-Uniswap-Labs-fees",
+                    "explanation": "Uniswap Labs publishes a dedicated support page disclosing its swap/interface fee and shows any applicable fee in the in-app swap detail section (paid in the output token), so the fee/markup is clearly disclosed."
+                  }
+                }
+              ]
+            },
+            "subscriptionFeatures": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.uniswap.org/hc/en-us/categories/5685161551629-General",
+                    "explanation": "Uniswap Wallet is a free non-custodial app (iOS, Android, browser extension) with no advertised optional paid subscription or premium tier."
+                  }
+                }
+              ]
+            },
             "cardFees": null,
-            "hiddenPartnerRevenue": null
+            "hiddenPartnerRevenue": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.uniswap.org/hc/en-us/articles/20131678274957-What-are-Uniswap-Labs-fees",
+                    "explanation": "Uniswap's fee model is transparent (Labs fee documented and shown in the swap detail section, plus disclosed protocol/LP fee tiers), with no evidence of undisclosed partner/referral markup."
+                  }
+                }
+              ]
+            }
           },
           "releaseVelocity": {
             "ref": {
@@ -41403,13 +43259,63 @@
               "explanation": "Zerion source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://zerion.io"
             },
-            "swapFees": null,
-            "bridgeFees": null,
+            "swapFees": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.zerion.io/en/articles/4813752-understanding-fees-on-zerion",
+                    "explanation": "Zerion's official help center 'Understanding Fees on Zerion' page discloses a 0.67% service fee applied to in-app swaps."
+                  }
+                }
+              ]
+            },
+            "bridgeFees": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://zerion.io/blog/zerion-fee-update-for-bridge/",
+                    "explanation": "Zerion discloses its bridge fee in the help center and blog (e.g., 0.8% bridge fee announced in the Zerion Fee Update for Bridge)."
+                  }
+                }
+              ]
+            },
             "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
-            "spreadDisclosure": null,
-            "subscriptionFeatures": null,
+            "spreadDisclosure": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.zerion.io/en/articles/4813752-understanding-fees-on-zerion",
+                    "explanation": "Zerion's official help center discloses a 0.67% service fee on swaps and states there are no hidden fees, with network and exchange fees also disclosed."
+                  }
+                }
+              ]
+            },
+            "subscriptionFeatures": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://zerion.io/premium",
+                    "explanation": "Zerion offers a paid Premium subscription (~$99/year) providing advanced analytics and reduced trading/bridging fees."
+                  }
+                }
+              ]
+            },
             "cardFees": "Card fees are provider-dependent where card purchase is available.",
-            "hiddenPartnerRevenue": null
+            "hiddenPartnerRevenue": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.zerion.io/en/articles/4813752-understanding-fees-on-zerion",
+                    "explanation": "Zerion transparently publishes its swap (0.67%) and bridge (0.8%) service fees on its official help center, indicating a disclosed rather than hidden revenue model."
+                  }
+                }
+              ]
+            }
           },
           "releaseVelocity": {
             "ref": {
@@ -42855,13 +44761,63 @@
               "explanation": "ZEUS docs say ZEUS has no processing fees.",
               "url": "https://docs.zeusln.app/"
             },
-            "swapFees": null,
-            "bridgeFees": null,
+            "swapFees": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/greekfetacheese/zeus",
+                    "explanation": "Zeus is an open-source self-custodial wallet that routes swaps directly through Uniswap's Universal Router with no wallet-level swap fee documented and no fees page disclosing one."
+                  }
+                }
+              ]
+            },
+            "bridgeFees": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/greekfetacheese/zeus",
+                    "explanation": "Bridging is done directly via the Across protocol with no wallet-level bridge fee documented or disclosed in the repository."
+                  }
+                }
+              ]
+            },
             "onRampFees": null,
-            "spreadDisclosure": null,
-            "subscriptionFeatures": null,
+            "spreadDisclosure": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/greekfetacheese/zeus",
+                    "explanation": "The wallet uses on-chain Uniswap quotes directly and there is no disclosed price spread or markup applied to quotes."
+                  }
+                }
+              ]
+            },
+            "subscriptionFeatures": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/greekfetacheese/zeus",
+                    "explanation": "Zeus is a free MIT-licensed open-source wallet with no optional paid subscription or premium tier offered."
+                  }
+                }
+              ]
+            },
             "cardFees": null,
-            "hiddenPartnerRevenue": null
+            "hiddenPartnerRevenue": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/greekfetacheese/zeus",
+                    "explanation": "The open-source code routes swaps/bridges directly to Uniswap and Across with no referral/partner code documented, showing no evidence of undisclosed partner revenue."
+                  }
+                }
+              ]
+            }
           },
           "releaseVelocity": {
             "ref": {

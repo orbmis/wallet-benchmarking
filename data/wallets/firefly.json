@@ -123,11 +123,33 @@
         "bugBountyProgram": {
           "$ref": "notSupported"
         },
-        "duressResistance": null,
+        "duressResistance": {
+          "duressMode": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/firefly/wallet",
+                  "explanation": "Firefly's repository and documentation contain no mention of a duress mode, decoy PIN, or passphrase-derived hidden wallet."
+                }
+              }
+            ]
+          }
+        },
         "firmware": null,
         "keysHandling": null,
         "lightClient": {
-          "ethereumL1": null
+          "ethereumL1": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://firefly.city",
+                  "explanation": "Firefly is an offline air-gapped signer that relies on the paired browser/phone for network data and has no trust-minimized L1 light client."
+                }
+              }
+            ]
+          }
         },
         "publicSecurityAudits": null,
         "secureElement": null,
@@ -145,9 +167,69 @@
           "erc7730": {
             "$ref": "notSupported"
           },
-          "erc8213": null
+          "erc8213": null,
+          "transactionSimulations": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/firefly/wallet",
+                  "explanation": "The Firefly DIY wallet displays only raw transaction parameters on its OLED screen; no transaction simulation or balance-change preview is documented."
+                }
+              }
+            ]
+          }
         },
-        "userSafety": null
+        "userSafety": null,
+        "hardwareWalletSupport": {
+          "$ref": "notApplicable"
+        },
+        "passkeyVerification": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://firefly.city",
+                "explanation": "Firefly is an air-gapped Ethereum signing device with no documented passkey/WebAuthn/FIDO verification factor."
+              }
+            }
+          ]
+        },
+        "scamAlerts": {
+          "contractTransactionWarning": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://hackaday.io/project/146319-firefly-hardware-wallet",
+                  "explanation": "Firefly is a minimal DIY air-gapped Ethereum signer; its documented feature set (multi-sig, offline signing, recovery) includes no malicious-contract registry or blocklist."
+                }
+              }
+            ]
+          },
+          "sendTransactionWarning": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://hackaday.io/project/146319-firefly-hardware-wallet",
+                  "explanation": "Firefly's documented features cover multi-sig, offline signing and recovery only; no flagged-address blacklist or address-poisoning detection is described."
+                }
+              }
+            ]
+          },
+          "scamUrlWarning": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://hackaday.io/project/146319-firefly-hardware-wallet",
+                  "explanation": "Firefly is a bare DIY signer with no network connectivity or companion app implementing URL scanning."
+                }
+              }
+            ]
+          }
+        }
       },
       "selfSovereignty": {
         "interoperability": null

@@ -1543,13 +1543,63 @@
             "explanation": "Safe source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://safe.global"
           },
-          "swapFees": null,
-          "bridgeFees": null,
+          "swapFees": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.safe.global/en/articles/178530-how-does-the-widget-fee-work-for-native-swaps",
+                  "explanation": "Safe{Wallet} help center discloses tiered native-swap widget fees (0.70% down to 0.1% for general pairs, 0.15%-0.05% for stablecoins) and states the fee percentage is always visible in the interface with a breakdown before approval."
+                }
+              }
+            ]
+          },
+          "bridgeFees": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.safe.global/en/articles/310879-how-does-the-widget-fee-work-for-native-bridge-transactions",
+                  "explanation": "Safe's native-bridge widget fee article discloses that the exact fee percentage is always known and displayed before confirming (e.g. a 0.1% widget fee = 1 USDT on a 1,000 USDT bridge)."
+                }
+              }
+            ]
+          },
           "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
-          "spreadDisclosure": null,
-          "subscriptionFeatures": null,
+          "spreadDisclosure": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.safe.global/en/articles/178530-how-does-the-widget-fee-work-for-native-swaps",
+                  "explanation": "The swap fee article discloses the pricing mechanics including price improvement/surplus (extra found by CoW Protocol is split between trader and protocol) and that network/liquidity-pool costs apply, rather than applying an undisclosed markup."
+                }
+              }
+            ]
+          },
+          "subscriptionFeatures": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://milkroad.com/reviews/safe-wallet/",
+                  "explanation": "Safe Wallet is free for core functionality (signer management, transaction proposal/execution) and does not charge for wallet use per the reviewed pricing."
+                }
+              }
+            ]
+          },
           "cardFees": "Card fees are provider-dependent where card purchase is available.",
-          "hiddenPartnerRevenue": null
+          "hiddenPartnerRevenue": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.safe.global/en/articles/310879-how-does-the-widget-fee-work-for-native-bridge-transactions",
+                  "explanation": "Fee revenue is transparently documented: the widget fee is paid to CoW Swap/LiFi with a portion going to the Safe Foundation as a license fee, and percentages are shown to the user, so there is no undisclosed partner/referral revenue."
+                }
+              }
+            ]
+          }
         },
         "releaseVelocity": {
           "ref": {

@@ -1473,11 +1473,51 @@
             "explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://daimo.com"
           },
-          "swapFees": null,
-          "bridgeFees": null,
+          "swapFees": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://beta.walletbeat.eth.limo/daimo/",
+                  "explanation": "Daimo (Daimo Pay) explicitly hides swap costs for a clean checkout and publishes no consumer-facing swap-fee disclosure; Walletbeat rates its fee transparency as unrated/unknown."
+                }
+              }
+            ]
+          },
+          "bridgeFees": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://beta.walletbeat.eth.limo/daimo/",
+                  "explanation": "Daimo states swaps, bridges, and gas are hidden from users for a clean checkout and discloses no explicit bridging fee to the user."
+                }
+              }
+            ]
+          },
           "onRampFees": null,
-          "spreadDisclosure": null,
-          "subscriptionFeatures": null,
+          "spreadDisclosure": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://beta.walletbeat.eth.limo/daimo/",
+                  "explanation": "No spread/markup disclosure is provided; the docs and site describe fees as hidden rather than showing any quote markup, and Walletbeat lists fee transparency as unrated."
+                }
+              }
+            ]
+          },
+          "subscriptionFeatures": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.daimo.com/",
+                  "explanation": "No paid subscription or premium tier is offered on Daimo's site or docs; it is a per-transaction ramp/payment product with no subscription features."
+                }
+              }
+            ]
+          },
           "cardFees": null,
           "hiddenPartnerRevenue": null
         },

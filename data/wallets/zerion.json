@@ -1507,13 +1507,63 @@
             "explanation": "Zerion source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://zerion.io"
           },
-          "swapFees": null,
-          "bridgeFees": null,
+          "swapFees": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.zerion.io/en/articles/4813752-understanding-fees-on-zerion",
+                  "explanation": "Zerion's official help center 'Understanding Fees on Zerion' page discloses a 0.67% service fee applied to in-app swaps."
+                }
+              }
+            ]
+          },
+          "bridgeFees": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://zerion.io/blog/zerion-fee-update-for-bridge/",
+                  "explanation": "Zerion discloses its bridge fee in the help center and blog (e.g., 0.8% bridge fee announced in the Zerion Fee Update for Bridge)."
+                }
+              }
+            ]
+          },
           "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
-          "spreadDisclosure": null,
-          "subscriptionFeatures": null,
+          "spreadDisclosure": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.zerion.io/en/articles/4813752-understanding-fees-on-zerion",
+                  "explanation": "Zerion's official help center discloses a 0.67% service fee on swaps and states there are no hidden fees, with network and exchange fees also disclosed."
+                }
+              }
+            ]
+          },
+          "subscriptionFeatures": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://zerion.io/premium",
+                  "explanation": "Zerion offers a paid Premium subscription (~$99/year) providing advanced analytics and reduced trading/bridging fees."
+                }
+              }
+            ]
+          },
           "cardFees": "Card fees are provider-dependent where card purchase is available.",
-          "hiddenPartnerRevenue": null
+          "hiddenPartnerRevenue": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.zerion.io/en/articles/4813752-understanding-fees-on-zerion",
+                  "explanation": "Zerion transparently publishes its swap (0.67%) and bridge (0.8%) service fees on its official help center, indicating a disclosed rather than hidden revenue model."
+                }
+              }
+            ]
+          }
         },
         "releaseVelocity": {
           "ref": {

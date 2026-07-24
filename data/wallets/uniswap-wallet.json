@@ -1473,10 +1473,40 @@
           "swapFees": "Uniswap Wallet advertises zero app fees on the official wallet page.",
           "bridgeFees": "Crosschain swaps include Across bridging fees and network costs, reflected in the quote before confirmation.",
           "onRampFees": null,
-          "spreadDisclosure": null,
-          "subscriptionFeatures": null,
+          "spreadDisclosure": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.uniswap.org/hc/en-us/articles/20131678274957-What-are-Uniswap-Labs-fees",
+                  "explanation": "Uniswap Labs publishes a dedicated support page disclosing its swap/interface fee and shows any applicable fee in the in-app swap detail section (paid in the output token), so the fee/markup is clearly disclosed."
+                }
+              }
+            ]
+          },
+          "subscriptionFeatures": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.uniswap.org/hc/en-us/categories/5685161551629-General",
+                  "explanation": "Uniswap Wallet is a free non-custodial app (iOS, Android, browser extension) with no advertised optional paid subscription or premium tier."
+                }
+              }
+            ]
+          },
           "cardFees": null,
-          "hiddenPartnerRevenue": null
+          "hiddenPartnerRevenue": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.uniswap.org/hc/en-us/articles/20131678274957-What-are-Uniswap-Labs-fees",
+                  "explanation": "Uniswap's fee model is transparent (Labs fee documented and shown in the swap detail section, plus disclosed protocol/LP fee tiers), with no evidence of undisclosed partner/referral markup."
+                }
+              }
+            ]
+          }
         },
         "releaseVelocity": {
           "ref": {

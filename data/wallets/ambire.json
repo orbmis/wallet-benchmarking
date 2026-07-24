@@ -1997,10 +1997,40 @@
           "swapFees": "Built-in swap and bridge has a flat 0.25% fee.",
           "bridgeFees": "Built-in swap and bridge has a flat 0.25% fee.",
           "onRampFees": null,
-          "spreadDisclosure": null,
-          "subscriptionFeatures": null,
+          "spreadDisclosure": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.ambire.com/swap-bridge-fee-increase/",
+                  "explanation": "Ambire publicly discloses a 0.5% swap and bridge fee and states wallet fees are made transparent to the user before confirmation."
+                }
+              }
+            ]
+          },
+          "subscriptionFeatures": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.ambire.com/reduce-swap-bridge-fees-proposal/",
+                  "explanation": "Ambire has no optional paid subscription or premium tier; fee reductions are tied to holding/staking $WALLET tokens rather than a paid subscription product."
+                }
+              }
+            ]
+          },
           "cardFees": null,
-          "hiddenPartnerRevenue": null
+          "hiddenPartnerRevenue": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.ambire.com/swap-bridge-fee-increase/",
+                  "explanation": "Ambire's fee model is transparent, disclosing a flat swap/bridge fee with 100% of revenue used for $WALLET buybacks, with no evidence of undisclosed partner/referral markup."
+                }
+              }
+            ]
+          }
         },
         "releaseVelocity": {
           "ref": {

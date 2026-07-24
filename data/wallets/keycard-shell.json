@@ -153,7 +153,17 @@
       "profile": "WalletProfile.GENERIC",
       "security": {
         "accountRecovery": null,
-        "bugBountyProgram": null,
+        "bugBountyProgram": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://docs.keycard.tech/en/about",
+                "explanation": "Keycard's About page links a 'Security & vulnerability disclosure (IFT)' program run under the Institute of Free Technology, which operates a HackenProof bug bounty covering its projects."
+              }
+            }
+          ]
+        },
         "duressResistance": {
           "basicUnlock": {
             "ref": [
@@ -209,7 +219,17 @@
           "multipartyKeyReconstruction": "MultiPartyKeyReconstruction.NON_MULTIPARTY"
         },
         "lightClient": {
-          "ethereumL1": null
+          "ethereumL1": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://keycard.tech/pages/keycard-shell",
+                  "explanation": "As an offline air-gapped signer with no companion app, Keycard Shell provides no Ethereum L1 light-client verification and relies on the connected software wallet's RPC."
+                }
+              }
+            ]
+          }
         },
         "publicSecurityAudits": null,
         "secureElement": {
@@ -281,9 +301,69 @@
               }
             ]
           },
-          "erc8213": null
+          "erc8213": null,
+          "transactionSimulations": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/keycard-tech/keycard-shell",
+                  "explanation": "Keycard Shell shows transaction details for verification on-device but does not simulate net balance changes, and it has no companion app providing simulation."
+                }
+              }
+            ]
+          }
         },
-        "userSafety": null
+        "userSafety": null,
+        "hardwareWalletSupport": {
+          "$ref": "notApplicable"
+        },
+        "scamAlerts": {
+          "scamUrlWarning": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.keycard.tech/en/about",
+                  "explanation": "Keycard Shell has no companion app and its docs/security pages describe only air-gapped signing and blind-signing minimization, with no known-malicious/phishing URL warning feature."
+                }
+              }
+            ]
+          },
+          "sendTransactionWarning": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.keycard.tech/en/about",
+                  "explanation": "The device offers on-screen transaction verification but no documented risky-send/address-poisoning warnings, and it has no companion app to provide them."
+                }
+              }
+            ]
+          },
+          "contractTransactionWarning": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.keycard.tech/en/about",
+                  "explanation": "No malicious/flagged-contract warning feature is documented for Keycard Shell, which relies on third-party wallets for such checks and only aims to 'minimize blind signing'."
+                }
+              }
+            ]
+          }
+        },
+        "passkeyVerification": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://docs.keycard.tech/en/about",
+                "explanation": "Neither Keycard's security/about pages nor its GitHub repo mention passkey/WebAuthn/FIDO verification; the device uses PIN plus secure-element key storage."
+              }
+            }
+          ]
+        }
       },
       "selfSovereignty": {
         "interoperability": {

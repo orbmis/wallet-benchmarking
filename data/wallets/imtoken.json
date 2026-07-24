@@ -1322,13 +1322,53 @@
             "explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://token.im"
           },
-          "swapFees": null,
-          "bridgeFees": null,
+          "swapFees": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.tokenlon.im/hc/en-us/articles/360037260272-Tokenlon-Fees",
+                  "explanation": "imToken's in-app swaps run through Tokenlon, whose published fees page discloses a 0.3% trade fee (0.04% for stablecoins, tiered down to 0.10%)."
+                }
+              }
+            ]
+          },
+          "bridgeFees": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/7539476790681-Token-bridging-across-different-blockchains-with-Celer-cBridge",
+                  "explanation": "imToken's help center documents cross-chain bridging via Celer cBridge (0%–0.04%) and other bridges with their fee structures explained per protocol."
+                }
+              }
+            ]
+          },
           "onRampFees": null,
           "spreadDisclosure": null,
-          "subscriptionFeatures": null,
+          "subscriptionFeatures": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://token.im/",
+                  "explanation": "imToken is a free wallet with no paid subscription or premium tier; reviews and its site indicate no subscription requirement or premium features."
+                }
+              }
+            ]
+          },
           "cardFees": null,
-          "hiddenPartnerRevenue": null
+          "hiddenPartnerRevenue": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.tokenlon.im/hc/en-us/articles/360037260272-Tokenlon-Fees",
+                  "explanation": "imToken's swap fee model is transparently published via Tokenlon's public fees page and its help center, with no evidence of undisclosed partner/referral markups."
+                }
+              }
+            ]
+          }
         },
         "releaseVelocity": {
           "ref": {

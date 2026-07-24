@@ -1253,13 +1253,63 @@
             "explanation": "Family source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://family.co"
           },
-          "swapFees": null,
-          "bridgeFees": null,
+          "swapFees": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/faqs",
+                  "explanation": "Family's FAQ states it \"does not charge any additional fees for using the wallet\" and the swap-tokens support page only says users see \"fees\" without disclosing any specific swap-fee amount or percentage."
+                }
+              }
+            ]
+          },
+          "bridgeFees": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/faqs",
+                  "explanation": "Family discloses no bridge/refuel fee; its FAQ states only network fees apply and no in-app bridge fee is published on its support pages."
+                }
+              }
+            ]
+          },
           "onRampFees": null,
-          "spreadDisclosure": null,
-          "subscriptionFeatures": null,
+          "spreadDisclosure": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/faqs",
+                  "explanation": "Family's FAQ states it charges no additional wallet fees and shows estimated fees before confirmation, but does not disclose any platform spread or markup percentage."
+                }
+              }
+            ]
+          },
+          "subscriptionFeatures": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/faqs",
+                  "explanation": "Family is offered as a free non-custodial wallet with no paid subscription or premium tier disclosed on its site, FAQ, or App Store listing."
+                }
+              }
+            ]
+          },
           "cardFees": null,
-          "hiddenPartnerRevenue": null
+          "hiddenPartnerRevenue": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/faqs",
+                  "explanation": "Family publicly states it charges no additional wallet fees and sources best prices from various exchanges, with no evidence of undisclosed partner/referral markup on swaps or ramps."
+                }
+              }
+            ]
+          }
         },
         "releaseVelocity": {
           "ref": {

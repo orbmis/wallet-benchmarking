@@ -1368,13 +1368,63 @@
             "explanation": "Rainbow source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://rainbow.me"
           },
-          "swapFees": null,
-          "bridgeFees": null,
+          "swapFees": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbow.me/en/support/app/bridge-and-swap-tokens",
+                  "explanation": "Rainbow's support page states the \"Rainbow Fee\" (the percentage/amount Rainbow applies) is always visible on the review screen before swapping."
+                }
+              }
+            ]
+          },
+          "bridgeFees": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbow.me/en/support/app/bridge-and-swap-tokens",
+                  "explanation": "The same Bridge and Swap support page discloses that the Rainbow Fee is shown on the review screen for both bridging and swapping transactions."
+                }
+              }
+            ]
+          },
           "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
-          "spreadDisclosure": null,
-          "subscriptionFeatures": null,
+          "spreadDisclosure": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbow.me/support/app/bridge-and-swap-tokens",
+                  "explanation": "Rainbow's official support page states the Rainbow Fee is always visible on the review page before confirming a swap."
+                }
+              }
+            ]
+          },
+          "subscriptionFeatures": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://learn.rainbow.me/swap-with-confidence-with-rainbow",
+                  "explanation": "Rainbow is a free wallet with no paid subscription or premium tier; only network gas and disclosed swap fees apply."
+                }
+              }
+            ]
+          },
           "cardFees": "Card fees are provider-dependent where card purchase is available.",
-          "hiddenPartnerRevenue": null
+          "hiddenPartnerRevenue": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbow.me/en/support/app/bridge-and-swap-tokens",
+                  "explanation": "Rainbow presents its fee transparently as a visible \"Rainbow Fee\" line item on the review screen, with no evidence of undisclosed partner/referral markup."
+                }
+              }
+            ]
+          }
         },
         "releaseVelocity": {
           "ref": {

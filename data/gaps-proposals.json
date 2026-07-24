@@ -1,812 +1,1646 @@
 {
   "proposals": [
     {
-      "walletId": "ambire",
-      "metricKey": "rampBuy",
-      "path": "product.fiatRamps.buyCrypto",
-      "decision": "yes",
-      "citationUrl": "https://blog.ambire.com/moonpay-integration-released-seamlessly-on-off-ramp-solution-for-ambire/",
-      "explanation": "Ambire offers in-app fiat-to-crypto buying via integrated providers (Ramp Network, Transak, MoonPay, Guardarian) from the wallet's Deposit tab."
-    },
-    {
-      "walletId": "ambire",
-      "metricKey": "rampSell",
-      "path": "product.fiatRamps.sellCrypto",
-      "decision": "yes",
-      "citationUrl": "https://blog.ambire.com/ambire-releases-fiat-off-ramp-feature-becoming-your-true-one-stop-shop-for-crypto/",
-      "explanation": "Ambire released an in-app fiat off-ramp (via Guardarian and MoonPay) letting users sell crypto and receive cash directly to their bank account."
-    },
-    {
-      "walletId": "ambire",
-      "metricKey": "rampCard",
-      "path": "product.fiatRamps.card",
-      "decision": "yes",
-      "citationUrl": "https://blog.ambire.com/moonpay-integration-released-seamlessly-on-off-ramp-solution-for-ambire/",
-      "explanation": "The MoonPay integration supports credit/debit cards (Visa, Mastercard) for buying crypto in-app, and Transak supports card purchases too."
-    },
-    {
-      "walletId": "ambire",
-      "metricKey": "rampApple",
-      "path": "product.fiatRamps.applePay",
-      "decision": "yes",
-      "citationUrl": "https://blog.ambire.com/moonpay-integration-released-seamlessly-on-off-ramp-solution-for-ambire/",
-      "explanation": "The MoonPay integration in Ambire explicitly supports Apple Pay as a payment method for buying crypto."
-    },
-    {
-      "walletId": "ambire",
-      "metricKey": "rampGoogle",
-      "path": "product.fiatRamps.googlePay",
-      "decision": "yes",
-      "citationUrl": "https://blog.ambire.com/moonpay-integration-released-seamlessly-on-off-ramp-solution-for-ambire/",
-      "explanation": "The MoonPay integration in Ambire explicitly supports Google Pay as a payment method for buying crypto."
-    },
-    {
-      "walletId": "ambire",
-      "metricKey": "rampBank",
-      "path": "product.fiatRamps.bankTransfer",
-      "decision": "yes",
-      "citationUrl": "https://blog.ambire.com/moonpay-integration-released-seamlessly-on-off-ramp-solution-for-ambire/",
-      "explanation": "Ambire's ramps support bank transfer methods (SEPA, ACH, wire) via MoonPay and Guardarian for both on- and off-ramping."
-    },
-    {
-      "walletId": "argent",
-      "metricKey": "rampApple",
-      "path": "product.fiatRamps.applePay",
-      "decision": "yes",
-      "citationUrl": "https://www.ready.co/learn/ready-how-to-fund-tutorial",
-      "explanation": "Ready lets users buy crypto via Ramp or Banxa using Apple Pay, per its funding tutorial and Card FAQs."
-    },
-    {
-      "walletId": "argent",
-      "metricKey": "rampGoogle",
-      "path": "product.fiatRamps.googlePay",
-      "decision": "yes",
-      "citationUrl": "https://www.ready.co/learn/ready-how-to-fund-tutorial",
-      "explanation": "Ready's integrated Ramp/Banxa on-ramp supports Google Pay as a payment method for buying crypto."
-    },
-    {
-      "walletId": "argent",
-      "metricKey": "rampBank",
-      "path": "product.fiatRamps.bankTransfer",
-      "decision": "yes",
-      "citationUrl": "https://www.ready.co/learn/ready-how-to-fund-tutorial",
-      "explanation": "Ready supports bank transfer for buying/funding crypto via Banxa/Ramp (also virtual bank details for USDC deposits)."
-    },
-    {
-      "walletId": "argent",
-      "metricKey": "defiRewards",
-      "path": "product.defiPositionAwareness.claimableRewards",
-      "decision": "yes",
-      "citationUrl": "https://www.ready.co/blog/strk-staking",
-      "explanation": "Ready displays accumulated/claimable staking rewards and lets users claim them directly in the app."
-    },
-    {
-      "walletId": "base-app",
-      "metricKey": "rampCard",
-      "path": "product.fiatRamps.card",
-      "decision": "yes",
-      "citationUrl": "https://docs.cdp.coinbase.com/onramp/coinbase-hosted-onramp/overview",
-      "explanation": "Base App buys crypto via integrated Coinbase Onramp, which supports debit card payments (guest checkout with debit card is explicitly available)."
-    },
-    {
-      "walletId": "base-app",
-      "metricKey": "rampApple",
-      "path": "product.fiatRamps.applePay",
-      "decision": "yes",
-      "citationUrl": "https://docs.cdp.coinbase.com/onramp/coinbase-hosted-onramp/overview",
-      "explanation": "Base App announced buying crypto with Apple Pay, and Coinbase Onramp (its integrated ramp) lists Apple Pay as a supported payment method."
-    },
-    {
-      "walletId": "base-app",
-      "metricKey": "rampGoogle",
-      "path": "product.fiatRamps.googlePay",
-      "decision": "yes",
-      "citationUrl": "https://docs.cdp.coinbase.com/onramp/coinbase-hosted-onramp/overview",
-      "explanation": "Coinbase Onramp, the ramp integrated into Base App, lists Google Pay as a supported payment method."
-    },
-    {
-      "walletId": "base-app",
-      "metricKey": "rampBank",
-      "path": "product.fiatRamps.bankTransfer",
-      "decision": "yes",
-      "citationUrl": "https://docs.cdp.coinbase.com/onramp/coinbase-hosted-onramp/overview",
-      "explanation": "Coinbase Onramp supports funding from a linked bank account (ACH), available in-app when a Coinbase account is connected."
-    },
-    {
-      "walletId": "base-app",
-      "metricKey": "pfWatchOnly",
-      "path": "product.portfolioManagement.watchOnlyWallets",
+      "walletId": "daimo",
+      "metricKey": "feeSwap",
+      "path": "product.pricingFeeModel.swapFees",
       "decision": "no",
-      "citationUrl": "https://cointelegraph.com/news/coinbase-unified-onchain-monitoring-new-wallet-app",
-      "explanation": "Base App/Coinbase Wallet aggregates multiple wallets by connecting self-custodial wallets via WalletConnect (wallets the user controls), with no documented ability to add public addresses you do not hold keys for as watch-only."
-    },
-    {
-      "walletId": "brave-wallet",
-      "metricKey": "rampCard",
-      "path": "product.fiatRamps.card",
-      "decision": "yes",
-      "citationUrl": "https://support.rampnetwork.com/en/articles/12630-what-payment-methods-does-ramp-network-support-for-buying-crypto",
-      "explanation": "Ramp Network (Brave Wallet's integrated on/off-ramp) supports Visa/Mastercard debit and credit cards per Ramp's official payment-methods support page."
-    },
-    {
-      "walletId": "brave-wallet",
-      "metricKey": "rampApple",
-      "path": "product.fiatRamps.applePay",
-      "decision": "yes",
-      "citationUrl": "https://support.rampnetwork.com/en/articles/12630-what-payment-methods-does-ramp-network-support-for-buying-crypto",
-      "explanation": "Ramp supports Apple Pay (with a linked Visa/Mastercard), as confirmed by Ramp's payment-methods page and Brave's own off-ramp blog stating Ramp integrates Apple Pay."
-    },
-    {
-      "walletId": "brave-wallet",
-      "metricKey": "rampGoogle",
-      "path": "product.fiatRamps.googlePay",
-      "decision": "yes",
-      "citationUrl": "https://support.rampnetwork.com/en/articles/12630-what-payment-methods-does-ramp-network-support-for-buying-crypto",
-      "explanation": "Ramp supports Google Pay (with a linked Visa/Mastercard) per Ramp's official payment-methods page, and Brave's off-ramp blog lists Google Pay among Ramp's integrated methods."
-    },
-    {
-      "walletId": "brave-wallet",
-      "metricKey": "rampBank",
-      "path": "product.fiatRamps.bankTransfer",
-      "decision": "yes",
-      "citationUrl": "https://support.rampnetwork.com/en/articles/12630-what-payment-methods-does-ramp-network-support-for-buying-crypto",
-      "explanation": "Ramp supports bank transfers (SEPA/Easy Bank Transfer/manual transfers) per its payment-methods page, and Brave's off-ramp blog confirms bank transfers are among Ramp's supported methods in Brave Wallet."
-    },
-    {
-      "walletId": "brave-wallet",
-      "metricKey": "pfWatchOnly",
-      "path": "product.portfolioManagement.watchOnlyWallets",
-      "decision": "no",
-      "citationUrl": "https://github.com/brave/brave-browser/wiki/Wallet-support-FAQ",
-      "explanation": "Brave Wallet's official import options cover only recovery phrase, private key, and JSON keystore imports, with no documented ability to add a public address as a watch-only/view-only account; the internal 'Watch-Only' NFT label merely flags unowned NFTs rather than a deliberate watch-address feature."
-    },
-    {
-      "walletId": "coinbase-wallet",
-      "metricKey": "rampSell",
-      "path": "product.fiatRamps.sellCrypto",
-      "decision": "yes",
-      "citationUrl": "https://help.coinbase.com/en/wallet/managing-account/sell-cash-out",
-      "explanation": "Coinbase Wallet's official 'Sell or cash out crypto' help article confirms an in-app crypto-to-fiat off-ramp (cash out) available in 130+ countries via a Coinbase account or third-party providers."
-    },
-    {
-      "walletId": "coinbase-wallet",
-      "metricKey": "pfCostBasis",
-      "path": "product.portfolioManagement.costBasis",
-      "decision": "no",
-      "citationUrl": "https://www.coinbase.com/learn/tips-and-tutorials/understanding-estimated-gains-and-losses",
-      "explanation": "Coinbase states transactions on Coinbase Wallet are not included in cost-basis/gain-loss calculations (assumed $0 cost basis), and no source shows the wallet tracking acquisition cost basis of holdings."
+      "citationUrl": "https://beta.walletbeat.eth.limo/daimo/",
+      "explanation": "Daimo (Daimo Pay) explicitly hides swap costs for a clean checkout and publishes no consumer-facing swap-fee disclosure; Walletbeat rates its fee transparency as unrated/unknown."
     },
     {
       "walletId": "daimo",
-      "metricKey": "rampSell",
-      "path": "product.fiatRamps.sellCrypto",
+      "metricKey": "feeBridge",
+      "path": "product.pricingFeeModel.bridgeFees",
       "decision": "no",
-      "citationUrl": "https://github.com/daimo-eth/daimo",
-      "explanation": "The Daimo consumer app integrated Coinbase Onramp for in-app deposits/buying (on-ramp) only; its withdrawal was on-chain crypto withdrawal, and neither the archived app README (github.com/daimo-eth/daimo) nor Daimo docs document any in-app crypto-to-fiat sell/off-ramp."
+      "citationUrl": "https://beta.walletbeat.eth.limo/daimo/",
+      "explanation": "Daimo states swaps, bridges, and gas are hidden from users for a clean checkout and discloses no explicit bridging fee to the user."
     },
     {
       "walletId": "daimo",
-      "metricKey": "rampCard",
-      "path": "product.fiatRamps.card",
-      "decision": "yes",
-      "citationUrl": "https://docs.cdp.coinbase.com/onramp/coinbase-hosted-onramp/overview",
-      "explanation": "Coinbase Onramp was live in the Daimo app as its in-app buy/deposit provider, and Coinbase Onramp's supported payment methods include debit cards per Coinbase's developer documentation."
+      "metricKey": "feeSpread",
+      "path": "product.pricingFeeModel.spreadDisclosure",
+      "decision": "no",
+      "citationUrl": "https://beta.walletbeat.eth.limo/daimo/",
+      "explanation": "No spread/markup disclosure is provided; the docs and site describe fees as hidden rather than showing any quote markup, and Walletbeat lists fee transparency as unrated."
+    },
+    {
+      "walletId": "daimo",
+      "metricKey": "feeSubscription",
+      "path": "product.pricingFeeModel.subscriptionFeatures",
+      "decision": "no",
+      "citationUrl": "https://docs.daimo.com/",
+      "explanation": "No paid subscription or premium tier is offered on Daimo's site or docs; it is a per-transaction ramp/payment product with no subscription features."
     },
     {
       "walletId": "elytro",
-      "metricKey": "rampBuy",
-      "path": "product.fiatRamps.buyCrypto",
+      "metricKey": "feeSwap",
+      "path": "product.pricingFeeModel.swapFees",
       "decision": "no",
-      "citationUrl": "https://elytro.com/faq",
-      "explanation": "Elytro's official site and FAQ describe only on-chain features (send/receive, swap, bridge, stablecoin gas) with no fiat-to-crypto on-ramp mentioned anywhere."
+      "explanation": "Elytro supports in-app swaps but discloses no wallet swap fee on its site, FAQ, or GitHub, and Walletbeat rates its fee transparency as unassessable (https://beta.walletbeat.eth.limo/elytro/)."
     },
     {
       "walletId": "elytro",
-      "metricKey": "rampSell",
-      "path": "product.fiatRamps.sellCrypto",
+      "metricKey": "feeBridge",
+      "path": "product.pricingFeeModel.bridgeFees",
       "decision": "no",
-      "citationUrl": "https://elytro.com/faq",
-      "explanation": "No crypto-to-fiat off-ramp is mentioned on Elytro's site or FAQ; the wallet only supports on-chain swaps/bridges, not cashing out to fiat."
+      "explanation": "Elytro advertises in-app bridging (\"Send, swap & bridge\") but discloses no bridge fee anywhere on elytro.com, its FAQ, or GitHub (https://elytro.com/faq)."
     },
     {
       "walletId": "elytro",
-      "metricKey": "rampCard",
-      "path": "product.fiatRamps.card",
+      "metricKey": "feeSpread",
+      "path": "product.pricingFeeModel.spreadDisclosure",
       "decision": "no",
-      "citationUrl": "https://elytro.com/",
-      "explanation": "Since Elytro has no integrated fiat ramp, no card payment method is available; the official site lists only on-chain operations."
+      "explanation": "No spread or quote markup disclosure appears on Elytro's site, FAQ, or docs, and Walletbeat notes it lacks fee-transparency information for Elytro (https://beta.walletbeat.eth.limo/elytro/)."
     },
     {
       "walletId": "elytro",
-      "metricKey": "rampApple",
-      "path": "product.fiatRamps.applePay",
+      "metricKey": "feeSubscription",
+      "path": "product.pricingFeeModel.subscriptionFeatures",
       "decision": "no",
-      "citationUrl": "https://elytro.com/",
-      "explanation": "No fiat ramp exists in Elytro, so Apple Pay is not offered as a payment method per the official site and FAQ."
-    },
-    {
-      "walletId": "elytro",
-      "metricKey": "rampGoogle",
-      "path": "product.fiatRamps.googlePay",
-      "decision": "no",
-      "citationUrl": "https://elytro.com/",
-      "explanation": "No fiat ramp exists in Elytro, so Google Pay is not offered as a payment method per the official site and FAQ."
-    },
-    {
-      "walletId": "elytro",
-      "metricKey": "rampBank",
-      "path": "product.fiatRamps.bankTransfer",
-      "decision": "no",
-      "citationUrl": "https://elytro.com/",
-      "explanation": "No fiat ramp exists in Elytro, so bank transfer (ACH/SEPA/wire) is not available as a payment method per the official site and FAQ."
+      "explanation": "Elytro's FAQ states \"The app and CLI are free,\" with only sponsored/network gas fees and no optional paid subscription or premium tier offered (https://elytro.com/faq)."
     },
     {
       "walletId": "family",
-      "metricKey": "rampSell",
-      "path": "product.fiatRamps.sellCrypto",
+      "metricKey": "feeSwap",
+      "path": "product.pricingFeeModel.swapFees",
       "decision": "no",
-      "citationUrl": "https://family.co/support/buy-crypto",
-      "explanation": "Family's fiat integration via Stripe is documented only for buying crypto (on-ramp); no sell/cash-out to fiat feature appears in Family's support or FAQ pages."
+      "citationUrl": "https://family.co/faqs",
+      "explanation": "Family's FAQ states it \"does not charge any additional fees for using the wallet\" and the swap-tokens support page only says users see \"fees\" without disclosing any specific swap-fee amount or percentage."
+    },
+    {
+      "walletId": "family",
+      "metricKey": "feeBridge",
+      "path": "product.pricingFeeModel.bridgeFees",
+      "decision": "no",
+      "citationUrl": "https://family.co/faqs",
+      "explanation": "Family discloses no bridge/refuel fee; its FAQ states only network fees apply and no in-app bridge fee is published on its support pages."
+    },
+    {
+      "walletId": "family",
+      "metricKey": "feeHidden",
+      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
+      "decision": "no",
+      "citationUrl": "https://family.co/faqs",
+      "explanation": "Family publicly states it charges no additional wallet fees and sources best prices from various exchanges, with no evidence of undisclosed partner/referral markup on swaps or ramps."
+    },
+    {
+      "walletId": "family",
+      "metricKey": "feeSubscription",
+      "path": "product.pricingFeeModel.subscriptionFeatures",
+      "decision": "no",
+      "citationUrl": "https://family.co/faqs",
+      "explanation": "Family is offered as a free non-custodial wallet with no paid subscription or premium tier disclosed on its site, FAQ, or App Store listing."
+    },
+    {
+      "walletId": "firefly",
+      "metricKey": "hwSupport",
+      "path": "security.hardwareWalletSupport",
+      "decision": "na",
+      "citationUrl": "https://firefly.city",
+      "explanation": "Firefly is itself a hardware signing device (Firefly Pixie), and its minimal browser-based companion has no evidence of signing with other third-party hardware wallets."
+    },
+    {
+      "walletId": "firefly",
+      "metricKey": "passkey",
+      "path": "security.passkeyVerification",
+      "decision": "no",
+      "citationUrl": "https://firefly.city",
+      "explanation": "Firefly is an air-gapped Ethereum signing device with no documented passkey/WebAuthn/FIDO verification factor."
+    },
+    {
+      "walletId": "firefly",
+      "metricKey": "lightClient",
+      "path": "security.lightClient.ethereumL1",
+      "decision": "no",
+      "citationUrl": "https://firefly.city",
+      "explanation": "Firefly is an offline air-gapped signer that relies on the paired browser/phone for network data and has no trust-minimized L1 light client."
     },
     {
       "walletId": "frame",
-      "metricKey": "rampBuy",
-      "path": "product.fiatRamps.buyCrypto",
-      "decision": "no",
-      "citationUrl": "https://docs.frame.sh/",
-      "explanation": "Frame is a desktop Ethereum dapp wallet with no integrated fiat on-ramp; its docs describe only hardware/software signers and watch accounts, and reviews confirm purchases must be done via external exchanges."
+      "metricKey": "feeSwap",
+      "path": "product.pricingFeeModel.swapFees",
+      "decision": "na",
+      "citationUrl": "https://frame.sh/",
+      "explanation": "Frame is a desktop dApp wallet with no built-in in-app swap feature; swaps are done via connected dApps/DEXs, so there is no Frame swap fee to disclose (https://frame.sh/)."
     },
     {
       "walletId": "frame",
-      "metricKey": "rampSell",
-      "path": "product.fiatRamps.sellCrypto",
-      "decision": "no",
-      "citationUrl": "https://docs.frame.sh/",
-      "explanation": "Frame provides no in-app crypto-to-fiat off-ramp; there is no buy/sell functionality in the wallet, only dapp connectivity and signing."
+      "metricKey": "feeBridge",
+      "path": "product.pricingFeeModel.bridgeFees",
+      "decision": "na",
+      "citationUrl": "https://blog.frame.sh/frame-canary/",
+      "explanation": "Frame has no native in-app bridging feature; cross-chain transfers must be done through external services/dApps, so there is no Frame bridge fee to disclose (https://blog.frame.sh/frame-canary/)."
     },
     {
       "walletId": "frame",
-      "metricKey": "rampCard",
-      "path": "product.fiatRamps.card",
-      "decision": "no",
-      "citationUrl": "https://docs.frame.sh/",
-      "explanation": "With no fiat ramp present in Frame, there is no card payment method available."
+      "metricKey": "feeSpread",
+      "path": "product.pricingFeeModel.spreadDisclosure",
+      "decision": "na",
+      "citationUrl": "https://frame.sh/",
+      "explanation": "Frame does not provide in-app swap/bridge quotes, so there is no price spread or markup applied by Frame to disclose (https://frame.sh/)."
     },
     {
       "walletId": "frame",
-      "metricKey": "rampApple",
-      "path": "product.fiatRamps.applePay",
+      "metricKey": "feeHidden",
+      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
       "decision": "no",
-      "citationUrl": "https://docs.frame.sh/",
-      "explanation": "With no fiat ramp present in Frame, Apple Pay is not available."
+      "citationUrl": "https://frame.sh/",
+      "explanation": "Frame is a free, open-source wallet that connects users directly to dApps/DEXs without an in-app swap/ramp order flow, so there is no evidence of undisclosed partner/referral revenue (https://frame.sh/)."
     },
     {
       "walletId": "frame",
-      "metricKey": "rampGoogle",
-      "path": "product.fiatRamps.googlePay",
+      "metricKey": "feeSubscription",
+      "path": "product.pricingFeeModel.subscriptionFeatures",
       "decision": "no",
-      "citationUrl": "https://docs.frame.sh/",
-      "explanation": "With no fiat ramp present in Frame, Google Pay is not available."
+      "citationUrl": "https://frame.sh/",
+      "explanation": "Frame is offered as a free wallet with no subscription or premium paid tier mentioned on its site or docs (https://frame.sh/)."
     },
     {
-      "walletId": "frame",
-      "metricKey": "rampBank",
-      "path": "product.fiatRamps.bankTransfer",
+      "walletId": "safe",
+      "metricKey": "feeSwap",
+      "path": "product.pricingFeeModel.swapFees",
+      "decision": "yes",
+      "citationUrl": "https://help.safe.global/en/articles/178530-how-does-the-widget-fee-work-for-native-swaps",
+      "explanation": "Safe{Wallet} help center discloses tiered native-swap widget fees (0.70% down to 0.1% for general pairs, 0.15%-0.05% for stablecoins) and states the fee percentage is always visible in the interface with a breakdown before approval."
+    },
+    {
+      "walletId": "safe",
+      "metricKey": "feeBridge",
+      "path": "product.pricingFeeModel.bridgeFees",
+      "decision": "yes",
+      "citationUrl": "https://help.safe.global/en/articles/310879-how-does-the-widget-fee-work-for-native-bridge-transactions",
+      "explanation": "Safe's native-bridge widget fee article discloses that the exact fee percentage is always known and displayed before confirming (e.g. a 0.1% widget fee = 1 USDT on a 1,000 USDT bridge)."
+    },
+    {
+      "walletId": "safe",
+      "metricKey": "feeSpread",
+      "path": "product.pricingFeeModel.spreadDisclosure",
+      "decision": "yes",
+      "citationUrl": "https://help.safe.global/en/articles/178530-how-does-the-widget-fee-work-for-native-swaps",
+      "explanation": "The swap fee article discloses the pricing mechanics including price improvement/surplus (extra found by CoW Protocol is split between trader and protocol) and that network/liquidity-pool costs apply, rather than applying an undisclosed markup."
+    },
+    {
+      "walletId": "safe",
+      "metricKey": "feeHidden",
+      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
       "decision": "no",
-      "citationUrl": "https://docs.frame.sh/",
-      "explanation": "With no fiat ramp present in Frame, bank transfer is not available."
+      "citationUrl": "https://help.safe.global/en/articles/310879-how-does-the-widget-fee-work-for-native-bridge-transactions",
+      "explanation": "Fee revenue is transparently documented: the widget fee is paid to CoW Swap/LiFi with a portion going to the Safe Foundation as a license fee, and percentages are shown to the user, so there is no undisclosed partner/referral revenue."
     },
     {
-      "walletId": "frame",
-      "metricKey": "pfWatchOnly",
-      "path": "product.portfolioManagement.watchOnlyWallets",
-      "decision": "yes",
-      "citationUrl": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Unlocking%20Accounts/",
-      "explanation": "Frame's docs describe Watch Accounts that are 'solely for viewing assets and connecting to protocols' without signing, i.e. watch-only accounts."
-    },
-    {
-      "walletId": "gemwallet",
-      "metricKey": "rampBuy",
-      "path": "product.fiatRamps.buyCrypto",
-      "decision": "yes",
-      "citationUrl": "https://docs.gemwallet.com/faq/fiat-provider/",
-      "explanation": "Gem Wallet's fiat provider docs list integrated on-ramp providers (Mercuryo, MoonPay, Transak, Paybis, Banxa, Cash App) that let users buy crypto in-app."
-    },
-    {
-      "walletId": "gemwallet",
-      "metricKey": "rampSell",
-      "path": "product.fiatRamps.sellCrypto",
-      "decision": "yes",
-      "citationUrl": "https://docs.gemwallet.com/faq/fiat-provider/",
-      "explanation": "The docs state Mercuryo, MoonPay, Transak and Paybis support both buying and selling crypto (fiat off-ramp) within Gem Wallet."
-    },
-    {
-      "walletId": "gemwallet",
-      "metricKey": "rampCard",
-      "path": "product.fiatRamps.card",
-      "decision": "yes",
-      "citationUrl": "https://docs.gemwallet.com/faq/fiat-provider/",
-      "explanation": "The fiat provider docs state users can buy crypto with traditional payment methods such as cards."
-    },
-    {
-      "walletId": "gemwallet",
-      "metricKey": "rampBank",
-      "path": "product.fiatRamps.bankTransfer",
-      "decision": "yes",
-      "citationUrl": "https://docs.gemwallet.com/faq/fiat-provider/",
-      "explanation": "The fiat provider docs state buying is available via 'supported bank payment options' alongside cards and mobile payments."
-    },
-    {
-      "walletId": "gemwallet",
-      "metricKey": "pfPnl",
-      "path": "product.portfolioManagement.pnl",
+      "walletId": "ambire",
+      "metricKey": "feeHidden",
+      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
       "decision": "no",
-      "citationUrl": "https://www.coingecko.com/learn/how-to-use-gem-wallet",
-      "explanation": "Guides describing Gem Wallet cover balances and staking but no profit/loss tracking, and reviews note portfolio-tracking limitations."
+      "citationUrl": "https://blog.ambire.com/swap-bridge-fee-increase/",
+      "explanation": "Ambire's fee model is transparent, disclosing a flat swap/bridge fee with 100% of revenue used for $WALLET buybacks, with no evidence of undisclosed partner/referral markup."
+    },
+    {
+      "walletId": "ambire",
+      "metricKey": "feeSubscription",
+      "path": "product.pricingFeeModel.subscriptionFeatures",
+      "decision": "no",
+      "citationUrl": "https://blog.ambire.com/reduce-swap-bridge-fees-proposal/",
+      "explanation": "Ambire has no optional paid subscription or premium tier; fee reductions are tied to holding/staking $WALLET tokens rather than a paid subscription product."
+    },
+    {
+      "walletId": "argent",
+      "metricKey": "feeSwap",
+      "path": "product.pricingFeeModel.swapFees",
+      "decision": "yes",
+      "citationUrl": "https://support.argent.xyz/hc/en-us/articles/360012726038-How-does-Argent-make-money",
+      "explanation": "Argent's support pages ('How does Argent make money' and 'All fees') disclose that it takes a share of the exchange fee on in-app crypto-to-crypto swaps via Paraswap/AVNU, with secondary sources citing ~0.5%."
+    },
+    {
+      "walletId": "argent",
+      "metricKey": "feeBridge",
+      "path": "product.pricingFeeModel.bridgeFees",
+      "decision": "no",
+      "citationUrl": "https://support.argent.xyz/hc/en-us/articles/10441581423133-All-fees-for-using-Argent-Starknet-mobile-wallet",
+      "explanation": "Argent bridging relies on third-party bridges (Layerswap, Rhino.fi, StarkGate) and its docs state only network gas fees apply, with no disclosed Argent-charged bridge fee."
+    },
+    {
+      "walletId": "argent",
+      "metricKey": "feeHidden",
+      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
+      "decision": "no",
+      "citationUrl": "https://support.argent.xyz/hc/en-us/articles/360012726038-How-does-Argent-make-money",
+      "explanation": "Argent transparently discloses its revenue as a share of the DEX-aggregator exchange fee, so partner/swap revenue is not undisclosed."
+    },
+    {
+      "walletId": "argent",
+      "metricKey": "feeSubscription",
+      "path": "product.pricingFeeModel.subscriptionFeatures",
+      "decision": "yes",
+      "citationUrl": "https://cryptocashbackcards.com/ready-card-review/",
+      "explanation": "Argent/Ready offers an optional paid premium tier, Ready Metal, at 120 USDC/year with higher cashback and 0% FX vs the free Lite tier."
+    },
+    {
+      "walletId": "base-app",
+      "metricKey": "feeBridge",
+      "path": "product.pricingFeeModel.bridgeFees",
+      "decision": "yes",
+      "citationUrl": "https://help.coinbase.com/en/wallet/bridging",
+      "explanation": "Coinbase's bridging help page discloses a 'Coinbase Fee' charged for bridging to networks other than Base, plus network transaction fees."
+    },
+    {
+      "walletId": "base-app",
+      "metricKey": "feeSpread",
+      "path": "product.pricingFeeModel.spreadDisclosure",
+      "decision": "no",
+      "citationUrl": "https://cryptoslate.com/crypto-wallets/base-wallet-review/",
+      "explanation": "Reviews note the swap fee is embedded in the quoted rate rather than shown as a separate line item, and no official page discloses a specific spread/markup on quotes."
+    },
+    {
+      "walletId": "base-app",
+      "metricKey": "feeHidden",
+      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
+      "decision": "no",
+      "citationUrl": "https://help.coinbase.com/en/wallet/getting-started/dex-swap",
+      "explanation": "The 1% Coinbase swap fee and DEX-aggregator fees are documented on Coinbase's official pages, with no evidence of undisclosed partner/referral revenue."
+    },
+    {
+      "walletId": "base-app",
+      "metricKey": "feeSubscription",
+      "path": "product.pricingFeeModel.subscriptionFeatures",
+      "decision": "no",
+      "citationUrl": "https://cryptoslate.com/crypto-wallets/base-wallet-review/",
+      "explanation": "Base App is free with no subscription/premium tier within the wallet; Coinbase One is a separate Coinbase product not offered inside the app."
+    },
+    {
+      "walletId": "bitbox",
+      "metricKey": "hwSupport",
+      "path": "security.hardwareWalletSupport",
+      "decision": "na",
+      "citationUrl": "https://bitbox.swiss/bitbox02/features/",
+      "explanation": "BitBox02 is itself a hardware signer; the BitBoxApp companion only pairs with BitBox devices and does not support signing with third-party hardware wallets."
+    },
+    {
+      "walletId": "bitbox",
+      "metricKey": "scamUrl",
+      "path": "security.scamAlerts.scamUrlWarning",
+      "decision": "no",
+      "citationUrl": "https://bitbox.swiss/bitbox02/security-features/",
+      "explanation": "BitBoxApp provides no known-malicious/phishing URL warning feature; its security model relies on manual on-device verification and its security-features page lists no such detection."
+    },
+    {
+      "walletId": "bitbox",
+      "metricKey": "scamSend",
+      "path": "security.scamAlerts.sendTransactionWarning",
+      "decision": "no",
+      "citationUrl": "https://support.bitbox.swiss/en_US/ethereum-co/send-eth-erc20-tokens",
+      "explanation": "BitBoxApp does not warn on risky sends such as address poisoning or unknown recipients, instead instructing users to manually verify all transaction details on the device screen."
+    },
+    {
+      "walletId": "bitbox",
+      "metricKey": "scamContract",
+      "path": "security.scamAlerts.contractTransactionWarning",
+      "decision": "no",
+      "citationUrl": "https://bitbox.swiss/bitbox02/security-features/",
+      "explanation": "No evidence BitBoxApp flags interactions with known-malicious contracts; its security-features and send docs describe only on-device detail verification, not contract reputation checks."
+    },
+    {
+      "walletId": "bitbox",
+      "metricKey": "txSim",
+      "path": "security.transactionLegibility.transactionSimulations",
+      "decision": "no",
+      "citationUrl": "https://support.bitbox.swiss/en_US/ethereum-co/send-eth-erc20-tokens",
+      "explanation": "BitBoxApp shows raw transaction details for on-device confirmation but does not simulate/preview net balance changes (no Blockaid/Blowfish-style simulation)."
+    },
+    {
+      "walletId": "bitbox",
+      "metricKey": "duress",
+      "path": "security.duressResistance.duressMode",
+      "decision": "yes",
+      "citationUrl": "https://support.bitbox.swiss/en_US/optional-passphrase/understanding-bitbox02-optional-passphrase",
+      "explanation": "BitBox02's optional passphrase creates hidden wallets and can be used to set up a duress/decoy wallet with a small balance to reveal under coercion."
+    },
+    {
+      "walletId": "bitbox",
+      "metricKey": "passkey",
+      "path": "security.passkeyVerification",
+      "decision": "yes",
+      "citationUrl": "https://support.bitbox.swiss/en_US/using-the-bitbox02-as-a-fido-u2f-authenticator",
+      "explanation": "The BitBox02 Multi edition functions as a FIDO U2F authenticator for two-factor authentication on websites like Google and GitHub."
+    },
+    {
+      "walletId": "bitbox",
+      "metricKey": "lightClient",
+      "path": "security.lightClient.ethereumL1",
+      "decision": "no",
+      "citationUrl": "https://bitbox.swiss/bitbox02/security-features/",
+      "explanation": "BitBoxApp connects to backend/RPC nodes (or a user's own full node for Bitcoin) and provides no trust-minimized Ethereum L1 light client verification."
+    },
+    {
+      "walletId": "bitget",
+      "metricKey": "feeSwap",
+      "path": "product.pricingFeeModel.swapFees",
+      "decision": "yes",
+      "citationUrl": "https://coinbureau.com/review/bitget-wallet-review",
+      "explanation": "Bitget Wallet discloses a swap service fee (~0.3% via its Super DEX aggregator) with transparent quotes shown before transactions, per the Coin Bureau review and Bitget's own swap materials stating the fee is shown before completing any transaction."
+    },
+    {
+      "walletId": "bitget",
+      "metricKey": "feeBridge",
+      "path": "product.pricingFeeModel.bridgeFees",
+      "decision": "yes",
+      "citationUrl": "https://coinbureau.com/review/bitget-wallet-review",
+      "explanation": "Bridge/provider fees for cross-chain transactions are displayed transparently in the quote before execution in Bitget Wallet's Super DEX interface, per the Coin Bureau review."
+    },
+    {
+      "walletId": "bitget",
+      "metricKey": "feeHidden",
+      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
+      "decision": "no",
+      "citationUrl": "https://coinbureau.com/review/bitget-wallet-review",
+      "explanation": "Sources indicate Bitget Wallet uses transparent upfront quotes for swap/bridge fees with no evidence of undisclosed partner markups or rate mark-ups, so no hidden partner revenue is indicated."
+    },
+    {
+      "walletId": "bitget",
+      "metricKey": "feeSubscription",
+      "path": "product.pricingFeeModel.subscriptionFeatures",
+      "decision": "no",
+      "citationUrl": "https://coinbureau.com/review/bitget-wallet-review",
+      "explanation": "Reviews of Bitget Wallet describe no optional paid subscription or premium membership tier for the wallet itself (only a tiered card cashback program), indicating no subscription features."
+    },
+    {
+      "walletId": "brave-wallet",
+      "metricKey": "feeSwap",
+      "path": "product.pricingFeeModel.swapFees",
+      "decision": "yes",
+      "citationUrl": "https://github.com/brave/brave-browser/issues/38566",
+      "explanation": "Brave discloses its swap fee policy, stating in its help center and blog that Brave does not add its own fees to in-wallet swaps (its former swap fee was removed in v1.67.x, tracked in brave-browser issue #38566)."
+    },
+    {
+      "walletId": "brave-wallet",
+      "metricKey": "feeBridge",
+      "path": "product.pricingFeeModel.bridgeFees",
+      "decision": "yes",
+      "citationUrl": "https://brave.com/blog/cross-chain-swaps/",
+      "explanation": "Brave's cross-chain swaps blog and help center clearly state 'Brave does not add fees to swaps or bridges performed within Brave Wallet,' disclosing its bridge fee policy."
+    },
+    {
+      "walletId": "brave-wallet",
+      "metricKey": "feeHidden",
+      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
+      "decision": "no",
+      "citationUrl": "https://brave.com/blog/cross-chain-swaps/",
+      "explanation": "Brave publicly states it does not add fees to swaps or bridges and removed its former swap fee, indicating a transparent fee model with no evidence of undisclosed partner/referral revenue."
+    },
+    {
+      "walletId": "brave-wallet",
+      "metricKey": "feeSubscription",
+      "path": "product.pricingFeeModel.subscriptionFeatures",
+      "decision": "no",
+      "citationUrl": "https://support.brave.app/hc/en-us/articles/4415497656461-Brave-Wallet-FAQ",
+      "explanation": "Brave Wallet is entirely free with no paid subscription or premium tier for the wallet itself (Brave's premium products like VPN/Leo are separate non-wallet services)."
+    },
+    {
+      "walletId": "coinbase-wallet",
+      "metricKey": "feeSwap",
+      "path": "product.pricingFeeModel.swapFees",
+      "decision": "yes",
+      "citationUrl": "https://milkroad.com/reviews/coinbase-wallet/",
+      "explanation": "Coinbase Wallet clearly discloses and charges a 1% fee on in-app token swaps, shown before confirming and documented across Coinbase Wallet fee references."
+    },
+    {
+      "walletId": "coinbase-wallet",
+      "metricKey": "feeHidden",
+      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
+      "decision": "no",
+      "citationUrl": "https://milkroad.com/reviews/coinbase-wallet/",
+      "explanation": "The swap fee model is transparent (flat 1% disclosed at transaction time), with no evidence of undisclosed partner markup or referral kickbacks."
+    },
+    {
+      "walletId": "coinbase-wallet",
+      "metricKey": "feeSubscription",
+      "path": "product.pricingFeeModel.subscriptionFeatures",
+      "decision": "no",
+      "citationUrl": "https://help.coinbase.com/en/coinbase/other-topics/coinbase-one/account",
+      "explanation": "The self-custody Coinbase Wallet does not offer its own paid premium tier; Coinbase One is a subscription for the separate Coinbase exchange app rather than the wallet's features."
+    },
+    {
+      "walletId": "cypherock",
+      "metricKey": "hwSupport",
+      "path": "security.hardwareWalletSupport",
+      "decision": "na",
+      "citationUrl": "https://www.cypherock.com/cysync",
+      "explanation": "Cypherock X1 is itself a hardware signer and its cySync companion app only signs with the X1 device, not third-party hardware wallets."
+    },
+    {
+      "walletId": "cypherock",
+      "metricKey": "scamSend",
+      "path": "security.scamAlerts.sendTransactionWarning",
+      "decision": "no",
+      "citationUrl": "https://www.cypherock.com/cysync",
+      "explanation": "cySync provides on-device address verification but no automated risky-send warnings such as address poisoning or new-recipient alerts are documented."
+    },
+    {
+      "walletId": "cypherock",
+      "metricKey": "scamContract",
+      "path": "security.scamAlerts.contractTransactionWarning",
+      "decision": "no",
+      "citationUrl": "https://coinbureau.com/review/cypherock-review",
+      "explanation": "cySync relies on manual review of permissions on the Vault screen and offers no automated malicious-contract flagging."
+    },
+    {
+      "walletId": "cypherock",
+      "metricKey": "txSim",
+      "path": "security.transactionLegibility.transactionSimulations",
+      "decision": "no",
+      "citationUrl": "https://www.cypherock.com/cysync",
+      "explanation": "cySync shows transaction details for on-device verification but does not simulate/preview net balance changes before signing."
+    },
+    {
+      "walletId": "cypherock",
+      "metricKey": "passkey",
+      "path": "security.passkeyVerification",
+      "decision": "no",
+      "citationUrl": "https://www.cypherock.com/cysync",
+      "explanation": "No evidence Cypherock X1 or cySync uses passkeys/WebAuthn/FIDO; it uses card-tap plus PIN for verification."
+    },
+    {
+      "walletId": "cypherock",
+      "metricKey": "lightClient",
+      "path": "security.lightClient.ethereumL1",
+      "decision": "no",
+      "citationUrl": "https://www.cypherock.com/cysync",
+      "explanation": "cySync relies on standard RPC/backend for account and history data with no trust-minimized Ethereum L1 light client."
+    },
+    {
+      "walletId": "exodus",
+      "metricKey": "feeSwap",
+      "path": "product.pricingFeeModel.swapFees",
+      "decision": "yes",
+      "citationUrl": "https://www.exodus.com/support/en/articles/8598637-how-does-exodus-make-money",
+      "explanation": "Exodus's official 'How does Exodus make money' support page and swap UI disclose that it earns via the spread and shows the exact amount you pay/receive (fixed rate from ~0.5%) before confirming a swap."
+    },
+    {
+      "walletId": "exodus",
+      "metricKey": "feeHidden",
+      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
+      "decision": "no",
+      "citationUrl": "https://www.exodus.com/support/en/articles/8598637-how-does-exodus-make-money",
+      "explanation": "Exodus openly discloses on its official support page that it earns from the swap spread and receives a small share of third-party fiat providers' processing fees, and it shows the full quote (spread) before confirmation, so the revenue is not undisclosed."
     },
     {
       "walletId": "gemwallet",
-      "metricKey": "pfCostBasis",
-      "path": "product.portfolioManagement.costBasis",
-      "decision": "no",
-      "citationUrl": "https://www.coingecko.com/learn/how-to-use-gem-wallet",
-      "explanation": "No source indicates Gem Wallet tracks acquisition cost basis; it displays current balances only."
+      "metricKey": "feeSwap",
+      "path": "product.pricingFeeModel.swapFees",
+      "decision": "yes",
+      "citationUrl": "https://docs.gemwallet.com/faq/swap-fees/",
+      "explanation": "Gem Wallet's swap-fees FAQ explicitly discloses it takes no service/handling fees or commissions and that swap provider/protocol fees are factored into the quoted rate visible before confirming."
     },
     {
       "walletId": "gemwallet",
-      "metricKey": "defiStaking",
-      "path": "product.defiPositionAwareness.stakingPositions",
+      "metricKey": "feeBridge",
+      "path": "product.pricingFeeModel.bridgeFees",
       "decision": "no",
-      "citationUrl": "https://99bitcoins.com/bitcoin-wallet/gemwallet-review/",
-      "explanation": "Gem Wallet offers its own native staking but reviews note it is missing DeFi positions, meaning it does not surface external DeFi protocol positions."
+      "citationUrl": "https://docs.gemwallet.com/faq/crosschain-swap/",
+      "explanation": "Gem Wallet integrates cross-chain bridges (Across, THORChain) but its docs do not itemize or disclose any specific bridge fee it charges, only a general 'save on fees' claim."
+    },
+    {
+      "walletId": "gemwallet",
+      "metricKey": "feeSpread",
+      "path": "product.pricingFeeModel.spreadDisclosure",
+      "decision": "yes",
+      "citationUrl": "https://gemwallet.com/swap/",
+      "explanation": "The swap page states 'There are no hidden charges or inflated spreads - you can see all costs before confirming the transaction,' explicitly addressing spread/markup."
+    },
+    {
+      "walletId": "gemwallet",
+      "metricKey": "feeHidden",
+      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
+      "decision": "no",
+      "citationUrl": "https://docs.gemwallet.com/faq/swap-fees/",
+      "explanation": "Gem Wallet's docs state it takes no commissions/markup and no affiliate program, and quotes disclose all costs before confirmation, indicating no undisclosed partner revenue."
+    },
+    {
+      "walletId": "gemwallet",
+      "metricKey": "feeSubscription",
+      "path": "product.pricingFeeModel.subscriptionFeatures",
+      "decision": "no",
+      "citationUrl": "https://docs.gemwallet.com/features/",
+      "explanation": "Gem Wallet is a free open-source self-custody wallet with no premium/paid subscription tier documented across its site and knowledge base."
+    },
+    {
+      "walletId": "gridplus",
+      "metricKey": "hwSupport",
+      "path": "security.hardwareWalletSupport",
+      "decision": "na",
+      "citationUrl": "https://docs.gridplus.io/lattice1/lattice1-introduction",
+      "explanation": "The Lattice1 is itself a hardware signer used with software wallets like MetaMask/Frame; its companion tooling does not sign with other third-party hardware wallets."
+    },
+    {
+      "walletId": "gridplus",
+      "metricKey": "scamContract",
+      "path": "security.scamAlerts.contractTransactionWarning",
+      "decision": "no",
+      "citationUrl": "https://docs.gridplus.io/lattice1/how-the-lattice1-makes-transactions-readable-with-abi-decoding",
+      "explanation": "The Lattice1 uses ABI decoding to make calldata human-readable but does not flag/blocklist known-malicious contracts; it relies on the user reading the decoded data."
+    },
+    {
+      "walletId": "gridplus",
+      "metricKey": "txSim",
+      "path": "security.transactionLegibility.transactionSimulations",
+      "decision": "no",
+      "citationUrl": "https://docs.gridplus.io/lattice1/how-the-lattice1-makes-transactions-readable-with-abi-decoding",
+      "explanation": "The Lattice1 provides ABI-decoded clear signing of raw transaction data but does not simulate/predict net balance changes before signing."
+    },
+    {
+      "walletId": "gridplus",
+      "metricKey": "duress",
+      "path": "security.duressResistance.duressMode",
+      "decision": "yes",
+      "citationUrl": "https://docs.gridplus.io/lattice1/how-to-manage-your-seed-phrase",
+      "explanation": "The Lattice1 supports an optional BIP39 passphrase (a 25th word) that generates a separate hidden wallet, functioning as a decoy/hidden-wallet mechanism."
+    },
+    {
+      "walletId": "gridplus",
+      "metricKey": "passkey",
+      "path": "security.passkeyVerification",
+      "decision": "no",
+      "citationUrl": "https://docs.gridplus.io/lattice1/security-features",
+      "explanation": "The Lattice1 uses a device PIN and SafeCard PIN for authentication with no mention of passkeys/WebAuthn/FIDO in its security documentation."
+    },
+    {
+      "walletId": "gridplus",
+      "metricKey": "lightClient",
+      "path": "security.lightClient.ethereumL1",
+      "decision": "no",
+      "citationUrl": "https://docs.gridplus.io/lattice1/security-features",
+      "explanation": "The Lattice1 relies on connected software wallets/RPCs for chain state and provides no trust-minimized Ethereum L1 light client."
+    },
+    {
+      "walletId": "imkey",
+      "metricKey": "hwSupport",
+      "path": "security.hardwareWalletSupport",
+      "decision": "na",
+      "citationUrl": "https://imkey.im/products/imkey-pro-crypto-hardware-wallet",
+      "explanation": "imKey Pro is itself a hardware signer whose companion app (imToken) is used to activate/pair the imKey device, not to sign with third-party hardware wallets."
+    },
+    {
+      "walletId": "imkey",
+      "metricKey": "scamSend",
+      "path": "security.scamAlerts.sendTransactionWarning",
+      "decision": "yes",
+      "citationUrl": "https://support.token.im/hc/en-us/articles/23417185602841-Inventory-of-Common-Address-Phishing-Tactics",
+      "explanation": "imToken automatically hides high-risk address-poisoning transactions and shows a security reminder when a user copies an address from transaction history."
+    },
+    {
+      "walletId": "imkey",
+      "metricKey": "scamContract",
+      "path": "security.scamAlerts.contractTransactionWarning",
+      "decision": "yes",
+      "citationUrl": "https://support.token.im/hc/en-us/articles/360039457914-Why-is-the-token-tagged-as-Warning",
+      "explanation": "imToken tags risky tokens/contracts as 'Warning' (pops a security alert on transfer) and hides 'Risk/High Risk' tokens to protect users from malicious contracts."
+    },
+    {
+      "walletId": "imkey",
+      "metricKey": "bugBounty",
+      "path": "security.bugBountyProgram",
+      "decision": "yes",
+      "citationUrl": "https://slowmist.io/imtoken/",
+      "explanation": "imKey runs a public 'Vulnerability and Threat Intelligence Bounty Program' and imToken runs a bounty program with SlowMist."
+    },
+    {
+      "walletId": "imkey",
+      "metricKey": "duress",
+      "path": "security.duressResistance.duressMode",
+      "decision": "no",
+      "citationUrl": "https://imkey.im/products/imkey-pro-crypto-hardware-wallet",
+      "explanation": "imKey Pro documentation describes only a standard 6-8 digit PIN (auto-reset after 5 failed attempts) with no passphrase-based hidden wallet or decoy/duress mode."
+    },
+    {
+      "walletId": "imkey",
+      "metricKey": "lightClient",
+      "path": "security.lightClient.ethereumL1",
+      "decision": "no",
+      "citationUrl": "https://support.token.im/hc/en-us/articles/31423984023961-Scam-Warning-Fraudulent-RPC-Node-Adjustments",
+      "explanation": "imToken/imKey rely on RPC nodes for chain state with no indication of a trust-minimized Ethereum L1 light client."
     },
     {
       "walletId": "imtoken",
-      "metricKey": "rampBuy",
-      "path": "product.fiatRamps.buyCrypto",
+      "metricKey": "feeSwap",
+      "path": "product.pricingFeeModel.swapFees",
       "decision": "yes",
-      "citationUrl": "https://www.moonpay.com/newsroom/imtoken",
-      "explanation": "imToken integrates MoonPay (and OpenC) for in-app fiat-to-crypto purchases via a 'Buy' button on the wallet home, per imToken's help center and the MoonPay partnership announcement."
+      "citationUrl": "https://support.tokenlon.im/hc/en-us/articles/360037260272-Tokenlon-Fees",
+      "explanation": "imToken's in-app swaps run through Tokenlon, whose published fees page discloses a 0.3% trade fee (0.04% for stablecoins, tiered down to 0.10%)."
     },
     {
       "walletId": "imtoken",
-      "metricKey": "rampCard",
-      "path": "product.fiatRamps.card",
+      "metricKey": "feeBridge",
+      "path": "product.pricingFeeModel.bridgeFees",
       "decision": "yes",
-      "citationUrl": "https://support.token.im/hc/en-us/articles/37321215580057-How-to-get-tokens-via-MoonPay-in-imToken",
-      "explanation": "imToken's help documentation states the MoonPay integration lets users pay with Visa (card), alongside Apple Pay and Google Pay."
+      "citationUrl": "https://support.token.im/hc/en-us/articles/7539476790681-Token-bridging-across-different-blockchains-with-Celer-cBridge",
+      "explanation": "imToken's help center documents cross-chain bridging via Celer cBridge (0%–0.04%) and other bridges with their fee structures explained per protocol."
     },
     {
       "walletId": "imtoken",
-      "metricKey": "rampApple",
-      "path": "product.fiatRamps.applePay",
-      "decision": "yes",
-      "citationUrl": "https://support.token.im/hc/en-us/articles/37321215580057-How-to-get-tokens-via-MoonPay-in-imToken",
-      "explanation": "imToken's help documentation states the MoonPay integration supports Apple Pay as a payment method for buying tokens."
+      "metricKey": "feeHidden",
+      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
+      "decision": "no",
+      "citationUrl": "https://support.tokenlon.im/hc/en-us/articles/360037260272-Tokenlon-Fees",
+      "explanation": "imToken's swap fee model is transparently published via Tokenlon's public fees page and its help center, with no evidence of undisclosed partner/referral markups."
     },
     {
       "walletId": "imtoken",
-      "metricKey": "rampGoogle",
-      "path": "product.fiatRamps.googlePay",
-      "decision": "yes",
-      "citationUrl": "https://support.token.im/hc/en-us/articles/37321215580057-How-to-get-tokens-via-MoonPay-in-imToken",
-      "explanation": "imToken's help documentation states the MoonPay integration supports Google Pay as a payment method for buying tokens."
+      "metricKey": "feeSubscription",
+      "path": "product.pricingFeeModel.subscriptionFeatures",
+      "decision": "no",
+      "citationUrl": "https://token.im/",
+      "explanation": "imToken is a free wallet with no paid subscription or premium tier; reviews and its site indicate no subscription requirement or premium features."
     },
     {
-      "walletId": "imtoken",
-      "metricKey": "defiLending",
-      "path": "product.defiPositionAwareness.lendingPositions",
-      "decision": "yes",
-      "citationUrl": "https://medium.com/imtoken/new-on-imtoken-defi-portfolio-manager-powered-by-debank-61302b6feeec",
-      "explanation": "The DeBank-powered DeFi Portfolio Manager surfaces lending/borrowing positions (loans) across protocols like Aave and Compound."
+      "walletId": "keycard-shell",
+      "metricKey": "hwSupport",
+      "path": "security.hardwareWalletSupport",
+      "decision": "na",
+      "citationUrl": "https://keycard.tech/pages/keycard-shell",
+      "explanation": "Keycard Shell is itself an air-gapped hardware signer with no mandatory companion app (it pairs with third-party software wallets), so signing with a different third-party hardware wallet is not applicable."
     },
     {
-      "walletId": "imtoken",
-      "metricKey": "defiLp",
-      "path": "product.defiPositionAwareness.lpPositions",
-      "decision": "yes",
-      "citationUrl": "https://medium.com/imtoken/new-on-imtoken-defi-portfolio-manager-powered-by-debank-61302b6feeec",
-      "explanation": "The DeBank-powered DeFi Portfolio Manager surfaces AMM/DEX liquidity-pool balances (e.g. Uniswap, PancakeSwap positions)."
+      "walletId": "keycard-shell",
+      "metricKey": "scamUrl",
+      "path": "security.scamAlerts.scamUrlWarning",
+      "decision": "no",
+      "citationUrl": "https://docs.keycard.tech/en/about",
+      "explanation": "Keycard Shell has no companion app and its docs/security pages describe only air-gapped signing and blind-signing minimization, with no known-malicious/phishing URL warning feature."
     },
     {
-      "walletId": "imtoken",
-      "metricKey": "defiVault",
-      "path": "product.defiPositionAwareness.vaultPositions",
+      "walletId": "keycard-shell",
+      "metricKey": "scamSend",
+      "path": "security.scamAlerts.sendTransactionWarning",
+      "decision": "no",
+      "citationUrl": "https://docs.keycard.tech/en/about",
+      "explanation": "The device offers on-screen transaction verification but no documented risky-send/address-poisoning warnings, and it has no companion app to provide them."
+    },
+    {
+      "walletId": "keycard-shell",
+      "metricKey": "scamContract",
+      "path": "security.scamAlerts.contractTransactionWarning",
+      "decision": "no",
+      "citationUrl": "https://docs.keycard.tech/en/about",
+      "explanation": "No malicious/flagged-contract warning feature is documented for Keycard Shell, which relies on third-party wallets for such checks and only aims to 'minimize blind signing'."
+    },
+    {
+      "walletId": "keycard-shell",
+      "metricKey": "txSim",
+      "path": "security.transactionLegibility.transactionSimulations",
+      "decision": "no",
+      "citationUrl": "https://github.com/keycard-tech/keycard-shell",
+      "explanation": "Keycard Shell shows transaction details for verification on-device but does not simulate net balance changes, and it has no companion app providing simulation."
+    },
+    {
+      "walletId": "keycard-shell",
+      "metricKey": "bugBounty",
+      "path": "security.bugBountyProgram",
       "decision": "yes",
-      "citationUrl": "https://medium.com/imtoken/new-on-imtoken-defi-portfolio-manager-powered-by-debank-61302b6feeec",
-      "explanation": "The DeBank-powered DeFi Portfolio Manager surfaces yield-vault/yield-aggregator and farm positions among the DeFi balances it displays."
+      "citationUrl": "https://docs.keycard.tech/en/about",
+      "explanation": "Keycard's About page links a 'Security & vulnerability disclosure (IFT)' program run under the Institute of Free Technology, which operates a HackenProof bug bounty covering its projects."
+    },
+    {
+      "walletId": "keycard-shell",
+      "metricKey": "passkey",
+      "path": "security.passkeyVerification",
+      "decision": "no",
+      "citationUrl": "https://docs.keycard.tech/en/about",
+      "explanation": "Neither Keycard's security/about pages nor its GitHub repo mention passkey/WebAuthn/FIDO verification; the device uses PIN plus secure-element key storage."
+    },
+    {
+      "walletId": "keycard-shell",
+      "metricKey": "lightClient",
+      "path": "security.lightClient.ethereumL1",
+      "decision": "no",
+      "citationUrl": "https://keycard.tech/pages/keycard-shell",
+      "explanation": "As an offline air-gapped signer with no companion app, Keycard Shell provides no Ethereum L1 light-client verification and relies on the connected software wallet's RPC."
+    },
+    {
+      "walletId": "keystone",
+      "metricKey": "hwSupport",
+      "path": "security.hardwareWalletSupport",
+      "decision": "na",
+      "citationUrl": "https://keyst.one/",
+      "explanation": "Keystone 3 Pro is itself a hardware signer that works via QR/third-party wallets and has no companion app that signs with other third-party hardware wallets, so this is not applicable."
+    },
+    {
+      "walletId": "keystone",
+      "metricKey": "txSim",
+      "path": "security.transactionLegibility.transactionSimulations",
+      "decision": "no",
+      "citationUrl": "https://blog.keyst.one/blind-signing-a-security-black-hole-for-the-ethereum-community-13f909b848b6",
+      "explanation": "Keystone decodes and displays full transaction/contract details on-device (anti-blind-signing) but there is no evidence of net-balance-change simulation like Blockaid/Blowfish."
+    },
+    {
+      "walletId": "keystone",
+      "metricKey": "duress",
+      "path": "security.duressResistance.duressMode",
+      "decision": "yes",
+      "citationUrl": "https://support.keyst.one/advanced-features/passphrase",
+      "explanation": "Keystone supports an optional passphrase 'hidden vault' for plausible deniability, with a default sentinel wallet shown under duress while assets stay in passphrase-protected wallets."
+    },
+    {
+      "walletId": "keystone",
+      "metricKey": "passkey",
+      "path": "security.passkeyVerification",
+      "decision": "no",
+      "citationUrl": "https://keyst.one/authentication",
+      "explanation": "Keystone 3 Pro uses PIN/fingerprint and QR-based device verification; no source indicates passkey/WebAuthn/FIDO2 as a verification factor."
+    },
+    {
+      "walletId": "keystone",
+      "metricKey": "lightClient",
+      "path": "security.lightClient.ethereumL1",
+      "decision": "no",
+      "citationUrl": "https://shop.keyst.one/products/keystone-3-pro",
+      "explanation": "Keystone is an air-gapped cold signer relying on connected third-party wallets/RPCs and provides no trust-minimized Ethereum L1 light client."
+    },
+    {
+      "walletId": "ledgerWallet",
+      "metricKey": "hwSupport",
+      "path": "security.hardwareWalletSupport",
+      "decision": "na",
+      "citationUrl": "https://www.ledger.com",
+      "explanation": "Ledger is itself a hardware signing device; Ledger Live is its companion app and does not sign with third-party hardware wallets."
+    },
+    {
+      "walletId": "ledgerWallet",
+      "metricKey": "scamUrl",
+      "path": "security.scamAlerts.scamUrlWarning",
+      "decision": "yes",
+      "citationUrl": "https://www.blockaid.io/blog/how-blockaid-helps-ledgers-transaction-check-mitigate-blind-signing-risks",
+      "explanation": "Ledger Live's Transaction Check (powered by Blockaid) flags interactions with questionable dApps/scam sites as potential risks or critical threats before signing."
+    },
+    {
+      "walletId": "ledgerWallet",
+      "metricKey": "scamSend",
+      "path": "security.scamAlerts.sendTransactionWarning",
+      "decision": "yes",
+      "citationUrl": "https://support.ledger.com/article/how-to-enhance-the-safety-of-your-ethereum-transactions-with-transaction-check",
+      "explanation": "Transaction Check flags sending assets to an unknown address as a potential risk before the transaction is signed."
+    },
+    {
+      "walletId": "ledgerWallet",
+      "metricKey": "scamContract",
+      "path": "security.scamAlerts.contractTransactionWarning",
+      "decision": "yes",
+      "citationUrl": "https://www.blockaid.io/blog/how-blockaid-helps-ledgers-transaction-check-mitigate-blind-signing-risks",
+      "explanation": "Transaction Check via Blockaid identifies transactions involving malicious contracts or stolen funds and flags them as critical threats."
+    },
+    {
+      "walletId": "ledgerWallet",
+      "metricKey": "txSim",
+      "path": "security.transactionLegibility.transactionSimulations",
+      "decision": "yes",
+      "citationUrl": "https://www.blockaid.io/blog/how-blockaid-helps-ledgers-transaction-check-mitigate-blind-signing-risks",
+      "explanation": "Ledger's Transaction Check simulates the transaction and validates its outcomes (via Blockaid/Tenderly/Cyvers) before signing."
+    },
+    {
+      "walletId": "ledgerWallet",
+      "metricKey": "duress",
+      "path": "security.duressResistance.duressMode",
+      "decision": "yes",
+      "citationUrl": "https://www.ledger.com/academy/passphrase-an-advanced-security-feature",
+      "explanation": "Ledger's passphrase feature creates hidden wallets for plausible deniability, letting a user reveal only a decoy standard account under coercion."
+    },
+    {
+      "walletId": "ledgerWallet",
+      "metricKey": "passkey",
+      "path": "security.passkeyVerification",
+      "decision": "yes",
+      "citationUrl": "https://www.ledger.com/blog/strengthen-the-security-of-your-accounts-with-webauthn",
+      "explanation": "Ledger devices run a Security Key application implementing FIDO U2F/FIDO2/WebAuthn for use as a 2FA/MFA authentication factor."
+    },
+    {
+      "walletId": "ledgerWallet",
+      "metricKey": "lightClient",
+      "path": "security.lightClient.ethereumL1",
+      "decision": "no",
+      "citationUrl": "https://support.ledger.com/article/how-to-enhance-the-safety-of-your-ethereum-transactions-with-transaction-check",
+      "explanation": "Ledger Live relies on standard/third-party RPC providers and Ledger's own backend rather than a trust-minimized Ethereum L1 light client; no such feature is documented."
+    },
+    {
+      "walletId": "metamask",
+      "metricKey": "feeSwap",
+      "path": "product.pricingFeeModel.swapFees",
+      "decision": "yes",
+      "citationUrl": "https://support.metamask.io/trade/swap/user-guide-swaps/",
+      "explanation": "MetaMask's support user-guide page explicitly discloses a 0.875% MetaMask swap service fee in its fee breakdown."
+    },
+    {
+      "walletId": "metamask",
+      "metricKey": "feeBridge",
+      "path": "product.pricingFeeModel.bridgeFees",
+      "decision": "yes",
+      "citationUrl": "https://support.metamask.io/metamask-portfolio/bridge/how-are-bridge-fees-calculated/",
+      "explanation": "MetaMask's support page 'How are bridge fees calculated?' discloses a 0.875% MetaMask fee applied on each bridge transaction."
+    },
+    {
+      "walletId": "metamask",
+      "metricKey": "feeHidden",
+      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
+      "decision": "no",
+      "citationUrl": "https://support.metamask.io/trade/swap/user-guide-swaps/",
+      "explanation": "MetaMask openly publishes its 0.875% swap and bridge fees in support docs, indicating a transparent fee model rather than undisclosed partner markup."
+    },
+    {
+      "walletId": "metamask",
+      "metricKey": "feeSubscription",
+      "path": "product.pricingFeeModel.subscriptionFeatures",
+      "decision": "yes",
+      "citationUrl": "https://metamask.io/transaction-shield",
+      "explanation": "MetaMask offers paid subscription tiers including Transaction Shield ($9.99/month security subscription) and the Metal Card annual membership ($199/yr)."
     },
     {
       "walletId": "mtpelerin",
-      "metricKey": "rampApple",
-      "path": "product.fiatRamps.applePay",
+      "metricKey": "feeSwap",
+      "path": "product.pricingFeeModel.swapFees",
       "decision": "yes",
-      "citationUrl": "https://www.mtpelerin.com/buy-crypto",
-      "explanation": "Mt Pelerin's official buy-crypto page confirms Bridge Wallet's integrated buy feature supports Apple Pay for instant crypto purchases."
+      "citationUrl": "https://www.mtpelerin.com/pricing",
+      "explanation": "Mt Pelerin's pricing page discloses swap fees: first CHF 500/year free, then 0.5% commission (0.1% for USDC-to-USDC swaps)."
+    },
+    {
+      "walletId": "mtpelerin",
+      "metricKey": "feeBridge",
+      "path": "product.pricingFeeModel.bridgeFees",
+      "decision": "yes",
+      "citationUrl": "https://www.mtpelerin.com/bridge/usdt",
+      "explanation": "Bridging is disclosed as using the same swap fee model (free up to CHF 500/year, or CHF 1,000 if referred, then standard exchange fees) on the bridge/USDT pages."
+    },
+    {
+      "walletId": "mtpelerin",
+      "metricKey": "feeSpread",
+      "path": "product.pricingFeeModel.spreadDisclosure",
+      "decision": "yes",
+      "citationUrl": "https://www.mtpelerin.com/swap-crypto",
+      "explanation": "The swap page explicitly discloses its spread policy, stating swaps occur 'with no spread, no slippage, and no price impact' at the real market price minus a transparent service fee."
+    },
+    {
+      "walletId": "mtpelerin",
+      "metricKey": "feeHidden",
+      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
+      "decision": "no",
+      "citationUrl": "https://www.mtpelerin.com/swap-crypto",
+      "explanation": "Mt Pelerin discloses its fee model transparently ('zero hidden costs minus a small, transparent service fee') with published commission percentages, and no evidence of undisclosed partner/referral markup was found."
+    },
+    {
+      "walletId": "mtpelerin",
+      "metricKey": "feeSubscription",
+      "path": "product.pricingFeeModel.subscriptionFeatures",
+      "decision": "yes",
+      "citationUrl": "https://www.mtpelerin.com/pricing",
+      "explanation": "Mt Pelerin offers an MPS shareholder token tier that raises the free-volume allowance up to CHF 50,000/year and grants discounted fees, functioning as an optional premium tier."
+    },
+    {
+      "walletId": "ngrave",
+      "metricKey": "hwSupport",
+      "path": "security.hardwareWalletSupport",
+      "decision": "na",
+      "citationUrl": "https://ngrave.io/en/liquid",
+      "explanation": "NGRAVE ZERO is itself a hardware signer and its LIQUID companion app does not sign with third-party hardware wallets (it interoperates with software wallets MetaMask/Rabby), so this is categorically not applicable."
+    },
+    {
+      "walletId": "ngrave",
+      "metricKey": "duress",
+      "path": "security.duressResistance.duressMode",
+      "decision": "yes",
+      "citationUrl": "https://support.ngrave.io/hc/en-us/articles/14915071703581-Passphrase-FAQ",
+      "explanation": "NGRAVE documents that a passphrase creates a hidden wallet and a small-balance passphrase wallet can act as a duress/decoy wallet surrendered under coercion."
+    },
+    {
+      "walletId": "ngrave",
+      "metricKey": "lightClient",
+      "path": "security.lightClient.ethereumL1",
+      "decision": "no",
+      "citationUrl": "https://ngrave.io/en/liquid",
+      "explanation": "LIQUID is a portfolio/broadcast app relying on standard RPC/QR flow with no documented trust-minimized Ethereum L1 light client."
     },
     {
       "walletId": "nufi",
-      "metricKey": "rampCard",
-      "path": "product.fiatRamps.card",
-      "decision": "yes",
-      "citationUrl": "https://support.nu.fi/support/solutions/articles/80001165993-how-to-buy-crypto",
-      "explanation": "NuFi's official support page states you can buy crypto via the integrated MoonPay ramp using 'a bank card, Apple Pay, Google Pay, bank transfer and other payment options.'"
+      "metricKey": "feeSwap",
+      "path": "product.pricingFeeModel.swapFees",
+      "decision": "no",
+      "citationUrl": "https://support.nu.fi/support/solutions/articles/80001148272-exchange-cardano-tokens",
+      "explanation": "NuFi's Cardano exchange support article states users need ADA to pay a transaction fee 'plus a service fee for using the swap functionality,' but no fee amount or percentage is disclosed, and the Jupiter DEX swap article discloses no NuFi fee at all."
     },
     {
       "walletId": "nufi",
-      "metricKey": "rampApple",
-      "path": "product.fiatRamps.applePay",
+      "metricKey": "feeSubscription",
+      "path": "product.pricingFeeModel.subscriptionFeatures",
+      "decision": "no",
+      "citationUrl": "https://reviewnexa.com/nufi-wallet-review/",
+      "explanation": "Multiple reviews indicate NuFi is free with no premium tiers or subscription features, and no official NuFi page advertises a paid tier."
+    },
+    {
+      "walletId": "okx",
+      "metricKey": "feeSwap",
+      "path": "product.pricingFeeModel.swapFees",
       "decision": "yes",
-      "citationUrl": "https://support.nu.fi/support/solutions/articles/80001165993-how-to-buy-crypto",
-      "explanation": "NuFi's official 'How to buy crypto' support page explicitly lists Apple Pay as a supported payment method through the integrated MoonPay ramp."
+      "citationUrl": "https://web3.okx.com/dex-fees",
+      "explanation": "OKX publishes a DEX fees page disclosing the interface fee on in-app swaps (0% to 0.5% depending on token group)."
     },
     {
-      "walletId": "nufi",
-      "metricKey": "rampGoogle",
-      "path": "product.fiatRamps.googlePay",
+      "walletId": "okx",
+      "metricKey": "feeHidden",
+      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
+      "decision": "no",
+      "citationUrl": "https://web3.okx.com/dex-fees",
+      "explanation": "OKX transparently publishes its DEX/interface fee schedule and shows all costs before confirmation, indicating no undisclosed partner/referral markup."
+    },
+    {
+      "walletId": "okx",
+      "metricKey": "feeSubscription",
+      "path": "product.pricingFeeModel.subscriptionFeatures",
+      "decision": "no",
+      "citationUrl": "https://web3.okx.com/dex-fees",
+      "explanation": "No evidence of an optional paid subscription or premium tier for OKX Wallet was found across official pages and reviews; it is a free self-custody wallet monetized via swap fees."
+    },
+    {
+      "walletId": "onekey",
+      "metricKey": "hwSupport",
+      "path": "security.hardwareWalletSupport",
+      "decision": "na",
+      "explanation": "OneKey Pro is itself a hardware signer and its companion app manages OneKey devices rather than third-party hardware wallets, so this metric is not applicable."
+    },
+    {
+      "walletId": "onekey",
+      "metricKey": "scamContract",
+      "path": "security.scamAlerts.contractTransactionWarning",
       "decision": "yes",
-      "citationUrl": "https://support.nu.fi/support/solutions/articles/80001165993-how-to-buy-crypto",
-      "explanation": "NuFi's official 'How to buy crypto' support page explicitly lists Google Pay as a supported payment method through the integrated MoonPay ramp."
+      "citationUrl": "https://help.onekey.so/en/articles/12058229-signguard-and-clear-signing-how-they-protect-you-from-web3-phishing-and-scams",
+      "explanation": "SignGuard integrates GoPlus, Blockaid and ScamSniffer to warn on interaction with malicious/flagged contracts before signing."
     },
     {
-      "walletId": "nufi",
-      "metricKey": "rampBank",
-      "path": "product.fiatRamps.bankTransfer",
+      "walletId": "onekey",
+      "metricKey": "txSim",
+      "path": "security.transactionLegibility.transactionSimulations",
       "decision": "yes",
-      "citationUrl": "https://support.nu.fi/support/solutions/articles/80001165993-how-to-buy-crypto",
-      "explanation": "NuFi's official 'How to buy crypto' support page explicitly lists bank transfer as a supported payment method through the integrated MoonPay ramp."
+      "citationUrl": "https://onekey.so/blog/ecosystem/sign-guard-by-one-key-clear-signing-preview-with-real-time-scam-detection/",
+      "explanation": "The OneKey app simulates transactions and displays key details (methods, approval amounts, target addresses) with Blockaid-powered clear signing before signing."
     },
     {
-      "walletId": "nufi",
-      "metricKey": "pfWatchOnly",
-      "path": "product.portfolioManagement.watchOnlyWallets",
-      "decision": "no",
-      "citationUrl": "https://support.nu.fi/support/solutions/articles/80000951670-add-account-hot-wallet",
-      "explanation": "NuFi's 'Add Account' options are limited to creating hot wallet accounts tied to your own seed phrase or pairing hardware wallets you hold keys for, with no option to add a watch-only/view-only address."
-    },
-    {
-      "walletId": "phantom",
-      "metricKey": "rampSell",
-      "path": "product.fiatRamps.sellCrypto",
+      "walletId": "onekey",
+      "metricKey": "duress",
+      "path": "security.duressResistance.duressMode",
       "decision": "yes",
-      "citationUrl": "https://help.phantom.com/hc/en-us/articles/28469415977491-Withdraw-crypto-to-your-bank-account",
-      "explanation": "Phantom's official help center documents an in-app crypto-to-fiat off-ramp via a 'Sell Crypto' flow (Home > Cash > Add Cash > Sell Crypto) and a 'Withdraw crypto to your bank account' feature."
+      "citationUrl": "https://help.onekey.so/en/articles/11461220-passphrases-and-hidden-wallets",
+      "explanation": "OneKey supports passphrase-based hidden wallets attachable to a secondary PIN, providing plausible deniability under coercion."
     },
     {
-      "walletId": "phantom",
-      "metricKey": "rampBank",
-      "path": "product.fiatRamps.bankTransfer",
+      "walletId": "onekey",
+      "metricKey": "passkey",
+      "path": "security.passkeyVerification",
       "decision": "yes",
-      "citationUrl": "https://help.phantom.com/hc/en-us/articles/28469415977491-Withdraw-crypto-to-your-bank-account",
-      "explanation": "Phantom's help center confirms bank transfer as a supported method for funding/withdrawing the Cash account, including a dedicated 1:1 USD bank withdrawal to your own bank account."
+      "citationUrl": "https://help.onekey.so/en/articles/11461109-onekey-supports-fido-and-fido2-authentication",
+      "explanation": "OneKey hardware wallets support FIDO and FIDO2 (WebAuthn/passkey) authentication as a security key."
+    },
+    {
+      "walletId": "onekey",
+      "metricKey": "lightClient",
+      "path": "security.lightClient.ethereumL1",
+      "decision": "no",
+      "explanation": "No evidence found that OneKey verifies Ethereum L1 state with a trust-minimized light client; it relies on RPC providers."
     },
     {
       "walletId": "phantom",
-      "metricKey": "defiLending",
-      "path": "product.defiPositionAwareness.lendingPositions",
-      "decision": "no",
-      "citationUrl": "https://www.datawallet.com/crypto/phantom-wallet-review",
-      "explanation": "Phantom lets users access lending dApps (e.g. Kamino, Aave) via its dApp browser but its own portfolio/Terminal only surfaces token balances and its native trading/perps positions, not external lending/borrowing positions, which require third-party trackers like Step Finance."
+      "metricKey": "feeSwap",
+      "path": "product.pricingFeeModel.swapFees",
+      "decision": "yes",
+      "citationUrl": "https://help.phantom.com/hc/en-us/articles/6048249796243-How-to-swap-tokens-in-Phantom",
+      "explanation": "Phantom's official help documentation discloses a 0.85% swap fee (shown in the fee disclosure before confirmation) on in-app swaps."
     },
     {
       "walletId": "phantom",
-      "metricKey": "defiLp",
-      "path": "product.defiPositionAwareness.lpPositions",
-      "decision": "no",
-      "citationUrl": "https://www.datawallet.com/crypto/phantom-wallet-review",
-      "explanation": "No official or reputable source indicates Phantom surfaces liquidity-pool positions held in external protocols; its portfolio shows balances and native trading positions only."
+      "metricKey": "feeBridge",
+      "path": "product.pricingFeeModel.bridgeFees",
+      "decision": "yes",
+      "citationUrl": "https://help.phantom.com/hc/en-us/articles/51384804802195-Bridge-crypto-in-Phantom",
+      "explanation": "Phantom's cross-chain swap/bridge quote screen discloses Phantom's fee plus the bridge provider fee and network fees before the user confirms."
     },
     {
       "walletId": "phantom",
-      "metricKey": "defiVault",
-      "path": "product.defiPositionAwareness.vaultPositions",
+      "metricKey": "feeHidden",
+      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
       "decision": "no",
-      "citationUrl": "https://www.datawallet.com/crypto/phantom-wallet-review",
-      "explanation": "No evidence Phantom reads/displays external yield-vault positions; its native views cover token balances and Phantom's own products rather than aggregating third-party vault positions."
-    },
-    {
-      "walletId": "phantom",
-      "metricKey": "defiLiq",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "decision": "no",
-      "citationUrl": "https://help.phantom.com/hc/en-us/articles/46527102843027-Trade-tokens-and-perps-in-Phantom-Terminal",
-      "explanation": "Liquidation levels/warnings in Phantom's Terminal apply only to its own Hyperliquid-powered perps product, not to borrow positions in external DeFi lending protocols."
+      "citationUrl": "https://help.phantom.com/hc/en-us/articles/6048249796243-How-to-swap-tokens-in-Phantom",
+      "explanation": "Phantom transparently discloses its 0.85% platform fee and bridge/aggregator fees in-app and in help docs, so there is no evidence of undisclosed partner revenue."
     },
     {
       "walletId": "pillarx",
-      "metricKey": "rampBuy",
-      "path": "product.fiatRamps.buyCrypto",
+      "metricKey": "feeSwap",
+      "path": "product.pricingFeeModel.swapFees",
       "decision": "no",
-      "citationUrl": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
-      "explanation": "The current PillarX App Store listing's release notes (v3.31.1, 09/02/2025) state the app \"removed the option to buy and sell using third party sites,\" and the current description only lists cross-chain swaps and stablecoin gas with no fiat on-ramp."
+      "citationUrl": "https://docs.pillarx.app/",
+      "explanation": "Neither PillarX's site, developer docs (docs.pillarx.app), nor its App Store listing disclose any fee charged on in-app swaps/Offers Engine, so the swap fee is not clearly disclosed."
     },
     {
       "walletId": "pillarx",
-      "metricKey": "rampSell",
-      "path": "product.fiatRamps.sellCrypto",
+      "metricKey": "feeBridge",
+      "path": "product.pricingFeeModel.bridgeFees",
       "decision": "no",
-      "citationUrl": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
-      "explanation": "The same App Store release notes (v3.31.1, 09/02/2025) confirm buy AND sell via third-party providers was removed, so the current shipping PillarX app offers no fiat off-ramp."
+      "citationUrl": "https://docs.pillarx.app/",
+      "explanation": "PillarX offers cross-chain swaps but no official page discloses any bridging fee it charges; the docs cover only dapp development, not fees."
     },
     {
       "walletId": "pillarx",
-      "metricKey": "rampCard",
-      "path": "product.fiatRamps.card",
+      "metricKey": "feeSpread",
+      "path": "product.pricingFeeModel.spreadDisclosure",
       "decision": "no",
-      "citationUrl": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
-      "explanation": "With in-app buy/sell removed in the current PillarX app (v3.31.1, 09/02/2025), no fiat ramp exists, so card payments are not available in the shipping product."
+      "citationUrl": "https://pillarx.app/",
+      "explanation": "No PillarX page discloses any price spread or markup applied on swap quotes from its aggregator/Offers Engine."
     },
     {
       "walletId": "pillarx",
-      "metricKey": "rampApple",
-      "path": "product.fiatRamps.applePay",
+      "metricKey": "feeSubscription",
+      "path": "product.pricingFeeModel.subscriptionFeatures",
       "decision": "no",
       "citationUrl": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
-      "explanation": "No in-app fiat ramp exists in the current PillarX app after buy/sell was removed (v3.31.1, 09/02/2025), so Apple Pay is not offered as a ramp payment method."
-    },
-    {
-      "walletId": "pillarx",
-      "metricKey": "rampGoogle",
-      "path": "product.fiatRamps.googlePay",
-      "decision": "no",
-      "citationUrl": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
-      "explanation": "No in-app fiat ramp exists in the current PillarX app after buy/sell was removed (v3.31.1, 09/02/2025), so Google Pay is not offered as a ramp payment method."
-    },
-    {
-      "walletId": "pillarx",
-      "metricKey": "rampBank",
-      "path": "product.fiatRamps.bankTransfer",
-      "decision": "no",
-      "citationUrl": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
-      "explanation": "No in-app fiat ramp exists in the current PillarX app after buy/sell was removed (v3.31.1, 09/02/2025), so bank transfer is not offered as a ramp payment method."
+      "explanation": "The App Store listing shows PillarX as free with no in-app purchases, and no site/docs material mentions any paid subscription or premium tier."
     },
     {
       "walletId": "rabby",
-      "metricKey": "rampBuy",
-      "path": "product.fiatRamps.buyCrypto",
-      "decision": "no",
-      "citationUrl": "https://cryptoslate.com/crypto-wallets/rabby-wallet-review/",
-      "explanation": "Multiple reviews confirm Rabby has no fiat on-ramp; the CryptoSlate review states 'There is also no fiat on-ramp of any kind,' with users funding via external transfers only."
+      "metricKey": "feeSwap",
+      "path": "product.pricingFeeModel.swapFees",
+      "decision": "yes",
+      "citationUrl": "https://x.com/Rabby_io/status/1809154330622140734",
+      "explanation": "Rabby officially announced and displays a 0.25% fee on its built-in swap, shown in the quote before execution."
     },
     {
       "walletId": "rabby",
-      "metricKey": "rampSell",
-      "path": "product.fiatRamps.sellCrypto",
+      "metricKey": "feeHidden",
+      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
       "decision": "no",
-      "citationUrl": "https://cryptoslate.com/crypto-wallets/rabby-wallet-review/",
-      "explanation": "Rabby has no fiat ramps at all, so no crypto-to-fiat off-ramp exists in-app."
+      "citationUrl": "https://x.com/Rabby_io/status/1809154330622140734",
+      "explanation": "Rabby's fee model is transparent (explicit 0.25% swap fee disclosed publicly and in-app), with no evidence of undisclosed partner/referral markups."
     },
     {
       "walletId": "rabby",
-      "metricKey": "rampCard",
-      "path": "product.fiatRamps.card",
+      "metricKey": "feeSubscription",
+      "path": "product.pricingFeeModel.subscriptionFeatures",
       "decision": "no",
-      "citationUrl": "https://cryptoslate.com/crypto-wallets/rabby-wallet-review/",
-      "explanation": "With no fiat on-ramp present in Rabby, no card payment method is offered."
-    },
-    {
-      "walletId": "rabby",
-      "metricKey": "rampApple",
-      "path": "product.fiatRamps.applePay",
-      "decision": "no",
-      "citationUrl": "https://cryptoslate.com/crypto-wallets/rabby-wallet-review/",
-      "explanation": "No fiat ramp exists in Rabby, so Apple Pay is not available as a payment method."
-    },
-    {
-      "walletId": "rabby",
-      "metricKey": "rampGoogle",
-      "path": "product.fiatRamps.googlePay",
-      "decision": "no",
-      "citationUrl": "https://cryptoslate.com/crypto-wallets/rabby-wallet-review/",
-      "explanation": "No fiat ramp exists in Rabby, so Google Pay is not available as a payment method."
-    },
-    {
-      "walletId": "rabby",
-      "metricKey": "rampBank",
-      "path": "product.fiatRamps.bankTransfer",
-      "decision": "no",
-      "citationUrl": "https://cryptoslate.com/crypto-wallets/rabby-wallet-review/",
-      "explanation": "No fiat ramp exists in Rabby, so bank transfer is not available as a payment method."
+      "citationUrl": "https://defillama.com/protocol/rabby-wallet",
+      "explanation": "Rabby is a free wallet monetized via the 0.25% swap fee and gas top-up service fee, with no optional paid subscription or premium tier found."
     },
     {
       "walletId": "rainbow",
-      "metricKey": "rampSell",
-      "path": "product.fiatRamps.sellCrypto",
-      "decision": "no",
-      "citationUrl": "https://rainbow.me/support/app/withdraw-from-rainbow",
-      "explanation": "Rainbow's official support page states it does not support selling crypto to fiat within the app and instead directs users to transfer assets to a centralized exchange to cash out."
-    },
-    {
-      "walletId": "rainbow",
-      "metricKey": "rampApple",
-      "path": "product.fiatRamps.applePay",
+      "metricKey": "feeSwap",
+      "path": "product.pricingFeeModel.swapFees",
       "decision": "yes",
-      "citationUrl": "https://learn.rainbow.me/buying-crypto-with-rainbow",
-      "explanation": "Rainbow's buy-crypto guide lists Apple Pay as a supported payment method across its integrated on-ramp providers (Ramp, MoonPay, Coinbase Pay)."
+      "citationUrl": "https://rainbow.me/en/support/app/bridge-and-swap-tokens",
+      "explanation": "Rainbow's support page states the \"Rainbow Fee\" (the percentage/amount Rainbow applies) is always visible on the review screen before swapping."
     },
     {
       "walletId": "rainbow",
-      "metricKey": "rampBank",
-      "path": "product.fiatRamps.bankTransfer",
+      "metricKey": "feeBridge",
+      "path": "product.pricingFeeModel.bridgeFees",
       "decision": "yes",
-      "citationUrl": "https://learn.rainbow.me/buying-crypto-with-rainbow",
-      "explanation": "Rainbow's buy-crypto guide lists ACH (bank transfers) as a supported payment method via its on-ramp providers."
+      "citationUrl": "https://rainbow.me/en/support/app/bridge-and-swap-tokens",
+      "explanation": "The same Bridge and Swap support page discloses that the Rainbow Fee is shown on the review screen for both bridging and swapping transactions."
     },
     {
       "walletId": "rainbow",
-      "metricKey": "defiLp",
-      "path": "product.defiPositionAwareness.lpPositions",
+      "metricKey": "feeHidden",
+      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
       "decision": "no",
-      "citationUrl": "https://rainbow.me/support/app/defi-positions-in-rainbow",
-      "explanation": "Rainbow's DeFi positions page lists only Aave, Compound, Yearn, and Maker, none of which are liquidity-pool protocols (no Uniswap, Curve, or Balancer), so LP positions are not surfaced."
+      "citationUrl": "https://rainbow.me/en/support/app/bridge-and-swap-tokens",
+      "explanation": "Rainbow presents its fee transparently as a visible \"Rainbow Fee\" line item on the review screen, with no evidence of undisclosed partner/referral markup."
+    },
+    {
+      "walletId": "rainbow",
+      "metricKey": "feeSubscription",
+      "path": "product.pricingFeeModel.subscriptionFeatures",
+      "decision": "no",
+      "citationUrl": "https://learn.rainbow.me/swap-with-confidence-with-rainbow",
+      "explanation": "Rainbow is a free wallet with no paid subscription or premium tier; only network gas and disclosed swap fees apply."
+    },
+    {
+      "walletId": "trezor",
+      "metricKey": "hwSupport",
+      "path": "security.hardwareWalletSupport",
+      "decision": "na",
+      "citationUrl": "https://trezor.io/learn/a/third-party-apps-and-trezor",
+      "explanation": "Trezor is itself a hardware signer and Trezor Suite does not support signing with third-party hardware wallets like Ledger."
+    },
+    {
+      "walletId": "trezor",
+      "metricKey": "scamSend",
+      "path": "security.scamAlerts.sendTransactionWarning",
+      "decision": "yes",
+      "citationUrl": "https://trezor.io/support/troubleshooting/coins-tokens/address-poisoning-attacks",
+      "explanation": "Trezor Suite detects address-poisoning and airdrop scam tokens, blurring them and labeling transactions as unverified/phishing."
+    },
+    {
+      "walletId": "trezor",
+      "metricKey": "scamContract",
+      "path": "security.scamAlerts.contractTransactionWarning",
+      "decision": "no",
+      "citationUrl": "https://trezor.io/support/troubleshooting/coins-tokens/malicious-smart-contracts",
+      "explanation": "Trezor's guidance directs users to external tools like Etherscan's token approval checker and offers no built-in flagged/malicious-contract warning before signing."
+    },
+    {
+      "walletId": "trezor",
+      "metricKey": "txSim",
+      "path": "security.transactionLegibility.transactionSimulations",
+      "decision": "no",
+      "citationUrl": "https://trezor.io/learn/supported-assets/ethereum-layer-2-EVM/ethereum-erc-20-tokens-on-trezor",
+      "explanation": "Trezor Suite has users review raw transaction/EIP-712 data on the device but does not simulate net balance changes before signing."
+    },
+    {
+      "walletId": "trezor",
+      "metricKey": "passkey",
+      "path": "security.passkeyVerification",
+      "decision": "yes",
+      "citationUrl": "https://trezor.io/guides/bonus-tools/using-your-trezor-as-a-security-key-fido-2-and-u2f",
+      "explanation": "Trezor Model T and Safe family devices work as FIDO2/passkey security keys for phishing-resistant 2FA and passwordless login."
+    },
+    {
+      "walletId": "trezor",
+      "metricKey": "lightClient",
+      "path": "security.lightClient.ethereumL1",
+      "decision": "no",
+      "citationUrl": "https://trezor.io/learn/supported-assets/ethereum-layer-2-EVM/ethereum-erc-20-tokens-on-trezor",
+      "explanation": "Trezor Suite relies on backend/RPC data rather than an embedded trust-minimized Ethereum L1 light client to verify state."
+    },
+    {
+      "walletId": "trust-wallet",
+      "metricKey": "feeSwap",
+      "path": "product.pricingFeeModel.swapFees",
+      "decision": "no",
+      "citationUrl": "https://chaincost.app/guides/trust-wallet-fees/",
+      "explanation": "Trust Wallet publicly markets swaps as having no wallet fee (only DEX spread ~0.5-1% baked into the rate), yet its Premium program offers 'swap fee discounts,' so the actual wallet swap fee is not clearly disclosed as a stated percentage."
+    },
+    {
+      "walletId": "trust-wallet",
+      "metricKey": "feeSubscription",
+      "path": "product.pricingFeeModel.subscriptionFeatures",
+      "decision": "no",
+      "citationUrl": "https://trustwallet.com/blog/announcements/introducing-trust-premium",
+      "explanation": "Trust Premium is a free loyalty/rewards program that explicitly states 'There are no subscriptions or hidden fees,' so there is no optional paid subscription or premium paid tier."
+    },
+    {
+      "walletId": "uniswap-wallet",
+      "metricKey": "feeSpread",
+      "path": "product.pricingFeeModel.spreadDisclosure",
+      "decision": "yes",
+      "citationUrl": "https://support.uniswap.org/hc/en-us/articles/20131678274957-What-are-Uniswap-Labs-fees",
+      "explanation": "Uniswap Labs publishes a dedicated support page disclosing its swap/interface fee and shows any applicable fee in the in-app swap detail section (paid in the output token), so the fee/markup is clearly disclosed."
+    },
+    {
+      "walletId": "uniswap-wallet",
+      "metricKey": "feeHidden",
+      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
+      "decision": "no",
+      "citationUrl": "https://support.uniswap.org/hc/en-us/articles/20131678274957-What-are-Uniswap-Labs-fees",
+      "explanation": "Uniswap's fee model is transparent (Labs fee documented and shown in the swap detail section, plus disclosed protocol/LP fee tiers), with no evidence of undisclosed partner/referral markup."
+    },
+    {
+      "walletId": "uniswap-wallet",
+      "metricKey": "feeSubscription",
+      "path": "product.pricingFeeModel.subscriptionFeatures",
+      "decision": "no",
+      "citationUrl": "https://support.uniswap.org/hc/en-us/categories/5685161551629-General",
+      "explanation": "Uniswap Wallet is a free non-custodial app (iOS, Android, browser extension) with no advertised optional paid subscription or premium tier."
+    },
+    {
+      "walletId": "zerion",
+      "metricKey": "feeSwap",
+      "path": "product.pricingFeeModel.swapFees",
+      "decision": "yes",
+      "citationUrl": "https://help.zerion.io/en/articles/4813752-understanding-fees-on-zerion",
+      "explanation": "Zerion's official help center 'Understanding Fees on Zerion' page discloses a 0.67% service fee applied to in-app swaps."
+    },
+    {
+      "walletId": "zerion",
+      "metricKey": "feeBridge",
+      "path": "product.pricingFeeModel.bridgeFees",
+      "decision": "yes",
+      "citationUrl": "https://zerion.io/blog/zerion-fee-update-for-bridge/",
+      "explanation": "Zerion discloses its bridge fee in the help center and blog (e.g., 0.8% bridge fee announced in the Zerion Fee Update for Bridge)."
+    },
+    {
+      "walletId": "zerion",
+      "metricKey": "feeHidden",
+      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
+      "decision": "no",
+      "citationUrl": "https://help.zerion.io/en/articles/4813752-understanding-fees-on-zerion",
+      "explanation": "Zerion transparently publishes its swap (0.67%) and bridge (0.8%) service fees on its official help center, indicating a disclosed rather than hidden revenue model."
+    },
+    {
+      "walletId": "zerion",
+      "metricKey": "feeSubscription",
+      "path": "product.pricingFeeModel.subscriptionFeatures",
+      "decision": "yes",
+      "citationUrl": "https://zerion.io/premium",
+      "explanation": "Zerion offers a paid Premium subscription (~$99/year) providing advanced analytics and reduced trading/bridging fees."
+    },
+    {
+      "walletId": "zeus",
+      "metricKey": "feeSwap",
+      "path": "product.pricingFeeModel.swapFees",
+      "decision": "no",
+      "citationUrl": "https://github.com/greekfetacheese/zeus",
+      "explanation": "Zeus is an open-source self-custodial wallet that routes swaps directly through Uniswap's Universal Router with no wallet-level swap fee documented and no fees page disclosing one."
+    },
+    {
+      "walletId": "zeus",
+      "metricKey": "feeBridge",
+      "path": "product.pricingFeeModel.bridgeFees",
+      "decision": "no",
+      "citationUrl": "https://github.com/greekfetacheese/zeus",
+      "explanation": "Bridging is done directly via the Across protocol with no wallet-level bridge fee documented or disclosed in the repository."
+    },
+    {
+      "walletId": "zeus",
+      "metricKey": "feeSpread",
+      "path": "product.pricingFeeModel.spreadDisclosure",
+      "decision": "no",
+      "citationUrl": "https://github.com/greekfetacheese/zeus",
+      "explanation": "The wallet uses on-chain Uniswap quotes directly and there is no disclosed price spread or markup applied to quotes."
+    },
+    {
+      "walletId": "zeus",
+      "metricKey": "feeHidden",
+      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
+      "decision": "no",
+      "citationUrl": "https://github.com/greekfetacheese/zeus",
+      "explanation": "The open-source code routes swaps/bridges directly to Uniswap and Across with no referral/partner code documented, showing no evidence of undisclosed partner revenue."
+    },
+    {
+      "walletId": "zeus",
+      "metricKey": "feeSubscription",
+      "path": "product.pricingFeeModel.subscriptionFeatures",
+      "decision": "no",
+      "citationUrl": "https://github.com/greekfetacheese/zeus",
+      "explanation": "Zeus is a free MIT-licensed open-source wallet with no optional paid subscription or premium tier offered."
+    },
+    {
+      "walletId": "coinbase-wallet",
+      "metricKey": "feeBridge",
+      "path": "product.pricingFeeModel.bridgeFees",
+      "decision": "yes",
+      "citationUrl": "https://help.coinbase.com/en/wallet/bridging",
+      "explanation": "Coinbase Wallet shows a Bridge Fee and Coinbase Fee in the transaction summary before the user confirms a cross-chain bridge, per the official Coinbase Help bridging page."
+    },
+    {
+      "walletId": "exodus",
+      "metricKey": "feeBridge",
+      "path": "product.pricingFeeModel.bridgeFees",
+      "decision": "yes",
+      "citationUrl": "https://www.exodus.com/investors/news-events/press-releases/detail/82/exodus-and-metamask-partner-to-bring-xo-swaps-bridge-functionality-to-millions-of-wallet-users",
+      "explanation": "Exodus XO Swap displays the full quote and fixed rate before the user confirms a cross-chain swap/bridge, so users see the amount received beforehand."
+    },
+    {
+      "walletId": "nufi",
+      "metricKey": "feeBridge",
+      "path": "product.pricingFeeModel.bridgeFees",
+      "decision": "unknown",
+      "citationUrl": "",
+      "explanation": "NuFi supports cross-chain bridging via SwapKit/THORChain but no official source confirms bridge fees are explicitly disclosed before confirmation."
+    },
+    {
+      "walletId": "okx",
+      "metricKey": "feeBridge",
+      "path": "product.pricingFeeModel.bridgeFees",
+      "decision": "yes",
+      "citationUrl": "https://www.okx.com/en-us/learn/what-is-okx-bridge",
+      "explanation": "OKX's official OKX Bridge guide states all costs — bridge fee (0.08–0.2%) and network gas — are displayed before confirming the transaction."
+    },
+    {
+      "walletId": "rabby",
+      "metricKey": "feeBridge",
+      "path": "product.pricingFeeModel.bridgeFees",
+      "decision": "yes",
+      "citationUrl": "https://li.fi/knowledge-hub/rabby-wallet-integrates-li-fi-to-power-bridge-feature",
+      "explanation": "Rabby uses LI.FI bridge aggregation with a 0.25% fee, and its pre-confirmation simulation surfaces the expected fee cost before the user bridges."
+    },
+    {
+      "walletId": "trust-wallet",
+      "metricKey": "feeBridge",
+      "path": "product.pricingFeeModel.bridgeFees",
+      "decision": "yes",
+      "citationUrl": "https://trustwallet.com/blog/guides/how-to-bridge-to-bnb-chain-using-trust-wallet",
+      "explanation": "Trust Wallet's official bridging guide instructs users to review the fees associated with the transaction before confirming."
+    },
+    {
+      "walletId": "daimo",
+      "metricKey": "feeHidden",
+      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
+      "decision": "unknown",
+      "citationUrl": "",
+      "explanation": "Insufficient public information to determine whether Daimo takes undisclosed partner revenue; swap/bridge fees are described as bundled for a clean checkout but no specific kickback arrangement was confirmed."
+    },
+    {
+      "walletId": "elytro",
+      "metricKey": "feeHidden",
+      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
+      "decision": "unknown",
+      "citationUrl": "",
+      "explanation": "No official documentation found addressing Elytro partner revenue or affiliate arrangements; unrated for fee transparency on Walletbeat."
+    },
+    {
+      "walletId": "nufi",
+      "metricKey": "feeHidden",
+      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
+      "decision": "no",
+      "citationUrl": "https://reviewnexa.com/nufi-wallet-review/",
+      "explanation": "NuFi discloses that it earns referral fees from integrated on-ramps and swap aggregators; no evidence of undisclosed/hidden partner revenue was found."
+    },
+    {
+      "walletId": "pillarx",
+      "metricKey": "feeHidden",
+      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
+      "decision": "unknown",
+      "citationUrl": "",
+      "explanation": "PillarX integrates StealthEX (which runs an affiliate program) but no documented evidence confirms whether PillarX takes affiliate revenue or discloses it; treated as unknown rather than asserting an undocumented negative claim."
+    },
+    {
+      "walletId": "trust-wallet",
+      "metricKey": "feeHidden",
+      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
+      "decision": "unknown",
+      "citationUrl": "",
+      "explanation": "Trust Wallet discloses at a high level that it earns affiliate commissions on swaps/staking, but specific partner arrangements are not detailed and no clear evidence of undisclosed kickbacks was found."
+    },
+    {
+      "walletId": "ambire",
+      "metricKey": "feeSpread",
+      "path": "product.pricingFeeModel.spreadDisclosure",
+      "decision": "yes",
+      "citationUrl": "https://blog.ambire.com/swap-bridge-fee-increase/",
+      "explanation": "Ambire publicly discloses a 0.5% swap and bridge fee and states wallet fees are made transparent to the user before confirmation."
+    },
+    {
+      "walletId": "argent",
+      "metricKey": "feeSpread",
+      "path": "product.pricingFeeModel.spreadDisclosure",
+      "decision": "yes",
+      "citationUrl": "https://support.argent.xyz/hc/en-us/articles/360006147378-What-is-the-crypto-to-crypto-exchange-fee-in-Argent-s-Ethereum-account",
+      "explanation": "Argent's official support page discloses a 0.5% exchange fee on swaps, shown in-app before confirming."
+    },
+    {
+      "walletId": "brave-wallet",
+      "metricKey": "feeSpread",
+      "path": "product.pricingFeeModel.spreadDisclosure",
+      "decision": "yes",
+      "citationUrl": "https://support.brave.app/hc/en-us/articles/13397025065357-What-are-Brave-Swaps",
+      "explanation": "Brave's official support docs state swap fees are displayed transparently, with only network gas and the disclosed swap fee applied."
+    },
+    {
+      "walletId": "family",
+      "metricKey": "feeSpread",
+      "path": "product.pricingFeeModel.spreadDisclosure",
+      "decision": "no",
+      "citationUrl": "https://family.co/faqs",
+      "explanation": "Family's FAQ states it charges no additional wallet fees and shows estimated fees before confirmation, but does not disclose any platform spread or markup percentage."
+    },
+    {
+      "walletId": "imtoken",
+      "metricKey": "feeSpread",
+      "path": "product.pricingFeeModel.spreadDisclosure",
+      "decision": "unknown",
+      "citationUrl": "",
+      "explanation": "imToken integrates Tokenlon (0.1–0.15% fees) and shows a swap cost warning, but explicit spread/markup disclosure before confirmation could not be confirmed from official sources."
+    },
+    {
+      "walletId": "nufi",
+      "metricKey": "feeSpread",
+      "path": "product.pricingFeeModel.spreadDisclosure",
+      "decision": "no",
+      "citationUrl": "https://nu.fi/blog/what-is-the-best-crypto-wallet",
+      "explanation": "NuFi states it charges no swap fees (only network fees), routing through aggregators; the underlying aggregator spread is not separately surfaced to the user."
+    },
+    {
+      "walletId": "rabby",
+      "metricKey": "feeSpread",
+      "path": "product.pricingFeeModel.spreadDisclosure",
+      "decision": "yes",
+      "citationUrl": "https://x.com/Rabby_io/status/1809154330622140734",
+      "explanation": "Rabby's official account announced a 0.25% built-in swap fee, and the swap flow previews the expected received amount including fee before confirmation."
+    },
+    {
+      "walletId": "rainbow",
+      "metricKey": "feeSpread",
+      "path": "product.pricingFeeModel.spreadDisclosure",
+      "decision": "yes",
+      "citationUrl": "https://rainbow.me/support/app/bridge-and-swap-tokens",
+      "explanation": "Rainbow's official support page states the Rainbow Fee is always visible on the review page before confirming a swap."
+    },
+    {
+      "walletId": "zerion",
+      "metricKey": "feeSpread",
+      "path": "product.pricingFeeModel.spreadDisclosure",
+      "decision": "yes",
+      "citationUrl": "https://help.zerion.io/en/articles/4813752-understanding-fees-on-zerion",
+      "explanation": "Zerion's official help center discloses a 0.67% service fee on swaps and states there are no hidden fees, with network and exchange fees also disclosed."
     },
     {
       "walletId": "safe",
-      "metricKey": "rampSell",
-      "path": "product.fiatRamps.sellCrypto",
+      "metricKey": "feeSubscription",
+      "path": "product.pricingFeeModel.subscriptionFeatures",
       "decision": "no",
-      "citationUrl": "https://safe.global/blog/fiat-on-ramp-now-available-in-safe-wallet-mobile-app-ios",
-      "explanation": "Safe{Wallet}'s only documented fiat ramp is a MoonPay-powered buy/on-ramp for iOS; no official source describes an off-ramp or selling crypto to fiat."
+      "citationUrl": "https://milkroad.com/reviews/safe-wallet/",
+      "explanation": "Safe Wallet is free for core functionality (signer management, transaction proposal/execution) and does not charge for wallet use per the reviewed pricing."
     },
     {
-      "walletId": "safe",
-      "metricKey": "rampApple",
-      "path": "product.fiatRamps.applePay",
+      "walletId": "base-app",
+      "metricKey": "feeSwap",
+      "path": "product.pricingFeeModel.swapFees",
       "decision": "yes",
-      "citationUrl": "https://safe.global/blog/fiat-on-ramp-now-available-in-safe-wallet-mobile-app-ios",
-      "explanation": "Safe's official on-ramp announcement states users can buy crypto within Safe{Wallet} using debit/credit card or Apple Pay via MoonPay."
+      "citationUrl": "https://university.cex.io/coinbase-wallet-base-review/",
+      "explanation": "Base App (formerly Coinbase Wallet) shows swap fees (up to ~1% Coinbase fee) on the confirmation screen before the user confirms the swap."
     },
     {
-      "walletId": "trust-wallet",
-      "metricKey": "rampSell",
-      "path": "product.fiatRamps.sellCrypto",
-      "decision": "yes",
-      "citationUrl": "https://support.trustwallet.com/support/solutions/articles/67000734511-moonpay-your-gateway-to-seamless-crypto-transactions",
-      "explanation": "Trust Wallet offers an in-app crypto-to-fiat off-ramp via integrated providers like MoonPay and Ramp, with a Sell button that connects users to convert crypto to fiat."
-    },
-    {
-      "walletId": "trust-wallet",
-      "metricKey": "rampApple",
-      "path": "product.fiatRamps.applePay",
-      "decision": "yes",
-      "citationUrl": "https://trustwallet.com/blog/announcements/buy-crypto-with-apple-pay-and-google-pay-in-trust-wallet",
-      "explanation": "Trust Wallet's official announcement states it supports Apple Pay as a buy-crypto payment option via its Express Buy feature powered by third-party partners."
-    },
-    {
-      "walletId": "trust-wallet",
-      "metricKey": "rampGoogle",
-      "path": "product.fiatRamps.googlePay",
-      "decision": "yes",
-      "citationUrl": "https://trustwallet.com/blog/announcements/buy-crypto-with-apple-pay-and-google-pay-in-trust-wallet",
-      "explanation": "Trust Wallet's official announcement states it supports Google Pay as a buy-crypto payment option via its Express Buy feature powered by third-party partners."
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "metricKey": "rampCard",
-      "path": "product.fiatRamps.card",
-      "decision": "yes",
-      "citationUrl": "https://support.uniswap.org/hc/en-us/articles/11306614164877-What-payment-methods-are-accepted-when-buying-crypto",
-      "explanation": "Uniswap's integrated fiat on-ramp accepts bank cards including MasterCard, Visa and Maestro (debit/credit) as a payment method."
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "metricKey": "rampApple",
-      "path": "product.fiatRamps.applePay",
-      "decision": "yes",
-      "citationUrl": "https://blog.uniswap.org/revolut-onramp-now-live",
-      "explanation": "Uniswap's ramp supports Apple Pay, listed among accepted payment methods and available via integrated providers such as Revolut, MoonPay and Transak."
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "metricKey": "rampGoogle",
-      "path": "product.fiatRamps.googlePay",
-      "decision": "yes",
-      "citationUrl": "https://blog.uniswap.org/revolut-onramp-now-live",
-      "explanation": "The official Uniswap blog confirms the Revolut on-ramp in Uniswap supports Google Pay (\"Revolut Pay, Apple Pay, Google Pay, cards\")."
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "metricKey": "rampBank",
-      "path": "product.fiatRamps.bankTransfer",
-      "decision": "yes",
-      "citationUrl": "https://support.uniswap.org/hc/en-us/articles/11306614164877-What-payment-methods-are-accepted-when-buying-crypto",
-      "explanation": "Uniswap's fiat on-ramp supports bank transfers (including SEPA and US/UK/Brazil bank transfers) as a payment method."
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "metricKey": "defiRewards",
-      "path": "product.defiPositionAwareness.claimableRewards",
-      "decision": "yes",
-      "citationUrl": "https://support.uniswap.org/hc/en-us/articles/33829507086989-How-to-collect-fees-from-a-liquidity-pool-on-Uniswap-v4",
-      "explanation": "The Uniswap app surfaces liquidity positions with uncollected/claimable fees that users can collect directly in the UI via the Collect fees action."
-    },
-    {
-      "walletId": "zerion",
-      "metricKey": "rampSell",
-      "path": "product.fiatRamps.sellCrypto",
+      "walletId": "firefly",
+      "metricKey": "scamContract",
+      "path": "security.scamAlerts.contractTransactionWarning",
       "decision": "no",
-      "citationUrl": "https://help.zerion.io/en/articles/5351052-sell-crypto-withdraw-to-bank-with-zerion",
-      "explanation": "Zerion's own help center states \"Currently, Zerion doesn't support selling crypto directly for fiat currencies\" and requires transferring to an external exchange to cash out."
+      "citationUrl": "https://hackaday.io/project/146319-firefly-hardware-wallet",
+      "explanation": "Firefly is a minimal DIY air-gapped Ethereum signer; its documented feature set (multi-sig, offline signing, recovery) includes no malicious-contract registry or blocklist."
     },
     {
-      "walletId": "zerion",
-      "metricKey": "rampApple",
-      "path": "product.fiatRamps.applePay",
+      "walletId": "keystone",
+      "metricKey": "scamContract",
+      "path": "security.scamAlerts.contractTransactionWarning",
+      "decision": "no",
+      "citationUrl": "https://keyst.one/",
+      "explanation": "Keystone's documentation focuses on air-gapped clear-signing and secure elements; no blocklist-based malicious-contract warning is described for the device or companion apps."
+    },
+    {
+      "walletId": "ngrave",
+      "metricKey": "scamContract",
+      "path": "security.scamAlerts.contractTransactionWarning",
+      "decision": "no",
+      "citationUrl": "https://ngrave.io/en/zero",
+      "explanation": "NGRAVE ZERO is fully air-gapped and relies on manual QR-based verification; no malicious-contract registry/blocklist warning is documented."
+    },
+    {
+      "walletId": "firefly",
+      "metricKey": "scamSend",
+      "path": "security.scamAlerts.sendTransactionWarning",
+      "decision": "no",
+      "citationUrl": "https://hackaday.io/project/146319-firefly-hardware-wallet",
+      "explanation": "Firefly's documented features cover multi-sig, offline signing and recovery only; no flagged-address blacklist or address-poisoning detection is described."
+    },
+    {
+      "walletId": "gridplus",
+      "metricKey": "scamSend",
+      "path": "security.scamAlerts.sendTransactionWarning",
+      "decision": "no",
+      "citationUrl": "https://docs.gridplus.io/lattice1/security-features",
+      "explanation": "GridPlus Lattice1 security docs describe clear signing and tamper protection but no blacklisted-address or address-poisoning send warning."
+    },
+    {
+      "walletId": "keystone",
+      "metricKey": "scamSend",
+      "path": "security.scamAlerts.sendTransactionWarning",
       "decision": "yes",
-      "citationUrl": "https://zerion.io/blog/how-to-fund-zerion-wallet/",
-      "explanation": "Zerion's funding guide lists integrated providers MoonPay and Mercuryo as supporting Apple Pay as a payment method for buying crypto."
+      "citationUrl": "https://www.bitget.com/amp/academy/keystone-wallet-safe",
+      "explanation": "Keystone firmware includes address-poisoning detection that flags transactions to addresses resembling previous destinations before signing."
     },
     {
-      "walletId": "zerion",
-      "metricKey": "rampGoogle",
-      "path": "product.fiatRamps.googlePay",
+      "walletId": "ngrave",
+      "metricKey": "scamSend",
+      "path": "security.scamAlerts.sendTransactionWarning",
+      "decision": "no",
+      "citationUrl": "https://ngrave.io/en/zero",
+      "explanation": "NGRAVE ZERO documentation describes no blacklisted-address or address-poisoning warning; it relies on manual verification on the secure display before QR signing."
+    },
+    {
+      "walletId": "onekey",
+      "metricKey": "scamSend",
+      "path": "security.scamAlerts.sendTransactionWarning",
       "decision": "yes",
-      "citationUrl": "https://zerion.io/blog/how-to-fund-zerion-wallet/",
-      "explanation": "Zerion's funding guide lists MoonPay (integrated provider) as supporting Google Pay as a payment method for buying crypto in-app."
+      "citationUrl": "https://help.onekey.so/en/articles/12058229-signguard-and-clear-signing-how-they-protect-you-from-web3-phishing-and-scams",
+      "explanation": "OneKey's SignGuard (GoPlus/Blockaid/ScamSniffer) detects hidden malicious addresses and flags suspicious approvals with risk alerts before signing."
     },
     {
-      "walletId": "zerion",
-      "metricKey": "rampBank",
-      "path": "product.fiatRamps.bankTransfer",
+      "walletId": "cypherock",
+      "metricKey": "scamUrl",
+      "path": "security.scamAlerts.scamUrlWarning",
+      "decision": "no",
+      "citationUrl": "https://docs.cypherock.com/security-overview/remote-attacks",
+      "explanation": "Cypherock's security docs focus on seedless design and secure elements; no blocklist-based phishing/dApp URL warning is documented for the X1 or cySync app."
+    },
+    {
+      "walletId": "firefly",
+      "metricKey": "scamUrl",
+      "path": "security.scamAlerts.scamUrlWarning",
+      "decision": "no",
+      "citationUrl": "https://hackaday.io/project/146319-firefly-hardware-wallet",
+      "explanation": "Firefly is a bare DIY signer with no network connectivity or companion app implementing URL scanning."
+    },
+    {
+      "walletId": "gridplus",
+      "metricKey": "scamUrl",
+      "path": "security.scamAlerts.scamUrlWarning",
+      "decision": "no",
+      "citationUrl": "https://docs.gridplus.io/lattice1/security-features",
+      "explanation": "GridPlus Lattice1 security docs cover hardware protection and clear signing only; no phishing-URL blocklist or dApp scam warning is described."
+    },
+    {
+      "walletId": "imkey",
+      "metricKey": "scamUrl",
+      "path": "security.scamAlerts.scamUrlWarning",
       "decision": "yes",
-      "citationUrl": "https://zerion.io/blog/how-to-fund-zerion-wallet/",
-      "explanation": "Zerion's funding guide states its integrated ramps (MoonPay, Ramp, Mercuryo) support bank transfers including SEPA/SEPA Instant and Faster Payments Service."
+      "citationUrl": "https://medium.com/imtoken/imtoken-2-9-2-out-now-with-updated-dapp-security-risk-control-and-more-551ca40f86c1",
+      "explanation": "imKey's companion app imToken bans risky dApp URLs and shows DApp access risk reminders for high-risk sites, providing blocklist-based scam URL warnings."
     },
     {
-      "walletId": "zerion",
-      "metricKey": "pfCostBasis",
-      "path": "product.portfolioManagement.costBasis",
+      "walletId": "keystone",
+      "metricKey": "scamUrl",
+      "path": "security.scamAlerts.scamUrlWarning",
+      "decision": "no",
+      "citationUrl": "https://blog.keyst.one/from-evm-to-solana-how-to-avoid-phishing-scams",
+      "explanation": "Keystone's own blog recommends third-party tools like ScamSniffer for phishing protection rather than a built-in URL blocklist in the device or companion apps."
+    },
+    {
+      "walletId": "ngrave",
+      "metricKey": "scamUrl",
+      "path": "security.scamAlerts.scamUrlWarning",
+      "decision": "no",
+      "citationUrl": "https://ngrave.io/en/zero",
+      "explanation": "NGRAVE ZERO is fully air-gapped; neither the device nor the LIQUID companion app documents a blocklist-based phishing/scam URL warning."
+    },
+    {
+      "walletId": "onekey",
+      "metricKey": "scamUrl",
+      "path": "security.scamAlerts.scamUrlWarning",
       "decision": "yes",
-      "citationUrl": "https://zerion.io/blog/profit-and-loss-now-on-zerion/",
-      "explanation": "Zerion's Profit and Loss feature tracks \"Average Cost\" (cost basis of holdings) and invested amount per asset to compute realized/unrealized gains."
+      "citationUrl": "https://help.onekey.so/en/articles/12058229-signguard-and-clear-signing-how-they-protect-you-from-web3-phishing-and-scams",
+      "explanation": "OneKey's SignGuard integrates GoPlus/Blockaid/ScamSniffer to detect phishing sites and malicious dApps in real time with alerts before signing."
     },
     {
-      "walletId": "zeus",
-      "metricKey": "rampBuy",
-      "path": "product.fiatRamps.buyCrypto",
-      "decision": "no",
-      "citationUrl": "https://github.com/greekfetacheese/zeus",
-      "explanation": "Zeus is a self-custodial desktop Ethereum wallet whose README lists its features (send, bridge, swap, portfolio, simulations) with no fiat on-ramp, and explicitly states it does not rely on any third-party service."
+      "walletId": "trezor",
+      "metricKey": "scamUrl",
+      "path": "security.scamAlerts.scamUrlWarning",
+      "decision": "yes",
+      "citationUrl": "https://trezor.io/guides/trezor-suite/wallet-connect-in-trezor-suite",
+      "explanation": "Trezor Suite's WalletConnect integration warns when a dApp is unverified or flagged as dangerous before the user connects/signs."
     },
     {
-      "walletId": "zeus",
-      "metricKey": "rampSell",
-      "path": "product.fiatRamps.sellCrypto",
+      "walletId": "firefly",
+      "metricKey": "txSim",
+      "path": "security.transactionLegibility.transactionSimulations",
       "decision": "no",
-      "citationUrl": "https://github.com/greekfetacheese/zeus",
-      "explanation": "The README documents no crypto-to-fiat off-ramp; only crypto operations like swaps and bridging are supported, and a GitHub code search found zero references to any ramp providers."
+      "citationUrl": "https://github.com/firefly/wallet",
+      "explanation": "The Firefly DIY wallet displays only raw transaction parameters on its OLED screen; no transaction simulation or balance-change preview is documented."
     },
     {
-      "walletId": "zeus",
-      "metricKey": "rampCard",
-      "path": "product.fiatRamps.card",
+      "walletId": "imkey",
+      "metricKey": "txSim",
+      "path": "security.transactionLegibility.transactionSimulations",
       "decision": "no",
-      "citationUrl": "https://github.com/greekfetacheese/zeus",
-      "explanation": "Zeus has no fiat ramp at all, so card payments are not available as a purchase method."
+      "citationUrl": "https://support.imkey.im/hc/en-001/categories/35745879900057-imKey-Pro-Instructions",
+      "explanation": "imKey Pro shows amount, recipient and fee for manual verification before signing, but no transaction simulation of net effects is documented."
     },
     {
-      "walletId": "zeus",
-      "metricKey": "rampApple",
-      "path": "product.fiatRamps.applePay",
+      "walletId": "ngrave",
+      "metricKey": "txSim",
+      "path": "security.transactionLegibility.transactionSimulations",
       "decision": "no",
-      "citationUrl": "https://github.com/greekfetacheese/zeus",
-      "explanation": "Zeus has no fiat ramp, so Apple Pay is not available as a payment method."
+      "citationUrl": "https://support.ngrave.io/hc/en-us/articles/19966506197021-Blind-signing",
+      "explanation": "NGRAVE's own blind-signing article notes smart-contract details cannot always be decoded on ZERO; simulation is not a feature of the device itself."
     },
     {
-      "walletId": "zeus",
-      "metricKey": "rampGoogle",
-      "path": "product.fiatRamps.googlePay",
-      "decision": "no",
-      "citationUrl": "https://github.com/greekfetacheese/zeus",
-      "explanation": "Zeus has no fiat ramp, so Google Pay is not available as a payment method."
+      "walletId": "cypherock",
+      "metricKey": "duress",
+      "path": "security.duressResistance.duressMode",
+      "decision": "yes",
+      "citationUrl": "https://thebitcoinhole.com/hardware-wallets/cypherock-x1",
+      "explanation": "Cypherock X1's feature spec lists a Dummy/Decoy/Duress wallet enabled via multiple BIP-39 passphrase-derived wallets with separate PINs, for coercion protection."
     },
     {
-      "walletId": "zeus",
-      "metricKey": "rampBank",
-      "path": "product.fiatRamps.bankTransfer",
+      "walletId": "firefly",
+      "metricKey": "duress",
+      "path": "security.duressResistance.duressMode",
       "decision": "no",
-      "citationUrl": "https://github.com/greekfetacheese/zeus",
-      "explanation": "Zeus has no fiat ramp, so bank transfer (ACH/SEPA/wire) is not available as a payment method."
+      "citationUrl": "https://github.com/firefly/wallet",
+      "explanation": "Firefly's repository and documentation contain no mention of a duress mode, decoy PIN, or passphrase-derived hidden wallet."
+    },
+    {
+      "walletId": "trezor",
+      "metricKey": "duress",
+      "path": "security.duressResistance.duressMode",
+      "decision": "yes",
+      "citationUrl": "https://blog.trezor.io/passphrase-the-ultimate-protection-for-your-accounts-3a311990925b",
+      "explanation": "SatoshiLabs' official Trezor blog names plausible deniability as a benefit of the passphrase/hidden-wallet feature, describing revealing a decoy wallet under coercion."
+    },
+    {
+      "walletId": "imkey",
+      "metricKey": "passkey",
+      "path": "security.passkeyVerification",
+      "decision": "no",
+      "citationUrl": "https://imkey.im/products/imkey-pro-crypto-hardware-wallet",
+      "explanation": "imKey Pro authenticates via PIN and Bluetooth/USB; no WebAuthn/FIDO2 passkey support is documented for the crypto wallet (the imKey Pass S6 is a separate FIDO2 product)."
+    },
+    {
+      "walletId": "ngrave",
+      "metricKey": "passkey",
+      "path": "security.passkeyVerification",
+      "decision": "no",
+      "citationUrl": "https://ngrave.io/en/zero",
+      "explanation": "NGRAVE ZERO authenticates via an 8-digit PIN and fingerprint; no passkey/WebAuthn/FIDO2 authentication is documented."
     }
   ]
 }

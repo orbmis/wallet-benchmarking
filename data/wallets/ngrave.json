@@ -180,11 +180,33 @@
             }
           ]
         },
-        "duressResistance": null,
+        "duressResistance": {
+          "duressMode": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.ngrave.io/hc/en-us/articles/14915071703581-Passphrase-FAQ",
+                  "explanation": "NGRAVE documents that a passphrase creates a hidden wallet and a small-balance passphrase wallet can act as a duress/decoy wallet surrendered under coercion."
+                }
+              }
+            ]
+          }
+        },
         "firmware": null,
         "keysHandling": null,
         "lightClient": {
-          "ethereumL1": null
+          "ethereumL1": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://ngrave.io/en/liquid",
+                  "explanation": "LIQUID is a portfolio/broadcast app relying on standard RPC/QR flow with no documented trust-minimized Ethereum L1 light client."
+                }
+              }
+            ]
+          }
         },
         "publicSecurityAudits": null,
         "secureElement": {
@@ -225,9 +247,69 @@
           "erc7730": {
             "$ref": "notSupported"
           },
-          "erc8213": null
+          "erc8213": null,
+          "transactionSimulations": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.ngrave.io/hc/en-us/articles/19966506197021-Blind-signing",
+                  "explanation": "NGRAVE's own blind-signing article notes smart-contract details cannot always be decoded on ZERO; simulation is not a feature of the device itself."
+                }
+              }
+            ]
+          }
         },
-        "userSafety": null
+        "userSafety": null,
+        "hardwareWalletSupport": {
+          "$ref": "notApplicable"
+        },
+        "scamAlerts": {
+          "contractTransactionWarning": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://ngrave.io/en/zero",
+                  "explanation": "NGRAVE ZERO is fully air-gapped and relies on manual QR-based verification; no malicious-contract registry/blocklist warning is documented."
+                }
+              }
+            ]
+          },
+          "sendTransactionWarning": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://ngrave.io/en/zero",
+                  "explanation": "NGRAVE ZERO documentation describes no blacklisted-address or address-poisoning warning; it relies on manual verification on the secure display before QR signing."
+                }
+              }
+            ]
+          },
+          "scamUrlWarning": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://ngrave.io/en/zero",
+                  "explanation": "NGRAVE ZERO is fully air-gapped; neither the device nor the LIQUID companion app documents a blocklist-based phishing/scam URL warning."
+                }
+              }
+            ]
+          }
+        },
+        "passkeyVerification": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://ngrave.io/en/zero",
+                "explanation": "NGRAVE ZERO authenticates via an 8-digit PIN and fingerprint; no passkey/WebAuthn/FIDO2 authentication is documented."
+              }
+            }
+          ]
+        }
       },
       "selfSovereignty": {
         "interoperability": null,
