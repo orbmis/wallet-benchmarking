@@ -734,9 +734,39 @@
               }
             ]
           },
-          "gasSponsorship": null,
-          "gasAbstraction": null,
-          "payGasInStablecoins": null,
+          "gasSponsorship": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.exodus.com/support/en/articles/8611278-does-exodus-have-transaction-fees-to-send-or-receive",
+                  "explanation": "Exodus support docs confirm users always pay standard network fees; no gas sponsorship or paymaster functionality is documented."
+                }
+              }
+            ]
+          },
+          "gasAbstraction": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.exodus.com/support/en/articles/8598698-how-do-i-set-ethereum-and-erc20-custom-transaction-fees",
+                  "explanation": "Exodus is a traditional EOA wallet; support docs describe manual gas fee management with no account abstraction or gasless UX."
+                }
+              }
+            ]
+          },
+          "payGasInStablecoins": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.exodus.com/support/en/articles/8611278-does-exodus-have-transaction-fees-to-send-or-receive",
+                  "explanation": "Exodus does not offer stablecoin gas payment in the standard wallet; users pay standard native network fees."
+                }
+              }
+            ]
+          },
           "payGasWithReceivedToken": null,
           "speedPresets": {
             "$call": "supported",
@@ -1329,7 +1359,17 @@
               }
             ]
           },
-          "syncsSettings": null,
+          "syncsSettings": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.exodus.com/article/1481-how-do-i-sync-my-exodus-wallet-to-a-different-device",
+                  "explanation": "Exodus's docs state custom tokens must be re-added after device sync and favorites don't sync to Desktop, so settings sync is not provided."
+                }
+              }
+            ]
+          },
           "syncsContactsOrAddressBook": null,
           "desktopMobileSync": {
             "$call": "supported",
@@ -1342,7 +1382,17 @@
               }
             ]
           },
-          "cloudBackedSync": null,
+          "cloudBackedSync": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.exodus.com/support/en/articles/8598900-how-do-i-back-up-my-wallet-with-icloud-or-google-drive",
+                  "explanation": "Exodus Mobile backs up the secret key encrypted to iCloud or Google Drive, secured by a passkey, enabling restoration on a new device."
+                }
+              }
+            ]
+          },
           "requiresSameSeedImport": {
             "$ref": "notSupported"
           }

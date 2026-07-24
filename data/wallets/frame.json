@@ -894,9 +894,39 @@
               }
             ]
           },
-          "gasSponsorship": null,
-          "gasAbstraction": null,
-          "payGasInStablecoins": null,
+          "gasSponsorship": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.frame.sh/docs/Introduction/",
+                  "explanation": "Frame's official docs describe a system-level EOA wallet with no account abstraction or gas sponsorship features."
+                }
+              }
+            ]
+          },
+          "gasAbstraction": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.frame.sh/docs/Introduction/",
+                  "explanation": "Frame is a desktop EOA wallet; official docs contain no mention of account abstraction, paymasters, or gasless transactions."
+                }
+              }
+            ]
+          },
+          "payGasInStablecoins": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blockspot.io/wallet/frame/",
+                  "explanation": "Frame is a desktop EOA wallet; no official documentation indicates stablecoin gas (paymaster) payment support."
+                }
+              }
+            ]
+          },
           "payGasWithReceivedToken": null,
           "speedPresets": {
             "$call": "supported",
@@ -1396,11 +1426,43 @@
             "explanation": "Frame source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://frame.sh"
           },
-          "syncsAccounts": null,
-          "syncsSettings": null,
+          "syncsAccounts": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.frame.sh/docs/Introduction/",
+                  "explanation": "Frame is a desktop-only app with local encrypted storage and no cloud sync; accounts must be re-imported on each desktop."
+                }
+              }
+            ]
+          },
+          "syncsSettings": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.frame.sh/docs/Introduction/",
+                  "explanation": "Frame uses local-only storage with no cloud component; settings and preferences are device-local and do not sync."
+                }
+              }
+            ]
+          },
           "syncsContactsOrAddressBook": null,
-          "desktopMobileSync": null,
-          "cloudBackedSync": null,
+          "desktopMobileSync": {
+            "$ref": "notApplicable"
+          },
+          "cloudBackedSync": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://frame.sh/",
+                  "explanation": "Frame has no cloud storage by default and keeps data under local user control; no cloud backup is offered."
+                }
+              }
+            ]
+          },
           "requiresSameSeedImport": {
             "$ref": "featureSupported"
           }

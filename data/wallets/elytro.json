@@ -1348,8 +1348,20 @@
           "syncsAccounts": null,
           "syncsSettings": null,
           "syncsContactsOrAddressBook": null,
-          "desktopMobileSync": null,
-          "cloudBackedSync": null,
+          "desktopMobileSync": {
+            "$ref": "notApplicable"
+          },
+          "cloudBackedSync": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/faq",
+                  "explanation": "Elytro encrypts keys locally on the user's device with no cloud backup; the FAQ advises keeping a local backup."
+                }
+              }
+            ]
+          },
           "requiresSameSeedImport": null
         }
       }

@@ -1010,10 +1010,30 @@
               }
             ]
           },
-          "payGasInStablecoins": null,
+          "payGasInStablecoins": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.uniswap.org/gasless-swaps",
+                  "explanation": "Uniswap Wallet offers gasless swaps via UniswapX (a filler pays gas), which is sponsorship, not user-selectable stablecoin gas payment."
+                }
+              }
+            ]
+          },
           "payGasWithReceivedToken": null,
           "speedPresets": null,
-          "stuckTransactionRecovery": null
+          "stuckTransactionRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.uniswap.org/hc/en-us/articles/11306460803981-My-Uniswap-Wallet-transaction-has-been-pending-for-a-long-time-What-can-I-do",
+                  "explanation": "Uniswap Wallet's support article for stuck pending transactions only recommends reinstalling the app, with no in-app speed-up, cancel, or replace-by-fee."
+                }
+              }
+            ]
+          }
         },
         "recoveryUx": {
           "ref": {
@@ -1534,11 +1554,41 @@
             "explanation": "Uniswap Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://wallet.uniswap.org/"
           },
-          "syncsAccounts": null,
+          "syncsAccounts": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
+                  "explanation": "Uniswap's In-App Wallet (Privy-powered) works across browsers and devices — login on any device grants access to the same wallet."
+                }
+              }
+            ]
+          },
           "syncsSettings": null,
           "syncsContactsOrAddressBook": null,
-          "desktopMobileSync": null,
-          "cloudBackedSync": null,
+          "desktopMobileSync": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.uniswap.org/hc/en-us/articles/25751833036045-How-to-import-your-Uniswap-Wallet-to-the-Uniswap-Extension",
+                  "explanation": "The Uniswap Extension imports the mobile wallet via QR code scan, giving access to the same wallet across desktop extension and mobile app."
+                }
+              }
+            ]
+          },
+          "cloudBackedSync": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.uniswap.org/hc/en-us/articles/11382985633421-How-to-back-up-your-recovery-phrase-on-iCloud-or-Google-Drive",
+                  "explanation": "Uniswap Wallet backs up the recovery phrase as a password-encrypted file to iCloud or Google Drive."
+                }
+              }
+            ]
+          },
           "requiresSameSeedImport": {
             "$ref": "featureSupported"
           }

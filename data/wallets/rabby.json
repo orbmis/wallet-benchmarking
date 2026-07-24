@@ -1522,7 +1522,17 @@
             "explanation": "Rabby GasAccount guide says users can deposit USDT/USDC and use it to pay gas fees across Rabby-integrated networks; it also documents fee details.",
             "url": "https://support.rabby.io/hc/en-us/articles/11477594883599-How-does-Rabby-GasAccount-work"
           },
-          "gasCustomization": null,
+          "gasCustomization": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.rabby.io/hc/en-us/articles/11495315064847-How-to-speed-up-or-cancel-a-pending-transaction",
+                  "explanation": "Rabby supports EIP-1559 with a Max Priority Fee slider, customisable gas limit in Advanced Settings, and a Custom gas price option alongside presets."
+                }
+              }
+            ]
+          },
           "gasSponsorship": {
             "$call": "notSupportedWithRef",
             "args": [
@@ -1557,7 +1567,17 @@
             ]
           },
           "payGasWithReceivedToken": null,
-          "speedPresets": null,
+          "speedPresets": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.rabby.io/hc/en-us/articles/11495315064847-How-to-speed-up-or-cancel-a-pending-transaction",
+                  "explanation": "Rabby offers Normal, Fast, and Instant gas speed presets in the transaction preview, plus a Custom option for manual entry."
+                }
+              }
+            ]
+          },
           "stuckTransactionRecovery": {
             "$call": "supported",
             "args": [
