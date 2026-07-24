@@ -1,1114 +1,1144 @@
 {
-	"id": "elytro",
-	"source": "software-wallets",
-	"export": "elytro",
-	"data": {
-		"metadata": {
-			"id": "elytro",
-			"displayName": "Elytro",
-			"tableName": "Elytro",
-			"blurb": "Coming soon. We build secured and decentralized public infra for humanity on Ethereum. We believe in a free, open, and self-own internet. We start by building a smart contract account.",
-			"contributors": [
-				{
-					"$ref": "nconsigny"
-				}
-			],
-			"iconExtension": "svg",
-			"lastUpdated": "2025-03-12",
-			"urls": {
-				"extensions": [
-					"https://chromewebstore.google.com/detail/elytro/alkpdbodocedcmhgmhkebanomfeenoik"
-				],
-				"repositories": [
-					"https://github.com/Elytro-eth"
-				],
-				"socials": {
-					"telegram": "https://t.me/+l9coqJq9QHgyYjI1",
-					"x": "https://x.com/Elytro_eth"
-				},
-				"websites": [
-					"https://elytro.com"
-				]
-			}
-		},
-		"features": {
-			"accountSupport": {
-				"defaultAccountType": "AccountType.rawErc4337",
-				"eip7702": {
-					"$ref": "notSupported"
-				},
-				"eoa": {
-					"$ref": "notSupported"
-				},
-				"mpc": {
-					"$ref": "notSupported"
-				},
-				"rawErc4337": {
-					"$call": "supported",
-					"args": [
-						{
-							"ref": {
-								"explanation": "Elytro supports ERC-4337 smart contract wallets",
-								"url": "https://github.com/Elytro-eth/soul-wallet-contract"
-							},
-							"contract": "UNKNOWN",
-							"controllingSharesInSelfCustodyByDefault": "YES",
-							"keyRotationTransactionGeneration": "TransactionGenerationCapability.USING_OPEN_SOURCE_STANDALONE_APP",
-							"tokenTransferTransactionGeneration": "TransactionGenerationCapability.USING_OPEN_SOURCE_STANDALONE_APP"
-						}
-					]
-				},
-				"safe": {
-					"$ref": "notSupported"
-				}
-			},
-			"addressResolution": {
-				"ref": {
-					"explanation": "Elytro CLI docs define transaction specs with raw `to:0xAddr` recipients, and public repository search found no ENS, namehash, resolver, or Universal Resolver implementation.",
-					"url": "https://elytro.com/docs/cli"
-				},
-				"chainSpecificAddressing": {
-					"erc7828": null,
-					"erc7831": null
-				},
-				"nonChainSpecificEnsResolution": {
-					"$call": "notSupportedWithRef",
-					"args": [
-						{
-							"ref": [
-								{
-									"explanation": "Elytro's transaction spec format is documented as `--tx \"to:0xAddr,value:0.1,data:0x\"`, with no ENS-name recipient format documented.",
-									"url": "https://elytro.com/docs/cli"
-								},
-								{
-									"explanation": "Elytro's quickstart sends transactions using `to:0xRecipient` and does not document ENS-name resolution for recipients.",
-									"url": "https://elytro.com/docs/quickstart"
-								}
-							]
-						}
-					]
-				}
-			},
-			"chainAbstraction": {
-				"bridging": {
-					"builtInBridging": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "Elytro describes token activity as \"Send, swap & bridge daily\" and its demo includes a \"Swap & bridge\" flow.",
-										"url": "https://elytro.com/"
-									},
-									{
-										"explanation": "Elytro publishes an illustrative \"Swap & bridge\" demo flow for the wallet CLI and agent chat scenarios.",
-										"url": "https://elytro.com/demo"
-									}
-								]
-							}
-						]
-					},
-					"bridgingViaTransactionGeneration": null,
-					"trustMinimizedBridging": null
-				},
-				"crossChainBalances": {
-					"ref": {
-						"explanation": "Elytro documents account-level balance checks and ERC-20 token listing commands, but not a unified cross-chain account-value dashboard.",
-						"url": "https://elytro.com/docs/cli"
-					},
-					"globalAccountValue": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "Elytro's account info and balance commands return account status and balances for a wallet/account, while the CLI reference separately lists accounts by chain; it does not document a single unified cross-chain account-value view.",
-										"url": "https://elytro.com/docs/cli"
-									},
-									{
-										"explanation": "The Elytro quickstart emphasizes querying balances directly and documents supported chains, but does not describe a global portfolio-value view across chains.",
-										"url": "https://elytro.com/docs/quickstart"
-									}
-								]
-							}
-						]
-					},
-					"perChainAccountValue": null
-				},
-				"gasSubsidies": {
-					"l1GasRelay": null,
-					"l1GasTank": null,
-					"l2GasRelay": null
-				}
-			},
-			"chainConfigurability": null,
-			"ecosystem": {
-				"delegation": null
-			},
-			"integration": {
-				"browser": {
-					"1193": null,
-					"2700": null,
-					"6963": null,
-					"ref": {
-						"$ref": "refTodo"
-					}
-				},
-				"walletCall": null
-			},
-			"licensing": {
-				"type": "LicensingType.SEPARATE_CORE_CODE_LICENSE_VS_WALLET_CODE_LICENSE",
-				"coreLicense": {
-					"ref": {
-						"explanation": "The current Elytro wallet contract repository is licensed under GPL-3.0.",
-						"url": "https://github.com/Elytro-eth/Elytro-wallet-contract/blob/develop/LICENSE"
-					},
-					"license": "FOSSLicense.GPL_3_0"
-				},
-				"walletAppLicense": {
-					"BROWSER": {
-						"ref": {
-							"explanation": "The Soul Wallet Web README states that the web wallet codebase is licensed under the MIT License.",
-							"url": "https://github.com/Elytro-eth/soul-wallet-web/blob/develop/README.md"
-						},
-						"license": "FOSSLicense.MIT"
-					},
-					"MOBILE": null
-				}
-			},
-			"monetization": {
-				"ref": {
-					"$ref": "refTodo"
-				},
-				"revenueBreakdownIsPublic": false,
-				"strategies": {
-					"donations": null,
-					"ecosystemGrants": null,
-					"governanceTokenLowFloat": null,
-					"governanceTokenMostlyDistributed": null,
-					"hiddenConvenienceFees": null,
-					"publicOffering": null,
-					"selfFunded": null,
-					"transparentConvenienceFees": null,
-					"ventureCapital": null
-				}
-			},
-			"multiAddress": {
-				"$call": "supported",
-				"args": [
-					{
-						"ref": [
-							{
-								"explanation": "Elytro Web shows a Select a wallet modal for multiple wallets found under a signer, and lets the user import another account.",
-								"url": "https://github.com/Elytro-eth/soul-wallet-web/blob/832c6eb03a2300b607559f9665bedabe94645424/src/pages/auth/SelectAccountModal/index.tsx"
-							}
-						]
-					}
-				]
-			},
-			"privacy": {
-				"analytics": {
-					"crashReports": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "The Chrome Web Store privacy disclosure for Elytro says the developer will not collect or use user data.",
-									"url": "https://chromewebstore.google.com/detail/elytro/alkpdbodocedcmhgmhkebanomfeenoik"
-								}
-							}
-						]
-					},
-					"usage": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "The Chrome Web Store privacy disclosure for Elytro says the developer will not collect or use user data.",
-									"url": "https://chromewebstore.google.com/detail/elytro/alkpdbodocedcmhgmhkebanomfeenoik"
-								}
-							}
-						]
-					}
-				},
-				"appIsolation": null,
-				"dataCollection": null,
-				"privacyPolicy": "https://github.com/Elytro-eth",
-				"transactionPrivacy": {
-					"defaultFungibleTokenTransferMode": "PUBLIC",
-					"STEALTH_ADDRESSES": {
-						"$ref": "notSupported"
-					},
-					"TORNADO_CASH_NOVA": {
-						"$ref": "notSupported"
-					},
-					"PRIVACY_POOLS": {
-						"$ref": "notSupported"
-					},
-					"RAILGUN": {
-						"$ref": "notSupported"
-					}
-				}
-			},
-			"profile": "WalletProfile.GENERIC",
-			"security": {
-				"accountRecovery": null,
-				"bugBountyProgram": {
-					"$call": "supported",
-					"args": [
-						{
-							"ref": [
-								{
-									"explanation": "Soul Wallet/Elytro publishes a bug bounty program for soulwallet-core and soul-wallet-contract, focused on critical and high-severity bugs affecting user funds.",
-									"url": "https://github.com/Elytro-eth/soul-wallet-contract/blob/develop/bug-bounty.md"
-								}
-							],
-							"availability": "BugBountyProgramAvailability.ACTIVE",
-							"coverageBreadth": "PARTIAL_SCOPE",
-							"dateStarted": "2024-08-20",
-							"disclosure": {
-								"$ref": "featureSupported"
-							},
-							"legalProtections": {
-								"$ref": "notSupported"
-							},
-							"platform": "BugBountyPlatform.SELF_HOSTED",
-							"rewards": {
-								"$call": "supported",
-								"args": [
-									{
-										"currency": "USD",
-										"maximum": 50000,
-										"minimum": 0
-									}
-								]
-							},
-							"upgradePathAvailable": true
-						}
-					]
-				},
-				"duressResistance": {
-					"basicUnlock": {
-						"ref": {
-							"explanation": "The Chrome Web Store listing says Elytro creates wallets with a simple passcode.",
-							"url": "https://chromewebstore.google.com/detail/elytro/alkpdbodocedcmhgmhkebanomfeenoik"
-						},
-						"mechanisms": {
-							"PIN": false,
-							"PASSWORD": true,
-							"BIOMETRIC": false,
-							"PATTERN": false
-						}
-					},
-					"duressMode": {
-						"$ref": "notSupported"
-					}
-				},
-				"hardwareWalletSupport": {
-					"ref": {
-						"$ref": "refTodo"
-					},
-					"wallets": {}
-				},
-				"keysHandling": null,
-				"lightClient": {
-					"ethereumL1": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Elytro quickstart lists network access to Ethereum RPC providers as a prerequisite for the CLI, which indicates RPC-provider access rather than an embedded Ethereum L1 light client.",
-									"url": "https://elytro.com/docs/quickstart"
-								}
-							}
-						]
-					}
-				},
-				"passkeyVerification": {
-					"$call": "supported",
-					"args": [
-						{
-							"ref": [
-								{
-									"explanation": "Elytro implements P256 verification using OpenZeppelin P256 verifier in their WebAuthn library.",
-									"url": "https://github.com/Elytro-eth/Elytro-wallet-contract/blob/9c6d5d9a8c3aa58a92b02ddb901478cd429569c7/contracts/libraries/WebAuthn.sol"
-								}
-							],
-							"details": "Elytro uses FreshCryptoLib for passkey verification in their WebAuthn library.",
-							"library": "PasskeyVerificationLibrary.OPEN_ZEPPELIN_P256_VERIFIER",
-							"libraryUrl": "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/d183d9b07a6cb0772ff52aa4e3e40165e99d6359/contracts/utils/cryptography/P256.sol"
-						}
-					]
-				},
-				"publicSecurityAudits": [
-					{
-						"ref": "https://github.com/Elytro-eth/soul-wallet-contract/blob/develop/audits/SlowMist%20Audit%20Report%20-%20SoulWallet.pdf",
-						"auditDate": "2024-06-04",
-						"auditor": {
-							"$ref": "slowmist"
-						},
-						"codeSnapshot": "preliminary_audit",
-						"unpatchedFlaws": "NO_HIGH_SEVERITY_FLAWS_FOUND",
-						"variantsScope": "SOULWALLET_CORE_AND_UPPER_LAYER_WALLET_CONTRACTS"
-					}
-				],
-				"scamAlerts": {
-					"contractTransactionWarning": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "Elytro documents transaction simulation, on-chain 2FA, and spending limits as its transaction-safety controls, but does not document malicious-contract registry checks or contract-risk warnings.",
-										"url": "https://elytro.com/"
-									},
-									{
-										"explanation": "Public Elytro repository search found no Blockaid, Tenderly-risk, phishing, malicious-contract, or scam-alert implementation matching contract-risk warnings.",
-										"url": "https://github.com/Elytro-eth"
-									}
-								]
-							}
-						]
-					},
-					"scamUrlWarning": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "Elytro is documented around CLI/agent wallet commands and account policies rather than browser URL reputation checks, and no scam/phishing URL warning feature is described.",
-										"url": "https://elytro.com/docs/cli"
-									},
-									{
-										"explanation": "Public Elytro repository search found no phishing-domain, scam URL, WalletConnect Verify, Blockaid, or URL reputation implementation matching the scam-URL warning metric.",
-										"url": "https://github.com/Elytro-eth"
-									}
-								]
-							}
-						]
-					},
-					"sendTransactionWarning": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "Elytro quickstart recommends simulating before sending and checking balances, but does not document risky-recipient, new-recipient, or user-whitelist send warnings.",
-										"url": "https://elytro.com/docs/quickstart"
-									},
-									{
-										"explanation": "Public Elytro repository search found no risky-recipient, whitelist, scam-address, Blockaid, or malicious-address implementation matching risky-send warnings.",
-										"url": "https://github.com/Elytro-eth"
-									}
-								]
-							}
-						]
-					}
-				},
-				"securityBestPractices": null,
-				"transactionLegibility": {
-					"ref": {
-						"$ref": "refTodo"
-					},
-					"transactionDetailsDisplay": {
-						"contractInteraction": null,
-						"erc20Approve": null,
-						"erc20Transfer": null,
-						"nftMint": null,
-						"nftTransfer": null,
-						"rawMessageSigning": null
-					},
-					"transactionRiskDetection": null,
-					"transactionSimulations": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "Elytro states that agents can \"Simulate, send & batch transactions\" and shows a CLI example for simulating before sending.",
-										"url": "https://elytro.com/"
-									},
-									{
-										"explanation": "Elytro publishes an illustrative \"Simulate & send\" demo flow for the wallet CLI and agent chat scenarios.",
-										"url": "https://elytro.com/demo"
-									}
-								],
-								"insights": "Elytro exposes transaction simulation through its CLI/demo flow before sending transactions."
-							}
-						]
-					}
-				}
-			},
-			"selfSovereignty": {
-				"permissionsManagement": {
-					"$call": "notSupportedWithRef",
-					"args": [
-						{
-							"ref": [
-								{
-									"explanation": "Elytro documents account policies such as spending limits and which actions require approval, but does not document wallet-native ERC-20/ERC-721/ERC-1155 token approval inspection or revocation.",
-									"url": "https://elytro.com/"
-								},
-								{
-									"explanation": "Public Elytro repository search found no approval, allowance, revoke, or token-permission management implementation matching the token-approval management metric.",
-									"url": "https://github.com/Elytro-eth"
-								}
-							]
-						}
-					]
-				},
-				"transactionSubmission": {
-					"l1": {
-						"ref": {
-							"explanation": "Elytro CLI docs describe transaction, query, and configuration flows through configured Alchemy RPC and Pimlico bundler/paymaster endpoints, with public endpoints as fallbacks.",
-							"url": "https://elytro.com/docs/cli"
-						},
-						"selfBroadcastViaDirectGossip": null,
-						"selfBroadcastViaSelfHostedNode": {
-							"$call": "notSupportedWithRef",
-							"args": [
-								{
-									"ref": {
-										"explanation": "Elytro configuration documents only Alchemy RPC and Pimlico bundler/paymaster keys plus public endpoints; it does not expose a custom Ethereum RPC URL or self-hosted-node broadcast setting.",
-										"url": "https://elytro.com/docs/cli"
-									}
-								}
-							]
-						}
-					},
-					"l2": {
-						"ref": {
-							"$ref": "refTodo"
-						},
-						"arbitrum": null,
-						"opStack": null
-					}
-				}
-			},
-			"transparency": {
-				"operationFees": null,
-				"releaseTransparency": {
-					"artifactSigning": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "Elytro publishes a browser extension through the Chrome Web Store.",
-										"url": "https://chromewebstore.google.com/detail/elytro/alkpdbodocedcmhgmhkebanomfeenoik"
-									},
-									{
-										"explanation": "Chrome for Developers states that all Chrome Web Store extensions are signed by Google, with signing handled automatically when a package is uploaded.",
-										"url": "https://developer.chrome.com/blog/verified-uploads-cws"
-									}
-								]
-							}
-						]
-					},
-					"dependencyLocking": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "The Soul Wallet Web repository includes a pnpm-lock.yaml lockfile.",
-									"url": "https://github.com/Elytro-eth/soul-wallet-web/blob/develop/pnpm-lock.yaml"
-								}
-							}
-						]
-					},
-					"dependencyVulnerabilityScanning": null,
-					"hasPublicChangelog": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "The Elytro Chrome Web Store page publishes the current extension version and update date.",
-									"url": "https://chromewebstore.google.com/detail/elytro/alkpdbodocedcmhgmhkebanomfeenoik"
-								}
-							}
-						]
-					},
-					"hermeticBuilds": null,
-					"repositoryChangeControls": null,
-					"reproducibleBuilds": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "Elytro/Soul Wallet Web's README documents ordinary dependency installation, development, and production build commands for the web wallet, but does not document an independent deterministic rebuild-and-compare process for matching the published browser extension or web release artifact.",
-										"url": "https://github.com/Elytro-eth/soul-wallet-web/blob/develop/README.md"
-									},
-									{
-										"explanation": "The Soul Wallet Web package scripts build with TypeScript and Vite (`tsc && vite build`); the public scripts describe generating a production build rather than reproducible release-artifact verification.",
-										"url": "https://github.com/Elytro-eth/soul-wallet-web/blob/develop/package.json"
-									}
-								]
-							}
-						]
-					}
-				}
-			},
-			"product": {
-				"platformCoverage": {
-					"ref": {
-						"explanation": "Elytro homepage describes CLI/agent-driven wallet setup and says the Chrome extension stays available for existing users while a new interface is built.",
-						"url": "https://elytro.com/"
-					},
-					"desktopApp": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Elytro is installed and used through CLI/agent workflows.",
-									"url": "https://elytro.com/"
-								}
-							}
-						]
-					},
-					"mobileApp": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Elytro homepage does not describe mobile app support.",
-									"url": "https://elytro.com/"
-								}
-							}
-						]
-					},
-					"browserExtension": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Elytro says the Chrome extension stays available for existing users.",
-									"url": "https://elytro.com/"
-								}
-							}
-						]
-					},
-					"browserNative": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Elytro is not browser-native.",
-									"url": "https://elytro.com/"
-								}
-							}
-						]
-					},
-					"webApp": null,
-					"ios": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Elytro homepage does not describe iOS support.",
-									"url": "https://elytro.com/"
-								}
-							}
-						]
-					},
-					"android": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Elytro homepage does not describe Android support.",
-									"url": "https://elytro.com/"
-								}
-							}
-						]
-					},
-					"chrome": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Elytro says the Chrome extension remains available for existing users.",
-									"url": "https://elytro.com/"
-								}
-							}
-						]
-					},
-					"firefox": null,
-					"safari": null
-				},
-				"supportedEcosystems": {
-					"ref": {
-						"explanation": "Elytro homepage describes Ethereum smart accounts, mainnet-first roadmap, and Arbitrum setup examples.",
-						"url": "https://elytro.com/"
-					},
-					"evm": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Elytro is built for Ethereum smart accounts and Arbitrum examples.",
-									"url": "https://elytro.com/"
-								}
-							}
-						]
-					},
-					"solana": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Elytro homepage scopes product to Ethereum smart accounts.",
-									"url": "https://elytro.com/"
-								}
-							}
-						]
-					},
-					"bitcoin": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Elytro homepage scopes product to Ethereum smart accounts.",
-									"url": "https://elytro.com/"
-								}
-							}
-						]
-					},
-					"cosmos": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Elytro homepage scopes product to Ethereum smart accounts.",
-									"url": "https://elytro.com/"
-								}
-							}
-						]
-					},
-					"ton": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Elytro homepage scopes product to Ethereum smart accounts.",
-									"url": "https://elytro.com/"
-								}
-							}
-						]
-					},
-					"starknet": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Elytro homepage scopes product to Ethereum smart accounts.",
-									"url": "https://elytro.com/"
-								}
-							}
-						]
-					},
-					"sui": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Elytro homepage scopes product to Ethereum smart accounts.",
-									"url": "https://elytro.com/"
-								}
-							}
-						]
-					},
-					"aptos": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Elytro homepage scopes product to Ethereum smart accounts.",
-									"url": "https://elytro.com/"
-								}
-							}
-						]
-					},
-					"xrp": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Elytro homepage scopes product to Ethereum smart accounts.",
-									"url": "https://elytro.com/"
-								}
-							}
-						]
-					},
-					"cardano": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Elytro homepage scopes product to Ethereum smart accounts.",
-									"url": "https://elytro.com/"
-								}
-							}
-						]
-					},
-					"lightning": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Elytro homepage scopes product to Ethereum smart accounts.",
-									"url": "https://elytro.com/"
-								}
-							}
-						]
-					},
-					"other": [
-						{
-							"name": "Arbitrum",
-							"ref": {
-								"explanation": "Elytro setup example creates and activates an account on Arbitrum.",
-								"url": "https://elytro.com/"
-							}
-						}
-					]
-				},
-				"dappExperience": {
-					"ref": {
-						"explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://elytro.com"
-					},
-					"inAppBrowser": null,
-					"curatedDappDirectory": null,
-					"dappSearch": null,
-					"walletConnectOnlyMode": {
-						"$ref": "notSupported"
-					},
-					"featuredApps": null,
-					"riskRatedDiscovery": null
-				},
-				"fiatRamps": {
-					"ref": {
-						"explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://elytro.com"
-					},
-					"buyCrypto": null,
-					"sellCrypto": null,
-					"bankTransfer": null,
-					"card": null,
-					"applePay": null,
-					"googlePay": null,
-					"kycDependency": "KYCDependency.UNKNOWN",
-					"providers": [],
-					"regionalAvailability": null
-				},
-				"gasUx": {
-					"ref": {
-						"explanation": "Elytro homepage demonstrates simulation, sponsored gas, UserOp building, and smart-account policy controls.",
-						"url": "https://elytro.com/"
-					},
-					"gasCustomization": null,
-					"gasSponsorship": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Elytro demo output shows Gas: 21,000 Sponsored.",
-									"url": "https://elytro.com/"
-								}
-							}
-						]
-					},
-					"gasAbstraction": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Elytro uses EIP-4337 smart accounts/UserOps.",
-									"url": "https://elytro.com/"
-								}
-							}
-						]
-					},
-					"payGasInStablecoins": null,
-					"payGasWithReceivedToken": null,
-					"speedPresets": null,
-					"stuckTransactionRecovery": null
-				},
-				"recoveryUx": {
-					"ref": {
-						"explanation": "Elytro homepage lists Social Recovery and demonstrates recovery status/access restored.",
-						"url": "https://elytro.com/"
-					},
-					"seedOnlyRecovery": null,
-					"cloudBackup": null,
-					"socialRecovery": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Elytro lists Social Recovery.",
-									"url": "https://elytro.com/"
-								}
-							}
-						]
-					},
-					"guardianRecovery": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Elytro social recovery restores access through smart-account recovery flow.",
-									"url": "https://elytro.com/"
-								}
-							}
-						]
-					},
-					"passkeyRecovery": null,
-					"emergencyKit": null,
-					"recoveryRehearsal": null
-				},
-				"onboardingFriction": {
-					"ref": {
-						"explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://elytro.com"
-					},
-					"seedPhraseRequiredAtSignup": null,
-					"passkeySignup": null,
-					"emailSignup": null,
-					"phoneSignup": null,
-					"kycRequiredForWallet": {
-						"$ref": "notSupported"
-					},
-					"guestMode": null,
-					"embeddedWalletMode": null,
-					"timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
-				},
-				"portfolioManagement": {
-					"ref": {
-						"explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://elytro.com"
-					},
-					"netWorth": null,
-					"pnl": null,
-					"costBasis": null,
-					"tokenCategories": null,
-					"nftSupport": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Elytro supports NFT display or NFT portfolio management in at least one wallet surface.",
-									"url": "https://elytro.com"
-								}
-							}
-						]
-					},
-					"collectionViews": null,
-					"watchOnlyWallets": null,
-					"multiWalletAggregation": {
-						"$ref": "featureSupported"
-					}
-				},
-				"notifications": {
-					"ref": {
-						"explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://elytro.com"
-					},
-					"sendReceive": null,
-					"priceAlerts": null,
-					"approvalAlerts": null,
-					"bridgeCompletion": null,
-					"failedTransaction": null,
-					"securityAlerts": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Elytro supports security alerts or transaction-risk warnings.",
-									"url": "https://elytro.com"
-								}
-							}
-						]
-					},
-					"marketAlerts": null
-				},
-				"nftCapabilities": {
-					"ref": {
-						"explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://elytro.com"
-					},
-					"display": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Elytro supports displaying NFTs or collectibles in the wallet.",
-									"url": "https://elytro.com"
-								}
-							}
-						]
-					},
-					"send": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Elytro supports wallet NFT transfer flows or NFT asset management.",
-									"url": "https://elytro.com"
-								}
-							}
-						]
-					},
-					"mint": null,
-					"marketplaceIntegration": null,
-					"spamNftHiding": null,
-					"collectionMetadataRefresh": null,
-					"royaltiesOrOffers": null
-				},
-				"defiPositionAwareness": {
-					"ref": {
-						"explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://elytro.com"
-					},
-					"lendingPositions": null,
-					"stakingPositions": null,
-					"lpPositions": null,
-					"vaultPositions": null,
-					"perProtocolBalances": null,
-					"claimableRewards": null,
-					"liquidationWarnings": null
-				},
-				"stakingEarn": {
-					"ref": {
-						"explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://elytro.com"
-					},
-					"nativeStaking": null,
-					"liquidStaking": null,
-					"validatorChoice": null,
-					"apyDisplay": null,
-					"rewardsClaiming": null,
-					"providerDependency": null,
-					"lockupDisclosure": null
-				},
-				"customerSupport": {
-					"ref": {
-						"explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://elytro.com"
-					},
-					"liveChat": null,
-					"emailSupport": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Elytro publishes support, help center, or contact paths for wallet users.",
-									"url": "https://elytro.com"
-								}
-							}
-						]
-					},
-					"aiSupport": null,
-					"publishedSla": null,
-					"inAppHelpCenter": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Elytro provides in-app or product-linked help/support content.",
-									"url": "https://elytro.com"
-								}
-							}
-						]
-					},
-					"transactionTroubleshooting": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Elytro support docs include transaction or wallet troubleshooting material.",
-									"url": "https://elytro.com"
-								}
-							}
-						]
-					},
-					"scamRecoveryGuidance": null
-				},
-				"developerOffering": {
-					"ref": {
-						"explanation": "Elytro homepage links agent integration docs, CLI reference, GitHub skills, npm, and agent setup prompts.",
-						"url": "https://elytro.com/"
-					},
-					"walletSdk": null,
-					"embeddedWalletSdk": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Elytro provides agent-facing wallet integration docs and setup prompts.",
-									"url": "https://elytro.com/"
-								}
-							}
-						]
-					},
-					"whiteLabelOffering": null,
-					"walletConnectSupport": null,
-					"eip6963": null,
-					"eip5792": null,
-					"deepLinks": null,
-					"mobileLinkingQuality": null
-				},
-				"pricingFeeModel": {
-					"ref": {
-						"explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://elytro.com"
-					},
-					"swapFees": null,
-					"bridgeFees": null,
-					"onRampFees": null,
-					"spreadDisclosure": null,
-					"subscriptionFeatures": null,
-					"cardFees": null,
-					"hiddenPartnerRevenue": null
-				},
-				"releaseVelocity": {
-					"ref": {
-						"explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://elytro.com"
-					},
-					"latestReleaseDate": "2025-03-12",
-					"releaseFrequency": "ReleaseFrequency.IRREGULAR",
-					"appStoreUpdateCadence": "App-store cadence should be measured from current app-store release history in a deeper pass.",
-					"githubActivity": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Elytro has public GitHub repository activity or releases that can be tracked.",
-									"url": "https://github.com/Elytro-eth"
-								}
-							}
-						]
-					},
-					"changelogDetail": "ChangelogDetail.BASIC"
-				},
-				"deviceSync": {
-					"ref": {
-						"explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://elytro.com"
-					},
-					"syncsAccounts": null,
-					"syncsSettings": null,
-					"syncsContactsOrAddressBook": null,
-					"desktopMobileSync": null,
-					"cloudBackedSync": null,
-					"requiresSameSeedImport": null
-				}
-			}
-		},
-		"variants": {
-			"MOBILE": true,
-			"BROWSER": true
-		}
-	}
+  "id": "elytro",
+  "source": "software-wallets",
+  "export": "elytro",
+  "data": {
+    "metadata": {
+      "id": "elytro",
+      "displayName": "Elytro",
+      "tableName": "Elytro",
+      "blurb": "Coming soon. We build secured and decentralized public infra for humanity on Ethereum. We believe in a free, open, and self-own internet. We start by building a smart contract account.",
+      "contributors": [
+        {
+          "$ref": "nconsigny"
+        }
+      ],
+      "iconExtension": "svg",
+      "lastUpdated": "2025-03-12",
+      "urls": {
+        "extensions": [
+          "https://chromewebstore.google.com/detail/elytro/alkpdbodocedcmhgmhkebanomfeenoik"
+        ],
+        "repositories": [
+          "https://github.com/Elytro-eth"
+        ],
+        "socials": {
+          "telegram": "https://t.me/+l9coqJq9QHgyYjI1",
+          "x": "https://x.com/Elytro_eth"
+        },
+        "websites": [
+          "https://elytro.com"
+        ]
+      }
+    },
+    "features": {
+      "accountSupport": {
+        "defaultAccountType": "AccountType.rawErc4337",
+        "eip7702": {
+          "$ref": "notSupported"
+        },
+        "eoa": {
+          "$ref": "notSupported"
+        },
+        "mpc": {
+          "$ref": "notSupported"
+        },
+        "rawErc4337": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "explanation": "Elytro supports ERC-4337 smart contract wallets",
+                "url": "https://github.com/Elytro-eth/soul-wallet-contract"
+              },
+              "contract": "UNKNOWN",
+              "controllingSharesInSelfCustodyByDefault": "YES",
+              "keyRotationTransactionGeneration": "TransactionGenerationCapability.USING_OPEN_SOURCE_STANDALONE_APP",
+              "tokenTransferTransactionGeneration": "TransactionGenerationCapability.USING_OPEN_SOURCE_STANDALONE_APP"
+            }
+          ]
+        },
+        "safe": {
+          "$ref": "notSupported"
+        }
+      },
+      "addressResolution": {
+        "ref": {
+          "explanation": "Elytro CLI docs define transaction specs with raw `to:0xAddr` recipients, and public repository search found no ENS, namehash, resolver, or Universal Resolver implementation.",
+          "url": "https://elytro.com/docs/cli"
+        },
+        "chainSpecificAddressing": {
+          "erc7828": null,
+          "erc7831": null
+        },
+        "nonChainSpecificEnsResolution": {
+          "$call": "notSupportedWithRef",
+          "args": [
+            {
+              "ref": [
+                {
+                  "explanation": "Elytro's transaction spec format is documented as `--tx \"to:0xAddr,value:0.1,data:0x\"`, with no ENS-name recipient format documented.",
+                  "url": "https://elytro.com/docs/cli"
+                },
+                {
+                  "explanation": "Elytro's quickstart sends transactions using `to:0xRecipient` and does not document ENS-name resolution for recipients.",
+                  "url": "https://elytro.com/docs/quickstart"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "chainAbstraction": {
+        "bridging": {
+          "builtInBridging": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "Elytro describes token activity as \"Send, swap & bridge daily\" and its demo includes a \"Swap & bridge\" flow.",
+                    "url": "https://elytro.com/"
+                  },
+                  {
+                    "explanation": "Elytro publishes an illustrative \"Swap & bridge\" demo flow for the wallet CLI and agent chat scenarios.",
+                    "url": "https://elytro.com/demo"
+                  }
+                ]
+              }
+            ]
+          },
+          "bridgingViaTransactionGeneration": null,
+          "trustMinimizedBridging": null
+        },
+        "crossChainBalances": {
+          "ref": {
+            "explanation": "Elytro documents account-level balance checks and ERC-20 token listing commands, but not a unified cross-chain account-value dashboard.",
+            "url": "https://elytro.com/docs/cli"
+          },
+          "globalAccountValue": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "Elytro's account info and balance commands return account status and balances for a wallet/account, while the CLI reference separately lists accounts by chain; it does not document a single unified cross-chain account-value view.",
+                    "url": "https://elytro.com/docs/cli"
+                  },
+                  {
+                    "explanation": "The Elytro quickstart emphasizes querying balances directly and documents supported chains, but does not describe a global portfolio-value view across chains.",
+                    "url": "https://elytro.com/docs/quickstart"
+                  }
+                ]
+              }
+            ]
+          },
+          "perChainAccountValue": null
+        },
+        "gasSubsidies": {
+          "l1GasRelay": null,
+          "l1GasTank": null,
+          "l2GasRelay": null
+        }
+      },
+      "chainConfigurability": null,
+      "ecosystem": {
+        "delegation": null
+      },
+      "integration": {
+        "browser": {
+          "1193": null,
+          "2700": null,
+          "6963": null,
+          "ref": {
+            "$ref": "refTodo"
+          }
+        },
+        "walletCall": null
+      },
+      "licensing": {
+        "type": "LicensingType.SEPARATE_CORE_CODE_LICENSE_VS_WALLET_CODE_LICENSE",
+        "coreLicense": {
+          "ref": {
+            "explanation": "The current Elytro wallet contract repository is licensed under GPL-3.0.",
+            "url": "https://github.com/Elytro-eth/Elytro-wallet-contract/blob/develop/LICENSE"
+          },
+          "license": "FOSSLicense.GPL_3_0"
+        },
+        "walletAppLicense": {
+          "BROWSER": {
+            "ref": {
+              "explanation": "The Soul Wallet Web README states that the web wallet codebase is licensed under the MIT License.",
+              "url": "https://github.com/Elytro-eth/soul-wallet-web/blob/develop/README.md"
+            },
+            "license": "FOSSLicense.MIT"
+          },
+          "MOBILE": null
+        }
+      },
+      "monetization": {
+        "ref": {
+          "$ref": "refTodo"
+        },
+        "revenueBreakdownIsPublic": false,
+        "strategies": {
+          "donations": null,
+          "ecosystemGrants": null,
+          "governanceTokenLowFloat": null,
+          "governanceTokenMostlyDistributed": null,
+          "hiddenConvenienceFees": null,
+          "publicOffering": null,
+          "selfFunded": null,
+          "transparentConvenienceFees": null,
+          "ventureCapital": null
+        }
+      },
+      "multiAddress": {
+        "$call": "supported",
+        "args": [
+          {
+            "ref": [
+              {
+                "explanation": "Elytro Web shows a Select a wallet modal for multiple wallets found under a signer, and lets the user import another account.",
+                "url": "https://github.com/Elytro-eth/soul-wallet-web/blob/832c6eb03a2300b607559f9665bedabe94645424/src/pages/auth/SelectAccountModal/index.tsx"
+              }
+            ]
+          }
+        ]
+      },
+      "privacy": {
+        "analytics": {
+          "crashReports": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "The Chrome Web Store privacy disclosure for Elytro says the developer will not collect or use user data.",
+                  "url": "https://chromewebstore.google.com/detail/elytro/alkpdbodocedcmhgmhkebanomfeenoik"
+                }
+              }
+            ]
+          },
+          "usage": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "The Chrome Web Store privacy disclosure for Elytro says the developer will not collect or use user data.",
+                  "url": "https://chromewebstore.google.com/detail/elytro/alkpdbodocedcmhgmhkebanomfeenoik"
+                }
+              }
+            ]
+          }
+        },
+        "appIsolation": null,
+        "dataCollection": null,
+        "privacyPolicy": "https://github.com/Elytro-eth",
+        "transactionPrivacy": {
+          "defaultFungibleTokenTransferMode": "PUBLIC",
+          "STEALTH_ADDRESSES": {
+            "$ref": "notSupported"
+          },
+          "TORNADO_CASH_NOVA": {
+            "$ref": "notSupported"
+          },
+          "PRIVACY_POOLS": {
+            "$ref": "notSupported"
+          },
+          "RAILGUN": {
+            "$ref": "notSupported"
+          }
+        }
+      },
+      "profile": "WalletProfile.GENERIC",
+      "security": {
+        "accountRecovery": null,
+        "bugBountyProgram": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": [
+                {
+                  "explanation": "Soul Wallet/Elytro publishes a bug bounty program for soulwallet-core and soul-wallet-contract, focused on critical and high-severity bugs affecting user funds.",
+                  "url": "https://github.com/Elytro-eth/soul-wallet-contract/blob/develop/bug-bounty.md"
+                }
+              ],
+              "availability": "BugBountyProgramAvailability.ACTIVE",
+              "coverageBreadth": "PARTIAL_SCOPE",
+              "dateStarted": "2024-08-20",
+              "disclosure": {
+                "$ref": "featureSupported"
+              },
+              "legalProtections": {
+                "$ref": "notSupported"
+              },
+              "platform": "BugBountyPlatform.SELF_HOSTED",
+              "rewards": {
+                "$call": "supported",
+                "args": [
+                  {
+                    "currency": "USD",
+                    "maximum": 50000,
+                    "minimum": 0
+                  }
+                ]
+              },
+              "upgradePathAvailable": true
+            }
+          ]
+        },
+        "duressResistance": {
+          "basicUnlock": {
+            "ref": {
+              "explanation": "The Chrome Web Store listing says Elytro creates wallets with a simple passcode.",
+              "url": "https://chromewebstore.google.com/detail/elytro/alkpdbodocedcmhgmhkebanomfeenoik"
+            },
+            "mechanisms": {
+              "PIN": false,
+              "PASSWORD": true,
+              "BIOMETRIC": false,
+              "PATTERN": false
+            }
+          },
+          "duressMode": {
+            "$ref": "notSupported"
+          }
+        },
+        "hardwareWalletSupport": {
+          "ref": {
+            "$ref": "refTodo"
+          },
+          "wallets": {}
+        },
+        "keysHandling": null,
+        "lightClient": {
+          "ethereumL1": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Elytro quickstart lists network access to Ethereum RPC providers as a prerequisite for the CLI, which indicates RPC-provider access rather than an embedded Ethereum L1 light client.",
+                  "url": "https://elytro.com/docs/quickstart"
+                }
+              }
+            ]
+          }
+        },
+        "passkeyVerification": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": [
+                {
+                  "explanation": "Elytro implements P256 verification using OpenZeppelin P256 verifier in their WebAuthn library.",
+                  "url": "https://github.com/Elytro-eth/Elytro-wallet-contract/blob/9c6d5d9a8c3aa58a92b02ddb901478cd429569c7/contracts/libraries/WebAuthn.sol"
+                }
+              ],
+              "details": "Elytro uses FreshCryptoLib for passkey verification in their WebAuthn library.",
+              "library": "PasskeyVerificationLibrary.OPEN_ZEPPELIN_P256_VERIFIER",
+              "libraryUrl": "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/d183d9b07a6cb0772ff52aa4e3e40165e99d6359/contracts/utils/cryptography/P256.sol"
+            }
+          ]
+        },
+        "publicSecurityAudits": [
+          {
+            "ref": "https://github.com/Elytro-eth/soul-wallet-contract/blob/develop/audits/SlowMist%20Audit%20Report%20-%20SoulWallet.pdf",
+            "auditDate": "2024-06-04",
+            "auditor": {
+              "$ref": "slowmist"
+            },
+            "codeSnapshot": "preliminary_audit",
+            "unpatchedFlaws": "NO_HIGH_SEVERITY_FLAWS_FOUND",
+            "variantsScope": "SOULWALLET_CORE_AND_UPPER_LAYER_WALLET_CONTRACTS"
+          }
+        ],
+        "scamAlerts": {
+          "contractTransactionWarning": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "Elytro documents transaction simulation, on-chain 2FA, and spending limits as its transaction-safety controls, but does not document malicious-contract registry checks or contract-risk warnings.",
+                    "url": "https://elytro.com/"
+                  },
+                  {
+                    "explanation": "Public Elytro repository search found no Blockaid, Tenderly-risk, phishing, malicious-contract, or scam-alert implementation matching contract-risk warnings.",
+                    "url": "https://github.com/Elytro-eth"
+                  }
+                ]
+              }
+            ]
+          },
+          "scamUrlWarning": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "Elytro is documented around CLI/agent wallet commands and account policies rather than browser URL reputation checks, and no scam/phishing URL warning feature is described.",
+                    "url": "https://elytro.com/docs/cli"
+                  },
+                  {
+                    "explanation": "Public Elytro repository search found no phishing-domain, scam URL, WalletConnect Verify, Blockaid, or URL reputation implementation matching the scam-URL warning metric.",
+                    "url": "https://github.com/Elytro-eth"
+                  }
+                ]
+              }
+            ]
+          },
+          "sendTransactionWarning": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "Elytro quickstart recommends simulating before sending and checking balances, but does not document risky-recipient, new-recipient, or user-whitelist send warnings.",
+                    "url": "https://elytro.com/docs/quickstart"
+                  },
+                  {
+                    "explanation": "Public Elytro repository search found no risky-recipient, whitelist, scam-address, Blockaid, or malicious-address implementation matching risky-send warnings.",
+                    "url": "https://github.com/Elytro-eth"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "securityBestPractices": null,
+        "transactionLegibility": {
+          "ref": {
+            "$ref": "refTodo"
+          },
+          "transactionDetailsDisplay": {
+            "contractInteraction": null,
+            "erc20Approve": null,
+            "erc20Transfer": null,
+            "nftMint": null,
+            "nftTransfer": null,
+            "rawMessageSigning": null
+          },
+          "transactionRiskDetection": null,
+          "transactionSimulations": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "Elytro states that agents can \"Simulate, send & batch transactions\" and shows a CLI example for simulating before sending.",
+                    "url": "https://elytro.com/"
+                  },
+                  {
+                    "explanation": "Elytro publishes an illustrative \"Simulate & send\" demo flow for the wallet CLI and agent chat scenarios.",
+                    "url": "https://elytro.com/demo"
+                  }
+                ],
+                "insights": "Elytro exposes transaction simulation through its CLI/demo flow before sending transactions."
+              }
+            ]
+          }
+        }
+      },
+      "selfSovereignty": {
+        "permissionsManagement": {
+          "$call": "notSupportedWithRef",
+          "args": [
+            {
+              "ref": [
+                {
+                  "explanation": "Elytro documents account policies such as spending limits and which actions require approval, but does not document wallet-native ERC-20/ERC-721/ERC-1155 token approval inspection or revocation.",
+                  "url": "https://elytro.com/"
+                },
+                {
+                  "explanation": "Public Elytro repository search found no approval, allowance, revoke, or token-permission management implementation matching the token-approval management metric.",
+                  "url": "https://github.com/Elytro-eth"
+                }
+              ]
+            }
+          ]
+        },
+        "transactionSubmission": {
+          "l1": {
+            "ref": {
+              "explanation": "Elytro CLI docs describe transaction, query, and configuration flows through configured Alchemy RPC and Pimlico bundler/paymaster endpoints, with public endpoints as fallbacks.",
+              "url": "https://elytro.com/docs/cli"
+            },
+            "selfBroadcastViaDirectGossip": null,
+            "selfBroadcastViaSelfHostedNode": {
+              "$call": "notSupportedWithRef",
+              "args": [
+                {
+                  "ref": {
+                    "explanation": "Elytro configuration documents only Alchemy RPC and Pimlico bundler/paymaster keys plus public endpoints; it does not expose a custom Ethereum RPC URL or self-hosted-node broadcast setting.",
+                    "url": "https://elytro.com/docs/cli"
+                  }
+                }
+              ]
+            }
+          },
+          "l2": {
+            "ref": {
+              "$ref": "refTodo"
+            },
+            "arbitrum": null,
+            "opStack": null
+          }
+        }
+      },
+      "transparency": {
+        "operationFees": null,
+        "releaseTransparency": {
+          "artifactSigning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "Elytro publishes a browser extension through the Chrome Web Store.",
+                    "url": "https://chromewebstore.google.com/detail/elytro/alkpdbodocedcmhgmhkebanomfeenoik"
+                  },
+                  {
+                    "explanation": "Chrome for Developers states that all Chrome Web Store extensions are signed by Google, with signing handled automatically when a package is uploaded.",
+                    "url": "https://developer.chrome.com/blog/verified-uploads-cws"
+                  }
+                ]
+              }
+            ]
+          },
+          "dependencyLocking": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "The Soul Wallet Web repository includes a pnpm-lock.yaml lockfile.",
+                  "url": "https://github.com/Elytro-eth/soul-wallet-web/blob/develop/pnpm-lock.yaml"
+                }
+              }
+            ]
+          },
+          "dependencyVulnerabilityScanning": null,
+          "hasPublicChangelog": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "The Elytro Chrome Web Store page publishes the current extension version and update date.",
+                  "url": "https://chromewebstore.google.com/detail/elytro/alkpdbodocedcmhgmhkebanomfeenoik"
+                }
+              }
+            ]
+          },
+          "hermeticBuilds": null,
+          "repositoryChangeControls": null,
+          "reproducibleBuilds": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "Elytro/Soul Wallet Web's README documents ordinary dependency installation, development, and production build commands for the web wallet, but does not document an independent deterministic rebuild-and-compare process for matching the published browser extension or web release artifact.",
+                    "url": "https://github.com/Elytro-eth/soul-wallet-web/blob/develop/README.md"
+                  },
+                  {
+                    "explanation": "The Soul Wallet Web package scripts build with TypeScript and Vite (`tsc && vite build`); the public scripts describe generating a production build rather than reproducible release-artifact verification.",
+                    "url": "https://github.com/Elytro-eth/soul-wallet-web/blob/develop/package.json"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "product": {
+        "platformCoverage": {
+          "ref": {
+            "explanation": "Elytro homepage describes CLI/agent-driven wallet setup and says the Chrome extension stays available for existing users while a new interface is built.",
+            "url": "https://elytro.com/"
+          },
+          "desktopApp": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Elytro is installed and used through CLI/agent workflows.",
+                  "url": "https://elytro.com/"
+                }
+              }
+            ]
+          },
+          "mobileApp": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Elytro homepage does not describe mobile app support.",
+                  "url": "https://elytro.com/"
+                }
+              }
+            ]
+          },
+          "browserExtension": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Elytro says the Chrome extension stays available for existing users.",
+                  "url": "https://elytro.com/"
+                }
+              }
+            ]
+          },
+          "browserNative": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Elytro is not browser-native.",
+                  "url": "https://elytro.com/"
+                }
+              }
+            ]
+          },
+          "webApp": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://chromewebstore.google.com/detail/elytro/alkpdbodocedcmhgmhkebanomfeenoik",
+                  "explanation": "Elytro ships as a Chrome browser extension (and a CLI for agents), not a browser-based web app usable without installing anything, per the Chrome Web Store listing and elytro.com."
+                }
+              }
+            ]
+          },
+          "ios": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Elytro homepage does not describe iOS support.",
+                  "url": "https://elytro.com/"
+                }
+              }
+            ]
+          },
+          "android": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Elytro homepage does not describe Android support.",
+                  "url": "https://elytro.com/"
+                }
+              }
+            ]
+          },
+          "chrome": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Elytro says the Chrome extension remains available for existing users.",
+                  "url": "https://elytro.com/"
+                }
+              }
+            ]
+          },
+          "firefox": null,
+          "safari": null
+        },
+        "supportedEcosystems": {
+          "ref": {
+            "explanation": "Elytro homepage describes Ethereum smart accounts, mainnet-first roadmap, and Arbitrum setup examples.",
+            "url": "https://elytro.com/"
+          },
+          "evm": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Elytro is built for Ethereum smart accounts and Arbitrum examples.",
+                  "url": "https://elytro.com/"
+                }
+              }
+            ]
+          },
+          "solana": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Elytro homepage scopes product to Ethereum smart accounts.",
+                  "url": "https://elytro.com/"
+                }
+              }
+            ]
+          },
+          "bitcoin": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Elytro homepage scopes product to Ethereum smart accounts.",
+                  "url": "https://elytro.com/"
+                }
+              }
+            ]
+          },
+          "cosmos": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Elytro homepage scopes product to Ethereum smart accounts.",
+                  "url": "https://elytro.com/"
+                }
+              }
+            ]
+          },
+          "ton": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Elytro homepage scopes product to Ethereum smart accounts.",
+                  "url": "https://elytro.com/"
+                }
+              }
+            ]
+          },
+          "starknet": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Elytro homepage scopes product to Ethereum smart accounts.",
+                  "url": "https://elytro.com/"
+                }
+              }
+            ]
+          },
+          "sui": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Elytro homepage scopes product to Ethereum smart accounts.",
+                  "url": "https://elytro.com/"
+                }
+              }
+            ]
+          },
+          "aptos": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Elytro homepage scopes product to Ethereum smart accounts.",
+                  "url": "https://elytro.com/"
+                }
+              }
+            ]
+          },
+          "xrp": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Elytro homepage scopes product to Ethereum smart accounts.",
+                  "url": "https://elytro.com/"
+                }
+              }
+            ]
+          },
+          "cardano": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Elytro homepage scopes product to Ethereum smart accounts.",
+                  "url": "https://elytro.com/"
+                }
+              }
+            ]
+          },
+          "lightning": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Elytro homepage scopes product to Ethereum smart accounts.",
+                  "url": "https://elytro.com/"
+                }
+              }
+            ]
+          },
+          "other": [
+            {
+              "name": "Arbitrum",
+              "ref": {
+                "explanation": "Elytro setup example creates and activates an account on Arbitrum.",
+                "url": "https://elytro.com/"
+              }
+            }
+          ]
+        },
+        "dappExperience": {
+          "ref": {
+            "explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://elytro.com"
+          },
+          "inAppBrowser": null,
+          "curatedDappDirectory": null,
+          "dappSearch": null,
+          "walletConnectOnlyMode": {
+            "$ref": "notSupported"
+          },
+          "featuredApps": null,
+          "riskRatedDiscovery": null
+        },
+        "fiatRamps": {
+          "ref": {
+            "explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://elytro.com"
+          },
+          "buyCrypto": null,
+          "sellCrypto": null,
+          "bankTransfer": null,
+          "card": null,
+          "applePay": null,
+          "googlePay": null,
+          "kycDependency": "KYCDependency.UNKNOWN",
+          "providers": [],
+          "regionalAvailability": null
+        },
+        "gasUx": {
+          "ref": {
+            "explanation": "Elytro homepage demonstrates simulation, sponsored gas, UserOp building, and smart-account policy controls.",
+            "url": "https://elytro.com/"
+          },
+          "gasCustomization": null,
+          "gasSponsorship": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Elytro demo output shows Gas: 21,000 Sponsored.",
+                  "url": "https://elytro.com/"
+                }
+              }
+            ]
+          },
+          "gasAbstraction": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Elytro uses EIP-4337 smart accounts/UserOps.",
+                  "url": "https://elytro.com/"
+                }
+              }
+            ]
+          },
+          "payGasInStablecoins": null,
+          "payGasWithReceivedToken": null,
+          "speedPresets": null,
+          "stuckTransactionRecovery": null
+        },
+        "recoveryUx": {
+          "ref": {
+            "explanation": "Elytro homepage lists Social Recovery and demonstrates recovery status/access restored.",
+            "url": "https://elytro.com/"
+          },
+          "seedOnlyRecovery": null,
+          "cloudBackup": null,
+          "socialRecovery": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Elytro lists Social Recovery.",
+                  "url": "https://elytro.com/"
+                }
+              }
+            ]
+          },
+          "guardianRecovery": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Elytro social recovery restores access through smart-account recovery flow.",
+                  "url": "https://elytro.com/"
+                }
+              }
+            ]
+          },
+          "passkeyRecovery": null,
+          "emergencyKit": null,
+          "recoveryRehearsal": null
+        },
+        "onboardingFriction": {
+          "ref": {
+            "explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://elytro.com"
+          },
+          "seedPhraseRequiredAtSignup": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://chromewebstore.google.com/detail/elytro/alkpdbodocedcmhgmhkebanomfeenoik",
+                  "explanation": "Elytro explicitly requires no seed phrase, letting users create a wallet with a simple passcode and recover via trusted contacts, per its Chrome Web Store description."
+                }
+              }
+            ]
+          },
+          "passkeySignup": null,
+          "emailSignup": null,
+          "phoneSignup": null,
+          "kycRequiredForWallet": {
+            "$ref": "notSupported"
+          },
+          "guestMode": null,
+          "embeddedWalletMode": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/faq",
+                  "explanation": "Elytro creates a no-seed ERC-4337 smart contract account behind the scenes accessed via passkey/passcode with social recovery, per its official FAQ and Chrome Web Store listing."
+                }
+              }
+            ]
+          },
+          "timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
+        },
+        "portfolioManagement": {
+          "ref": {
+            "explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://elytro.com"
+          },
+          "netWorth": null,
+          "pnl": null,
+          "costBasis": null,
+          "tokenCategories": null,
+          "nftSupport": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Elytro supports NFT display or NFT portfolio management in at least one wallet surface.",
+                  "url": "https://elytro.com"
+                }
+              }
+            ]
+          },
+          "collectionViews": null,
+          "watchOnlyWallets": null,
+          "multiWalletAggregation": {
+            "$ref": "featureSupported"
+          }
+        },
+        "notifications": {
+          "ref": {
+            "explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://elytro.com"
+          },
+          "sendReceive": null,
+          "priceAlerts": null,
+          "approvalAlerts": null,
+          "bridgeCompletion": null,
+          "failedTransaction": null,
+          "securityAlerts": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Elytro supports security alerts or transaction-risk warnings.",
+                  "url": "https://elytro.com"
+                }
+              }
+            ]
+          },
+          "marketAlerts": null
+        },
+        "nftCapabilities": {
+          "ref": {
+            "explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://elytro.com"
+          },
+          "display": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Elytro supports displaying NFTs or collectibles in the wallet.",
+                  "url": "https://elytro.com"
+                }
+              }
+            ]
+          },
+          "send": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Elytro supports wallet NFT transfer flows or NFT asset management.",
+                  "url": "https://elytro.com"
+                }
+              }
+            ]
+          },
+          "mint": null,
+          "marketplaceIntegration": null,
+          "spamNftHiding": null,
+          "collectionMetadataRefresh": null,
+          "royaltiesOrOffers": null
+        },
+        "defiPositionAwareness": {
+          "ref": {
+            "explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://elytro.com"
+          },
+          "lendingPositions": null,
+          "stakingPositions": null,
+          "lpPositions": null,
+          "vaultPositions": null,
+          "perProtocolBalances": null,
+          "claimableRewards": null,
+          "liquidationWarnings": null
+        },
+        "stakingEarn": {
+          "ref": {
+            "explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://elytro.com"
+          },
+          "nativeStaking": null,
+          "liquidStaking": null,
+          "validatorChoice": null,
+          "apyDisplay": null,
+          "rewardsClaiming": null,
+          "providerDependency": null,
+          "lockupDisclosure": null
+        },
+        "customerSupport": {
+          "ref": {
+            "explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://elytro.com"
+          },
+          "liveChat": null,
+          "emailSupport": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Elytro publishes support, help center, or contact paths for wallet users.",
+                  "url": "https://elytro.com"
+                }
+              }
+            ]
+          },
+          "aiSupport": null,
+          "publishedSla": null,
+          "inAppHelpCenter": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Elytro provides in-app or product-linked help/support content.",
+                  "url": "https://elytro.com"
+                }
+              }
+            ]
+          },
+          "transactionTroubleshooting": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Elytro support docs include transaction or wallet troubleshooting material.",
+                  "url": "https://elytro.com"
+                }
+              }
+            ]
+          },
+          "scamRecoveryGuidance": null
+        },
+        "developerOffering": {
+          "ref": {
+            "explanation": "Elytro homepage links agent integration docs, CLI reference, GitHub skills, npm, and agent setup prompts.",
+            "url": "https://elytro.com/"
+          },
+          "walletSdk": null,
+          "embeddedWalletSdk": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Elytro provides agent-facing wallet integration docs and setup prompts.",
+                  "url": "https://elytro.com/"
+                }
+              }
+            ]
+          },
+          "whiteLabelOffering": null,
+          "walletConnectSupport": null,
+          "eip6963": null,
+          "eip5792": null,
+          "deepLinks": null,
+          "mobileLinkingQuality": null
+        },
+        "pricingFeeModel": {
+          "ref": {
+            "explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://elytro.com"
+          },
+          "swapFees": null,
+          "bridgeFees": null,
+          "onRampFees": null,
+          "spreadDisclosure": null,
+          "subscriptionFeatures": null,
+          "cardFees": null,
+          "hiddenPartnerRevenue": null
+        },
+        "releaseVelocity": {
+          "ref": {
+            "explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://elytro.com"
+          },
+          "latestReleaseDate": "2025-03-12",
+          "releaseFrequency": "ReleaseFrequency.IRREGULAR",
+          "appStoreUpdateCadence": "App-store cadence should be measured from current app-store release history in a deeper pass.",
+          "githubActivity": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Elytro has public GitHub repository activity or releases that can be tracked.",
+                  "url": "https://github.com/Elytro-eth"
+                }
+              }
+            ]
+          },
+          "changelogDetail": "ChangelogDetail.BASIC"
+        },
+        "deviceSync": {
+          "ref": {
+            "explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://elytro.com"
+          },
+          "syncsAccounts": null,
+          "syncsSettings": null,
+          "syncsContactsOrAddressBook": null,
+          "desktopMobileSync": null,
+          "cloudBackedSync": null,
+          "requiresSameSeedImport": null
+        }
+      }
+    },
+    "variants": {
+      "MOBILE": true,
+      "BROWSER": true
+    }
+  }
 }

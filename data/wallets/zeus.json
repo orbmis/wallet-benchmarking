@@ -1,1192 +1,1242 @@
 {
-	"id": "zeus",
-	"source": "software-wallets",
-	"export": "zeus",
-	"data": {
-		"metadata": {
-			"id": "zeus",
-			"displayName": "Zeus",
-			"tableName": "Zeus",
-			"blurb": "Zeus is a truly seedless and decentralized self-custodial Ethereum wallet.",
-			"contributors": [
-				{
-					"$ref": "greekfetacheese"
-				}
-			],
-			"iconExtension": "svg",
-			"lastUpdated": "2026-01-12",
-			"urls": {
-				"docs": [
-					"https://github.com/greekfetacheese/zeus"
-				],
-				"repositories": [
-					"https://github.com/greekfetacheese/zeus"
-				],
-				"websites": [
-					"https://github.com/greekfetacheese/zeus"
-				]
-			}
-		},
-		"features": {
-			"accountSupport": {
-				"defaultAccountType": "AccountType.eoa",
-				"eip7702": {
-					"$ref": "notSupported"
-				},
-				"eoa": {
-					"$call": "supported",
-					"args": [
-						{
-							"ref": [
-								{
-									"explanation": "Zeus derives a Hierarchical Deterministic Wallet from a username and password using the BIP32 standard. Users can also import wallets using either a 12-24 word phrase or a private key.",
-									"url": "https://github.com/greekfetacheese/zeus#how-wallet-management-work-in-zeus"
-								}
-							],
-							"canExportPrivateKey": true,
-							"keyDerivation": {
-								"type": "BIP32",
-								"canExportSeedPhrase": false,
-								"derivationPath": "BIP44",
-								"seedPhrase": "BIP39"
-							}
-						}
-					]
-				},
-				"mpc": {
-					"$ref": "notSupported"
-				},
-				"rawErc4337": {
-					"$ref": "notSupported"
-				},
-				"safe": {
-					"$ref": "notSupported"
-				}
-			},
-			"addressResolution": {
-				"ref": {
-					"explanation": "Zeus's send UI validates recipients by parsing the input as an Ethereum address with `Address::from_str`; repository search found no ENS, namehash, resolver, or Universal Resolver implementation.",
-					"url": "https://github.com/greekfetacheese/zeus/blob/1eebac5c3dfd740aa6b87d915b495b98a3f140c4/src/gui/ui/send_crypto.rs"
-				},
-				"chainSpecificAddressing": {
-					"erc7828": null,
-					"erc7831": null
-				},
-				"nonChainSpecificEnsResolution": {
-					"$call": "notSupportedWithRef",
-					"args": [
-						{
-							"ref": {
-								"explanation": "The Zeus send flow checks recipient input with `Address::from_str`, so non-address names such as ENS names are rejected as invalid recipients rather than resolved.",
-								"url": "https://github.com/greekfetacheese/zeus/blob/1eebac5c3dfd740aa6b87d915b495b98a3f140c4/src/gui/ui/send_crypto.rs"
-							}
-						}
-					]
-				}
-			},
-			"chainAbstraction": {
-				"bridging": {
-					"builtInBridging": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "Zeus has a built-in interface which uses the Across protocol to bridge ETH between chains.",
-										"url": "https://github.com/greekfetacheese/zeus/blob/7bd2a133344bfa5b52dfe0df6e8864839cbbaee9/src/gui/ui/dapps/across.rs"
-									}
-								],
-								"feesLargerThan1bps": {
-									"afterSingleAction": "FeeDisplayLevel.AGGREGATED",
-									"byDefault": "FeeDisplayLevel.AGGREGATED",
-									"fullySponsored": false
-								},
-								"risksExplained": "NOT_IN_UI"
-							}
-						]
-					},
-					"suggestedBridging": {
-						"$ref": "notSupported"
-					}
-				},
-				"crossChainBalances": {
-					"ref": {
-						"$ref": "refTodo"
-					},
-					"ether": {
-						"crossChainSumView": {
-							"$ref": "notSupported"
-						},
-						"perChainBalanceViewAcrossMultipleChains": {
-							"$ref": "featureSupported"
-						}
-					},
-					"globalAccountValue": {
-						"$ref": "featureSupported"
-					},
-					"perChainAccountValue": {
-						"$ref": "featureSupported"
-					},
-					"usdc": {
-						"crossChainSumView": {
-							"$ref": "notSupported"
-						},
-						"perChainBalanceViewAcrossMultipleChains": {
-							"$ref": "featureSupported"
-						}
-					}
-				}
-			},
-			"chainConfigurability": {
-				"$call": "supported",
-				"args": [
-					{
-						"ref": [
-							{
-								"explanation": "Zeus uses public RPC endpoints by default but allows users to provide custom endpoints and disable or delete what they don't want.",
-								"url": "https://github.com/greekfetacheese/zeus#features"
-							}
-						],
-						"customChainRpcEndpoint": {
-							"$call": "supported",
-							"args": [
-								{
-									"ref": [
-										{
-											"explanation": "Users can use their own RPC endpoints.",
-											"url": "https://github.com/greekfetacheese/zeus#features"
-										}
-									]
-								}
-							]
-						},
-						"l1": {
-							"$call": "supported",
-							"args": [
-								{
-									"rpcEndpointConfiguration": "RpcEndpointConfiguration.YES_AFTER_OTHER_REQUESTS",
-									"withNoConnectivityExceptL1RPCEndpoint": {
-										"accountCreation": {
-											"$ref": "featureSupported"
-										},
-										"accountImport": {
-											"$ref": "featureSupported"
-										},
-										"erc20BalanceLookup": {
-											"$ref": "featureSupported"
-										},
-										"erc20TokenSend": {
-											"$ref": "featureSupported"
-										},
-										"etherBalanceLookup": {
-											"$ref": "featureSupported"
-										}
-									}
-								}
-							]
-						},
-						"nonL1": {
-							"$call": "supported",
-							"args": [
-								{
-									"rpcEndpointConfiguration": "RpcEndpointConfiguration.YES_AFTER_OTHER_REQUESTS"
-								}
-							]
-						}
-					}
-				]
-			},
-			"ecosystem": {
-				"delegation": null
-			},
-			"integration": {
-				"browser": "NOT_A_BROWSER_WALLET",
-				"walletCall": null
-			},
-			"licensing": {
-				"type": "LicensingType.SINGLE_WALLET_REPO_AND_LICENSE",
-				"walletAppLicense": {
-					"ref": [
-						{
-							"explanation": "Zeus is licensed under the MIT license.",
-							"url": "https://github.com/greekfetacheese/zeus/blob/e2f12ad22ae24845f8f9bee1f0187be0a5bd07c8/LICENSE-MIT"
-						}
-					],
-					"license": "FOSSLicense.MIT"
-				}
-			},
-			"monetization": {
-				"ref": [],
-				"revenueBreakdownIsPublic": false,
-				"strategies": {
-					"donations": false,
-					"ecosystemGrants": false,
-					"governanceTokenLowFloat": false,
-					"governanceTokenMostlyDistributed": false,
-					"hiddenConvenienceFees": false,
-					"publicOffering": false,
-					"selfFunded": true,
-					"transparentConvenienceFees": false,
-					"ventureCapital": false
-				}
-			},
-			"multiAddress": {
-				"$ref": "featureSupported"
-			},
-			"privacy": {
-				"analytics": {
-					"crashReports": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "The Zeus README states that Zeus has no telemetry and does not communicate with any third-party server; activity stays local on the user computer.",
-									"url": "https://github.com/greekfetacheese/zeus#security"
-								}
-							}
-						]
-					},
-					"usage": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "The Zeus README states that Zeus has no telemetry and does not communicate with any third-party server; activity stays local on the user computer.",
-									"url": "https://github.com/greekfetacheese/zeus#security"
-								}
-							}
-						]
-					}
-				},
-				"appIsolation": {
-					"DESKTOP": {
-						"createInAppConnectionFlow": {
-							"$ref": "notSupported"
-						},
-						"erc7846WalletConnect": {
-							"$ref": "notSupported"
-						},
-						"ethAccounts": {
-							"$call": "supported",
-							"args": [
-								{
-									"ref": [
-										{
-											"explanation": "Zeus exposes the address of the active account only.",
-											"url": "https://github.com/greekfetacheese/zeus/blob/8d51c76d1c6ccce5a4a845c34429a4f89ff9cdae/src/server.rs#L371"
-										}
-									],
-									"defaultBehavior": "ExposedAccountsBehavior.ACTIVE_ACCOUNT_ONLY"
-								}
-							]
-						},
-						"useAppSpecificLastConnectedAddresses": {
-							"$ref": "notSupported"
-						}
-					}
-				},
-				"dataCollection": null,
-				"privacyPolicy": null,
-				"transactionPrivacy": {
-					"defaultFungibleTokenTransferMode": "PUBLIC",
-					"STEALTH_ADDRESSES": {
-						"$ref": "notSupported"
-					},
-					"TORNADO_CASH_NOVA": {
-						"$ref": "notSupported"
-					},
-					"PRIVACY_POOLS": {
-						"$ref": "notSupported"
-					},
-					"RAILGUN": {
-						"$ref": "notSupported"
-					}
-				}
-			},
-			"profile": "WalletProfile.GENERIC",
-			"security": {
-				"accountRecovery": {
-					"$call": "supported",
-					"args": [
-						{
-							"ref": [
-								{
-									"explanation": "Zeus uses a username and password to derive the master HD wallet. Recovery is only possible by using the same username and password.",
-									"url": "https://github.com/greekfetacheese/zeus#how-wallet-management-work-in-zeus"
-								}
-							],
-							"guardianRecovery": {
-								"$ref": "notSupported"
-							}
-						}
-					]
-				},
-				"bugBountyProgram": {
-					"$ref": "notSupported"
-				},
-				"duressResistance": {
-					"basicUnlock": {
-						"ref": {
-							"explanation": "Zeus uses a username and password to derive the master HD wallet; recovery is only possible by using the same username and password.",
-							"url": "https://github.com/greekfetacheese/zeus#how-wallet-management-work-in-zeus"
-						},
-						"mechanisms": {
-							"PIN": false,
-							"PASSWORD": true,
-							"BIOMETRIC": false,
-							"PATTERN": false
-						}
-					},
-					"duressMode": {
-						"$ref": "notSupported"
-					}
-				},
-				"hardwareWalletSupport": {
-					"$call": "notSupportedWithRef",
-					"args": [
-						{
-							"ref": {
-								"explanation": "Zeus documents wallet management through username/password-derived wallets plus seed-phrase and private-key imports; no public hardware-wallet pairing or signing support is documented in the README, and repository search found no Ledger, Trezor, or hardware-wallet integration.",
-								"url": "https://github.com/greekfetacheese/zeus#how-wallet-management-work-in-zeus"
-							}
-						}
-					]
-				},
-				"keysHandling": {
-					"ref": [
-						{
-							"explanation": "Keys are generated fully on the user device using BIP32 derivation from a seed derived via Argon2Id from username and password.",
-							"url": "https://github.com/greekfetacheese/zeus#how-the-wallet-recovery-works"
-						}
-					],
-					"keyGeneration": "KeyGenerationLocation.FULLY_ON_USER_DEVICE",
-					"multipartyKeyReconstruction": "MultiPartyKeyReconstruction.NON_MULTIPARTY"
-				},
-				"lightClient": {
-					"ethereumL1": {
-						"$ref": "notSupported"
-					}
-				},
-				"passkeyVerification": {
-					"$ref": "notSupported"
-				},
-				"publicSecurityAudits": [],
-				"scamAlerts": {
-					"contractTransactionWarning": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "Zeus currently does not have a scam alert mechanism, It simply shows with which contract you are interacting with. If it is a known contract a hyperlink with the contracts name is shown otherwise a truncated version of the contract address is shown (hyperlink). The user can also see all the decoded events to inspect the transaction.",
-										"label": "Contract interaction is shown in the transaction details",
-										"url": "https://github.com/greekfetacheese/zeus/blob/6fc3006fd8790f3f0db2feae24a5bdbad07c0c30/src/gui/ui/tx_window.rs#L246C1-L247C1"
-									}
-								]
-							}
-						]
-					},
-					"scamUrlWarning": {
-						"$ref": "notSupported"
-					},
-					"sendTransactionWarning": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": [
-									{
-										"label": "Before every transaction the user must confirm the action.",
-										"url": "https://github.com/greekfetacheese/zeus/blob/6fc3006fd8790f3f0db2feae24a5bdbad07c0c30/src/utils/tx.rs#L241C1-L242C1"
-									}
-								],
-								"leaksRecipient": false,
-								"leaksUserAddress": false,
-								"leaksUserIp": false,
-								"newRecipientWarning": false,
-								"userWhitelist": true
-							}
-						]
-					}
-				},
-				"securityBestPractices": null,
-				"transactionLegibility": {
-					"ref": [
-						{
-							"explanation": "Zeus performs local EVM simulations to verify and display exact transaction outcomes, including decoding of common events like erc20 transfers, swaps, approvals etc...",
-							"url": "https://github.com/greekfetacheese/zeus/blob/6fc3006fd8790f3f0db2feae24a5bdbad07c0c30/src/core/tx_analysis.rs"
-						}
-					],
-					"erc7730": null,
-					"erc8213": {
-						"$call": "supported",
-						"args": [
-							{
-								"calldataDisplay": null,
-								"messageSigningLegibility": {
-									"EIP712_STRUCT": "DataDisplayOptions.SHOWN_BY_DEFAULT",
-									"DOMAIN_HASH": "DataDisplayOptions.SHOWN_BY_DEFAULT",
-									"MESSAGE_HASH": "DataDisplayOptions.SHOWN_BY_DEFAULT",
-									"EIP712_DIGEST": "DataDisplayOptions.NOT_IN_UI"
-								}
-							}
-						]
-					},
-					"transactionDetailsDisplay": {
-						"chain": "DataDisplayOptions.SHOWN_BY_DEFAULT",
-						"from": "DataDisplayOptions.SHOWN_BY_DEFAULT",
-						"gas": "DataDisplayOptions.NOT_IN_UI",
-						"nonce": "DataDisplayOptions.NOT_IN_UI",
-						"to": "DataDisplayOptions.SHOWN_BY_DEFAULT",
-						"value": "DataDisplayOptions.SHOWN_BY_DEFAULT"
-					},
-					"transactionSimulations": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Zeus performs local EVM simulations with revm before transaction submission and decodes transfers, token approvals, permits, bridge deposits, Uniswap swaps, and failed outcomes from logs.",
-									"url": "https://github.com/greekfetacheese/zeus/blob/6fc3006fd8790f3f0db2feae24a5bdbad07c0c30/src/core/tx_analysis.rs"
-								},
-								"ERC_20_TRANSFER": {
-									"transactionOutcome": "TransactionOutcome.EXPLAINED"
-								},
-								"ERC_721_TRANSFER": null,
-								"ERC_1155_TRANSFER": null,
-								"USDC_APPROVAL": {
-									"transactionOutcome": "TransactionOutcome.EXPLAINED"
-								},
-								"AAVE_SUPPLY": null,
-								"SAFEWALLET_AAVE_SUPPLY_NESTED": null,
-								"SAFEWALLET_AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": null,
-								"ETH_TRANSFER": {
-									"transactionOutcome": "TransactionOutcome.EXPLAINED"
-								},
-								"ZKSYNC_USDC_TRANSFER": null,
-								"AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": null,
-								"FAILED_TRANSACTION": {
-									"transactionOutcome": "TransactionOutcome.EXPLAINED"
-								},
-								"NONDETERMINISTIC_TRANSACTION": null
-							}
-						]
-					}
-				}
-			},
-			"selfSovereignty": {
-				"permissionsManagement": {
-					"$call": "notSupportedWithRef",
-					"args": [
-						{
-							"ref": [
-								{
-									"explanation": "The Zeus README says the wallet does not automatically index data like token approvals, because it works from Ethereum RPC APIs rather than third-party indexing services.",
-									"url": "https://github.com/greekfetacheese/zeus#features"
-								}
-							]
-						}
-					]
-				},
-				"transactionSubmission": {
-					"l1": {
-						"ref": [
-							{
-								"explanation": "Zeus submits transactions via RPC endpoints.",
-								"url": "https://github.com/greekfetacheese/zeus#features"
-							}
-						],
-						"selfBroadcastViaDirectGossip": {
-							"$ref": "notSupported"
-						},
-						"selfBroadcastViaSelfHostedNode": {
-							"$call": "supported",
-							"args": [
-								{
-									"ref": [
-										{
-											"explanation": "Users can provide their own RPC endpoint to a self-hosted node.",
-											"url": "https://github.com/greekfetacheese/zeus#features"
-										}
-									]
-								}
-							]
-						}
-					},
-					"l2": {
-						"arbitrum": "TransactionSubmissionL2Support.SUPPORTED_BUT_NO_FORCE_INCLUSION",
-						"opStack": "TransactionSubmissionL2Support.SUPPORTED_BUT_NO_FORCE_INCLUSION",
-						"ref": [
-							{
-								"explanation": "Zeus submits L2 transactions via RPC endpoints.",
-								"url": "https://github.com/greekfetacheese/zeus#features"
-							}
-						]
-					}
-				}
-			},
-			"transparency": {
-				"operationFees": {
-					"builtInErc20Swap": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "Zeus performs local EVM simulations to show exact outcomes including fees.",
-										"url": "https://github.com/greekfetacheese/zeus#features"
-									}
-								],
-								"afterSingleAction": "comprehensiveFeesShownByDefault.afterSingleAction",
-								"byDefault": "comprehensiveFeesShownByDefault.byDefault",
-								"fullySponsored": "comprehensiveFeesShownByDefault.fullySponsored"
-							}
-						]
-					},
-					"erc20L1Transfer": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "Zeus performs local EVM simulations to show the exact tokens the recipient will receive in case of a token tax but it does not breakdown the fees if any.",
-										"url": "https://github.com/greekfetacheese/zeus#features"
-									}
-								],
-								"afterSingleAction": "comprehensiveFeesShownByDefault.afterSingleAction",
-								"byDefault": "comprehensiveFeesShownByDefault.byDefault",
-								"fullySponsored": "comprehensiveFeesShownByDefault.fullySponsored"
-							}
-						]
-					},
-					"ethL1Transfer": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "Zeus performs local EVM simulations to show exact outcomes including fees.",
-										"url": "https://github.com/greekfetacheese/zeus#features"
-									}
-								],
-								"afterSingleAction": "comprehensiveFeesShownByDefault.afterSingleAction",
-								"byDefault": "comprehensiveFeesShownByDefault.byDefault",
-								"fullySponsored": "comprehensiveFeesShownByDefault.fullySponsored"
-							}
-						]
-					},
-					"uniswapUSDCToEtherSwap": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "Zeus performs local EVM simulations to show exact outcomes but it does not show the fees if any.",
-										"url": "https://github.com/greekfetacheese/zeus#features"
-									}
-								],
-								"afterSingleAction": "comprehensiveFeesShownByDefault.afterSingleAction",
-								"byDefault": "comprehensiveFeesShownByDefault.byDefault",
-								"fullySponsored": "comprehensiveFeesShownByDefault.fullySponsored"
-							}
-						]
-					}
-				},
-				"releaseTransparency": {
-					"artifactSigning": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "The latest Zeus GitHub release publishes ZIP assets with GitHub-provided SHA-256 digests, but no detached signature, signed checksum file, or platform signing artifact is listed among the release assets.",
-									"url": "https://api.github.com/repos/greekfetacheese/zeus/releases?per_page=1"
-								}
-							}
-						]
-					},
-					"dependencyLocking": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "The Zeus repository includes a Cargo.lock lockfile for Rust dependency resolution.",
-									"url": "https://github.com/greekfetacheese/zeus/blob/master/Cargo.lock"
-								}
-							}
-						]
-					},
-					"dependencyVulnerabilityScanning": null,
-					"hasPublicChangelog": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Zeus publishes release notes and downloadable artifacts on its public GitHub releases page.",
-									"url": "https://github.com/greekfetacheese/zeus/releases"
-								}
-							}
-						]
-					},
-					"hermeticBuilds": null,
-					"repositoryChangeControls": null,
-					"reproducibleBuilds": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "Zeus publishes locked Rust dependencies in Cargo.lock and a production profile in Cargo.toml, but the public repository does not document deterministic rebuild-and-compare verification for matching published desktop release artifacts.",
-										"url": "https://github.com/greekfetacheese/zeus/blob/master/Cargo.toml"
-									},
-									{
-										"explanation": "The Zeus Cargo.lock file pins registry package versions and checksums for dependency resolution; this supports repeatable dependency selection but is not a published reproducible-build verification workflow for release binaries.",
-										"url": "https://github.com/greekfetacheese/zeus/blob/master/Cargo.lock"
-									}
-								]
-							}
-						]
-					}
-				}
-			},
-			"product": {
-				"platformCoverage": {
-					"ref": {
-						"explanation": "ZEUS docs describe ZEUS as a mobile Bitcoin wallet available on Google Play, Apple App Store, and F-Droid.",
-						"url": "https://docs.zeusln.app/"
-					},
-					"desktopApp": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "ZEUS docs describe a mobile app, not desktop.",
-									"url": "https://docs.zeusln.app/"
-								}
-							}
-						]
-					},
-					"mobileApp": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "ZEUS docs describe a mobile Bitcoin wallet.",
-									"url": "https://docs.zeusln.app/"
-								}
-							}
-						]
-					},
-					"browserExtension": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "ZEUS docs do not describe browser extension support.",
-									"url": "https://docs.zeusln.app/"
-								}
-							}
-						]
-					},
-					"browserNative": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "ZEUS is a mobile app, not browser-native.",
-									"url": "https://docs.zeusln.app/"
-								}
-							}
-						]
-					},
-					"webApp": null,
-					"ios": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "ZEUS docs say it is available on Apple App Store.",
-									"url": "https://docs.zeusln.app/"
-								}
-							}
-						]
-					},
-					"android": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "ZEUS docs say it is available on Google Play and F-Droid.",
-									"url": "https://docs.zeusln.app/"
-								}
-							}
-						]
-					},
-					"chrome": null,
-					"firefox": null,
-					"safari": null
-				},
-				"supportedEcosystems": {
-					"ref": {
-						"explanation": "ZEUS docs describe ZEUS as Bitcoin-only with on-chain and Lightning accounts.",
-						"url": "https://docs.zeusln.app/"
-					},
-					"evm": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "ZEUS is documented as Bitcoin-only.",
-									"url": "https://docs.zeusln.app/"
-								}
-							}
-						]
-					},
-					"solana": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "ZEUS is documented as Bitcoin-only.",
-									"url": "https://docs.zeusln.app/"
-								}
-							}
-						]
-					},
-					"bitcoin": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "ZEUS is a Bitcoin wallet with on-chain accounts.",
-									"url": "https://docs.zeusln.app/"
-								}
-							}
-						]
-					},
-					"cosmos": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "ZEUS is documented as Bitcoin-only.",
-									"url": "https://docs.zeusln.app/"
-								}
-							}
-						]
-					},
-					"ton": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "ZEUS is documented as Bitcoin-only.",
-									"url": "https://docs.zeusln.app/"
-								}
-							}
-						]
-					},
-					"starknet": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "ZEUS is documented as Bitcoin-only.",
-									"url": "https://docs.zeusln.app/"
-								}
-							}
-						]
-					},
-					"sui": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "ZEUS is documented as Bitcoin-only.",
-									"url": "https://docs.zeusln.app/"
-								}
-							}
-						]
-					},
-					"aptos": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "ZEUS is documented as Bitcoin-only.",
-									"url": "https://docs.zeusln.app/"
-								}
-							}
-						]
-					},
-					"xrp": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "ZEUS is documented as Bitcoin-only.",
-									"url": "https://docs.zeusln.app/"
-								}
-							}
-						]
-					},
-					"cardano": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "ZEUS is documented as Bitcoin-only.",
-									"url": "https://docs.zeusln.app/"
-								}
-							}
-						]
-					},
-					"lightning": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "ZEUS has full Bitcoin Lightning wallet functionality and Lightning accounts.",
-									"url": "https://docs.zeusln.app/"
-								}
-							}
-						]
-					},
-					"other": []
-				},
-				"dappExperience": {
-					"ref": {
-						"explanation": "ZEUS docs describe Lightning and node-management wallet functions, not Web3 dapp browsing.",
-						"url": "https://docs.zeusln.app/"
-					},
-					"inAppBrowser": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "ZEUS docs do not document an in-app Web3 dapp browser.",
-									"url": "https://docs.zeusln.app/"
-								}
-							}
-						]
-					},
-					"curatedDappDirectory": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "ZEUS docs do not document a dapp directory.",
-									"url": "https://docs.zeusln.app/"
-								}
-							}
-						]
-					},
-					"dappSearch": null,
-					"walletConnectOnlyMode": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "ZEUS is a Bitcoin/Lightning wallet, not a WalletConnect-only Web3 wallet.",
-									"url": "https://docs.zeusln.app/"
-								}
-							}
-						]
-					},
-					"featuredApps": null,
-					"riskRatedDiscovery": null
-				},
-				"fiatRamps": {
-					"ref": {
-						"explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://github.com/greekfetacheese/zeus"
-					},
-					"buyCrypto": null,
-					"sellCrypto": null,
-					"bankTransfer": null,
-					"card": null,
-					"applePay": null,
-					"googlePay": null,
-					"kycDependency": "KYCDependency.UNKNOWN",
-					"providers": [],
-					"regionalAvailability": null
-				},
-				"gasUx": {
-					"ref": {
-						"explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://github.com/greekfetacheese/zeus"
-					},
-					"gasCustomization": null,
-					"gasSponsorship": null,
-					"gasAbstraction": null,
-					"payGasInStablecoins": null,
-					"payGasWithReceivedToken": null,
-					"speedPresets": null,
-					"stuckTransactionRecovery": null
-				},
-				"recoveryUx": {
-					"ref": {
-						"explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://github.com/greekfetacheese/zeus"
-					},
-					"seedOnlyRecovery": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Zeus supports recovery/import through a seed or secret recovery phrase.",
-									"url": "https://github.com/greekfetacheese/zeus"
-								}
-							}
-						]
-					},
-					"cloudBackup": null,
-					"socialRecovery": null,
-					"guardianRecovery": null,
-					"passkeyRecovery": null,
-					"emergencyKit": null,
-					"recoveryRehearsal": null
-				},
-				"onboardingFriction": {
-					"ref": {
-						"explanation": "ZEUS docs say ZEUS is self-custodial, no KYC, PIN/passphrase encrypted, and supports connecting to own node/LNDHub.",
-						"url": "https://docs.zeusln.app/"
-					},
-					"seedPhraseRequiredAtSignup": null,
-					"passkeySignup": null,
-					"emailSignup": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "ZEUS docs do not describe email signup.",
-									"url": "https://docs.zeusln.app/"
-								}
-							}
-						]
-					},
-					"phoneSignup": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "ZEUS docs do not describe phone signup.",
-									"url": "https://docs.zeusln.app/"
-								}
-							}
-						]
-					},
-					"kycRequiredForWallet": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "ZEUS docs explicitly say no KYC.",
-									"url": "https://docs.zeusln.app/"
-								}
-							}
-						]
-					},
-					"guestMode": null,
-					"embeddedWalletMode": null,
-					"timeToFirstWallet": "OnboardingSpeed.UNKNOWN"
-				},
-				"portfolioManagement": {
-					"ref": {
-						"explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://github.com/greekfetacheese/zeus"
-					},
-					"netWorth": {
-						"$ref": "featureSupported"
-					},
-					"pnl": null,
-					"costBasis": null,
-					"tokenCategories": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Zeus provides token balance and asset-list portfolio views.",
-									"url": "https://github.com/greekfetacheese/zeus"
-								}
-							}
-						]
-					},
-					"nftSupport": null,
-					"collectionViews": null,
-					"watchOnlyWallets": null,
-					"multiWalletAggregation": {
-						"$ref": "featureSupported"
-					}
-				},
-				"notifications": {
-					"ref": {
-						"explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://github.com/greekfetacheese/zeus"
-					},
-					"sendReceive": null,
-					"priceAlerts": null,
-					"approvalAlerts": null,
-					"bridgeCompletion": null,
-					"failedTransaction": null,
-					"securityAlerts": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Zeus supports security alerts or transaction-risk warnings.",
-									"url": "https://github.com/greekfetacheese/zeus"
-								}
-							}
-						]
-					},
-					"marketAlerts": null
-				},
-				"nftCapabilities": {
-					"ref": {
-						"explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://github.com/greekfetacheese/zeus"
-					},
-					"display": null,
-					"send": null,
-					"mint": null,
-					"marketplaceIntegration": null,
-					"spamNftHiding": null,
-					"collectionMetadataRefresh": null,
-					"royaltiesOrOffers": null
-				},
-				"defiPositionAwareness": {
-					"ref": {
-						"explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://github.com/greekfetacheese/zeus"
-					},
-					"lendingPositions": null,
-					"stakingPositions": null,
-					"lpPositions": null,
-					"vaultPositions": null,
-					"perProtocolBalances": null,
-					"claimableRewards": null,
-					"liquidationWarnings": null
-				},
-				"stakingEarn": {
-					"ref": {
-						"explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://github.com/greekfetacheese/zeus"
-					},
-					"nativeStaking": null,
-					"liquidStaking": null,
-					"validatorChoice": null,
-					"apyDisplay": null,
-					"rewardsClaiming": null,
-					"providerDependency": null,
-					"lockupDisclosure": null
-				},
-				"customerSupport": {
-					"ref": {
-						"explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://github.com/greekfetacheese/zeus"
-					},
-					"liveChat": null,
-					"emailSupport": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Zeus publishes support, help center, or contact paths for wallet users.",
-									"url": "https://github.com/greekfetacheese/zeus"
-								}
-							}
-						]
-					},
-					"aiSupport": null,
-					"publishedSla": null,
-					"inAppHelpCenter": null,
-					"transactionTroubleshooting": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Zeus support docs include transaction or wallet troubleshooting material.",
-									"url": "https://github.com/greekfetacheese/zeus"
-								}
-							}
-						]
-					},
-					"scamRecoveryGuidance": null
-				},
-				"developerOffering": {
-					"ref": {
-						"explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://github.com/greekfetacheese/zeus"
-					},
-					"walletSdk": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Zeus publishes wallet developer docs, SDKs, or public wallet integration repositories.",
-									"url": "https://github.com/greekfetacheese/zeus"
-								}
-							}
-						]
-					},
-					"embeddedWalletSdk": null,
-					"whiteLabelOffering": null,
-					"walletConnectSupport": null,
-					"eip6963": null,
-					"eip5792": null,
-					"deepLinks": null,
-					"mobileLinkingQuality": null
-				},
-				"pricingFeeModel": {
-					"ref": {
-						"explanation": "ZEUS docs say ZEUS has no processing fees.",
-						"url": "https://docs.zeusln.app/"
-					},
-					"swapFees": null,
-					"bridgeFees": null,
-					"onRampFees": null,
-					"spreadDisclosure": null,
-					"subscriptionFeatures": null,
-					"cardFees": null,
-					"hiddenPartnerRevenue": null
-				},
-				"releaseVelocity": {
-					"ref": {
-						"explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://github.com/greekfetacheese/zeus"
-					},
-					"latestReleaseDate": "2026-01-12",
-					"releaseFrequency": "ReleaseFrequency.IRREGULAR",
-					"appStoreUpdateCadence": null,
-					"githubActivity": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Zeus has public GitHub repository activity or releases that can be tracked.",
-									"url": "https://github.com/greekfetacheese/zeus"
-								}
-							}
-						]
-					},
-					"changelogDetail": "ChangelogDetail.BASIC"
-				},
-				"deviceSync": {
-					"ref": {
-						"explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://github.com/greekfetacheese/zeus"
-					},
-					"syncsAccounts": null,
-					"syncsSettings": null,
-					"syncsContactsOrAddressBook": null,
-					"desktopMobileSync": null,
-					"cloudBackedSync": null,
-					"requiresSameSeedImport": {
-						"$ref": "featureSupported"
-					}
-				}
-			}
-		},
-		"variants": {
-			"DESKTOP": true
-		}
-	}
+  "id": "zeus",
+  "source": "software-wallets",
+  "export": "zeus",
+  "data": {
+    "metadata": {
+      "id": "zeus",
+      "displayName": "Zeus",
+      "tableName": "Zeus",
+      "blurb": "Zeus is a truly seedless and decentralized self-custodial Ethereum wallet.",
+      "contributors": [
+        {
+          "$ref": "greekfetacheese"
+        }
+      ],
+      "iconExtension": "svg",
+      "lastUpdated": "2026-01-12",
+      "urls": {
+        "docs": [
+          "https://github.com/greekfetacheese/zeus"
+        ],
+        "repositories": [
+          "https://github.com/greekfetacheese/zeus"
+        ],
+        "websites": [
+          "https://github.com/greekfetacheese/zeus"
+        ]
+      }
+    },
+    "features": {
+      "accountSupport": {
+        "defaultAccountType": "AccountType.eoa",
+        "eip7702": {
+          "$ref": "notSupported"
+        },
+        "eoa": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": [
+                {
+                  "explanation": "Zeus derives a Hierarchical Deterministic Wallet from a username and password using the BIP32 standard. Users can also import wallets using either a 12-24 word phrase or a private key.",
+                  "url": "https://github.com/greekfetacheese/zeus#how-wallet-management-work-in-zeus"
+                }
+              ],
+              "canExportPrivateKey": true,
+              "keyDerivation": {
+                "type": "BIP32",
+                "canExportSeedPhrase": false,
+                "derivationPath": "BIP44",
+                "seedPhrase": "BIP39"
+              }
+            }
+          ]
+        },
+        "mpc": {
+          "$ref": "notSupported"
+        },
+        "rawErc4337": {
+          "$ref": "notSupported"
+        },
+        "safe": {
+          "$ref": "notSupported"
+        }
+      },
+      "addressResolution": {
+        "ref": {
+          "explanation": "Zeus's send UI validates recipients by parsing the input as an Ethereum address with `Address::from_str`; repository search found no ENS, namehash, resolver, or Universal Resolver implementation.",
+          "url": "https://github.com/greekfetacheese/zeus/blob/1eebac5c3dfd740aa6b87d915b495b98a3f140c4/src/gui/ui/send_crypto.rs"
+        },
+        "chainSpecificAddressing": {
+          "erc7828": null,
+          "erc7831": null
+        },
+        "nonChainSpecificEnsResolution": {
+          "$call": "notSupportedWithRef",
+          "args": [
+            {
+              "ref": {
+                "explanation": "The Zeus send flow checks recipient input with `Address::from_str`, so non-address names such as ENS names are rejected as invalid recipients rather than resolved.",
+                "url": "https://github.com/greekfetacheese/zeus/blob/1eebac5c3dfd740aa6b87d915b495b98a3f140c4/src/gui/ui/send_crypto.rs"
+              }
+            }
+          ]
+        }
+      },
+      "chainAbstraction": {
+        "bridging": {
+          "builtInBridging": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "Zeus has a built-in interface which uses the Across protocol to bridge ETH between chains.",
+                    "url": "https://github.com/greekfetacheese/zeus/blob/7bd2a133344bfa5b52dfe0df6e8864839cbbaee9/src/gui/ui/dapps/across.rs"
+                  }
+                ],
+                "feesLargerThan1bps": {
+                  "afterSingleAction": "FeeDisplayLevel.AGGREGATED",
+                  "byDefault": "FeeDisplayLevel.AGGREGATED",
+                  "fullySponsored": false
+                },
+                "risksExplained": "NOT_IN_UI"
+              }
+            ]
+          },
+          "suggestedBridging": {
+            "$ref": "notSupported"
+          }
+        },
+        "crossChainBalances": {
+          "ref": {
+            "$ref": "refTodo"
+          },
+          "ether": {
+            "crossChainSumView": {
+              "$ref": "notSupported"
+            },
+            "perChainBalanceViewAcrossMultipleChains": {
+              "$ref": "featureSupported"
+            }
+          },
+          "globalAccountValue": {
+            "$ref": "featureSupported"
+          },
+          "perChainAccountValue": {
+            "$ref": "featureSupported"
+          },
+          "usdc": {
+            "crossChainSumView": {
+              "$ref": "notSupported"
+            },
+            "perChainBalanceViewAcrossMultipleChains": {
+              "$ref": "featureSupported"
+            }
+          }
+        }
+      },
+      "chainConfigurability": {
+        "$call": "supported",
+        "args": [
+          {
+            "ref": [
+              {
+                "explanation": "Zeus uses public RPC endpoints by default but allows users to provide custom endpoints and disable or delete what they don't want.",
+                "url": "https://github.com/greekfetacheese/zeus#features"
+              }
+            ],
+            "customChainRpcEndpoint": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": [
+                    {
+                      "explanation": "Users can use their own RPC endpoints.",
+                      "url": "https://github.com/greekfetacheese/zeus#features"
+                    }
+                  ]
+                }
+              ]
+            },
+            "l1": {
+              "$call": "supported",
+              "args": [
+                {
+                  "rpcEndpointConfiguration": "RpcEndpointConfiguration.YES_AFTER_OTHER_REQUESTS",
+                  "withNoConnectivityExceptL1RPCEndpoint": {
+                    "accountCreation": {
+                      "$ref": "featureSupported"
+                    },
+                    "accountImport": {
+                      "$ref": "featureSupported"
+                    },
+                    "erc20BalanceLookup": {
+                      "$ref": "featureSupported"
+                    },
+                    "erc20TokenSend": {
+                      "$ref": "featureSupported"
+                    },
+                    "etherBalanceLookup": {
+                      "$ref": "featureSupported"
+                    }
+                  }
+                }
+              ]
+            },
+            "nonL1": {
+              "$call": "supported",
+              "args": [
+                {
+                  "rpcEndpointConfiguration": "RpcEndpointConfiguration.YES_AFTER_OTHER_REQUESTS"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "ecosystem": {
+        "delegation": null
+      },
+      "integration": {
+        "browser": "NOT_A_BROWSER_WALLET",
+        "walletCall": null
+      },
+      "licensing": {
+        "type": "LicensingType.SINGLE_WALLET_REPO_AND_LICENSE",
+        "walletAppLicense": {
+          "ref": [
+            {
+              "explanation": "Zeus is licensed under the MIT license.",
+              "url": "https://github.com/greekfetacheese/zeus/blob/e2f12ad22ae24845f8f9bee1f0187be0a5bd07c8/LICENSE-MIT"
+            }
+          ],
+          "license": "FOSSLicense.MIT"
+        }
+      },
+      "monetization": {
+        "ref": [],
+        "revenueBreakdownIsPublic": false,
+        "strategies": {
+          "donations": false,
+          "ecosystemGrants": false,
+          "governanceTokenLowFloat": false,
+          "governanceTokenMostlyDistributed": false,
+          "hiddenConvenienceFees": false,
+          "publicOffering": false,
+          "selfFunded": true,
+          "transparentConvenienceFees": false,
+          "ventureCapital": false
+        }
+      },
+      "multiAddress": {
+        "$ref": "featureSupported"
+      },
+      "privacy": {
+        "analytics": {
+          "crashReports": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "The Zeus README states that Zeus has no telemetry and does not communicate with any third-party server; activity stays local on the user computer.",
+                  "url": "https://github.com/greekfetacheese/zeus#security"
+                }
+              }
+            ]
+          },
+          "usage": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "The Zeus README states that Zeus has no telemetry and does not communicate with any third-party server; activity stays local on the user computer.",
+                  "url": "https://github.com/greekfetacheese/zeus#security"
+                }
+              }
+            ]
+          }
+        },
+        "appIsolation": {
+          "DESKTOP": {
+            "createInAppConnectionFlow": {
+              "$ref": "notSupported"
+            },
+            "erc7846WalletConnect": {
+              "$ref": "notSupported"
+            },
+            "ethAccounts": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": [
+                    {
+                      "explanation": "Zeus exposes the address of the active account only.",
+                      "url": "https://github.com/greekfetacheese/zeus/blob/8d51c76d1c6ccce5a4a845c34429a4f89ff9cdae/src/server.rs#L371"
+                    }
+                  ],
+                  "defaultBehavior": "ExposedAccountsBehavior.ACTIVE_ACCOUNT_ONLY"
+                }
+              ]
+            },
+            "useAppSpecificLastConnectedAddresses": {
+              "$ref": "notSupported"
+            }
+          }
+        },
+        "dataCollection": null,
+        "privacyPolicy": null,
+        "transactionPrivacy": {
+          "defaultFungibleTokenTransferMode": "PUBLIC",
+          "STEALTH_ADDRESSES": {
+            "$ref": "notSupported"
+          },
+          "TORNADO_CASH_NOVA": {
+            "$ref": "notSupported"
+          },
+          "PRIVACY_POOLS": {
+            "$ref": "notSupported"
+          },
+          "RAILGUN": {
+            "$ref": "notSupported"
+          }
+        }
+      },
+      "profile": "WalletProfile.GENERIC",
+      "security": {
+        "accountRecovery": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": [
+                {
+                  "explanation": "Zeus uses a username and password to derive the master HD wallet. Recovery is only possible by using the same username and password.",
+                  "url": "https://github.com/greekfetacheese/zeus#how-wallet-management-work-in-zeus"
+                }
+              ],
+              "guardianRecovery": {
+                "$ref": "notSupported"
+              }
+            }
+          ]
+        },
+        "bugBountyProgram": {
+          "$ref": "notSupported"
+        },
+        "duressResistance": {
+          "basicUnlock": {
+            "ref": {
+              "explanation": "Zeus uses a username and password to derive the master HD wallet; recovery is only possible by using the same username and password.",
+              "url": "https://github.com/greekfetacheese/zeus#how-wallet-management-work-in-zeus"
+            },
+            "mechanisms": {
+              "PIN": false,
+              "PASSWORD": true,
+              "BIOMETRIC": false,
+              "PATTERN": false
+            }
+          },
+          "duressMode": {
+            "$ref": "notSupported"
+          }
+        },
+        "hardwareWalletSupport": {
+          "$call": "notSupportedWithRef",
+          "args": [
+            {
+              "ref": {
+                "explanation": "Zeus documents wallet management through username/password-derived wallets plus seed-phrase and private-key imports; no public hardware-wallet pairing or signing support is documented in the README, and repository search found no Ledger, Trezor, or hardware-wallet integration.",
+                "url": "https://github.com/greekfetacheese/zeus#how-wallet-management-work-in-zeus"
+              }
+            }
+          ]
+        },
+        "keysHandling": {
+          "ref": [
+            {
+              "explanation": "Keys are generated fully on the user device using BIP32 derivation from a seed derived via Argon2Id from username and password.",
+              "url": "https://github.com/greekfetacheese/zeus#how-the-wallet-recovery-works"
+            }
+          ],
+          "keyGeneration": "KeyGenerationLocation.FULLY_ON_USER_DEVICE",
+          "multipartyKeyReconstruction": "MultiPartyKeyReconstruction.NON_MULTIPARTY"
+        },
+        "lightClient": {
+          "ethereumL1": {
+            "$ref": "notSupported"
+          }
+        },
+        "passkeyVerification": {
+          "$ref": "notSupported"
+        },
+        "publicSecurityAudits": [],
+        "scamAlerts": {
+          "contractTransactionWarning": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "Zeus currently does not have a scam alert mechanism, It simply shows with which contract you are interacting with. If it is a known contract a hyperlink with the contracts name is shown otherwise a truncated version of the contract address is shown (hyperlink). The user can also see all the decoded events to inspect the transaction.",
+                    "label": "Contract interaction is shown in the transaction details",
+                    "url": "https://github.com/greekfetacheese/zeus/blob/6fc3006fd8790f3f0db2feae24a5bdbad07c0c30/src/gui/ui/tx_window.rs#L246C1-L247C1"
+                  }
+                ]
+              }
+            ]
+          },
+          "scamUrlWarning": {
+            "$ref": "notSupported"
+          },
+          "sendTransactionWarning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "label": "Before every transaction the user must confirm the action.",
+                    "url": "https://github.com/greekfetacheese/zeus/blob/6fc3006fd8790f3f0db2feae24a5bdbad07c0c30/src/utils/tx.rs#L241C1-L242C1"
+                  }
+                ],
+                "leaksRecipient": false,
+                "leaksUserAddress": false,
+                "leaksUserIp": false,
+                "newRecipientWarning": false,
+                "userWhitelist": true
+              }
+            ]
+          }
+        },
+        "securityBestPractices": null,
+        "transactionLegibility": {
+          "ref": [
+            {
+              "explanation": "Zeus performs local EVM simulations to verify and display exact transaction outcomes, including decoding of common events like erc20 transfers, swaps, approvals etc...",
+              "url": "https://github.com/greekfetacheese/zeus/blob/6fc3006fd8790f3f0db2feae24a5bdbad07c0c30/src/core/tx_analysis.rs"
+            }
+          ],
+          "erc7730": null,
+          "erc8213": {
+            "$call": "supported",
+            "args": [
+              {
+                "calldataDisplay": null,
+                "messageSigningLegibility": {
+                  "EIP712_STRUCT": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+                  "DOMAIN_HASH": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+                  "MESSAGE_HASH": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+                  "EIP712_DIGEST": "DataDisplayOptions.NOT_IN_UI"
+                }
+              }
+            ]
+          },
+          "transactionDetailsDisplay": {
+            "chain": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+            "from": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+            "gas": "DataDisplayOptions.NOT_IN_UI",
+            "nonce": "DataDisplayOptions.NOT_IN_UI",
+            "to": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+            "value": "DataDisplayOptions.SHOWN_BY_DEFAULT"
+          },
+          "transactionSimulations": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Zeus performs local EVM simulations with revm before transaction submission and decodes transfers, token approvals, permits, bridge deposits, Uniswap swaps, and failed outcomes from logs.",
+                  "url": "https://github.com/greekfetacheese/zeus/blob/6fc3006fd8790f3f0db2feae24a5bdbad07c0c30/src/core/tx_analysis.rs"
+                },
+                "ERC_20_TRANSFER": {
+                  "transactionOutcome": "TransactionOutcome.EXPLAINED"
+                },
+                "ERC_721_TRANSFER": null,
+                "ERC_1155_TRANSFER": null,
+                "USDC_APPROVAL": {
+                  "transactionOutcome": "TransactionOutcome.EXPLAINED"
+                },
+                "AAVE_SUPPLY": null,
+                "SAFEWALLET_AAVE_SUPPLY_NESTED": null,
+                "SAFEWALLET_AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": null,
+                "ETH_TRANSFER": {
+                  "transactionOutcome": "TransactionOutcome.EXPLAINED"
+                },
+                "ZKSYNC_USDC_TRANSFER": null,
+                "AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": null,
+                "FAILED_TRANSACTION": {
+                  "transactionOutcome": "TransactionOutcome.EXPLAINED"
+                },
+                "NONDETERMINISTIC_TRANSACTION": null
+              }
+            ]
+          }
+        }
+      },
+      "selfSovereignty": {
+        "permissionsManagement": {
+          "$call": "notSupportedWithRef",
+          "args": [
+            {
+              "ref": [
+                {
+                  "explanation": "The Zeus README says the wallet does not automatically index data like token approvals, because it works from Ethereum RPC APIs rather than third-party indexing services.",
+                  "url": "https://github.com/greekfetacheese/zeus#features"
+                }
+              ]
+            }
+          ]
+        },
+        "transactionSubmission": {
+          "l1": {
+            "ref": [
+              {
+                "explanation": "Zeus submits transactions via RPC endpoints.",
+                "url": "https://github.com/greekfetacheese/zeus#features"
+              }
+            ],
+            "selfBroadcastViaDirectGossip": {
+              "$ref": "notSupported"
+            },
+            "selfBroadcastViaSelfHostedNode": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": [
+                    {
+                      "explanation": "Users can provide their own RPC endpoint to a self-hosted node.",
+                      "url": "https://github.com/greekfetacheese/zeus#features"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "l2": {
+            "arbitrum": "TransactionSubmissionL2Support.SUPPORTED_BUT_NO_FORCE_INCLUSION",
+            "opStack": "TransactionSubmissionL2Support.SUPPORTED_BUT_NO_FORCE_INCLUSION",
+            "ref": [
+              {
+                "explanation": "Zeus submits L2 transactions via RPC endpoints.",
+                "url": "https://github.com/greekfetacheese/zeus#features"
+              }
+            ]
+          }
+        }
+      },
+      "transparency": {
+        "operationFees": {
+          "builtInErc20Swap": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "Zeus performs local EVM simulations to show exact outcomes including fees.",
+                    "url": "https://github.com/greekfetacheese/zeus#features"
+                  }
+                ],
+                "afterSingleAction": "comprehensiveFeesShownByDefault.afterSingleAction",
+                "byDefault": "comprehensiveFeesShownByDefault.byDefault",
+                "fullySponsored": "comprehensiveFeesShownByDefault.fullySponsored"
+              }
+            ]
+          },
+          "erc20L1Transfer": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "Zeus performs local EVM simulations to show the exact tokens the recipient will receive in case of a token tax but it does not breakdown the fees if any.",
+                    "url": "https://github.com/greekfetacheese/zeus#features"
+                  }
+                ],
+                "afterSingleAction": "comprehensiveFeesShownByDefault.afterSingleAction",
+                "byDefault": "comprehensiveFeesShownByDefault.byDefault",
+                "fullySponsored": "comprehensiveFeesShownByDefault.fullySponsored"
+              }
+            ]
+          },
+          "ethL1Transfer": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "Zeus performs local EVM simulations to show exact outcomes including fees.",
+                    "url": "https://github.com/greekfetacheese/zeus#features"
+                  }
+                ],
+                "afterSingleAction": "comprehensiveFeesShownByDefault.afterSingleAction",
+                "byDefault": "comprehensiveFeesShownByDefault.byDefault",
+                "fullySponsored": "comprehensiveFeesShownByDefault.fullySponsored"
+              }
+            ]
+          },
+          "uniswapUSDCToEtherSwap": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "Zeus performs local EVM simulations to show exact outcomes but it does not show the fees if any.",
+                    "url": "https://github.com/greekfetacheese/zeus#features"
+                  }
+                ],
+                "afterSingleAction": "comprehensiveFeesShownByDefault.afterSingleAction",
+                "byDefault": "comprehensiveFeesShownByDefault.byDefault",
+                "fullySponsored": "comprehensiveFeesShownByDefault.fullySponsored"
+              }
+            ]
+          }
+        },
+        "releaseTransparency": {
+          "artifactSigning": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "The latest Zeus GitHub release publishes ZIP assets with GitHub-provided SHA-256 digests, but no detached signature, signed checksum file, or platform signing artifact is listed among the release assets.",
+                  "url": "https://api.github.com/repos/greekfetacheese/zeus/releases?per_page=1"
+                }
+              }
+            ]
+          },
+          "dependencyLocking": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "The Zeus repository includes a Cargo.lock lockfile for Rust dependency resolution.",
+                  "url": "https://github.com/greekfetacheese/zeus/blob/master/Cargo.lock"
+                }
+              }
+            ]
+          },
+          "dependencyVulnerabilityScanning": null,
+          "hasPublicChangelog": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Zeus publishes release notes and downloadable artifacts on its public GitHub releases page.",
+                  "url": "https://github.com/greekfetacheese/zeus/releases"
+                }
+              }
+            ]
+          },
+          "hermeticBuilds": null,
+          "repositoryChangeControls": null,
+          "reproducibleBuilds": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "Zeus publishes locked Rust dependencies in Cargo.lock and a production profile in Cargo.toml, but the public repository does not document deterministic rebuild-and-compare verification for matching published desktop release artifacts.",
+                    "url": "https://github.com/greekfetacheese/zeus/blob/master/Cargo.toml"
+                  },
+                  {
+                    "explanation": "The Zeus Cargo.lock file pins registry package versions and checksums for dependency resolution; this supports repeatable dependency selection but is not a published reproducible-build verification workflow for release binaries.",
+                    "url": "https://github.com/greekfetacheese/zeus/blob/master/Cargo.lock"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "product": {
+        "platformCoverage": {
+          "ref": {
+            "explanation": "ZEUS docs describe ZEUS as a mobile Bitcoin wallet available on Google Play, Apple App Store, and F-Droid.",
+            "url": "https://docs.zeusln.app/"
+          },
+          "desktopApp": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "ZEUS docs describe a mobile app, not desktop.",
+                  "url": "https://docs.zeusln.app/"
+                }
+              }
+            ]
+          },
+          "mobileApp": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "ZEUS docs describe a mobile Bitcoin wallet.",
+                  "url": "https://docs.zeusln.app/"
+                }
+              }
+            ]
+          },
+          "browserExtension": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "ZEUS docs do not describe browser extension support.",
+                  "url": "https://docs.zeusln.app/"
+                }
+              }
+            ]
+          },
+          "browserNative": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "ZEUS is a mobile app, not browser-native.",
+                  "url": "https://docs.zeusln.app/"
+                }
+              }
+            ]
+          },
+          "webApp": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/greekfetacheese/zeus",
+                  "explanation": "Zeus's README lists Supported Platforms as Windows and Linux desktop only, distributed as a downloadable executable, with no browser-based web app."
+                }
+              }
+            ]
+          },
+          "ios": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "ZEUS docs say it is available on Apple App Store.",
+                  "url": "https://docs.zeusln.app/"
+                }
+              }
+            ]
+          },
+          "android": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "ZEUS docs say it is available on Google Play and F-Droid.",
+                  "url": "https://docs.zeusln.app/"
+                }
+              }
+            ]
+          },
+          "chrome": null,
+          "firefox": null,
+          "safari": null
+        },
+        "supportedEcosystems": {
+          "ref": {
+            "explanation": "ZEUS docs describe ZEUS as Bitcoin-only with on-chain and Lightning accounts.",
+            "url": "https://docs.zeusln.app/"
+          },
+          "evm": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "ZEUS is documented as Bitcoin-only.",
+                  "url": "https://docs.zeusln.app/"
+                }
+              }
+            ]
+          },
+          "solana": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "ZEUS is documented as Bitcoin-only.",
+                  "url": "https://docs.zeusln.app/"
+                }
+              }
+            ]
+          },
+          "bitcoin": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "ZEUS is a Bitcoin wallet with on-chain accounts.",
+                  "url": "https://docs.zeusln.app/"
+                }
+              }
+            ]
+          },
+          "cosmos": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "ZEUS is documented as Bitcoin-only.",
+                  "url": "https://docs.zeusln.app/"
+                }
+              }
+            ]
+          },
+          "ton": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "ZEUS is documented as Bitcoin-only.",
+                  "url": "https://docs.zeusln.app/"
+                }
+              }
+            ]
+          },
+          "starknet": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "ZEUS is documented as Bitcoin-only.",
+                  "url": "https://docs.zeusln.app/"
+                }
+              }
+            ]
+          },
+          "sui": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "ZEUS is documented as Bitcoin-only.",
+                  "url": "https://docs.zeusln.app/"
+                }
+              }
+            ]
+          },
+          "aptos": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "ZEUS is documented as Bitcoin-only.",
+                  "url": "https://docs.zeusln.app/"
+                }
+              }
+            ]
+          },
+          "xrp": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "ZEUS is documented as Bitcoin-only.",
+                  "url": "https://docs.zeusln.app/"
+                }
+              }
+            ]
+          },
+          "cardano": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "ZEUS is documented as Bitcoin-only.",
+                  "url": "https://docs.zeusln.app/"
+                }
+              }
+            ]
+          },
+          "lightning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "ZEUS has full Bitcoin Lightning wallet functionality and Lightning accounts.",
+                  "url": "https://docs.zeusln.app/"
+                }
+              }
+            ]
+          },
+          "other": []
+        },
+        "dappExperience": {
+          "ref": {
+            "explanation": "ZEUS docs describe Lightning and node-management wallet functions, not Web3 dapp browsing.",
+            "url": "https://docs.zeusln.app/"
+          },
+          "inAppBrowser": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "ZEUS docs do not document an in-app Web3 dapp browser.",
+                  "url": "https://docs.zeusln.app/"
+                }
+              }
+            ]
+          },
+          "curatedDappDirectory": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "ZEUS docs do not document a dapp directory.",
+                  "url": "https://docs.zeusln.app/"
+                }
+              }
+            ]
+          },
+          "dappSearch": null,
+          "walletConnectOnlyMode": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "ZEUS is a Bitcoin/Lightning wallet, not a WalletConnect-only Web3 wallet.",
+                  "url": "https://docs.zeusln.app/"
+                }
+              }
+            ]
+          },
+          "featuredApps": null,
+          "riskRatedDiscovery": null
+        },
+        "fiatRamps": {
+          "ref": {
+            "explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://github.com/greekfetacheese/zeus"
+          },
+          "buyCrypto": null,
+          "sellCrypto": null,
+          "bankTransfer": null,
+          "card": null,
+          "applePay": null,
+          "googlePay": null,
+          "kycDependency": "KYCDependency.UNKNOWN",
+          "providers": [],
+          "regionalAvailability": null
+        },
+        "gasUx": {
+          "ref": {
+            "explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://github.com/greekfetacheese/zeus"
+          },
+          "gasCustomization": null,
+          "gasSponsorship": null,
+          "gasAbstraction": null,
+          "payGasInStablecoins": null,
+          "payGasWithReceivedToken": null,
+          "speedPresets": null,
+          "stuckTransactionRecovery": null
+        },
+        "recoveryUx": {
+          "ref": {
+            "explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://github.com/greekfetacheese/zeus"
+          },
+          "seedOnlyRecovery": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Zeus supports recovery/import through a seed or secret recovery phrase.",
+                  "url": "https://github.com/greekfetacheese/zeus"
+                }
+              }
+            ]
+          },
+          "cloudBackup": null,
+          "socialRecovery": null,
+          "guardianRecovery": null,
+          "passkeyRecovery": null,
+          "emergencyKit": null,
+          "recoveryRehearsal": null
+        },
+        "onboardingFriction": {
+          "ref": {
+            "explanation": "ZEUS docs say ZEUS is self-custodial, no KYC, PIN/passphrase encrypted, and supports connecting to own node/LNDHub.",
+            "url": "https://docs.zeusln.app/"
+          },
+          "seedPhraseRequiredAtSignup": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/greekfetacheese/zeus",
+                  "explanation": "The README states Zeus is 'seedless' and onboarding only requires a username and password to derive the HD wallet, so no seed phrase is forced at signup (seed import is optional)."
+                }
+              }
+            ]
+          },
+          "passkeySignup": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/greekfetacheese/zeus",
+                  "explanation": "The README describes signup as entering a username and password hashed with Argon2Id; there is no passkey/WebAuthn/FIDO option."
+                }
+              }
+            ]
+          },
+          "emailSignup": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "ZEUS docs do not describe email signup.",
+                  "url": "https://docs.zeusln.app/"
+                }
+              }
+            ]
+          },
+          "phoneSignup": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "ZEUS docs do not describe phone signup.",
+                  "url": "https://docs.zeusln.app/"
+                }
+              }
+            ]
+          },
+          "kycRequiredForWallet": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "ZEUS docs explicitly say no KYC.",
+                  "url": "https://docs.zeusln.app/"
+                }
+              }
+            ]
+          },
+          "guestMode": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/greekfetacheese/zeus",
+                  "explanation": "The README states that the first time you run Zeus you are prompted to enter a username and password to derive a wallet, with no try-before-wallet guest mode."
+                }
+              }
+            ]
+          },
+          "embeddedWalletMode": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/greekfetacheese/zeus",
+                  "explanation": "Zeus derives a self-custodial HD wallet locally from a username/password via Argon2Id/BIP32 with no telemetry or third-party service, offering no social/email-login MPC or embedded smart-account wallet."
+                }
+              }
+            ]
+          },
+          "timeToFirstWallet": "OnboardingSpeed.UNKNOWN"
+        },
+        "portfolioManagement": {
+          "ref": {
+            "explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://github.com/greekfetacheese/zeus"
+          },
+          "netWorth": {
+            "$ref": "featureSupported"
+          },
+          "pnl": null,
+          "costBasis": null,
+          "tokenCategories": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Zeus provides token balance and asset-list portfolio views.",
+                  "url": "https://github.com/greekfetacheese/zeus"
+                }
+              }
+            ]
+          },
+          "nftSupport": null,
+          "collectionViews": null,
+          "watchOnlyWallets": null,
+          "multiWalletAggregation": {
+            "$ref": "featureSupported"
+          }
+        },
+        "notifications": {
+          "ref": {
+            "explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://github.com/greekfetacheese/zeus"
+          },
+          "sendReceive": null,
+          "priceAlerts": null,
+          "approvalAlerts": null,
+          "bridgeCompletion": null,
+          "failedTransaction": null,
+          "securityAlerts": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Zeus supports security alerts or transaction-risk warnings.",
+                  "url": "https://github.com/greekfetacheese/zeus"
+                }
+              }
+            ]
+          },
+          "marketAlerts": null
+        },
+        "nftCapabilities": {
+          "ref": {
+            "explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://github.com/greekfetacheese/zeus"
+          },
+          "display": null,
+          "send": null,
+          "mint": null,
+          "marketplaceIntegration": null,
+          "spamNftHiding": null,
+          "collectionMetadataRefresh": null,
+          "royaltiesOrOffers": null
+        },
+        "defiPositionAwareness": {
+          "ref": {
+            "explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://github.com/greekfetacheese/zeus"
+          },
+          "lendingPositions": null,
+          "stakingPositions": null,
+          "lpPositions": null,
+          "vaultPositions": null,
+          "perProtocolBalances": null,
+          "claimableRewards": null,
+          "liquidationWarnings": null
+        },
+        "stakingEarn": {
+          "ref": {
+            "explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://github.com/greekfetacheese/zeus"
+          },
+          "nativeStaking": null,
+          "liquidStaking": null,
+          "validatorChoice": null,
+          "apyDisplay": null,
+          "rewardsClaiming": null,
+          "providerDependency": null,
+          "lockupDisclosure": null
+        },
+        "customerSupport": {
+          "ref": {
+            "explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://github.com/greekfetacheese/zeus"
+          },
+          "liveChat": null,
+          "emailSupport": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Zeus publishes support, help center, or contact paths for wallet users.",
+                  "url": "https://github.com/greekfetacheese/zeus"
+                }
+              }
+            ]
+          },
+          "aiSupport": null,
+          "publishedSla": null,
+          "inAppHelpCenter": null,
+          "transactionTroubleshooting": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Zeus support docs include transaction or wallet troubleshooting material.",
+                  "url": "https://github.com/greekfetacheese/zeus"
+                }
+              }
+            ]
+          },
+          "scamRecoveryGuidance": null
+        },
+        "developerOffering": {
+          "ref": {
+            "explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://github.com/greekfetacheese/zeus"
+          },
+          "walletSdk": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Zeus publishes wallet developer docs, SDKs, or public wallet integration repositories.",
+                  "url": "https://github.com/greekfetacheese/zeus"
+                }
+              }
+            ]
+          },
+          "embeddedWalletSdk": null,
+          "whiteLabelOffering": null,
+          "walletConnectSupport": null,
+          "eip6963": null,
+          "eip5792": null,
+          "deepLinks": null,
+          "mobileLinkingQuality": null
+        },
+        "pricingFeeModel": {
+          "ref": {
+            "explanation": "ZEUS docs say ZEUS has no processing fees.",
+            "url": "https://docs.zeusln.app/"
+          },
+          "swapFees": null,
+          "bridgeFees": null,
+          "onRampFees": null,
+          "spreadDisclosure": null,
+          "subscriptionFeatures": null,
+          "cardFees": null,
+          "hiddenPartnerRevenue": null
+        },
+        "releaseVelocity": {
+          "ref": {
+            "explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://github.com/greekfetacheese/zeus"
+          },
+          "latestReleaseDate": "2026-01-12",
+          "releaseFrequency": "ReleaseFrequency.IRREGULAR",
+          "appStoreUpdateCadence": null,
+          "githubActivity": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Zeus has public GitHub repository activity or releases that can be tracked.",
+                  "url": "https://github.com/greekfetacheese/zeus"
+                }
+              }
+            ]
+          },
+          "changelogDetail": "ChangelogDetail.BASIC"
+        },
+        "deviceSync": {
+          "ref": {
+            "explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://github.com/greekfetacheese/zeus"
+          },
+          "syncsAccounts": null,
+          "syncsSettings": null,
+          "syncsContactsOrAddressBook": null,
+          "desktopMobileSync": null,
+          "cloudBackedSync": null,
+          "requiresSameSeedImport": {
+            "$ref": "featureSupported"
+          }
+        }
+      }
+    },
+    "variants": {
+      "DESKTOP": true
+    }
+  }
 }

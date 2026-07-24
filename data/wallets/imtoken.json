@@ -1,1188 +1,1288 @@
 {
-	"id": "imtoken",
-	"source": "software-wallets",
-	"export": "imtoken",
-	"data": {
-		"metadata": {
-			"id": "imtoken",
-			"displayName": "imToken",
-			"tableName": "imToken",
-			"blurb": "imToken is a reliable and intuitive digital wallet, enabling easy access to over 50+ major networks including Bitcoin, Ethereum, and Tron. imToken supports hardware wallets, token swap and app browser etc., and provides secure and trusted non-custodial wallet services to millions of users in more than 150 countries and regions around the world.",
-			"contributors": [
-				{
-					"$ref": "mako"
-				},
-				{
-					"$ref": "mattmatt"
-				}
-			],
-			"iconExtension": "svg",
-			"lastUpdated": "2025-10-28",
-			"urls": {
-				"docs": [
-					"https://docs.token.im/"
-				],
-				"repositories": [
-					"https://github.com/consenlabs/token-core-monorepo"
-				],
-				"socials": {
-					"discord": "https://discord.com/invite/imToken",
-					"x": "https://x.com/imTokenOfficial"
-				},
-				"websites": [
-					"https://token.im"
-				]
-			}
-		},
-		"features": {
-			"accountSupport": {
-				"defaultAccountType": "AccountType.eoa",
-				"eip7702": {
-					"$ref": "notSupported"
-				},
-				"eoa": {
-					"$call": "supported",
-					"args": [
-						{
-							"ref": {
-								"$ref": "refTodo"
-							},
-							"canExportPrivateKey": true,
-							"keyDerivation": {
-								"type": "BIP32",
-								"canExportSeedPhrase": true,
-								"derivationPath": "BIP44",
-								"seedPhrase": "BIP39"
-							}
-						}
-					]
-				},
-				"mpc": {
-					"$ref": "notSupported"
-				},
-				"rawErc4337": {
-					"$ref": "notSupported"
-				},
-				"safe": {
-					"$ref": "notSupported"
-				}
-			},
-			"addressResolution": {
-				"ref": [
-					{
-						"explanation": "imToken supports ENS human-readable names and resolves them onchain before sending funds.",
-						"url": "https://support.token.im/hc/articles/360039928813"
-					}
-				],
-				"chainSpecificAddressing": {
-					"erc7828": {
-						"$ref": "notSupported"
-					},
-					"erc7831": {
-						"$ref": "notSupported"
-					}
-				},
-				"nonChainSpecificEnsResolution": {
-					"$call": "supported",
-					"args": [
-						{
-							"medium": "CHAIN_CLIENT"
-						}
-					]
-				}
-			},
-			"chainAbstraction": {
-				"bridging": {
-					"builtInBridging": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "imToken provides built-in cross-chain bridging through cBridge and other bridge protocols, with clear fee breakdown. Scam risks are explained, but trust assumptions of the bridge are not.",
-										"url": "https://support.token.im/hc/en-us/articles/4404355206553-How-to-use-cBridge-with-imToken"
-									}
-								],
-								"feesLargerThan1bps": {
-									"afterSingleAction": "FeeDisplayLevel.COMPREHENSIVE",
-									"byDefault": "FeeDisplayLevel.COMPREHENSIVE",
-									"fullySponsored": false
-								},
-								"risksExplained": "NOT_IN_UI"
-							}
-						]
-					},
-					"suggestedBridging": {
-						"$ref": "notSupported"
-					}
-				},
-				"crossChainBalances": {
-					"ref": {
-						"$ref": "refTodo"
-					},
-					"ether": {
-						"crossChainSumView": {
-							"$ref": "notSupported"
-						},
-						"perChainBalanceViewAcrossMultipleChains": {
-							"$ref": "notSupported"
-						}
-					},
-					"globalAccountValue": {
-						"$ref": "notSupported"
-					},
-					"perChainAccountValue": {
-						"$ref": "notSupported"
-					},
-					"usdc": {
-						"crossChainSumView": {
-							"$ref": "notSupported"
-						},
-						"perChainBalanceViewAcrossMultipleChains": {
-							"$ref": "notSupported"
-						}
-					}
-				}
-			},
-			"chainConfigurability": {
-				"$call": "supported",
-				"args": [
-					{
-						"ref": {
-							"explanation": "imToken says its custom RPC feature lets users connect directly to Ethereum-compatible networks and custom network nodes through imToken.",
-							"url": "https://support.token.im/hc/en-us/articles/900005324266-imToken-now-supports-custom-RPC-Experience-the-layer-2-ecosystem-today"
-						},
-						"customChainRpcEndpoint": {
-							"$ref": "featureSupported"
-						},
-						"l1": {
-							"$call": "supported",
-							"args": [
-								{
-									"rpcEndpointConfiguration": "RpcEndpointConfiguration.YES_BEFORE_ANY_REQUEST"
-								}
-							]
-						}
-					}
-				]
-			},
-			"ecosystem": {
-				"delegation": null
-			},
-			"integration": {
-				"browser": "NOT_A_BROWSER_WALLET",
-				"walletCall": null
-			},
-			"licensing": {
-				"type": "LicensingType.SEPARATE_CORE_CODE_LICENSE_VS_WALLET_CODE_LICENSE",
-				"coreLicense": {
-					"ref": [
-						{
-							"explanation": "imToken publishes its core code under the Apache 2.0 open-source license; the app itself is proprietary.",
-							"url": "https://github.com/consenlabs/token-core-monorepo/blob/9798639887b0496b562490952d8f1585047a749e/LICENSE"
-						}
-					],
-					"license": "FOSSLicense.APACHE_2_0"
-				},
-				"walletAppLicense": {
-					"MOBILE": {
-						"ref": {
-							"$ref": "refNotNecessary"
-						},
-						"license": "SourceNotAvailableLicense.PROPRIETARY"
-					}
-				}
-			},
-			"monetization": {
-				"ref": [
-					{
-						"explanation": "imToken announced a USD 30 million Series B funding round led by institutional investors.",
-						"url": "https://support.token.im/hc/en-us/articles/900005414706-imToken-Announces-US-30-million-Series-B-Investment"
-					}
-				],
-				"revenueBreakdownIsPublic": false,
-				"strategies": {
-					"donations": false,
-					"ecosystemGrants": false,
-					"governanceTokenLowFloat": false,
-					"governanceTokenMostlyDistributed": false,
-					"hiddenConvenienceFees": false,
-					"publicOffering": false,
-					"selfFunded": false,
-					"transparentConvenienceFees": true,
-					"ventureCapital": true
-				}
-			},
-			"multiAddress": {
-				"$call": "supported",
-				"args": [
-					{
-						"ref": [
-							{
-								"explanation": "Each request only involves one active address."
-							}
-						]
-					}
-				]
-			},
-			"privacy": {
-				"analytics": {
-					"crashReports": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken's App Store privacy label lists Diagnostics as data linked to the user.",
-									"url": "https://apps.apple.com/us/app/imtoken-btc-eth-wallet/id1384798940"
-								}
-							}
-						]
-					},
-					"usage": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken's App Store privacy label lists Usage Data as data linked to the user.",
-									"url": "https://apps.apple.com/us/app/imtoken-btc-eth-wallet/id1384798940"
-								}
-							}
-						]
-					}
-				},
-				"appIsolation": {
-					"MOBILE": null
-				},
-				"dataCollection": {
-					"INSTALL": null,
-					"NATIVE_SWAP": {
-						"collected": []
-					},
-					"SEND_ETHER": {
-						"collected": []
-					},
-					"SEND_USDC": null,
-					"MAKE_TRANSACTION": {
-						"collected": [
-							{
-								"ref": [
-									{
-										"explanation": "imToken can associate your wallet address along with your mobile device's IP address, per its privacy policy. Each request only involves one active address.",
-										"url": "https://token.im/tos-en.html"
-									}
-								],
-								"byEntity": {
-									"$ref": "imToken"
-								},
-								"dataCollection": {
-									"ACCOUNT_ADDRESS": "CollectionPolicy.ALWAYS",
-									"endpoint": {
-										"$ref": "RegularEndpoint"
-									},
-									"multiAddress": {
-										"type": "MultiAddressPolicy.ACTIVE_ADDRESS_ONLY"
-									}
-								},
-								"purposes": [
-									"DataCollectionPurpose.CHAIN_DATA_LOOKUP"
-								]
-							}
-						]
-					},
-					"APP_CONNECTION": {
-						"collected": []
-					},
-					"ONBOARDING_NEW": {
-						"collected": [],
-						"publishedOnchain": "NO_DATA_PUBLISHED_ONCHAIN"
-					},
-					"ONBOARDING_IMPORT": null
-				},
-				"privacyPolicy": "https://token.im/tos-en.html",
-				"transactionPrivacy": {
-					"defaultFungibleTokenTransferMode": "PUBLIC",
-					"STEALTH_ADDRESSES": {
-						"$ref": "notSupported"
-					},
-					"TORNADO_CASH_NOVA": {
-						"$ref": "notSupported"
-					},
-					"PRIVACY_POOLS": {
-						"$ref": "notSupported"
-					},
-					"RAILGUN": {
-						"$ref": "notSupported"
-					}
-				}
-			},
-			"profile": "WalletProfile.GENERIC",
-			"security": {
-				"accountRecovery": null,
-				"bugBountyProgram": {
-					"$call": "supported",
-					"args": [
-						{
-							"ref": [
-								{
-									"explanation": "To show our appreciation to researchers, who help keep our products and our customers safe, we are glad to introduce a Responsible Disclosure Program to provide recognition and rewards for responsibly disclosed vulnerabilities.",
-									"url": "https://bugrap.io/bounties/imToken%20Wallet"
-								}
-							],
-							"availability": "BugBountyProgramAvailability.ACTIVE",
-							"coverageBreadth": "FULL_SCOPE",
-							"dateStarted": "2024-04-15",
-							"disclosure": {
-								"$ref": "notSupported"
-							},
-							"legalProtections": {
-								"$ref": "notSupported"
-							},
-							"platform": "BugBountyPlatform.SELF_HOSTED",
-							"rewards": {
-								"$call": "supported",
-								"args": [
-									{
-										"currency": "USDC",
-										"maximum": 10000,
-										"minimum": 0
-									}
-								]
-							},
-							"upgradePathAvailable": true
-						}
-					]
-				},
-				"duressResistance": {
-					"basicUnlock": {
-						"ref": {
-							"explanation": "imToken documents biometric verification with Touch ID/Face ID for password-free payments across accounts.",
-							"url": "https://support.token.im/hc/en-us/articles/33035005586841-Seamless-Payments-One-Click-Instant-Transfer"
-						},
-						"mechanisms": {
-							"PIN": false,
-							"PASSWORD": true,
-							"BIOMETRIC": true,
-							"PATTERN": false
-						}
-					},
-					"duressMode": {
-						"$ref": "notSupported"
-					}
-				},
-				"hardwareWalletSupport": {
-					"MOBILE": {
-						"ref": [
-							{
-								"explanation": "imToken works with the imKey hardware wallet via Bluetooth, and with Keystone via QR codes.",
-								"url": "https://support.token.im/hc/en-us/articles/25985632007193-imToken-and-Hardware-Wallets-Uncompromised-Protection-Unparalleled-Convenience"
-							}
-						],
-						"wallets": {
-							"KEYSTONE": {
-								"$call": "supported",
-								"args": [
-									{
-										"connectionTypes": [
-											"HardwareWalletConnection.QR"
-										]
-									}
-								]
-							},
-							"IMKEY": {
-								"$call": "supported",
-								"args": [
-									{
-										"connectionTypes": [
-											"HardwareWalletConnection.bluetooth"
-										]
-									}
-								]
-							}
-						}
-					}
-				},
-				"keysHandling": null,
-				"lightClient": {
-					"ethereumL1": {
-						"$ref": "notSupported"
-					}
-				},
-				"passkeyVerification": {
-					"$ref": "notSupported"
-				},
-				"publicSecurityAudits": [
-					{
-						"ref": [
-							{
-								"explanation": "imToken underwent security audit by Cure53 in 2018. Since then, imToken has maintained internal audits for each release.",
-								"url": "https://cure53.de/pentest-report_imtoken.pdf"
-							}
-						],
-						"auditDate": "2018-05-07",
-						"auditor": {
-							"$ref": "cure53"
-						},
-						"unpatchedFlaws": "ALL_FIXED",
-						"variantsScope": "ALL_VARIANTS"
-					}
-				],
-				"scamAlerts": {
-					"contractTransactionWarning": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "imToken displays detailed contract interaction information including token quantity changes, authorization details (approve and permit), and warns when transferring funds to contract addresses or authorizing ordinary accounts. It also alerts users about high slippage during token swapping.",
-										"url": "https://support.token.im/hc/en-us/articles/21850966355737-Revamped-imToken-signature-for-safer-and-more-intuitive-transactions"
-									}
-								],
-								"contractRegistry": true,
-								"leaksContractAddress": true,
-								"leaksUserAddress": true,
-								"leaksUserIp": true,
-								"previousContractInteractionWarning": true,
-								"recentContractWarning": false
-							}
-						]
-					},
-					"scamUrlWarning": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "imToken warns about risky signatures such as eth_sign, non-standard EIP-712 type signatures, and ENS security risks including zero-width characters. It also marks risky tokens, addresses, and apps. Processing happens on-device.",
-										"url": "https://support.token.im/hc/en-us/articles/21850966355737-Revamped-imToken-signature-for-safer-and-more-intuitive-transactions"
-									}
-								],
-								"leaksIp": false,
-								"leaksUserAddress": false,
-								"leaksVisitedUrl": "NO"
-							}
-						]
-					},
-					"sendTransactionWarning": {
-						"$ref": "notSupported"
-					}
-				},
-				"securityBestPractices": null,
-				"transactionLegibility": {
-					"ref": {
-						"$ref": "refTodo"
-					},
-					"transactionSimulations": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Coinspect verified imToken iOS transaction simulation, stating that the wallet previews the expected outcome by simulating request execution on-chain before signing and displays transaction incomes and outcomes.",
-									"url": "https://www.coinspect.com/wallets/reports/im-token-ios/"
-								},
-								"insights": "imToken shows simulated transaction income/outcome information before signing, according to Coinspect verification."
-							}
-						]
-					}
-				}
-			},
-			"selfSovereignty": {
-				"permissionsManagement": {
-					"$call": "supported",
-					"args": [
-						{
-							"ref": [
-								{
-									"explanation": "imToken support explains that users can open an ETH token, tap the Token Function button, and select Revoke to enter the Revoke page for token approvals.",
-									"url": "https://support.token.im/hc/en-us/articles/900006746566-My-USDT-was-sent-out-from-my-wallet-without-my-consent-How-did-that-happen"
-								},
-								{
-									"explanation": "imToken Sweet7 documentation says the Revoke entry lets users view and manage token approvals from the token function menu.",
-									"url": "https://support.token.im/hc/en-us/articles/20330137166361-imToken-Sweet7-Implementation-A-Guide-to-the-Seven-Function-Operations"
-								}
-							]
-						}
-					]
-				},
-				"transactionSubmission": {
-					"l1": {
-						"ref": {
-							"explanation": "imToken says its custom RPC feature lets users connect directly to Ethereum-compatible networks and custom network nodes through imToken.",
-							"url": "https://support.token.im/hc/en-us/articles/900005324266-imToken-now-supports-custom-RPC-Experience-the-layer-2-ecosystem-today"
-						},
-						"selfBroadcastViaDirectGossip": {
-							"$ref": "notSupported"
-						},
-						"selfBroadcastViaSelfHostedNode": {
-							"$ref": "featureSupported"
-						}
-					},
-					"l2": {
-						"ref": {
-							"$ref": "refTodo"
-						},
-						"arbitrum": "TransactionSubmissionL2Support.NOT_SUPPORTED_BY_WALLET_BY_DEFAULT",
-						"opStack": "TransactionSubmissionL2Support.NOT_SUPPORTED_BY_WALLET_BY_DEFAULT"
-					}
-				}
-			},
-			"transparency": {
-				"operationFees": null,
-				"releaseTransparency": {
-					"artifactSigning": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "imToken is distributed through Apple's App Store under the imToken BTC & ETH Wallet listing.",
-										"url": "https://apps.apple.com/us/app/imtoken-btc-eth-wallet/id1384798940"
-									},
-									{
-										"explanation": "Apple documents that App Store distribution verifies the developer signature and then re-signs the app using an Apple identity before download.",
-										"url": "https://developer.apple.com/documentation/Xcode/using-the-latest-code-signature-format"
-									}
-								]
-							}
-						]
-					},
-					"dependencyLocking": null,
-					"dependencyVulnerabilityScanning": null,
-					"hasPublicChangelog": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken's App Store page publishes version history and release notes.",
-									"url": "https://apps.apple.com/us/app/imtoken-btc-eth-wallet/id1384798940"
-								}
-							}
-						]
-					},
-					"hermeticBuilds": null,
-					"repositoryChangeControls": null,
-					"reproducibleBuilds": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken mobile is recorded as source-unavailable proprietary software; no public source tree or reproducible-build instructions are published for independently reproducing the mobile wallet release artifact.",
-									"url": "https://token.im/"
-								}
-							}
-						]
-					}
-				}
-			},
-			"product": {
-				"platformCoverage": {
-					"ref": {
-						"explanation": "imToken homepage describes a non-custodial wallet and links Try imToken; app-store platform specifics were not separately captured.",
-						"url": "https://token.im/"
-					},
-					"desktopApp": null,
-					"mobileApp": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken presents itself as an app wallet for millions of users.",
-									"url": "https://token.im/"
-								}
-							}
-						]
-					},
-					"browserExtension": null,
-					"browserNative": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken is an app wallet, not browser-native.",
-									"url": "https://token.im/"
-								}
-							}
-						]
-					},
-					"webApp": null,
-					"ios": null,
-					"android": null,
-					"chrome": null,
-					"firefox": null,
-					"safari": null
-				},
-				"supportedEcosystems": {
-					"ref": {
-						"explanation": "imToken homepage says it supports BTC, ETH, DOGE, A, TRX, TON, EVM-compatible and Layer 2 networks, with 50+ networks and 20M+ tokens.",
-						"url": "https://token.im/"
-					},
-					"evm": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken supports tokens across EVM-compatible and Layer 2 networks.",
-									"url": "https://token.im/"
-								}
-							}
-						]
-					},
-					"solana": null,
-					"bitcoin": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken lists BTC support.",
-									"url": "https://token.im/"
-								}
-							}
-						]
-					},
-					"cosmos": null,
-					"ton": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken lists TON support.",
-									"url": "https://token.im/"
-								}
-							}
-						]
-					},
-					"starknet": null,
-					"sui": null,
-					"aptos": null,
-					"xrp": null,
-					"cardano": null,
-					"lightning": null,
-					"other": [
-						{
-							"name": "TRON",
-							"ref": {
-								"explanation": "imToken lists TRX support.",
-								"url": "https://token.im/"
-							}
-						},
-						{
-							"name": "Dogecoin",
-							"ref": {
-								"explanation": "imToken lists DOGE support.",
-								"url": "https://token.im/"
-							}
-						}
-					]
-				},
-				"dappExperience": {
-					"ref": {
-						"explanation": "imToken homepage links DApp Browser as a product feature and lists WalletConnect among friends/partners.",
-						"url": "https://token.im/"
-					},
-					"inAppBrowser": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken lists DApp Browser as a feature.",
-									"url": "https://token.im/"
-								}
-							}
-						]
-					},
-					"curatedDappDirectory": null,
-					"dappSearch": null,
-					"walletConnectOnlyMode": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken lists DApp Browser, so it is not WalletConnect-only.",
-									"url": "https://token.im/"
-								}
-							}
-						]
-					},
-					"featuredApps": null,
-					"riskRatedDiscovery": null
-				},
-				"fiatRamps": {
-					"ref": {
-						"explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://token.im"
-					},
-					"buyCrypto": null,
-					"sellCrypto": null,
-					"bankTransfer": null,
-					"card": null,
-					"applePay": null,
-					"googlePay": null,
-					"kycDependency": "KYCDependency.UNKNOWN",
-					"providers": [],
-					"regionalAvailability": null
-				},
-				"gasUx": {
-					"ref": {
-						"explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://token.im"
-					},
-					"gasCustomization": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken supports standard EVM transaction sending where gas settings can be inspected or controlled in the wallet flow.",
-									"url": "https://docs.token.im/"
-								}
-							}
-						]
-					},
-					"gasSponsorship": null,
-					"gasAbstraction": null,
-					"payGasInStablecoins": null,
-					"payGasWithReceivedToken": null,
-					"speedPresets": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": null,
-									"url": "https://docs.token.im/"
-								}
-							}
-						]
-					},
-					"stuckTransactionRecovery": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken support/product materials include stuck or pending transaction recovery guidance.",
-									"url": "https://docs.token.im/"
-								}
-							}
-						]
-					}
-				},
-				"recoveryUx": {
-					"ref": {
-						"explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://token.im"
-					},
-					"seedOnlyRecovery": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken supports recovery/import through a seed or secret recovery phrase.",
-									"url": "https://docs.token.im/"
-								}
-							}
-						]
-					},
-					"cloudBackup": null,
-					"socialRecovery": null,
-					"guardianRecovery": null,
-					"passkeyRecovery": null,
-					"emergencyKit": null,
-					"recoveryRehearsal": null
-				},
-				"onboardingFriction": {
-					"ref": {
-						"explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://token.im"
-					},
-					"seedPhraseRequiredAtSignup": {
-						"$ref": "featureSupported"
-					},
-					"passkeySignup": null,
-					"emailSignup": null,
-					"phoneSignup": null,
-					"kycRequiredForWallet": {
-						"$ref": "notSupported"
-					},
-					"guestMode": null,
-					"embeddedWalletMode": null,
-					"timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
-				},
-				"portfolioManagement": {
-					"ref": {
-						"explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://token.im"
-					},
-					"netWorth": null,
-					"pnl": null,
-					"costBasis": null,
-					"tokenCategories": null,
-					"nftSupport": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken supports NFT display or NFT portfolio management in at least one wallet surface.",
-									"url": "https://token.im"
-								}
-							}
-						]
-					},
-					"collectionViews": null,
-					"watchOnlyWallets": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken supports watch-only addresses, imported account monitoring, or external account portfolio tracking.",
-									"url": "https://token.im"
-								}
-							}
-						]
-					},
-					"multiWalletAggregation": {
-						"$ref": "featureSupported"
-					}
-				},
-				"notifications": {
-					"ref": {
-						"explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://token.im"
-					},
-					"sendReceive": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken supports notifications for wallet activity such as sends or receives.",
-									"url": "https://token.im"
-								}
-							}
-						]
-					},
-					"priceAlerts": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken supports price or market alerts.",
-									"url": "https://token.im"
-								}
-							}
-						]
-					},
-					"approvalAlerts": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken supports approval-related alerts, approval review, or permission warnings.",
-									"url": "https://token.im"
-								}
-							}
-						]
-					},
-					"bridgeCompletion": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": null,
-									"url": "https://token.im"
-								}
-							}
-						]
-					},
-					"failedTransaction": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken supports wallet activity notifications that can include failed or completed transaction status.",
-									"url": "https://token.im"
-								}
-							}
-						]
-					},
-					"securityAlerts": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken supports security alerts or transaction-risk warnings.",
-									"url": "https://token.im"
-								}
-							}
-						]
-					},
-					"marketAlerts": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken supports market or price alerts.",
-									"url": "https://token.im"
-								}
-							}
-						]
-					}
-				},
-				"nftCapabilities": {
-					"ref": {
-						"explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://token.im"
-					},
-					"display": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken supports displaying NFTs or collectibles in the wallet.",
-									"url": "https://token.im"
-								}
-							}
-						]
-					},
-					"send": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken supports wallet NFT transfer flows or NFT asset management.",
-									"url": "https://token.im"
-								}
-							}
-						]
-					},
-					"mint": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken can connect to dapps and sign NFT mint transactions.",
-									"url": "https://token.im"
-								}
-							}
-						]
-					},
-					"marketplaceIntegration": null,
-					"spamNftHiding": null,
-					"collectionMetadataRefresh": null,
-					"royaltiesOrOffers": null
-				},
-				"defiPositionAwareness": {
-					"ref": {
-						"explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://token.im"
-					},
-					"lendingPositions": null,
-					"stakingPositions": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken surfaces staking or earn positions in wallet/portfolio views.",
-									"url": "https://token.im"
-								}
-							}
-						]
-					},
-					"lpPositions": null,
-					"vaultPositions": null,
-					"perProtocolBalances": null,
-					"claimableRewards": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken surfaces claimable rewards or earn balances.",
-									"url": "https://token.im"
-								}
-							}
-						]
-					},
-					"liquidationWarnings": null
-				},
-				"stakingEarn": {
-					"ref": {
-						"explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://token.im"
-					},
-					"nativeStaking": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken supports native staking or earn products for at least one supported ecosystem.",
-									"url": "https://token.im"
-								}
-							}
-						]
-					},
-					"liquidStaking": null,
-					"validatorChoice": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken lets users choose validators or staking targets in at least one ecosystem.",
-									"url": "https://token.im"
-								}
-							}
-						]
-					},
-					"apyDisplay": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken displays APY/reward information for staking or earn products.",
-									"url": "https://token.im"
-								}
-							}
-						]
-					},
-					"rewardsClaiming": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken supports claiming staking or earn rewards.",
-									"url": "https://token.im"
-								}
-							}
-						]
-					},
-					"providerDependency": "Provider- or protocol-dependent; requires per-asset/provider audit for exact dependency.",
-					"lockupDisclosure": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken staking/earn flows disclose lockup or protocol-specific constraints where applicable.",
-									"url": "https://token.im"
-								}
-							}
-						]
-					}
-				},
-				"customerSupport": {
-					"ref": {
-						"explanation": "imToken homepage provides Discord, feedback email, and Help Center links.",
-						"url": "https://token.im/"
-					},
-					"liveChat": null,
-					"emailSupport": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken homepage lists feedback email for product trouble.",
-									"url": "https://token.im/"
-								}
-							}
-						]
-					},
-					"aiSupport": null,
-					"publishedSla": null,
-					"inAppHelpCenter": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken homepage links a Help Center.",
-									"url": "https://token.im/"
-								}
-							}
-						]
-					},
-					"transactionTroubleshooting": null,
-					"scamRecoveryGuidance": null
-				},
-				"developerOffering": {
-					"ref": {
-						"explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://token.im"
-					},
-					"walletSdk": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken publishes wallet developer docs, SDKs, or public wallet integration repositories.",
-									"url": "https://github.com/consenlabs/token-core-monorepo"
-								}
-							}
-						]
-					},
-					"embeddedWalletSdk": null,
-					"whiteLabelOffering": null,
-					"walletConnectSupport": {
-						"$ref": "featureSupported"
-					},
-					"eip6963": null,
-					"eip5792": null,
-					"deepLinks": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken documents mobile deep links, universal links, or app-link connection flows.",
-									"url": "https://docs.token.im/"
-								}
-							}
-						]
-					},
-					"mobileLinkingQuality": "Mobile linking documented or product-supported; quality requires hands-on UX testing."
-				},
-				"pricingFeeModel": {
-					"ref": {
-						"explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://token.im"
-					},
-					"swapFees": null,
-					"bridgeFees": null,
-					"onRampFees": null,
-					"spreadDisclosure": null,
-					"subscriptionFeatures": null,
-					"cardFees": null,
-					"hiddenPartnerRevenue": null
-				},
-				"releaseVelocity": {
-					"ref": {
-						"explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://token.im"
-					},
-					"latestReleaseDate": "2025-10-28",
-					"releaseFrequency": "ReleaseFrequency.IRREGULAR",
-					"appStoreUpdateCadence": "App-store cadence should be measured from current app-store release history in a deeper pass.",
-					"githubActivity": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "imToken has public GitHub repository activity or releases that can be tracked.",
-									"url": "https://github.com/consenlabs/token-core-monorepo"
-								}
-							}
-						]
-					},
-					"changelogDetail": "ChangelogDetail.BASIC"
-				},
-				"deviceSync": {
-					"ref": {
-						"explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://token.im"
-					},
-					"syncsAccounts": null,
-					"syncsSettings": null,
-					"syncsContactsOrAddressBook": null,
-					"desktopMobileSync": null,
-					"cloudBackedSync": null,
-					"requiresSameSeedImport": {
-						"$ref": "featureSupported"
-					}
-				}
-			}
-		},
-		"variants": {
-			"MOBILE": true
-		}
-	}
+  "id": "imtoken",
+  "source": "software-wallets",
+  "export": "imtoken",
+  "data": {
+    "metadata": {
+      "id": "imtoken",
+      "displayName": "imToken",
+      "tableName": "imToken",
+      "blurb": "imToken is a reliable and intuitive digital wallet, enabling easy access to over 50+ major networks including Bitcoin, Ethereum, and Tron. imToken supports hardware wallets, token swap and app browser etc., and provides secure and trusted non-custodial wallet services to millions of users in more than 150 countries and regions around the world.",
+      "contributors": [
+        {
+          "$ref": "mako"
+        },
+        {
+          "$ref": "mattmatt"
+        }
+      ],
+      "iconExtension": "svg",
+      "lastUpdated": "2025-10-28",
+      "urls": {
+        "docs": [
+          "https://docs.token.im/"
+        ],
+        "repositories": [
+          "https://github.com/consenlabs/token-core-monorepo"
+        ],
+        "socials": {
+          "discord": "https://discord.com/invite/imToken",
+          "x": "https://x.com/imTokenOfficial"
+        },
+        "websites": [
+          "https://token.im"
+        ]
+      }
+    },
+    "features": {
+      "accountSupport": {
+        "defaultAccountType": "AccountType.eoa",
+        "eip7702": {
+          "$ref": "notSupported"
+        },
+        "eoa": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "$ref": "refTodo"
+              },
+              "canExportPrivateKey": true,
+              "keyDerivation": {
+                "type": "BIP32",
+                "canExportSeedPhrase": true,
+                "derivationPath": "BIP44",
+                "seedPhrase": "BIP39"
+              }
+            }
+          ]
+        },
+        "mpc": {
+          "$ref": "notSupported"
+        },
+        "rawErc4337": {
+          "$ref": "notSupported"
+        },
+        "safe": {
+          "$ref": "notSupported"
+        }
+      },
+      "addressResolution": {
+        "ref": [
+          {
+            "explanation": "imToken supports ENS human-readable names and resolves them onchain before sending funds.",
+            "url": "https://support.token.im/hc/articles/360039928813"
+          }
+        ],
+        "chainSpecificAddressing": {
+          "erc7828": {
+            "$ref": "notSupported"
+          },
+          "erc7831": {
+            "$ref": "notSupported"
+          }
+        },
+        "nonChainSpecificEnsResolution": {
+          "$call": "supported",
+          "args": [
+            {
+              "medium": "CHAIN_CLIENT"
+            }
+          ]
+        }
+      },
+      "chainAbstraction": {
+        "bridging": {
+          "builtInBridging": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "imToken provides built-in cross-chain bridging through cBridge and other bridge protocols, with clear fee breakdown. Scam risks are explained, but trust assumptions of the bridge are not.",
+                    "url": "https://support.token.im/hc/en-us/articles/4404355206553-How-to-use-cBridge-with-imToken"
+                  }
+                ],
+                "feesLargerThan1bps": {
+                  "afterSingleAction": "FeeDisplayLevel.COMPREHENSIVE",
+                  "byDefault": "FeeDisplayLevel.COMPREHENSIVE",
+                  "fullySponsored": false
+                },
+                "risksExplained": "NOT_IN_UI"
+              }
+            ]
+          },
+          "suggestedBridging": {
+            "$ref": "notSupported"
+          }
+        },
+        "crossChainBalances": {
+          "ref": {
+            "$ref": "refTodo"
+          },
+          "ether": {
+            "crossChainSumView": {
+              "$ref": "notSupported"
+            },
+            "perChainBalanceViewAcrossMultipleChains": {
+              "$ref": "notSupported"
+            }
+          },
+          "globalAccountValue": {
+            "$ref": "notSupported"
+          },
+          "perChainAccountValue": {
+            "$ref": "notSupported"
+          },
+          "usdc": {
+            "crossChainSumView": {
+              "$ref": "notSupported"
+            },
+            "perChainBalanceViewAcrossMultipleChains": {
+              "$ref": "notSupported"
+            }
+          }
+        }
+      },
+      "chainConfigurability": {
+        "$call": "supported",
+        "args": [
+          {
+            "ref": {
+              "explanation": "imToken says its custom RPC feature lets users connect directly to Ethereum-compatible networks and custom network nodes through imToken.",
+              "url": "https://support.token.im/hc/en-us/articles/900005324266-imToken-now-supports-custom-RPC-Experience-the-layer-2-ecosystem-today"
+            },
+            "customChainRpcEndpoint": {
+              "$ref": "featureSupported"
+            },
+            "l1": {
+              "$call": "supported",
+              "args": [
+                {
+                  "rpcEndpointConfiguration": "RpcEndpointConfiguration.YES_BEFORE_ANY_REQUEST"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "ecosystem": {
+        "delegation": null
+      },
+      "integration": {
+        "browser": "NOT_A_BROWSER_WALLET",
+        "walletCall": null
+      },
+      "licensing": {
+        "type": "LicensingType.SEPARATE_CORE_CODE_LICENSE_VS_WALLET_CODE_LICENSE",
+        "coreLicense": {
+          "ref": [
+            {
+              "explanation": "imToken publishes its core code under the Apache 2.0 open-source license; the app itself is proprietary.",
+              "url": "https://github.com/consenlabs/token-core-monorepo/blob/9798639887b0496b562490952d8f1585047a749e/LICENSE"
+            }
+          ],
+          "license": "FOSSLicense.APACHE_2_0"
+        },
+        "walletAppLicense": {
+          "MOBILE": {
+            "ref": {
+              "$ref": "refNotNecessary"
+            },
+            "license": "SourceNotAvailableLicense.PROPRIETARY"
+          }
+        }
+      },
+      "monetization": {
+        "ref": [
+          {
+            "explanation": "imToken announced a USD 30 million Series B funding round led by institutional investors.",
+            "url": "https://support.token.im/hc/en-us/articles/900005414706-imToken-Announces-US-30-million-Series-B-Investment"
+          }
+        ],
+        "revenueBreakdownIsPublic": false,
+        "strategies": {
+          "donations": false,
+          "ecosystemGrants": false,
+          "governanceTokenLowFloat": false,
+          "governanceTokenMostlyDistributed": false,
+          "hiddenConvenienceFees": false,
+          "publicOffering": false,
+          "selfFunded": false,
+          "transparentConvenienceFees": true,
+          "ventureCapital": true
+        }
+      },
+      "multiAddress": {
+        "$call": "supported",
+        "args": [
+          {
+            "ref": [
+              {
+                "explanation": "Each request only involves one active address."
+              }
+            ]
+          }
+        ]
+      },
+      "privacy": {
+        "analytics": {
+          "crashReports": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken's App Store privacy label lists Diagnostics as data linked to the user.",
+                  "url": "https://apps.apple.com/us/app/imtoken-btc-eth-wallet/id1384798940"
+                }
+              }
+            ]
+          },
+          "usage": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken's App Store privacy label lists Usage Data as data linked to the user.",
+                  "url": "https://apps.apple.com/us/app/imtoken-btc-eth-wallet/id1384798940"
+                }
+              }
+            ]
+          }
+        },
+        "appIsolation": {
+          "MOBILE": null
+        },
+        "dataCollection": {
+          "INSTALL": null,
+          "NATIVE_SWAP": {
+            "collected": []
+          },
+          "SEND_ETHER": {
+            "collected": []
+          },
+          "SEND_USDC": null,
+          "MAKE_TRANSACTION": {
+            "collected": [
+              {
+                "ref": [
+                  {
+                    "explanation": "imToken can associate your wallet address along with your mobile device's IP address, per its privacy policy. Each request only involves one active address.",
+                    "url": "https://token.im/tos-en.html"
+                  }
+                ],
+                "byEntity": {
+                  "$ref": "imToken"
+                },
+                "dataCollection": {
+                  "ACCOUNT_ADDRESS": "CollectionPolicy.ALWAYS",
+                  "endpoint": {
+                    "$ref": "RegularEndpoint"
+                  },
+                  "multiAddress": {
+                    "type": "MultiAddressPolicy.ACTIVE_ADDRESS_ONLY"
+                  }
+                },
+                "purposes": [
+                  "DataCollectionPurpose.CHAIN_DATA_LOOKUP"
+                ]
+              }
+            ]
+          },
+          "APP_CONNECTION": {
+            "collected": []
+          },
+          "ONBOARDING_NEW": {
+            "collected": [],
+            "publishedOnchain": "NO_DATA_PUBLISHED_ONCHAIN"
+          },
+          "ONBOARDING_IMPORT": null
+        },
+        "privacyPolicy": "https://token.im/tos-en.html",
+        "transactionPrivacy": {
+          "defaultFungibleTokenTransferMode": "PUBLIC",
+          "STEALTH_ADDRESSES": {
+            "$ref": "notSupported"
+          },
+          "TORNADO_CASH_NOVA": {
+            "$ref": "notSupported"
+          },
+          "PRIVACY_POOLS": {
+            "$ref": "notSupported"
+          },
+          "RAILGUN": {
+            "$ref": "notSupported"
+          }
+        }
+      },
+      "profile": "WalletProfile.GENERIC",
+      "security": {
+        "accountRecovery": null,
+        "bugBountyProgram": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": [
+                {
+                  "explanation": "To show our appreciation to researchers, who help keep our products and our customers safe, we are glad to introduce a Responsible Disclosure Program to provide recognition and rewards for responsibly disclosed vulnerabilities.",
+                  "url": "https://bugrap.io/bounties/imToken%20Wallet"
+                }
+              ],
+              "availability": "BugBountyProgramAvailability.ACTIVE",
+              "coverageBreadth": "FULL_SCOPE",
+              "dateStarted": "2024-04-15",
+              "disclosure": {
+                "$ref": "notSupported"
+              },
+              "legalProtections": {
+                "$ref": "notSupported"
+              },
+              "platform": "BugBountyPlatform.SELF_HOSTED",
+              "rewards": {
+                "$call": "supported",
+                "args": [
+                  {
+                    "currency": "USDC",
+                    "maximum": 10000,
+                    "minimum": 0
+                  }
+                ]
+              },
+              "upgradePathAvailable": true
+            }
+          ]
+        },
+        "duressResistance": {
+          "basicUnlock": {
+            "ref": {
+              "explanation": "imToken documents biometric verification with Touch ID/Face ID for password-free payments across accounts.",
+              "url": "https://support.token.im/hc/en-us/articles/33035005586841-Seamless-Payments-One-Click-Instant-Transfer"
+            },
+            "mechanisms": {
+              "PIN": false,
+              "PASSWORD": true,
+              "BIOMETRIC": true,
+              "PATTERN": false
+            }
+          },
+          "duressMode": {
+            "$ref": "notSupported"
+          }
+        },
+        "hardwareWalletSupport": {
+          "MOBILE": {
+            "ref": [
+              {
+                "explanation": "imToken works with the imKey hardware wallet via Bluetooth, and with Keystone via QR codes.",
+                "url": "https://support.token.im/hc/en-us/articles/25985632007193-imToken-and-Hardware-Wallets-Uncompromised-Protection-Unparalleled-Convenience"
+              }
+            ],
+            "wallets": {
+              "KEYSTONE": {
+                "$call": "supported",
+                "args": [
+                  {
+                    "connectionTypes": [
+                      "HardwareWalletConnection.QR"
+                    ]
+                  }
+                ]
+              },
+              "IMKEY": {
+                "$call": "supported",
+                "args": [
+                  {
+                    "connectionTypes": [
+                      "HardwareWalletConnection.bluetooth"
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "keysHandling": null,
+        "lightClient": {
+          "ethereumL1": {
+            "$ref": "notSupported"
+          }
+        },
+        "passkeyVerification": {
+          "$ref": "notSupported"
+        },
+        "publicSecurityAudits": [
+          {
+            "ref": [
+              {
+                "explanation": "imToken underwent security audit by Cure53 in 2018. Since then, imToken has maintained internal audits for each release.",
+                "url": "https://cure53.de/pentest-report_imtoken.pdf"
+              }
+            ],
+            "auditDate": "2018-05-07",
+            "auditor": {
+              "$ref": "cure53"
+            },
+            "unpatchedFlaws": "ALL_FIXED",
+            "variantsScope": "ALL_VARIANTS"
+          }
+        ],
+        "scamAlerts": {
+          "contractTransactionWarning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "imToken displays detailed contract interaction information including token quantity changes, authorization details (approve and permit), and warns when transferring funds to contract addresses or authorizing ordinary accounts. It also alerts users about high slippage during token swapping.",
+                    "url": "https://support.token.im/hc/en-us/articles/21850966355737-Revamped-imToken-signature-for-safer-and-more-intuitive-transactions"
+                  }
+                ],
+                "contractRegistry": true,
+                "leaksContractAddress": true,
+                "leaksUserAddress": true,
+                "leaksUserIp": true,
+                "previousContractInteractionWarning": true,
+                "recentContractWarning": false
+              }
+            ]
+          },
+          "scamUrlWarning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "imToken warns about risky signatures such as eth_sign, non-standard EIP-712 type signatures, and ENS security risks including zero-width characters. It also marks risky tokens, addresses, and apps. Processing happens on-device.",
+                    "url": "https://support.token.im/hc/en-us/articles/21850966355737-Revamped-imToken-signature-for-safer-and-more-intuitive-transactions"
+                  }
+                ],
+                "leaksIp": false,
+                "leaksUserAddress": false,
+                "leaksVisitedUrl": "NO"
+              }
+            ]
+          },
+          "sendTransactionWarning": {
+            "$ref": "notSupported"
+          }
+        },
+        "securityBestPractices": null,
+        "transactionLegibility": {
+          "ref": {
+            "$ref": "refTodo"
+          },
+          "transactionSimulations": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Coinspect verified imToken iOS transaction simulation, stating that the wallet previews the expected outcome by simulating request execution on-chain before signing and displays transaction incomes and outcomes.",
+                  "url": "https://www.coinspect.com/wallets/reports/im-token-ios/"
+                },
+                "insights": "imToken shows simulated transaction income/outcome information before signing, according to Coinspect verification."
+              }
+            ]
+          }
+        }
+      },
+      "selfSovereignty": {
+        "permissionsManagement": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": [
+                {
+                  "explanation": "imToken support explains that users can open an ETH token, tap the Token Function button, and select Revoke to enter the Revoke page for token approvals.",
+                  "url": "https://support.token.im/hc/en-us/articles/900006746566-My-USDT-was-sent-out-from-my-wallet-without-my-consent-How-did-that-happen"
+                },
+                {
+                  "explanation": "imToken Sweet7 documentation says the Revoke entry lets users view and manage token approvals from the token function menu.",
+                  "url": "https://support.token.im/hc/en-us/articles/20330137166361-imToken-Sweet7-Implementation-A-Guide-to-the-Seven-Function-Operations"
+                }
+              ]
+            }
+          ]
+        },
+        "transactionSubmission": {
+          "l1": {
+            "ref": {
+              "explanation": "imToken says its custom RPC feature lets users connect directly to Ethereum-compatible networks and custom network nodes through imToken.",
+              "url": "https://support.token.im/hc/en-us/articles/900005324266-imToken-now-supports-custom-RPC-Experience-the-layer-2-ecosystem-today"
+            },
+            "selfBroadcastViaDirectGossip": {
+              "$ref": "notSupported"
+            },
+            "selfBroadcastViaSelfHostedNode": {
+              "$ref": "featureSupported"
+            }
+          },
+          "l2": {
+            "ref": {
+              "$ref": "refTodo"
+            },
+            "arbitrum": "TransactionSubmissionL2Support.NOT_SUPPORTED_BY_WALLET_BY_DEFAULT",
+            "opStack": "TransactionSubmissionL2Support.NOT_SUPPORTED_BY_WALLET_BY_DEFAULT"
+          }
+        }
+      },
+      "transparency": {
+        "operationFees": null,
+        "releaseTransparency": {
+          "artifactSigning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "imToken is distributed through Apple's App Store under the imToken BTC & ETH Wallet listing.",
+                    "url": "https://apps.apple.com/us/app/imtoken-btc-eth-wallet/id1384798940"
+                  },
+                  {
+                    "explanation": "Apple documents that App Store distribution verifies the developer signature and then re-signs the app using an Apple identity before download.",
+                    "url": "https://developer.apple.com/documentation/Xcode/using-the-latest-code-signature-format"
+                  }
+                ]
+              }
+            ]
+          },
+          "dependencyLocking": null,
+          "dependencyVulnerabilityScanning": null,
+          "hasPublicChangelog": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken's App Store page publishes version history and release notes.",
+                  "url": "https://apps.apple.com/us/app/imtoken-btc-eth-wallet/id1384798940"
+                }
+              }
+            ]
+          },
+          "hermeticBuilds": null,
+          "repositoryChangeControls": null,
+          "reproducibleBuilds": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken mobile is recorded as source-unavailable proprietary software; no public source tree or reproducible-build instructions are published for independently reproducing the mobile wallet release artifact.",
+                  "url": "https://token.im/"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "product": {
+        "platformCoverage": {
+          "ref": {
+            "explanation": "imToken homepage describes a non-custodial wallet and links Try imToken; app-store platform specifics were not separately captured.",
+            "url": "https://token.im/"
+          },
+          "desktopApp": null,
+          "mobileApp": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken presents itself as an app wallet for millions of users.",
+                  "url": "https://token.im/"
+                }
+              }
+            ]
+          },
+          "browserExtension": null,
+          "browserNative": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken is an app wallet, not browser-native.",
+                  "url": "https://token.im/"
+                }
+              }
+            ]
+          },
+          "webApp": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/39943011404441-Announcement-imToken-Web-Beta-is-Live",
+                  "explanation": "imToken Web (web.token.im) is a non-custodial browser-based web app usable directly in a browser with quick passkey account creation, no native app or extension install required."
+                }
+              }
+            ]
+          },
+          "ios": null,
+          "android": null,
+          "chrome": null,
+          "firefox": null,
+          "safari": null
+        },
+        "supportedEcosystems": {
+          "ref": {
+            "explanation": "imToken homepage says it supports BTC, ETH, DOGE, A, TRX, TON, EVM-compatible and Layer 2 networks, with 50+ networks and 20M+ tokens.",
+            "url": "https://token.im/"
+          },
+          "evm": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken supports tokens across EVM-compatible and Layer 2 networks.",
+                  "url": "https://token.im/"
+                }
+              }
+            ]
+          },
+          "solana": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/115001657313-Which-chains-and-tokens-does-imToken-support",
+                  "explanation": "imToken's official supported-chains list (Ethereum, Bitcoin, Cosmos, Vaulta, TRON, Polkadot, TON, etc.) does not include Solana."
+                }
+              }
+            ]
+          },
+          "bitcoin": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken lists BTC support.",
+                  "url": "https://token.im/"
+                }
+              }
+            ]
+          },
+          "cosmos": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/115001657313-Which-chains-and-tokens-does-imToken-support",
+                  "explanation": "imToken natively supports the Cosmos ecosystem, listing Cosmos (ATOM) and Osmosis among its supported blockchains."
+                }
+              }
+            ]
+          },
+          "ton": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken lists TON support.",
+                  "url": "https://token.im/"
+                }
+              }
+            ]
+          },
+          "starknet": null,
+          "sui": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/115001657313-Which-chains-and-tokens-does-imToken-support",
+                  "explanation": "Sui is not present in imToken's official supported-chains list."
+                }
+              }
+            ]
+          },
+          "aptos": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/115001657313-Which-chains-and-tokens-does-imToken-support",
+                  "explanation": "Aptos is not present in imToken's official supported-chains list."
+                }
+              }
+            ]
+          },
+          "xrp": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/115001657313-Which-chains-and-tokens-does-imToken-support",
+                  "explanation": "The XRP Ledger is not present in imToken's official supported-chains list."
+                }
+              }
+            ]
+          },
+          "cardano": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/115001657313-Which-chains-and-tokens-does-imToken-support",
+                  "explanation": "Cardano is not present in imToken's official supported-chains list."
+                }
+              }
+            ]
+          },
+          "lightning": null,
+          "other": [
+            {
+              "name": "TRON",
+              "ref": {
+                "explanation": "imToken lists TRX support.",
+                "url": "https://token.im/"
+              }
+            },
+            {
+              "name": "Dogecoin",
+              "ref": {
+                "explanation": "imToken lists DOGE support.",
+                "url": "https://token.im/"
+              }
+            }
+          ]
+        },
+        "dappExperience": {
+          "ref": {
+            "explanation": "imToken homepage links DApp Browser as a product feature and lists WalletConnect among friends/partners.",
+            "url": "https://token.im/"
+          },
+          "inAppBrowser": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken lists DApp Browser as a feature.",
+                  "url": "https://token.im/"
+                }
+              }
+            ]
+          },
+          "curatedDappDirectory": null,
+          "dappSearch": null,
+          "walletConnectOnlyMode": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken lists DApp Browser, so it is not WalletConnect-only.",
+                  "url": "https://token.im/"
+                }
+              }
+            ]
+          },
+          "featuredApps": null,
+          "riskRatedDiscovery": null
+        },
+        "fiatRamps": {
+          "ref": {
+            "explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://token.im"
+          },
+          "buyCrypto": null,
+          "sellCrypto": null,
+          "bankTransfer": null,
+          "card": null,
+          "applePay": null,
+          "googlePay": null,
+          "kycDependency": "KYCDependency.UNKNOWN",
+          "providers": [],
+          "regionalAvailability": null
+        },
+        "gasUx": {
+          "ref": {
+            "explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://token.im"
+          },
+          "gasCustomization": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken supports standard EVM transaction sending where gas settings can be inspected or controlled in the wallet flow.",
+                  "url": "https://docs.token.im/"
+                }
+              }
+            ]
+          },
+          "gasSponsorship": null,
+          "gasAbstraction": null,
+          "payGasInStablecoins": null,
+          "payGasWithReceivedToken": null,
+          "speedPresets": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": null,
+                  "url": "https://docs.token.im/"
+                }
+              }
+            ]
+          },
+          "stuckTransactionRecovery": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken support/product materials include stuck or pending transaction recovery guidance.",
+                  "url": "https://docs.token.im/"
+                }
+              }
+            ]
+          }
+        },
+        "recoveryUx": {
+          "ref": {
+            "explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://token.im"
+          },
+          "seedOnlyRecovery": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken supports recovery/import through a seed or secret recovery phrase.",
+                  "url": "https://docs.token.im/"
+                }
+              }
+            ]
+          },
+          "cloudBackup": null,
+          "socialRecovery": null,
+          "guardianRecovery": null,
+          "passkeyRecovery": null,
+          "emergencyKit": null,
+          "recoveryRehearsal": null
+        },
+        "onboardingFriction": {
+          "ref": {
+            "explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://token.im"
+          },
+          "seedPhraseRequiredAtSignup": {
+            "$ref": "featureSupported"
+          },
+          "passkeySignup": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/40570905689881-How-to-Use-imToken-Web",
+                  "explanation": "imToken Web onboarding lets users 'Create account with passkey' using the WebAuthn standard and device secure chip for one-tap login."
+                }
+              }
+            ]
+          },
+          "emailSignup": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/40570905689881-How-to-Use-imToken-Web",
+                  "explanation": "imToken Web account creation is passkey-based with an account alias; no email-signup option is documented."
+                }
+              }
+            ]
+          },
+          "phoneSignup": null,
+          "kycRequiredForWallet": {
+            "$ref": "notSupported"
+          },
+          "guestMode": null,
+          "embeddedWalletMode": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/53273841041049-Web3-Without-Mnemonics-How-AA-Passkey-Could-Shape-Crypto-s-Next-Decade",
+                  "explanation": "imToken Web is powered by Passkey and Account Abstraction, providing a smart-account wallet created behind the scenes with no private key or mnemonic backup required."
+                }
+              }
+            ]
+          },
+          "timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
+        },
+        "portfolioManagement": {
+          "ref": {
+            "explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://token.im"
+          },
+          "netWorth": null,
+          "pnl": null,
+          "costBasis": null,
+          "tokenCategories": null,
+          "nftSupport": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken supports NFT display or NFT portfolio management in at least one wallet surface.",
+                  "url": "https://token.im"
+                }
+              }
+            ]
+          },
+          "collectionViews": null,
+          "watchOnlyWallets": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken supports watch-only addresses, imported account monitoring, or external account portfolio tracking.",
+                  "url": "https://token.im"
+                }
+              }
+            ]
+          },
+          "multiWalletAggregation": {
+            "$ref": "featureSupported"
+          }
+        },
+        "notifications": {
+          "ref": {
+            "explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://token.im"
+          },
+          "sendReceive": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken supports notifications for wallet activity such as sends or receives.",
+                  "url": "https://token.im"
+                }
+              }
+            ]
+          },
+          "priceAlerts": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken supports price or market alerts.",
+                  "url": "https://token.im"
+                }
+              }
+            ]
+          },
+          "approvalAlerts": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken supports approval-related alerts, approval review, or permission warnings.",
+                  "url": "https://token.im"
+                }
+              }
+            ]
+          },
+          "bridgeCompletion": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": null,
+                  "url": "https://token.im"
+                }
+              }
+            ]
+          },
+          "failedTransaction": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken supports wallet activity notifications that can include failed or completed transaction status.",
+                  "url": "https://token.im"
+                }
+              }
+            ]
+          },
+          "securityAlerts": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken supports security alerts or transaction-risk warnings.",
+                  "url": "https://token.im"
+                }
+              }
+            ]
+          },
+          "marketAlerts": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken supports market or price alerts.",
+                  "url": "https://token.im"
+                }
+              }
+            ]
+          }
+        },
+        "nftCapabilities": {
+          "ref": {
+            "explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://token.im"
+          },
+          "display": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken supports displaying NFTs or collectibles in the wallet.",
+                  "url": "https://token.im"
+                }
+              }
+            ]
+          },
+          "send": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken supports wallet NFT transfer flows or NFT asset management.",
+                  "url": "https://token.im"
+                }
+              }
+            ]
+          },
+          "mint": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken can connect to dapps and sign NFT mint transactions.",
+                  "url": "https://token.im"
+                }
+              }
+            ]
+          },
+          "marketplaceIntegration": null,
+          "spamNftHiding": null,
+          "collectionMetadataRefresh": null,
+          "royaltiesOrOffers": null
+        },
+        "defiPositionAwareness": {
+          "ref": {
+            "explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://token.im"
+          },
+          "lendingPositions": null,
+          "stakingPositions": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken surfaces staking or earn positions in wallet/portfolio views.",
+                  "url": "https://token.im"
+                }
+              }
+            ]
+          },
+          "lpPositions": null,
+          "vaultPositions": null,
+          "perProtocolBalances": null,
+          "claimableRewards": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken surfaces claimable rewards or earn balances.",
+                  "url": "https://token.im"
+                }
+              }
+            ]
+          },
+          "liquidationWarnings": null
+        },
+        "stakingEarn": {
+          "ref": {
+            "explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://token.im"
+          },
+          "nativeStaking": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken supports native staking or earn products for at least one supported ecosystem.",
+                  "url": "https://token.im"
+                }
+              }
+            ]
+          },
+          "liquidStaking": null,
+          "validatorChoice": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken lets users choose validators or staking targets in at least one ecosystem.",
+                  "url": "https://token.im"
+                }
+              }
+            ]
+          },
+          "apyDisplay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken displays APY/reward information for staking or earn products.",
+                  "url": "https://token.im"
+                }
+              }
+            ]
+          },
+          "rewardsClaiming": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken supports claiming staking or earn rewards.",
+                  "url": "https://token.im"
+                }
+              }
+            ]
+          },
+          "providerDependency": "Provider- or protocol-dependent; requires per-asset/provider audit for exact dependency.",
+          "lockupDisclosure": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken staking/earn flows disclose lockup or protocol-specific constraints where applicable.",
+                  "url": "https://token.im"
+                }
+              }
+            ]
+          }
+        },
+        "customerSupport": {
+          "ref": {
+            "explanation": "imToken homepage provides Discord, feedback email, and Help Center links.",
+            "url": "https://token.im/"
+          },
+          "liveChat": null,
+          "emailSupport": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken homepage lists feedback email for product trouble.",
+                  "url": "https://token.im/"
+                }
+              }
+            ]
+          },
+          "aiSupport": null,
+          "publishedSla": null,
+          "inAppHelpCenter": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken homepage links a Help Center.",
+                  "url": "https://token.im/"
+                }
+              }
+            ]
+          },
+          "transactionTroubleshooting": null,
+          "scamRecoveryGuidance": null
+        },
+        "developerOffering": {
+          "ref": {
+            "explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://token.im"
+          },
+          "walletSdk": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken publishes wallet developer docs, SDKs, or public wallet integration repositories.",
+                  "url": "https://github.com/consenlabs/token-core-monorepo"
+                }
+              }
+            ]
+          },
+          "embeddedWalletSdk": null,
+          "whiteLabelOffering": null,
+          "walletConnectSupport": {
+            "$ref": "featureSupported"
+          },
+          "eip6963": null,
+          "eip5792": null,
+          "deepLinks": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken documents mobile deep links, universal links, or app-link connection flows.",
+                  "url": "https://docs.token.im/"
+                }
+              }
+            ]
+          },
+          "mobileLinkingQuality": "Mobile linking documented or product-supported; quality requires hands-on UX testing."
+        },
+        "pricingFeeModel": {
+          "ref": {
+            "explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://token.im"
+          },
+          "swapFees": null,
+          "bridgeFees": null,
+          "onRampFees": null,
+          "spreadDisclosure": null,
+          "subscriptionFeatures": null,
+          "cardFees": null,
+          "hiddenPartnerRevenue": null
+        },
+        "releaseVelocity": {
+          "ref": {
+            "explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://token.im"
+          },
+          "latestReleaseDate": "2025-10-28",
+          "releaseFrequency": "ReleaseFrequency.IRREGULAR",
+          "appStoreUpdateCadence": "App-store cadence should be measured from current app-store release history in a deeper pass.",
+          "githubActivity": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "imToken has public GitHub repository activity or releases that can be tracked.",
+                  "url": "https://github.com/consenlabs/token-core-monorepo"
+                }
+              }
+            ]
+          },
+          "changelogDetail": "ChangelogDetail.BASIC"
+        },
+        "deviceSync": {
+          "ref": {
+            "explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://token.im"
+          },
+          "syncsAccounts": null,
+          "syncsSettings": null,
+          "syncsContactsOrAddressBook": null,
+          "desktopMobileSync": null,
+          "cloudBackedSync": null,
+          "requiresSameSeedImport": {
+            "$ref": "featureSupported"
+          }
+        }
+      }
+    },
+    "variants": {
+      "MOBILE": true
+    }
+  }
 }

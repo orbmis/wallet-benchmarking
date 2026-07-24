@@ -1,969 +1,1332 @@
 {
   "proposals": [
     {
-      "walletId": "bitbox",
-      "metricKey": "usageAnalytics",
-      "path": "privacy.analytics.usage",
+      "walletId": "ambire",
+      "metricKey": "obPasskey",
+      "path": "product.onboardingFriction.passkeySignup",
       "decision": "no",
-      "citationUrl": "https://support.bitbox.swiss/en_US/privacy/bitboxapp-data-sharing",
-      "explanation": "BitBox support documentation states the BitBoxApp does not embed third-party tracking, advertising, or analytics tools."
+      "citationUrl": "https://help.ambire.com/hc/en-us/articles/12506346827036-How-to-create-smart-wallet-account-in-the-browser-extension",
+      "explanation": "The current Ambire extension/mobile onboarding docs list only hardware wallet, seed phrase, and EOA import methods with no passkey/WebAuthn option."
     },
     {
-      "walletId": "bitbox",
-      "metricKey": "crashReports",
-      "path": "privacy.analytics.crashReports",
+      "walletId": "ambire",
+      "metricKey": "obEmail",
+      "path": "product.onboardingFriction.emailSignup",
       "decision": "no",
-      "citationUrl": "https://support.bitbox.swiss/en_US/privacy/bitboxapp-data-sharing",
-      "explanation": "The BitBoxApp does not embed third-party tracking/analytics/crash tools; logging is anonymized and minimized, with no third-party crash reporting described."
+      "citationUrl": "https://help.ambire.com/en/articles/13714255-how-to-add-your-v1-ambire-smart-account-legacy-to-the-extension",
+      "explanation": "Email+password signup existed only in the deprecated legacy v1 web wallet, and Ambire's docs confirm email+password accounts cannot be created/imported in the current extension."
     },
     {
-      "walletId": "bitbox",
-      "metricKey": "stealth",
-      "path": "privacy.transactionPrivacy.STEALTH_ADDRESSES",
+      "walletId": "ambire",
+      "metricKey": "obGuest",
+      "path": "product.onboardingFriction.guestMode",
       "decision": "no",
-      "citationUrl": "https://support.bitbox.swiss/en_US/ethereum-co/receive-eth-erc20-tokens",
-      "explanation": "No stealth-address receiving is offered; the BitBoxApp supports standard Bitcoin and basic Ethereum/ERC20 receiving only."
+      "citationUrl": "https://help.ambire.com/hc/en-us/articles/12506346827036-How-to-create-smart-wallet-account-in-the-browser-extension",
+      "explanation": "The extension onboarding requires creating or importing a smart account (via seed phrase/hardware wallet/EOA) with no try-without-wallet or guest/view-only entry point documented."
     },
     {
-      "walletId": "bitbox",
-      "metricKey": "privacyPools",
-      "path": "privacy.transactionPrivacy.PRIVACY_POOLS",
+      "walletId": "ambire",
+      "metricKey": "obEmbedded",
+      "path": "product.onboardingFriction.embeddedWalletMode",
       "decision": "no",
-      "citationUrl": "https://github.com/BitBoxSwiss/bitbox-wallet-app/blob/master/CHANGELOG.md",
-      "explanation": "No Privacy Pools integration is documented in the BitBoxApp changelog or support materials."
+      "citationUrl": "https://help.ambire.com/hc/en-us/articles/12506346827036-How-to-create-smart-wallet-account-in-the-browser-extension",
+      "explanation": "Ambire creates a smart-contract account, but the current product provisions it from a user-controlled seed phrase or EOA key rather than a no-seed social/email/MPC embedded flow (the legacy no-seed email option is deprecated)."
     },
     {
-      "walletId": "bitbox",
-      "metricKey": "defaultTransfer",
-      "path": "privacy.transactionPrivacy.defaultFungibleTokenTransferMode",
-      "decision": "value",
-      "valueString": "PUBLIC",
-      "citationUrl": "https://support.bitbox.swiss/en_US/ethereum-co/send-eth-erc20-tokens",
-      "explanation": "All transfers are ordinary on-chain public transactions with no private/shielded mode offered in the BitBoxApp send flow."
+      "walletId": "argent",
+      "metricKey": "pWeb",
+      "path": "product.platformCoverage.webApp",
+      "decision": "yes",
+      "citationUrl": "https://support.argent.xyz/hc/en-us/articles/17984093612189-Argent-web-wallet",
+      "explanation": "Argent (now Ready) offers an email-based browser web wallet on Starknet that requires no app download or extension, per its support docs."
     },
     {
-      "walletId": "bitbox",
-      "metricKey": "approvals",
-      "path": "selfSovereignty.permissionsManagement",
+      "walletId": "argent",
+      "metricKey": "ecoSui",
+      "path": "product.supportedEcosystems.sui",
       "decision": "no",
-      "citationUrl": "https://support.bitbox.swiss/en_US/ethereum-co/connect-to-a-dapp-with-walletconnect",
-      "explanation": "The BitBoxApp offers WalletConnect dapp connectivity but no built-in token-approval inspection/revocation UI; users are directed to external tools like Etherscan for approvals."
+      "citationUrl": "https://support.argent.xyz/hc/en-us/articles/4404024199697-Can-I-use-Argent-on-Layer-2-or-sidechains-Optimism-Polygon-etc",
+      "explanation": "Argent supports only Ethereum, EVM L2s, and Starknet; there is no evidence of native Sui support in any official source."
     },
     {
-      "walletId": "bitbox",
-      "metricKey": "selfBroadcast",
-      "path": "selfSovereignty.transactionSubmission.l1.selfBroadcastViaSelfHostedNode",
-      "decision": "yes",
-      "citationUrl": "https://support.bitbox.swiss/en_US/privacy/connecting-the-bitboxapp-to-your-own-full-node",
-      "explanation": "The BitBoxApp can connect to the user's own Bitcoin full node via an Electrum-compatible server for independent verification and broadcast."
-    },
-    {
-      "walletId": "bitbox",
-      "metricKey": "bridging",
-      "path": "chainAbstraction.bridging.builtInBridging",
+      "walletId": "argent",
+      "metricKey": "ecoAptos",
+      "path": "product.supportedEcosystems.aptos",
       "decision": "no",
-      "citationUrl": "https://github.com/BitBoxSwiss/bitbox-wallet-app/blob/master/CHANGELOG.md",
-      "explanation": "No native cross-chain bridging is documented in the BitBoxApp changelog or support hub."
+      "citationUrl": "https://support.argent.xyz/hc/en-us/articles/4404024199697-Can-I-use-Argent-on-Layer-2-or-sidechains-Optimism-Polygon-etc",
+      "explanation": "Argent supports only Ethereum, EVM L2s, and Starknet; no official source indicates native Aptos support."
     },
     {
-      "walletId": "bitbox",
-      "metricKey": "changelog",
-      "path": "transparency.releaseTransparency.hasPublicChangelog",
-      "decision": "yes",
-      "citationUrl": "https://github.com/BitBoxSwiss/bitbox-wallet-app/blob/master/CHANGELOG.md",
-      "explanation": "BitBox publishes a public CHANGELOG.md for the BitBoxApp and a separate firmware changelog on GitHub."
-    },
-    {
-      "walletId": "bitbox",
-      "metricKey": "signing",
-      "path": "transparency.releaseTransparency.artifactSigning",
-      "decision": "yes",
-      "citationUrl": "https://support.bitbox.swiss/en_US/verify-app-signature/verify-bitboxapp-signature-macos",
-      "explanation": "BitBoxApp installers are code-signed/notarized with published GPG .asc signatures, and firmware releases carry signed reproducibility assertions."
-    },
-    {
-      "walletId": "bitbox",
-      "metricKey": "reproducible",
-      "path": "transparency.releaseTransparency.reproducibleBuilds",
-      "decision": "yes",
-      "citationUrl": "https://github.com/BitBoxSwiss/bitbox02-firmware/blob/master/releases/README.md",
-      "explanation": "BitBox02 firmware is built reproducibly via Docker with fixed dependencies, allowing anyone to rebuild and match the official binary from a version tag."
-    },
-    {
-      "walletId": "cypherock",
-      "metricKey": "usageAnalytics",
-      "path": "privacy.analytics.usage",
-      "decision": "yes",
-      "citationUrl": "https://github.com/Cypherock/cysync-desktop/blob/main/README.md",
-      "explanation": "The cySync-desktop README lists 'Disable analytics' only for development mode, indicating analytics telemetry is enabled in production builds."
-    },
-    {
-      "walletId": "cypherock",
-      "metricKey": "crashReports",
-      "path": "privacy.analytics.crashReports",
-      "decision": "yes",
-      "citationUrl": "https://github.com/Cypherock/cysync-desktop/blob/main/README.md",
-      "explanation": "The cySync-desktop README lists 'Disable crash report' only for development mode, indicating crash reporting is active in production builds."
-    },
-    {
-      "walletId": "cypherock",
-      "metricKey": "stealth",
-      "path": "privacy.transactionPrivacy.STEALTH_ADDRESSES",
+      "walletId": "argent",
+      "metricKey": "ecoCardano",
+      "path": "product.supportedEcosystems.cardano",
       "decision": "no",
-      "citationUrl": "https://www.cypherock.com/features",
-      "explanation": "No Cypherock documentation or feature page references stealth-address receiving, which is absent from this hardware wallet and its cySync app."
+      "citationUrl": "https://support.argent.xyz/hc/en-us/articles/4404024199697-Can-I-use-Argent-on-Layer-2-or-sidechains-Optimism-Polygon-etc",
+      "explanation": "Argent supports only Ethereum, EVM L2s, and Starknet; no official source indicates native Cardano support."
     },
     {
-      "walletId": "cypherock",
-      "metricKey": "privacyPools",
-      "path": "privacy.transactionPrivacy.PRIVACY_POOLS",
+      "walletId": "argent",
+      "metricKey": "ecoXrp",
+      "path": "product.supportedEcosystems.xrp",
       "decision": "no",
-      "citationUrl": "https://www.cypherock.com/features",
-      "explanation": "No Cypherock source mentions Privacy Pools integration in the X1 or cySync app."
+      "citationUrl": "https://support.argent.xyz/hc/en-us/articles/4404024199697-Can-I-use-Argent-on-Layer-2-or-sidechains-Optimism-Polygon-etc",
+      "explanation": "Argent supports only Ethereum, EVM L2s, and Starknet; no official source indicates XRP Ledger support."
     },
     {
-      "walletId": "cypherock",
-      "metricKey": "defaultTransfer",
-      "path": "privacy.transactionPrivacy.defaultFungibleTokenTransferMode",
-      "decision": "value",
-      "valueString": "PUBLIC",
-      "citationUrl": "https://www.cypherock.com/features",
-      "explanation": "As a standard multi-chain hardware wallet with no privacy-transfer mode, token transfers are public by default."
-    },
-    {
-      "walletId": "cypherock",
-      "metricKey": "bridging",
-      "path": "chainAbstraction.bridging.builtInBridging",
+      "walletId": "argent",
+      "metricKey": "obSeed",
+      "path": "product.onboardingFriction.seedPhraseRequiredAtSignup",
       "decision": "no",
-      "citationUrl": "https://www.cypherock.com/features",
-      "explanation": "Cypherock states swapping and bridging functionalities related to cross-chain bridging are not available; only swaps are offered, not native bridging."
+      "citationUrl": "https://support.argent.xyz/hc/en-us/articles/360006853458-How-can-I-recover-my-wallet-without-a-seed-phrase",
+      "explanation": "Argent is a smart-contract wallet that replaces seed phrases entirely, using email/password login and guardian-based social recovery instead."
     },
     {
-      "walletId": "cypherock",
-      "metricKey": "globalValue",
-      "path": "chainAbstraction.crossChainBalances.globalAccountValue",
+      "walletId": "argent",
+      "metricKey": "obEmbedded",
+      "path": "product.onboardingFriction.embeddedWalletMode",
       "decision": "yes",
-      "citationUrl": "https://www.cypherock.com/cysync",
-      "explanation": "cySync provides portfolio aggregation tracking assets across wallets and chains in a single place, giving a unified account value view."
+      "citationUrl": "https://support.argent.xyz/hc/en-us/articles/17984093612189-Argent-web-wallet",
+      "explanation": "Argent's web wallet creates a self-custodial smart-contract account behind email/password login with no seed phrase, matching an embedded/smart-account onboarding model."
     },
     {
-      "walletId": "cypherock",
-      "metricKey": "changelog",
-      "path": "transparency.releaseTransparency.hasPublicChangelog",
+      "walletId": "base-app",
+      "metricKey": "obEmail",
+      "path": "product.onboardingFriction.emailSignup",
       "decision": "yes",
-      "citationUrl": "https://github.com/Cypherock/x1_wallet_firmware/releases",
-      "explanation": "Cypherock publishes detailed public firmware release notes with version numbers and changes on its GitHub releases page."
+      "citationUrl": "https://docs.base.org/base-chain/tools/onboarding",
+      "explanation": "The Base App's Base Account lets users sign in/create an account using an email one-time passcode (OTP), per Coinbase Help and Base docs on user onboarding."
     },
     {
-      "walletId": "cypherock",
-      "metricKey": "signing",
-      "path": "transparency.releaseTransparency.artifactSigning",
-      "decision": "yes",
-      "citationUrl": "https://walletscrutiny.com/hardware/cypherockx1/",
-      "explanation": "WalletScrutiny confirms X1 firmware is signed by two private keys with a signed header appended to the firmware binary image."
-    },
-    {
-      "walletId": "firefly",
-      "metricKey": "usageAnalytics",
-      "path": "privacy.analytics.usage",
+      "walletId": "base-app",
+      "metricKey": "obGuest",
+      "path": "product.onboardingFriction.guestMode",
       "decision": "no",
-      "citationUrl": "https://firefly.city/",
-      "explanation": "Firefly is an air-gapped DIY hardware wallet with no wireless/wired data connection, so the device cannot send usage telemetry per firefly.city."
+      "citationUrl": "https://blog.base.org/baseapp",
+      "explanation": "Base App requires creating a Base Account (smart wallet via email/passkey) on sign-up to access the app, with no documented guest/browse-without-wallet mode, per the Base App launch announcement stating users receive a Base Account upon sign-up."
     },
     {
-      "walletId": "firefly",
-      "metricKey": "crashReports",
-      "path": "privacy.analytics.crashReports",
+      "walletId": "bitget",
+      "metricKey": "ecoCosmos",
+      "path": "product.supportedEcosystems.cosmos",
+      "decision": "yes",
+      "citationUrl": "https://web3.bitget.com/en/blog/articles/bitkeep-adds-cosmos-to-its-list-of-supported-mainnets",
+      "explanation": "Bitget Wallet's official blog announced adding the Cosmos (ATOM) mainnet, enabling token transactions and Cosmos ecosystem DApp/DeFi access."
+    },
+    {
+      "walletId": "bitget",
+      "metricKey": "ecoCardano",
+      "path": "product.supportedEcosystems.cardano",
+      "decision": "yes",
+      "citationUrl": "https://web3.bitget.com/en/wiki/ada-cardano-wallet",
+      "explanation": "Bitget Wallet's official ADA wiki page instructs users to create a native 'ADA (Cardano) Wallet' from the mainnet list to store, send and receive ADA on the Cardano mainnet."
+    },
+    {
+      "walletId": "bitget",
+      "metricKey": "ecoXrp",
+      "path": "product.supportedEcosystems.xrp",
+      "decision": "yes",
+      "citationUrl": "https://www.bitget.com/news/detail/12560605322058",
+      "explanation": "Bitget's official news announced integrating the XRP Ledger (XRPL) mainnet so users can send/receive XRP and RLUSD and do XRPL cross-chain transactions within the wallet."
+    },
+    {
+      "walletId": "bitget",
+      "metricKey": "obEmail",
+      "path": "product.onboardingFriction.emailSignup",
+      "decision": "yes",
+      "citationUrl": "https://financefeeds.com/bitget-wallet-facilitates-web3-onboarding-through-keyless-mpc-integration/",
+      "explanation": "Bitget Wallet's keyless MPC integration lets users create a wallet via an email address (along with Google, Apple ID, and Telegram)."
+    },
+    {
+      "walletId": "bitget",
+      "metricKey": "obEmbedded",
+      "path": "product.onboardingFriction.embeddedWalletMode",
+      "decision": "yes",
+      "citationUrl": "https://web3.bitget.com/en/blog/articles/bitget-wallet-launches-mpc-wallet",
+      "explanation": "Bitget Wallet offers a keyless MPC embedded wallet created via social/email login with no seed phrase, distributing key shares via a 2/3 TSS scheme."
+    },
+    {
+      "walletId": "brave-wallet",
+      "metricKey": "pWeb",
+      "path": "product.platformCoverage.webApp",
       "decision": "no",
-      "citationUrl": "https://firefly.city/",
-      "explanation": "The device is air-gapped and cannot transmit signals, and neither the firmware nor docs mention any crash/error reporting."
+      "citationUrl": "https://brave.com/wallet/",
+      "explanation": "Brave Wallet is built natively into the Brave browser, not offered as a standalone browser-based web app usable without installing Brave."
     },
     {
-      "walletId": "firefly",
-      "metricKey": "stealth",
-      "path": "privacy.transactionPrivacy.STEALTH_ADDRESSES",
+      "walletId": "brave-wallet",
+      "metricKey": "ecoBitcoin",
+      "path": "product.supportedEcosystems.bitcoin",
+      "decision": "yes",
+      "citationUrl": "https://brave.com/blog/bitcoin-wallet/",
+      "explanation": "Brave Wallet natively supports Bitcoin, letting users create Bitcoin accounts and send/receive native BTC across Legacy, SegWit, and Taproot address types."
+    },
+    {
+      "walletId": "brave-wallet",
+      "metricKey": "ecoCosmos",
+      "path": "product.supportedEcosystems.cosmos",
       "decision": "no",
-      "citationUrl": "https://github.com/firefly/pixie-firmware",
-      "explanation": "No stealth-address support is mentioned anywhere in the Firefly firmware, hardware docs, or firefly.city site."
+      "citationUrl": "https://brave.com/wallet/",
+      "explanation": "Brave Wallet's supported networks (Ethereum/EVM, Solana, Filecoin, Bitcoin, Zcash, Cardano) do not include Cosmos SDK/IBC chains."
     },
     {
-      "walletId": "firefly",
-      "metricKey": "privacyPools",
-      "path": "privacy.transactionPrivacy.PRIVACY_POOLS",
+      "walletId": "brave-wallet",
+      "metricKey": "ecoTon",
+      "path": "product.supportedEcosystems.ton",
       "decision": "no",
-      "citationUrl": "https://github.com/firefly/pixie-firmware",
-      "explanation": "No Privacy Pools integration is referenced in the Firefly firmware or any official material."
+      "citationUrl": "https://brave.com/wallet/",
+      "explanation": "TON is not among Brave Wallet's supported networks listed by Brave."
     },
     {
-      "walletId": "firefly",
-      "metricKey": "defaultTransfer",
-      "path": "privacy.transactionPrivacy.defaultFungibleTokenTransferMode",
-      "decision": "value",
-      "valueString": "PUBLIC",
-      "citationUrl": "https://firefly.city/",
-      "explanation": "Firefly signs standard public Ethereum transactions with no private-transfer mode described."
-    },
-    {
-      "walletId": "firefly",
-      "metricKey": "bridging",
-      "path": "chainAbstraction.bridging.builtInBridging",
+      "walletId": "brave-wallet",
+      "metricKey": "ecoSui",
+      "path": "product.supportedEcosystems.sui",
       "decision": "no",
-      "citationUrl": "https://firefly.city/",
-      "explanation": "Firefly is an Ethereum-only signing device with no built-in cross-chain bridging described in any official source."
+      "citationUrl": "https://brave.com/wallet/",
+      "explanation": "Sui is not among Brave Wallet's supported networks."
     },
     {
-      "walletId": "firefly",
-      "metricKey": "globalValue",
-      "path": "chainAbstraction.crossChainBalances.globalAccountValue",
+      "walletId": "brave-wallet",
+      "metricKey": "ecoAptos",
+      "path": "product.supportedEcosystems.aptos",
       "decision": "no",
-      "citationUrl": "https://firefly.city/",
-      "explanation": "Being an air-gapped single-chain Ethereum signer with no balance-aggregating companion suite, there is no unified cross-chain balance view."
+      "citationUrl": "https://community.brave.app/t/using-brave-wallet-aptos-bridges/487009",
+      "explanation": "Aptos is not supported; community reports confirm Brave Wallet cannot be used with Aptos apps/bridges."
     },
     {
-      "walletId": "firefly",
-      "metricKey": "ens",
-      "path": "addressResolution.nonChainSpecificEnsResolution",
+      "walletId": "brave-wallet",
+      "metricKey": "ecoCardano",
+      "path": "product.supportedEcosystems.cardano",
       "decision": "yes",
-      "citationUrl": "https://github.com/ensdomains/hack2018/issues/11",
-      "explanation": "Firefly's companion Ethers Wallet uses ethers.js which resolves ENS names (e.g. ricmoo.firefly.eth), and ENS destination resolution is an explicit Firefly design goal."
+      "citationUrl": "https://brave.com/blog/cardano-in-brave-wallet/",
+      "explanation": "Brave and Input|Output completed native Cardano integration, letting users hold and manage ADA and Cardano native assets, send/receive, and swap directly in the wallet."
     },
     {
-      "walletId": "firefly",
-      "metricKey": "changelog",
-      "path": "transparency.releaseTransparency.hasPublicChangelog",
-      "decision": "yes",
-      "citationUrl": "https://github.com/firefly/pixie-device/blob/main/CHANGELOG.md",
-      "explanation": "The Firefly Pixie hardware repo publishes a public CHANGELOG.md tracking changes between board revisions."
-    },
-    {
-      "walletId": "firefly",
-      "metricKey": "license",
-      "path": "licensing.walletAppLicense",
-      "decision": "value",
-      "valueString": "BSD (firmware); MIT (hardware design)",
-      "citationUrl": "https://github.com/firefly/pixie-firmware",
-      "explanation": "The Firefly Pixie firmware README states BSD License while the hardware design repo is MIT License."
-    },
-    {
-      "walletId": "gridplus",
-      "metricKey": "usageAnalytics",
-      "path": "privacy.analytics.usage",
+      "walletId": "brave-wallet",
+      "metricKey": "ecoXrp",
+      "path": "product.supportedEcosystems.xrp",
       "decision": "no",
-      "citationUrl": "https://docs.gridplus.io/lattice1/lattice1-introduction",
-      "explanation": "GridPlus documentation states it does not collect user data on the Lattice Manager and end-to-end encrypts device messages, with no usage telemetry indicated."
+      "citationUrl": "https://community.brave.app/t/can-i-store-xrp-tokens-in-my-brave-wallet/415281",
+      "explanation": "Brave Wallet does not support the XRP Ledger, as confirmed by community reports that XRP cannot be stored in Brave Wallet."
     },
     {
-      "walletId": "gridplus",
-      "metricKey": "stealth",
-      "path": "privacy.transactionPrivacy.STEALTH_ADDRESSES",
+      "walletId": "brave-wallet",
+      "metricKey": "obPasskey",
+      "path": "product.onboardingFriction.passkeySignup",
       "decision": "no",
-      "citationUrl": "https://docs.gridplus.io/apps-and-integrations/lattice-manager",
-      "explanation": "No GridPlus documentation or repo indicates support for stealth-address receiving on the Lattice1 or its companion apps."
+      "citationUrl": "https://support.brave.com/hc/en-us/articles/12753544357645-Creating-your-Brave-Wallet",
+      "explanation": "Brave Wallet onboarding uses a password plus seed-phrase creation/import, with no passkey/WebAuthn signup option."
     },
     {
-      "walletId": "gridplus",
-      "metricKey": "privacyPools",
-      "path": "privacy.transactionPrivacy.PRIVACY_POOLS",
+      "walletId": "brave-wallet",
+      "metricKey": "obEmail",
+      "path": "product.onboardingFriction.emailSignup",
       "decision": "no",
-      "citationUrl": "https://docs.gridplus.io/apps-and-integrations/lattice-manager",
-      "explanation": "No GridPlus documentation or integration lists Privacy Pools support."
+      "citationUrl": "https://support.brave.com/hc/en-us/articles/12753544357645-Creating-your-Brave-Wallet",
+      "explanation": "Onboarding does not require or offer email signup; users only set a password and create/import a seed phrase."
     },
     {
-      "walletId": "gridplus",
-      "metricKey": "defaultTransfer",
-      "path": "privacy.transactionPrivacy.defaultFungibleTokenTransferMode",
-      "decision": "value",
-      "valueString": "PUBLIC",
-      "citationUrl": "https://docs.gridplus.io/apps-and-integrations/lattice-manager/managing-your-bitcoin-wallet",
-      "explanation": "The Lattice1 signs standard on-chain Bitcoin and Ethereum transactions with no privacy transfer mode, so transfers are public by default."
-    },
-    {
-      "walletId": "gridplus",
-      "metricKey": "approvals",
-      "path": "selfSovereignty.permissionsManagement",
+      "walletId": "brave-wallet",
+      "metricKey": "obEmbedded",
+      "path": "product.onboardingFriction.embeddedWalletMode",
       "decision": "no",
-      "citationUrl": "https://docs.gridplus.io/apps-and-integrations/lattice-manager",
-      "explanation": "The official Lattice Manager only handles device management and simple BTC send/receive, with no token-approval inspection or revocation feature documented."
+      "citationUrl": "https://brave.com/web3/self-custody-wallet/",
+      "explanation": "Brave Wallet is a self-custody wallet created via seed phrase, with no no-seed embedded/MPC/smart-account social-login option."
     },
     {
-      "walletId": "gridplus",
-      "metricKey": "selfBroadcast",
-      "path": "selfSovereignty.transactionSubmission.l1.selfBroadcastViaSelfHostedNode",
+      "walletId": "coinbase-wallet",
+      "metricKey": "pWeb",
+      "path": "product.platformCoverage.webApp",
       "decision": "yes",
-      "citationUrl": "https://docs.gridplus.io/apps-and-integrations/lattice-manager/connecting-your-lattice-to-your-own-private-endpoint",
-      "explanation": "GridPlus offers lattice-connect-v2, a self-hosted endpoint users run on their own network to sign and route transactions without any GridPlus infrastructure."
+      "citationUrl": "https://wallet.coinbase.com/apps",
+      "explanation": "Coinbase Wallet offers a browser-based web app at wallet.coinbase.com with 'no app, extension, or download required' and instant passkey wallet creation."
     },
     {
-      "walletId": "gridplus",
-      "metricKey": "bridging",
-      "path": "chainAbstraction.bridging.builtInBridging",
+      "walletId": "coinbase-wallet",
+      "metricKey": "obPasskey",
+      "path": "product.onboardingFriction.passkeySignup",
+      "decision": "yes",
+      "citationUrl": "https://help.coinbase.com/en/wallet/getting-started/smart-wallet-passkeys",
+      "explanation": "The Base Account / Smart Wallet is created and accessed via passkeys (Face ID, Touch ID, or a hardware key) instead of a seed phrase, per Coinbase Help."
+    },
+    {
+      "walletId": "coinbase-wallet",
+      "metricKey": "obEmail",
+      "path": "product.onboardingFriction.emailSignup",
+      "decision": "yes",
+      "citationUrl": "https://help.coinbase.com/en/wallet/getting-started/smart-wallet-passkeys",
+      "explanation": "Coinbase states you can sign in to your Base account using email passcodes, and the smart-wallet onboarding pairs a passkey with an email address."
+    },
+    {
+      "walletId": "coinbase-wallet",
+      "metricKey": "obEmbedded",
+      "path": "product.onboardingFriction.embeddedWalletMode",
+      "decision": "yes",
+      "citationUrl": "https://help.coinbase.com/en/wallet/getting-started/smart-wallet-passkeys",
+      "explanation": "Base Account is an ERC-4337 smart wallet created behind the scenes via passkey/email login with no seed phrase, matching the embedded/MPC/smart-account model."
+    },
+    {
+      "walletId": "daimo",
+      "metricKey": "ecoBitcoin",
+      "path": "product.supportedEcosystems.bitcoin",
       "decision": "no",
-      "citationUrl": "https://docs.gridplus.io/apps-and-integrations/lattice-manager",
-      "explanation": "Neither the Lattice1 firmware nor the Lattice Manager provides native cross-chain bridging functionality."
+      "citationUrl": "https://docs.daimo.com/supported-chains",
+      "explanation": "Daimo's official Supported Chains docs list only EVM chains plus Solana and Tron; Bitcoin is not among the supported networks."
     },
     {
-      "walletId": "gridplus",
-      "metricKey": "globalValue",
-      "path": "chainAbstraction.crossChainBalances.globalAccountValue",
+      "walletId": "daimo",
+      "metricKey": "ecoCosmos",
+      "path": "product.supportedEcosystems.cosmos",
       "decision": "no",
-      "citationUrl": "https://docs.gridplus.io/apps-and-integrations/lattice-manager",
-      "explanation": "The Lattice Manager offers a simple BTC wallet and device management but no unified cross-chain account value view."
+      "citationUrl": "https://docs.daimo.com/supported-chains",
+      "explanation": "Daimo's official Supported Chains docs list only EVM chains plus Solana and Tron, with no Cosmos SDK/IBC support."
     },
     {
-      "walletId": "gridplus",
-      "metricKey": "changelog",
-      "path": "transparency.releaseTransparency.hasPublicChangelog",
-      "decision": "yes",
-      "citationUrl": "https://github.com/GridPlus/lattice-software-releases",
-      "explanation": "GridPlus publishes a public changelog of firmware/software releases in the lattice-software-releases GitHub repo and firmware release blog posts."
-    },
-    {
-      "walletId": "gridplus",
-      "metricKey": "signing",
-      "path": "transparency.releaseTransparency.artifactSigning",
-      "decision": "yes",
-      "citationUrl": "https://docs.gridplus.io/lattice1/lattice1-guides/how-to-upgrade-the-firmware",
-      "explanation": "GridPlus firmware documentation states every release must be signed by multiple geographically separated private keys and verified by a secure bootloader before installation."
-    },
-    {
-      "walletId": "gridplus",
-      "metricKey": "license",
-      "path": "licensing.walletAppLicense",
-      "decision": "value",
-      "valueString": "Proprietary (firmware); MIT (SDK/keyring); Lattice Manager unlicensed",
-      "citationUrl": "https://github.com/orgs/GridPlus/repositories",
-      "explanation": "The Lattice1 firmware is proprietary/closed-source while GridPlus's supporting tools like gridplus-sdk and eth-lattice-keyring are MIT and the lattice-manager repo specifies no license."
-    },
-    {
-      "walletId": "imkey",
-      "metricKey": "usageAnalytics",
-      "path": "privacy.analytics.usage",
-      "decision": "yes",
-      "citationUrl": "https://support.token.im/hc/en-us/articles/9395540782617-imToken-on-Security",
-      "explanation": "imToken (imKey Pro's primary companion app) uses Firebase for usage statistics/analytics per its security documentation."
-    },
-    {
-      "walletId": "imkey",
-      "metricKey": "crashReports",
-      "path": "privacy.analytics.crashReports",
-      "decision": "yes",
-      "citationUrl": "https://support.token.im/hc/en-us/articles/9395540782617-imToken-on-Security",
-      "explanation": "imToken uses Sentry for error/crash reporting per its official security documentation."
-    },
-    {
-      "walletId": "imkey",
-      "metricKey": "stealth",
-      "path": "privacy.transactionPrivacy.STEALTH_ADDRESSES",
+      "walletId": "daimo",
+      "metricKey": "ecoTon",
+      "path": "product.supportedEcosystems.ton",
       "decision": "no",
-      "citationUrl": "https://imkey.im/products/imkey-pro-crypto-hardware-wallet",
-      "explanation": "No imKey or imToken documentation indicates support for stealth-address receiving; it is not a listed feature."
+      "citationUrl": "https://docs.daimo.com/supported-chains",
+      "explanation": "Daimo's official Supported Chains docs cover only EVM chains, Solana, and Tron; TON is not supported."
     },
     {
-      "walletId": "imkey",
-      "metricKey": "privacyPools",
-      "path": "privacy.transactionPrivacy.PRIVACY_POOLS",
+      "walletId": "daimo",
+      "metricKey": "ecoSui",
+      "path": "product.supportedEcosystems.sui",
       "decision": "no",
-      "citationUrl": "https://imkey.im/products/imkey-pro-crypto-hardware-wallet",
-      "explanation": "Neither imKey nor its companion imToken app documents any Privacy Pools integration."
+      "citationUrl": "https://docs.daimo.com/supported-chains",
+      "explanation": "Daimo's official Supported Chains docs cover only EVM chains, Solana, and Tron; Sui is not supported."
     },
     {
-      "walletId": "imkey",
-      "metricKey": "defaultTransfer",
-      "path": "privacy.transactionPrivacy.defaultFungibleTokenTransferMode",
-      "decision": "value",
-      "valueString": "PUBLIC",
-      "citationUrl": "https://imkey.im/products/imkey-pro-crypto-hardware-wallet",
-      "explanation": "imKey Pro signs standard public on-chain transactions (BTC, ETH/ERC-20, TRX) with no private-transfer mode."
-    },
-    {
-      "walletId": "imkey",
-      "metricKey": "selfBroadcast",
-      "path": "selfSovereignty.transactionSubmission.l1.selfBroadcastViaSelfHostedNode",
-      "decision": "yes",
-      "citationUrl": "https://support.token.im/hc/en-us/articles/900005324266-imToken-supports-custom-network-RPC-Experience-the-layer-2-ecosystem-now-",
-      "explanation": "imToken supports custom network RPC configuration, available for imKey and imKey Pro, allowing broadcast via a self-hosted node endpoint."
-    },
-    {
-      "walletId": "imkey",
-      "metricKey": "ens",
-      "path": "addressResolution.nonChainSpecificEnsResolution",
-      "decision": "yes",
-      "citationUrl": "https://support.token.im/hc/en-us/articles/360039447354-How-to-register-and-manage-ENS-domains-with-imToken",
-      "explanation": "imToken supports ENS registration, management, and forward/reverse .eth resolution per its help center."
-    },
-    {
-      "walletId": "imkey",
-      "metricKey": "changelog",
-      "path": "transparency.releaseTransparency.hasPublicChangelog",
-      "decision": "yes",
-      "citationUrl": "https://apps.apple.com/us/app/imtoken-btc-eth-wallet/id1384798940",
-      "explanation": "The imToken companion app publishes public per-version release notes on the App Store."
-    },
-    {
-      "walletId": "imkey",
-      "metricKey": "reproducible",
-      "path": "transparency.releaseTransparency.reproducibleBuilds",
+      "walletId": "daimo",
+      "metricKey": "ecoAptos",
+      "path": "product.supportedEcosystems.aptos",
       "decision": "no",
-      "citationUrl": "https://walletscrutiny.com/hardware/imkeypro/",
-      "explanation": "WalletScrutiny states imKey Pro builds cannot be reproduced because the current-release source code is not publicly available."
+      "citationUrl": "https://docs.daimo.com/supported-chains",
+      "explanation": "Daimo's official Supported Chains docs cover only EVM chains, Solana, and Tron; Aptos is not supported."
     },
     {
-      "walletId": "keycard-shell",
-      "metricKey": "stealth",
-      "path": "privacy.transactionPrivacy.STEALTH_ADDRESSES",
+      "walletId": "daimo",
+      "metricKey": "ecoCardano",
+      "path": "product.supportedEcosystems.cardano",
       "decision": "no",
-      "citationUrl": "https://docs.keycard.tech/en/blog/announcing-keycard-shell",
-      "explanation": "Keycard Shell is an air-gapped QR transaction signer whose official docs, blog and firmware repo describe only BTC/ETH/ERC-20/ERC-712 clear signing with no mention of stealth-address receiving."
+      "citationUrl": "https://docs.daimo.com/supported-chains",
+      "explanation": "Daimo's official Supported Chains docs cover only EVM chains, Solana, and Tron; Cardano is not supported."
     },
     {
-      "walletId": "keycard-shell",
-      "metricKey": "privacyPools",
-      "path": "privacy.transactionPrivacy.PRIVACY_POOLS",
+      "walletId": "daimo",
+      "metricKey": "ecoXrp",
+      "path": "product.supportedEcosystems.xrp",
       "decision": "no",
-      "citationUrl": "https://docs.keycard.tech/en/developers/overview",
-      "explanation": "No Privacy Pools integration is mentioned anywhere in Keycard Shell's official documentation, blog, or open-source firmware repo."
+      "citationUrl": "https://docs.daimo.com/supported-chains",
+      "explanation": "Daimo's official Supported Chains docs cover only EVM chains, Solana, and Tron; the XRP Ledger is not supported."
     },
     {
-      "walletId": "keycard-shell",
-      "metricKey": "approvals",
-      "path": "selfSovereignty.permissionsManagement",
-      "decision": "yes",
-      "citationUrl": "https://docs.keycard.tech/en/blog/announcing-keycard-shell",
-      "explanation": "Shell provides clear signing that decodes ERC-20 approvals so users retain full visibility and control over ERC20/ERC712 signatures such as approvals before confirming."
-    },
-    {
-      "walletId": "keycard-shell",
-      "metricKey": "selfBroadcast",
-      "path": "selfSovereignty.transactionSubmission.l1.selfBroadcastViaSelfHostedNode",
-      "decision": "yes",
-      "citationUrl": "https://github.com/keycard-tech/keycard-shell",
-      "explanation": "As an air-gapped QR/USB signer that returns signed transactions to companion software (e.g. Sparrow, Specter, Rabby), broadcasting is done by the paired wallet which can be pointed at a self-hosted node."
-    },
-    {
-      "walletId": "keycard-shell",
-      "metricKey": "bridging",
-      "path": "chainAbstraction.bridging.builtInBridging",
+      "walletId": "elytro",
+      "metricKey": "pWeb",
+      "path": "product.platformCoverage.webApp",
       "decision": "no",
-      "citationUrl": "https://docs.keycard.tech/en/developers/overview",
-      "explanation": "Shell is a stateless offline signing device with no built-in cross-chain bridging functionality described in its docs or repo."
+      "citationUrl": "https://chromewebstore.google.com/detail/elytro/alkpdbodocedcmhgmhkebanomfeenoik",
+      "explanation": "Elytro ships as a Chrome browser extension (and a CLI for agents), not a browser-based web app usable without installing anything, per the Chrome Web Store listing and elytro.com."
     },
     {
-      "walletId": "keycard-shell",
-      "metricKey": "globalValue",
-      "path": "chainAbstraction.crossChainBalances.globalAccountValue",
+      "walletId": "elytro",
+      "metricKey": "obSeed",
+      "path": "product.onboardingFriction.seedPhraseRequiredAtSignup",
       "decision": "no",
-      "citationUrl": "https://docs.keycard.tech/en/developers/overview",
-      "explanation": "Shell has no persistent state and no portfolio/companion app, so it offers no unified cross-chain account value view; it only signs transactions relayed by third-party wallets."
+      "citationUrl": "https://chromewebstore.google.com/detail/elytro/alkpdbodocedcmhgmhkebanomfeenoik",
+      "explanation": "Elytro explicitly requires no seed phrase, letting users create a wallet with a simple passcode and recover via trusted contacts, per its Chrome Web Store description."
     },
     {
-      "walletId": "keycard-shell",
-      "metricKey": "changelog",
-      "path": "transparency.releaseTransparency.hasPublicChangelog",
+      "walletId": "elytro",
+      "metricKey": "obEmbedded",
+      "path": "product.onboardingFriction.embeddedWalletMode",
       "decision": "yes",
-      "citationUrl": "https://github.com/keycard-tech/keycard-shell/releases",
-      "explanation": "The keycard-shell GitHub releases page publishes versioned release notes (v1.0.3 through v1.3.0) each with a documented Changes section."
+      "citationUrl": "https://elytro.com/faq",
+      "explanation": "Elytro creates a no-seed ERC-4337 smart contract account behind the scenes accessed via passkey/passcode with social recovery, per its official FAQ and Chrome Web Store listing."
     },
     {
-      "walletId": "keycard-shell",
-      "metricKey": "signing",
-      "path": "transparency.releaseTransparency.artifactSigning",
-      "decision": "yes",
-      "citationUrl": "https://github.com/keycard-tech/keycard-shell/releases",
-      "explanation": "Firmware is cryptographically signed with a key whose public key (bootloader-pubkey.txt) the bootloader uses to verify the firmware before execution, and release commits carry verified GPG signatures."
-    },
-    {
-      "walletId": "keycard-shell",
-      "metricKey": "reproducible",
-      "path": "transparency.releaseTransparency.reproducibleBuilds",
-      "decision": "yes",
-      "citationUrl": "https://github.com/keycard-tech/keycard-shell",
-      "explanation": "The README documents a reproducible-build verification flow using tools/firmware-hash.py to hash a locally built binary and match it against the official release binary ('The two hashes must match')."
-    },
-    {
-      "walletId": "keystone",
-      "metricKey": "usageAnalytics",
-      "path": "privacy.analytics.usage",
-      "decision": "yes",
-      "citationUrl": "https://apps.apple.com/us/app/keystone-nexus/id6742313403",
-      "explanation": "The Keystone Nexus companion app's App Store privacy label discloses collecting Diagnostics Performance Data used for 'Analytics' purposes."
-    },
-    {
-      "walletId": "keystone",
-      "metricKey": "crashReports",
-      "path": "privacy.analytics.crashReports",
-      "decision": "yes",
-      "citationUrl": "https://apps.apple.com/us/app/keystone-nexus/id6742313403",
-      "explanation": "The Keystone Nexus App Store privacy label discloses collecting Diagnostics 'Crash Data' for analytics and app functionality."
-    },
-    {
-      "walletId": "keystone",
-      "metricKey": "stealth",
-      "path": "privacy.transactionPrivacy.STEALTH_ADDRESSES",
+      "walletId": "exodus",
+      "metricKey": "pWeb",
+      "path": "product.platformCoverage.webApp",
       "decision": "no",
-      "citationUrl": "https://guide.keyst.one/docs/nexusfaq",
-      "explanation": "No Keystone documentation or app materials mention stealth-address receiving support."
+      "citationUrl": "https://www.exodus.com/web3-wallet",
+      "explanation": "Exodus ships as desktop, mobile, and a browser extension (Exodus Web3 Wallet); there is no browser-based web app usable without installing an app or extension."
     },
     {
-      "walletId": "keystone",
-      "metricKey": "privacyPools",
-      "path": "privacy.transactionPrivacy.PRIVACY_POOLS",
+      "walletId": "exodus",
+      "metricKey": "ecoCosmos",
+      "path": "product.supportedEcosystems.cosmos",
+      "decision": "yes",
+      "citationUrl": "https://www.exodus.com/cosmos-wallet-atom",
+      "explanation": "Exodus has a dedicated Cosmos ATOM wallet supporting send/receive/stake of native ATOM."
+    },
+    {
+      "walletId": "exodus",
+      "metricKey": "ecoSui",
+      "path": "product.supportedEcosystems.sui",
+      "decision": "yes",
+      "citationUrl": "https://apps.apple.com/us/app/exodus-crypto-bitcoin-wallet/id1414384820",
+      "explanation": "Exodus lists SUI as a supported native asset (Sui and TON went live for send/receive/swap)."
+    },
+    {
+      "walletId": "exodus",
+      "metricKey": "ecoAptos",
+      "path": "product.supportedEcosystems.aptos",
+      "decision": "yes",
+      "citationUrl": "https://www.exodus.com/support/en/articles/9007968-staking-aptos-apt-faqs",
+      "explanation": "Exodus natively supports Aptos (APT) including APT staking via its knowledge base and asset list."
+    },
+    {
+      "walletId": "exodus",
+      "metricKey": "ecoCardano",
+      "path": "product.supportedEcosystems.cardano",
+      "decision": "yes",
+      "citationUrl": "https://www.exodus.com/ada-cardano-wallet",
+      "explanation": "Exodus has a dedicated ADA Cardano wallet supporting native manage/send/stake of ADA since 2020."
+    },
+    {
+      "walletId": "exodus",
+      "metricKey": "ecoXrp",
+      "path": "product.supportedEcosystems.xrp",
+      "decision": "yes",
+      "citationUrl": "https://www.exodus.com/xrp-wallet",
+      "explanation": "Exodus offers a dedicated XRP wallet supporting native XRP on the XRP Ledger."
+    },
+    {
+      "walletId": "exodus",
+      "metricKey": "obPasskey",
+      "path": "product.onboardingFriction.passkeySignup",
       "decision": "no",
-      "citationUrl": "https://guide.keyst.one/docs/nexusfaq",
-      "explanation": "No Keystone documentation or app materials mention Privacy Pools integration."
+      "citationUrl": "https://www.exodus.com/investors/news-events/press-releases/detail/50/exodus-launches-passkeys-wallet-a-seamless-solution-for-web3-onboarding-and-dapp-integration",
+      "explanation": "The consumer Exodus wallet onboards via a 12-word seed phrase; the passkey/MPC 'Passkeys Wallet' is a separate developer/embedded SDK product, not the consumer app's signup flow."
     },
     {
-      "walletId": "keystone",
-      "metricKey": "defaultTransfer",
-      "path": "privacy.transactionPrivacy.defaultFungibleTokenTransferMode",
-      "decision": "value",
-      "valueString": "PUBLIC",
-      "citationUrl": "https://guide.keyst.one/docs/nexusfaq",
-      "explanation": "Keystone signs standard transparent BTC/EVM transactions with no private transfer mode, so transfers are public by default."
-    },
-    {
-      "walletId": "keystone",
-      "metricKey": "approvals",
-      "path": "selfSovereignty.permissionsManagement",
+      "walletId": "exodus",
+      "metricKey": "obEmail",
+      "path": "product.onboardingFriction.emailSignup",
       "decision": "no",
-      "citationUrl": "https://blog.keyst.one/watch-out-for-your-token-approvals-don-t-become-a-hacker-s-atm",
-      "explanation": "Keystone displays approve parameters when signing but its Nexus companion has no built-in allowance manager, relying on third-party tools like Revoke.cash to inspect/revoke."
+      "citationUrl": "https://www.exodus.com/support/en/articles/8598900-how-do-i-store-my-12-word-secret-recovery-phrase-in-the-backup-vault",
+      "explanation": "Exodus requires no personal information at signup and creates the wallet from a recovery phrase rather than an email address."
     },
     {
-      "walletId": "keystone",
-      "metricKey": "bridging",
-      "path": "chainAbstraction.bridging.builtInBridging",
+      "walletId": "exodus",
+      "metricKey": "obGuest",
+      "path": "product.onboardingFriction.guestMode",
       "decision": "no",
-      "citationUrl": "https://guide.keyst.one/docs/nexusfaq",
-      "explanation": "The Keystone Nexus companion app offers asset swaps but no native cross-chain bridging feature is documented in its FAQ."
+      "citationUrl": "https://vault12.com/learn/crypto-wallet-guides/exodus-ios/",
+      "explanation": "The consumer app requires creating or restoring a seed-phrase wallet before use, with no try/view-only guest mode."
     },
     {
-      "walletId": "keystone",
-      "metricKey": "globalValue",
-      "path": "chainAbstraction.crossChainBalances.globalAccountValue",
-      "decision": "yes",
-      "citationUrl": "https://keyst.one/nexus",
-      "explanation": "Keystone Nexus provides multi-chain asset viewing with a unified/aggregated balance across supported chains."
-    },
-    {
-      "walletId": "keystone",
-      "metricKey": "ens",
-      "path": "addressResolution.nonChainSpecificEnsResolution",
-      "decision": "yes",
-      "citationUrl": "https://support.keyst.one/advanced-features/displaying-ens-names",
-      "explanation": "Keystone supports ENS name resolution/display by loading an offline ENS database, showing the .eth name alongside the on-chain address when signing."
-    },
-    {
-      "walletId": "keystone",
-      "metricKey": "changelog",
-      "path": "transparency.releaseTransparency.hasPublicChangelog",
-      "decision": "yes",
-      "citationUrl": "https://support.keyst.one/changelog/keystone-companion-app",
-      "explanation": "Keystone publishes a public changelog for its companion app with version release notes."
-    },
-    {
-      "walletId": "keystone",
-      "metricKey": "reproducible",
-      "path": "transparency.releaseTransparency.reproducibleBuilds",
-      "decision": "yes",
-      "citationUrl": "https://github.com/KeystoneHQ/keystone3-firmware/blob/master/docs/verify.md",
-      "explanation": "Keystone documents reproducible firmware builds via Docker, letting users compile from source and compare SHA256 checksums against released firmware."
-    },
-    {
-      "walletId": "keystone",
-      "metricKey": "license",
-      "path": "licensing.walletAppLicense",
-      "decision": "value",
-      "valueString": "MIT",
-      "citationUrl": "https://github.com/KeystoneHQ/keystone3-firmware/blob/master/LICENSE",
-      "explanation": "The Keystone 3 firmware repository LICENSE file is the MIT License."
-    },
-    {
-      "walletId": "ledgerWallet",
-      "metricKey": "usageAnalytics",
-      "path": "privacy.analytics.usage",
-      "decision": "yes",
-      "citationUrl": "https://www.ledger.com/privacy-policy",
-      "explanation": "Ledger Live collects anonymous usage/product analytics by default with a toggle under Settings > Help > Analytics, so it does send usage telemetry."
-    },
-    {
-      "walletId": "ledgerWallet",
-      "metricKey": "crashReports",
-      "path": "privacy.analytics.crashReports",
-      "decision": "yes",
-      "citationUrl": "https://www.ledger.com/privacy-policy",
-      "explanation": "Ledger Live sends crash/error diagnostic reports (a separate 'Report bugs' toggle exists in Settings > Help alongside Analytics), so crash reports are sent by default."
-    },
-    {
-      "walletId": "ledgerWallet",
-      "metricKey": "stealth",
-      "path": "privacy.transactionPrivacy.STEALTH_ADDRESSES",
+      "walletId": "exodus",
+      "metricKey": "obEmbedded",
+      "path": "product.onboardingFriction.embeddedWalletMode",
       "decision": "no",
-      "citationUrl": "https://www.ledger.com/how-to-keep-yourself-private-in-the-blockchain-world",
-      "explanation": "No official Ledger documentation indicates support for stealth-address receiving in Ledger Live or the devices."
+      "citationUrl": "https://www.exodus.com/investors/news-events/press-releases/detail/50/exodus-launches-passkeys-wallet-a-seamless-solution-for-web3-onboarding-and-dapp-integration",
+      "explanation": "The shipping consumer Exodus wallet is a seed-phrase self-custody wallet; the no-seed MPC 'Passkeys Wallet' is a separate embedded-wallet SDK for developers, not the consumer onboarding UX."
     },
     {
-      "walletId": "ledgerWallet",
-      "metricKey": "privacyPools",
-      "path": "privacy.transactionPrivacy.PRIVACY_POOLS",
+      "walletId": "family",
+      "metricKey": "ecoSui",
+      "path": "product.supportedEcosystems.sui",
       "decision": "no",
-      "citationUrl": "https://www.ledger.com/how-to-keep-yourself-private-in-the-blockchain-world",
-      "explanation": "There is no evidence in Ledger's official materials of any Privacy Pools integration in Ledger Live or its devices."
+      "citationUrl": "https://family.co/faqs",
+      "explanation": "Family supports only Ethereum mainnet and EVM L2s (Optimism, Base, Arbitrum, Polygon, zkSync), with no mention of Sui."
     },
     {
-      "walletId": "ledgerWallet",
-      "metricKey": "defaultTransfer",
-      "path": "privacy.transactionPrivacy.defaultFungibleTokenTransferMode",
-      "decision": "value",
-      "valueString": "PUBLIC",
-      "citationUrl": "https://www.ledger.com/ledger-live/",
-      "explanation": "Ledger Live sends standard on-chain transfers with no privacy mode, so transfers are public by default."
-    },
-    {
-      "walletId": "ledgerWallet",
-      "metricKey": "approvals",
-      "path": "selfSovereignty.permissionsManagement",
-      "decision": "yes",
-      "citationUrl": "https://support.ledger.com/article/8700644160925-zd",
-      "explanation": "Ledger Live integrates Revoke.cash to let users inspect and revoke token approvals without leaving the app."
-    },
-    {
-      "walletId": "ledgerWallet",
-      "metricKey": "selfBroadcast",
-      "path": "selfSovereignty.transactionSubmission.l1.selfBroadcastViaSelfHostedNode",
-      "decision": "yes",
-      "citationUrl": "https://github.com/LedgerHQ/satstack",
-      "explanation": "Ledger's open-source SatStack lets Ledger Live connect to a user's own Bitcoin full node to broadcast transactions."
-    },
-    {
-      "walletId": "ledgerWallet",
-      "metricKey": "bridging",
-      "path": "chainAbstraction.bridging.builtInBridging",
-      "decision": "yes",
-      "citationUrl": "https://support.ledger.com/article/swap-tokens-across-blockchains-with-lifi-in-ledger-live",
-      "explanation": "Ledger Live offers native cross-chain bridging/swaps via the integrated LI.FI aggregator."
-    },
-    {
-      "walletId": "ledgerWallet",
-      "metricKey": "globalValue",
-      "path": "chainAbstraction.crossChainBalances.globalAccountValue",
-      "decision": "yes",
-      "citationUrl": "https://www.ledger.com/ledger-live/",
-      "explanation": "The Ledger Wallet/Live Home tab aggregates total balance across every account and network into a single unified value view."
-    },
-    {
-      "walletId": "ledgerWallet",
-      "metricKey": "ens",
-      "path": "addressResolution.nonChainSpecificEnsResolution",
-      "decision": "yes",
-      "citationUrl": "https://www.ledger.com/blog/ledger-now-supports-ens-domain-adresses",
-      "explanation": "Ledger Live resolves ENS names in the send flow, with the mapping cryptographically verified on the hardware device."
-    },
-    {
-      "walletId": "ledgerWallet",
-      "metricKey": "changelog",
-      "path": "transparency.releaseTransparency.hasPublicChangelog",
-      "decision": "yes",
-      "citationUrl": "https://github.com/LedgerHQ/ledger-live/blob/develop/apps/ledger-live-desktop/CHANGELOG.md",
-      "explanation": "Ledger publishes a public CHANGELOG.md and GitHub Releases for Ledger Live, plus a 'What's new' support page."
-    },
-    {
-      "walletId": "ledgerWallet",
-      "metricKey": "signing",
-      "path": "transparency.releaseTransparency.artifactSigning",
-      "decision": "yes",
-      "citationUrl": "https://www.ledger.com/academy/topics/ledgersolutions/is-ledger-open-source",
-      "explanation": "Ledger firmware/OS and apps are cryptographically signed and verified by the device's genuine check before install."
-    },
-    {
-      "walletId": "ledgerWallet",
-      "metricKey": "reproducible",
-      "path": "transparency.releaseTransparency.reproducibleBuilds",
+      "walletId": "family",
+      "metricKey": "ecoAptos",
+      "path": "product.supportedEcosystems.aptos",
       "decision": "no",
-      "citationUrl": "https://www.ledger.com/blog-ledger-is-95-opensource-why-not-100",
-      "explanation": "Ledger's Secure Element firmware is closed-source under STMicroelectronics NDA and is not published as reproducible builds."
+      "citationUrl": "https://family.co/faqs",
+      "explanation": "Family is Ethereum/EVM-only per its FAQs and makes no mention of Aptos support."
     },
     {
-      "walletId": "ngrave",
-      "metricKey": "usageAnalytics",
-      "path": "privacy.analytics.usage",
-      "decision": "yes",
-      "citationUrl": "https://apps.apple.com/us/app/ngrave-liquid-the-crypto-app/id1485844818",
-      "explanation": "Apple App Store privacy disclosure for NGRAVE LIQUID lists 'Product Interaction' and 'Usage Data' collected and used for Analytics."
-    },
-    {
-      "walletId": "ngrave",
-      "metricKey": "crashReports",
-      "path": "privacy.analytics.crashReports",
-      "decision": "yes",
-      "citationUrl": "https://apps.apple.com/us/app/ngrave-liquid-the-crypto-app/id1485844818",
-      "explanation": "The App Store privacy section lists Diagnostics including 'Crash Data' and 'Performance Data' collected and used for Analytics."
-    },
-    {
-      "walletId": "ngrave",
-      "metricKey": "stealth",
-      "path": "privacy.transactionPrivacy.STEALTH_ADDRESSES",
+      "walletId": "family",
+      "metricKey": "ecoCardano",
+      "path": "product.supportedEcosystems.cardano",
       "decision": "no",
-      "citationUrl": "https://ngrave.io/en/liquid",
-      "explanation": "NGRAVE ZERO/LIQUID supports only standard coins/EVM tokens with QR-signed transactions and offers no stealth-address receiving feature."
+      "citationUrl": "https://family.co/faqs",
+      "explanation": "Family supports only Ethereum mainnet and EVM L2s, with no Cardano support mentioned."
     },
     {
-      "walletId": "ngrave",
-      "metricKey": "privacyPools",
-      "path": "privacy.transactionPrivacy.PRIVACY_POOLS",
+      "walletId": "family",
+      "metricKey": "ecoXrp",
+      "path": "product.supportedEcosystems.xrp",
       "decision": "no",
-      "citationUrl": "https://ngrave.io/en/roadmap",
-      "explanation": "No NGRAVE documentation or roadmap mentions any Privacy Pools integration."
+      "citationUrl": "https://family.co/faqs",
+      "explanation": "Family is an Ethereum-focused EVM wallet and does not support the XRP Ledger."
     },
     {
-      "walletId": "ngrave",
-      "metricKey": "defaultTransfer",
-      "path": "privacy.transactionPrivacy.defaultFungibleTokenTransferMode",
-      "decision": "value",
-      "valueString": "PUBLIC",
-      "citationUrl": "https://ngrave.io/en/liquid",
-      "explanation": "Transfers are ordinary on-chain transactions signed offline and broadcast publicly, with no private-transfer mode described."
-    },
-    {
-      "walletId": "ngrave",
-      "metricKey": "approvals",
-      "path": "selfSovereignty.permissionsManagement",
+      "walletId": "family",
+      "metricKey": "obSeed",
+      "path": "product.onboardingFriction.seedPhraseRequiredAtSignup",
       "decision": "no",
-      "citationUrl": "https://support.ngrave.io/hc/en-us/articles/20045312764701-How-to-stay-safe-on-web3",
-      "explanation": "LIQUID provides no token-approval inspect/revoke feature; NGRAVE's own guidance directs users to external tools like revoke.cash."
+      "citationUrl": "https://family.co/blog/why-family-accounts",
+      "explanation": "Family creates accounts via email/SMS plus passkey/password and generates the seed phrase behind the scenes in memory, never exposing it to the user, so no seed phrase is forced at signup."
     },
     {
-      "walletId": "ngrave",
-      "metricKey": "selfBroadcast",
-      "path": "selfSovereignty.transactionSubmission.l1.selfBroadcastViaSelfHostedNode",
+      "walletId": "family",
+      "metricKey": "obPasskey",
+      "path": "product.onboardingFriction.passkeySignup",
+      "decision": "yes",
+      "citationUrl": "https://family.co/blog/why-family-accounts",
+      "explanation": "Family accounts are created and secured using a passkey (stored in the device's Secure Enclave/TPM), with passkey-only setup on iOS."
+    },
+    {
+      "walletId": "family",
+      "metricKey": "obGuest",
+      "path": "product.onboardingFriction.guestMode",
       "decision": "no",
-      "citationUrl": "https://ngrave.io/en/liquid",
-      "explanation": "The air-gapped ZERO relies on the LIQUID companion app to fetch data and broadcast transactions, with no option to connect a self-hosted node."
+      "citationUrl": "https://family.co/support/create-your-first-wallet",
+      "explanation": "Family requires creating an account with email or phone to get started, and even view-only wallet tracking is done from within an account, so there is no account-free guest mode."
     },
     {
-      "walletId": "ngrave",
-      "metricKey": "bridging",
-      "path": "chainAbstraction.bridging.builtInBridging",
+      "walletId": "family",
+      "metricKey": "obEmbedded",
+      "path": "product.onboardingFriction.embeddedWalletMode",
+      "decision": "yes",
+      "citationUrl": "https://family.co/blog/why-family-accounts",
+      "explanation": "Family generates the wallet's seed phrase behind the scenes via email/SMS + passkey login without exposing it, functioning as a no-seed embedded-style self-custodial wallet."
+    },
+    {
+      "walletId": "frame",
+      "metricKey": "pWeb",
+      "path": "product.platformCoverage.webApp",
       "decision": "no",
-      "citationUrl": "https://support.ngrave.io/hc/en-us/articles/17575955145117-What-is-swapping",
-      "explanation": "NGRAVE offers third-party Changelly swaps and MetaMask/Rabby integration but native in-app bridging is listed as still in development, not available."
+      "citationUrl": "https://docs.frame.sh/",
+      "explanation": "Frame is a desktop-native application (with a companion browser extension for connectivity) and offers no browser-based web app usable without installing software, per docs.frame.sh."
     },
     {
-      "walletId": "ngrave",
-      "metricKey": "globalValue",
-      "path": "chainAbstraction.crossChainBalances.globalAccountValue",
-      "decision": "yes",
-      "citationUrl": "https://ngrave.io/en/liquid",
-      "explanation": "LIQUID provides a real-time portfolio overview showing total account value across all supported coins and tokens."
-    },
-    {
-      "walletId": "ngrave",
-      "metricKey": "ens",
-      "path": "addressResolution.nonChainSpecificEnsResolution",
-      "decision": "yes",
-      "citationUrl": "https://ngrave.io/en/roadmap",
-      "explanation": "NGRAVE's roadmap lists 'Use ENS names in LIQUID' under Already Available features."
-    },
-    {
-      "walletId": "ngrave",
-      "metricKey": "changelog",
-      "path": "transparency.releaseTransparency.hasPublicChangelog",
-      "decision": "yes",
-      "citationUrl": "https://apps.apple.com/us/app/ngrave-liquid-the-crypto-app/id1485844818",
-      "explanation": "NGRAVE publishes versioned release notes/'What's New' for the LIQUID app on the app stores (e.g. v2.11.1 fixes)."
-    },
-    {
-      "walletId": "ngrave",
-      "metricKey": "signing",
-      "path": "transparency.releaseTransparency.artifactSigning",
-      "decision": "yes",
-      "citationUrl": "https://support.ngrave.io/hc/en-us/articles/9709388172061-How-safe-are-ZERO-firmware-updates",
-      "explanation": "NGRAVE states firmware updates are cryptographically checked and only installed if signed by NGRAVE."
-    },
-    {
-      "walletId": "ngrave",
-      "metricKey": "reproducible",
-      "path": "transparency.releaseTransparency.reproducibleBuilds",
+      "walletId": "frame",
+      "metricKey": "obPasskey",
+      "path": "product.onboardingFriction.passkeySignup",
       "decision": "no",
-      "citationUrl": "https://walletscrutiny.com/hardware/ngravezero/",
-      "explanation": "The ZERO firmware is proprietary/closed-source (WalletScrutiny/Walletbeat rate it non-FOSS with an empty public repo), so builds are not independently reproducible."
+      "citationUrl": "https://docs.frame.sh/docs/Getting%20Started/Basics/Account%20Setup/What%20is%20an%20Account/",
+      "explanation": "Frame's account setup supports only seed phrases, private keys, keystore files, and hardware signers (Ledger/Trezor/GridPlus), with no passkey/WebAuthn option documented."
     },
     {
-      "walletId": "onekey",
-      "metricKey": "usageAnalytics",
-      "path": "privacy.analytics.usage",
-      "decision": "yes",
-      "citationUrl": "https://help.onekey.so/en/articles/11461298-privacy-policy",
-      "explanation": "OneKey's privacy policy states it collects analytics data and uses third parties to analyze traffic, and a Privacy Guides community analysis documents mandatory, non-optional telemetry (device fingerprint/instanceId, IP, geolocation) fired on every app launch."
-    },
-    {
-      "walletId": "onekey",
-      "metricKey": "stealth",
-      "path": "privacy.transactionPrivacy.STEALTH_ADDRESSES",
+      "walletId": "frame",
+      "metricKey": "obEmail",
+      "path": "product.onboardingFriction.emailSignup",
       "decision": "no",
-      "citationUrl": "https://help.onekey.so/en/collections/13034364-onekey-app",
-      "explanation": "No OneKey documentation or product page indicates support for stealth-address receiving."
+      "citationUrl": "https://docs.frame.sh/docs/Getting%20Started/Basics/Account%20Setup/What%20is%20an%20Account/",
+      "explanation": "Frame provides no email-based signup; accounts are added only via seed phrase, private key, keystore file, or hardware signer."
     },
     {
-      "walletId": "onekey",
-      "metricKey": "privacyPools",
-      "path": "privacy.transactionPrivacy.PRIVACY_POOLS",
+      "walletId": "frame",
+      "metricKey": "obGuest",
+      "path": "product.onboardingFriction.guestMode",
       "decision": "no",
-      "citationUrl": "https://help.onekey.so/en/collections/13034364-onekey-app",
-      "explanation": "No OneKey documentation or product page indicates any Privacy Pools integration."
+      "citationUrl": "https://docs.frame.sh/docs/Getting%20Started/Basics/Account%20Setup/What%20is%20an%20Account/",
+      "explanation": "Frame requires importing/adding a signer to function and documents no guest/try-without-account mode."
     },
     {
-      "walletId": "onekey",
-      "metricKey": "defaultTransfer",
-      "path": "privacy.transactionPrivacy.defaultFungibleTokenTransferMode",
-      "decision": "value",
-      "valueString": "PUBLIC",
-      "citationUrl": "https://help.onekey.so/en/articles/11461145-send-and-receive-cryptos-in-onekey-app",
-      "explanation": "OneKey is a standard multi-chain wallet whose send flow broadcasts ordinary on-chain transactions with no private-transfer mode, so transfers are public by default."
-    },
-    {
-      "walletId": "onekey",
-      "metricKey": "approvals",
-      "path": "selfSovereignty.permissionsManagement",
+      "walletId": "frame",
+      "metricKey": "obEmbedded",
+      "path": "product.onboardingFriction.embeddedWalletMode",
       "decision": "no",
-      "citationUrl": "https://onekey.so/blog/ecosystem/ethereum-token-approvals-explained/",
-      "explanation": "OneKey provides ABI parsing and approval prompts at signing time but its own guidance directs users to third-party tools like Revoke.cash rather than an in-app approval inspection/revoke manager."
+      "citationUrl": "https://docs.frame.sh/docs/Getting%20Started/Basics/Account%20Setup/What%20is%20an%20Account/",
+      "explanation": "Frame is a self-custody signer manager (seed/private key/keystore/hardware) with no embedded/MPC/smart-account or social-login wallet mode."
     },
     {
-      "walletId": "onekey",
-      "metricKey": "selfBroadcast",
-      "path": "selfSovereignty.transactionSubmission.l1.selfBroadcastViaSelfHostedNode",
-      "decision": "yes",
-      "citationUrl": "https://help.onekey.so/hc/en-us/articles/9280841182479-Manage-RPCs-in-OneKey-App-Switch-Customize",
-      "explanation": "OneKey App supports adding a custom RPC per network that replaces OneKey's default node, allowing broadcast via a self-hosted node."
-    },
-    {
-      "walletId": "onekey",
-      "metricKey": "bridging",
-      "path": "chainAbstraction.bridging.builtInBridging",
-      "decision": "yes",
-      "citationUrl": "https://help.onekey.so/hc/en-us/articles/10125064370319-Introducing-OneKey-App-Swap",
-      "explanation": "OneKey App unifies Swap and Bridge into one aggregator supporting cross-chain transfers across 20+ blockchains."
-    },
-    {
-      "walletId": "onekey",
-      "metricKey": "globalValue",
-      "path": "chainAbstraction.crossChainBalances.globalAccountValue",
+      "walletId": "gemwallet",
+      "metricKey": "pWeb",
+      "path": "product.platformCoverage.webApp",
       "decision": "no",
-      "citationUrl": "https://help.onekey.so/en/articles/11461144-view-and-customize-asset-panel-in-onekey-app",
-      "explanation": "The OneKey asset panel shows the value of assets under the currently selected wallet account/chain and requires switching chain and account to navigate, rather than presenting a single unified cross-chain account total."
+      "citationUrl": "https://docs.gemwallet.com/get-started/",
+      "explanation": "Gem Wallet's official site and Get Started docs list only iOS and Android native apps with no browser-based web app usable without installing."
     },
     {
-      "walletId": "onekey",
-      "metricKey": "changelog",
-      "path": "transparency.releaseTransparency.hasPublicChangelog",
-      "decision": "yes",
-      "citationUrl": "https://help.onekey.so/en/articles/11461394-firmware-changelog-for-onekey-pro",
-      "explanation": "OneKey publishes a public firmware changelog for OneKey Pro with dated version release notes for system and Bluetooth firmware."
-    },
-    {
-      "walletId": "onekey",
-      "metricKey": "signing",
-      "path": "transparency.releaseTransparency.artifactSigning",
-      "decision": "yes",
-      "citationUrl": "https://help.onekey.so/hc/en-us/articles/9613904055311-Authenticate-the-consistency-of-firmware-files-with-the-open-source-code-released-by-OneKey",
-      "explanation": "OneKey firmware artifacts are built via GitHub CI and signed by the OneKey team before release, with documented verification of the signature."
-    },
-    {
-      "walletId": "trezor",
-      "metricKey": "usageAnalytics",
-      "path": "privacy.analytics.usage",
-      "decision": "yes",
-      "citationUrl": "https://docs.trezor.io/trezor-suite/analytics/",
-      "explanation": "Trezor Suite collects usage/functional analytics (logged to an AWS S3 backend) when data collection is enabled, a setting prompted on first run and toggleable in Settings."
-    },
-    {
-      "walletId": "trezor",
-      "metricKey": "crashReports",
-      "path": "privacy.analytics.crashReports",
-      "decision": "yes",
-      "citationUrl": "https://docs.trezor.io/trezor-suite/analytics/sentry.html",
-      "explanation": "Trezor Suite sends error/crash reports to Sentry.io to track errors and app performance for users who have anonymous data collection enabled."
-    },
-    {
-      "walletId": "trezor",
-      "metricKey": "stealth",
-      "path": "privacy.transactionPrivacy.STEALTH_ADDRESSES",
+      "walletId": "gemwallet",
+      "metricKey": "obPasskey",
+      "path": "product.onboardingFriction.passkeySignup",
       "decision": "no",
-      "citationUrl": "https://trezor.io/trezor-suite",
-      "explanation": "No Trezor Suite or firmware documentation references stealth-address receiving; the feature is absent."
+      "citationUrl": "https://docs.gemwallet.com/get-started/",
+      "explanation": "Onboarding uses a BIP-39 secret recovery phrase exclusively, with no passkey/WebAuthn option mentioned in the setup docs."
     },
     {
-      "walletId": "trezor",
-      "metricKey": "privacyPools",
-      "path": "privacy.transactionPrivacy.PRIVACY_POOLS",
+      "walletId": "gemwallet",
+      "metricKey": "obEmail",
+      "path": "product.onboardingFriction.emailSignup",
       "decision": "no",
-      "citationUrl": "https://github.com/trezor/trezor-suite",
-      "explanation": "There is no Privacy Pools integration in Trezor Suite documentation, changelogs, or the trezor-suite repository."
+      "citationUrl": "https://gemwallet.com/",
+      "explanation": "The official site states installation requires 'no email or phone number required,' relying solely on a secret recovery phrase."
     },
     {
-      "walletId": "trezor",
-      "metricKey": "defaultTransfer",
-      "path": "privacy.transactionPrivacy.defaultFungibleTokenTransferMode",
-      "decision": "value",
-      "valueString": "PUBLIC",
-      "citationUrl": "https://trezor.io/guides/sending-receiving-staking-funds/sending-receiving/send-crypto-in-trezor-suite",
-      "explanation": "Trezor Suite sends standard on-chain transactions with no shielded/private transfer mode, so token transfers are public."
+      "walletId": "gemwallet",
+      "metricKey": "obGuest",
+      "path": "product.onboardingFriction.guestMode",
+      "decision": "yes",
+      "citationUrl": "https://docs.gemwallet.com/guides/watch-wallet/",
+      "explanation": "Gem Wallet offers a Watch Wallet mode where a user pastes an address to monitor balances and transactions without a seed phrase or creating a key-holding wallet."
     },
     {
-      "walletId": "trezor",
-      "metricKey": "approvals",
-      "path": "selfSovereignty.permissionsManagement",
+      "walletId": "gemwallet",
+      "metricKey": "obEmbedded",
+      "path": "product.onboardingFriction.embeddedWalletMode",
       "decision": "no",
-      "citationUrl": "https://forum.trezor.io/t/smart-contract-revoker-viewer-manager-in-trezor-suite/12001",
-      "explanation": "Trezor Suite has no general native token-approval inspector/revoker (only a narrow revoke step inside the mobile DEX swap flow) and users are directed to third-party tools for allowance management."
+      "citationUrl": "https://gemwallet.com/",
+      "explanation": "Gem Wallet is a self-custodial seed-phrase wallet with no MPC/embedded/social-login smart-account mode; the site emphasizes securely saving your own recovery phrase."
     },
     {
-      "walletId": "trezor",
-      "metricKey": "selfBroadcast",
-      "path": "selfSovereignty.transactionSubmission.l1.selfBroadcastViaSelfHostedNode",
+      "walletId": "imtoken",
+      "metricKey": "pWeb",
+      "path": "product.platformCoverage.webApp",
       "decision": "yes",
-      "citationUrl": "https://trezor.io/learn/security-privacy/how-trezor-keeps-you-safe/connect-trezor-suite-to-your-node",
-      "explanation": "Trezor Suite (desktop) lets users connect to their own full node via a custom Blockbook or Electrum backend, broadcasting through self-hosted infrastructure."
+      "citationUrl": "https://support.token.im/hc/en-us/articles/39943011404441-Announcement-imToken-Web-Beta-is-Live",
+      "explanation": "imToken Web (web.token.im) is a non-custodial browser-based web app usable directly in a browser with quick passkey account creation, no native app or extension install required."
     },
     {
-      "walletId": "trezor",
-      "metricKey": "bridging",
-      "path": "chainAbstraction.bridging.builtInBridging",
+      "walletId": "imtoken",
+      "metricKey": "ecoSolana",
+      "path": "product.supportedEcosystems.solana",
       "decision": "no",
-      "citationUrl": "https://trezor.io/guides/sending-receiving-staking-funds/trading-crypto-in-trezor-suite/swap-crypto-in-trezor-suite",
-      "explanation": "Trezor Suite offers swaps only via third-party CEX/DEX partners (DEX limited to same-chain EVM), with no native cross-chain bridging engine."
+      "citationUrl": "https://support.token.im/hc/en-us/articles/115001657313-Which-chains-and-tokens-does-imToken-support",
+      "explanation": "imToken's official supported-chains list (Ethereum, Bitcoin, Cosmos, Vaulta, TRON, Polkadot, TON, etc.) does not include Solana."
     },
     {
-      "walletId": "trezor",
-      "metricKey": "globalValue",
-      "path": "chainAbstraction.crossChainBalances.globalAccountValue",
+      "walletId": "imtoken",
+      "metricKey": "ecoCosmos",
+      "path": "product.supportedEcosystems.cosmos",
       "decision": "yes",
-      "citationUrl": "https://trezor.io/guides/trezor-suite/getting-to-know-trezor-suite",
-      "explanation": "The Trezor Suite dashboard shows an aggregate portfolio value combining balances across all enabled coins and accounts with a historical chart."
+      "citationUrl": "https://support.token.im/hc/en-us/articles/115001657313-Which-chains-and-tokens-does-imToken-support",
+      "explanation": "imToken natively supports the Cosmos ecosystem, listing Cosmos (ATOM) and Osmosis among its supported blockchains."
     },
     {
-      "walletId": "trezor",
-      "metricKey": "changelog",
-      "path": "transparency.releaseTransparency.hasPublicChangelog",
-      "decision": "yes",
-      "citationUrl": "https://trezor.io/other/product-updates/trezor-firmware-changelog-all-versions-and-release-dates",
-      "explanation": "Trezor publishes public changelogs and release notes for both Suite (GitHub Releases) and firmware."
+      "walletId": "imtoken",
+      "metricKey": "ecoSui",
+      "path": "product.supportedEcosystems.sui",
+      "decision": "no",
+      "citationUrl": "https://support.token.im/hc/en-us/articles/115001657313-Which-chains-and-tokens-does-imToken-support",
+      "explanation": "Sui is not present in imToken's official supported-chains list."
     },
     {
-      "walletId": "trezor",
-      "metricKey": "signing",
-      "path": "transparency.releaseTransparency.artifactSigning",
-      "decision": "yes",
-      "citationUrl": "https://docs.trezor.io/trezor-firmware/common/reproducible-build.html",
-      "explanation": "Official Trezor firmware images are cryptographically signed, requiring at least two independent key-holder signatures."
+      "walletId": "imtoken",
+      "metricKey": "ecoAptos",
+      "path": "product.supportedEcosystems.aptos",
+      "decision": "no",
+      "citationUrl": "https://support.token.im/hc/en-us/articles/115001657313-Which-chains-and-tokens-does-imToken-support",
+      "explanation": "Aptos is not present in imToken's official supported-chains list."
     },
     {
-      "walletId": "trezor",
-      "metricKey": "reproducible",
-      "path": "transparency.releaseTransparency.reproducibleBuilds",
+      "walletId": "imtoken",
+      "metricKey": "ecoCardano",
+      "path": "product.supportedEcosystems.cardano",
+      "decision": "no",
+      "citationUrl": "https://support.token.im/hc/en-us/articles/115001657313-Which-chains-and-tokens-does-imToken-support",
+      "explanation": "Cardano is not present in imToken's official supported-chains list."
+    },
+    {
+      "walletId": "imtoken",
+      "metricKey": "ecoXrp",
+      "path": "product.supportedEcosystems.xrp",
+      "decision": "no",
+      "citationUrl": "https://support.token.im/hc/en-us/articles/115001657313-Which-chains-and-tokens-does-imToken-support",
+      "explanation": "The XRP Ledger is not present in imToken's official supported-chains list."
+    },
+    {
+      "walletId": "imtoken",
+      "metricKey": "obPasskey",
+      "path": "product.onboardingFriction.passkeySignup",
       "decision": "yes",
-      "citationUrl": "https://docs.trezor.io/trezor-firmware/common/reproducible-build.html",
-      "explanation": "Trezor firmware builds are reproducible; users can rebuild via Docker and verify the binary is identical to the official image except for the signature bytes."
+      "citationUrl": "https://support.token.im/hc/en-us/articles/40570905689881-How-to-Use-imToken-Web",
+      "explanation": "imToken Web onboarding lets users 'Create account with passkey' using the WebAuthn standard and device secure chip for one-tap login."
+    },
+    {
+      "walletId": "imtoken",
+      "metricKey": "obEmail",
+      "path": "product.onboardingFriction.emailSignup",
+      "decision": "no",
+      "citationUrl": "https://support.token.im/hc/en-us/articles/40570905689881-How-to-Use-imToken-Web",
+      "explanation": "imToken Web account creation is passkey-based with an account alias; no email-signup option is documented."
+    },
+    {
+      "walletId": "imtoken",
+      "metricKey": "obEmbedded",
+      "path": "product.onboardingFriction.embeddedWalletMode",
+      "decision": "yes",
+      "citationUrl": "https://support.token.im/hc/en-us/articles/53273841041049-Web3-Without-Mnemonics-How-AA-Passkey-Could-Shape-Crypto-s-Next-Decade",
+      "explanation": "imToken Web is powered by Passkey and Account Abstraction, providing a smart-account wallet created behind the scenes with no private key or mnemonic backup required."
+    },
+    {
+      "walletId": "metamask",
+      "metricKey": "obPasskey",
+      "path": "product.onboardingFriction.passkeySignup",
+      "decision": "no",
+      "citationUrl": "https://support.metamask.io/start/creating-a-new-wallet/",
+      "explanation": "The consumer MetaMask wallet only offers Google/Apple/Telegram social login or SRP for signup; passkeys are used only for biometric unlock of an existing wallet, not for creating/accessing a wallet, per MetaMask support docs (https://support.metamask.io/configure/wallet/social-login/)."
+    },
+    {
+      "walletId": "metamask",
+      "metricKey": "obEmail",
+      "path": "product.onboardingFriction.emailSignup",
+      "decision": "no",
+      "citationUrl": "https://support.metamask.io/configure/wallet/social-login/",
+      "explanation": "MetaMask's consumer wallet creation supports SRP and Google/Apple/Telegram social login only, with no email signup option (email passwordless login exists only in the developer Embedded Wallets SDK, not the shipping consumer wallet), per MetaMask support docs (https://support.metamask.io/start/creating-a-new-wallet/)."
+    },
+    {
+      "walletId": "metamask",
+      "metricKey": "obGuest",
+      "path": "product.onboardingFriction.guestMode",
+      "decision": "no",
+      "citationUrl": "https://support.metamask.io/start/creating-a-new-wallet/",
+      "explanation": "MetaMask's new-wallet documentation describes only SRP-based and social-login wallet creation with no guest/try-without-wallet mode."
+    },
+    {
+      "walletId": "metamask",
+      "metricKey": "obEmbedded",
+      "path": "product.onboardingFriction.embeddedWalletMode",
+      "decision": "yes",
+      "citationUrl": "https://metamask.io/news/introducing-metamask-social-login",
+      "explanation": "MetaMask's consumer social login (Google/Apple/Telegram) generates the SRP 'under the hood' and backs it up online via key sharding across nodes so the user never manually handles a seed phrase, per MetaMask's announcement and support docs."
+    },
+    {
+      "walletId": "mtpelerin",
+      "metricKey": "pWeb",
+      "path": "product.platformCoverage.webApp",
+      "decision": "yes",
+      "citationUrl": "https://www.mtpelerin.com/bridge-wallet",
+      "explanation": "The official Bridge Wallet page offers a 'continue on web / Launch app' option pointing to app.mtpelerin.com, a browser-based self-custodial wallet usable without installing the mobile app."
+    },
+    {
+      "walletId": "mtpelerin",
+      "metricKey": "ecoSolana",
+      "path": "product.supportedEcosystems.solana",
+      "decision": "no",
+      "citationUrl": "https://www.mtpelerin.com/bridge-wallet",
+      "explanation": "Mt Pelerin's official supported-network list (Bitcoin, Lightning, Ethereum, Arbitrum, Avalanche, Base, BNB Chain, Celo, Gnosis, Optimism, Polygon, Rootstock, Sonic, Tempo, Tezos, zkSync) does not include Solana."
+    },
+    {
+      "walletId": "mtpelerin",
+      "metricKey": "ecoSui",
+      "path": "product.supportedEcosystems.sui",
+      "decision": "no",
+      "citationUrl": "https://www.mtpelerin.com/bridge-wallet",
+      "explanation": "Sui is not in Mt Pelerin's official list of supported networks for Bridge Wallet."
+    },
+    {
+      "walletId": "mtpelerin",
+      "metricKey": "ecoAptos",
+      "path": "product.supportedEcosystems.aptos",
+      "decision": "no",
+      "citationUrl": "https://www.mtpelerin.com/bridge-wallet",
+      "explanation": "Aptos is not in Mt Pelerin's official list of supported networks for Bridge Wallet."
+    },
+    {
+      "walletId": "mtpelerin",
+      "metricKey": "ecoCardano",
+      "path": "product.supportedEcosystems.cardano",
+      "decision": "no",
+      "citationUrl": "https://www.mtpelerin.com/bridge-wallet",
+      "explanation": "Cardano is not in Mt Pelerin's official list of supported networks for Bridge Wallet."
+    },
+    {
+      "walletId": "mtpelerin",
+      "metricKey": "ecoXrp",
+      "path": "product.supportedEcosystems.xrp",
+      "decision": "no",
+      "citationUrl": "https://www.mtpelerin.com/bridge-wallet",
+      "explanation": "The XRP Ledger is not in Mt Pelerin's official list of supported networks (which covers Bitcoin, Tezos and EVM chains only)."
+    },
+    {
+      "walletId": "mtpelerin",
+      "metricKey": "obPasskey",
+      "path": "product.onboardingFriction.passkeySignup",
+      "decision": "no",
+      "citationUrl": "https://www.mtpelerin.com/bridge-wallet",
+      "explanation": "Bridge Wallet onboarding is built around a self-custodial secret/seed phrase with password and biometric/PIN unlock; official support and product pages describe no passkey/WebAuthn signup."
+    },
+    {
+      "walletId": "mtpelerin",
+      "metricKey": "obEmail",
+      "path": "product.onboardingFriction.emailSignup",
+      "decision": "no",
+      "citationUrl": "https://www.mtpelerin.com/support",
+      "explanation": "Wallet creation is seed-phrase based and self-custodial; the email/SMS collected is for KYC identity verification to buy/sell crypto, not for creating or accessing the wallet."
+    },
+    {
+      "walletId": "mtpelerin",
+      "metricKey": "obEmbedded",
+      "path": "product.onboardingFriction.embeddedWalletMode",
+      "decision": "no",
+      "citationUrl": "https://www.mtpelerin.com/bridge-wallet",
+      "explanation": "Bridge Wallet is explicitly fully self-custodial where the user holds their own secret phrase, with no no-seed embedded/MPC/smart-account wallet created via social/email login."
+    },
+    {
+      "walletId": "nufi",
+      "metricKey": "ecoCosmos",
+      "path": "product.supportedEcosystems.cosmos",
+      "decision": "no",
+      "citationUrl": "https://nu.fi/chains/support",
+      "explanation": "NuFi's supported blockchains page lists Bitcoin, Ethereum, Cardano, Solana, Tron, Flow and various EVM/SVM chains but no Cosmos SDK/IBC chains."
+    },
+    {
+      "walletId": "nufi",
+      "metricKey": "ecoTon",
+      "path": "product.supportedEcosystems.ton",
+      "decision": "no",
+      "citationUrl": "https://nu.fi/chains/support",
+      "explanation": "NuFi's supported blockchains page does not list TON among its supported networks."
+    },
+    {
+      "walletId": "nufi",
+      "metricKey": "ecoSui",
+      "path": "product.supportedEcosystems.sui",
+      "decision": "no",
+      "citationUrl": "https://nu.fi/chains/support",
+      "explanation": "NuFi's supported blockchains page does not list Sui among its supported networks."
+    },
+    {
+      "walletId": "nufi",
+      "metricKey": "ecoAptos",
+      "path": "product.supportedEcosystems.aptos",
+      "decision": "no",
+      "citationUrl": "https://nu.fi/chains/support",
+      "explanation": "NuFi's supported blockchains page does not list Aptos among its supported networks."
+    },
+    {
+      "walletId": "nufi",
+      "metricKey": "ecoXrp",
+      "path": "product.supportedEcosystems.xrp",
+      "decision": "no",
+      "citationUrl": "https://nu.fi/chains/support",
+      "explanation": "NuFi's supported blockchains page does not list the XRP Ledger among its supported networks."
+    },
+    {
+      "walletId": "nufi",
+      "metricKey": "obEmbedded",
+      "path": "product.onboardingFriction.embeddedWalletMode",
+      "decision": "yes",
+      "citationUrl": "https://support.nu.fi/support/solutions/articles/80001070723-create-a-seedless-wallet-using-a-social-account-like-google",
+      "explanation": "NuFi creates a seedless non-custodial wallet behind the scenes via social login using Web3Auth, splitting the private key into shards stored across a decentralized network (MPC-style embedded wallet)."
+    },
+    {
+      "walletId": "okx",
+      "metricKey": "ecoAptos",
+      "path": "product.supportedEcosystems.aptos",
+      "decision": "yes",
+      "citationUrl": "https://web3.okx.com/wallet/aptos",
+      "explanation": "OKX Wallet has a dedicated Aptos (APT) wallet page and help articles for using the Aptos network to store, send and receive APT across app, web and extension."
+    },
+    {
+      "walletId": "okx",
+      "metricKey": "ecoCardano",
+      "path": "product.supportedEcosystems.cardano",
+      "decision": "yes",
+      "citationUrl": "https://web3.okx.com/wallet/cardano",
+      "explanation": "OKX Wallet provides a dedicated Cardano (ADA) wallet page to securely store, send and receive ADA on the Cardano network."
+    },
+    {
+      "walletId": "okx",
+      "metricKey": "ecoXrp",
+      "path": "product.supportedEcosystems.xrp",
+      "decision": "yes",
+      "citationUrl": "https://web3.okx.com/wallet/xrp-ledger",
+      "explanation": "OKX Wallet has a dedicated XRP Ledger wallet page to store, send and receive XRP natively."
+    },
+    {
+      "walletId": "okx",
+      "metricKey": "obEmail",
+      "path": "product.onboardingFriction.emailSignup",
+      "decision": "yes",
+      "citationUrl": "https://tradersunion.com/news/brokers-news/show/2740032-okx-wallet-enables-easier-sign-ins/",
+      "explanation": "OKX introduced seed-phrase-free onboarding letting users create/access a wallet by signing in with Email (as well as Google/Apple) across app, extension and web."
+    },
+    {
+      "walletId": "okx",
+      "metricKey": "obGuest",
+      "path": "product.onboardingFriction.guestMode",
+      "decision": "yes",
+      "citationUrl": "https://www.okx.com/en-us/help/okx-wallet-faqs",
+      "explanation": "OKX offers a guest mode on the home page (desktop or mobile browser) to explore wallet features and view a sample wallet without creating one first."
+    },
+    {
+      "walletId": "okx",
+      "metricKey": "obEmbedded",
+      "path": "product.onboardingFriction.embeddedWalletMode",
+      "decision": "yes",
+      "citationUrl": "https://tradersunion.com/news/brokers-news/show/2740032-okx-wallet-enables-easier-sign-ins/",
+      "explanation": "OKX's social/email login creates a no-seed wallet whose private key is generated and stored in a Trusted Execution Environment (TEE) behind the scenes, with optional export/mnemonic conversion."
+    },
+    {
+      "walletId": "phantom",
+      "metricKey": "pWeb",
+      "path": "product.platformCoverage.webApp",
+      "decision": "no",
+      "citationUrl": "https://help.phantom.com/hc/en-us/articles/4412436271635-Set-up-the-Phantom-browser-extension",
+      "explanation": "Phantom ships only as a browser extension and mobile app with no standalone browser-based web app usable without installing the extension, per its official setup docs and store listings."
+    },
+    {
+      "walletId": "phantom",
+      "metricKey": "obSeed",
+      "path": "product.onboardingFriction.seedPhraseRequiredAtSignup",
+      "decision": "no",
+      "citationUrl": "https://phantom.com/learn/blog/deep-dive-log-in-to-phantom-with-email",
+      "explanation": "Phantom offers a seedless wallet created with Google/Apple login plus a 4-digit PIN where no secret recovery phrase is shown or handled by the user at signup."
+    },
+    {
+      "walletId": "phantom",
+      "metricKey": "obPasskey",
+      "path": "product.onboardingFriction.passkeySignup",
+      "decision": "no",
+      "citationUrl": "https://phantom.com/learn/blog/create-a-wallet-with-your-email",
+      "explanation": "Phantom's seedless onboarding uses Google/Apple OAuth plus a PIN rather than a WebAuthn/FIDO passkey, and no passkey signup option is documented."
+    },
+    {
+      "walletId": "phantom",
+      "metricKey": "obEmail",
+      "path": "product.onboardingFriction.emailSignup",
+      "decision": "yes",
+      "citationUrl": "https://phantom.com/learn/blog/create-a-wallet-with-your-email",
+      "explanation": "Phantom lets users create a wallet via 'Continue with Email' (backed by Google/Apple account) plus a 4-digit PIN, as described in its official email wallet blog and help docs."
+    },
+    {
+      "walletId": "pillarx",
+      "metricKey": "ecoSui",
+      "path": "product.supportedEcosystems.sui",
+      "decision": "no",
+      "citationUrl": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+      "explanation": "PillarX is an EVM-only smart-contract wallet supporting Ethereum, Polygon, Base, BNB, Optimism and Arbitrum, with no mention of Sui in its App Store listing or official materials."
+    },
+    {
+      "walletId": "pillarx",
+      "metricKey": "ecoAptos",
+      "path": "product.supportedEcosystems.aptos",
+      "decision": "no",
+      "citationUrl": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+      "explanation": "PillarX supports only EVM networks per its App Store listing and official site, with no Aptos support referenced anywhere."
+    },
+    {
+      "walletId": "pillarx",
+      "metricKey": "ecoCardano",
+      "path": "product.supportedEcosystems.cardano",
+      "decision": "no",
+      "citationUrl": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+      "explanation": "PillarX is a multichain EVM wallet (Ethereum, Polygon, Base, BNB, Optimism, Arbitrum, etc.) and no Cardano support is mentioned in its App Store listing or blog."
+    },
+    {
+      "walletId": "pillarx",
+      "metricKey": "ecoXrp",
+      "path": "product.supportedEcosystems.xrp",
+      "decision": "no",
+      "citationUrl": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+      "explanation": "PillarX supports only EVM-compatible chains and makes no reference to the XRP Ledger in its App Store listing or official materials."
+    },
+    {
+      "walletId": "pillarx",
+      "metricKey": "obPasskey",
+      "path": "product.onboardingFriction.passkeySignup",
+      "decision": "no",
+      "citationUrl": "https://blog.pillarx.app/account-abstraction-and-chain-abstraction-the-benefits-for-pillarx-users/",
+      "explanation": "PillarX's own blog lists passkeys, MFA and session keys as upcoming security features rather than currently shipping, indicating passkey signup is not yet available."
+    },
+    {
+      "walletId": "pillarx",
+      "metricKey": "obEmbedded",
+      "path": "product.onboardingFriction.embeddedWalletMode",
+      "decision": "yes",
+      "citationUrl": "https://blog.pillarx.app/account-abstraction-and-chain-abstraction-the-benefits-for-pillarx-users/",
+      "explanation": "PillarX uses Etherspot account abstraction so users log in with social/email and get a smart account deployed in the background without seed phrases, i.e. an embedded/smart-account wallet."
+    },
+    {
+      "walletId": "rabby",
+      "metricKey": "pWeb",
+      "path": "product.platformCoverage.webApp",
+      "decision": "no",
+      "citationUrl": "https://allcryptowallets.org/wallets/rabby",
+      "explanation": "Rabby is distributed only as a browser extension (Chrome/Firefox/Edge), desktop apps (Windows/Mac), and mobile apps (iOS/Android), with no browser-based web app usable without installing something, per its platform listings."
+    },
+    {
+      "walletId": "rabby",
+      "metricKey": "obPasskey",
+      "path": "product.onboardingFriction.passkeySignup",
+      "decision": "no",
+      "citationUrl": "https://www.coingecko.com/learn/how-to-use-rabby-wallet",
+      "explanation": "Rabby onboarding creates a wallet via a password and seed phrase (or import), with no passkey/WebAuthn signup option described in setup guides."
+    },
+    {
+      "walletId": "rabby",
+      "metricKey": "obGuest",
+      "path": "product.onboardingFriction.guestMode",
+      "decision": "no",
+      "citationUrl": "https://www.coingecko.com/learn/how-to-use-rabby-wallet",
+      "explanation": "Rabby's setup requires creating or importing a wallet (password + seed phrase) with no guest mode to try the app without a wallet first, though a watch-only address feature exists after setup."
+    },
+    {
+      "walletId": "rainbow",
+      "metricKey": "pWeb",
+      "path": "product.platformCoverage.webApp",
+      "decision": "no",
+      "citationUrl": "https://rainbow.me/",
+      "explanation": "Rainbow ships an iOS/Android app and a browser extension only; the official site and store listings offer no standalone browser web app usable without installing the extension."
+    },
+    {
+      "walletId": "rainbow",
+      "metricKey": "ecoBitcoin",
+      "path": "product.supportedEcosystems.bitcoin",
+      "decision": "no",
+      "citationUrl": "https://rainbow.me/support/app/supported-networks",
+      "explanation": "No official or secondary source lists native BTC support; Rainbow's chain coverage is EVM plus Solana/Sui/Monad, and reviews explicitly note Bitcoin is not supported."
+    },
+    {
+      "walletId": "rainbow",
+      "metricKey": "ecoCosmos",
+      "path": "product.supportedEcosystems.cosmos",
+      "decision": "no",
+      "citationUrl": "https://rainbow.me/support/app/supported-networks",
+      "explanation": "No source indicates Cosmos SDK/IBC support; Rainbow supports EVM chains plus Solana, Sui, and Monad only."
+    },
+    {
+      "walletId": "rainbow",
+      "metricKey": "ecoTon",
+      "path": "product.supportedEcosystems.ton",
+      "decision": "no",
+      "citationUrl": "https://rainbow.me/support/app/supported-networks",
+      "explanation": "No source indicates TON support; Rainbow's ecosystems are EVM plus Solana, Sui, and Monad."
+    },
+    {
+      "walletId": "rainbow",
+      "metricKey": "ecoAptos",
+      "path": "product.supportedEcosystems.aptos",
+      "decision": "no",
+      "citationUrl": "https://rainbow.me/support/app/supported-networks",
+      "explanation": "No reliable source lists Aptos support; only EVM chains plus Solana, Sui, and Monad are named."
+    },
+    {
+      "walletId": "rainbow",
+      "metricKey": "ecoCardano",
+      "path": "product.supportedEcosystems.cardano",
+      "decision": "no",
+      "citationUrl": "https://rainbow.me/support/app/supported-networks",
+      "explanation": "No source indicates Cardano support; Rainbow supports EVM chains plus Solana, Sui, and Monad only."
+    },
+    {
+      "walletId": "rainbow",
+      "metricKey": "ecoXrp",
+      "path": "product.supportedEcosystems.xrp",
+      "decision": "no",
+      "citationUrl": "https://rainbow.me/support/app/supported-networks",
+      "explanation": "No source indicates XRP Ledger support; Rainbow's supported ecosystems are EVM plus Solana, Sui, and Monad."
+    },
+    {
+      "walletId": "rainbow",
+      "metricKey": "obPasskey",
+      "path": "product.onboardingFriction.passkeySignup",
+      "decision": "no",
+      "citationUrl": "https://rainbow.me/en/support/extension/get-started-with-the-rainbow-extension",
+      "explanation": "Rainbow onboarding generates an HD seed-phrase wallet secured by a local password; no passkey/WebAuthn signup is documented."
+    },
+    {
+      "walletId": "rainbow",
+      "metricKey": "obEmail",
+      "path": "product.onboardingFriction.emailSignup",
+      "decision": "no",
+      "citationUrl": "https://rainbow.me/en/support/extension/get-started-with-the-rainbow-extension",
+      "explanation": "Rainbow creates a self-custodial seed-phrase wallet with no email-based account creation option in any documented onboarding flow."
+    },
+    {
+      "walletId": "rainbow",
+      "metricKey": "obGuest",
+      "path": "product.onboardingFriction.guestMode",
+      "decision": "yes",
+      "citationUrl": "https://apps.apple.com/us/app/rainbow-ethereum-wallet/id1457119021",
+      "explanation": "Rainbow offers a watch/impersonation mode letting users follow and view any public address in read-only mode without creating a wallet first."
+    },
+    {
+      "walletId": "rainbow",
+      "metricKey": "obEmbedded",
+      "path": "product.onboardingFriction.embeddedWalletMode",
+      "decision": "no",
+      "citationUrl": "https://rainbow.me/en/support/extension/get-started-with-the-rainbow-extension",
+      "explanation": "Rainbow is a self-custodial seed-phrase HD wallet with no no-seed embedded/MPC/smart-account mode created via social or email login."
+    },
+    {
+      "walletId": "safe",
+      "metricKey": "ecoSui",
+      "path": "product.supportedEcosystems.sui",
+      "decision": "no",
+      "citationUrl": "https://help.safe.global/en/articles/40795-supported-networks",
+      "explanation": "Safe is available on EVM chains only and its supported-networks documentation lists no non-EVM chains, so it does not natively support Sui."
+    },
+    {
+      "walletId": "safe",
+      "metricKey": "ecoAptos",
+      "path": "product.supportedEcosystems.aptos",
+      "decision": "no",
+      "citationUrl": "https://help.safe.global/en/articles/40795-supported-networks",
+      "explanation": "Safe is deployed only on EVM-compatible chains supporting the same opcodes as its contracts, which excludes the Move-based Aptos network."
+    },
+    {
+      "walletId": "safe",
+      "metricKey": "ecoCardano",
+      "path": "product.supportedEcosystems.cardano",
+      "decision": "no",
+      "citationUrl": "https://help.safe.global/en/articles/40795-supported-networks",
+      "explanation": "Safe supports EVM chains only, so it does not natively support the non-EVM Cardano network."
+    },
+    {
+      "walletId": "safe",
+      "metricKey": "ecoXrp",
+      "path": "product.supportedEcosystems.xrp",
+      "decision": "no",
+      "citationUrl": "https://help.safe.global/en/articles/40795-supported-networks",
+      "explanation": "Safe supports EVM chains only and lists no XRP Ledger deployment, so it does not natively support the XRP Ledger."
+    },
+    {
+      "walletId": "safe",
+      "metricKey": "obGuest",
+      "path": "product.onboardingFriction.guestMode",
+      "decision": "no",
+      "citationUrl": "https://help.safe.global/en/articles/40840-why-do-i-need-to-connect-a-signer-wallet",
+      "explanation": "Safe{Wallet} requires connecting a signer wallet (e.g. MetaMask, Ledger) as the first step before you can create or use a Safe, offering no guest/browse mode."
+    },
+    {
+      "walletId": "safe",
+      "metricKey": "obEmbedded",
+      "path": "product.onboardingFriction.embeddedWalletMode",
+      "decision": "no",
+      "citationUrl": "https://help.safe.global/en/articles/40840-why-do-i-need-to-connect-a-signer-wallet",
+      "explanation": "The consumer Safe{Wallet} product does not create a no-seed embedded/social-login wallet behind the scenes; it requires the user to bring an existing external signer wallet to control the Safe smart account."
+    },
+    {
+      "walletId": "trust-wallet",
+      "metricKey": "pWeb",
+      "path": "product.platformCoverage.webApp",
+      "decision": "no",
+      "citationUrl": "https://trustwallet.com/browser-extension",
+      "explanation": "Trust Wallet ships only as a mobile app (iOS/Android) and a browser extension for Chrome/Brave, with no browser-based web app usable without installing an extension or native app."
+    },
+    {
+      "walletId": "trust-wallet",
+      "metricKey": "obPasskey",
+      "path": "product.onboardingFriction.passkeySignup",
+      "decision": "yes",
+      "citationUrl": "https://trustwallet.com/blog/announcements/trust-wallet-swift-understanding-passkeys-and-recoverability",
+      "explanation": "Trust Wallet SWIFT automatically creates a passkey (FIDO/WebAuthn, biometric-based) when you create the wallet, using it instead of a password or seed phrase."
+    },
+    {
+      "walletId": "trust-wallet",
+      "metricKey": "obEmbedded",
+      "path": "product.onboardingFriction.embeddedWalletMode",
+      "decision": "yes",
+      "citationUrl": "https://trustwallet.com/blog/announcements/trust-wallet-swift-understanding-passkeys-and-recoverability",
+      "explanation": "Trust Wallet SWIFT is a smart-contract wallet powered by account abstraction with passkey-based creation that eliminates the seed phrase, providing a no-seed embedded/smart-account wallet."
+    },
+    {
+      "walletId": "uniswap-wallet",
+      "metricKey": "ecoBitcoin",
+      "path": "product.supportedEcosystems.bitcoin",
+      "decision": "no",
+      "citationUrl": "https://99bitcoins.com/bitcoin-wallet/uniswap-wallet-review/",
+      "explanation": "The Uniswap Wallet supports only EVM chains (Ethereum, Base, Arbitrum, etc.) and cannot hold or send native BTC."
+    },
+    {
+      "walletId": "uniswap-wallet",
+      "metricKey": "ecoCosmos",
+      "path": "product.supportedEcosystems.cosmos",
+      "decision": "no",
+      "citationUrl": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
+      "explanation": "The wallet is EVM-only and provides no Cosmos SDK/IBC chain support per its network documentation and reviews."
+    },
+    {
+      "walletId": "uniswap-wallet",
+      "metricKey": "ecoTon",
+      "path": "product.supportedEcosystems.ton",
+      "decision": "no",
+      "citationUrl": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
+      "explanation": "The wallet supports only EVM chains and has no TON network support."
+    },
+    {
+      "walletId": "uniswap-wallet",
+      "metricKey": "ecoSui",
+      "path": "product.supportedEcosystems.sui",
+      "decision": "no",
+      "citationUrl": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
+      "explanation": "The wallet supports only EVM chains and has no Sui support."
+    },
+    {
+      "walletId": "uniswap-wallet",
+      "metricKey": "ecoAptos",
+      "path": "product.supportedEcosystems.aptos",
+      "decision": "no",
+      "citationUrl": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
+      "explanation": "The wallet supports only EVM chains and has no Aptos support."
+    },
+    {
+      "walletId": "uniswap-wallet",
+      "metricKey": "ecoCardano",
+      "path": "product.supportedEcosystems.cardano",
+      "decision": "no",
+      "citationUrl": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
+      "explanation": "The wallet supports only EVM chains and has no Cardano support."
+    },
+    {
+      "walletId": "uniswap-wallet",
+      "metricKey": "ecoXrp",
+      "path": "product.supportedEcosystems.xrp",
+      "decision": "no",
+      "citationUrl": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
+      "explanation": "The wallet supports only EVM chains and has no XRP Ledger support."
+    },
+    {
+      "walletId": "uniswap-wallet",
+      "metricKey": "obPasskey",
+      "path": "product.onboardingFriction.passkeySignup",
+      "decision": "yes",
+      "citationUrl": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
+      "explanation": "The in-app wallet lets you spin up a wallet in a few clicks using FaceID, TouchID, or a passkey."
+    },
+    {
+      "walletId": "uniswap-wallet",
+      "metricKey": "obEmail",
+      "path": "product.onboardingFriction.emailSignup",
+      "decision": "yes",
+      "citationUrl": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
+      "explanation": "Users can add login methods including Google, Apple, or email for account access across devices."
+    },
+    {
+      "walletId": "uniswap-wallet",
+      "metricKey": "obEmbedded",
+      "path": "product.onboardingFriction.embeddedWalletMode",
+      "decision": "yes",
+      "citationUrl": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
+      "explanation": "The new in-app wallet is a no-seed embedded wallet powered by Privy with distributed key material, created via passkey/social/email login."
+    },
+    {
+      "walletId": "zerion",
+      "metricKey": "ecoBitcoin",
+      "path": "product.supportedEcosystems.bitcoin",
+      "decision": "no",
+      "citationUrl": "https://help.zerion.io/en/articles/8186606-supported-networks-on-zerion",
+      "explanation": "Zerion supports only wrapped Bitcoin (WBTC) on EVM/Solana and does not support native BTC mainnet storage/sending per its supported networks documentation."
+    },
+    {
+      "walletId": "zerion",
+      "metricKey": "ecoSolana",
+      "path": "product.supportedEcosystems.solana",
+      "decision": "yes",
+      "citationUrl": "https://help.zerion.io/en/articles/8186606-supported-networks-on-zerion",
+      "explanation": "Zerion natively supports Solana, letting users create/hold/manage Solana assets per its help center and Solana wallet page."
+    },
+    {
+      "walletId": "zerion",
+      "metricKey": "ecoCosmos",
+      "path": "product.supportedEcosystems.cosmos",
+      "decision": "no",
+      "citationUrl": "https://help.zerion.io/en/articles/8186606-supported-networks-on-zerion",
+      "explanation": "Zerion's supported networks are Ethereum/EVM chains, Solana, and TRON, with no Cosmos SDK/IBC chain support listed."
+    },
+    {
+      "walletId": "zerion",
+      "metricKey": "ecoTon",
+      "path": "product.supportedEcosystems.ton",
+      "decision": "no",
+      "citationUrl": "https://help.zerion.io/en/articles/8186606-supported-networks-on-zerion",
+      "explanation": "TON is not among Zerion's supported networks (Ethereum/EVM, Solana, TRON)."
+    },
+    {
+      "walletId": "zerion",
+      "metricKey": "ecoSui",
+      "path": "product.supportedEcosystems.sui",
+      "decision": "no",
+      "citationUrl": "https://help.zerion.io/en/articles/8186606-supported-networks-on-zerion",
+      "explanation": "Sui is not listed among Zerion's supported networks."
+    },
+    {
+      "walletId": "zerion",
+      "metricKey": "ecoAptos",
+      "path": "product.supportedEcosystems.aptos",
+      "decision": "no",
+      "citationUrl": "https://help.zerion.io/en/articles/8186606-supported-networks-on-zerion",
+      "explanation": "Aptos is not listed among Zerion's supported networks."
+    },
+    {
+      "walletId": "zerion",
+      "metricKey": "ecoCardano",
+      "path": "product.supportedEcosystems.cardano",
+      "decision": "no",
+      "citationUrl": "https://help.zerion.io/en/articles/8186606-supported-networks-on-zerion",
+      "explanation": "Cardano is not listed among Zerion's supported networks."
+    },
+    {
+      "walletId": "zerion",
+      "metricKey": "ecoXrp",
+      "path": "product.supportedEcosystems.xrp",
+      "decision": "no",
+      "citationUrl": "https://help.zerion.io/en/articles/8186606-supported-networks-on-zerion",
+      "explanation": "The XRP Ledger is not listed among Zerion's supported networks."
+    },
+    {
+      "walletId": "zerion",
+      "metricKey": "obPasskey",
+      "path": "product.onboardingFriction.passkeySignup",
+      "decision": "no",
+      "citationUrl": "https://help.zerion.io/en/articles/9657118-create-your-first-wallet-in-zerion",
+      "explanation": "Zerion's standard wallet creation uses a 12-word seed phrase with passcode/password unlock, not passkey signup (passkeys only appear in its separate Account Abstraction API/Safe tech)."
+    },
+    {
+      "walletId": "zerion",
+      "metricKey": "obEmail",
+      "path": "product.onboardingFriction.emailSignup",
+      "decision": "no",
+      "citationUrl": "https://help.zerion.io/en/articles/9657118-create-your-first-wallet-in-zerion",
+      "explanation": "The consumer Zerion app requires creating/importing a seed-phrase wallet and does not offer email signup in its onboarding flow."
+    },
+    {
+      "walletId": "zerion",
+      "metricKey": "obGuest",
+      "path": "product.onboardingFriction.guestMode",
+      "decision": "yes",
+      "citationUrl": "https://help.zerion.io/en/articles/5464678-what-is-the-difference-between-a-watch-address-and-a-connected-wallet",
+      "explanation": "Zerion lets users add a watch address to track any public wallet without creating or connecting their own wallet, viewing balances/positions."
+    },
+    {
+      "walletId": "zerion",
+      "metricKey": "obEmbedded",
+      "path": "product.onboardingFriction.embeddedWalletMode",
+      "decision": "no",
+      "citationUrl": "https://help.zerion.io/en/articles/9657118-create-your-first-wallet-in-zerion",
+      "explanation": "The Zerion consumer app creates a self-custody seed-phrase wallet with no embedded/MPC/social-login smart-account mode (such tech is offered only via its developer API, not the consumer app)."
+    },
+    {
+      "walletId": "zeus",
+      "metricKey": "pWeb",
+      "path": "product.platformCoverage.webApp",
+      "decision": "no",
+      "citationUrl": "https://github.com/greekfetacheese/zeus",
+      "explanation": "Zeus's README lists Supported Platforms as Windows and Linux desktop only, distributed as a downloadable executable, with no browser-based web app."
+    },
+    {
+      "walletId": "zeus",
+      "metricKey": "obSeed",
+      "path": "product.onboardingFriction.seedPhraseRequiredAtSignup",
+      "decision": "no",
+      "citationUrl": "https://github.com/greekfetacheese/zeus",
+      "explanation": "The README states Zeus is 'seedless' and onboarding only requires a username and password to derive the HD wallet, so no seed phrase is forced at signup (seed import is optional)."
+    },
+    {
+      "walletId": "zeus",
+      "metricKey": "obPasskey",
+      "path": "product.onboardingFriction.passkeySignup",
+      "decision": "no",
+      "citationUrl": "https://github.com/greekfetacheese/zeus",
+      "explanation": "The README describes signup as entering a username and password hashed with Argon2Id; there is no passkey/WebAuthn/FIDO option."
+    },
+    {
+      "walletId": "zeus",
+      "metricKey": "obGuest",
+      "path": "product.onboardingFriction.guestMode",
+      "decision": "no",
+      "citationUrl": "https://github.com/greekfetacheese/zeus",
+      "explanation": "The README states that the first time you run Zeus you are prompted to enter a username and password to derive a wallet, with no try-before-wallet guest mode."
+    },
+    {
+      "walletId": "zeus",
+      "metricKey": "obEmbedded",
+      "path": "product.onboardingFriction.embeddedWalletMode",
+      "decision": "no",
+      "citationUrl": "https://github.com/greekfetacheese/zeus",
+      "explanation": "Zeus derives a self-custodial HD wallet locally from a username/password via Argon2Id/BIP32 with no telemetry or third-party service, offering no social/email-login MPC or embedded smart-account wallet."
     }
   ]
 }

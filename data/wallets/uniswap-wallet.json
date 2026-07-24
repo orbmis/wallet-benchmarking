@@ -1,1243 +1,1343 @@
 {
-	"id": "uniswap-wallet",
-	"source": "software-wallets",
-	"export": "uniswapWallet",
-	"data": {
-		"metadata": {
-			"id": "uniswap-wallet",
-			"displayName": "Uniswap Wallet",
-			"tableName": "Uniswap",
-			"blurb": "The self-custody wallet for swapping, sending, bridging, and exploring apps across 16+ networks.",
-			"contributors": [
-				{
-					"$ref": "ren2140"
-				}
-			],
-			"iconExtension": "svg",
-			"lastUpdated": "2026-04-04",
-			"urls": {
-				"docs": [
-					"https://docs.uniswap.org/"
-				],
-				"extensions": [
-					"https://chromewebstore.google.com/detail/uniswap-extension/nnpmfplkfogfpmcngplhnbdnnilmcdcg"
-				],
-				"repositories": [
-					"https://github.com/Uniswap"
-				],
-				"socials": {
-					"discord": "https://discord.com/invite/uniswap",
-					"farcaster": "https://farcaster.xyz/uniswap",
-					"x": "https://x.com/Uniswap"
-				},
-				"websites": [
-					"https://wallet.uniswap.org/"
-				]
-			}
-		},
-		"features": {
-			"accountSupport": {
-				"defaultAccountType": "AccountType.eoa",
-				"eip7702": {
-					"$call": "supported",
-					"args": [
-						{
-							"ref": [
-								{
-									"explanation": "Uniswap Wallet mobile and extension apps follow EIP-7702 for smart-wallet delegation; new wallets are smart wallets by default while remaining controlled by the user's private key.",
-									"url": "https://support.uniswap.org/hc/en-us/articles/36391987158797-Smart-Wallets-and-Delegation"
-								},
-								{
-									"explanation": "Uniswap's Smart Wallet overview documents its EIP-7702 implementation and links the Calibur smart-wallet contract.",
-									"url": "https://developers.uniswap.org/docs/protocols/smart-wallet/overview"
-								}
-							]
-						}
-					]
-				},
-				"eoa": {
-					"$call": "supported",
-					"args": [
-						{
-							"ref": [
-								{
-									"explanation": "Uniswap Wallet lets users create a new Ethereum wallet or import an existing crypto wallet.",
-									"url": "https://apps.apple.com/us/app/uniswap-crypto-nft-wallet/id6443944476"
-								},
-								{
-									"explanation": "Uniswap Labs states that the wallet is self-custodial and that users remain responsible for recovery phrases.",
-									"url": "https://support.uniswap.org/hc/en-us/articles/28278904584077-Uniswap-Wallet-Security-Measures"
-								}
-							],
-							"keyDerivation": {
-								"seedPhrase": "BIP39"
-							}
-						}
-					]
-				},
-				"mpc": {
-					"$call": "notSupportedWithRef",
-					"args": [
-						{
-							"ref": [
-								{
-									"explanation": "Uniswap documents its smart wallet as the Calibur implementation using EIP-7702 delegation, with users keeping the same EOA address.",
-									"url": "https://developers.uniswap.org/contracts/smart-wallet/overview"
-								},
-								{
-									"explanation": "Uniswap Wallet security docs describe self-custodial recovery-phrase ownership rather than MPC or Safe account custody.",
-									"url": "https://support.uniswap.org/hc/en-us/articles/28278904584077-Uniswap-Wallet-Security-Measures"
-								}
-							]
-						}
-					]
-				},
-				"rawErc4337": {
-					"$call": "notSupportedWithRef",
-					"args": [
-						{
-							"ref": [
-								{
-									"explanation": "Uniswap documents its smart wallet as the Calibur implementation using EIP-7702 delegation, with users keeping the same EOA address.",
-									"url": "https://developers.uniswap.org/contracts/smart-wallet/overview"
-								},
-								{
-									"explanation": "Uniswap Wallet security docs describe self-custodial recovery-phrase ownership rather than MPC or Safe account custody.",
-									"url": "https://support.uniswap.org/hc/en-us/articles/28278904584077-Uniswap-Wallet-Security-Measures"
-								}
-							]
-						}
-					]
-				},
-				"safe": {
-					"$call": "notSupportedWithRef",
-					"args": [
-						{
-							"ref": [
-								{
-									"explanation": "Uniswap documents its smart wallet as the Calibur implementation using EIP-7702 delegation, with users keeping the same EOA address.",
-									"url": "https://developers.uniswap.org/contracts/smart-wallet/overview"
-								},
-								{
-									"explanation": "Uniswap Wallet security docs describe self-custodial recovery-phrase ownership rather than MPC or Safe account custody.",
-									"url": "https://support.uniswap.org/hc/en-us/articles/28278904584077-Uniswap-Wallet-Security-Measures"
-								}
-							]
-						}
-					]
-				}
-			},
-			"addressResolution": {
-				"ref": [
-					{
-						"explanation": "Uniswap Wallet users can claim uni.eth usernames that work anywhere ENS addresses are supported.",
-						"url": "https://support.uniswap.org/hc/en-us/articles/24327082166285-Can-I-use-my-username-in-other-wallets"
-					},
-					{
-						"explanation": "ENS's Uniswap case study says the Uniswap Wallet mobile app and browser extension use ENS for human-readable names.",
-						"url": "https://ens.domains/ecosystem/uniswap"
-					}
-				],
-				"chainSpecificAddressing": {
-					"erc7828": null,
-					"erc7831": null
-				},
-				"nonChainSpecificEnsResolution": {
-					"$call": "supported",
-					"args": [
-						{
-							"medium": "CHAIN_CLIENT"
-						}
-					]
-				}
-			},
-			"chainAbstraction": {
-				"bridging": {
-					"builtInBridging": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "The Uniswap Wallet App Store listing describes swapping across Ethereum, Unichain, Base, BNB Chain, Arbitrum, Polygon, Optimism, and other EVM-compatible chains.",
-										"url": "https://apps.apple.com/us/app/uniswap-crypto-nft-wallet/id6443944476"
-									},
-									{
-										"explanation": "The Uniswap Wallet site describes swap, buy, sell, bridge, send, and receive in one place.",
-										"url": "https://wallet.uniswap.org/"
-									}
-								]
-							}
-						]
-					},
-					"suggestedBridging": null
-				},
-				"crossChainBalances": {
-					"ref": [
-						{
-							"explanation": "The Uniswap Wallet App Store listing says users can view crypto and NFT assets in one place without switching chains.",
-							"url": "https://apps.apple.com/us/app/uniswap-crypto-nft-wallet/id6443944476"
-						},
-						{
-							"explanation": "The Uniswap Extension page says all tokens appear in one place and users do not need to switch chains to view assets.",
-							"url": "https://wallet.uniswap.org/extension"
-						}
-					],
-					"globalAccountValue": {
-						"$ref": "featureSupported"
-					},
-					"perChainAccountValue": null
-				}
-			},
-			"chainConfigurability": null,
-			"ecosystem": {
-				"delegation": null
-			},
-			"integration": {
-				"browser": {
-					"1193": null,
-					"2700": null,
-					"6963": null,
-					"ref": {
-						"$ref": "refTodo"
-					}
-				},
-				"walletCall": null
-			},
-			"licensing": {
-				"type": "LicensingType.SINGLE_WALLET_REPO_AND_LICENSE",
-				"walletAppLicense": {
-					"ref": {
-						"explanation": "The Uniswap Wallet mobile app is explicitly licensed under GPL 3.0 or later. The browser extension directory in the same monorepo does not contain a `LICENSE` file. Development happens in a private repository and only production-ready code is published.",
-						"url": "https://github.com/Uniswap/interface/blob/64ff3de5ac6c4840ca6b32947b3529aea49930cc/apps/mobile/LICENSE"
-					},
-					"license": "FOSSLicense.GPL_3_0"
-				}
-			},
-			"monetization": {
-				"ref": [
-					{
-						"explanation": "Uniswap Labs raised $165M in a Series B led by Polychain Capital in October 2022, with participation from a16z, Paradigm, SV Angel, and Variant, at a $1.66B valuation. Total funding across all rounds is approximately $176M.",
-						"url": "https://techcrunch.com/2022/10/13/uniswap-labs-raises-165-million-in-new-funding/"
-					}
-				],
-				"revenueBreakdownIsPublic": false,
-				"strategies": {
-					"donations": false,
-					"ecosystemGrants": false,
-					"governanceTokenLowFloat": false,
-					"governanceTokenMostlyDistributed": true,
-					"hiddenConvenienceFees": null,
-					"publicOffering": false,
-					"selfFunded": false,
-					"transparentConvenienceFees": true,
-					"ventureCapital": true
-				}
-			},
-			"multiAddress": {
-				"$call": "supported",
-				"args": [
-					{
-						"ref": {
-							"explanation": "Uniswap Wallet supports multiple wallet addresses under the same recovery phrase and lets users create additional wallet addresses.",
-							"url": "https://support.uniswap.org/hc/en-us/articles/11302413221773-How-to-create-a-new-wallet"
-						}
-					}
-				]
-			},
-			"privacy": {
-				"analytics": {
-					"crashReports": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Apple's App Store privacy disclosure for Uniswap Wallet lists diagnostics, including crash data and performance data, under data not linked to the user.",
-									"url": "https://apps.apple.com/us/app/uniswap-crypto-nft-wallet/id6443944476"
-								}
-							}
-						]
-					},
-					"usage": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "Uniswap Labs says it uses anonymous usage data across its products and provides an in-wallet analytics opt-out.",
-										"url": "https://support.uniswap.org/hc/en-us/articles/23548436751629-How-do-I-opt-out-of-analytics-in-the-Uniswap-Wallet"
-									},
-									{
-										"explanation": "Apple's App Store privacy disclosure for Uniswap Wallet lists product interaction usage data under analytics.",
-										"url": "https://apps.apple.com/us/app/uniswap-crypto-nft-wallet/id6443944476"
-									}
-								]
-							}
-						]
-					}
-				},
-				"appIsolation": null,
-				"dataCollection": null,
-				"privacyPolicy": "https://support.uniswap.org/hc/en-us/articles/30934457771405-Uniswap-Labs-Privacy-Policy",
-				"transactionPrivacy": {
-					"defaultFungibleTokenTransferMode": "PUBLIC",
-					"STEALTH_ADDRESSES": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "Uniswap Labs support says other people can see a wallet's tokens, NFTs, and transaction history because wallet transaction information is stored and verified on public blockchains and public wallet addresses/transactions are visible through block explorers.",
-										"url": "https://support.uniswap.org/hc/en-us/articles/11306520039309-Can-other-people-see-my-tokens-NFTs-and-transaction-history"
-									},
-									{
-										"explanation": "Uniswap Wallet address documentation describes receiving funds through a normal public wallet address or ENS username, not through stealth-address or Privacy Pools recipient flows.",
-										"url": "https://support.uniswap.org/hc/en-us/articles/11306186131725-How-to-find-your-wallet-address-in-the-Uniswap-Wallet"
-									}
-								]
-							}
-						]
-					},
-					"TORNADO_CASH_NOVA": null,
-					"PRIVACY_POOLS": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "Uniswap Labs support says other people can see a wallet's tokens, NFTs, and transaction history because wallet transaction information is stored and verified on public blockchains and public wallet addresses/transactions are visible through block explorers.",
-										"url": "https://support.uniswap.org/hc/en-us/articles/11306520039309-Can-other-people-see-my-tokens-NFTs-and-transaction-history"
-									},
-									{
-										"explanation": "Uniswap Wallet address documentation describes receiving funds through a normal public wallet address or ENS username, not through stealth-address or Privacy Pools recipient flows.",
-										"url": "https://support.uniswap.org/hc/en-us/articles/11306186131725-How-to-find-your-wallet-address-in-the-Uniswap-Wallet"
-									}
-								]
-							}
-						]
-					},
-					"RAILGUN": null
-				}
-			},
-			"profile": "WalletProfile.GENERIC",
-			"security": {
-				"accountRecovery": null,
-				"bugBountyProgram": {
-					"$call": "supported",
-					"args": [
-						{
-							"ref": [
-								{
-									"explanation": "Uniswap Labs runs a bug bounty program through Cantina. The wallet mobile app and browser extension are in scope, with rewards up to $50K for critical wallet vulnerabilities.",
-									"url": "https://cantina.xyz/bounties/f9df94db-c7b1-434b-bb06-d1360abdd1be"
-								}
-							],
-							"availability": "BugBountyProgramAvailability.ACTIVE",
-							"coverageBreadth": "FULL_SCOPE",
-							"dateStarted": "2024-11-26",
-							"disclosure": {
-								"$ref": "notSupported"
-							},
-							"legalProtections": {
-								"$ref": "notSupported"
-							},
-							"platform": "BugBountyPlatform.CANTINA",
-							"rewards": {
-								"$call": "supported",
-								"args": [
-									{
-										"currency": "USD",
-										"maximum": 50000,
-										"minimum": 0
-									}
-								]
-							},
-							"upgradePathAvailable": true
-						}
-					]
-				},
-				"duressResistance": {
-					"basicUnlock": {
-						"ref": {
-							"explanation": "Uniswap support says the mobile wallet can require Face ID, Touch ID, or Android biometrics before the app opens or before swaps/transactions are submitted.",
-							"url": "https://support.uniswap.org/hc/en-us/articles/16248300505101-How-do-I-set-up-Face-ID-Touch-ID-or-Biometrics-in-the-Uniswap-Wallet"
-						},
-						"mechanisms": {
-							"PIN": false,
-							"PASSWORD": false,
-							"BIOMETRIC": true,
-							"PATTERN": false
-						}
-					},
-					"duressMode": {
-						"$ref": "notSupported"
-					}
-				},
-				"hardwareWalletSupport": {
-					"ref": [
-						{
-							"explanation": "CryptoSlate's current Uniswap Wallet product profile lists hardware wallet support as No for the Uniswap Wallet app/extension product.",
-							"url": "https://cryptoslate.com/products/uniswap-wallet/"
-						},
-						{
-							"explanation": "Uniswap Labs describes Uniswap Wallet as available on iOS, Android, and Chrome; separate hardware-wallet connectivity is documented for the Uniswap web app rather than the Uniswap Wallet app itself.",
-							"url": "https://wallet.uniswap.org/"
-						}
-					],
-					"wallets": {}
-				},
-				"keysHandling": null,
-				"lightClient": {
-					"ethereumL1": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap Labs documents the Wallet and Extension as interfaces compatible with a maintained list of supported networks; unsupported-network tokens are not visible in the products, indicating an interface/RPC-backed network model rather than an embedded Ethereum L1 light client.",
-									"url": "https://support.uniswap.org/hc/en-us/articles/14569415293325-Networks-on-Uniswap"
-								}
-							}
-						]
-					}
-				},
-				"passkeyVerification": {
-					"$call": "notSupportedWithRef",
-					"args": [
-						{
-							"ref": [
-								{
-									"explanation": "Uniswap says its smart wallet feature uses EIP-7702 delegation while the wallet remains controlled by the user's private key.",
-									"url": "https://support.uniswap.org/hc/en-us/articles/36391987158797-Smart-Wallets-and-Delegation"
-								},
-								{
-									"explanation": "Uniswap Wallet account recovery is documented through the wallet recovery phrase, which can be used to import the wallet into another wallet app.",
-									"url": "https://support.uniswap.org/hc/en-us/articles/11306360177677-How-to-find-your-recovery-phrase-in-the-Uniswap-Wallet"
-								}
-							]
-						}
-					]
-				},
-				"publicSecurityAudits": [
-					{
-						"ref": "https://github.com/trailofbits/publications/blob/master/reviews/2024-02-uniswap-wallet-browserextension-securityreview.pdf",
-						"auditDate": "2024-04-01",
-						"unpatchedFlaws": "UNKNOWN",
-						"variantsScope": "BROWSER"
-					},
-					{
-						"ref": "https://github.com/trailofbits/publications/blob/master/reviews/2023-09-uniswap-wallet-securityreview.pdf",
-						"auditDate": "2023-11-01",
-						"unpatchedFlaws": "UNKNOWN",
-						"variantsScope": "MOBILE"
-					}
-				],
-				"scamAlerts": {
-					"contractTransactionWarning": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap Wallet and Extension may show transaction warnings for unverified contracts and malicious transactions using Blockaid and WalletConnect/ReOwn signals.",
-									"url": "https://support.uniswap.org/hc/en-us/articles/37781087046029-Dapp-Protection-via-WalletConnect-and-Blockaid"
-								},
-								"contractRegistry": true,
-								"previousContractInteractionWarning": null,
-								"recentContractWarning": null
-							}
-						]
-					},
-					"scamUrlWarning": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap Wallet and Extension may show connection warnings for malicious, unverified, and verified dapps.",
-									"url": "https://support.uniswap.org/hc/en-us/articles/37781087046029-Dapp-Protection-via-WalletConnect-and-Blockaid"
-								}
-							}
-						]
-					},
-					"sendTransactionWarning": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap Wallet and Extension may display decoded transaction data, token amounts sent or received, and warnings for potentially malicious transactions.",
-									"url": "https://support.uniswap.org/hc/en-us/articles/37781087046029-Dapp-Protection-via-WalletConnect-and-Blockaid"
-								},
-								"newRecipientWarning": null,
-								"userWhitelist": null
-							}
-						]
-					}
-				},
-				"securityBestPractices": null,
-				"transactionLegibility": {
-					"ref": [
-						{
-							"explanation": "Uniswap Wallet and Extension display decoded transaction data for connected dapp transactions, including token amounts sent and/or received and warnings for unverified or potentially malicious transactions.",
-							"url": "https://support.uniswap.org/hc/en-us/articles/37781087046029-Dapp-Protection-via-WalletConnect-and-Blockaid"
-						},
-						{
-							"explanation": "Blockaid transaction security simulates and validates transactions in real time so users can understand resulting state changes and outcomes before signing.",
-							"url": "https://www.blockaid.io/transaction-security"
-						}
-					],
-					"erc7730": null,
-					"erc8213": null,
-					"transactionDetailsDisplay": {
-						"$call": "supported",
-						"args": [
-							{
-								"chain": null,
-								"from": null,
-								"gas": null,
-								"nonce": null,
-								"to": null,
-								"value": null,
-								"calldata": "DataDisplayOptions.SHOWN_BY_DEFAULT"
-							}
-						]
-					},
-					"transactionSimulations": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "Uniswap says Wallet and Extension display decoded transaction data including token amounts being sent and/or received for dapp transactions.",
-										"url": "https://support.uniswap.org/hc/en-us/articles/37781087046029-Dapp-Protection-via-WalletConnect-and-Blockaid"
-									},
-									{
-										"explanation": "Blockaid describes Transaction Preview as revealing the full onchain impact of a transaction before it is signed, including state changes and outcomes.",
-										"url": "https://www.blockaid.io/transaction-security"
-									}
-								],
-								"ERC_20_TRANSFER": {
-									"transactionOutcome": "TransactionOutcome.EXPLAINED"
-								},
-								"ERC_721_TRANSFER": null,
-								"ERC_1155_TRANSFER": null,
-								"USDC_APPROVAL": {
-									"transactionOutcome": "TransactionOutcome.EXPLAINED"
-								},
-								"AAVE_SUPPLY": null,
-								"SAFEWALLET_AAVE_SUPPLY_NESTED": null,
-								"SAFEWALLET_AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": null,
-								"ETH_TRANSFER": {
-									"transactionOutcome": "TransactionOutcome.EXPLAINED"
-								},
-								"ZKSYNC_USDC_TRANSFER": null,
-								"AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": null,
-								"FAILED_TRANSACTION": null,
-								"NONDETERMINISTIC_TRANSACTION": null
-							}
-						]
-					}
-				}
-			},
-			"selfSovereignty": {
-				"permissionsManagement": {
-					"$call": "supported",
-					"args": [
-						{
-							"ref": [
-								{
-									"explanation": "Uniswap Labs documents how users can revoke token approvals through block explorers' approval checkers.",
-									"url": "https://support.uniswap.org/hc/en-us/articles/15724901841037-How-to-revoke-a-token-approval"
-								},
-								{
-									"explanation": "Uniswap Labs recommends Etherscan token approvals and Revoke.Cash for checking a wallet's approvals.",
-									"url": "https://support.uniswap.org/hc/en-us/articles/17523327223437-Checking-your-wallet-s-approvals"
-								}
-							]
-						}
-					]
-				},
-				"transactionSubmission": {
-					"l1": {
-						"ref": {
-							"$ref": "refTodo"
-						},
-						"selfBroadcastViaDirectGossip": null,
-						"selfBroadcastViaSelfHostedNode": {
-							"$call": "notSupportedWithRef",
-							"args": [
-								{
-									"ref": {
-										"explanation": "Uniswap Labs says its Wallet and Extension are compatible with maintained supported networks and that tokens sent on unsupported networks are not visible in Uniswap Labs products; it does not expose user-selected Ethereum mainnet RPC/self-hosted-node submission in this product model.",
-										"url": "https://support.uniswap.org/hc/en-us/articles/14569415293325-Networks-on-Uniswap"
-									}
-								}
-							]
-						}
-					},
-					"l2": {
-						"arbitrum": null,
-						"opStack": null,
-						"ref": {
-							"$ref": "refTodo"
-						}
-					}
-				}
-			},
-			"transparency": {
-				"operationFees": null,
-				"releaseTransparency": {
-					"artifactSigning": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "Uniswap Wallet publishes a browser extension through the Chrome Web Store.",
-										"url": "https://chromewebstore.google.com/detail/uniswap-extension/nnpmfplkfogfpmcngplhnbdnnilmcdcg"
-									},
-									{
-										"explanation": "Chrome for Developers states that all Chrome Web Store extensions are signed by Google, with signing handled automatically when a package is uploaded.",
-										"url": "https://developer.chrome.com/blog/verified-uploads-cws"
-									}
-								]
-							}
-						]
-					},
-					"dependencyLocking": null,
-					"dependencyVulnerabilityScanning": null,
-					"hasPublicChangelog": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "Uniswap Labs publishes version history for the Uniswap Wallet iOS app in the App Store.",
-										"url": "https://apps.apple.com/us/app/uniswap-crypto-nft-wallet/id6443944476"
-									},
-									{
-										"explanation": "The public Uniswap interface repository README states releases are automatically tagged after production-ready code is published.",
-										"url": "https://github.com/Uniswap/interface"
-									}
-								]
-							}
-						]
-					},
-					"hermeticBuilds": null,
-					"repositoryChangeControls": null,
-					"reproducibleBuilds": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "Uniswap's public interface repository says wallet mobile and extension code is published after private development cycles and releases are tagged, but this publication model is source-available release tagging rather than an independently documented reproducible-build verification process for published wallet artifacts.",
-										"url": "https://github.com/Uniswap/interface/blob/main/README.md"
-									},
-									{
-										"explanation": "Uniswap Wallet security documentation describes the wallet code as source-available for public review, but does not document deterministic rebuild instructions for matching mobile app or browser extension release artifacts.",
-										"url": "https://support.uniswap.org/hc/en-us/articles/28278904584077-Uniswap-Wallet-Security-Measures"
-									}
-								]
-							}
-						]
-					}
-				}
-			},
-			"product": {
-				"platformCoverage": {
-					"ref": {
-						"explanation": "Uniswap Wallet official page says it is trusted across iOS, Android, and Chrome.",
-						"url": "https://wallet.uniswap.org/"
-					},
-					"desktopApp": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap Wallet official page lists iOS, Android, and Chrome, not a standalone desktop app.",
-									"url": "https://wallet.uniswap.org/"
-								}
-							}
-						]
-					},
-					"mobileApp": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap Wallet official page lists iOS and Android.",
-									"url": "https://wallet.uniswap.org/"
-								}
-							}
-						]
-					},
-					"browserExtension": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap Wallet official page lists Chrome.",
-									"url": "https://wallet.uniswap.org/"
-								}
-							}
-						]
-					},
-					"browserNative": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap Wallet is distributed as app/extension, not browser-native.",
-									"url": "https://wallet.uniswap.org/"
-								}
-							}
-						]
-					},
-					"webApp": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap support says crosschain swaps are available from the Uniswap web app or Uniswap Wallet.",
-									"url": "https://support.uniswap.org/hc/en-us/articles/43793128689549-What-are-crosschain-swaps"
-								}
-							}
-						]
-					},
-					"ios": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap Wallet official page lists iOS.",
-									"url": "https://wallet.uniswap.org/"
-								}
-							}
-						]
-					},
-					"android": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap Wallet official page lists Android.",
-									"url": "https://wallet.uniswap.org/"
-								}
-							}
-						]
-					},
-					"chrome": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap Wallet official page lists Chrome.",
-									"url": "https://wallet.uniswap.org/"
-								}
-							}
-						]
-					},
-					"firefox": null,
-					"safari": null
-				},
-				"supportedEcosystems": {
-					"ref": {
-						"explanation": "Uniswap Wallet official page describes 19+ networks; crosschain swap support lists Ethereum, Unichain, Arbitrum, Base, Optimism, Soneium, ZKsync, Zora, and World Chain.",
-						"url": "https://support.uniswap.org/hc/en-us/articles/43793128689549-What-are-crosschain-swaps"
-					},
-					"evm": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap crosschain swap networks are EVM/L2 networks including Ethereum, Arbitrum, Base, Optimism, ZKsync, Zora, and World Chain.",
-									"url": "https://support.uniswap.org/hc/en-us/articles/43793128689549-What-are-crosschain-swaps"
-								}
-							}
-						]
-					},
-					"solana": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap crosschain swap support explicitly lists Solana as not available for crosschain swaps; wallet-level Solana support was not proven.",
-									"url": "https://support.uniswap.org/hc/en-us/articles/43793128689549-What-are-crosschain-swaps"
-								}
-							}
-						]
-					},
-					"bitcoin": null,
-					"cosmos": null,
-					"ton": null,
-					"starknet": null,
-					"sui": null,
-					"aptos": null,
-					"xrp": null,
-					"cardano": null,
-					"lightning": null,
-					"other": [
-						{
-							"name": "Unichain",
-							"ref": {
-								"explanation": "Uniswap crosschain swap supported-network list includes Unichain.",
-								"url": "https://support.uniswap.org/hc/en-us/articles/43793128689549-What-are-crosschain-swaps"
-							}
-						},
-						{
-							"name": "Soneium",
-							"ref": {
-								"explanation": "Uniswap crosschain swap supported-network list includes Soneium.",
-								"url": "https://support.uniswap.org/hc/en-us/articles/43793128689549-What-are-crosschain-swaps"
-							}
-						},
-						{
-							"name": "Zora",
-							"ref": {
-								"explanation": "Uniswap crosschain swap supported-network list includes Zora.",
-								"url": "https://support.uniswap.org/hc/en-us/articles/43793128689549-What-are-crosschain-swaps"
-							}
-						},
-						{
-							"name": "World Chain",
-							"ref": {
-								"explanation": "Uniswap crosschain swap supported-network list includes World Chain.",
-								"url": "https://support.uniswap.org/hc/en-us/articles/43793128689549-What-are-crosschain-swaps"
-							}
-						}
-					]
-				},
-				"dappExperience": {
-					"ref": {
-						"explanation": "Uniswap Wallet page describes exploring apps across supported networks.",
-						"url": "https://wallet.uniswap.org/"
-					},
-					"inAppBrowser": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap Wallet page says the wallet is for exploring apps across networks.",
-									"url": "https://wallet.uniswap.org/"
-								}
-							}
-						]
-					},
-					"curatedDappDirectory": null,
-					"dappSearch": null,
-					"walletConnectOnlyMode": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap Wallet is a first-party wallet/app surface and not documented as WalletConnect-only.",
-									"url": "https://wallet.uniswap.org/"
-								}
-							}
-						]
-					},
-					"featuredApps": null,
-					"riskRatedDiscovery": null
-				},
-				"fiatRamps": {
-					"ref": {
-						"explanation": "Uniswap Wallet official page says users can swap, buy, sell, bridge, send, and receive all in one place.",
-						"url": "https://wallet.uniswap.org/"
-					},
-					"buyCrypto": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap Wallet official page lists buy.",
-									"url": "https://wallet.uniswap.org/"
-								}
-							}
-						]
-					},
-					"sellCrypto": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap Wallet official page lists sell.",
-									"url": "https://wallet.uniswap.org/"
-								}
-							}
-						]
-					},
-					"bankTransfer": null,
-					"card": null,
-					"applePay": null,
-					"googlePay": null,
-					"kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
-					"providers": [],
-					"regionalAvailability": "Uniswap Wallet advertises buy/sell, but provider and country matrix were not resolved in this pass."
-				},
-				"gasUx": {
-					"ref": {
-						"explanation": "Uniswap support says crosschain swap quotes show bridging fees and network costs before confirmation.",
-						"url": "https://support.uniswap.org/hc/en-us/articles/43793128689549-What-are-crosschain-swaps"
-					},
-					"gasCustomization": null,
-					"gasSponsorship": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap crosschain swap docs describe fees paid in the quote; sponsorship was not documented.",
-									"url": "https://support.uniswap.org/hc/en-us/articles/43793128689549-What-are-crosschain-swaps"
-								}
-							}
-						]
-					},
-					"gasAbstraction": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap automatically chains bridging and swapping steps for crosschain swaps.",
-									"url": "https://support.uniswap.org/hc/en-us/articles/43793128689549-What-are-crosschain-swaps"
-								}
-							}
-						]
-					},
-					"payGasInStablecoins": null,
-					"payGasWithReceivedToken": null,
-					"speedPresets": null,
-					"stuckTransactionRecovery": null
-				},
-				"recoveryUx": {
-					"ref": {
-						"explanation": "Uniswap Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://wallet.uniswap.org/"
-					},
-					"seedOnlyRecovery": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap Wallet supports recovery/import through a seed or secret recovery phrase.",
-									"url": "https://docs.uniswap.org/"
-								}
-							}
-						]
-					},
-					"cloudBackup": null,
-					"socialRecovery": null,
-					"guardianRecovery": null,
-					"passkeyRecovery": null,
-					"emergencyKit": null,
-					"recoveryRehearsal": null
-				},
-				"onboardingFriction": {
-					"ref": {
-						"explanation": "Uniswap Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://wallet.uniswap.org/"
-					},
-					"seedPhraseRequiredAtSignup": {
-						"$ref": "featureSupported"
-					},
-					"passkeySignup": null,
-					"emailSignup": null,
-					"phoneSignup": null,
-					"kycRequiredForWallet": {
-						"$ref": "notSupported"
-					},
-					"guestMode": null,
-					"embeddedWalletMode": null,
-					"timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
-				},
-				"portfolioManagement": {
-					"ref": {
-						"explanation": "Uniswap Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://wallet.uniswap.org/"
-					},
-					"netWorth": {
-						"$ref": "featureSupported"
-					},
-					"pnl": null,
-					"costBasis": null,
-					"tokenCategories": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap Wallet provides token balance and asset-list portfolio views.",
-									"url": "https://wallet.uniswap.org/"
-								}
-							}
-						]
-					},
-					"nftSupport": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap Wallet supports NFT display or NFT portfolio management in at least one wallet surface.",
-									"url": "https://wallet.uniswap.org/"
-								}
-							}
-						]
-					},
-					"collectionViews": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap Wallet provides NFT collection-oriented views or NFT portfolio surfaces.",
-									"url": "https://wallet.uniswap.org/"
-								}
-							}
-						]
-					},
-					"watchOnlyWallets": null,
-					"multiWalletAggregation": {
-						"$ref": "featureSupported"
-					}
-				},
-				"notifications": {
-					"ref": {
-						"explanation": "Uniswap Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://wallet.uniswap.org/"
-					},
-					"sendReceive": null,
-					"priceAlerts": null,
-					"approvalAlerts": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap Wallet supports approval-related alerts, approval review, or permission warnings.",
-									"url": "https://wallet.uniswap.org/"
-								}
-							}
-						]
-					},
-					"bridgeCompletion": null,
-					"failedTransaction": null,
-					"securityAlerts": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap Wallet supports security alerts or transaction-risk warnings.",
-									"url": "https://wallet.uniswap.org/"
-								}
-							}
-						]
-					},
-					"marketAlerts": null
-				},
-				"nftCapabilities": {
-					"ref": {
-						"explanation": "Uniswap Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://wallet.uniswap.org/"
-					},
-					"display": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap Wallet supports displaying NFTs or collectibles in the wallet.",
-									"url": "https://wallet.uniswap.org/"
-								}
-							}
-						]
-					},
-					"send": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap Wallet supports wallet NFT transfer flows or NFT asset management.",
-									"url": "https://wallet.uniswap.org/"
-								}
-							}
-						]
-					},
-					"mint": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap Wallet can connect to dapps and sign NFT mint transactions.",
-									"url": "https://wallet.uniswap.org/"
-								}
-							}
-						]
-					},
-					"marketplaceIntegration": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap Wallet integrates NFT marketplace or NFT trading/discovery features.",
-									"url": "https://wallet.uniswap.org/"
-								}
-							}
-						]
-					},
-					"spamNftHiding": null,
-					"collectionMetadataRefresh": null,
-					"royaltiesOrOffers": null
-				},
-				"defiPositionAwareness": {
-					"ref": {
-						"explanation": "Uniswap Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://wallet.uniswap.org/"
-					},
-					"lendingPositions": null,
-					"stakingPositions": null,
-					"lpPositions": null,
-					"vaultPositions": null,
-					"perProtocolBalances": null,
-					"claimableRewards": null,
-					"liquidationWarnings": null
-				},
-				"stakingEarn": {
-					"ref": {
-						"explanation": "Uniswap Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://wallet.uniswap.org/"
-					},
-					"nativeStaking": null,
-					"liquidStaking": null,
-					"validatorChoice": null,
-					"apyDisplay": null,
-					"rewardsClaiming": null,
-					"providerDependency": null,
-					"lockupDisclosure": null
-				},
-				"customerSupport": {
-					"ref": {
-						"explanation": "Uniswap Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://wallet.uniswap.org/"
-					},
-					"liveChat": null,
-					"emailSupport": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap Wallet publishes support, help center, or contact paths for wallet users.",
-									"url": "https://docs.uniswap.org/"
-								}
-							}
-						]
-					},
-					"aiSupport": null,
-					"publishedSla": null,
-					"inAppHelpCenter": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap Wallet provides in-app or product-linked help/support content.",
-									"url": "https://docs.uniswap.org/"
-								}
-							}
-						]
-					},
-					"transactionTroubleshooting": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap Wallet support docs include transaction or wallet troubleshooting material.",
-									"url": "https://docs.uniswap.org/"
-								}
-							}
-						]
-					},
-					"scamRecoveryGuidance": null
-				},
-				"developerOffering": {
-					"ref": {
-						"explanation": "Uniswap Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://wallet.uniswap.org/"
-					},
-					"walletSdk": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap Wallet publishes wallet developer docs, SDKs, or public wallet integration repositories.",
-									"url": "https://github.com/Uniswap"
-								}
-							}
-						]
-					},
-					"embeddedWalletSdk": null,
-					"whiteLabelOffering": null,
-					"walletConnectSupport": {
-						"$ref": "featureSupported"
-					},
-					"eip6963": null,
-					"eip5792": null,
-					"deepLinks": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap Wallet documents mobile deep links, universal links, or app-link connection flows.",
-									"url": "https://docs.uniswap.org/"
-								}
-							}
-						]
-					},
-					"mobileLinkingQuality": "Mobile linking documented or product-supported; quality requires hands-on UX testing."
-				},
-				"pricingFeeModel": {
-					"ref": {
-						"explanation": "Uniswap Wallet page says zero app fees; Uniswap support says crosschain swaps include Across bridging fees and network costs shown before confirmation.",
-						"url": "https://support.uniswap.org/hc/en-us/articles/43793128689549-What-are-crosschain-swaps"
-					},
-					"swapFees": "Uniswap Wallet advertises zero app fees on the official wallet page.",
-					"bridgeFees": "Crosschain swaps include Across bridging fees and network costs, reflected in the quote before confirmation.",
-					"onRampFees": null,
-					"spreadDisclosure": null,
-					"subscriptionFeatures": null,
-					"cardFees": null,
-					"hiddenPartnerRevenue": null
-				},
-				"releaseVelocity": {
-					"ref": {
-						"explanation": "Uniswap Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://wallet.uniswap.org/"
-					},
-					"latestReleaseDate": "2026-04-04",
-					"releaseFrequency": "ReleaseFrequency.IRREGULAR",
-					"appStoreUpdateCadence": "App-store cadence should be measured from current app-store release history in a deeper pass.",
-					"githubActivity": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Uniswap Wallet has public GitHub repository activity or releases that can be tracked.",
-									"url": "https://github.com/Uniswap"
-								}
-							}
-						]
-					},
-					"changelogDetail": "ChangelogDetail.BASIC"
-				},
-				"deviceSync": {
-					"ref": {
-						"explanation": "Uniswap Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://wallet.uniswap.org/"
-					},
-					"syncsAccounts": null,
-					"syncsSettings": null,
-					"syncsContactsOrAddressBook": null,
-					"desktopMobileSync": null,
-					"cloudBackedSync": null,
-					"requiresSameSeedImport": {
-						"$ref": "featureSupported"
-					}
-				}
-			}
-		},
-		"variants": {
-			"MOBILE": true,
-			"BROWSER": true
-		}
-	}
+  "id": "uniswap-wallet",
+  "source": "software-wallets",
+  "export": "uniswapWallet",
+  "data": {
+    "metadata": {
+      "id": "uniswap-wallet",
+      "displayName": "Uniswap Wallet",
+      "tableName": "Uniswap",
+      "blurb": "The self-custody wallet for swapping, sending, bridging, and exploring apps across 16+ networks.",
+      "contributors": [
+        {
+          "$ref": "ren2140"
+        }
+      ],
+      "iconExtension": "svg",
+      "lastUpdated": "2026-04-04",
+      "urls": {
+        "docs": [
+          "https://docs.uniswap.org/"
+        ],
+        "extensions": [
+          "https://chromewebstore.google.com/detail/uniswap-extension/nnpmfplkfogfpmcngplhnbdnnilmcdcg"
+        ],
+        "repositories": [
+          "https://github.com/Uniswap"
+        ],
+        "socials": {
+          "discord": "https://discord.com/invite/uniswap",
+          "farcaster": "https://farcaster.xyz/uniswap",
+          "x": "https://x.com/Uniswap"
+        },
+        "websites": [
+          "https://wallet.uniswap.org/"
+        ]
+      }
+    },
+    "features": {
+      "accountSupport": {
+        "defaultAccountType": "AccountType.eoa",
+        "eip7702": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": [
+                {
+                  "explanation": "Uniswap Wallet mobile and extension apps follow EIP-7702 for smart-wallet delegation; new wallets are smart wallets by default while remaining controlled by the user's private key.",
+                  "url": "https://support.uniswap.org/hc/en-us/articles/36391987158797-Smart-Wallets-and-Delegation"
+                },
+                {
+                  "explanation": "Uniswap's Smart Wallet overview documents its EIP-7702 implementation and links the Calibur smart-wallet contract.",
+                  "url": "https://developers.uniswap.org/docs/protocols/smart-wallet/overview"
+                }
+              ]
+            }
+          ]
+        },
+        "eoa": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": [
+                {
+                  "explanation": "Uniswap Wallet lets users create a new Ethereum wallet or import an existing crypto wallet.",
+                  "url": "https://apps.apple.com/us/app/uniswap-crypto-nft-wallet/id6443944476"
+                },
+                {
+                  "explanation": "Uniswap Labs states that the wallet is self-custodial and that users remain responsible for recovery phrases.",
+                  "url": "https://support.uniswap.org/hc/en-us/articles/28278904584077-Uniswap-Wallet-Security-Measures"
+                }
+              ],
+              "keyDerivation": {
+                "seedPhrase": "BIP39"
+              }
+            }
+          ]
+        },
+        "mpc": {
+          "$call": "notSupportedWithRef",
+          "args": [
+            {
+              "ref": [
+                {
+                  "explanation": "Uniswap documents its smart wallet as the Calibur implementation using EIP-7702 delegation, with users keeping the same EOA address.",
+                  "url": "https://developers.uniswap.org/contracts/smart-wallet/overview"
+                },
+                {
+                  "explanation": "Uniswap Wallet security docs describe self-custodial recovery-phrase ownership rather than MPC or Safe account custody.",
+                  "url": "https://support.uniswap.org/hc/en-us/articles/28278904584077-Uniswap-Wallet-Security-Measures"
+                }
+              ]
+            }
+          ]
+        },
+        "rawErc4337": {
+          "$call": "notSupportedWithRef",
+          "args": [
+            {
+              "ref": [
+                {
+                  "explanation": "Uniswap documents its smart wallet as the Calibur implementation using EIP-7702 delegation, with users keeping the same EOA address.",
+                  "url": "https://developers.uniswap.org/contracts/smart-wallet/overview"
+                },
+                {
+                  "explanation": "Uniswap Wallet security docs describe self-custodial recovery-phrase ownership rather than MPC or Safe account custody.",
+                  "url": "https://support.uniswap.org/hc/en-us/articles/28278904584077-Uniswap-Wallet-Security-Measures"
+                }
+              ]
+            }
+          ]
+        },
+        "safe": {
+          "$call": "notSupportedWithRef",
+          "args": [
+            {
+              "ref": [
+                {
+                  "explanation": "Uniswap documents its smart wallet as the Calibur implementation using EIP-7702 delegation, with users keeping the same EOA address.",
+                  "url": "https://developers.uniswap.org/contracts/smart-wallet/overview"
+                },
+                {
+                  "explanation": "Uniswap Wallet security docs describe self-custodial recovery-phrase ownership rather than MPC or Safe account custody.",
+                  "url": "https://support.uniswap.org/hc/en-us/articles/28278904584077-Uniswap-Wallet-Security-Measures"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "addressResolution": {
+        "ref": [
+          {
+            "explanation": "Uniswap Wallet users can claim uni.eth usernames that work anywhere ENS addresses are supported.",
+            "url": "https://support.uniswap.org/hc/en-us/articles/24327082166285-Can-I-use-my-username-in-other-wallets"
+          },
+          {
+            "explanation": "ENS's Uniswap case study says the Uniswap Wallet mobile app and browser extension use ENS for human-readable names.",
+            "url": "https://ens.domains/ecosystem/uniswap"
+          }
+        ],
+        "chainSpecificAddressing": {
+          "erc7828": null,
+          "erc7831": null
+        },
+        "nonChainSpecificEnsResolution": {
+          "$call": "supported",
+          "args": [
+            {
+              "medium": "CHAIN_CLIENT"
+            }
+          ]
+        }
+      },
+      "chainAbstraction": {
+        "bridging": {
+          "builtInBridging": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "The Uniswap Wallet App Store listing describes swapping across Ethereum, Unichain, Base, BNB Chain, Arbitrum, Polygon, Optimism, and other EVM-compatible chains.",
+                    "url": "https://apps.apple.com/us/app/uniswap-crypto-nft-wallet/id6443944476"
+                  },
+                  {
+                    "explanation": "The Uniswap Wallet site describes swap, buy, sell, bridge, send, and receive in one place.",
+                    "url": "https://wallet.uniswap.org/"
+                  }
+                ]
+              }
+            ]
+          },
+          "suggestedBridging": null
+        },
+        "crossChainBalances": {
+          "ref": [
+            {
+              "explanation": "The Uniswap Wallet App Store listing says users can view crypto and NFT assets in one place without switching chains.",
+              "url": "https://apps.apple.com/us/app/uniswap-crypto-nft-wallet/id6443944476"
+            },
+            {
+              "explanation": "The Uniswap Extension page says all tokens appear in one place and users do not need to switch chains to view assets.",
+              "url": "https://wallet.uniswap.org/extension"
+            }
+          ],
+          "globalAccountValue": {
+            "$ref": "featureSupported"
+          },
+          "perChainAccountValue": null
+        }
+      },
+      "chainConfigurability": null,
+      "ecosystem": {
+        "delegation": null
+      },
+      "integration": {
+        "browser": {
+          "1193": null,
+          "2700": null,
+          "6963": null,
+          "ref": {
+            "$ref": "refTodo"
+          }
+        },
+        "walletCall": null
+      },
+      "licensing": {
+        "type": "LicensingType.SINGLE_WALLET_REPO_AND_LICENSE",
+        "walletAppLicense": {
+          "ref": {
+            "explanation": "The Uniswap Wallet mobile app is explicitly licensed under GPL 3.0 or later. The browser extension directory in the same monorepo does not contain a `LICENSE` file. Development happens in a private repository and only production-ready code is published.",
+            "url": "https://github.com/Uniswap/interface/blob/64ff3de5ac6c4840ca6b32947b3529aea49930cc/apps/mobile/LICENSE"
+          },
+          "license": "FOSSLicense.GPL_3_0"
+        }
+      },
+      "monetization": {
+        "ref": [
+          {
+            "explanation": "Uniswap Labs raised $165M in a Series B led by Polychain Capital in October 2022, with participation from a16z, Paradigm, SV Angel, and Variant, at a $1.66B valuation. Total funding across all rounds is approximately $176M.",
+            "url": "https://techcrunch.com/2022/10/13/uniswap-labs-raises-165-million-in-new-funding/"
+          }
+        ],
+        "revenueBreakdownIsPublic": false,
+        "strategies": {
+          "donations": false,
+          "ecosystemGrants": false,
+          "governanceTokenLowFloat": false,
+          "governanceTokenMostlyDistributed": true,
+          "hiddenConvenienceFees": null,
+          "publicOffering": false,
+          "selfFunded": false,
+          "transparentConvenienceFees": true,
+          "ventureCapital": true
+        }
+      },
+      "multiAddress": {
+        "$call": "supported",
+        "args": [
+          {
+            "ref": {
+              "explanation": "Uniswap Wallet supports multiple wallet addresses under the same recovery phrase and lets users create additional wallet addresses.",
+              "url": "https://support.uniswap.org/hc/en-us/articles/11302413221773-How-to-create-a-new-wallet"
+            }
+          }
+        ]
+      },
+      "privacy": {
+        "analytics": {
+          "crashReports": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Apple's App Store privacy disclosure for Uniswap Wallet lists diagnostics, including crash data and performance data, under data not linked to the user.",
+                  "url": "https://apps.apple.com/us/app/uniswap-crypto-nft-wallet/id6443944476"
+                }
+              }
+            ]
+          },
+          "usage": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "Uniswap Labs says it uses anonymous usage data across its products and provides an in-wallet analytics opt-out.",
+                    "url": "https://support.uniswap.org/hc/en-us/articles/23548436751629-How-do-I-opt-out-of-analytics-in-the-Uniswap-Wallet"
+                  },
+                  {
+                    "explanation": "Apple's App Store privacy disclosure for Uniswap Wallet lists product interaction usage data under analytics.",
+                    "url": "https://apps.apple.com/us/app/uniswap-crypto-nft-wallet/id6443944476"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "appIsolation": null,
+        "dataCollection": null,
+        "privacyPolicy": "https://support.uniswap.org/hc/en-us/articles/30934457771405-Uniswap-Labs-Privacy-Policy",
+        "transactionPrivacy": {
+          "defaultFungibleTokenTransferMode": "PUBLIC",
+          "STEALTH_ADDRESSES": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "Uniswap Labs support says other people can see a wallet's tokens, NFTs, and transaction history because wallet transaction information is stored and verified on public blockchains and public wallet addresses/transactions are visible through block explorers.",
+                    "url": "https://support.uniswap.org/hc/en-us/articles/11306520039309-Can-other-people-see-my-tokens-NFTs-and-transaction-history"
+                  },
+                  {
+                    "explanation": "Uniswap Wallet address documentation describes receiving funds through a normal public wallet address or ENS username, not through stealth-address or Privacy Pools recipient flows.",
+                    "url": "https://support.uniswap.org/hc/en-us/articles/11306186131725-How-to-find-your-wallet-address-in-the-Uniswap-Wallet"
+                  }
+                ]
+              }
+            ]
+          },
+          "TORNADO_CASH_NOVA": null,
+          "PRIVACY_POOLS": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "Uniswap Labs support says other people can see a wallet's tokens, NFTs, and transaction history because wallet transaction information is stored and verified on public blockchains and public wallet addresses/transactions are visible through block explorers.",
+                    "url": "https://support.uniswap.org/hc/en-us/articles/11306520039309-Can-other-people-see-my-tokens-NFTs-and-transaction-history"
+                  },
+                  {
+                    "explanation": "Uniswap Wallet address documentation describes receiving funds through a normal public wallet address or ENS username, not through stealth-address or Privacy Pools recipient flows.",
+                    "url": "https://support.uniswap.org/hc/en-us/articles/11306186131725-How-to-find-your-wallet-address-in-the-Uniswap-Wallet"
+                  }
+                ]
+              }
+            ]
+          },
+          "RAILGUN": null
+        }
+      },
+      "profile": "WalletProfile.GENERIC",
+      "security": {
+        "accountRecovery": null,
+        "bugBountyProgram": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": [
+                {
+                  "explanation": "Uniswap Labs runs a bug bounty program through Cantina. The wallet mobile app and browser extension are in scope, with rewards up to $50K for critical wallet vulnerabilities.",
+                  "url": "https://cantina.xyz/bounties/f9df94db-c7b1-434b-bb06-d1360abdd1be"
+                }
+              ],
+              "availability": "BugBountyProgramAvailability.ACTIVE",
+              "coverageBreadth": "FULL_SCOPE",
+              "dateStarted": "2024-11-26",
+              "disclosure": {
+                "$ref": "notSupported"
+              },
+              "legalProtections": {
+                "$ref": "notSupported"
+              },
+              "platform": "BugBountyPlatform.CANTINA",
+              "rewards": {
+                "$call": "supported",
+                "args": [
+                  {
+                    "currency": "USD",
+                    "maximum": 50000,
+                    "minimum": 0
+                  }
+                ]
+              },
+              "upgradePathAvailable": true
+            }
+          ]
+        },
+        "duressResistance": {
+          "basicUnlock": {
+            "ref": {
+              "explanation": "Uniswap support says the mobile wallet can require Face ID, Touch ID, or Android biometrics before the app opens or before swaps/transactions are submitted.",
+              "url": "https://support.uniswap.org/hc/en-us/articles/16248300505101-How-do-I-set-up-Face-ID-Touch-ID-or-Biometrics-in-the-Uniswap-Wallet"
+            },
+            "mechanisms": {
+              "PIN": false,
+              "PASSWORD": false,
+              "BIOMETRIC": true,
+              "PATTERN": false
+            }
+          },
+          "duressMode": {
+            "$ref": "notSupported"
+          }
+        },
+        "hardwareWalletSupport": {
+          "ref": [
+            {
+              "explanation": "CryptoSlate's current Uniswap Wallet product profile lists hardware wallet support as No for the Uniswap Wallet app/extension product.",
+              "url": "https://cryptoslate.com/products/uniswap-wallet/"
+            },
+            {
+              "explanation": "Uniswap Labs describes Uniswap Wallet as available on iOS, Android, and Chrome; separate hardware-wallet connectivity is documented for the Uniswap web app rather than the Uniswap Wallet app itself.",
+              "url": "https://wallet.uniswap.org/"
+            }
+          ],
+          "wallets": {}
+        },
+        "keysHandling": null,
+        "lightClient": {
+          "ethereumL1": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap Labs documents the Wallet and Extension as interfaces compatible with a maintained list of supported networks; unsupported-network tokens are not visible in the products, indicating an interface/RPC-backed network model rather than an embedded Ethereum L1 light client.",
+                  "url": "https://support.uniswap.org/hc/en-us/articles/14569415293325-Networks-on-Uniswap"
+                }
+              }
+            ]
+          }
+        },
+        "passkeyVerification": {
+          "$call": "notSupportedWithRef",
+          "args": [
+            {
+              "ref": [
+                {
+                  "explanation": "Uniswap says its smart wallet feature uses EIP-7702 delegation while the wallet remains controlled by the user's private key.",
+                  "url": "https://support.uniswap.org/hc/en-us/articles/36391987158797-Smart-Wallets-and-Delegation"
+                },
+                {
+                  "explanation": "Uniswap Wallet account recovery is documented through the wallet recovery phrase, which can be used to import the wallet into another wallet app.",
+                  "url": "https://support.uniswap.org/hc/en-us/articles/11306360177677-How-to-find-your-recovery-phrase-in-the-Uniswap-Wallet"
+                }
+              ]
+            }
+          ]
+        },
+        "publicSecurityAudits": [
+          {
+            "ref": "https://github.com/trailofbits/publications/blob/master/reviews/2024-02-uniswap-wallet-browserextension-securityreview.pdf",
+            "auditDate": "2024-04-01",
+            "unpatchedFlaws": "UNKNOWN",
+            "variantsScope": "BROWSER"
+          },
+          {
+            "ref": "https://github.com/trailofbits/publications/blob/master/reviews/2023-09-uniswap-wallet-securityreview.pdf",
+            "auditDate": "2023-11-01",
+            "unpatchedFlaws": "UNKNOWN",
+            "variantsScope": "MOBILE"
+          }
+        ],
+        "scamAlerts": {
+          "contractTransactionWarning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap Wallet and Extension may show transaction warnings for unverified contracts and malicious transactions using Blockaid and WalletConnect/ReOwn signals.",
+                  "url": "https://support.uniswap.org/hc/en-us/articles/37781087046029-Dapp-Protection-via-WalletConnect-and-Blockaid"
+                },
+                "contractRegistry": true,
+                "previousContractInteractionWarning": null,
+                "recentContractWarning": null
+              }
+            ]
+          },
+          "scamUrlWarning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap Wallet and Extension may show connection warnings for malicious, unverified, and verified dapps.",
+                  "url": "https://support.uniswap.org/hc/en-us/articles/37781087046029-Dapp-Protection-via-WalletConnect-and-Blockaid"
+                }
+              }
+            ]
+          },
+          "sendTransactionWarning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap Wallet and Extension may display decoded transaction data, token amounts sent or received, and warnings for potentially malicious transactions.",
+                  "url": "https://support.uniswap.org/hc/en-us/articles/37781087046029-Dapp-Protection-via-WalletConnect-and-Blockaid"
+                },
+                "newRecipientWarning": null,
+                "userWhitelist": null
+              }
+            ]
+          }
+        },
+        "securityBestPractices": null,
+        "transactionLegibility": {
+          "ref": [
+            {
+              "explanation": "Uniswap Wallet and Extension display decoded transaction data for connected dapp transactions, including token amounts sent and/or received and warnings for unverified or potentially malicious transactions.",
+              "url": "https://support.uniswap.org/hc/en-us/articles/37781087046029-Dapp-Protection-via-WalletConnect-and-Blockaid"
+            },
+            {
+              "explanation": "Blockaid transaction security simulates and validates transactions in real time so users can understand resulting state changes and outcomes before signing.",
+              "url": "https://www.blockaid.io/transaction-security"
+            }
+          ],
+          "erc7730": null,
+          "erc8213": null,
+          "transactionDetailsDisplay": {
+            "$call": "supported",
+            "args": [
+              {
+                "chain": null,
+                "from": null,
+                "gas": null,
+                "nonce": null,
+                "to": null,
+                "value": null,
+                "calldata": "DataDisplayOptions.SHOWN_BY_DEFAULT"
+              }
+            ]
+          },
+          "transactionSimulations": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "Uniswap says Wallet and Extension display decoded transaction data including token amounts being sent and/or received for dapp transactions.",
+                    "url": "https://support.uniswap.org/hc/en-us/articles/37781087046029-Dapp-Protection-via-WalletConnect-and-Blockaid"
+                  },
+                  {
+                    "explanation": "Blockaid describes Transaction Preview as revealing the full onchain impact of a transaction before it is signed, including state changes and outcomes.",
+                    "url": "https://www.blockaid.io/transaction-security"
+                  }
+                ],
+                "ERC_20_TRANSFER": {
+                  "transactionOutcome": "TransactionOutcome.EXPLAINED"
+                },
+                "ERC_721_TRANSFER": null,
+                "ERC_1155_TRANSFER": null,
+                "USDC_APPROVAL": {
+                  "transactionOutcome": "TransactionOutcome.EXPLAINED"
+                },
+                "AAVE_SUPPLY": null,
+                "SAFEWALLET_AAVE_SUPPLY_NESTED": null,
+                "SAFEWALLET_AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": null,
+                "ETH_TRANSFER": {
+                  "transactionOutcome": "TransactionOutcome.EXPLAINED"
+                },
+                "ZKSYNC_USDC_TRANSFER": null,
+                "AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": null,
+                "FAILED_TRANSACTION": null,
+                "NONDETERMINISTIC_TRANSACTION": null
+              }
+            ]
+          }
+        }
+      },
+      "selfSovereignty": {
+        "permissionsManagement": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": [
+                {
+                  "explanation": "Uniswap Labs documents how users can revoke token approvals through block explorers' approval checkers.",
+                  "url": "https://support.uniswap.org/hc/en-us/articles/15724901841037-How-to-revoke-a-token-approval"
+                },
+                {
+                  "explanation": "Uniswap Labs recommends Etherscan token approvals and Revoke.Cash for checking a wallet's approvals.",
+                  "url": "https://support.uniswap.org/hc/en-us/articles/17523327223437-Checking-your-wallet-s-approvals"
+                }
+              ]
+            }
+          ]
+        },
+        "transactionSubmission": {
+          "l1": {
+            "ref": {
+              "$ref": "refTodo"
+            },
+            "selfBroadcastViaDirectGossip": null,
+            "selfBroadcastViaSelfHostedNode": {
+              "$call": "notSupportedWithRef",
+              "args": [
+                {
+                  "ref": {
+                    "explanation": "Uniswap Labs says its Wallet and Extension are compatible with maintained supported networks and that tokens sent on unsupported networks are not visible in Uniswap Labs products; it does not expose user-selected Ethereum mainnet RPC/self-hosted-node submission in this product model.",
+                    "url": "https://support.uniswap.org/hc/en-us/articles/14569415293325-Networks-on-Uniswap"
+                  }
+                }
+              ]
+            }
+          },
+          "l2": {
+            "arbitrum": null,
+            "opStack": null,
+            "ref": {
+              "$ref": "refTodo"
+            }
+          }
+        }
+      },
+      "transparency": {
+        "operationFees": null,
+        "releaseTransparency": {
+          "artifactSigning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "Uniswap Wallet publishes a browser extension through the Chrome Web Store.",
+                    "url": "https://chromewebstore.google.com/detail/uniswap-extension/nnpmfplkfogfpmcngplhnbdnnilmcdcg"
+                  },
+                  {
+                    "explanation": "Chrome for Developers states that all Chrome Web Store extensions are signed by Google, with signing handled automatically when a package is uploaded.",
+                    "url": "https://developer.chrome.com/blog/verified-uploads-cws"
+                  }
+                ]
+              }
+            ]
+          },
+          "dependencyLocking": null,
+          "dependencyVulnerabilityScanning": null,
+          "hasPublicChangelog": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "Uniswap Labs publishes version history for the Uniswap Wallet iOS app in the App Store.",
+                    "url": "https://apps.apple.com/us/app/uniswap-crypto-nft-wallet/id6443944476"
+                  },
+                  {
+                    "explanation": "The public Uniswap interface repository README states releases are automatically tagged after production-ready code is published.",
+                    "url": "https://github.com/Uniswap/interface"
+                  }
+                ]
+              }
+            ]
+          },
+          "hermeticBuilds": null,
+          "repositoryChangeControls": null,
+          "reproducibleBuilds": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "Uniswap's public interface repository says wallet mobile and extension code is published after private development cycles and releases are tagged, but this publication model is source-available release tagging rather than an independently documented reproducible-build verification process for published wallet artifacts.",
+                    "url": "https://github.com/Uniswap/interface/blob/main/README.md"
+                  },
+                  {
+                    "explanation": "Uniswap Wallet security documentation describes the wallet code as source-available for public review, but does not document deterministic rebuild instructions for matching mobile app or browser extension release artifacts.",
+                    "url": "https://support.uniswap.org/hc/en-us/articles/28278904584077-Uniswap-Wallet-Security-Measures"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "product": {
+        "platformCoverage": {
+          "ref": {
+            "explanation": "Uniswap Wallet official page says it is trusted across iOS, Android, and Chrome.",
+            "url": "https://wallet.uniswap.org/"
+          },
+          "desktopApp": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap Wallet official page lists iOS, Android, and Chrome, not a standalone desktop app.",
+                  "url": "https://wallet.uniswap.org/"
+                }
+              }
+            ]
+          },
+          "mobileApp": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap Wallet official page lists iOS and Android.",
+                  "url": "https://wallet.uniswap.org/"
+                }
+              }
+            ]
+          },
+          "browserExtension": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap Wallet official page lists Chrome.",
+                  "url": "https://wallet.uniswap.org/"
+                }
+              }
+            ]
+          },
+          "browserNative": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap Wallet is distributed as app/extension, not browser-native.",
+                  "url": "https://wallet.uniswap.org/"
+                }
+              }
+            ]
+          },
+          "webApp": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap support says crosschain swaps are available from the Uniswap web app or Uniswap Wallet.",
+                  "url": "https://support.uniswap.org/hc/en-us/articles/43793128689549-What-are-crosschain-swaps"
+                }
+              }
+            ]
+          },
+          "ios": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap Wallet official page lists iOS.",
+                  "url": "https://wallet.uniswap.org/"
+                }
+              }
+            ]
+          },
+          "android": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap Wallet official page lists Android.",
+                  "url": "https://wallet.uniswap.org/"
+                }
+              }
+            ]
+          },
+          "chrome": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap Wallet official page lists Chrome.",
+                  "url": "https://wallet.uniswap.org/"
+                }
+              }
+            ]
+          },
+          "firefox": null,
+          "safari": null
+        },
+        "supportedEcosystems": {
+          "ref": {
+            "explanation": "Uniswap Wallet official page describes 19+ networks; crosschain swap support lists Ethereum, Unichain, Arbitrum, Base, Optimism, Soneium, ZKsync, Zora, and World Chain.",
+            "url": "https://support.uniswap.org/hc/en-us/articles/43793128689549-What-are-crosschain-swaps"
+          },
+          "evm": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap crosschain swap networks are EVM/L2 networks including Ethereum, Arbitrum, Base, Optimism, ZKsync, Zora, and World Chain.",
+                  "url": "https://support.uniswap.org/hc/en-us/articles/43793128689549-What-are-crosschain-swaps"
+                }
+              }
+            ]
+          },
+          "solana": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap crosschain swap support explicitly lists Solana as not available for crosschain swaps; wallet-level Solana support was not proven.",
+                  "url": "https://support.uniswap.org/hc/en-us/articles/43793128689549-What-are-crosschain-swaps"
+                }
+              }
+            ]
+          },
+          "bitcoin": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://99bitcoins.com/bitcoin-wallet/uniswap-wallet-review/",
+                  "explanation": "The Uniswap Wallet supports only EVM chains (Ethereum, Base, Arbitrum, etc.) and cannot hold or send native BTC."
+                }
+              }
+            ]
+          },
+          "cosmos": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
+                  "explanation": "The wallet is EVM-only and provides no Cosmos SDK/IBC chain support per its network documentation and reviews."
+                }
+              }
+            ]
+          },
+          "ton": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
+                  "explanation": "The wallet supports only EVM chains and has no TON network support."
+                }
+              }
+            ]
+          },
+          "starknet": null,
+          "sui": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
+                  "explanation": "The wallet supports only EVM chains and has no Sui support."
+                }
+              }
+            ]
+          },
+          "aptos": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
+                  "explanation": "The wallet supports only EVM chains and has no Aptos support."
+                }
+              }
+            ]
+          },
+          "xrp": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
+                  "explanation": "The wallet supports only EVM chains and has no XRP Ledger support."
+                }
+              }
+            ]
+          },
+          "cardano": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
+                  "explanation": "The wallet supports only EVM chains and has no Cardano support."
+                }
+              }
+            ]
+          },
+          "lightning": null,
+          "other": [
+            {
+              "name": "Unichain",
+              "ref": {
+                "explanation": "Uniswap crosschain swap supported-network list includes Unichain.",
+                "url": "https://support.uniswap.org/hc/en-us/articles/43793128689549-What-are-crosschain-swaps"
+              }
+            },
+            {
+              "name": "Soneium",
+              "ref": {
+                "explanation": "Uniswap crosschain swap supported-network list includes Soneium.",
+                "url": "https://support.uniswap.org/hc/en-us/articles/43793128689549-What-are-crosschain-swaps"
+              }
+            },
+            {
+              "name": "Zora",
+              "ref": {
+                "explanation": "Uniswap crosschain swap supported-network list includes Zora.",
+                "url": "https://support.uniswap.org/hc/en-us/articles/43793128689549-What-are-crosschain-swaps"
+              }
+            },
+            {
+              "name": "World Chain",
+              "ref": {
+                "explanation": "Uniswap crosschain swap supported-network list includes World Chain.",
+                "url": "https://support.uniswap.org/hc/en-us/articles/43793128689549-What-are-crosschain-swaps"
+              }
+            }
+          ]
+        },
+        "dappExperience": {
+          "ref": {
+            "explanation": "Uniswap Wallet page describes exploring apps across supported networks.",
+            "url": "https://wallet.uniswap.org/"
+          },
+          "inAppBrowser": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap Wallet page says the wallet is for exploring apps across networks.",
+                  "url": "https://wallet.uniswap.org/"
+                }
+              }
+            ]
+          },
+          "curatedDappDirectory": null,
+          "dappSearch": null,
+          "walletConnectOnlyMode": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap Wallet is a first-party wallet/app surface and not documented as WalletConnect-only.",
+                  "url": "https://wallet.uniswap.org/"
+                }
+              }
+            ]
+          },
+          "featuredApps": null,
+          "riskRatedDiscovery": null
+        },
+        "fiatRamps": {
+          "ref": {
+            "explanation": "Uniswap Wallet official page says users can swap, buy, sell, bridge, send, and receive all in one place.",
+            "url": "https://wallet.uniswap.org/"
+          },
+          "buyCrypto": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap Wallet official page lists buy.",
+                  "url": "https://wallet.uniswap.org/"
+                }
+              }
+            ]
+          },
+          "sellCrypto": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap Wallet official page lists sell.",
+                  "url": "https://wallet.uniswap.org/"
+                }
+              }
+            ]
+          },
+          "bankTransfer": null,
+          "card": null,
+          "applePay": null,
+          "googlePay": null,
+          "kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
+          "providers": [],
+          "regionalAvailability": "Uniswap Wallet advertises buy/sell, but provider and country matrix were not resolved in this pass."
+        },
+        "gasUx": {
+          "ref": {
+            "explanation": "Uniswap support says crosschain swap quotes show bridging fees and network costs before confirmation.",
+            "url": "https://support.uniswap.org/hc/en-us/articles/43793128689549-What-are-crosschain-swaps"
+          },
+          "gasCustomization": null,
+          "gasSponsorship": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap crosschain swap docs describe fees paid in the quote; sponsorship was not documented.",
+                  "url": "https://support.uniswap.org/hc/en-us/articles/43793128689549-What-are-crosschain-swaps"
+                }
+              }
+            ]
+          },
+          "gasAbstraction": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap automatically chains bridging and swapping steps for crosschain swaps.",
+                  "url": "https://support.uniswap.org/hc/en-us/articles/43793128689549-What-are-crosschain-swaps"
+                }
+              }
+            ]
+          },
+          "payGasInStablecoins": null,
+          "payGasWithReceivedToken": null,
+          "speedPresets": null,
+          "stuckTransactionRecovery": null
+        },
+        "recoveryUx": {
+          "ref": {
+            "explanation": "Uniswap Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://wallet.uniswap.org/"
+          },
+          "seedOnlyRecovery": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap Wallet supports recovery/import through a seed or secret recovery phrase.",
+                  "url": "https://docs.uniswap.org/"
+                }
+              }
+            ]
+          },
+          "cloudBackup": null,
+          "socialRecovery": null,
+          "guardianRecovery": null,
+          "passkeyRecovery": null,
+          "emergencyKit": null,
+          "recoveryRehearsal": null
+        },
+        "onboardingFriction": {
+          "ref": {
+            "explanation": "Uniswap Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://wallet.uniswap.org/"
+          },
+          "seedPhraseRequiredAtSignup": {
+            "$ref": "featureSupported"
+          },
+          "passkeySignup": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
+                  "explanation": "The in-app wallet lets you spin up a wallet in a few clicks using FaceID, TouchID, or a passkey."
+                }
+              }
+            ]
+          },
+          "emailSignup": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
+                  "explanation": "Users can add login methods including Google, Apple, or email for account access across devices."
+                }
+              }
+            ]
+          },
+          "phoneSignup": null,
+          "kycRequiredForWallet": {
+            "$ref": "notSupported"
+          },
+          "guestMode": null,
+          "embeddedWalletMode": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
+                  "explanation": "The new in-app wallet is a no-seed embedded wallet powered by Privy with distributed key material, created via passkey/social/email login."
+                }
+              }
+            ]
+          },
+          "timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
+        },
+        "portfolioManagement": {
+          "ref": {
+            "explanation": "Uniswap Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://wallet.uniswap.org/"
+          },
+          "netWorth": {
+            "$ref": "featureSupported"
+          },
+          "pnl": null,
+          "costBasis": null,
+          "tokenCategories": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap Wallet provides token balance and asset-list portfolio views.",
+                  "url": "https://wallet.uniswap.org/"
+                }
+              }
+            ]
+          },
+          "nftSupport": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap Wallet supports NFT display or NFT portfolio management in at least one wallet surface.",
+                  "url": "https://wallet.uniswap.org/"
+                }
+              }
+            ]
+          },
+          "collectionViews": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap Wallet provides NFT collection-oriented views or NFT portfolio surfaces.",
+                  "url": "https://wallet.uniswap.org/"
+                }
+              }
+            ]
+          },
+          "watchOnlyWallets": null,
+          "multiWalletAggregation": {
+            "$ref": "featureSupported"
+          }
+        },
+        "notifications": {
+          "ref": {
+            "explanation": "Uniswap Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://wallet.uniswap.org/"
+          },
+          "sendReceive": null,
+          "priceAlerts": null,
+          "approvalAlerts": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap Wallet supports approval-related alerts, approval review, or permission warnings.",
+                  "url": "https://wallet.uniswap.org/"
+                }
+              }
+            ]
+          },
+          "bridgeCompletion": null,
+          "failedTransaction": null,
+          "securityAlerts": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap Wallet supports security alerts or transaction-risk warnings.",
+                  "url": "https://wallet.uniswap.org/"
+                }
+              }
+            ]
+          },
+          "marketAlerts": null
+        },
+        "nftCapabilities": {
+          "ref": {
+            "explanation": "Uniswap Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://wallet.uniswap.org/"
+          },
+          "display": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap Wallet supports displaying NFTs or collectibles in the wallet.",
+                  "url": "https://wallet.uniswap.org/"
+                }
+              }
+            ]
+          },
+          "send": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap Wallet supports wallet NFT transfer flows or NFT asset management.",
+                  "url": "https://wallet.uniswap.org/"
+                }
+              }
+            ]
+          },
+          "mint": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap Wallet can connect to dapps and sign NFT mint transactions.",
+                  "url": "https://wallet.uniswap.org/"
+                }
+              }
+            ]
+          },
+          "marketplaceIntegration": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap Wallet integrates NFT marketplace or NFT trading/discovery features.",
+                  "url": "https://wallet.uniswap.org/"
+                }
+              }
+            ]
+          },
+          "spamNftHiding": null,
+          "collectionMetadataRefresh": null,
+          "royaltiesOrOffers": null
+        },
+        "defiPositionAwareness": {
+          "ref": {
+            "explanation": "Uniswap Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://wallet.uniswap.org/"
+          },
+          "lendingPositions": null,
+          "stakingPositions": null,
+          "lpPositions": null,
+          "vaultPositions": null,
+          "perProtocolBalances": null,
+          "claimableRewards": null,
+          "liquidationWarnings": null
+        },
+        "stakingEarn": {
+          "ref": {
+            "explanation": "Uniswap Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://wallet.uniswap.org/"
+          },
+          "nativeStaking": null,
+          "liquidStaking": null,
+          "validatorChoice": null,
+          "apyDisplay": null,
+          "rewardsClaiming": null,
+          "providerDependency": null,
+          "lockupDisclosure": null
+        },
+        "customerSupport": {
+          "ref": {
+            "explanation": "Uniswap Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://wallet.uniswap.org/"
+          },
+          "liveChat": null,
+          "emailSupport": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap Wallet publishes support, help center, or contact paths for wallet users.",
+                  "url": "https://docs.uniswap.org/"
+                }
+              }
+            ]
+          },
+          "aiSupport": null,
+          "publishedSla": null,
+          "inAppHelpCenter": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap Wallet provides in-app or product-linked help/support content.",
+                  "url": "https://docs.uniswap.org/"
+                }
+              }
+            ]
+          },
+          "transactionTroubleshooting": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap Wallet support docs include transaction or wallet troubleshooting material.",
+                  "url": "https://docs.uniswap.org/"
+                }
+              }
+            ]
+          },
+          "scamRecoveryGuidance": null
+        },
+        "developerOffering": {
+          "ref": {
+            "explanation": "Uniswap Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://wallet.uniswap.org/"
+          },
+          "walletSdk": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap Wallet publishes wallet developer docs, SDKs, or public wallet integration repositories.",
+                  "url": "https://github.com/Uniswap"
+                }
+              }
+            ]
+          },
+          "embeddedWalletSdk": null,
+          "whiteLabelOffering": null,
+          "walletConnectSupport": {
+            "$ref": "featureSupported"
+          },
+          "eip6963": null,
+          "eip5792": null,
+          "deepLinks": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap Wallet documents mobile deep links, universal links, or app-link connection flows.",
+                  "url": "https://docs.uniswap.org/"
+                }
+              }
+            ]
+          },
+          "mobileLinkingQuality": "Mobile linking documented or product-supported; quality requires hands-on UX testing."
+        },
+        "pricingFeeModel": {
+          "ref": {
+            "explanation": "Uniswap Wallet page says zero app fees; Uniswap support says crosschain swaps include Across bridging fees and network costs shown before confirmation.",
+            "url": "https://support.uniswap.org/hc/en-us/articles/43793128689549-What-are-crosschain-swaps"
+          },
+          "swapFees": "Uniswap Wallet advertises zero app fees on the official wallet page.",
+          "bridgeFees": "Crosschain swaps include Across bridging fees and network costs, reflected in the quote before confirmation.",
+          "onRampFees": null,
+          "spreadDisclosure": null,
+          "subscriptionFeatures": null,
+          "cardFees": null,
+          "hiddenPartnerRevenue": null
+        },
+        "releaseVelocity": {
+          "ref": {
+            "explanation": "Uniswap Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://wallet.uniswap.org/"
+          },
+          "latestReleaseDate": "2026-04-04",
+          "releaseFrequency": "ReleaseFrequency.IRREGULAR",
+          "appStoreUpdateCadence": "App-store cadence should be measured from current app-store release history in a deeper pass.",
+          "githubActivity": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Uniswap Wallet has public GitHub repository activity or releases that can be tracked.",
+                  "url": "https://github.com/Uniswap"
+                }
+              }
+            ]
+          },
+          "changelogDetail": "ChangelogDetail.BASIC"
+        },
+        "deviceSync": {
+          "ref": {
+            "explanation": "Uniswap Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://wallet.uniswap.org/"
+          },
+          "syncsAccounts": null,
+          "syncsSettings": null,
+          "syncsContactsOrAddressBook": null,
+          "desktopMobileSync": null,
+          "cloudBackedSync": null,
+          "requiresSameSeedImport": {
+            "$ref": "featureSupported"
+          }
+        }
+      }
+    },
+    "variants": {
+      "MOBILE": true,
+      "BROWSER": true
+    }
+  }
 }
