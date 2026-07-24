@@ -67,6 +67,7 @@
   .pill.bad{background:var(--badbg);color:#ef7f8f}
   .pill.warn{background:var(--warnbg);color:#e7b85c}
   .pill.unknown{background:var(--unknownbg);color:var(--muted)}
+  .pill.na{background:transparent;color:#565b6b;border:1px dashed var(--line);font-weight:500}
   .pill.value{background:var(--valuebg);color:var(--valuetxt);font-weight:500}
   .pill.diff{box-shadow:0 0 0 2px var(--warn)}
   .legend{display:flex;gap:14px;padding:8px 20px;color:var(--muted);font-size:12px;flex-wrap:wrap;align-items:center;border-bottom:1px solid var(--line)}
@@ -152,6 +153,7 @@
           <li><span class="pill bad">Worse</span> unfavourable</li>
           <li><span class="pill warn">Partial</span> partial / qualified support</li>
           <li><span class="pill unknown">— Unknown</span> not recorded in the dataset (distinct from "No")</li>
+          <li><span class="pill na">N/A</span> not applicable to this wallet type (e.g. product features on hardware wallets)</li>
           <li><span class="pill value">Value</span> a descriptive value (e.g. a licence) rather than yes/no</li>
         </ul>
       </div>
@@ -309,7 +311,11 @@ function classify(node){
   if(typeof node==='boolean') return [node?'yes':'no', null];
   if(typeof node==='string') return ['value', shortEnum(node)];
   if(isObj(node)){
-    if('$ref' in node) return [node['$ref']==='notSupported' ? 'no' : 'yes', null];
+    if('$ref' in node){
+      if(node['$ref']==='notSupported') return ['no', null];
+      if(node['$ref']==='notApplicable') return ['na', null];
+      return ['yes', null];
+    }
     if('$call' in node){
       const c=node['$call'];
       if(c.startsWith('not') || c.includes('notSupported')) return ['no', null];
@@ -346,6 +352,9 @@ function buildPayload(walletsRaw){
   const ws=[];
   for(const w of walletsRaw){
     const feats=w.data.features, meta=w.data.metadata||{};
+    // Hardware-wallet records intentionally omit the product.* namespace
+    // (see data/SCHEMA.md). Those cells are Not Applicable, not unknown.
+    const hasProduct='product' in feats;
     const cells={};
     for(const m of METRIC_CATALOG){
       const node=getPath(feats, m.path);
@@ -357,6 +366,9 @@ function buildPayload(walletsRaw){
       else if(m.type==='count_high'){ if(Array.isArray(node)){ st='count'; detail=node.length; } }
       else if(m.type==='count_low'){ const c=countOpenHigh(node); if(c!=null){ st='count'; detail=c; } }
       else if(m.type==='license'){ const lv=licenseValue(node); if(lv){ st='value'; detail=lv; } }
+      // Namespace rule: a missing product.* datapoint on a record without the
+      // product namespace is Not Applicable rather than an open gap.
+      if(st==='unknown' && m.path.startsWith('product.') && !hasProduct) st='na';
       cells[m.key]={state:st, detail, ref};
     }
     const variantsObj=w.data.variants||{};
@@ -403,6 +415,7 @@ function polarityClass(m, cell){
   const s = cell.state;
   if(s==='value') return 'value';
   if(s==='unknown') return 'unknown';
+  if(s==='na') return 'na';
   if(s==='partial') return 'warn';
   if(s==='count'){
     const goodHigh = m.type==='count_high';
@@ -420,6 +433,7 @@ function cellText(m, cell){
     case 'no': return 'No';
     case 'partial': return 'Partial';
     case 'unknown': return '—';
+    case 'na': return 'N/A';
     case 'value': return cell.detail || '—';
     case 'count': return String(cell.detail);
   }
@@ -462,7 +476,7 @@ function renderControls(){
 function metricVisible(m, cols){
   if(state.search && !m.label.toLowerCase().includes(state.search.toLowerCase())) return false;
   const cells = cols.map(w=>w.cells[m.key]);
-  if(state.hideUnknown && cells.every(c=>c.state==='unknown')) return false;
+  if(state.hideUnknown && cells.every(c=>c.state==='unknown'||c.state==='na')) return false;
   if(state.onlyDiff){
     const allSame = cols.every(w=>sameAsBaseline(m,w));
     if(allSame) return false;
@@ -476,7 +490,7 @@ function renderSummary(cols){
     let good=0,tot=0;
     stateMetrics.forEach(m=>{
       const c=w.cells[m.key];
-      if(c.state==='unknown') return;
+      if(c.state==='unknown'||c.state==='na') return;
       tot++;
       const cls=polarityClass(m,c);
       if(cls==='good') good++;
@@ -547,9 +561,9 @@ function openDrawer(wid, mkey){
   document.getElementById('dWallet').textContent = `${w.name} · ${m.cat}`;
   const cls=polarityClass(m,c);
   const vclass = cls==='good'?'g':cls==='bad'?'b':'n';
-  const verdictBg = {good:'var(--goodbg)',bad:'var(--badbg)',warn:'var(--warnbg)',unknown:'var(--unknownbg)',value:'var(--valuebg)'}[cls];
+  const verdictBg = {good:'var(--goodbg)',bad:'var(--badbg)',warn:'var(--warnbg)',unknown:'var(--unknownbg)',na:'var(--unknownbg)',value:'var(--valuebg)'}[cls];
   let polarityTag='';
-  if(c.state!=='unknown' && c.state!=='value'){
+  if(c.state!=='unknown' && c.state!=='na' && c.state!=='value'){
     polarityTag = cls==='good'?'<span class="tag g">good for users</span>':cls==='bad'?'<span class="tag b">worse for users</span>':'';
   }
   let body = `<div><span class="verdict" style="background:${verdictBg}">${cellText(m,c)}</span>${polarityTag}</div>`;
@@ -575,6 +589,8 @@ function openDrawer(wid, mkey){
   } else if(ref && ref.named){
     const nm = ref.named==='refTodo' ? 'Unsourced — flagged <code>refTodo</code> in the dataset (needs a citation).' : `Reference to shared object <code>${escapeHtml(ref.named)}</code> (not inlined in this prototype).`;
     body += `<div class="nosrc">⚠ ${nm}</div>`;
+  } else if(c.state==='na'){
+    body += `<div class="nosrc">Not applicable to this wallet type — this datapoint isn't tracked for these records.</div>`;
   } else if(c.state==='unknown'){
     body += `<div class="nosrc">No data recorded for this wallet/metric.</div>`;
   } else {

@@ -1,255 +1,347 @@
 {
-	"id": "cypherock",
-	"source": "hardware-wallets",
-	"export": "cypherockWallet",
-	"data": {
-		"metadata": {
-			"id": "cypherock",
-			"displayName": "Cypherock Wallet",
-			"tableName": "Cypherock",
-			"blurb": "The Cypherock has a secure element (EAL6+ rated) and uses a unique card-tapping system for transaction authorization.",
-			"contributors": [
-				{
-					"$ref": "patrickalphac"
-				},
-				{
-					"$ref": "mattmatt"
-				}
-			],
-			"hardwareWalletManufactureType": "HardwareWalletManufactureType.FACTORY_MADE",
-			"hardwareWalletModels": [
-				{
-					"id": "cypherock-x1",
-					"name": "Cypherock X1",
-					"isFlagship": true,
-					"url": "https://www.cypherock.com/product/cypherock-x1"
-				}
-			],
-			"iconExtension": "svg",
-			"lastUpdated": "2025-01-06",
-			"urls": {
-				"docs": [
-					"https://docs.cypherock.com/"
-				],
-				"repositories": [
-					"https://github.com/Cypherock"
-				],
-				"socials": {
-					"facebook": "https://facebook.com/cypherock/",
-					"instagram": "https://www.instagram.com/cypherockwallet/",
-					"linkedin": "https://www.linkedin.com/company/cypherockwallet/",
-					"telegram": "https://t.me/cypherock",
-					"x": "https://x.com/CypherockWallet"
-				},
-				"websites": [
-					"https://www.cypherock.com"
-				]
-			}
-		},
-		"features": {
-			"accountSupport": null,
-			"appConnectionSupport": {
-				"$call": "supported",
-				"args": [
-					{
-						"ref": "https://www.youtube.com/watch?v=R0g35dKjRtI",
-						"requiresManufacturerConsent": null,
-						"supportedConnections": {
-							"VENDOR_OPEN_SOURCE_APP": true
-						}
-					}
-				]
-			},
-			"licensing": {
-				"type": "LicensingType.SINGLE_WALLET_REPO_AND_LICENSE",
-				"walletAppLicense": {
-					"ref": [
-						{
-							"explanation": "Cypherock is open-source and reproducible",
-							"url": "https://github.com/Cypherock/x1_wallet_firmware/blob/3542eeae9f4455bec107fe0f02230453719706a6/LICENSE.md"
-						}
-					],
-					"license": "FOSSLicense.MIT_WITH_CLAUSE"
-				}
-			},
-			"monetization": {
-				"ref": [
-					{
-						"explanation": "Hardware wallet startup Cypherock raises $1 Mn",
-						"url": "https://entrackr.com/2022/12/hardware-wallet-startup-cypherock-raises-1-mn/"
-					}
-				],
-				"revenueBreakdownIsPublic": false,
-				"strategies": {
-					"donations": null,
-					"ecosystemGrants": null,
-					"governanceTokenLowFloat": null,
-					"governanceTokenMostlyDistributed": null,
-					"hiddenConvenienceFees": null,
-					"publicOffering": null,
-					"selfFunded": null,
-					"transparentConvenienceFees": null,
-					"ventureCapital": true
-				}
-			},
-			"multiAddress": null,
-			"privacy": {
-				"analytics": {
-					"crashReports": null,
-					"usage": null
-				},
-				"dataCollection": null,
-				"hardwarePrivacy": null,
-				"privacyPolicy": "https://www.cypherock.com/privacy",
-				"transactionPrivacy": null
-			},
-			"profile": "WalletProfile.GENERIC",
-			"security": {
-				"accountRecovery": null,
-				"bugBountyProgram": {
-					"$call": "supported",
-					"args": [
-						{
-							"ref": [
-								{
-									"explanation": "Cypherock has a 90-day disclosure policy, which means that we do our best to fix issues within 90 days upon receipt of a vulnerability report. If the issue is fixed sooner and if there is a mutual agreement between the security researcher and the Cypherock Security Team, the disclosure might happen before the 90-day deadline.",
-									"url": "https://www.cypherock.com/bug-bounty"
-								}
-							],
-							"availability": "BugBountyProgramAvailability.ACTIVE",
-							"coverageBreadth": "FULL_SCOPE",
-							"dateStarted": "2023-03-22",
-							"disclosure": {
-								"$call": "supported",
-								"args": [
-									{
-										"numberOfDays": 30
-									}
-								]
-							},
-							"legalProtections": {
-								"$call": "supported",
-								"args": [
-									{
-										"type": "LegalProtectionType.SAFE_HARBOR",
-										"ref": [
-											{
-												"explanation": "Cypherock commits that security researchers reporting bugs will be protected from legal liability, so long as they follow responsible disclosure guidelines and principles.",
-												"url": "https://www.cypherock.com/bug-bounty"
-											}
-										]
-									}
-								]
-							},
-							"platform": "BugBountyPlatform.SELF_HOSTED",
-							"rewards": {
-								"$ref": "notSupported"
-							},
-							"upgradePathAvailable": true
-						}
-					]
-				},
-				"duressResistance": null,
-				"firmware": {
-					"type": "FirmwareType.PASS",
-					"customFirmware": null,
-					"firmwareOpenSource": "FirmwareType.PASS",
-					"reproducibleBuilds": "FirmwareType.PASS",
-					"silentUpdateProtection": "FirmwareType.PASS"
-				},
-				"keysHandling": null,
-				"lightClient": {
-					"ethereumL1": null
-				},
-				"publicSecurityAudits": [
-					{
-						"ref": [
-							{
-								"explanation": "Public Response to Keylabs Audit of Cypherock",
-								"url": "https://www.cypherock.com/keylabs.pdf"
-							}
-						],
-						"auditDate": "2022-09-30",
-						"auditor": {
-							"$ref": "keylabs"
-						},
-						"codeSnapshot": {
-							"date": "2022-09-30"
-						},
-						"unpatchedFlaws": "ALL_FIXED",
-						"variantsScope": {
-							"HARDWARE": true
-						}
-					}
-				],
-				"secureElement": {
-					"$call": "supported",
-					"args": [
-						{
-							"ref": [
-								{
-									"explanation": "X1 Vault is open source and stores 1 of the 5 shards and the 4 X1 Cards have EAL 6+ secure elements and store the remaining 4 of the 5 shards.",
-									"url": "https://docs.cypherock.com/security-overview/introduction"
-								}
-							],
-							"secureElementType": "SecureElementType.EAL_6_PLUS"
-						}
-					]
-				},
-				"securityBestPractices": null,
-				"supplyChainDIY": null,
-				"supplyChainFactory": null,
-				"transactionLegibility": {
-					"ref": [
-						{
-							"explanation": "Independent video demonstration of Cypherock's signing implementation.",
-							"url": "https://youtu.be/9YmPWxAvKYY?t=534"
-						},
-						{
-							"explanation": "Independent video demonstration of Cypherock's transaction implementation.",
-							"url": "https://youtube.com/shorts/YG6lzwTUojE"
-						}
-					],
-					"dataExtraction": {
-						"EYES": true,
-						"HASHES": false,
-						"QRCODE": false
-					},
-					"detailsDisplayed": {
-						"chain": "DataDisplayOptions.NOT_IN_UI",
-						"from": "DataDisplayOptions.SHOWN_BY_DEFAULT",
-						"gas": "DataDisplayOptions.SHOWN_BY_DEFAULT",
-						"nonce": "DataDisplayOptions.NOT_IN_UI",
-						"to": "DataDisplayOptions.SHOWN_BY_DEFAULT",
-						"value": "DataDisplayOptions.SHOWN_BY_DEFAULT"
-					},
-					"erc7730": {
-						"$ref": "notSupported"
-					},
-					"erc8213": null
-				},
-				"userSafety": null
-			},
-			"selfSovereignty": {
-				"interoperability": null
-			},
-			"transparency": {
-				"maintenance": null,
-				"operationFees": null,
-				"releaseTransparency": {
-					"artifactSigning": null,
-					"dependencyLocking": null,
-					"dependencyVulnerabilityScanning": null,
-					"hasPublicChangelog": null,
-					"hermeticBuilds": null,
-					"repositoryChangeControls": null,
-					"reproducibleBuilds": null
-				},
-				"reputation": null
-			}
-		},
-		"variants": {
-			"HARDWARE": true
-		}
-	}
+  "id": "cypherock",
+  "source": "hardware-wallets",
+  "export": "cypherockWallet",
+  "data": {
+    "metadata": {
+      "id": "cypherock",
+      "displayName": "Cypherock Wallet",
+      "tableName": "Cypherock",
+      "blurb": "The Cypherock has a secure element (EAL6+ rated) and uses a unique card-tapping system for transaction authorization.",
+      "contributors": [
+        {
+          "$ref": "patrickalphac"
+        },
+        {
+          "$ref": "mattmatt"
+        }
+      ],
+      "hardwareWalletManufactureType": "HardwareWalletManufactureType.FACTORY_MADE",
+      "hardwareWalletModels": [
+        {
+          "id": "cypherock-x1",
+          "name": "Cypherock X1",
+          "isFlagship": true,
+          "url": "https://www.cypherock.com/product/cypherock-x1"
+        }
+      ],
+      "iconExtension": "svg",
+      "lastUpdated": "2025-01-06",
+      "urls": {
+        "docs": [
+          "https://docs.cypherock.com/"
+        ],
+        "repositories": [
+          "https://github.com/Cypherock"
+        ],
+        "socials": {
+          "facebook": "https://facebook.com/cypherock/",
+          "instagram": "https://www.instagram.com/cypherockwallet/",
+          "linkedin": "https://www.linkedin.com/company/cypherockwallet/",
+          "telegram": "https://t.me/cypherock",
+          "x": "https://x.com/CypherockWallet"
+        },
+        "websites": [
+          "https://www.cypherock.com"
+        ]
+      }
+    },
+    "features": {
+      "accountSupport": null,
+      "appConnectionSupport": {
+        "$call": "supported",
+        "args": [
+          {
+            "ref": "https://www.youtube.com/watch?v=R0g35dKjRtI",
+            "requiresManufacturerConsent": null,
+            "supportedConnections": {
+              "VENDOR_OPEN_SOURCE_APP": true
+            }
+          }
+        ]
+      },
+      "licensing": {
+        "type": "LicensingType.SINGLE_WALLET_REPO_AND_LICENSE",
+        "walletAppLicense": {
+          "ref": [
+            {
+              "explanation": "Cypherock is open-source and reproducible",
+              "url": "https://github.com/Cypherock/x1_wallet_firmware/blob/3542eeae9f4455bec107fe0f02230453719706a6/LICENSE.md"
+            }
+          ],
+          "license": "FOSSLicense.MIT_WITH_CLAUSE"
+        }
+      },
+      "monetization": {
+        "ref": [
+          {
+            "explanation": "Hardware wallet startup Cypherock raises $1 Mn",
+            "url": "https://entrackr.com/2022/12/hardware-wallet-startup-cypherock-raises-1-mn/"
+          }
+        ],
+        "revenueBreakdownIsPublic": false,
+        "strategies": {
+          "donations": null,
+          "ecosystemGrants": null,
+          "governanceTokenLowFloat": null,
+          "governanceTokenMostlyDistributed": null,
+          "hiddenConvenienceFees": null,
+          "publicOffering": null,
+          "selfFunded": null,
+          "transparentConvenienceFees": null,
+          "ventureCapital": true
+        }
+      },
+      "multiAddress": null,
+      "privacy": {
+        "analytics": {
+          "crashReports": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/Cypherock/cysync-desktop/blob/main/README.md",
+                  "explanation": "The cySync-desktop README lists 'Disable crash report' only for development mode, indicating crash reporting is active in production builds."
+                }
+              }
+            ]
+          },
+          "usage": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/Cypherock/cysync-desktop/blob/main/README.md",
+                  "explanation": "The cySync-desktop README lists 'Disable analytics' only for development mode, indicating analytics telemetry is enabled in production builds."
+                }
+              }
+            ]
+          }
+        },
+        "dataCollection": null,
+        "hardwarePrivacy": null,
+        "privacyPolicy": "https://www.cypherock.com/privacy",
+        "transactionPrivacy": {
+          "STEALTH_ADDRESSES": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.cypherock.com/features",
+                  "explanation": "No Cypherock documentation or feature page references stealth-address receiving, which is absent from this hardware wallet and its cySync app."
+                }
+              }
+            ]
+          },
+          "PRIVACY_POOLS": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.cypherock.com/features",
+                  "explanation": "No Cypherock source mentions Privacy Pools integration in the X1 or cySync app."
+                }
+              }
+            ]
+          },
+          "defaultFungibleTokenTransferMode": "PUBLIC"
+        }
+      },
+      "profile": "WalletProfile.GENERIC",
+      "security": {
+        "accountRecovery": null,
+        "bugBountyProgram": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": [
+                {
+                  "explanation": "Cypherock has a 90-day disclosure policy, which means that we do our best to fix issues within 90 days upon receipt of a vulnerability report. If the issue is fixed sooner and if there is a mutual agreement between the security researcher and the Cypherock Security Team, the disclosure might happen before the 90-day deadline.",
+                  "url": "https://www.cypherock.com/bug-bounty"
+                }
+              ],
+              "availability": "BugBountyProgramAvailability.ACTIVE",
+              "coverageBreadth": "FULL_SCOPE",
+              "dateStarted": "2023-03-22",
+              "disclosure": {
+                "$call": "supported",
+                "args": [
+                  {
+                    "numberOfDays": 30
+                  }
+                ]
+              },
+              "legalProtections": {
+                "$call": "supported",
+                "args": [
+                  {
+                    "type": "LegalProtectionType.SAFE_HARBOR",
+                    "ref": [
+                      {
+                        "explanation": "Cypherock commits that security researchers reporting bugs will be protected from legal liability, so long as they follow responsible disclosure guidelines and principles.",
+                        "url": "https://www.cypherock.com/bug-bounty"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "platform": "BugBountyPlatform.SELF_HOSTED",
+              "rewards": {
+                "$ref": "notSupported"
+              },
+              "upgradePathAvailable": true
+            }
+          ]
+        },
+        "duressResistance": null,
+        "firmware": {
+          "type": "FirmwareType.PASS",
+          "customFirmware": null,
+          "firmwareOpenSource": "FirmwareType.PASS",
+          "reproducibleBuilds": "FirmwareType.PASS",
+          "silentUpdateProtection": "FirmwareType.PASS"
+        },
+        "keysHandling": null,
+        "lightClient": {
+          "ethereumL1": null
+        },
+        "publicSecurityAudits": [
+          {
+            "ref": [
+              {
+                "explanation": "Public Response to Keylabs Audit of Cypherock",
+                "url": "https://www.cypherock.com/keylabs.pdf"
+              }
+            ],
+            "auditDate": "2022-09-30",
+            "auditor": {
+              "$ref": "keylabs"
+            },
+            "codeSnapshot": {
+              "date": "2022-09-30"
+            },
+            "unpatchedFlaws": "ALL_FIXED",
+            "variantsScope": {
+              "HARDWARE": true
+            }
+          }
+        ],
+        "secureElement": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": [
+                {
+                  "explanation": "X1 Vault is open source and stores 1 of the 5 shards and the 4 X1 Cards have EAL 6+ secure elements and store the remaining 4 of the 5 shards.",
+                  "url": "https://docs.cypherock.com/security-overview/introduction"
+                }
+              ],
+              "secureElementType": "SecureElementType.EAL_6_PLUS"
+            }
+          ]
+        },
+        "securityBestPractices": null,
+        "supplyChainDIY": null,
+        "supplyChainFactory": null,
+        "transactionLegibility": {
+          "ref": [
+            {
+              "explanation": "Independent video demonstration of Cypherock's signing implementation.",
+              "url": "https://youtu.be/9YmPWxAvKYY?t=534"
+            },
+            {
+              "explanation": "Independent video demonstration of Cypherock's transaction implementation.",
+              "url": "https://youtube.com/shorts/YG6lzwTUojE"
+            }
+          ],
+          "dataExtraction": {
+            "EYES": true,
+            "HASHES": false,
+            "QRCODE": false
+          },
+          "detailsDisplayed": {
+            "chain": "DataDisplayOptions.NOT_IN_UI",
+            "from": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+            "gas": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+            "nonce": "DataDisplayOptions.NOT_IN_UI",
+            "to": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+            "value": "DataDisplayOptions.SHOWN_BY_DEFAULT"
+          },
+          "erc7730": {
+            "$ref": "notSupported"
+          },
+          "erc8213": null
+        },
+        "userSafety": null
+      },
+      "selfSovereignty": {
+        "interoperability": null
+      },
+      "transparency": {
+        "maintenance": null,
+        "operationFees": null,
+        "releaseTransparency": {
+          "artifactSigning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://walletscrutiny.com/hardware/cypherockx1/",
+                  "explanation": "WalletScrutiny confirms X1 firmware is signed by two private keys with a signed header appended to the firmware binary image."
+                }
+              }
+            ]
+          },
+          "dependencyLocking": null,
+          "dependencyVulnerabilityScanning": null,
+          "hasPublicChangelog": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/Cypherock/x1_wallet_firmware/releases",
+                  "explanation": "Cypherock publishes detailed public firmware release notes with version numbers and changes on its GitHub releases page."
+                }
+              }
+            ]
+          },
+          "hermeticBuilds": null,
+          "repositoryChangeControls": null,
+          "reproducibleBuilds": null
+        },
+        "reputation": null
+      },
+      "chainAbstraction": {
+        "bridging": {
+          "builtInBridging": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.cypherock.com/features",
+                  "explanation": "Cypherock states swapping and bridging functionalities related to cross-chain bridging are not available; only swaps are offered, not native bridging."
+                }
+              }
+            ]
+          }
+        },
+        "crossChainBalances": {
+          "globalAccountValue": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.cypherock.com/cysync",
+                  "explanation": "cySync provides portfolio aggregation tracking assets across wallets and chains in a single place, giving a unified account value view."
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "variants": {
+      "HARDWARE": true
+    }
+  }
 }

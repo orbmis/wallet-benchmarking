@@ -1,240 +1,368 @@
 {
-	"id": "trezor",
-	"source": "hardware-wallets",
-	"export": "trezorWallet",
-	"data": {
-		"metadata": {
-			"id": "trezor",
-			"displayName": "Trezor Wallet",
-			"tableName": "Trezor",
-			"blurb": "Trezor Wallet is a self-custodial hardware wallet built by SatoshiLabs. It provides secure storage for cryptocurrencies with an easy-to-use interface.",
-			"contributors": [
-				{
-					"$ref": "nconsigny"
-				},
-				{
-					"$ref": "patrickalphac"
-				},
-				{
-					"$ref": "mattmatt"
-				}
-			],
-			"hardwareWalletManufactureType": "HardwareWalletManufactureType.FACTORY_MADE",
-			"hardwareWalletModels": [
-				{
-					"id": "trezor-safe-5",
-					"name": "Trezor Safe 5",
-					"isFlagship": true,
-					"url": "https://trezor.io/trezor-safe-5"
-				},
-				{
-					"id": "trezor-safe-3",
-					"name": "Trezor Safe 3",
-					"isFlagship": false,
-					"url": "https://trezor.io/trezor-safe-3"
-				},
-				{
-					"id": "trezor-model-one",
-					"name": "Trezor Model One",
-					"isFlagship": false,
-					"url": "https://trezor.io/trezor-model-one"
-				},
-				{
-					"id": "trezor-model-t",
-					"name": "Trezor Model T",
-					"isFlagship": false,
-					"url": "https://trezor.io/trezor-model-t"
-				}
-			],
-			"iconExtension": "svg",
-			"lastUpdated": "2025-03-12",
-			"urls": {
-				"docs": [
-					"https://trezor.io/learn"
-				],
-				"repositories": [
-					"https://github.com/trezor/trezor-suite"
-				],
-				"socials": {
-					"instagram": "https://www.instagram.com/trezor.io/",
-					"linkedin": "https://www.linkedin.com/company/trezor/",
-					"reddit": "https://www.reddit.com/r/TREZOR/",
-					"tiktok": "https://www.tiktok.com/@trezor.io_official",
-					"x": "https://x.com/trezor",
-					"youtube": "https://www.youtube.com/@TrezorWallet"
-				},
-				"websites": [
-					"https://trezor.io/"
-				]
-			}
-		},
-		"features": {
-			"accountSupport": null,
-			"appConnectionSupport": {
-				"$call": "supported",
-				"args": [
-					{
-						"ref": "https://trezor.io/guides/third-party-wallet-apps/third-party-wallet-apps-dapps",
-						"requiresManufacturerConsent": null,
-						"supportedConnections": {
-							"VENDOR_OPEN_SOURCE_APP": true,
-							"METAMASK": true,
-							"RABBY": true,
-							"AMBIRE": true,
-							"FRAME": true,
-							"OTHER": true
-						}
-					}
-				]
-			},
-			"licensing": null,
-			"monetization": {
-				"ref": {
-					"$ref": "refTodo"
-				},
-				"revenueBreakdownIsPublic": false,
-				"strategies": {
-					"donations": null,
-					"ecosystemGrants": null,
-					"governanceTokenLowFloat": null,
-					"governanceTokenMostlyDistributed": null,
-					"hiddenConvenienceFees": null,
-					"publicOffering": null,
-					"selfFunded": null,
-					"transparentConvenienceFees": null,
-					"ventureCapital": null
-				}
-			},
-			"multiAddress": null,
-			"privacy": {
-				"analytics": {
-					"crashReports": null,
-					"usage": null
-				},
-				"dataCollection": null,
-				"hardwarePrivacy": null,
-				"privacyPolicy": "https://trezor.io/privacy-policy",
-				"transactionPrivacy": null
-			},
-			"profile": "WalletProfile.GENERIC",
-			"security": {
-				"accountRecovery": null,
-				"bugBountyProgram": {
-					"$call": "supported",
-					"args": [
-						{
-							"ref": {
-								"$ref": "refTodo"
-							},
-							"availability": "BugBountyProgramAvailability.ACTIVE",
-							"coverageBreadth": "FULL_SCOPE",
-							"dateStarted": "2018-08-25",
-							"disclosure": {
-								"$ref": "notSupported"
-							},
-							"legalProtections": {
-								"$call": "supported",
-								"args": [
-									{
-										"type": "LegalProtectionType.SAFE_HARBOR",
-										"ref": [
-											{
-												"explanation": "Use exploits solely to verify the existence of vulnerabilities.",
-												"url": "https://trezor.io/other/partner-portal/for-developers/bug-bounty-program"
-											}
-										]
-									}
-								]
-							},
-							"platform": "BugBountyPlatform.SELF_HOSTED",
-							"rewards": {
-								"$call": "supported",
-								"args": [
-									{
-										"currency": "USD",
-										"maximum": 100000,
-										"minimum": 0
-									}
-								]
-							},
-							"upgradePathAvailable": true
-						}
-					]
-				},
-				"duressResistance": null,
-				"firmware": null,
-				"keysHandling": null,
-				"lightClient": {
-					"ethereumL1": null
-				},
-				"publicSecurityAudits": null,
-				"secureElement": {
-					"$call": "supported",
-					"args": [
-						{
-							"ref": [
-								{
-									"explanation": "Equipped with features including the Secure Element (EAL6+) and device-entry passphrase, it’s an impenetrable security pair.",
-									"url": "https://trezor.io/trezor-safe-3"
-								}
-							],
-							"secureElementType": "SecureElementType.EAL_6_PLUS"
-						}
-					]
-				},
-				"securityBestPractices": null,
-				"supplyChainDIY": null,
-				"supplyChainFactory": null,
-				"transactionLegibility": {
-					"ref": [
-						{
-							"explanation": "Independent video demonstration of Trezor's signing implementation on Safe.",
-							"url": "https://youtu.be/9YmPWxAvKYY?t=1108"
-						},
-						{
-							"explanation": "Independent video showing transaction details on Trezor Safe 5",
-							"url": "https://youtube.com/shorts/4LayLrSuHNg"
-						}
-					],
-					"dataExtraction": {
-						"EYES": true,
-						"HASHES": false,
-						"QRCODE": false
-					},
-					"detailsDisplayed": {
-						"$spread:displaysFullTransactionDetails": {
-							"$ref": "displaysFullTransactionDetails"
-						},
-						"chain": "DataDisplayOptions.NOT_IN_UI",
-						"nonce": "DataDisplayOptions.NOT_IN_UI"
-					},
-					"erc7730": {
-						"$ref": "notSupported"
-					},
-					"erc8213": null
-				},
-				"userSafety": null
-			},
-			"selfSovereignty": {
-				"interoperability": null
-			},
-			"transparency": {
-				"maintenance": null,
-				"operationFees": null,
-				"releaseTransparency": {
-					"artifactSigning": null,
-					"dependencyLocking": null,
-					"dependencyVulnerabilityScanning": null,
-					"hasPublicChangelog": null,
-					"hermeticBuilds": null,
-					"repositoryChangeControls": null,
-					"reproducibleBuilds": null
-				},
-				"reputation": null
-			}
-		},
-		"variants": {
-			"HARDWARE": true
-		}
-	}
+  "id": "trezor",
+  "source": "hardware-wallets",
+  "export": "trezorWallet",
+  "data": {
+    "metadata": {
+      "id": "trezor",
+      "displayName": "Trezor Wallet",
+      "tableName": "Trezor",
+      "blurb": "Trezor Wallet is a self-custodial hardware wallet built by SatoshiLabs. It provides secure storage for cryptocurrencies with an easy-to-use interface.",
+      "contributors": [
+        {
+          "$ref": "nconsigny"
+        },
+        {
+          "$ref": "patrickalphac"
+        },
+        {
+          "$ref": "mattmatt"
+        }
+      ],
+      "hardwareWalletManufactureType": "HardwareWalletManufactureType.FACTORY_MADE",
+      "hardwareWalletModels": [
+        {
+          "id": "trezor-safe-5",
+          "name": "Trezor Safe 5",
+          "isFlagship": true,
+          "url": "https://trezor.io/trezor-safe-5"
+        },
+        {
+          "id": "trezor-safe-3",
+          "name": "Trezor Safe 3",
+          "isFlagship": false,
+          "url": "https://trezor.io/trezor-safe-3"
+        },
+        {
+          "id": "trezor-model-one",
+          "name": "Trezor Model One",
+          "isFlagship": false,
+          "url": "https://trezor.io/trezor-model-one"
+        },
+        {
+          "id": "trezor-model-t",
+          "name": "Trezor Model T",
+          "isFlagship": false,
+          "url": "https://trezor.io/trezor-model-t"
+        }
+      ],
+      "iconExtension": "svg",
+      "lastUpdated": "2025-03-12",
+      "urls": {
+        "docs": [
+          "https://trezor.io/learn"
+        ],
+        "repositories": [
+          "https://github.com/trezor/trezor-suite"
+        ],
+        "socials": {
+          "instagram": "https://www.instagram.com/trezor.io/",
+          "linkedin": "https://www.linkedin.com/company/trezor/",
+          "reddit": "https://www.reddit.com/r/TREZOR/",
+          "tiktok": "https://www.tiktok.com/@trezor.io_official",
+          "x": "https://x.com/trezor",
+          "youtube": "https://www.youtube.com/@TrezorWallet"
+        },
+        "websites": [
+          "https://trezor.io/"
+        ]
+      }
+    },
+    "features": {
+      "accountSupport": null,
+      "appConnectionSupport": {
+        "$call": "supported",
+        "args": [
+          {
+            "ref": "https://trezor.io/guides/third-party-wallet-apps/third-party-wallet-apps-dapps",
+            "requiresManufacturerConsent": null,
+            "supportedConnections": {
+              "VENDOR_OPEN_SOURCE_APP": true,
+              "METAMASK": true,
+              "RABBY": true,
+              "AMBIRE": true,
+              "FRAME": true,
+              "OTHER": true
+            }
+          }
+        ]
+      },
+      "licensing": null,
+      "monetization": {
+        "ref": {
+          "$ref": "refTodo"
+        },
+        "revenueBreakdownIsPublic": false,
+        "strategies": {
+          "donations": null,
+          "ecosystemGrants": null,
+          "governanceTokenLowFloat": null,
+          "governanceTokenMostlyDistributed": null,
+          "hiddenConvenienceFees": null,
+          "publicOffering": null,
+          "selfFunded": null,
+          "transparentConvenienceFees": null,
+          "ventureCapital": null
+        }
+      },
+      "multiAddress": null,
+      "privacy": {
+        "analytics": {
+          "crashReports": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.trezor.io/trezor-suite/analytics/sentry.html",
+                  "explanation": "Trezor Suite sends error/crash reports to Sentry.io to track errors and app performance for users who have anonymous data collection enabled."
+                }
+              }
+            ]
+          },
+          "usage": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.trezor.io/trezor-suite/analytics/",
+                  "explanation": "Trezor Suite collects usage/functional analytics (logged to an AWS S3 backend) when data collection is enabled, a setting prompted on first run and toggleable in Settings."
+                }
+              }
+            ]
+          }
+        },
+        "dataCollection": null,
+        "hardwarePrivacy": null,
+        "privacyPolicy": "https://trezor.io/privacy-policy",
+        "transactionPrivacy": {
+          "STEALTH_ADDRESSES": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trezor.io/trezor-suite",
+                  "explanation": "No Trezor Suite or firmware documentation references stealth-address receiving; the feature is absent."
+                }
+              }
+            ]
+          },
+          "PRIVACY_POOLS": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/trezor/trezor-suite",
+                  "explanation": "There is no Privacy Pools integration in Trezor Suite documentation, changelogs, or the trezor-suite repository."
+                }
+              }
+            ]
+          },
+          "defaultFungibleTokenTransferMode": "PUBLIC"
+        }
+      },
+      "profile": "WalletProfile.GENERIC",
+      "security": {
+        "accountRecovery": null,
+        "bugBountyProgram": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "$ref": "refTodo"
+              },
+              "availability": "BugBountyProgramAvailability.ACTIVE",
+              "coverageBreadth": "FULL_SCOPE",
+              "dateStarted": "2018-08-25",
+              "disclosure": {
+                "$ref": "notSupported"
+              },
+              "legalProtections": {
+                "$call": "supported",
+                "args": [
+                  {
+                    "type": "LegalProtectionType.SAFE_HARBOR",
+                    "ref": [
+                      {
+                        "explanation": "Use exploits solely to verify the existence of vulnerabilities.",
+                        "url": "https://trezor.io/other/partner-portal/for-developers/bug-bounty-program"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "platform": "BugBountyPlatform.SELF_HOSTED",
+              "rewards": {
+                "$call": "supported",
+                "args": [
+                  {
+                    "currency": "USD",
+                    "maximum": 100000,
+                    "minimum": 0
+                  }
+                ]
+              },
+              "upgradePathAvailable": true
+            }
+          ]
+        },
+        "duressResistance": null,
+        "firmware": null,
+        "keysHandling": null,
+        "lightClient": {
+          "ethereumL1": null
+        },
+        "publicSecurityAudits": null,
+        "secureElement": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": [
+                {
+                  "explanation": "Equipped with features including the Secure Element (EAL6+) and device-entry passphrase, it’s an impenetrable security pair.",
+                  "url": "https://trezor.io/trezor-safe-3"
+                }
+              ],
+              "secureElementType": "SecureElementType.EAL_6_PLUS"
+            }
+          ]
+        },
+        "securityBestPractices": null,
+        "supplyChainDIY": null,
+        "supplyChainFactory": null,
+        "transactionLegibility": {
+          "ref": [
+            {
+              "explanation": "Independent video demonstration of Trezor's signing implementation on Safe.",
+              "url": "https://youtu.be/9YmPWxAvKYY?t=1108"
+            },
+            {
+              "explanation": "Independent video showing transaction details on Trezor Safe 5",
+              "url": "https://youtube.com/shorts/4LayLrSuHNg"
+            }
+          ],
+          "dataExtraction": {
+            "EYES": true,
+            "HASHES": false,
+            "QRCODE": false
+          },
+          "detailsDisplayed": {
+            "$spread:displaysFullTransactionDetails": {
+              "$ref": "displaysFullTransactionDetails"
+            },
+            "chain": "DataDisplayOptions.NOT_IN_UI",
+            "nonce": "DataDisplayOptions.NOT_IN_UI"
+          },
+          "erc7730": {
+            "$ref": "notSupported"
+          },
+          "erc8213": null
+        },
+        "userSafety": null
+      },
+      "selfSovereignty": {
+        "interoperability": null,
+        "permissionsManagement": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://forum.trezor.io/t/smart-contract-revoker-viewer-manager-in-trezor-suite/12001",
+                "explanation": "Trezor Suite has no general native token-approval inspector/revoker (only a narrow revoke step inside the mobile DEX swap flow) and users are directed to third-party tools for allowance management."
+              }
+            }
+          ]
+        },
+        "transactionSubmission": {
+          "l1": {
+            "selfBroadcastViaSelfHostedNode": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://trezor.io/learn/security-privacy/how-trezor-keeps-you-safe/connect-trezor-suite-to-your-node",
+                    "explanation": "Trezor Suite (desktop) lets users connect to their own full node via a custom Blockbook or Electrum backend, broadcasting through self-hosted infrastructure."
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "transparency": {
+        "maintenance": null,
+        "operationFees": null,
+        "releaseTransparency": {
+          "artifactSigning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.trezor.io/trezor-firmware/common/reproducible-build.html",
+                  "explanation": "Official Trezor firmware images are cryptographically signed, requiring at least two independent key-holder signatures."
+                }
+              }
+            ]
+          },
+          "dependencyLocking": null,
+          "dependencyVulnerabilityScanning": null,
+          "hasPublicChangelog": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trezor.io/other/product-updates/trezor-firmware-changelog-all-versions-and-release-dates",
+                  "explanation": "Trezor publishes public changelogs and release notes for both Suite (GitHub Releases) and firmware."
+                }
+              }
+            ]
+          },
+          "hermeticBuilds": null,
+          "repositoryChangeControls": null,
+          "reproducibleBuilds": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.trezor.io/trezor-firmware/common/reproducible-build.html",
+                  "explanation": "Trezor firmware builds are reproducible; users can rebuild via Docker and verify the binary is identical to the official image except for the signature bytes."
+                }
+              }
+            ]
+          }
+        },
+        "reputation": null
+      },
+      "chainAbstraction": {
+        "bridging": {
+          "builtInBridging": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trezor.io/guides/sending-receiving-staking-funds/trading-crypto-in-trezor-suite/swap-crypto-in-trezor-suite",
+                  "explanation": "Trezor Suite offers swaps only via third-party CEX/DEX partners (DEX limited to same-chain EVM), with no native cross-chain bridging engine."
+                }
+              }
+            ]
+          }
+        },
+        "crossChainBalances": {
+          "globalAccountValue": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trezor.io/guides/trezor-suite/getting-to-know-trezor-suite",
+                  "explanation": "The Trezor Suite dashboard shows an aggregate portfolio value combining balances across all enabled coins and accounts with a historical chart."
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "variants": {
+      "HARDWARE": true
+    }
+  }
 }

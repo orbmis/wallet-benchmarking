@@ -1,0 +1,969 @@
+{
+  "proposals": [
+    {
+      "walletId": "bitbox",
+      "metricKey": "usageAnalytics",
+      "path": "privacy.analytics.usage",
+      "decision": "no",
+      "citationUrl": "https://support.bitbox.swiss/en_US/privacy/bitboxapp-data-sharing",
+      "explanation": "BitBox support documentation states the BitBoxApp does not embed third-party tracking, advertising, or analytics tools."
+    },
+    {
+      "walletId": "bitbox",
+      "metricKey": "crashReports",
+      "path": "privacy.analytics.crashReports",
+      "decision": "no",
+      "citationUrl": "https://support.bitbox.swiss/en_US/privacy/bitboxapp-data-sharing",
+      "explanation": "The BitBoxApp does not embed third-party tracking/analytics/crash tools; logging is anonymized and minimized, with no third-party crash reporting described."
+    },
+    {
+      "walletId": "bitbox",
+      "metricKey": "stealth",
+      "path": "privacy.transactionPrivacy.STEALTH_ADDRESSES",
+      "decision": "no",
+      "citationUrl": "https://support.bitbox.swiss/en_US/ethereum-co/receive-eth-erc20-tokens",
+      "explanation": "No stealth-address receiving is offered; the BitBoxApp supports standard Bitcoin and basic Ethereum/ERC20 receiving only."
+    },
+    {
+      "walletId": "bitbox",
+      "metricKey": "privacyPools",
+      "path": "privacy.transactionPrivacy.PRIVACY_POOLS",
+      "decision": "no",
+      "citationUrl": "https://github.com/BitBoxSwiss/bitbox-wallet-app/blob/master/CHANGELOG.md",
+      "explanation": "No Privacy Pools integration is documented in the BitBoxApp changelog or support materials."
+    },
+    {
+      "walletId": "bitbox",
+      "metricKey": "defaultTransfer",
+      "path": "privacy.transactionPrivacy.defaultFungibleTokenTransferMode",
+      "decision": "value",
+      "valueString": "PUBLIC",
+      "citationUrl": "https://support.bitbox.swiss/en_US/ethereum-co/send-eth-erc20-tokens",
+      "explanation": "All transfers are ordinary on-chain public transactions with no private/shielded mode offered in the BitBoxApp send flow."
+    },
+    {
+      "walletId": "bitbox",
+      "metricKey": "approvals",
+      "path": "selfSovereignty.permissionsManagement",
+      "decision": "no",
+      "citationUrl": "https://support.bitbox.swiss/en_US/ethereum-co/connect-to-a-dapp-with-walletconnect",
+      "explanation": "The BitBoxApp offers WalletConnect dapp connectivity but no built-in token-approval inspection/revocation UI; users are directed to external tools like Etherscan for approvals."
+    },
+    {
+      "walletId": "bitbox",
+      "metricKey": "selfBroadcast",
+      "path": "selfSovereignty.transactionSubmission.l1.selfBroadcastViaSelfHostedNode",
+      "decision": "yes",
+      "citationUrl": "https://support.bitbox.swiss/en_US/privacy/connecting-the-bitboxapp-to-your-own-full-node",
+      "explanation": "The BitBoxApp can connect to the user's own Bitcoin full node via an Electrum-compatible server for independent verification and broadcast."
+    },
+    {
+      "walletId": "bitbox",
+      "metricKey": "bridging",
+      "path": "chainAbstraction.bridging.builtInBridging",
+      "decision": "no",
+      "citationUrl": "https://github.com/BitBoxSwiss/bitbox-wallet-app/blob/master/CHANGELOG.md",
+      "explanation": "No native cross-chain bridging is documented in the BitBoxApp changelog or support hub."
+    },
+    {
+      "walletId": "bitbox",
+      "metricKey": "changelog",
+      "path": "transparency.releaseTransparency.hasPublicChangelog",
+      "decision": "yes",
+      "citationUrl": "https://github.com/BitBoxSwiss/bitbox-wallet-app/blob/master/CHANGELOG.md",
+      "explanation": "BitBox publishes a public CHANGELOG.md for the BitBoxApp and a separate firmware changelog on GitHub."
+    },
+    {
+      "walletId": "bitbox",
+      "metricKey": "signing",
+      "path": "transparency.releaseTransparency.artifactSigning",
+      "decision": "yes",
+      "citationUrl": "https://support.bitbox.swiss/en_US/verify-app-signature/verify-bitboxapp-signature-macos",
+      "explanation": "BitBoxApp installers are code-signed/notarized with published GPG .asc signatures, and firmware releases carry signed reproducibility assertions."
+    },
+    {
+      "walletId": "bitbox",
+      "metricKey": "reproducible",
+      "path": "transparency.releaseTransparency.reproducibleBuilds",
+      "decision": "yes",
+      "citationUrl": "https://github.com/BitBoxSwiss/bitbox02-firmware/blob/master/releases/README.md",
+      "explanation": "BitBox02 firmware is built reproducibly via Docker with fixed dependencies, allowing anyone to rebuild and match the official binary from a version tag."
+    },
+    {
+      "walletId": "cypherock",
+      "metricKey": "usageAnalytics",
+      "path": "privacy.analytics.usage",
+      "decision": "yes",
+      "citationUrl": "https://github.com/Cypherock/cysync-desktop/blob/main/README.md",
+      "explanation": "The cySync-desktop README lists 'Disable analytics' only for development mode, indicating analytics telemetry is enabled in production builds."
+    },
+    {
+      "walletId": "cypherock",
+      "metricKey": "crashReports",
+      "path": "privacy.analytics.crashReports",
+      "decision": "yes",
+      "citationUrl": "https://github.com/Cypherock/cysync-desktop/blob/main/README.md",
+      "explanation": "The cySync-desktop README lists 'Disable crash report' only for development mode, indicating crash reporting is active in production builds."
+    },
+    {
+      "walletId": "cypherock",
+      "metricKey": "stealth",
+      "path": "privacy.transactionPrivacy.STEALTH_ADDRESSES",
+      "decision": "no",
+      "citationUrl": "https://www.cypherock.com/features",
+      "explanation": "No Cypherock documentation or feature page references stealth-address receiving, which is absent from this hardware wallet and its cySync app."
+    },
+    {
+      "walletId": "cypherock",
+      "metricKey": "privacyPools",
+      "path": "privacy.transactionPrivacy.PRIVACY_POOLS",
+      "decision": "no",
+      "citationUrl": "https://www.cypherock.com/features",
+      "explanation": "No Cypherock source mentions Privacy Pools integration in the X1 or cySync app."
+    },
+    {
+      "walletId": "cypherock",
+      "metricKey": "defaultTransfer",
+      "path": "privacy.transactionPrivacy.defaultFungibleTokenTransferMode",
+      "decision": "value",
+      "valueString": "PUBLIC",
+      "citationUrl": "https://www.cypherock.com/features",
+      "explanation": "As a standard multi-chain hardware wallet with no privacy-transfer mode, token transfers are public by default."
+    },
+    {
+      "walletId": "cypherock",
+      "metricKey": "bridging",
+      "path": "chainAbstraction.bridging.builtInBridging",
+      "decision": "no",
+      "citationUrl": "https://www.cypherock.com/features",
+      "explanation": "Cypherock states swapping and bridging functionalities related to cross-chain bridging are not available; only swaps are offered, not native bridging."
+    },
+    {
+      "walletId": "cypherock",
+      "metricKey": "globalValue",
+      "path": "chainAbstraction.crossChainBalances.globalAccountValue",
+      "decision": "yes",
+      "citationUrl": "https://www.cypherock.com/cysync",
+      "explanation": "cySync provides portfolio aggregation tracking assets across wallets and chains in a single place, giving a unified account value view."
+    },
+    {
+      "walletId": "cypherock",
+      "metricKey": "changelog",
+      "path": "transparency.releaseTransparency.hasPublicChangelog",
+      "decision": "yes",
+      "citationUrl": "https://github.com/Cypherock/x1_wallet_firmware/releases",
+      "explanation": "Cypherock publishes detailed public firmware release notes with version numbers and changes on its GitHub releases page."
+    },
+    {
+      "walletId": "cypherock",
+      "metricKey": "signing",
+      "path": "transparency.releaseTransparency.artifactSigning",
+      "decision": "yes",
+      "citationUrl": "https://walletscrutiny.com/hardware/cypherockx1/",
+      "explanation": "WalletScrutiny confirms X1 firmware is signed by two private keys with a signed header appended to the firmware binary image."
+    },
+    {
+      "walletId": "firefly",
+      "metricKey": "usageAnalytics",
+      "path": "privacy.analytics.usage",
+      "decision": "no",
+      "citationUrl": "https://firefly.city/",
+      "explanation": "Firefly is an air-gapped DIY hardware wallet with no wireless/wired data connection, so the device cannot send usage telemetry per firefly.city."
+    },
+    {
+      "walletId": "firefly",
+      "metricKey": "crashReports",
+      "path": "privacy.analytics.crashReports",
+      "decision": "no",
+      "citationUrl": "https://firefly.city/",
+      "explanation": "The device is air-gapped and cannot transmit signals, and neither the firmware nor docs mention any crash/error reporting."
+    },
+    {
+      "walletId": "firefly",
+      "metricKey": "stealth",
+      "path": "privacy.transactionPrivacy.STEALTH_ADDRESSES",
+      "decision": "no",
+      "citationUrl": "https://github.com/firefly/pixie-firmware",
+      "explanation": "No stealth-address support is mentioned anywhere in the Firefly firmware, hardware docs, or firefly.city site."
+    },
+    {
+      "walletId": "firefly",
+      "metricKey": "privacyPools",
+      "path": "privacy.transactionPrivacy.PRIVACY_POOLS",
+      "decision": "no",
+      "citationUrl": "https://github.com/firefly/pixie-firmware",
+      "explanation": "No Privacy Pools integration is referenced in the Firefly firmware or any official material."
+    },
+    {
+      "walletId": "firefly",
+      "metricKey": "defaultTransfer",
+      "path": "privacy.transactionPrivacy.defaultFungibleTokenTransferMode",
+      "decision": "value",
+      "valueString": "PUBLIC",
+      "citationUrl": "https://firefly.city/",
+      "explanation": "Firefly signs standard public Ethereum transactions with no private-transfer mode described."
+    },
+    {
+      "walletId": "firefly",
+      "metricKey": "bridging",
+      "path": "chainAbstraction.bridging.builtInBridging",
+      "decision": "no",
+      "citationUrl": "https://firefly.city/",
+      "explanation": "Firefly is an Ethereum-only signing device with no built-in cross-chain bridging described in any official source."
+    },
+    {
+      "walletId": "firefly",
+      "metricKey": "globalValue",
+      "path": "chainAbstraction.crossChainBalances.globalAccountValue",
+      "decision": "no",
+      "citationUrl": "https://firefly.city/",
+      "explanation": "Being an air-gapped single-chain Ethereum signer with no balance-aggregating companion suite, there is no unified cross-chain balance view."
+    },
+    {
+      "walletId": "firefly",
+      "metricKey": "ens",
+      "path": "addressResolution.nonChainSpecificEnsResolution",
+      "decision": "yes",
+      "citationUrl": "https://github.com/ensdomains/hack2018/issues/11",
+      "explanation": "Firefly's companion Ethers Wallet uses ethers.js which resolves ENS names (e.g. ricmoo.firefly.eth), and ENS destination resolution is an explicit Firefly design goal."
+    },
+    {
+      "walletId": "firefly",
+      "metricKey": "changelog",
+      "path": "transparency.releaseTransparency.hasPublicChangelog",
+      "decision": "yes",
+      "citationUrl": "https://github.com/firefly/pixie-device/blob/main/CHANGELOG.md",
+      "explanation": "The Firefly Pixie hardware repo publishes a public CHANGELOG.md tracking changes between board revisions."
+    },
+    {
+      "walletId": "firefly",
+      "metricKey": "license",
+      "path": "licensing.walletAppLicense",
+      "decision": "value",
+      "valueString": "BSD (firmware); MIT (hardware design)",
+      "citationUrl": "https://github.com/firefly/pixie-firmware",
+      "explanation": "The Firefly Pixie firmware README states BSD License while the hardware design repo is MIT License."
+    },
+    {
+      "walletId": "gridplus",
+      "metricKey": "usageAnalytics",
+      "path": "privacy.analytics.usage",
+      "decision": "no",
+      "citationUrl": "https://docs.gridplus.io/lattice1/lattice1-introduction",
+      "explanation": "GridPlus documentation states it does not collect user data on the Lattice Manager and end-to-end encrypts device messages, with no usage telemetry indicated."
+    },
+    {
+      "walletId": "gridplus",
+      "metricKey": "stealth",
+      "path": "privacy.transactionPrivacy.STEALTH_ADDRESSES",
+      "decision": "no",
+      "citationUrl": "https://docs.gridplus.io/apps-and-integrations/lattice-manager",
+      "explanation": "No GridPlus documentation or repo indicates support for stealth-address receiving on the Lattice1 or its companion apps."
+    },
+    {
+      "walletId": "gridplus",
+      "metricKey": "privacyPools",
+      "path": "privacy.transactionPrivacy.PRIVACY_POOLS",
+      "decision": "no",
+      "citationUrl": "https://docs.gridplus.io/apps-and-integrations/lattice-manager",
+      "explanation": "No GridPlus documentation or integration lists Privacy Pools support."
+    },
+    {
+      "walletId": "gridplus",
+      "metricKey": "defaultTransfer",
+      "path": "privacy.transactionPrivacy.defaultFungibleTokenTransferMode",
+      "decision": "value",
+      "valueString": "PUBLIC",
+      "citationUrl": "https://docs.gridplus.io/apps-and-integrations/lattice-manager/managing-your-bitcoin-wallet",
+      "explanation": "The Lattice1 signs standard on-chain Bitcoin and Ethereum transactions with no privacy transfer mode, so transfers are public by default."
+    },
+    {
+      "walletId": "gridplus",
+      "metricKey": "approvals",
+      "path": "selfSovereignty.permissionsManagement",
+      "decision": "no",
+      "citationUrl": "https://docs.gridplus.io/apps-and-integrations/lattice-manager",
+      "explanation": "The official Lattice Manager only handles device management and simple BTC send/receive, with no token-approval inspection or revocation feature documented."
+    },
+    {
+      "walletId": "gridplus",
+      "metricKey": "selfBroadcast",
+      "path": "selfSovereignty.transactionSubmission.l1.selfBroadcastViaSelfHostedNode",
+      "decision": "yes",
+      "citationUrl": "https://docs.gridplus.io/apps-and-integrations/lattice-manager/connecting-your-lattice-to-your-own-private-endpoint",
+      "explanation": "GridPlus offers lattice-connect-v2, a self-hosted endpoint users run on their own network to sign and route transactions without any GridPlus infrastructure."
+    },
+    {
+      "walletId": "gridplus",
+      "metricKey": "bridging",
+      "path": "chainAbstraction.bridging.builtInBridging",
+      "decision": "no",
+      "citationUrl": "https://docs.gridplus.io/apps-and-integrations/lattice-manager",
+      "explanation": "Neither the Lattice1 firmware nor the Lattice Manager provides native cross-chain bridging functionality."
+    },
+    {
+      "walletId": "gridplus",
+      "metricKey": "globalValue",
+      "path": "chainAbstraction.crossChainBalances.globalAccountValue",
+      "decision": "no",
+      "citationUrl": "https://docs.gridplus.io/apps-and-integrations/lattice-manager",
+      "explanation": "The Lattice Manager offers a simple BTC wallet and device management but no unified cross-chain account value view."
+    },
+    {
+      "walletId": "gridplus",
+      "metricKey": "changelog",
+      "path": "transparency.releaseTransparency.hasPublicChangelog",
+      "decision": "yes",
+      "citationUrl": "https://github.com/GridPlus/lattice-software-releases",
+      "explanation": "GridPlus publishes a public changelog of firmware/software releases in the lattice-software-releases GitHub repo and firmware release blog posts."
+    },
+    {
+      "walletId": "gridplus",
+      "metricKey": "signing",
+      "path": "transparency.releaseTransparency.artifactSigning",
+      "decision": "yes",
+      "citationUrl": "https://docs.gridplus.io/lattice1/lattice1-guides/how-to-upgrade-the-firmware",
+      "explanation": "GridPlus firmware documentation states every release must be signed by multiple geographically separated private keys and verified by a secure bootloader before installation."
+    },
+    {
+      "walletId": "gridplus",
+      "metricKey": "license",
+      "path": "licensing.walletAppLicense",
+      "decision": "value",
+      "valueString": "Proprietary (firmware); MIT (SDK/keyring); Lattice Manager unlicensed",
+      "citationUrl": "https://github.com/orgs/GridPlus/repositories",
+      "explanation": "The Lattice1 firmware is proprietary/closed-source while GridPlus's supporting tools like gridplus-sdk and eth-lattice-keyring are MIT and the lattice-manager repo specifies no license."
+    },
+    {
+      "walletId": "imkey",
+      "metricKey": "usageAnalytics",
+      "path": "privacy.analytics.usage",
+      "decision": "yes",
+      "citationUrl": "https://support.token.im/hc/en-us/articles/9395540782617-imToken-on-Security",
+      "explanation": "imToken (imKey Pro's primary companion app) uses Firebase for usage statistics/analytics per its security documentation."
+    },
+    {
+      "walletId": "imkey",
+      "metricKey": "crashReports",
+      "path": "privacy.analytics.crashReports",
+      "decision": "yes",
+      "citationUrl": "https://support.token.im/hc/en-us/articles/9395540782617-imToken-on-Security",
+      "explanation": "imToken uses Sentry for error/crash reporting per its official security documentation."
+    },
+    {
+      "walletId": "imkey",
+      "metricKey": "stealth",
+      "path": "privacy.transactionPrivacy.STEALTH_ADDRESSES",
+      "decision": "no",
+      "citationUrl": "https://imkey.im/products/imkey-pro-crypto-hardware-wallet",
+      "explanation": "No imKey or imToken documentation indicates support for stealth-address receiving; it is not a listed feature."
+    },
+    {
+      "walletId": "imkey",
+      "metricKey": "privacyPools",
+      "path": "privacy.transactionPrivacy.PRIVACY_POOLS",
+      "decision": "no",
+      "citationUrl": "https://imkey.im/products/imkey-pro-crypto-hardware-wallet",
+      "explanation": "Neither imKey nor its companion imToken app documents any Privacy Pools integration."
+    },
+    {
+      "walletId": "imkey",
+      "metricKey": "defaultTransfer",
+      "path": "privacy.transactionPrivacy.defaultFungibleTokenTransferMode",
+      "decision": "value",
+      "valueString": "PUBLIC",
+      "citationUrl": "https://imkey.im/products/imkey-pro-crypto-hardware-wallet",
+      "explanation": "imKey Pro signs standard public on-chain transactions (BTC, ETH/ERC-20, TRX) with no private-transfer mode."
+    },
+    {
+      "walletId": "imkey",
+      "metricKey": "selfBroadcast",
+      "path": "selfSovereignty.transactionSubmission.l1.selfBroadcastViaSelfHostedNode",
+      "decision": "yes",
+      "citationUrl": "https://support.token.im/hc/en-us/articles/900005324266-imToken-supports-custom-network-RPC-Experience-the-layer-2-ecosystem-now-",
+      "explanation": "imToken supports custom network RPC configuration, available for imKey and imKey Pro, allowing broadcast via a self-hosted node endpoint."
+    },
+    {
+      "walletId": "imkey",
+      "metricKey": "ens",
+      "path": "addressResolution.nonChainSpecificEnsResolution",
+      "decision": "yes",
+      "citationUrl": "https://support.token.im/hc/en-us/articles/360039447354-How-to-register-and-manage-ENS-domains-with-imToken",
+      "explanation": "imToken supports ENS registration, management, and forward/reverse .eth resolution per its help center."
+    },
+    {
+      "walletId": "imkey",
+      "metricKey": "changelog",
+      "path": "transparency.releaseTransparency.hasPublicChangelog",
+      "decision": "yes",
+      "citationUrl": "https://apps.apple.com/us/app/imtoken-btc-eth-wallet/id1384798940",
+      "explanation": "The imToken companion app publishes public per-version release notes on the App Store."
+    },
+    {
+      "walletId": "imkey",
+      "metricKey": "reproducible",
+      "path": "transparency.releaseTransparency.reproducibleBuilds",
+      "decision": "no",
+      "citationUrl": "https://walletscrutiny.com/hardware/imkeypro/",
+      "explanation": "WalletScrutiny states imKey Pro builds cannot be reproduced because the current-release source code is not publicly available."
+    },
+    {
+      "walletId": "keycard-shell",
+      "metricKey": "stealth",
+      "path": "privacy.transactionPrivacy.STEALTH_ADDRESSES",
+      "decision": "no",
+      "citationUrl": "https://docs.keycard.tech/en/blog/announcing-keycard-shell",
+      "explanation": "Keycard Shell is an air-gapped QR transaction signer whose official docs, blog and firmware repo describe only BTC/ETH/ERC-20/ERC-712 clear signing with no mention of stealth-address receiving."
+    },
+    {
+      "walletId": "keycard-shell",
+      "metricKey": "privacyPools",
+      "path": "privacy.transactionPrivacy.PRIVACY_POOLS",
+      "decision": "no",
+      "citationUrl": "https://docs.keycard.tech/en/developers/overview",
+      "explanation": "No Privacy Pools integration is mentioned anywhere in Keycard Shell's official documentation, blog, or open-source firmware repo."
+    },
+    {
+      "walletId": "keycard-shell",
+      "metricKey": "approvals",
+      "path": "selfSovereignty.permissionsManagement",
+      "decision": "yes",
+      "citationUrl": "https://docs.keycard.tech/en/blog/announcing-keycard-shell",
+      "explanation": "Shell provides clear signing that decodes ERC-20 approvals so users retain full visibility and control over ERC20/ERC712 signatures such as approvals before confirming."
+    },
+    {
+      "walletId": "keycard-shell",
+      "metricKey": "selfBroadcast",
+      "path": "selfSovereignty.transactionSubmission.l1.selfBroadcastViaSelfHostedNode",
+      "decision": "yes",
+      "citationUrl": "https://github.com/keycard-tech/keycard-shell",
+      "explanation": "As an air-gapped QR/USB signer that returns signed transactions to companion software (e.g. Sparrow, Specter, Rabby), broadcasting is done by the paired wallet which can be pointed at a self-hosted node."
+    },
+    {
+      "walletId": "keycard-shell",
+      "metricKey": "bridging",
+      "path": "chainAbstraction.bridging.builtInBridging",
+      "decision": "no",
+      "citationUrl": "https://docs.keycard.tech/en/developers/overview",
+      "explanation": "Shell is a stateless offline signing device with no built-in cross-chain bridging functionality described in its docs or repo."
+    },
+    {
+      "walletId": "keycard-shell",
+      "metricKey": "globalValue",
+      "path": "chainAbstraction.crossChainBalances.globalAccountValue",
+      "decision": "no",
+      "citationUrl": "https://docs.keycard.tech/en/developers/overview",
+      "explanation": "Shell has no persistent state and no portfolio/companion app, so it offers no unified cross-chain account value view; it only signs transactions relayed by third-party wallets."
+    },
+    {
+      "walletId": "keycard-shell",
+      "metricKey": "changelog",
+      "path": "transparency.releaseTransparency.hasPublicChangelog",
+      "decision": "yes",
+      "citationUrl": "https://github.com/keycard-tech/keycard-shell/releases",
+      "explanation": "The keycard-shell GitHub releases page publishes versioned release notes (v1.0.3 through v1.3.0) each with a documented Changes section."
+    },
+    {
+      "walletId": "keycard-shell",
+      "metricKey": "signing",
+      "path": "transparency.releaseTransparency.artifactSigning",
+      "decision": "yes",
+      "citationUrl": "https://github.com/keycard-tech/keycard-shell/releases",
+      "explanation": "Firmware is cryptographically signed with a key whose public key (bootloader-pubkey.txt) the bootloader uses to verify the firmware before execution, and release commits carry verified GPG signatures."
+    },
+    {
+      "walletId": "keycard-shell",
+      "metricKey": "reproducible",
+      "path": "transparency.releaseTransparency.reproducibleBuilds",
+      "decision": "yes",
+      "citationUrl": "https://github.com/keycard-tech/keycard-shell",
+      "explanation": "The README documents a reproducible-build verification flow using tools/firmware-hash.py to hash a locally built binary and match it against the official release binary ('The two hashes must match')."
+    },
+    {
+      "walletId": "keystone",
+      "metricKey": "usageAnalytics",
+      "path": "privacy.analytics.usage",
+      "decision": "yes",
+      "citationUrl": "https://apps.apple.com/us/app/keystone-nexus/id6742313403",
+      "explanation": "The Keystone Nexus companion app's App Store privacy label discloses collecting Diagnostics Performance Data used for 'Analytics' purposes."
+    },
+    {
+      "walletId": "keystone",
+      "metricKey": "crashReports",
+      "path": "privacy.analytics.crashReports",
+      "decision": "yes",
+      "citationUrl": "https://apps.apple.com/us/app/keystone-nexus/id6742313403",
+      "explanation": "The Keystone Nexus App Store privacy label discloses collecting Diagnostics 'Crash Data' for analytics and app functionality."
+    },
+    {
+      "walletId": "keystone",
+      "metricKey": "stealth",
+      "path": "privacy.transactionPrivacy.STEALTH_ADDRESSES",
+      "decision": "no",
+      "citationUrl": "https://guide.keyst.one/docs/nexusfaq",
+      "explanation": "No Keystone documentation or app materials mention stealth-address receiving support."
+    },
+    {
+      "walletId": "keystone",
+      "metricKey": "privacyPools",
+      "path": "privacy.transactionPrivacy.PRIVACY_POOLS",
+      "decision": "no",
+      "citationUrl": "https://guide.keyst.one/docs/nexusfaq",
+      "explanation": "No Keystone documentation or app materials mention Privacy Pools integration."
+    },
+    {
+      "walletId": "keystone",
+      "metricKey": "defaultTransfer",
+      "path": "privacy.transactionPrivacy.defaultFungibleTokenTransferMode",
+      "decision": "value",
+      "valueString": "PUBLIC",
+      "citationUrl": "https://guide.keyst.one/docs/nexusfaq",
+      "explanation": "Keystone signs standard transparent BTC/EVM transactions with no private transfer mode, so transfers are public by default."
+    },
+    {
+      "walletId": "keystone",
+      "metricKey": "approvals",
+      "path": "selfSovereignty.permissionsManagement",
+      "decision": "no",
+      "citationUrl": "https://blog.keyst.one/watch-out-for-your-token-approvals-don-t-become-a-hacker-s-atm",
+      "explanation": "Keystone displays approve parameters when signing but its Nexus companion has no built-in allowance manager, relying on third-party tools like Revoke.cash to inspect/revoke."
+    },
+    {
+      "walletId": "keystone",
+      "metricKey": "bridging",
+      "path": "chainAbstraction.bridging.builtInBridging",
+      "decision": "no",
+      "citationUrl": "https://guide.keyst.one/docs/nexusfaq",
+      "explanation": "The Keystone Nexus companion app offers asset swaps but no native cross-chain bridging feature is documented in its FAQ."
+    },
+    {
+      "walletId": "keystone",
+      "metricKey": "globalValue",
+      "path": "chainAbstraction.crossChainBalances.globalAccountValue",
+      "decision": "yes",
+      "citationUrl": "https://keyst.one/nexus",
+      "explanation": "Keystone Nexus provides multi-chain asset viewing with a unified/aggregated balance across supported chains."
+    },
+    {
+      "walletId": "keystone",
+      "metricKey": "ens",
+      "path": "addressResolution.nonChainSpecificEnsResolution",
+      "decision": "yes",
+      "citationUrl": "https://support.keyst.one/advanced-features/displaying-ens-names",
+      "explanation": "Keystone supports ENS name resolution/display by loading an offline ENS database, showing the .eth name alongside the on-chain address when signing."
+    },
+    {
+      "walletId": "keystone",
+      "metricKey": "changelog",
+      "path": "transparency.releaseTransparency.hasPublicChangelog",
+      "decision": "yes",
+      "citationUrl": "https://support.keyst.one/changelog/keystone-companion-app",
+      "explanation": "Keystone publishes a public changelog for its companion app with version release notes."
+    },
+    {
+      "walletId": "keystone",
+      "metricKey": "reproducible",
+      "path": "transparency.releaseTransparency.reproducibleBuilds",
+      "decision": "yes",
+      "citationUrl": "https://github.com/KeystoneHQ/keystone3-firmware/blob/master/docs/verify.md",
+      "explanation": "Keystone documents reproducible firmware builds via Docker, letting users compile from source and compare SHA256 checksums against released firmware."
+    },
+    {
+      "walletId": "keystone",
+      "metricKey": "license",
+      "path": "licensing.walletAppLicense",
+      "decision": "value",
+      "valueString": "MIT",
+      "citationUrl": "https://github.com/KeystoneHQ/keystone3-firmware/blob/master/LICENSE",
+      "explanation": "The Keystone 3 firmware repository LICENSE file is the MIT License."
+    },
+    {
+      "walletId": "ledgerWallet",
+      "metricKey": "usageAnalytics",
+      "path": "privacy.analytics.usage",
+      "decision": "yes",
+      "citationUrl": "https://www.ledger.com/privacy-policy",
+      "explanation": "Ledger Live collects anonymous usage/product analytics by default with a toggle under Settings > Help > Analytics, so it does send usage telemetry."
+    },
+    {
+      "walletId": "ledgerWallet",
+      "metricKey": "crashReports",
+      "path": "privacy.analytics.crashReports",
+      "decision": "yes",
+      "citationUrl": "https://www.ledger.com/privacy-policy",
+      "explanation": "Ledger Live sends crash/error diagnostic reports (a separate 'Report bugs' toggle exists in Settings > Help alongside Analytics), so crash reports are sent by default."
+    },
+    {
+      "walletId": "ledgerWallet",
+      "metricKey": "stealth",
+      "path": "privacy.transactionPrivacy.STEALTH_ADDRESSES",
+      "decision": "no",
+      "citationUrl": "https://www.ledger.com/how-to-keep-yourself-private-in-the-blockchain-world",
+      "explanation": "No official Ledger documentation indicates support for stealth-address receiving in Ledger Live or the devices."
+    },
+    {
+      "walletId": "ledgerWallet",
+      "metricKey": "privacyPools",
+      "path": "privacy.transactionPrivacy.PRIVACY_POOLS",
+      "decision": "no",
+      "citationUrl": "https://www.ledger.com/how-to-keep-yourself-private-in-the-blockchain-world",
+      "explanation": "There is no evidence in Ledger's official materials of any Privacy Pools integration in Ledger Live or its devices."
+    },
+    {
+      "walletId": "ledgerWallet",
+      "metricKey": "defaultTransfer",
+      "path": "privacy.transactionPrivacy.defaultFungibleTokenTransferMode",
+      "decision": "value",
+      "valueString": "PUBLIC",
+      "citationUrl": "https://www.ledger.com/ledger-live/",
+      "explanation": "Ledger Live sends standard on-chain transfers with no privacy mode, so transfers are public by default."
+    },
+    {
+      "walletId": "ledgerWallet",
+      "metricKey": "approvals",
+      "path": "selfSovereignty.permissionsManagement",
+      "decision": "yes",
+      "citationUrl": "https://support.ledger.com/article/8700644160925-zd",
+      "explanation": "Ledger Live integrates Revoke.cash to let users inspect and revoke token approvals without leaving the app."
+    },
+    {
+      "walletId": "ledgerWallet",
+      "metricKey": "selfBroadcast",
+      "path": "selfSovereignty.transactionSubmission.l1.selfBroadcastViaSelfHostedNode",
+      "decision": "yes",
+      "citationUrl": "https://github.com/LedgerHQ/satstack",
+      "explanation": "Ledger's open-source SatStack lets Ledger Live connect to a user's own Bitcoin full node to broadcast transactions."
+    },
+    {
+      "walletId": "ledgerWallet",
+      "metricKey": "bridging",
+      "path": "chainAbstraction.bridging.builtInBridging",
+      "decision": "yes",
+      "citationUrl": "https://support.ledger.com/article/swap-tokens-across-blockchains-with-lifi-in-ledger-live",
+      "explanation": "Ledger Live offers native cross-chain bridging/swaps via the integrated LI.FI aggregator."
+    },
+    {
+      "walletId": "ledgerWallet",
+      "metricKey": "globalValue",
+      "path": "chainAbstraction.crossChainBalances.globalAccountValue",
+      "decision": "yes",
+      "citationUrl": "https://www.ledger.com/ledger-live/",
+      "explanation": "The Ledger Wallet/Live Home tab aggregates total balance across every account and network into a single unified value view."
+    },
+    {
+      "walletId": "ledgerWallet",
+      "metricKey": "ens",
+      "path": "addressResolution.nonChainSpecificEnsResolution",
+      "decision": "yes",
+      "citationUrl": "https://www.ledger.com/blog/ledger-now-supports-ens-domain-adresses",
+      "explanation": "Ledger Live resolves ENS names in the send flow, with the mapping cryptographically verified on the hardware device."
+    },
+    {
+      "walletId": "ledgerWallet",
+      "metricKey": "changelog",
+      "path": "transparency.releaseTransparency.hasPublicChangelog",
+      "decision": "yes",
+      "citationUrl": "https://github.com/LedgerHQ/ledger-live/blob/develop/apps/ledger-live-desktop/CHANGELOG.md",
+      "explanation": "Ledger publishes a public CHANGELOG.md and GitHub Releases for Ledger Live, plus a 'What's new' support page."
+    },
+    {
+      "walletId": "ledgerWallet",
+      "metricKey": "signing",
+      "path": "transparency.releaseTransparency.artifactSigning",
+      "decision": "yes",
+      "citationUrl": "https://www.ledger.com/academy/topics/ledgersolutions/is-ledger-open-source",
+      "explanation": "Ledger firmware/OS and apps are cryptographically signed and verified by the device's genuine check before install."
+    },
+    {
+      "walletId": "ledgerWallet",
+      "metricKey": "reproducible",
+      "path": "transparency.releaseTransparency.reproducibleBuilds",
+      "decision": "no",
+      "citationUrl": "https://www.ledger.com/blog-ledger-is-95-opensource-why-not-100",
+      "explanation": "Ledger's Secure Element firmware is closed-source under STMicroelectronics NDA and is not published as reproducible builds."
+    },
+    {
+      "walletId": "ngrave",
+      "metricKey": "usageAnalytics",
+      "path": "privacy.analytics.usage",
+      "decision": "yes",
+      "citationUrl": "https://apps.apple.com/us/app/ngrave-liquid-the-crypto-app/id1485844818",
+      "explanation": "Apple App Store privacy disclosure for NGRAVE LIQUID lists 'Product Interaction' and 'Usage Data' collected and used for Analytics."
+    },
+    {
+      "walletId": "ngrave",
+      "metricKey": "crashReports",
+      "path": "privacy.analytics.crashReports",
+      "decision": "yes",
+      "citationUrl": "https://apps.apple.com/us/app/ngrave-liquid-the-crypto-app/id1485844818",
+      "explanation": "The App Store privacy section lists Diagnostics including 'Crash Data' and 'Performance Data' collected and used for Analytics."
+    },
+    {
+      "walletId": "ngrave",
+      "metricKey": "stealth",
+      "path": "privacy.transactionPrivacy.STEALTH_ADDRESSES",
+      "decision": "no",
+      "citationUrl": "https://ngrave.io/en/liquid",
+      "explanation": "NGRAVE ZERO/LIQUID supports only standard coins/EVM tokens with QR-signed transactions and offers no stealth-address receiving feature."
+    },
+    {
+      "walletId": "ngrave",
+      "metricKey": "privacyPools",
+      "path": "privacy.transactionPrivacy.PRIVACY_POOLS",
+      "decision": "no",
+      "citationUrl": "https://ngrave.io/en/roadmap",
+      "explanation": "No NGRAVE documentation or roadmap mentions any Privacy Pools integration."
+    },
+    {
+      "walletId": "ngrave",
+      "metricKey": "defaultTransfer",
+      "path": "privacy.transactionPrivacy.defaultFungibleTokenTransferMode",
+      "decision": "value",
+      "valueString": "PUBLIC",
+      "citationUrl": "https://ngrave.io/en/liquid",
+      "explanation": "Transfers are ordinary on-chain transactions signed offline and broadcast publicly, with no private-transfer mode described."
+    },
+    {
+      "walletId": "ngrave",
+      "metricKey": "approvals",
+      "path": "selfSovereignty.permissionsManagement",
+      "decision": "no",
+      "citationUrl": "https://support.ngrave.io/hc/en-us/articles/20045312764701-How-to-stay-safe-on-web3",
+      "explanation": "LIQUID provides no token-approval inspect/revoke feature; NGRAVE's own guidance directs users to external tools like revoke.cash."
+    },
+    {
+      "walletId": "ngrave",
+      "metricKey": "selfBroadcast",
+      "path": "selfSovereignty.transactionSubmission.l1.selfBroadcastViaSelfHostedNode",
+      "decision": "no",
+      "citationUrl": "https://ngrave.io/en/liquid",
+      "explanation": "The air-gapped ZERO relies on the LIQUID companion app to fetch data and broadcast transactions, with no option to connect a self-hosted node."
+    },
+    {
+      "walletId": "ngrave",
+      "metricKey": "bridging",
+      "path": "chainAbstraction.bridging.builtInBridging",
+      "decision": "no",
+      "citationUrl": "https://support.ngrave.io/hc/en-us/articles/17575955145117-What-is-swapping",
+      "explanation": "NGRAVE offers third-party Changelly swaps and MetaMask/Rabby integration but native in-app bridging is listed as still in development, not available."
+    },
+    {
+      "walletId": "ngrave",
+      "metricKey": "globalValue",
+      "path": "chainAbstraction.crossChainBalances.globalAccountValue",
+      "decision": "yes",
+      "citationUrl": "https://ngrave.io/en/liquid",
+      "explanation": "LIQUID provides a real-time portfolio overview showing total account value across all supported coins and tokens."
+    },
+    {
+      "walletId": "ngrave",
+      "metricKey": "ens",
+      "path": "addressResolution.nonChainSpecificEnsResolution",
+      "decision": "yes",
+      "citationUrl": "https://ngrave.io/en/roadmap",
+      "explanation": "NGRAVE's roadmap lists 'Use ENS names in LIQUID' under Already Available features."
+    },
+    {
+      "walletId": "ngrave",
+      "metricKey": "changelog",
+      "path": "transparency.releaseTransparency.hasPublicChangelog",
+      "decision": "yes",
+      "citationUrl": "https://apps.apple.com/us/app/ngrave-liquid-the-crypto-app/id1485844818",
+      "explanation": "NGRAVE publishes versioned release notes/'What's New' for the LIQUID app on the app stores (e.g. v2.11.1 fixes)."
+    },
+    {
+      "walletId": "ngrave",
+      "metricKey": "signing",
+      "path": "transparency.releaseTransparency.artifactSigning",
+      "decision": "yes",
+      "citationUrl": "https://support.ngrave.io/hc/en-us/articles/9709388172061-How-safe-are-ZERO-firmware-updates",
+      "explanation": "NGRAVE states firmware updates are cryptographically checked and only installed if signed by NGRAVE."
+    },
+    {
+      "walletId": "ngrave",
+      "metricKey": "reproducible",
+      "path": "transparency.releaseTransparency.reproducibleBuilds",
+      "decision": "no",
+      "citationUrl": "https://walletscrutiny.com/hardware/ngravezero/",
+      "explanation": "The ZERO firmware is proprietary/closed-source (WalletScrutiny/Walletbeat rate it non-FOSS with an empty public repo), so builds are not independently reproducible."
+    },
+    {
+      "walletId": "onekey",
+      "metricKey": "usageAnalytics",
+      "path": "privacy.analytics.usage",
+      "decision": "yes",
+      "citationUrl": "https://help.onekey.so/en/articles/11461298-privacy-policy",
+      "explanation": "OneKey's privacy policy states it collects analytics data and uses third parties to analyze traffic, and a Privacy Guides community analysis documents mandatory, non-optional telemetry (device fingerprint/instanceId, IP, geolocation) fired on every app launch."
+    },
+    {
+      "walletId": "onekey",
+      "metricKey": "stealth",
+      "path": "privacy.transactionPrivacy.STEALTH_ADDRESSES",
+      "decision": "no",
+      "citationUrl": "https://help.onekey.so/en/collections/13034364-onekey-app",
+      "explanation": "No OneKey documentation or product page indicates support for stealth-address receiving."
+    },
+    {
+      "walletId": "onekey",
+      "metricKey": "privacyPools",
+      "path": "privacy.transactionPrivacy.PRIVACY_POOLS",
+      "decision": "no",
+      "citationUrl": "https://help.onekey.so/en/collections/13034364-onekey-app",
+      "explanation": "No OneKey documentation or product page indicates any Privacy Pools integration."
+    },
+    {
+      "walletId": "onekey",
+      "metricKey": "defaultTransfer",
+      "path": "privacy.transactionPrivacy.defaultFungibleTokenTransferMode",
+      "decision": "value",
+      "valueString": "PUBLIC",
+      "citationUrl": "https://help.onekey.so/en/articles/11461145-send-and-receive-cryptos-in-onekey-app",
+      "explanation": "OneKey is a standard multi-chain wallet whose send flow broadcasts ordinary on-chain transactions with no private-transfer mode, so transfers are public by default."
+    },
+    {
+      "walletId": "onekey",
+      "metricKey": "approvals",
+      "path": "selfSovereignty.permissionsManagement",
+      "decision": "no",
+      "citationUrl": "https://onekey.so/blog/ecosystem/ethereum-token-approvals-explained/",
+      "explanation": "OneKey provides ABI parsing and approval prompts at signing time but its own guidance directs users to third-party tools like Revoke.cash rather than an in-app approval inspection/revoke manager."
+    },
+    {
+      "walletId": "onekey",
+      "metricKey": "selfBroadcast",
+      "path": "selfSovereignty.transactionSubmission.l1.selfBroadcastViaSelfHostedNode",
+      "decision": "yes",
+      "citationUrl": "https://help.onekey.so/hc/en-us/articles/9280841182479-Manage-RPCs-in-OneKey-App-Switch-Customize",
+      "explanation": "OneKey App supports adding a custom RPC per network that replaces OneKey's default node, allowing broadcast via a self-hosted node."
+    },
+    {
+      "walletId": "onekey",
+      "metricKey": "bridging",
+      "path": "chainAbstraction.bridging.builtInBridging",
+      "decision": "yes",
+      "citationUrl": "https://help.onekey.so/hc/en-us/articles/10125064370319-Introducing-OneKey-App-Swap",
+      "explanation": "OneKey App unifies Swap and Bridge into one aggregator supporting cross-chain transfers across 20+ blockchains."
+    },
+    {
+      "walletId": "onekey",
+      "metricKey": "globalValue",
+      "path": "chainAbstraction.crossChainBalances.globalAccountValue",
+      "decision": "no",
+      "citationUrl": "https://help.onekey.so/en/articles/11461144-view-and-customize-asset-panel-in-onekey-app",
+      "explanation": "The OneKey asset panel shows the value of assets under the currently selected wallet account/chain and requires switching chain and account to navigate, rather than presenting a single unified cross-chain account total."
+    },
+    {
+      "walletId": "onekey",
+      "metricKey": "changelog",
+      "path": "transparency.releaseTransparency.hasPublicChangelog",
+      "decision": "yes",
+      "citationUrl": "https://help.onekey.so/en/articles/11461394-firmware-changelog-for-onekey-pro",
+      "explanation": "OneKey publishes a public firmware changelog for OneKey Pro with dated version release notes for system and Bluetooth firmware."
+    },
+    {
+      "walletId": "onekey",
+      "metricKey": "signing",
+      "path": "transparency.releaseTransparency.artifactSigning",
+      "decision": "yes",
+      "citationUrl": "https://help.onekey.so/hc/en-us/articles/9613904055311-Authenticate-the-consistency-of-firmware-files-with-the-open-source-code-released-by-OneKey",
+      "explanation": "OneKey firmware artifacts are built via GitHub CI and signed by the OneKey team before release, with documented verification of the signature."
+    },
+    {
+      "walletId": "trezor",
+      "metricKey": "usageAnalytics",
+      "path": "privacy.analytics.usage",
+      "decision": "yes",
+      "citationUrl": "https://docs.trezor.io/trezor-suite/analytics/",
+      "explanation": "Trezor Suite collects usage/functional analytics (logged to an AWS S3 backend) when data collection is enabled, a setting prompted on first run and toggleable in Settings."
+    },
+    {
+      "walletId": "trezor",
+      "metricKey": "crashReports",
+      "path": "privacy.analytics.crashReports",
+      "decision": "yes",
+      "citationUrl": "https://docs.trezor.io/trezor-suite/analytics/sentry.html",
+      "explanation": "Trezor Suite sends error/crash reports to Sentry.io to track errors and app performance for users who have anonymous data collection enabled."
+    },
+    {
+      "walletId": "trezor",
+      "metricKey": "stealth",
+      "path": "privacy.transactionPrivacy.STEALTH_ADDRESSES",
+      "decision": "no",
+      "citationUrl": "https://trezor.io/trezor-suite",
+      "explanation": "No Trezor Suite or firmware documentation references stealth-address receiving; the feature is absent."
+    },
+    {
+      "walletId": "trezor",
+      "metricKey": "privacyPools",
+      "path": "privacy.transactionPrivacy.PRIVACY_POOLS",
+      "decision": "no",
+      "citationUrl": "https://github.com/trezor/trezor-suite",
+      "explanation": "There is no Privacy Pools integration in Trezor Suite documentation, changelogs, or the trezor-suite repository."
+    },
+    {
+      "walletId": "trezor",
+      "metricKey": "defaultTransfer",
+      "path": "privacy.transactionPrivacy.defaultFungibleTokenTransferMode",
+      "decision": "value",
+      "valueString": "PUBLIC",
+      "citationUrl": "https://trezor.io/guides/sending-receiving-staking-funds/sending-receiving/send-crypto-in-trezor-suite",
+      "explanation": "Trezor Suite sends standard on-chain transactions with no shielded/private transfer mode, so token transfers are public."
+    },
+    {
+      "walletId": "trezor",
+      "metricKey": "approvals",
+      "path": "selfSovereignty.permissionsManagement",
+      "decision": "no",
+      "citationUrl": "https://forum.trezor.io/t/smart-contract-revoker-viewer-manager-in-trezor-suite/12001",
+      "explanation": "Trezor Suite has no general native token-approval inspector/revoker (only a narrow revoke step inside the mobile DEX swap flow) and users are directed to third-party tools for allowance management."
+    },
+    {
+      "walletId": "trezor",
+      "metricKey": "selfBroadcast",
+      "path": "selfSovereignty.transactionSubmission.l1.selfBroadcastViaSelfHostedNode",
+      "decision": "yes",
+      "citationUrl": "https://trezor.io/learn/security-privacy/how-trezor-keeps-you-safe/connect-trezor-suite-to-your-node",
+      "explanation": "Trezor Suite (desktop) lets users connect to their own full node via a custom Blockbook or Electrum backend, broadcasting through self-hosted infrastructure."
+    },
+    {
+      "walletId": "trezor",
+      "metricKey": "bridging",
+      "path": "chainAbstraction.bridging.builtInBridging",
+      "decision": "no",
+      "citationUrl": "https://trezor.io/guides/sending-receiving-staking-funds/trading-crypto-in-trezor-suite/swap-crypto-in-trezor-suite",
+      "explanation": "Trezor Suite offers swaps only via third-party CEX/DEX partners (DEX limited to same-chain EVM), with no native cross-chain bridging engine."
+    },
+    {
+      "walletId": "trezor",
+      "metricKey": "globalValue",
+      "path": "chainAbstraction.crossChainBalances.globalAccountValue",
+      "decision": "yes",
+      "citationUrl": "https://trezor.io/guides/trezor-suite/getting-to-know-trezor-suite",
+      "explanation": "The Trezor Suite dashboard shows an aggregate portfolio value combining balances across all enabled coins and accounts with a historical chart."
+    },
+    {
+      "walletId": "trezor",
+      "metricKey": "changelog",
+      "path": "transparency.releaseTransparency.hasPublicChangelog",
+      "decision": "yes",
+      "citationUrl": "https://trezor.io/other/product-updates/trezor-firmware-changelog-all-versions-and-release-dates",
+      "explanation": "Trezor publishes public changelogs and release notes for both Suite (GitHub Releases) and firmware."
+    },
+    {
+      "walletId": "trezor",
+      "metricKey": "signing",
+      "path": "transparency.releaseTransparency.artifactSigning",
+      "decision": "yes",
+      "citationUrl": "https://docs.trezor.io/trezor-firmware/common/reproducible-build.html",
+      "explanation": "Official Trezor firmware images are cryptographically signed, requiring at least two independent key-holder signatures."
+    },
+    {
+      "walletId": "trezor",
+      "metricKey": "reproducible",
+      "path": "transparency.releaseTransparency.reproducibleBuilds",
+      "decision": "yes",
+      "citationUrl": "https://docs.trezor.io/trezor-firmware/common/reproducible-build.html",
+      "explanation": "Trezor firmware builds are reproducible; users can rebuild via Docker and verify the binary is identical to the official image except for the signature bytes."
+    }
+  ]
+}
