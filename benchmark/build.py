@@ -461,7 +461,11 @@ def build_payload():
         for key, label, cat, path, typ, good, desc in M:
             node = get_path(feats, path)
             ref = find_ref(node) if isinstance(node, (dict, list)) else None
-            if typ == "state":
+            # Explicit notApplicable sentinel wins for every metric type (e.g. a
+            # support/value/count field marked N/A), not just state fields.
+            if isinstance(node, dict) and node.get("$ref") == "notApplicable":
+                state, detail = "na", None
+            elif typ == "state":
                 state, detail = classify(node)
             elif typ == "value":
                 state, detail = ("value", short_enum(node)) if isinstance(node, str) else ("unknown", None)

@@ -360,7 +360,9 @@ function buildPayload(walletsRaw){
       const node=getPath(feats, m.path);
       const ref=(isObj(node)||Array.isArray(node))?findRef(node):null;
       let st='unknown', detail=null;
-      if(m.type==='state'){ [st,detail]=classify(node); }
+      // Explicit notApplicable sentinel wins for every metric type, not just state.
+      if(isObj(node) && node['$ref']==='notApplicable'){ st='na'; }
+      else if(m.type==='state'){ [st,detail]=classify(node); }
       else if(m.type==='value'){ if(typeof node==='string'){ st='value'; detail=shortEnum(node); } }
       else if(m.type==='support'){ if(node!=null){ st=hasSupport(node)?'yes':'no'; } }
       else if(m.type==='count_high'){ if(Array.isArray(node)){ st='count'; detail=node.length; } }
