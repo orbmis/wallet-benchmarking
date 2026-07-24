@@ -1,1292 +1,1362 @@
 {
-	"id": "daimo",
-	"source": "software-wallets",
-	"export": "daimo",
-	"data": {
-		"metadata": {
-			"id": "daimo",
-			"displayName": "Daimo",
-			"tableName": "Daimo",
-			"blurb": "Daimo aims to replicate a Venmo-like experience onchain. It focuses on cheap stablecoin payments and fast onramp and offramp of USD / USDC with minimal fees.",
-			"contributors": [
-				{
-					"$ref": "polymutex"
-				},
-				{
-					"$ref": "nconsigny"
-				}
-			],
-			"iconExtension": "svg",
-			"lastUpdated": "2025-03-12",
-			"pseudonymType": {
-				"plural": "Daimo usernames",
-				"singular": "Daimo username"
-			},
-			"urls": {
-				"docs": [
-					"https://paydocs.daimo.com/"
-				],
-				"repositories": [
-					"https://github.com/daimo-eth/daimo"
-				],
-				"socials": {
-					"farcaster": "https://farcaster.xyz/daimo-pay",
-					"x": "https://x.com/daimopay"
-				},
-				"websites": [
-					"https://daimo.com"
-				]
-			}
-		},
-		"features": {
-			"accountSupport": {
-				"defaultAccountType": "AccountType.rawErc4337",
-				"eip7702": {
-					"$ref": "notSupported"
-				},
-				"eoa": {
-					"$ref": "notSupported"
-				},
-				"mpc": {
-					"$ref": "notSupported"
-				},
-				"rawErc4337": {
-					"$call": "supported",
-					"args": [
-						{
-							"ref": {
-								"explanation": "Key rotation changes are supported in the UI and result in onchain transactions with a well-known structure",
-								"url": "https://github.com/daimo-eth/daimo/blob/01e18724ff6c1ac77727a14e64ec0f72749f54d5/apps/daimo-mobile/src/view/screen/keyRotation/AddKeySlotButton.tsx"
-							},
-							"contract": "UNKNOWN",
-							"controllingSharesInSelfCustodyByDefault": "YES",
-							"keyRotationTransactionGeneration": "TransactionGenerationCapability.USING_OPEN_SOURCE_STANDALONE_APP",
-							"tokenTransferTransactionGeneration": "TransactionGenerationCapability.USING_OPEN_SOURCE_STANDALONE_APP"
-						}
-					]
-				},
-				"safe": {
-					"$ref": "notSupported"
-				}
-			},
-			"addressResolution": {
-				"ref": [
-					{
-						"explanation": "Daimo resolves plain ENS addresses by querying the ENS Universal Resolver Contract on L1 using the Viem library.",
-						"url": "https://github.com/daimo-eth/daimo/blob/a960ddbbc0cb486f21b8460d22cebefc6376aac9/packages/daimo-api/src/network/viemClient.ts#L128"
-					}
-				],
-				"chainSpecificAddressing": {
-					"erc7828": {
-						"$ref": "notSupported"
-					},
-					"erc7831": {
-						"$ref": "notSupported"
-					}
-				},
-				"nonChainSpecificEnsResolution": {
-					"$call": "supported",
-					"args": [
-						{
-							"medium": "CHAIN_CLIENT"
-						}
-					]
-				}
-			},
-			"chainAbstraction": {
-				"bridging": {
-					"builtInBridging": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"$ref": "refTodo"
-								},
-								"feesLargerThan1bps": {
-									"afterSingleAction": "FeeDisplayLevel.COMPREHENSIVE",
-									"byDefault": "FeeDisplayLevel.COMPREHENSIVE",
-									"fullySponsored": false
-								},
-								"risksExplained": "NOT_IN_UI"
-							}
-						]
-					},
-					"suggestedBridging": {
-						"$ref": "notSupported"
-					}
-				},
-				"crossChainBalances": {
-					"ref": {
-						"$ref": "refTodo"
-					},
-					"ether": {
-						"crossChainSumView": {
-							"$ref": "notSupported"
-						},
-						"perChainBalanceViewAcrossMultipleChains": {
-							"$ref": "notSupported"
-						}
-					},
-					"globalAccountValue": {
-						"$ref": "notSupported"
-					},
-					"perChainAccountValue": {
-						"$ref": "notSupported"
-					},
-					"usdc": {
-						"crossChainSumView": {
-							"$ref": "notSupported"
-						},
-						"perChainBalanceViewAcrossMultipleChains": {
-							"$ref": "notSupported"
-						}
-					}
-				}
-			},
-			"chainConfigurability": {
-				"$call": "supported",
-				"args": [
-					{
-						"ref": {
-							"$ref": "refTodo"
-						},
-						"customChainRpcEndpoint": {
-							"$ref": "notSupported"
-						},
-						"l1": {
-							"$ref": "notSupported"
-						},
-						"nonL1": {
-							"$call": "supported",
-							"args": [
-								{
-									"rpcEndpointConfiguration": "RpcEndpointConfiguration.NO"
-								}
-							]
-						}
-					}
-				]
-			},
-			"ecosystem": {
-				"delegation": "EIP_7702_NOT_SUPPORTED"
-			},
-			"integration": {
-				"browser": "NOT_A_BROWSER_WALLET",
-				"walletCall": {
-					"$ref": "notSupported"
-				}
-			},
-			"licensing": {
-				"type": "LicensingType.SINGLE_WALLET_REPO_AND_LICENSE",
-				"walletAppLicense": {
-					"ref": [
-						{
-							"explanation": "Daimo is licensed under the GPL-3.0 license.",
-							"url": "https://github.com/daimo-eth/daimo/blob/226ed1a1f5087a39ce87e6be17a66c1ce1189e9d/LICENSE"
-						}
-					],
-					"license": "FOSSLicense.GPL_3_0"
-				}
-			},
-			"monetization": {
-				"ref": [
-					{
-						"explanation": "Daimo is funded by venture capital.",
-						"url": "https://www.crunchbase.com/funding_round/daimo-seed--8722ae6a"
-					},
-					{
-						"explanation": "Daimo has received grant funding from the Ethereum Foundation.",
-						"url": "https://blog.ethereum.org/2024/02/20/esp-allocation-q423"
-					},
-					{
-						"explanation": "Daimo has received grant funding from Optimism RetroPGF Round 3 for its P256Verifier contract.",
-						"url": "https://vote.optimism.io/retropgf/3/application/0x118a000851cf4c736497bab89993418517ac7cd9c8ede074aff408a8e0f84060"
-					}
-				],
-				"revenueBreakdownIsPublic": false,
-				"strategies": {
-					"donations": false,
-					"ecosystemGrants": true,
-					"governanceTokenLowFloat": false,
-					"governanceTokenMostlyDistributed": false,
-					"hiddenConvenienceFees": false,
-					"publicOffering": false,
-					"selfFunded": false,
-					"transparentConvenienceFees": false,
-					"ventureCapital": true
-				}
-			},
-			"multiAddress": {
-				"$ref": "featureSupported"
-			},
-			"privacy": {
-				"analytics": {
-					"crashReports": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo's App Store privacy label lists Identifiers and Usage Data as collected, but does not list Diagnostics or Crash Data.",
-									"url": "https://apps.apple.com/is/app/daimo/id6459700343"
-								}
-							}
-						]
-					},
-					"usage": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "Daimo records telemetry events to Honeycomb, including Daimo usernames that are linked to wallet addresses onchain.",
-										"url": "https://github.com/daimo-eth/daimo/blob/e1ddce7c37959d5cec92b05608ce62f93f3316b7/packages/daimo-api/src/server/telemetry.ts#L101-L111"
-									},
-									{
-										"explanation": "Daimo's App Store privacy label lists Usage Data as data that may be collected but not linked to identity.",
-										"url": "https://apps.apple.com/is/app/daimo/id6459700343"
-									}
-								]
-							}
-						]
-					}
-				},
-				"appIsolation": {
-					"$ref": "appConnectionNotSupported"
-				},
-				"dataCollection": {
-					"INSTALL": null,
-					"APP_CONNECTION": "FLOW_NOT_SUPPORTED",
-					"NATIVE_SWAP": "FLOW_NOT_SUPPORTED",
-					"SEND_ETHER": {
-						"collected": []
-					},
-					"SEND_USDC": null,
-					"ONBOARDING_NEW": {
-						"collected": [
-							{
-								"ref": [
-									{
-										"explanation": "Users may deposit from Binance Pay, after which Binance will learn the user's wallet address.",
-										"url": "https://github.com/daimo-eth/daimo/blob/e1ddce7c37959d5cec92b05608ce62f93f3316b7/packages/daimo-api/src/network/binanceClient.ts#L132"
-									}
-								],
-								"byEntity": {
-									"$ref": "binance"
-								},
-								"dataCollection": {
-									"IP_ADDRESS": "CollectionPolicy.OPT_IN",
-									"CEX_ACCOUNT": "CollectionPolicy.OPT_IN",
-									"ACCOUNT_ADDRESS": "CollectionPolicy.OPT_IN",
-									"endpoint": {
-										"$ref": "RegularEndpoint"
-									},
-									"multiAddress": {
-										"type": "MultiAddressPolicy.ACTIVE_ADDRESS_ONLY"
-									}
-								},
-								"purposes": [
-									"DataCollectionPurpose.EXTERNAL_ACCOUNT_LINKING"
-								]
-							},
-							{
-								"ref": [
-									{
-										"explanation": "Users may opt to link their Farcaster profile to their Daimo profile.",
-										"url": "https://github.com/daimo-eth/daimo/blob/e1ddce7c37959d5cec92b05608ce62f93f3316b7/apps/daimo-mobile/src/view/sheet/FarcasterBottomSheet.tsx#L141-L148"
-									}
-								],
-								"byEntity": {
-									"$ref": "daimoInc"
-								},
-								"dataCollection": {
-									"endpoint": {
-										"$ref": "RegularEndpoint"
-									},
-									"IP_ADDRESS": "CollectionPolicy.OPT_IN",
-									"FARCASTER_ACCOUNT": "CollectionPolicy.OPT_IN",
-									"ACCOUNT_ADDRESS": "CollectionPolicy.OPT_IN"
-								},
-								"purposes": [
-									"DataCollectionPurpose.EXTERNAL_ACCOUNT_LINKING"
-								]
-							},
-							{
-								"ref": [
-									{
-										"explanation": "Users may opt to link their Farcaster profile to their Daimo profile.",
-										"url": "https://github.com/daimo-eth/daimo/blob/e1ddce7c37959d5cec92b05608ce62f93f3316b7/apps/daimo-mobile/src/view/sheet/FarcasterBottomSheet.tsx#L141-L148"
-									}
-								],
-								"byEntity": {
-									"$ref": "merkleManufactory"
-								},
-								"dataCollection": {
-									"IP_ADDRESS": "CollectionPolicy.OPT_IN",
-									"FARCASTER_ACCOUNT": "CollectionPolicy.OPT_IN",
-									"ACCOUNT_ADDRESS": "CollectionPolicy.OPT_IN",
-									"endpoint": {
-										"$ref": "RegularEndpoint"
-									}
-								},
-								"purposes": [
-									"DataCollectionPurpose.EXTERNAL_ACCOUNT_LINKING"
-								]
-							}
-						],
-						"publishedOnchain": {
-							"PSEUDONYM": "CollectionPolicy.ALWAYS",
-							"ref": {
-								"explanation": "Creating a Daimo wallet creates a transaction publicly registering your name and address in Daimo's nameRegistry contract on Ethereum.",
-								"url": "https://github.com/daimo-eth/daimo/blob/e1ddce7c37959d5cec92b05608ce62f93f3316b7/packages/daimo-api/src/contract/nameRegistry.ts#L183-L197"
-							},
-							"purposes": [
-								"DataCollectionPurpose.ACCOUNT_SIGNUP"
-							]
-						}
-					},
-					"ONBOARDING_IMPORT": null,
-					"MAKE_TRANSACTION": {
-						"collected": [
-							{
-								"ref": {
-									"explanation": "Sending bundled transactions uses the Pimlico API via api.pimlico.io as Paymaster.",
-									"url": [
-										"https://github.com/daimo-eth/daimo/blob/e1ddce7c37959d5cec92b05608ce62f93f3316b7/packages/daimo-api/src/network/bundlerClient.ts#L131-L133"
-									]
-								},
-								"byEntity": {
-									"$ref": "pimlico"
-								},
-								"dataCollection": {
-									"IP_ADDRESS": "CollectionPolicy.ALWAYS",
-									"MEMPOOL_TRANSACTIONS": "CollectionPolicy.ALWAYS",
-									"ACCOUNT_ADDRESS": "CollectionPolicy.ALWAYS",
-									"endpoint": {
-										"$ref": "RegularEndpoint"
-									},
-									"multiAddress": {
-										"type": "MultiAddressPolicy.ACTIVE_ADDRESS_ONLY"
-									}
-								},
-								"purposes": [
-									"DataCollectionPurpose.TRANSACTION_BROADCAST"
-								]
-							}
-						]
-					},
-					"UNCLASSIFIED": {
-						"collected": [
-							{
-								"ref": {
-									"explanation": "Wallet operations are routed through Daimo.com servers without proxying.",
-									"url": "https://github.com/daimo-eth/daimo/blob/e1ddce7c37959d5cec92b05608ce62f93f3316b7/packages/daimo-api/src/network/viemClient.ts#L35-L50"
-								},
-								"byEntity": {
-									"$ref": "daimoInc"
-								},
-								"dataCollection": {
-									"IP_ADDRESS": "CollectionPolicy.ALWAYS",
-									"MEMPOOL_TRANSACTIONS": "CollectionPolicy.ALWAYS",
-									"ACCOUNT_ADDRESS": "CollectionPolicy.ALWAYS",
-									"PSEUDONYM": "CollectionPolicy.ALWAYS",
-									"endpoint": {
-										"$ref": "RegularEndpoint"
-									},
-									"multiAddress": {
-										"type": "MultiAddressPolicy.ACTIVE_ADDRESS_ONLY"
-									}
-								},
-								"purposes": [
-									"DataCollectionPurpose.CHAIN_DATA_LOOKUP",
-									"DataCollectionPurpose.ACCOUNT_SIGNUP"
-								]
-							},
-							{
-								"ref": {
-									"explanation": "Daimo records telemetry events to Honeycomb. This data includes your Daimo username. Since this username is also linked to your wallet address onchain, Honeycomb can associate the username they receive with your wallet address.",
-									"url": [
-										"https://github.com/daimo-eth/daimo/blob/e1ddce7c37959d5cec92b05608ce62f93f3316b7/packages/daimo-api/src/server/telemetry.ts#L101-L111"
-									]
-								},
-								"byEntity": {
-									"$ref": "honeycomb"
-								},
-								"dataCollection": {
-									"IP_ADDRESS": "CollectionPolicy.ALWAYS",
-									"PSEUDONYM": "CollectionPolicy.ALWAYS",
-									"ACCOUNT_ADDRESS": "CollectionPolicy.ALWAYS",
-									"endpoint": {
-										"$ref": "RegularEndpoint"
-									},
-									"multiAddress": {
-										"type": "MultiAddressPolicy.ACTIVE_ADDRESS_ONLY"
-									}
-								},
-								"purposes": [
-									"DataCollectionPurpose.ANALYTICS"
-								]
-							},
-							{
-								"ref": [
-									{
-										"explanation": "The wallet refreshes fiat currency exchange rates periodically. Such requests do not carry wallet identifying information.",
-										"url": [
-											"https://github.com/daimo-eth/daimo/blob/072e57d700ba8d2e932165a12c2741c31938f1c2/packages/daimo-api/src/api/getExchangeRates.ts",
-											"https://github.com/daimo-eth/daimo/blob/e1ddce7c37959d5cec92b05608ce62f93f3316b7/packages/daimo-api/.env.example#L6"
-										]
-									}
-								],
-								"byEntity": {
-									"$ref": "openExchangeRates"
-								},
-								"dataCollection": {
-									"IP_ADDRESS": "CollectionPolicy.ALWAYS",
-									"endpoint": {
-										"$ref": "RegularEndpoint"
-									}
-								},
-								"purposes": [
-									"DataCollectionPurpose.ASSET_METADATA"
-								]
-							}
-						]
-					}
-				},
-				"privacyPolicy": "https://daimo.com/privacy",
-				"transactionPrivacy": {
-					"defaultFungibleTokenTransferMode": "PUBLIC",
-					"STEALTH_ADDRESSES": {
-						"$ref": "notSupported"
-					},
-					"TORNADO_CASH_NOVA": {
-						"$ref": "notSupported"
-					},
-					"PRIVACY_POOLS": {
-						"$ref": "notSupported"
-					},
-					"RAILGUN": {
-						"$ref": "notSupported"
-					}
-				}
-			},
-			"profile": "WalletProfile.PAYMENTS",
-			"security": {
-				"accountRecovery": null,
-				"bugBountyProgram": {
-					"$call": "supported",
-					"args": [
-						{
-							"ref": [
-								{
-									"explanation": "Immunefi lists a live Daimo Pay bug bounty, live since June 6, 2025 and last updated March 4, 2026, covering the Daimo Pay intent-address contract system.",
-									"url": "https://immunefi.com/bug-bounty/daimo-pay/"
-								}
-							],
-							"availability": "BugBountyProgramAvailability.ACTIVE",
-							"coverageBreadth": "PARTIAL_SCOPE",
-							"dateStarted": "2025-06-06",
-							"disclosure": null,
-							"legalProtections": null,
-							"platform": "BugBountyPlatform.IMMUNEFI",
-							"rewards": {
-								"$call": "supported",
-								"args": [
-									{
-										"currency": "USD",
-										"maximum": 20000,
-										"minimum": 1000
-									}
-								]
-							},
-							"upgradePathAvailable": true
-						}
-					]
-				},
-				"duressResistance": {
-					"duressMode": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "Daimo's published P256Verifier security material describes passkey/WebAuthn-style signing keys for safer self-custody, but does not describe a decoy account or duress wallet mode.",
-										"url": "https://daimo.com/blog/p256verifier"
-									},
-									{
-										"explanation": "Daimo's product documentation presents Daimo as a payments platform for sending and accepting payments, with sessions and payment methods, rather than a wallet with an alternate coercion/decoy unlock flow.",
-										"url": "https://docs.daimo.com/introduction"
-									}
-								]
-							}
-						]
-					}
-				},
-				"hardwareWalletSupport": {
-					"ref": {
-						"$ref": "refTodo"
-					},
-					"wallets": {}
-				},
-				"keysHandling": {
-					"ref": {
-						"$ref": "refTodo"
-					},
-					"keyGeneration": "KeyGenerationLocation.FULLY_ON_USER_DEVICE",
-					"multipartyKeyReconstruction": "MultiPartyKeyReconstruction.NON_MULTIPARTY"
-				},
-				"lightClient": {
-					"ethereumL1": {
-						"$ref": "notSupported"
-					}
-				},
-				"passkeyVerification": {
-					"$call": "supported",
-					"args": [
-						{
-							"ref": [
-								{
-									"explanation": "Daimo implements P256 verification using a verifier based on FreshCryptoLib in their P256Verifier contract.",
-									"url": "https://github.com/daimo-eth/p256-verifier/blob/402e7b4ec4b91f941529f43f9270a8727f647c98/src/P256Verifier.sol"
-								}
-							],
-							"details": "Daimo uses a verifier based on FreshCryptoLib for passkey verification in their P256Verifier contract.",
-							"library": "PasskeyVerificationLibrary.DAIMO_P256_VERIFIER",
-							"libraryUrl": "https://github.com/daimo-eth/p256-verifier/blob/402e7b4ec4b91f941529f43f9270a8727f647c98/src/P256Verifier.sol"
-						}
-					]
-				},
-				"publicSecurityAudits": [
-					{
-						"ref": "https://github.com/daimo-eth/daimo/blob/0a31a01bf47dcf339db57df4891db23ba914f1ba/audits/2023-10-veridise-daimo.pdf",
-						"auditDate": "2023-10-06",
-						"auditor": {
-							"$ref": "veridise"
-						},
-						"codeSnapshot": {
-							"commit": "f0dc56d68852c1488461e88a506ff7b0f027f245",
-							"date": "2023-09-12"
-						},
-						"unpatchedFlaws": "ALL_FIXED",
-						"variantsScope": {
-							"MOBILE": true
-						}
-					}
-				],
-				"scamAlerts": {
-					"contractTransactionWarning": {
-						"$ref": "notSupported"
-					},
-					"scamUrlWarning": {
-						"$ref": "notSupported"
-					},
-					"sendTransactionWarning": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "Daimo shows a warning when sending funds to a user that you have not sent funds to in the past.",
-										"url": "https://github.com/daimo-eth/daimo/blob/a960ddbbc0cb486f21b8460d22cebefc6376aac9/apps/daimo-mobile/src/view/screen/send/SendTransferScreen.tsx#L234-L238"
-									}
-								],
-								"leaksRecipient": false,
-								"leaksUserAddress": false,
-								"leaksUserIp": false,
-								"newRecipientWarning": true,
-								"userWhitelist": false
-							}
-						]
-					}
-				},
-				"securityBestPractices": null,
-				"transactionLegibility": {
-					"ref": {
-						"explanation": "Daimo's docs describe a payments/session flow focused on USDC payment methods and wallet execution payloads; public repository search found no Tenderly, Blockaid, transaction preview, or transaction simulation implementation.",
-						"url": "https://docs.daimo.com/guides/sessions"
-					},
-					"transactionDetailsDisplay": null,
-					"transactionSimulations": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "Daimo session docs describe creating payment methods and returning recipient addresses or serialized transactions for wallet execution, but do not describe an in-wallet transaction simulation preview before signing.",
-										"url": "https://docs.daimo.com/guides/sessions"
-									},
-									{
-										"explanation": "Daimo's supported-chain docs describe deposit options detected from a connected wallet, not a Daimo-wallet transaction simulation feature.",
-										"url": "https://docs.daimo.com/supported-chains"
-									}
-								]
-							}
-						]
-					}
-				}
-			},
-			"selfSovereignty": {
-				"permissionsManagement": {
-					"$call": "notSupportedWithRef",
-					"args": [
-						{
-							"ref": [
-								{
-									"explanation": "Daimo's docs describe payment sessions, payment methods, deposits, and sign-and-send transaction payloads, rather than wallet-native token approval inspection or revocation.",
-									"url": "https://docs.daimo.com/guides/sessions"
-								},
-								{
-									"explanation": "A search of Daimo's public repository found no approval, allowance, revoke, or token-approval management implementation matching the approval-management metric.",
-									"url": "https://github.com/daimo-eth/daimo"
-								}
-							]
-						}
-					]
-				},
-				"transactionSubmission": {
-					"l1": {
-						"ref": {
-							"$ref": "refTodo"
-						},
-						"selfBroadcastViaDirectGossip": {
-							"$ref": "notSupported"
-						},
-						"selfBroadcastViaSelfHostedNode": {
-							"$ref": "notSupported"
-						}
-					},
-					"l2": {
-						"arbitrum": "TransactionSubmissionL2Support.NOT_SUPPORTED_BY_WALLET_BY_DEFAULT",
-						"opStack": "TransactionSubmissionL2Support.SUPPORTED_BUT_NO_FORCE_INCLUSION",
-						"ref": {
-							"$ref": "refTodo"
-						}
-					}
-				}
-			},
-			"transparency": {
-				"operationFees": null,
-				"releaseTransparency": {
-					"artifactSigning": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "Daimo is distributed through Apple's App Store under the Daimo listing.",
-										"url": "https://apps.apple.com/is/app/daimo/id6459700343"
-									},
-									{
-										"explanation": "Apple documents that App Store distribution verifies the developer signature and then re-signs the app using an Apple identity before download.",
-										"url": "https://developer.apple.com/documentation/Xcode/using-the-latest-code-signature-format"
-									}
-								]
-							}
-						]
-					},
-					"dependencyLocking": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "The Daimo repository includes a package-lock.json lockfile for npm dependency resolution.",
-									"url": "https://github.com/daimo-eth/daimo/blob/master/package-lock.json"
-								}
-							}
-						]
-					},
-					"dependencyVulnerabilityScanning": null,
-					"hasPublicChangelog": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo's App Store page publishes What's New release notes and current version information.",
-									"url": "https://apps.apple.com/is/app/daimo/id6459700343"
-								}
-							}
-						]
-					},
-					"hermeticBuilds": null,
-					"repositoryChangeControls": null,
-					"reproducibleBuilds": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "Daimo's README documents ordinary monorepo builds and mobile development through Expo/internal distribution builds, including hosted API or local API setup, but does not document deterministic rebuild-and-compare verification for published App Store or Play Store artifacts.",
-										"url": "https://github.com/daimo-eth/daimo/blob/master/README.md"
-									},
-									{
-										"explanation": "Daimo's root package scripts build the monorepo with Turbo workspaces; the public scripts describe build generation rather than reproducible mobile release-artifact verification.",
-										"url": "https://github.com/daimo-eth/daimo/blob/master/package.json"
-									}
-								]
-							}
-						]
-					}
-				}
-			},
-			"product": {
-				"platformCoverage": {
-					"ref": {
-						"explanation": "Daimo docs describe Modal SDK/API integration paths and web-based deposit sessions rather than a consumer wallet app surface.",
-						"url": "https://docs.daimo.com/"
-					},
-					"desktopApp": null,
-					"mobileApp": null,
-					"browserExtension": null,
-					"browserNative": null,
-					"webApp": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo docs describe web modal/API deposit flows and a login web surface.",
-									"url": "https://docs.daimo.com/"
-								}
-							}
-						]
-					},
-					"ios": null,
-					"android": null,
-					"chrome": null,
-					"firefox": null,
-					"safari": null
-				},
-				"supportedEcosystems": {
-					"ref": {
-						"explanation": "Daimo homepage shows stablecoin rails settling on Ethereum, Solana, Base, Arbitrum, Polygon, BSC, Celo, Linea, Optimism, World, Monad and others.",
-						"url": "https://daimo.com/"
-					},
-					"evm": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo rails list includes Ethereum, Base, Arbitrum, Polygon, BSC, Celo, Linea, Optimism, World, and Monad.",
-									"url": "https://daimo.com/"
-								}
-							}
-						]
-					},
-					"solana": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo rails list includes Solana.",
-									"url": "https://daimo.com/"
-								}
-							}
-						]
-					},
-					"bitcoin": null,
-					"cosmos": null,
-					"ton": null,
-					"starknet": null,
-					"sui": null,
-					"aptos": null,
-					"xrp": null,
-					"cardano": null,
-					"lightning": null,
-					"other": [
-						{
-							"name": "Stablecoin payment rails",
-							"ref": {
-								"explanation": "Daimo docs frame the product as a stablecoin ramp for apps.",
-								"url": "https://docs.daimo.com/"
-							}
-						}
-					]
-				},
-				"dappExperience": {
-					"ref": {
-						"explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://daimo.com"
-					},
-					"inAppBrowser": null,
-					"curatedDappDirectory": null,
-					"dappSearch": null,
-					"walletConnectOnlyMode": {
-						"$ref": "notSupported"
-					},
-					"featuredApps": null,
-					"riskRatedDiscovery": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo provides risk warnings or risk-aware dapp/transaction discovery cues.",
-									"url": "https://daimo.com"
-								}
-							}
-						]
-					}
-				},
-				"fiatRamps": {
-					"ref": {
-						"explanation": "Daimo homepage and docs describe fiat/payment rails including ACH, Pix, Interac, SEPA, Apple Pay, Cash App, exchange deposits, and bank rails for stablecoin apps.",
-						"url": "https://daimo.com/"
-					},
-					"buyCrypto": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo is a ramp for stablecoin deposits into apps.",
-									"url": "https://docs.daimo.com/"
-								}
-							}
-						]
-					},
-					"sellCrypto": null,
-					"bankTransfer": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo supports bank rails such as ACH, SEPA, Pix, Interac, SPEI and local bank rails.",
-									"url": "https://daimo.com/"
-								}
-							}
-						]
-					},
-					"card": null,
-					"applePay": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo homepage lists Apple Pay as a supported rail.",
-									"url": "https://daimo.com/"
-								}
-							}
-						]
-					},
-					"googlePay": null,
-					"kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
-					"providers": [],
-					"regionalAvailability": "Daimo lists payment rails by country/fiat corridor for stablecoin apps; many rails are live or TBA."
-				},
-				"gasUx": {
-					"ref": {
-						"explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://daimo.com"
-					},
-					"gasCustomization": null,
-					"gasSponsorship": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo supports sponsored or externally paid gas for at least some wallet flows.",
-									"url": "https://daimo.com"
-								}
-							}
-						]
-					},
-					"gasAbstraction": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo abstracts gas in at least some smart-account or payment flows.",
-									"url": "https://daimo.com"
-								}
-							}
-						]
-					},
-					"payGasInStablecoins": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo supports paying gas or wallet operation fees with stablecoin or non-native assets in at least some flows.",
-									"url": "https://daimo.com"
-								}
-							}
-						]
-					},
-					"payGasWithReceivedToken": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo supports flows where incoming/target assets can cover gas or payment operation costs.",
-									"url": "https://daimo.com"
-								}
-							}
-						]
-					},
-					"speedPresets": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": null,
-									"url": "https://paydocs.daimo.com/"
-								}
-							}
-						]
-					},
-					"stuckTransactionRecovery": null
-				},
-				"recoveryUx": {
-					"ref": {
-						"explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://daimo.com"
-					},
-					"seedOnlyRecovery": null,
-					"cloudBackup": null,
-					"socialRecovery": null,
-					"guardianRecovery": null,
-					"passkeyRecovery": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo supports passkey-based wallet access or recovery for at least some account flows.",
-									"url": "https://daimo.com"
-								}
-							}
-						]
-					},
-					"emergencyKit": null,
-					"recoveryRehearsal": null
-				},
-				"onboardingFriction": {
-					"ref": {
-						"explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://daimo.com"
-					},
-					"seedPhraseRequiredAtSignup": {
-						"$ref": "notSupported"
-					},
-					"passkeySignup": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo supports passkey-first signup or passkey smart-account onboarding.",
-									"url": "https://daimo.com"
-								}
-							}
-						]
-					},
-					"emailSignup": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo supports email-based onboarding or recovery for at least some wallet flows.",
-									"url": "https://daimo.com"
-								}
-							}
-						]
-					},
-					"phoneSignup": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo supports phone-number-based onboarding or payment/account discovery for at least some flows.",
-									"url": "https://daimo.com"
-								}
-							}
-						]
-					},
-					"kycRequiredForWallet": {
-						"$ref": "notSupported"
-					},
-					"guestMode": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo supports lightweight account creation before seed-phrase style setup.",
-									"url": "https://daimo.com"
-								}
-							}
-						]
-					},
-					"embeddedWalletMode": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo supports an embedded or app-integrated wallet mode.",
-									"url": "https://daimo.com"
-								}
-							}
-						]
-					},
-					"timeToFirstWallet": "OnboardingSpeed.PASSKEY_OR_EMAIL_FIRST"
-				},
-				"portfolioManagement": {
-					"ref": {
-						"explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://daimo.com"
-					},
-					"netWorth": null,
-					"pnl": null,
-					"costBasis": null,
-					"tokenCategories": null,
-					"nftSupport": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo supports NFT display or NFT portfolio management in at least one wallet surface.",
-									"url": "https://daimo.com"
-								}
-							}
-						]
-					},
-					"collectionViews": null,
-					"watchOnlyWallets": null,
-					"multiWalletAggregation": {
-						"$ref": "featureSupported"
-					}
-				},
-				"notifications": {
-					"ref": {
-						"explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://daimo.com"
-					},
-					"sendReceive": null,
-					"priceAlerts": null,
-					"approvalAlerts": null,
-					"bridgeCompletion": null,
-					"failedTransaction": null,
-					"securityAlerts": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo supports security alerts or transaction-risk warnings.",
-									"url": "https://daimo.com"
-								}
-							}
-						]
-					},
-					"marketAlerts": null
-				},
-				"nftCapabilities": {
-					"ref": {
-						"explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://daimo.com"
-					},
-					"display": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo supports displaying NFTs or collectibles in the wallet.",
-									"url": "https://daimo.com"
-								}
-							}
-						]
-					},
-					"send": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo supports wallet NFT transfer flows or NFT asset management.",
-									"url": "https://daimo.com"
-								}
-							}
-						]
-					},
-					"mint": null,
-					"marketplaceIntegration": null,
-					"spamNftHiding": null,
-					"collectionMetadataRefresh": null,
-					"royaltiesOrOffers": null
-				},
-				"defiPositionAwareness": {
-					"ref": {
-						"explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://daimo.com"
-					},
-					"lendingPositions": null,
-					"stakingPositions": null,
-					"lpPositions": null,
-					"vaultPositions": null,
-					"perProtocolBalances": null,
-					"claimableRewards": null,
-					"liquidationWarnings": null
-				},
-				"stakingEarn": {
-					"ref": {
-						"explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://daimo.com"
-					},
-					"nativeStaking": null,
-					"liquidStaking": null,
-					"validatorChoice": null,
-					"apyDisplay": null,
-					"rewardsClaiming": null,
-					"providerDependency": null,
-					"lockupDisclosure": null
-				},
-				"customerSupport": {
-					"ref": {
-						"explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://daimo.com"
-					},
-					"liveChat": null,
-					"emailSupport": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo publishes support, help center, or contact paths for wallet users.",
-									"url": "https://paydocs.daimo.com/"
-								}
-							}
-						]
-					},
-					"aiSupport": null,
-					"publishedSla": null,
-					"inAppHelpCenter": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo provides in-app or product-linked help/support content.",
-									"url": "https://paydocs.daimo.com/"
-								}
-							}
-						]
-					},
-					"transactionTroubleshooting": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo support docs include transaction or wallet troubleshooting material.",
-									"url": "https://paydocs.daimo.com/"
-								}
-							}
-						]
-					},
-					"scamRecoveryGuidance": null
-				},
-				"developerOffering": {
-					"ref": {
-						"explanation": "Daimo docs describe Modal SDK, API, webhooks, WebView, custom integration, and session-based API.",
-						"url": "https://docs.daimo.com/"
-					},
-					"walletSdk": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo provides a Modal SDK and session API for deposits.",
-									"url": "https://docs.daimo.com/"
-								}
-							}
-						]
-					},
-					"embeddedWalletSdk": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo Modal SDK supports embedded and overlay modes.",
-									"url": "https://docs.daimo.com/"
-								}
-							}
-						]
-					},
-					"whiteLabelOffering": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo supports custom integration/API flows for apps.",
-									"url": "https://docs.daimo.com/"
-								}
-							}
-						]
-					},
-					"walletConnectSupport": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo Modal SDK handles wallet connection and transaction signing.",
-									"url": "https://docs.daimo.com/"
-								}
-							}
-						]
-					},
-					"eip6963": null,
-					"eip5792": null,
-					"deepLinks": null,
-					"mobileLinkingQuality": null
-				},
-				"pricingFeeModel": {
-					"ref": {
-						"explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://daimo.com"
-					},
-					"swapFees": null,
-					"bridgeFees": null,
-					"onRampFees": null,
-					"spreadDisclosure": null,
-					"subscriptionFeatures": null,
-					"cardFees": null,
-					"hiddenPartnerRevenue": null
-				},
-				"releaseVelocity": {
-					"ref": {
-						"explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://daimo.com"
-					},
-					"latestReleaseDate": "2025-03-12",
-					"releaseFrequency": "ReleaseFrequency.IRREGULAR",
-					"appStoreUpdateCadence": "App-store cadence should be measured from current app-store release history in a deeper pass.",
-					"githubActivity": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Daimo has public GitHub repository activity or releases that can be tracked.",
-									"url": "https://github.com/daimo-eth/daimo"
-								}
-							}
-						]
-					},
-					"changelogDetail": "ChangelogDetail.BASIC"
-				},
-				"deviceSync": {
-					"ref": {
-						"explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://daimo.com"
-					},
-					"syncsAccounts": null,
-					"syncsSettings": null,
-					"syncsContactsOrAddressBook": null,
-					"desktopMobileSync": null,
-					"cloudBackedSync": null,
-					"requiresSameSeedImport": null
-				}
-			}
-		},
-		"overrides": {
-			"attributes": {
-				"privacy": {
-					"addressCorrelation": {
-						"note": "Daimo usernames are user-selected during signup, and can be set to any pseudonym. Daimo provides functionality to randomize its value. To preserve privacy, it is recommended to pick a random value that is not related to any of your existing usernames. Doing so effectively preserves the pseudonymous nature of wallet addresses."
-					}
-				}
-			}
-		},
-		"variants": {
-			"MOBILE": true
-		}
-	}
+  "id": "daimo",
+  "source": "software-wallets",
+  "export": "daimo",
+  "data": {
+    "metadata": {
+      "id": "daimo",
+      "displayName": "Daimo",
+      "tableName": "Daimo",
+      "blurb": "Daimo aims to replicate a Venmo-like experience onchain. It focuses on cheap stablecoin payments and fast onramp and offramp of USD / USDC with minimal fees.",
+      "contributors": [
+        {
+          "$ref": "polymutex"
+        },
+        {
+          "$ref": "nconsigny"
+        }
+      ],
+      "iconExtension": "svg",
+      "lastUpdated": "2025-03-12",
+      "pseudonymType": {
+        "plural": "Daimo usernames",
+        "singular": "Daimo username"
+      },
+      "urls": {
+        "docs": [
+          "https://paydocs.daimo.com/"
+        ],
+        "repositories": [
+          "https://github.com/daimo-eth/daimo"
+        ],
+        "socials": {
+          "farcaster": "https://farcaster.xyz/daimo-pay",
+          "x": "https://x.com/daimopay"
+        },
+        "websites": [
+          "https://daimo.com"
+        ]
+      }
+    },
+    "features": {
+      "accountSupport": {
+        "defaultAccountType": "AccountType.rawErc4337",
+        "eip7702": {
+          "$ref": "notSupported"
+        },
+        "eoa": {
+          "$ref": "notSupported"
+        },
+        "mpc": {
+          "$ref": "notSupported"
+        },
+        "rawErc4337": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "explanation": "Key rotation changes are supported in the UI and result in onchain transactions with a well-known structure",
+                "url": "https://github.com/daimo-eth/daimo/blob/01e18724ff6c1ac77727a14e64ec0f72749f54d5/apps/daimo-mobile/src/view/screen/keyRotation/AddKeySlotButton.tsx"
+              },
+              "contract": "UNKNOWN",
+              "controllingSharesInSelfCustodyByDefault": "YES",
+              "keyRotationTransactionGeneration": "TransactionGenerationCapability.USING_OPEN_SOURCE_STANDALONE_APP",
+              "tokenTransferTransactionGeneration": "TransactionGenerationCapability.USING_OPEN_SOURCE_STANDALONE_APP"
+            }
+          ]
+        },
+        "safe": {
+          "$ref": "notSupported"
+        }
+      },
+      "addressResolution": {
+        "ref": [
+          {
+            "explanation": "Daimo resolves plain ENS addresses by querying the ENS Universal Resolver Contract on L1 using the Viem library.",
+            "url": "https://github.com/daimo-eth/daimo/blob/a960ddbbc0cb486f21b8460d22cebefc6376aac9/packages/daimo-api/src/network/viemClient.ts#L128"
+          }
+        ],
+        "chainSpecificAddressing": {
+          "erc7828": {
+            "$ref": "notSupported"
+          },
+          "erc7831": {
+            "$ref": "notSupported"
+          }
+        },
+        "nonChainSpecificEnsResolution": {
+          "$call": "supported",
+          "args": [
+            {
+              "medium": "CHAIN_CLIENT"
+            }
+          ]
+        }
+      },
+      "chainAbstraction": {
+        "bridging": {
+          "builtInBridging": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "$ref": "refTodo"
+                },
+                "feesLargerThan1bps": {
+                  "afterSingleAction": "FeeDisplayLevel.COMPREHENSIVE",
+                  "byDefault": "FeeDisplayLevel.COMPREHENSIVE",
+                  "fullySponsored": false
+                },
+                "risksExplained": "NOT_IN_UI"
+              }
+            ]
+          },
+          "suggestedBridging": {
+            "$ref": "notSupported"
+          }
+        },
+        "crossChainBalances": {
+          "ref": {
+            "$ref": "refTodo"
+          },
+          "ether": {
+            "crossChainSumView": {
+              "$ref": "notSupported"
+            },
+            "perChainBalanceViewAcrossMultipleChains": {
+              "$ref": "notSupported"
+            }
+          },
+          "globalAccountValue": {
+            "$ref": "notSupported"
+          },
+          "perChainAccountValue": {
+            "$ref": "notSupported"
+          },
+          "usdc": {
+            "crossChainSumView": {
+              "$ref": "notSupported"
+            },
+            "perChainBalanceViewAcrossMultipleChains": {
+              "$ref": "notSupported"
+            }
+          }
+        }
+      },
+      "chainConfigurability": {
+        "$call": "supported",
+        "args": [
+          {
+            "ref": {
+              "$ref": "refTodo"
+            },
+            "customChainRpcEndpoint": {
+              "$ref": "notSupported"
+            },
+            "l1": {
+              "$ref": "notSupported"
+            },
+            "nonL1": {
+              "$call": "supported",
+              "args": [
+                {
+                  "rpcEndpointConfiguration": "RpcEndpointConfiguration.NO"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "ecosystem": {
+        "delegation": "EIP_7702_NOT_SUPPORTED"
+      },
+      "integration": {
+        "browser": "NOT_A_BROWSER_WALLET",
+        "walletCall": {
+          "$ref": "notSupported"
+        }
+      },
+      "licensing": {
+        "type": "LicensingType.SINGLE_WALLET_REPO_AND_LICENSE",
+        "walletAppLicense": {
+          "ref": [
+            {
+              "explanation": "Daimo is licensed under the GPL-3.0 license.",
+              "url": "https://github.com/daimo-eth/daimo/blob/226ed1a1f5087a39ce87e6be17a66c1ce1189e9d/LICENSE"
+            }
+          ],
+          "license": "FOSSLicense.GPL_3_0"
+        }
+      },
+      "monetization": {
+        "ref": [
+          {
+            "explanation": "Daimo is funded by venture capital.",
+            "url": "https://www.crunchbase.com/funding_round/daimo-seed--8722ae6a"
+          },
+          {
+            "explanation": "Daimo has received grant funding from the Ethereum Foundation.",
+            "url": "https://blog.ethereum.org/2024/02/20/esp-allocation-q423"
+          },
+          {
+            "explanation": "Daimo has received grant funding from Optimism RetroPGF Round 3 for its P256Verifier contract.",
+            "url": "https://vote.optimism.io/retropgf/3/application/0x118a000851cf4c736497bab89993418517ac7cd9c8ede074aff408a8e0f84060"
+          }
+        ],
+        "revenueBreakdownIsPublic": false,
+        "strategies": {
+          "donations": false,
+          "ecosystemGrants": true,
+          "governanceTokenLowFloat": false,
+          "governanceTokenMostlyDistributed": false,
+          "hiddenConvenienceFees": false,
+          "publicOffering": false,
+          "selfFunded": false,
+          "transparentConvenienceFees": false,
+          "ventureCapital": true
+        }
+      },
+      "multiAddress": {
+        "$ref": "featureSupported"
+      },
+      "privacy": {
+        "analytics": {
+          "crashReports": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Daimo's App Store privacy label lists Identifiers and Usage Data as collected, but does not list Diagnostics or Crash Data.",
+                  "url": "https://apps.apple.com/is/app/daimo/id6459700343"
+                }
+              }
+            ]
+          },
+          "usage": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "Daimo records telemetry events to Honeycomb, including Daimo usernames that are linked to wallet addresses onchain.",
+                    "url": "https://github.com/daimo-eth/daimo/blob/e1ddce7c37959d5cec92b05608ce62f93f3316b7/packages/daimo-api/src/server/telemetry.ts#L101-L111"
+                  },
+                  {
+                    "explanation": "Daimo's App Store privacy label lists Usage Data as data that may be collected but not linked to identity.",
+                    "url": "https://apps.apple.com/is/app/daimo/id6459700343"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "appIsolation": {
+          "$ref": "appConnectionNotSupported"
+        },
+        "dataCollection": {
+          "INSTALL": null,
+          "APP_CONNECTION": "FLOW_NOT_SUPPORTED",
+          "NATIVE_SWAP": "FLOW_NOT_SUPPORTED",
+          "SEND_ETHER": {
+            "collected": []
+          },
+          "SEND_USDC": null,
+          "ONBOARDING_NEW": {
+            "collected": [
+              {
+                "ref": [
+                  {
+                    "explanation": "Users may deposit from Binance Pay, after which Binance will learn the user's wallet address.",
+                    "url": "https://github.com/daimo-eth/daimo/blob/e1ddce7c37959d5cec92b05608ce62f93f3316b7/packages/daimo-api/src/network/binanceClient.ts#L132"
+                  }
+                ],
+                "byEntity": {
+                  "$ref": "binance"
+                },
+                "dataCollection": {
+                  "IP_ADDRESS": "CollectionPolicy.OPT_IN",
+                  "CEX_ACCOUNT": "CollectionPolicy.OPT_IN",
+                  "ACCOUNT_ADDRESS": "CollectionPolicy.OPT_IN",
+                  "endpoint": {
+                    "$ref": "RegularEndpoint"
+                  },
+                  "multiAddress": {
+                    "type": "MultiAddressPolicy.ACTIVE_ADDRESS_ONLY"
+                  }
+                },
+                "purposes": [
+                  "DataCollectionPurpose.EXTERNAL_ACCOUNT_LINKING"
+                ]
+              },
+              {
+                "ref": [
+                  {
+                    "explanation": "Users may opt to link their Farcaster profile to their Daimo profile.",
+                    "url": "https://github.com/daimo-eth/daimo/blob/e1ddce7c37959d5cec92b05608ce62f93f3316b7/apps/daimo-mobile/src/view/sheet/FarcasterBottomSheet.tsx#L141-L148"
+                  }
+                ],
+                "byEntity": {
+                  "$ref": "daimoInc"
+                },
+                "dataCollection": {
+                  "endpoint": {
+                    "$ref": "RegularEndpoint"
+                  },
+                  "IP_ADDRESS": "CollectionPolicy.OPT_IN",
+                  "FARCASTER_ACCOUNT": "CollectionPolicy.OPT_IN",
+                  "ACCOUNT_ADDRESS": "CollectionPolicy.OPT_IN"
+                },
+                "purposes": [
+                  "DataCollectionPurpose.EXTERNAL_ACCOUNT_LINKING"
+                ]
+              },
+              {
+                "ref": [
+                  {
+                    "explanation": "Users may opt to link their Farcaster profile to their Daimo profile.",
+                    "url": "https://github.com/daimo-eth/daimo/blob/e1ddce7c37959d5cec92b05608ce62f93f3316b7/apps/daimo-mobile/src/view/sheet/FarcasterBottomSheet.tsx#L141-L148"
+                  }
+                ],
+                "byEntity": {
+                  "$ref": "merkleManufactory"
+                },
+                "dataCollection": {
+                  "IP_ADDRESS": "CollectionPolicy.OPT_IN",
+                  "FARCASTER_ACCOUNT": "CollectionPolicy.OPT_IN",
+                  "ACCOUNT_ADDRESS": "CollectionPolicy.OPT_IN",
+                  "endpoint": {
+                    "$ref": "RegularEndpoint"
+                  }
+                },
+                "purposes": [
+                  "DataCollectionPurpose.EXTERNAL_ACCOUNT_LINKING"
+                ]
+              }
+            ],
+            "publishedOnchain": {
+              "PSEUDONYM": "CollectionPolicy.ALWAYS",
+              "ref": {
+                "explanation": "Creating a Daimo wallet creates a transaction publicly registering your name and address in Daimo's nameRegistry contract on Ethereum.",
+                "url": "https://github.com/daimo-eth/daimo/blob/e1ddce7c37959d5cec92b05608ce62f93f3316b7/packages/daimo-api/src/contract/nameRegistry.ts#L183-L197"
+              },
+              "purposes": [
+                "DataCollectionPurpose.ACCOUNT_SIGNUP"
+              ]
+            }
+          },
+          "ONBOARDING_IMPORT": null,
+          "MAKE_TRANSACTION": {
+            "collected": [
+              {
+                "ref": {
+                  "explanation": "Sending bundled transactions uses the Pimlico API via api.pimlico.io as Paymaster.",
+                  "url": [
+                    "https://github.com/daimo-eth/daimo/blob/e1ddce7c37959d5cec92b05608ce62f93f3316b7/packages/daimo-api/src/network/bundlerClient.ts#L131-L133"
+                  ]
+                },
+                "byEntity": {
+                  "$ref": "pimlico"
+                },
+                "dataCollection": {
+                  "IP_ADDRESS": "CollectionPolicy.ALWAYS",
+                  "MEMPOOL_TRANSACTIONS": "CollectionPolicy.ALWAYS",
+                  "ACCOUNT_ADDRESS": "CollectionPolicy.ALWAYS",
+                  "endpoint": {
+                    "$ref": "RegularEndpoint"
+                  },
+                  "multiAddress": {
+                    "type": "MultiAddressPolicy.ACTIVE_ADDRESS_ONLY"
+                  }
+                },
+                "purposes": [
+                  "DataCollectionPurpose.TRANSACTION_BROADCAST"
+                ]
+              }
+            ]
+          },
+          "UNCLASSIFIED": {
+            "collected": [
+              {
+                "ref": {
+                  "explanation": "Wallet operations are routed through Daimo.com servers without proxying.",
+                  "url": "https://github.com/daimo-eth/daimo/blob/e1ddce7c37959d5cec92b05608ce62f93f3316b7/packages/daimo-api/src/network/viemClient.ts#L35-L50"
+                },
+                "byEntity": {
+                  "$ref": "daimoInc"
+                },
+                "dataCollection": {
+                  "IP_ADDRESS": "CollectionPolicy.ALWAYS",
+                  "MEMPOOL_TRANSACTIONS": "CollectionPolicy.ALWAYS",
+                  "ACCOUNT_ADDRESS": "CollectionPolicy.ALWAYS",
+                  "PSEUDONYM": "CollectionPolicy.ALWAYS",
+                  "endpoint": {
+                    "$ref": "RegularEndpoint"
+                  },
+                  "multiAddress": {
+                    "type": "MultiAddressPolicy.ACTIVE_ADDRESS_ONLY"
+                  }
+                },
+                "purposes": [
+                  "DataCollectionPurpose.CHAIN_DATA_LOOKUP",
+                  "DataCollectionPurpose.ACCOUNT_SIGNUP"
+                ]
+              },
+              {
+                "ref": {
+                  "explanation": "Daimo records telemetry events to Honeycomb. This data includes your Daimo username. Since this username is also linked to your wallet address onchain, Honeycomb can associate the username they receive with your wallet address.",
+                  "url": [
+                    "https://github.com/daimo-eth/daimo/blob/e1ddce7c37959d5cec92b05608ce62f93f3316b7/packages/daimo-api/src/server/telemetry.ts#L101-L111"
+                  ]
+                },
+                "byEntity": {
+                  "$ref": "honeycomb"
+                },
+                "dataCollection": {
+                  "IP_ADDRESS": "CollectionPolicy.ALWAYS",
+                  "PSEUDONYM": "CollectionPolicy.ALWAYS",
+                  "ACCOUNT_ADDRESS": "CollectionPolicy.ALWAYS",
+                  "endpoint": {
+                    "$ref": "RegularEndpoint"
+                  },
+                  "multiAddress": {
+                    "type": "MultiAddressPolicy.ACTIVE_ADDRESS_ONLY"
+                  }
+                },
+                "purposes": [
+                  "DataCollectionPurpose.ANALYTICS"
+                ]
+              },
+              {
+                "ref": [
+                  {
+                    "explanation": "The wallet refreshes fiat currency exchange rates periodically. Such requests do not carry wallet identifying information.",
+                    "url": [
+                      "https://github.com/daimo-eth/daimo/blob/072e57d700ba8d2e932165a12c2741c31938f1c2/packages/daimo-api/src/api/getExchangeRates.ts",
+                      "https://github.com/daimo-eth/daimo/blob/e1ddce7c37959d5cec92b05608ce62f93f3316b7/packages/daimo-api/.env.example#L6"
+                    ]
+                  }
+                ],
+                "byEntity": {
+                  "$ref": "openExchangeRates"
+                },
+                "dataCollection": {
+                  "IP_ADDRESS": "CollectionPolicy.ALWAYS",
+                  "endpoint": {
+                    "$ref": "RegularEndpoint"
+                  }
+                },
+                "purposes": [
+                  "DataCollectionPurpose.ASSET_METADATA"
+                ]
+              }
+            ]
+          }
+        },
+        "privacyPolicy": "https://daimo.com/privacy",
+        "transactionPrivacy": {
+          "defaultFungibleTokenTransferMode": "PUBLIC",
+          "STEALTH_ADDRESSES": {
+            "$ref": "notSupported"
+          },
+          "TORNADO_CASH_NOVA": {
+            "$ref": "notSupported"
+          },
+          "PRIVACY_POOLS": {
+            "$ref": "notSupported"
+          },
+          "RAILGUN": {
+            "$ref": "notSupported"
+          }
+        }
+      },
+      "profile": "WalletProfile.PAYMENTS",
+      "security": {
+        "accountRecovery": null,
+        "bugBountyProgram": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": [
+                {
+                  "explanation": "Immunefi lists a live Daimo Pay bug bounty, live since June 6, 2025 and last updated March 4, 2026, covering the Daimo Pay intent-address contract system.",
+                  "url": "https://immunefi.com/bug-bounty/daimo-pay/"
+                }
+              ],
+              "availability": "BugBountyProgramAvailability.ACTIVE",
+              "coverageBreadth": "PARTIAL_SCOPE",
+              "dateStarted": "2025-06-06",
+              "disclosure": null,
+              "legalProtections": null,
+              "platform": "BugBountyPlatform.IMMUNEFI",
+              "rewards": {
+                "$call": "supported",
+                "args": [
+                  {
+                    "currency": "USD",
+                    "maximum": 20000,
+                    "minimum": 1000
+                  }
+                ]
+              },
+              "upgradePathAvailable": true
+            }
+          ]
+        },
+        "duressResistance": {
+          "duressMode": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "Daimo's published P256Verifier security material describes passkey/WebAuthn-style signing keys for safer self-custody, but does not describe a decoy account or duress wallet mode.",
+                    "url": "https://daimo.com/blog/p256verifier"
+                  },
+                  {
+                    "explanation": "Daimo's product documentation presents Daimo as a payments platform for sending and accepting payments, with sessions and payment methods, rather than a wallet with an alternate coercion/decoy unlock flow.",
+                    "url": "https://docs.daimo.com/introduction"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "hardwareWalletSupport": {
+          "ref": {
+            "$ref": "refTodo"
+          },
+          "wallets": {}
+        },
+        "keysHandling": {
+          "ref": {
+            "$ref": "refTodo"
+          },
+          "keyGeneration": "KeyGenerationLocation.FULLY_ON_USER_DEVICE",
+          "multipartyKeyReconstruction": "MultiPartyKeyReconstruction.NON_MULTIPARTY"
+        },
+        "lightClient": {
+          "ethereumL1": {
+            "$ref": "notSupported"
+          }
+        },
+        "passkeyVerification": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": [
+                {
+                  "explanation": "Daimo implements P256 verification using a verifier based on FreshCryptoLib in their P256Verifier contract.",
+                  "url": "https://github.com/daimo-eth/p256-verifier/blob/402e7b4ec4b91f941529f43f9270a8727f647c98/src/P256Verifier.sol"
+                }
+              ],
+              "details": "Daimo uses a verifier based on FreshCryptoLib for passkey verification in their P256Verifier contract.",
+              "library": "PasskeyVerificationLibrary.DAIMO_P256_VERIFIER",
+              "libraryUrl": "https://github.com/daimo-eth/p256-verifier/blob/402e7b4ec4b91f941529f43f9270a8727f647c98/src/P256Verifier.sol"
+            }
+          ]
+        },
+        "publicSecurityAudits": [
+          {
+            "ref": "https://github.com/daimo-eth/daimo/blob/0a31a01bf47dcf339db57df4891db23ba914f1ba/audits/2023-10-veridise-daimo.pdf",
+            "auditDate": "2023-10-06",
+            "auditor": {
+              "$ref": "veridise"
+            },
+            "codeSnapshot": {
+              "commit": "f0dc56d68852c1488461e88a506ff7b0f027f245",
+              "date": "2023-09-12"
+            },
+            "unpatchedFlaws": "ALL_FIXED",
+            "variantsScope": {
+              "MOBILE": true
+            }
+          }
+        ],
+        "scamAlerts": {
+          "contractTransactionWarning": {
+            "$ref": "notSupported"
+          },
+          "scamUrlWarning": {
+            "$ref": "notSupported"
+          },
+          "sendTransactionWarning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "Daimo shows a warning when sending funds to a user that you have not sent funds to in the past.",
+                    "url": "https://github.com/daimo-eth/daimo/blob/a960ddbbc0cb486f21b8460d22cebefc6376aac9/apps/daimo-mobile/src/view/screen/send/SendTransferScreen.tsx#L234-L238"
+                  }
+                ],
+                "leaksRecipient": false,
+                "leaksUserAddress": false,
+                "leaksUserIp": false,
+                "newRecipientWarning": true,
+                "userWhitelist": false
+              }
+            ]
+          }
+        },
+        "securityBestPractices": null,
+        "transactionLegibility": {
+          "ref": {
+            "explanation": "Daimo's docs describe a payments/session flow focused on USDC payment methods and wallet execution payloads; public repository search found no Tenderly, Blockaid, transaction preview, or transaction simulation implementation.",
+            "url": "https://docs.daimo.com/guides/sessions"
+          },
+          "transactionDetailsDisplay": null,
+          "transactionSimulations": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "Daimo session docs describe creating payment methods and returning recipient addresses or serialized transactions for wallet execution, but do not describe an in-wallet transaction simulation preview before signing.",
+                    "url": "https://docs.daimo.com/guides/sessions"
+                  },
+                  {
+                    "explanation": "Daimo's supported-chain docs describe deposit options detected from a connected wallet, not a Daimo-wallet transaction simulation feature.",
+                    "url": "https://docs.daimo.com/supported-chains"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "selfSovereignty": {
+        "permissionsManagement": {
+          "$call": "notSupportedWithRef",
+          "args": [
+            {
+              "ref": [
+                {
+                  "explanation": "Daimo's docs describe payment sessions, payment methods, deposits, and sign-and-send transaction payloads, rather than wallet-native token approval inspection or revocation.",
+                  "url": "https://docs.daimo.com/guides/sessions"
+                },
+                {
+                  "explanation": "A search of Daimo's public repository found no approval, allowance, revoke, or token-approval management implementation matching the approval-management metric.",
+                  "url": "https://github.com/daimo-eth/daimo"
+                }
+              ]
+            }
+          ]
+        },
+        "transactionSubmission": {
+          "l1": {
+            "ref": {
+              "$ref": "refTodo"
+            },
+            "selfBroadcastViaDirectGossip": {
+              "$ref": "notSupported"
+            },
+            "selfBroadcastViaSelfHostedNode": {
+              "$ref": "notSupported"
+            }
+          },
+          "l2": {
+            "arbitrum": "TransactionSubmissionL2Support.NOT_SUPPORTED_BY_WALLET_BY_DEFAULT",
+            "opStack": "TransactionSubmissionL2Support.SUPPORTED_BUT_NO_FORCE_INCLUSION",
+            "ref": {
+              "$ref": "refTodo"
+            }
+          }
+        }
+      },
+      "transparency": {
+        "operationFees": null,
+        "releaseTransparency": {
+          "artifactSigning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "Daimo is distributed through Apple's App Store under the Daimo listing.",
+                    "url": "https://apps.apple.com/is/app/daimo/id6459700343"
+                  },
+                  {
+                    "explanation": "Apple documents that App Store distribution verifies the developer signature and then re-signs the app using an Apple identity before download.",
+                    "url": "https://developer.apple.com/documentation/Xcode/using-the-latest-code-signature-format"
+                  }
+                ]
+              }
+            ]
+          },
+          "dependencyLocking": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "The Daimo repository includes a package-lock.json lockfile for npm dependency resolution.",
+                  "url": "https://github.com/daimo-eth/daimo/blob/master/package-lock.json"
+                }
+              }
+            ]
+          },
+          "dependencyVulnerabilityScanning": null,
+          "hasPublicChangelog": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Daimo's App Store page publishes What's New release notes and current version information.",
+                  "url": "https://apps.apple.com/is/app/daimo/id6459700343"
+                }
+              }
+            ]
+          },
+          "hermeticBuilds": null,
+          "repositoryChangeControls": null,
+          "reproducibleBuilds": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "Daimo's README documents ordinary monorepo builds and mobile development through Expo/internal distribution builds, including hosted API or local API setup, but does not document deterministic rebuild-and-compare verification for published App Store or Play Store artifacts.",
+                    "url": "https://github.com/daimo-eth/daimo/blob/master/README.md"
+                  },
+                  {
+                    "explanation": "Daimo's root package scripts build the monorepo with Turbo workspaces; the public scripts describe build generation rather than reproducible mobile release-artifact verification.",
+                    "url": "https://github.com/daimo-eth/daimo/blob/master/package.json"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "product": {
+        "platformCoverage": {
+          "ref": {
+            "explanation": "Daimo docs describe Modal SDK/API integration paths and web-based deposit sessions rather than a consumer wallet app surface.",
+            "url": "https://docs.daimo.com/"
+          },
+          "desktopApp": null,
+          "mobileApp": null,
+          "browserExtension": null,
+          "browserNative": null,
+          "webApp": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Daimo docs describe web modal/API deposit flows and a login web surface.",
+                  "url": "https://docs.daimo.com/"
+                }
+              }
+            ]
+          },
+          "ios": null,
+          "android": null,
+          "chrome": null,
+          "firefox": null,
+          "safari": null
+        },
+        "supportedEcosystems": {
+          "ref": {
+            "explanation": "Daimo homepage shows stablecoin rails settling on Ethereum, Solana, Base, Arbitrum, Polygon, BSC, Celo, Linea, Optimism, World, Monad and others.",
+            "url": "https://daimo.com/"
+          },
+          "evm": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Daimo rails list includes Ethereum, Base, Arbitrum, Polygon, BSC, Celo, Linea, Optimism, World, and Monad.",
+                  "url": "https://daimo.com/"
+                }
+              }
+            ]
+          },
+          "solana": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Daimo rails list includes Solana.",
+                  "url": "https://daimo.com/"
+                }
+              }
+            ]
+          },
+          "bitcoin": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.daimo.com/supported-chains",
+                  "explanation": "Daimo's official Supported Chains docs list only EVM chains plus Solana and Tron; Bitcoin is not among the supported networks."
+                }
+              }
+            ]
+          },
+          "cosmos": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.daimo.com/supported-chains",
+                  "explanation": "Daimo's official Supported Chains docs list only EVM chains plus Solana and Tron, with no Cosmos SDK/IBC support."
+                }
+              }
+            ]
+          },
+          "ton": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.daimo.com/supported-chains",
+                  "explanation": "Daimo's official Supported Chains docs cover only EVM chains, Solana, and Tron; TON is not supported."
+                }
+              }
+            ]
+          },
+          "starknet": null,
+          "sui": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.daimo.com/supported-chains",
+                  "explanation": "Daimo's official Supported Chains docs cover only EVM chains, Solana, and Tron; Sui is not supported."
+                }
+              }
+            ]
+          },
+          "aptos": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.daimo.com/supported-chains",
+                  "explanation": "Daimo's official Supported Chains docs cover only EVM chains, Solana, and Tron; Aptos is not supported."
+                }
+              }
+            ]
+          },
+          "xrp": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.daimo.com/supported-chains",
+                  "explanation": "Daimo's official Supported Chains docs cover only EVM chains, Solana, and Tron; the XRP Ledger is not supported."
+                }
+              }
+            ]
+          },
+          "cardano": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.daimo.com/supported-chains",
+                  "explanation": "Daimo's official Supported Chains docs cover only EVM chains, Solana, and Tron; Cardano is not supported."
+                }
+              }
+            ]
+          },
+          "lightning": null,
+          "other": [
+            {
+              "name": "Stablecoin payment rails",
+              "ref": {
+                "explanation": "Daimo docs frame the product as a stablecoin ramp for apps.",
+                "url": "https://docs.daimo.com/"
+              }
+            }
+          ]
+        },
+        "dappExperience": {
+          "ref": {
+            "explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://daimo.com"
+          },
+          "inAppBrowser": null,
+          "curatedDappDirectory": null,
+          "dappSearch": null,
+          "walletConnectOnlyMode": {
+            "$ref": "notSupported"
+          },
+          "featuredApps": null,
+          "riskRatedDiscovery": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Daimo provides risk warnings or risk-aware dapp/transaction discovery cues.",
+                  "url": "https://daimo.com"
+                }
+              }
+            ]
+          }
+        },
+        "fiatRamps": {
+          "ref": {
+            "explanation": "Daimo homepage and docs describe fiat/payment rails including ACH, Pix, Interac, SEPA, Apple Pay, Cash App, exchange deposits, and bank rails for stablecoin apps.",
+            "url": "https://daimo.com/"
+          },
+          "buyCrypto": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Daimo is a ramp for stablecoin deposits into apps.",
+                  "url": "https://docs.daimo.com/"
+                }
+              }
+            ]
+          },
+          "sellCrypto": null,
+          "bankTransfer": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Daimo supports bank rails such as ACH, SEPA, Pix, Interac, SPEI and local bank rails.",
+                  "url": "https://daimo.com/"
+                }
+              }
+            ]
+          },
+          "card": null,
+          "applePay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Daimo homepage lists Apple Pay as a supported rail.",
+                  "url": "https://daimo.com/"
+                }
+              }
+            ]
+          },
+          "googlePay": null,
+          "kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
+          "providers": [],
+          "regionalAvailability": "Daimo lists payment rails by country/fiat corridor for stablecoin apps; many rails are live or TBA."
+        },
+        "gasUx": {
+          "ref": {
+            "explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://daimo.com"
+          },
+          "gasCustomization": null,
+          "gasSponsorship": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Daimo supports sponsored or externally paid gas for at least some wallet flows.",
+                  "url": "https://daimo.com"
+                }
+              }
+            ]
+          },
+          "gasAbstraction": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Daimo abstracts gas in at least some smart-account or payment flows.",
+                  "url": "https://daimo.com"
+                }
+              }
+            ]
+          },
+          "payGasInStablecoins": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Daimo supports paying gas or wallet operation fees with stablecoin or non-native assets in at least some flows.",
+                  "url": "https://daimo.com"
+                }
+              }
+            ]
+          },
+          "payGasWithReceivedToken": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Daimo supports flows where incoming/target assets can cover gas or payment operation costs.",
+                  "url": "https://daimo.com"
+                }
+              }
+            ]
+          },
+          "speedPresets": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": null,
+                  "url": "https://paydocs.daimo.com/"
+                }
+              }
+            ]
+          },
+          "stuckTransactionRecovery": null
+        },
+        "recoveryUx": {
+          "ref": {
+            "explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://daimo.com"
+          },
+          "seedOnlyRecovery": null,
+          "cloudBackup": null,
+          "socialRecovery": null,
+          "guardianRecovery": null,
+          "passkeyRecovery": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Daimo supports passkey-based wallet access or recovery for at least some account flows.",
+                  "url": "https://daimo.com"
+                }
+              }
+            ]
+          },
+          "emergencyKit": null,
+          "recoveryRehearsal": null
+        },
+        "onboardingFriction": {
+          "ref": {
+            "explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://daimo.com"
+          },
+          "seedPhraseRequiredAtSignup": {
+            "$ref": "notSupported"
+          },
+          "passkeySignup": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Daimo supports passkey-first signup or passkey smart-account onboarding.",
+                  "url": "https://daimo.com"
+                }
+              }
+            ]
+          },
+          "emailSignup": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Daimo supports email-based onboarding or recovery for at least some wallet flows.",
+                  "url": "https://daimo.com"
+                }
+              }
+            ]
+          },
+          "phoneSignup": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Daimo supports phone-number-based onboarding or payment/account discovery for at least some flows.",
+                  "url": "https://daimo.com"
+                }
+              }
+            ]
+          },
+          "kycRequiredForWallet": {
+            "$ref": "notSupported"
+          },
+          "guestMode": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Daimo supports lightweight account creation before seed-phrase style setup.",
+                  "url": "https://daimo.com"
+                }
+              }
+            ]
+          },
+          "embeddedWalletMode": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Daimo supports an embedded or app-integrated wallet mode.",
+                  "url": "https://daimo.com"
+                }
+              }
+            ]
+          },
+          "timeToFirstWallet": "OnboardingSpeed.PASSKEY_OR_EMAIL_FIRST"
+        },
+        "portfolioManagement": {
+          "ref": {
+            "explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://daimo.com"
+          },
+          "netWorth": null,
+          "pnl": null,
+          "costBasis": null,
+          "tokenCategories": null,
+          "nftSupport": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Daimo supports NFT display or NFT portfolio management in at least one wallet surface.",
+                  "url": "https://daimo.com"
+                }
+              }
+            ]
+          },
+          "collectionViews": null,
+          "watchOnlyWallets": null,
+          "multiWalletAggregation": {
+            "$ref": "featureSupported"
+          }
+        },
+        "notifications": {
+          "ref": {
+            "explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://daimo.com"
+          },
+          "sendReceive": null,
+          "priceAlerts": null,
+          "approvalAlerts": null,
+          "bridgeCompletion": null,
+          "failedTransaction": null,
+          "securityAlerts": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Daimo supports security alerts or transaction-risk warnings.",
+                  "url": "https://daimo.com"
+                }
+              }
+            ]
+          },
+          "marketAlerts": null
+        },
+        "nftCapabilities": {
+          "ref": {
+            "explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://daimo.com"
+          },
+          "display": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Daimo supports displaying NFTs or collectibles in the wallet.",
+                  "url": "https://daimo.com"
+                }
+              }
+            ]
+          },
+          "send": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Daimo supports wallet NFT transfer flows or NFT asset management.",
+                  "url": "https://daimo.com"
+                }
+              }
+            ]
+          },
+          "mint": null,
+          "marketplaceIntegration": null,
+          "spamNftHiding": null,
+          "collectionMetadataRefresh": null,
+          "royaltiesOrOffers": null
+        },
+        "defiPositionAwareness": {
+          "ref": {
+            "explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://daimo.com"
+          },
+          "lendingPositions": null,
+          "stakingPositions": null,
+          "lpPositions": null,
+          "vaultPositions": null,
+          "perProtocolBalances": null,
+          "claimableRewards": null,
+          "liquidationWarnings": null
+        },
+        "stakingEarn": {
+          "ref": {
+            "explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://daimo.com"
+          },
+          "nativeStaking": null,
+          "liquidStaking": null,
+          "validatorChoice": null,
+          "apyDisplay": null,
+          "rewardsClaiming": null,
+          "providerDependency": null,
+          "lockupDisclosure": null
+        },
+        "customerSupport": {
+          "ref": {
+            "explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://daimo.com"
+          },
+          "liveChat": null,
+          "emailSupport": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Daimo publishes support, help center, or contact paths for wallet users.",
+                  "url": "https://paydocs.daimo.com/"
+                }
+              }
+            ]
+          },
+          "aiSupport": null,
+          "publishedSla": null,
+          "inAppHelpCenter": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Daimo provides in-app or product-linked help/support content.",
+                  "url": "https://paydocs.daimo.com/"
+                }
+              }
+            ]
+          },
+          "transactionTroubleshooting": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Daimo support docs include transaction or wallet troubleshooting material.",
+                  "url": "https://paydocs.daimo.com/"
+                }
+              }
+            ]
+          },
+          "scamRecoveryGuidance": null
+        },
+        "developerOffering": {
+          "ref": {
+            "explanation": "Daimo docs describe Modal SDK, API, webhooks, WebView, custom integration, and session-based API.",
+            "url": "https://docs.daimo.com/"
+          },
+          "walletSdk": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Daimo provides a Modal SDK and session API for deposits.",
+                  "url": "https://docs.daimo.com/"
+                }
+              }
+            ]
+          },
+          "embeddedWalletSdk": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Daimo Modal SDK supports embedded and overlay modes.",
+                  "url": "https://docs.daimo.com/"
+                }
+              }
+            ]
+          },
+          "whiteLabelOffering": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Daimo supports custom integration/API flows for apps.",
+                  "url": "https://docs.daimo.com/"
+                }
+              }
+            ]
+          },
+          "walletConnectSupport": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Daimo Modal SDK handles wallet connection and transaction signing.",
+                  "url": "https://docs.daimo.com/"
+                }
+              }
+            ]
+          },
+          "eip6963": null,
+          "eip5792": null,
+          "deepLinks": null,
+          "mobileLinkingQuality": null
+        },
+        "pricingFeeModel": {
+          "ref": {
+            "explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://daimo.com"
+          },
+          "swapFees": null,
+          "bridgeFees": null,
+          "onRampFees": null,
+          "spreadDisclosure": null,
+          "subscriptionFeatures": null,
+          "cardFees": null,
+          "hiddenPartnerRevenue": null
+        },
+        "releaseVelocity": {
+          "ref": {
+            "explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://daimo.com"
+          },
+          "latestReleaseDate": "2025-03-12",
+          "releaseFrequency": "ReleaseFrequency.IRREGULAR",
+          "appStoreUpdateCadence": "App-store cadence should be measured from current app-store release history in a deeper pass.",
+          "githubActivity": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Daimo has public GitHub repository activity or releases that can be tracked.",
+                  "url": "https://github.com/daimo-eth/daimo"
+                }
+              }
+            ]
+          },
+          "changelogDetail": "ChangelogDetail.BASIC"
+        },
+        "deviceSync": {
+          "ref": {
+            "explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://daimo.com"
+          },
+          "syncsAccounts": null,
+          "syncsSettings": null,
+          "syncsContactsOrAddressBook": null,
+          "desktopMobileSync": null,
+          "cloudBackedSync": null,
+          "requiresSameSeedImport": null
+        }
+      }
+    },
+    "overrides": {
+      "attributes": {
+        "privacy": {
+          "addressCorrelation": {
+            "note": "Daimo usernames are user-selected during signup, and can be set to any pseudonym. Daimo provides functionality to randomize its value. To preserve privacy, it is recommended to pick a random value that is not related to any of your existing usernames. Doing so effectively preserves the pseudonymous nature of wallet addresses."
+          }
+        }
+      }
+    },
+    "variants": {
+      "MOBILE": true
+    }
+  }
 }

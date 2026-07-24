@@ -1523,14 +1523,54 @@
             "seedPhraseRequiredAtSignup": {
               "$ref": "featureSupported"
             },
-            "passkeySignup": null,
-            "emailSignup": null,
+            "passkeySignup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.ambire.com/hc/en-us/articles/12506346827036-How-to-create-smart-wallet-account-in-the-browser-extension",
+                    "explanation": "The current Ambire extension/mobile onboarding docs list only hardware wallet, seed phrase, and EOA import methods with no passkey/WebAuthn option."
+                  }
+                }
+              ]
+            },
+            "emailSignup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.ambire.com/en/articles/13714255-how-to-add-your-v1-ambire-smart-account-legacy-to-the-extension",
+                    "explanation": "Email+password signup existed only in the deprecated legacy v1 web wallet, and Ambire's docs confirm email+password accounts cannot be created/imported in the current extension."
+                  }
+                }
+              ]
+            },
             "phoneSignup": null,
             "kycRequiredForWallet": {
               "$ref": "notSupported"
             },
-            "guestMode": null,
-            "embeddedWalletMode": null,
+            "guestMode": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.ambire.com/hc/en-us/articles/12506346827036-How-to-create-smart-wallet-account-in-the-browser-extension",
+                    "explanation": "The extension onboarding requires creating or importing a smart account (via seed phrase/hardware wallet/EOA) with no try-without-wallet or guest/view-only entry point documented."
+                  }
+                }
+              ]
+            },
+            "embeddedWalletMode": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.ambire.com/hc/en-us/articles/12506346827036-How-to-create-smart-wallet-account-in-the-browser-extension",
+                    "explanation": "Ambire creates a smart-contract account, but the current product provisions it from a user-controlled seed phrase or EOA key rather than a no-seed social/email/MPC embedded flow (the legacy no-seed email option is deprecated)."
+                  }
+                }
+              ]
+            },
             "timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
           },
           "portfolioManagement": {
@@ -2332,7 +2372,17 @@
                 }
               ]
             },
-            "webApp": null,
+            "webApp": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.argent.xyz/hc/en-us/articles/17984093612189-Argent-web-wallet",
+                    "explanation": "Argent (now Ready) offers an email-based browser web wallet on Starknet that requires no app download or extension, per its support docs."
+                  }
+                }
+              ]
+            },
             "ios": {
               "$call": "supported",
               "args": [
@@ -2450,10 +2500,50 @@
                 }
               ]
             },
-            "sui": null,
-            "aptos": null,
-            "xrp": null,
-            "cardano": null,
+            "sui": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.argent.xyz/hc/en-us/articles/4404024199697-Can-I-use-Argent-on-Layer-2-or-sidechains-Optimism-Polygon-etc",
+                    "explanation": "Argent supports only Ethereum, EVM L2s, and Starknet; there is no evidence of native Sui support in any official source."
+                  }
+                }
+              ]
+            },
+            "aptos": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.argent.xyz/hc/en-us/articles/4404024199697-Can-I-use-Argent-on-Layer-2-or-sidechains-Optimism-Polygon-etc",
+                    "explanation": "Argent supports only Ethereum, EVM L2s, and Starknet; no official source indicates native Aptos support."
+                  }
+                }
+              ]
+            },
+            "xrp": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.argent.xyz/hc/en-us/articles/4404024199697-Can-I-use-Argent-on-Layer-2-or-sidechains-Optimism-Polygon-etc",
+                    "explanation": "Argent supports only Ethereum, EVM L2s, and Starknet; no official source indicates XRP Ledger support."
+                  }
+                }
+              ]
+            },
+            "cardano": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.argent.xyz/hc/en-us/articles/4404024199697-Can-I-use-Argent-on-Layer-2-or-sidechains-Optimism-Polygon-etc",
+                    "explanation": "Argent supports only Ethereum, EVM L2s, and Starknet; no official source indicates native Cardano support."
+                  }
+                }
+              ]
+            },
             "lightning": null,
             "other": [
               {
@@ -2658,7 +2748,17 @@
               "explanation": "Argent recovery guide starts recovery by email and optional phone verification; Argent X setup uses seed phrase recovery.",
               "url": "https://support.argent.xyz/hc/en-us/articles/360022631412-About-wallet-recovery"
             },
-            "seedPhraseRequiredAtSignup": null,
+            "seedPhraseRequiredAtSignup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.argent.xyz/hc/en-us/articles/360006853458-How-can-I-recover-my-wallet-without-a-seed-phrase",
+                    "explanation": "Argent is a smart-contract wallet that replaces seed phrases entirely, using email/password login and guardian-based social recovery instead."
+                  }
+                }
+              ]
+            },
             "passkeySignup": null,
             "emailSignup": {
               "$call": "supported",
@@ -2694,7 +2794,17 @@
               ]
             },
             "guestMode": null,
-            "embeddedWalletMode": null,
+            "embeddedWalletMode": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.argent.xyz/hc/en-us/articles/17984093612189-Argent-web-wallet",
+                    "explanation": "Argent's web wallet creates a self-custodial smart-contract account behind email/password login with no seed phrase, matching an embedded/smart-account onboarding model."
+                  }
+                }
+              ]
+            },
             "timeToFirstWallet": "OnboardingSpeed.UNKNOWN"
           },
           "portfolioManagement": {
@@ -3975,7 +4085,17 @@
                 }
               ]
             },
-            "emailSignup": null,
+            "emailSignup": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.base.org/base-chain/tools/onboarding",
+                    "explanation": "The Base App's Base Account lets users sign in/create an account using an email one-time passcode (OTP), per Coinbase Help and Base docs on user onboarding."
+                  }
+                }
+              ]
+            },
             "phoneSignup": null,
             "kycRequiredForWallet": {
               "$call": "notSupportedWithRef",
@@ -3988,7 +4108,17 @@
                 }
               ]
             },
-            "guestMode": null,
+            "guestMode": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://blog.base.org/baseapp",
+                    "explanation": "Base App requires creating a Base Account (smart wallet via email/passkey) on sign-up to access the app, with no documented guest/browse-without-wallet mode, per the Base App launch announcement stating users receive a Base Account upon sign-up."
+                  }
+                }
+              ]
+            },
             "embeddedWalletMode": {
               "$call": "supported",
               "args": [
@@ -5381,7 +5511,17 @@
                 }
               ]
             },
-            "cosmos": null,
+            "cosmos": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://web3.bitget.com/en/blog/articles/bitkeep-adds-cosmos-to-its-list-of-supported-mainnets",
+                    "explanation": "Bitget Wallet's official blog announced adding the Cosmos (ATOM) mainnet, enabling token transactions and Cosmos ecosystem DApp/DeFi access."
+                  }
+                }
+              ]
+            },
             "ton": {
               "$call": "supported",
               "args": [
@@ -5416,8 +5556,28 @@
                 }
               ]
             },
-            "xrp": null,
-            "cardano": null,
+            "xrp": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.bitget.com/news/detail/12560605322058",
+                    "explanation": "Bitget's official news announced integrating the XRP Ledger (XRPL) mainnet so users can send/receive XRP and RLUSD and do XRPL cross-chain transactions within the wallet."
+                  }
+                }
+              ]
+            },
+            "cardano": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://web3.bitget.com/en/wiki/ada-cardano-wallet",
+                    "explanation": "Bitget Wallet's official ADA wiki page instructs users to create a native 'ADA (Cardano) Wallet' from the mainnet list to store, send and receive ADA on the Cardano mainnet."
+                  }
+                }
+              ]
+            },
             "lightning": null,
             "other": [
               {
@@ -5680,13 +5840,33 @@
               "$ref": "featureSupported"
             },
             "passkeySignup": null,
-            "emailSignup": null,
+            "emailSignup": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://financefeeds.com/bitget-wallet-facilitates-web3-onboarding-through-keyless-mpc-integration/",
+                    "explanation": "Bitget Wallet's keyless MPC integration lets users create a wallet via an email address (along with Google, Apple ID, and Telegram)."
+                  }
+                }
+              ]
+            },
             "phoneSignup": null,
             "kycRequiredForWallet": {
               "$ref": "notSupported"
             },
             "guestMode": null,
-            "embeddedWalletMode": null,
+            "embeddedWalletMode": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://web3.bitget.com/en/blog/articles/bitget-wallet-launches-mpc-wallet",
+                    "explanation": "Bitget Wallet offers a keyless MPC embedded wallet created via social/email login with no seed phrase, distributing key shares via a 2/3 TSS scheme."
+                  }
+                }
+              ]
+            },
             "timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
           },
           "portfolioManagement": {
@@ -6650,7 +6830,17 @@
                 }
               ]
             },
-            "webApp": null,
+            "webApp": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://brave.com/wallet/",
+                    "explanation": "Brave Wallet is built natively into the Brave browser, not offered as a standalone browser-based web app usable without installing Brave."
+                  }
+                }
+              ]
+            },
             "ios": {
               "$call": "supported",
               "args": [
@@ -6734,14 +6924,84 @@
                 }
               ]
             },
-            "bitcoin": null,
-            "cosmos": null,
-            "ton": null,
+            "bitcoin": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://brave.com/blog/bitcoin-wallet/",
+                    "explanation": "Brave Wallet natively supports Bitcoin, letting users create Bitcoin accounts and send/receive native BTC across Legacy, SegWit, and Taproot address types."
+                  }
+                }
+              ]
+            },
+            "cosmos": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://brave.com/wallet/",
+                    "explanation": "Brave Wallet's supported networks (Ethereum/EVM, Solana, Filecoin, Bitcoin, Zcash, Cardano) do not include Cosmos SDK/IBC chains."
+                  }
+                }
+              ]
+            },
+            "ton": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://brave.com/wallet/",
+                    "explanation": "TON is not among Brave Wallet's supported networks listed by Brave."
+                  }
+                }
+              ]
+            },
             "starknet": null,
-            "sui": null,
-            "aptos": null,
-            "xrp": null,
-            "cardano": null,
+            "sui": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://brave.com/wallet/",
+                    "explanation": "Sui is not among Brave Wallet's supported networks."
+                  }
+                }
+              ]
+            },
+            "aptos": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://community.brave.app/t/using-brave-wallet-aptos-bridges/487009",
+                    "explanation": "Aptos is not supported; community reports confirm Brave Wallet cannot be used with Aptos apps/bridges."
+                  }
+                }
+              ]
+            },
+            "xrp": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://community.brave.app/t/can-i-store-xrp-tokens-in-my-brave-wallet/415281",
+                    "explanation": "Brave Wallet does not support the XRP Ledger, as confirmed by community reports that XRP cannot be stored in Brave Wallet."
+                  }
+                }
+              ]
+            },
+            "cardano": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://brave.com/blog/cardano-in-brave-wallet/",
+                    "explanation": "Brave and Input|Output completed native Cardano integration, letting users hold and manage ADA and Cardano native assets, send/receive, and swap directly in the wallet."
+                  }
+                }
+              ]
+            },
             "lightning": null,
             "other": []
           },
@@ -6886,14 +7146,44 @@
             "seedPhraseRequiredAtSignup": {
               "$ref": "featureSupported"
             },
-            "passkeySignup": null,
-            "emailSignup": null,
+            "passkeySignup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.brave.com/hc/en-us/articles/12753544357645-Creating-your-Brave-Wallet",
+                    "explanation": "Brave Wallet onboarding uses a password plus seed-phrase creation/import, with no passkey/WebAuthn signup option."
+                  }
+                }
+              ]
+            },
+            "emailSignup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.brave.com/hc/en-us/articles/12753544357645-Creating-your-Brave-Wallet",
+                    "explanation": "Onboarding does not require or offer email signup; users only set a password and create/import a seed phrase."
+                  }
+                }
+              ]
+            },
             "phoneSignup": null,
             "kycRequiredForWallet": {
               "$ref": "notSupported"
             },
             "guestMode": null,
-            "embeddedWalletMode": null,
+            "embeddedWalletMode": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://brave.com/web3/self-custody-wallet/",
+                    "explanation": "Brave Wallet is a self-custody wallet created via seed phrase, with no no-seed embedded/MPC/smart-account social-login option."
+                  }
+                }
+              ]
+            },
             "timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
           },
           "portfolioManagement": {
@@ -7586,7 +7876,17 @@
             "browserNative": {
               "$ref": "notSupported"
             },
-            "webApp": null,
+            "webApp": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://wallet.coinbase.com/apps",
+                    "explanation": "Coinbase Wallet offers a browser-based web app at wallet.coinbase.com with 'no app, extension, or download required' and instant passkey wallet creation."
+                  }
+                }
+              ]
+            },
             "ios": {
               "$call": "supported",
               "args": [
@@ -7935,14 +8235,44 @@
             "seedPhraseRequiredAtSignup": {
               "$ref": "featureSupported"
             },
-            "passkeySignup": null,
-            "emailSignup": null,
+            "passkeySignup": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.coinbase.com/en/wallet/getting-started/smart-wallet-passkeys",
+                    "explanation": "The Base Account / Smart Wallet is created and accessed via passkeys (Face ID, Touch ID, or a hardware key) instead of a seed phrase, per Coinbase Help."
+                  }
+                }
+              ]
+            },
+            "emailSignup": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.coinbase.com/en/wallet/getting-started/smart-wallet-passkeys",
+                    "explanation": "Coinbase states you can sign in to your Base account using email passcodes, and the smart-wallet onboarding pairs a passkey with an email address."
+                  }
+                }
+              ]
+            },
             "phoneSignup": null,
             "kycRequiredForWallet": {
               "$ref": "notSupported"
             },
             "guestMode": null,
-            "embeddedWalletMode": null,
+            "embeddedWalletMode": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.coinbase.com/en/wallet/getting-started/smart-wallet-passkeys",
+                    "explanation": "Base Account is an ERC-4337 smart wallet created behind the scenes via passkey/email login with no seed phrase, matching the embedded/MPC/smart-account model."
+                  }
+                }
+              ]
+            },
             "timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
           },
           "portfolioManagement": {
@@ -9632,14 +9962,84 @@
                 }
               ]
             },
-            "bitcoin": null,
-            "cosmos": null,
-            "ton": null,
+            "bitcoin": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.daimo.com/supported-chains",
+                    "explanation": "Daimo's official Supported Chains docs list only EVM chains plus Solana and Tron; Bitcoin is not among the supported networks."
+                  }
+                }
+              ]
+            },
+            "cosmos": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.daimo.com/supported-chains",
+                    "explanation": "Daimo's official Supported Chains docs list only EVM chains plus Solana and Tron, with no Cosmos SDK/IBC support."
+                  }
+                }
+              ]
+            },
+            "ton": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.daimo.com/supported-chains",
+                    "explanation": "Daimo's official Supported Chains docs cover only EVM chains, Solana, and Tron; TON is not supported."
+                  }
+                }
+              ]
+            },
             "starknet": null,
-            "sui": null,
-            "aptos": null,
-            "xrp": null,
-            "cardano": null,
+            "sui": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.daimo.com/supported-chains",
+                    "explanation": "Daimo's official Supported Chains docs cover only EVM chains, Solana, and Tron; Sui is not supported."
+                  }
+                }
+              ]
+            },
+            "aptos": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.daimo.com/supported-chains",
+                    "explanation": "Daimo's official Supported Chains docs cover only EVM chains, Solana, and Tron; Aptos is not supported."
+                  }
+                }
+              ]
+            },
+            "xrp": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.daimo.com/supported-chains",
+                    "explanation": "Daimo's official Supported Chains docs cover only EVM chains, Solana, and Tron; the XRP Ledger is not supported."
+                  }
+                }
+              ]
+            },
+            "cardano": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.daimo.com/supported-chains",
+                    "explanation": "Daimo's official Supported Chains docs cover only EVM chains, Solana, and Tron; Cardano is not supported."
+                  }
+                }
+              ]
+            },
             "lightning": null,
             "other": [
               {
@@ -10742,7 +11142,17 @@
                 }
               ]
             },
-            "webApp": null,
+            "webApp": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://chromewebstore.google.com/detail/elytro/alkpdbodocedcmhgmhkebanomfeenoik",
+                    "explanation": "Elytro ships as a Chrome browser extension (and a CLI for agents), not a browser-based web app usable without installing anything, per the Chrome Web Store listing and elytro.com."
+                  }
+                }
+              ]
+            },
             "ios": {
               "$call": "notSupportedWithRef",
               "args": [
@@ -11015,7 +11425,17 @@
               "explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://elytro.com"
             },
-            "seedPhraseRequiredAtSignup": null,
+            "seedPhraseRequiredAtSignup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://chromewebstore.google.com/detail/elytro/alkpdbodocedcmhgmhkebanomfeenoik",
+                    "explanation": "Elytro explicitly requires no seed phrase, letting users create a wallet with a simple passcode and recover via trusted contacts, per its Chrome Web Store description."
+                  }
+                }
+              ]
+            },
             "passkeySignup": null,
             "emailSignup": null,
             "phoneSignup": null,
@@ -11023,7 +11443,17 @@
               "$ref": "notSupported"
             },
             "guestMode": null,
-            "embeddedWalletMode": null,
+            "embeddedWalletMode": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://elytro.com/faq",
+                    "explanation": "Elytro creates a no-seed ERC-4337 smart contract account behind the scenes accessed via passkey/passcode with social recovery, per its official FAQ and Chrome Web Store listing."
+                  }
+                }
+              ]
+            },
             "timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
           },
           "portfolioManagement": {
@@ -11720,7 +12150,17 @@
                 }
               ]
             },
-            "webApp": null,
+            "webApp": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.exodus.com/web3-wallet",
+                    "explanation": "Exodus ships as desktop, mobile, and a browser extension (Exodus Web3 Wallet); there is no browser-based web app usable without installing an app or extension."
+                  }
+                }
+              ]
+            },
             "ios": {
               "$call": "supported",
               "args": [
@@ -11785,13 +12225,63 @@
                 }
               ]
             },
-            "cosmos": null,
+            "cosmos": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.exodus.com/cosmos-wallet-atom",
+                    "explanation": "Exodus has a dedicated Cosmos ATOM wallet supporting send/receive/stake of native ATOM."
+                  }
+                }
+              ]
+            },
             "ton": null,
             "starknet": null,
-            "sui": null,
-            "aptos": null,
-            "xrp": null,
-            "cardano": null,
+            "sui": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://apps.apple.com/us/app/exodus-crypto-bitcoin-wallet/id1414384820",
+                    "explanation": "Exodus lists SUI as a supported native asset (Sui and TON went live for send/receive/swap)."
+                  }
+                }
+              ]
+            },
+            "aptos": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.exodus.com/support/en/articles/9007968-staking-aptos-apt-faqs",
+                    "explanation": "Exodus natively supports Aptos (APT) including APT staking via its knowledge base and asset list."
+                  }
+                }
+              ]
+            },
+            "xrp": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.exodus.com/xrp-wallet",
+                    "explanation": "Exodus offers a dedicated XRP wallet supporting native XRP on the XRP Ledger."
+                  }
+                }
+              ]
+            },
+            "cardano": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.exodus.com/ada-cardano-wallet",
+                    "explanation": "Exodus has a dedicated ADA Cardano wallet supporting native manage/send/stake of ADA since 2020."
+                  }
+                }
+              ]
+            },
             "lightning": null,
             "other": [
               {
@@ -11999,14 +12489,54 @@
             "seedPhraseRequiredAtSignup": {
               "$ref": "featureSupported"
             },
-            "passkeySignup": null,
-            "emailSignup": null,
+            "passkeySignup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.exodus.com/investors/news-events/press-releases/detail/50/exodus-launches-passkeys-wallet-a-seamless-solution-for-web3-onboarding-and-dapp-integration",
+                    "explanation": "The consumer Exodus wallet onboards via a 12-word seed phrase; the passkey/MPC 'Passkeys Wallet' is a separate developer/embedded SDK product, not the consumer app's signup flow."
+                  }
+                }
+              ]
+            },
+            "emailSignup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.exodus.com/support/en/articles/8598900-how-do-i-store-my-12-word-secret-recovery-phrase-in-the-backup-vault",
+                    "explanation": "Exodus requires no personal information at signup and creates the wallet from a recovery phrase rather than an email address."
+                  }
+                }
+              ]
+            },
             "phoneSignup": null,
             "kycRequiredForWallet": {
               "$ref": "notSupported"
             },
-            "guestMode": null,
-            "embeddedWalletMode": null,
+            "guestMode": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://vault12.com/learn/crypto-wallet-guides/exodus-ios/",
+                    "explanation": "The consumer app requires creating or restoring a seed-phrase wallet before use, with no try/view-only guest mode."
+                  }
+                }
+              ]
+            },
+            "embeddedWalletMode": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.exodus.com/investors/news-events/press-releases/detail/50/exodus-launches-passkeys-wallet-a-seamless-solution-for-web3-onboarding-and-dapp-integration",
+                    "explanation": "The shipping consumer Exodus wallet is a seed-phrase self-custody wallet; the no-seed MPC 'Passkeys Wallet' is a separate embedded-wallet SDK for developers, not the consumer onboarding UX."
+                  }
+                }
+              ]
+            },
             "timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
           },
           "portfolioManagement": {
@@ -12994,10 +13524,50 @@
               ]
             },
             "starknet": null,
-            "sui": null,
-            "aptos": null,
-            "xrp": null,
-            "cardano": null,
+            "sui": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://family.co/faqs",
+                    "explanation": "Family supports only Ethereum mainnet and EVM L2s (Optimism, Base, Arbitrum, Polygon, zkSync), with no mention of Sui."
+                  }
+                }
+              ]
+            },
+            "aptos": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://family.co/faqs",
+                    "explanation": "Family is Ethereum/EVM-only per its FAQs and makes no mention of Aptos support."
+                  }
+                }
+              ]
+            },
+            "xrp": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://family.co/faqs",
+                    "explanation": "Family is an Ethereum-focused EVM wallet and does not support the XRP Ledger."
+                  }
+                }
+              ]
+            },
+            "cardano": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://family.co/faqs",
+                    "explanation": "Family supports only Ethereum mainnet and EVM L2s, with no Cardano support mentioned."
+                  }
+                }
+              ]
+            },
             "lightning": null,
             "other": [
               {
@@ -13175,8 +13745,28 @@
               "explanation": "Family homepage says it works with or without email/phone and supports importing wallets using Secret Recovery Phrase or private key.",
               "url": "https://family.co/"
             },
-            "seedPhraseRequiredAtSignup": null,
-            "passkeySignup": null,
+            "seedPhraseRequiredAtSignup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://family.co/blog/why-family-accounts",
+                    "explanation": "Family creates accounts via email/SMS plus passkey/password and generates the seed phrase behind the scenes in memory, never exposing it to the user, so no seed phrase is forced at signup."
+                  }
+                }
+              ]
+            },
+            "passkeySignup": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://family.co/blog/why-family-accounts",
+                    "explanation": "Family accounts are created and secured using a passkey (stored in the device's Secure Enclave/TPM), with passkey-only setup on iOS."
+                  }
+                }
+              ]
+            },
             "emailSignup": {
               "$call": "supported",
               "args": [
@@ -13210,8 +13800,28 @@
                 }
               ]
             },
-            "guestMode": null,
-            "embeddedWalletMode": null,
+            "guestMode": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://family.co/support/create-your-first-wallet",
+                    "explanation": "Family requires creating an account with email or phone to get started, and even view-only wallet tracking is done from within an account, so there is no account-free guest mode."
+                  }
+                }
+              ]
+            },
+            "embeddedWalletMode": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://family.co/blog/why-family-accounts",
+                    "explanation": "Family generates the wallet's seed phrase behind the scenes via email/SMS + passkey login without exposing it, functioning as a no-seed embedded-style self-custodial wallet."
+                  }
+                }
+              ]
+            },
             "timeToFirstWallet": "OnboardingSpeed.UNKNOWN"
           },
           "portfolioManagement": {
@@ -14351,7 +14961,17 @@
                 }
               ]
             },
-            "webApp": null,
+            "webApp": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.frame.sh/",
+                    "explanation": "Frame is a desktop-native application (with a companion browser extension for connectivity) and offers no browser-based web app usable without installing software, per docs.frame.sh."
+                  }
+                }
+              ]
+            },
             "ios": {
               "$call": "notSupportedWithRef",
               "args": [
@@ -14607,14 +15227,54 @@
             "seedPhraseRequiredAtSignup": {
               "$ref": "featureSupported"
             },
-            "passkeySignup": null,
-            "emailSignup": null,
+            "passkeySignup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.frame.sh/docs/Getting%20Started/Basics/Account%20Setup/What%20is%20an%20Account/",
+                    "explanation": "Frame's account setup supports only seed phrases, private keys, keystore files, and hardware signers (Ledger/Trezor/GridPlus), with no passkey/WebAuthn option documented."
+                  }
+                }
+              ]
+            },
+            "emailSignup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.frame.sh/docs/Getting%20Started/Basics/Account%20Setup/What%20is%20an%20Account/",
+                    "explanation": "Frame provides no email-based signup; accounts are added only via seed phrase, private key, keystore file, or hardware signer."
+                  }
+                }
+              ]
+            },
             "phoneSignup": null,
             "kycRequiredForWallet": {
               "$ref": "notSupported"
             },
-            "guestMode": null,
-            "embeddedWalletMode": null,
+            "guestMode": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.frame.sh/docs/Getting%20Started/Basics/Account%20Setup/What%20is%20an%20Account/",
+                    "explanation": "Frame requires importing/adding a signer to function and documents no guest/try-without-account mode."
+                  }
+                }
+              ]
+            },
+            "embeddedWalletMode": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.frame.sh/docs/Getting%20Started/Basics/Account%20Setup/What%20is%20an%20Account/",
+                    "explanation": "Frame is a self-custody signer manager (seed/private key/keystore/hardware) with no embedded/MPC/smart-account or social-login wallet mode."
+                  }
+                }
+              ]
+            },
             "timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
           },
           "portfolioManagement": {
@@ -15446,7 +16106,17 @@
                 }
               ]
             },
-            "webApp": null,
+            "webApp": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.gemwallet.com/get-started/",
+                    "explanation": "Gem Wallet's official site and Get Started docs list only iOS and Android native apps with no browser-based web app usable without installing."
+                  }
+                }
+              ]
+            },
             "ios": {
               "$call": "supported",
               "args": [
@@ -15697,14 +16367,54 @@
             "seedPhraseRequiredAtSignup": {
               "$ref": "featureSupported"
             },
-            "passkeySignup": null,
-            "emailSignup": null,
+            "passkeySignup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.gemwallet.com/get-started/",
+                    "explanation": "Onboarding uses a BIP-39 secret recovery phrase exclusively, with no passkey/WebAuthn option mentioned in the setup docs."
+                  }
+                }
+              ]
+            },
+            "emailSignup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://gemwallet.com/",
+                    "explanation": "The official site states installation requires 'no email or phone number required,' relying solely on a secret recovery phrase."
+                  }
+                }
+              ]
+            },
             "phoneSignup": null,
             "kycRequiredForWallet": {
               "$ref": "notSupported"
             },
-            "guestMode": null,
-            "embeddedWalletMode": null,
+            "guestMode": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.gemwallet.com/guides/watch-wallet/",
+                    "explanation": "Gem Wallet offers a Watch Wallet mode where a user pastes an address to monitor balances and transactions without a seed phrase or creating a key-holding wallet."
+                  }
+                }
+              ]
+            },
+            "embeddedWalletMode": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://gemwallet.com/",
+                    "explanation": "Gem Wallet is a self-custodial seed-phrase wallet with no MPC/embedded/social-login smart-account mode; the site emphasizes securely saving your own recovery phrase."
+                  }
+                }
+              ]
+            },
             "timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
           },
           "portfolioManagement": {
@@ -17326,7 +18036,17 @@
                 }
               ]
             },
-            "webApp": null,
+            "webApp": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.token.im/hc/en-us/articles/39943011404441-Announcement-imToken-Web-Beta-is-Live",
+                    "explanation": "imToken Web (web.token.im) is a non-custodial browser-based web app usable directly in a browser with quick passkey account creation, no native app or extension install required."
+                  }
+                }
+              ]
+            },
             "ios": null,
             "android": null,
             "chrome": null,
@@ -17349,7 +18069,17 @@
                 }
               ]
             },
-            "solana": null,
+            "solana": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.token.im/hc/en-us/articles/115001657313-Which-chains-and-tokens-does-imToken-support",
+                    "explanation": "imToken's official supported-chains list (Ethereum, Bitcoin, Cosmos, Vaulta, TRON, Polkadot, TON, etc.) does not include Solana."
+                  }
+                }
+              ]
+            },
             "bitcoin": {
               "$call": "supported",
               "args": [
@@ -17361,7 +18091,17 @@
                 }
               ]
             },
-            "cosmos": null,
+            "cosmos": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.token.im/hc/en-us/articles/115001657313-Which-chains-and-tokens-does-imToken-support",
+                    "explanation": "imToken natively supports the Cosmos ecosystem, listing Cosmos (ATOM) and Osmosis among its supported blockchains."
+                  }
+                }
+              ]
+            },
             "ton": {
               "$call": "supported",
               "args": [
@@ -17374,10 +18114,50 @@
               ]
             },
             "starknet": null,
-            "sui": null,
-            "aptos": null,
-            "xrp": null,
-            "cardano": null,
+            "sui": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.token.im/hc/en-us/articles/115001657313-Which-chains-and-tokens-does-imToken-support",
+                    "explanation": "Sui is not present in imToken's official supported-chains list."
+                  }
+                }
+              ]
+            },
+            "aptos": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.token.im/hc/en-us/articles/115001657313-Which-chains-and-tokens-does-imToken-support",
+                    "explanation": "Aptos is not present in imToken's official supported-chains list."
+                  }
+                }
+              ]
+            },
+            "xrp": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.token.im/hc/en-us/articles/115001657313-Which-chains-and-tokens-does-imToken-support",
+                    "explanation": "The XRP Ledger is not present in imToken's official supported-chains list."
+                  }
+                }
+              ]
+            },
+            "cardano": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.token.im/hc/en-us/articles/115001657313-Which-chains-and-tokens-does-imToken-support",
+                    "explanation": "Cardano is not present in imToken's official supported-chains list."
+                  }
+                }
+              ]
+            },
             "lightning": null,
             "other": [
               {
@@ -17517,14 +18297,44 @@
             "seedPhraseRequiredAtSignup": {
               "$ref": "featureSupported"
             },
-            "passkeySignup": null,
-            "emailSignup": null,
+            "passkeySignup": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.token.im/hc/en-us/articles/40570905689881-How-to-Use-imToken-Web",
+                    "explanation": "imToken Web onboarding lets users 'Create account with passkey' using the WebAuthn standard and device secure chip for one-tap login."
+                  }
+                }
+              ]
+            },
+            "emailSignup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.token.im/hc/en-us/articles/40570905689881-How-to-Use-imToken-Web",
+                    "explanation": "imToken Web account creation is passkey-based with an account alias; no email-signup option is documented."
+                  }
+                }
+              ]
+            },
             "phoneSignup": null,
             "kycRequiredForWallet": {
               "$ref": "notSupported"
             },
             "guestMode": null,
-            "embeddedWalletMode": null,
+            "embeddedWalletMode": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.token.im/hc/en-us/articles/53273841041049-Web3-Without-Mnemonics-How-AA-Passkey-Could-Shape-Crypto-s-Next-Decade",
+                    "explanation": "imToken Web is powered by Passkey and Account Abstraction, providing a smart-account wallet created behind the scenes with no private key or mnemonic backup required."
+                  }
+                }
+              ]
+            },
             "timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
           },
           "portfolioManagement": {
@@ -20361,14 +21171,54 @@
             "seedPhraseRequiredAtSignup": {
               "$ref": "featureSupported"
             },
-            "passkeySignup": null,
-            "emailSignup": null,
+            "passkeySignup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.metamask.io/start/creating-a-new-wallet/",
+                    "explanation": "The consumer MetaMask wallet only offers Google/Apple/Telegram social login or SRP for signup; passkeys are used only for biometric unlock of an existing wallet, not for creating/accessing a wallet, per MetaMask support docs (https://support.metamask.io/configure/wallet/social-login/)."
+                  }
+                }
+              ]
+            },
+            "emailSignup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.metamask.io/configure/wallet/social-login/",
+                    "explanation": "MetaMask's consumer wallet creation supports SRP and Google/Apple/Telegram social login only, with no email signup option (email passwordless login exists only in the developer Embedded Wallets SDK, not the shipping consumer wallet), per MetaMask support docs (https://support.metamask.io/start/creating-a-new-wallet/)."
+                  }
+                }
+              ]
+            },
             "phoneSignup": null,
             "kycRequiredForWallet": {
               "$ref": "notSupported"
             },
-            "guestMode": null,
-            "embeddedWalletMode": null,
+            "guestMode": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.metamask.io/start/creating-a-new-wallet/",
+                    "explanation": "MetaMask's new-wallet documentation describes only SRP-based and social-login wallet creation with no guest/try-without-wallet mode."
+                  }
+                }
+              ]
+            },
+            "embeddedWalletMode": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://metamask.io/news/introducing-metamask-social-login",
+                    "explanation": "MetaMask's consumer social login (Google/Apple/Telegram) generates the SRP 'under the hood' and backs it up online via key sharding across nodes so the user never manually handles a seed phrase, per MetaMask's announcement and support docs."
+                  }
+                }
+              ]
+            },
             "timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
           },
           "portfolioManagement": {
@@ -21458,7 +22308,17 @@
                 }
               ]
             },
-            "webApp": null,
+            "webApp": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.mtpelerin.com/bridge-wallet",
+                    "explanation": "The official Bridge Wallet page offers a 'continue on web / Launch app' option pointing to app.mtpelerin.com, a browser-based self-custodial wallet usable without installing the mobile app."
+                  }
+                }
+              ]
+            },
             "ios": {
               "$call": "supported",
               "args": [
@@ -21501,7 +22361,17 @@
                 }
               ]
             },
-            "solana": null,
+            "solana": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.mtpelerin.com/bridge-wallet",
+                    "explanation": "Mt Pelerin's official supported-network list (Bitcoin, Lightning, Ethereum, Arbitrum, Avalanche, Base, BNB Chain, Celo, Gnosis, Optimism, Polygon, Rootstock, Sonic, Tempo, Tezos, zkSync) does not include Solana."
+                  }
+                }
+              ]
+            },
             "bitcoin": {
               "$call": "supported",
               "args": [
@@ -21536,10 +22406,50 @@
               ]
             },
             "starknet": null,
-            "sui": null,
-            "aptos": null,
-            "xrp": null,
-            "cardano": null,
+            "sui": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.mtpelerin.com/bridge-wallet",
+                    "explanation": "Sui is not in Mt Pelerin's official list of supported networks for Bridge Wallet."
+                  }
+                }
+              ]
+            },
+            "aptos": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.mtpelerin.com/bridge-wallet",
+                    "explanation": "Aptos is not in Mt Pelerin's official list of supported networks for Bridge Wallet."
+                  }
+                }
+              ]
+            },
+            "xrp": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.mtpelerin.com/bridge-wallet",
+                    "explanation": "The XRP Ledger is not in Mt Pelerin's official list of supported networks (which covers Bitcoin, Tezos and EVM chains only)."
+                  }
+                }
+              ]
+            },
+            "cardano": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.mtpelerin.com/bridge-wallet",
+                    "explanation": "Cardano is not in Mt Pelerin's official list of supported networks for Bridge Wallet."
+                  }
+                }
+              ]
+            },
             "lightning": {
               "$call": "supported",
               "args": [
@@ -21756,14 +22666,44 @@
             "seedPhraseRequiredAtSignup": {
               "$ref": "featureSupported"
             },
-            "passkeySignup": null,
-            "emailSignup": null,
+            "passkeySignup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.mtpelerin.com/bridge-wallet",
+                    "explanation": "Bridge Wallet onboarding is built around a self-custodial secret/seed phrase with password and biometric/PIN unlock; official support and product pages describe no passkey/WebAuthn signup."
+                  }
+                }
+              ]
+            },
+            "emailSignup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.mtpelerin.com/support",
+                    "explanation": "Wallet creation is seed-phrase based and self-custodial; the email/SMS collected is for KYC identity verification to buy/sell crypto, not for creating or accessing the wallet."
+                  }
+                }
+              ]
+            },
             "phoneSignup": null,
             "kycRequiredForWallet": {
               "$ref": "notSupported"
             },
             "guestMode": null,
-            "embeddedWalletMode": null,
+            "embeddedWalletMode": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.mtpelerin.com/bridge-wallet",
+                    "explanation": "Bridge Wallet is explicitly fully self-custodial where the user holds their own secret phrase, with no no-seed embedded/MPC/smart-account wallet created via social/email login."
+                  }
+                }
+              ]
+            },
             "timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
           },
           "portfolioManagement": {
@@ -23045,12 +23985,62 @@
                 }
               ]
             },
-            "cosmos": null,
-            "ton": null,
+            "cosmos": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://nu.fi/chains/support",
+                    "explanation": "NuFi's supported blockchains page lists Bitcoin, Ethereum, Cardano, Solana, Tron, Flow and various EVM/SVM chains but no Cosmos SDK/IBC chains."
+                  }
+                }
+              ]
+            },
+            "ton": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://nu.fi/chains/support",
+                    "explanation": "NuFi's supported blockchains page does not list TON among its supported networks."
+                  }
+                }
+              ]
+            },
             "starknet": null,
-            "sui": null,
-            "aptos": null,
-            "xrp": null,
+            "sui": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://nu.fi/chains/support",
+                    "explanation": "NuFi's supported blockchains page does not list Sui among its supported networks."
+                  }
+                }
+              ]
+            },
+            "aptos": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://nu.fi/chains/support",
+                    "explanation": "NuFi's supported blockchains page does not list Aptos among its supported networks."
+                  }
+                }
+              ]
+            },
+            "xrp": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://nu.fi/chains/support",
+                    "explanation": "NuFi's supported blockchains page does not list the XRP Ledger among its supported networks."
+                  }
+                }
+              ]
+            },
             "cardano": {
               "$call": "supported",
               "args": [
@@ -23208,7 +24198,17 @@
               "$ref": "notSupported"
             },
             "guestMode": null,
-            "embeddedWalletMode": null,
+            "embeddedWalletMode": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.nu.fi/support/solutions/articles/80001070723-create-a-seedless-wallet-using-a-social-account-like-google",
+                    "explanation": "NuFi creates a seedless non-custodial wallet behind the scenes via social login using Web3Auth, splitting the private key into shards stored across a decentralized network (MPC-style embedded wallet)."
+                  }
+                }
+              ]
+            },
             "timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
           },
           "portfolioManagement": {
@@ -24304,9 +25304,39 @@
                 }
               ]
             },
-            "aptos": null,
-            "xrp": null,
-            "cardano": null,
+            "aptos": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://web3.okx.com/wallet/aptos",
+                    "explanation": "OKX Wallet has a dedicated Aptos (APT) wallet page and help articles for using the Aptos network to store, send and receive APT across app, web and extension."
+                  }
+                }
+              ]
+            },
+            "xrp": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://web3.okx.com/wallet/xrp-ledger",
+                    "explanation": "OKX Wallet has a dedicated XRP Ledger wallet page to store, send and receive XRP natively."
+                  }
+                }
+              ]
+            },
+            "cardano": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://web3.okx.com/wallet/cardano",
+                    "explanation": "OKX Wallet provides a dedicated Cardano (ADA) wallet page to securely store, send and receive ADA on the Cardano network."
+                  }
+                }
+              ]
+            },
             "lightning": null,
             "other": [
               {
@@ -24555,13 +25585,43 @@
               "$ref": "featureSupported"
             },
             "passkeySignup": null,
-            "emailSignup": null,
+            "emailSignup": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://tradersunion.com/news/brokers-news/show/2740032-okx-wallet-enables-easier-sign-ins/",
+                    "explanation": "OKX introduced seed-phrase-free onboarding letting users create/access a wallet by signing in with Email (as well as Google/Apple) across app, extension and web."
+                  }
+                }
+              ]
+            },
             "phoneSignup": null,
             "kycRequiredForWallet": {
               "$ref": "notSupported"
             },
-            "guestMode": null,
-            "embeddedWalletMode": null,
+            "guestMode": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.okx.com/en-us/help/okx-wallet-faqs",
+                    "explanation": "OKX offers a guest mode on the home page (desktop or mobile browser) to explore wallet features and view a sample wallet without creating one first."
+                  }
+                }
+              ]
+            },
+            "embeddedWalletMode": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://tradersunion.com/news/brokers-news/show/2740032-okx-wallet-enables-easier-sign-ins/",
+                    "explanation": "OKX's social/email login creates a no-seed wallet whose private key is generated and stored in a Trusted Execution Environment (TEE) behind the scenes, with optional export/mnemonic conversion."
+                  }
+                }
+              ]
+            },
             "timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
           },
           "portfolioManagement": {
@@ -26095,7 +27155,17 @@
                 }
               ]
             },
-            "webApp": null,
+            "webApp": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.phantom.com/hc/en-us/articles/4412436271635-Set-up-the-Phantom-browser-extension",
+                    "explanation": "Phantom ships only as a browser extension and mobile app with no standalone browser-based web app usable without installing the extension, per its official setup docs and store listings."
+                  }
+                }
+              ]
+            },
             "ios": {
               "$call": "supported",
               "args": [
@@ -26472,9 +27542,39 @@
               "explanation": "Phantom developer docs say Phantom creates and manages private keys for users; Phantom Connect also supports social login providers for app integrations.",
               "url": "https://docs.phantom.com/introduction/"
             },
-            "seedPhraseRequiredAtSignup": null,
-            "passkeySignup": null,
-            "emailSignup": null,
+            "seedPhraseRequiredAtSignup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://phantom.com/learn/blog/deep-dive-log-in-to-phantom-with-email",
+                    "explanation": "Phantom offers a seedless wallet created with Google/Apple login plus a 4-digit PIN where no secret recovery phrase is shown or handled by the user at signup."
+                  }
+                }
+              ]
+            },
+            "passkeySignup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://phantom.com/learn/blog/create-a-wallet-with-your-email",
+                    "explanation": "Phantom's seedless onboarding uses Google/Apple OAuth plus a PIN rather than a WebAuthn/FIDO passkey, and no passkey signup option is documented."
+                  }
+                }
+              ]
+            },
+            "emailSignup": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://phantom.com/learn/blog/create-a-wallet-with-your-email",
+                    "explanation": "Phantom lets users create a wallet via 'Continue with Email' (backed by Google/Apple account) plus a 4-digit PIN, as described in its official email wallet blog and help docs."
+                  }
+                }
+              ]
+            },
             "phoneSignup": null,
             "kycRequiredForWallet": {
               "$call": "notSupportedWithRef",
@@ -27602,10 +28702,50 @@
               ]
             },
             "starknet": null,
-            "sui": null,
-            "aptos": null,
-            "xrp": null,
-            "cardano": null,
+            "sui": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+                    "explanation": "PillarX is an EVM-only smart-contract wallet supporting Ethereum, Polygon, Base, BNB, Optimism and Arbitrum, with no mention of Sui in its App Store listing or official materials."
+                  }
+                }
+              ]
+            },
+            "aptos": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+                    "explanation": "PillarX supports only EVM networks per its App Store listing and official site, with no Aptos support referenced anywhere."
+                  }
+                }
+              ]
+            },
+            "xrp": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+                    "explanation": "PillarX supports only EVM-compatible chains and makes no reference to the XRP Ledger in its App Store listing or official materials."
+                  }
+                }
+              ]
+            },
+            "cardano": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+                    "explanation": "PillarX is a multichain EVM wallet (Ethereum, Polygon, Base, BNB, Optimism, Arbitrum, etc.) and no Cardano support is mentioned in its App Store listing or blog."
+                  }
+                }
+              ]
+            },
             "lightning": null,
             "other": []
           },
@@ -27730,14 +28870,34 @@
             "seedPhraseRequiredAtSignup": {
               "$ref": "featureSupported"
             },
-            "passkeySignup": null,
+            "passkeySignup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://blog.pillarx.app/account-abstraction-and-chain-abstraction-the-benefits-for-pillarx-users/",
+                    "explanation": "PillarX's own blog lists passkeys, MFA and session keys as upcoming security features rather than currently shipping, indicating passkey signup is not yet available."
+                  }
+                }
+              ]
+            },
             "emailSignup": null,
             "phoneSignup": null,
             "kycRequiredForWallet": {
               "$ref": "notSupported"
             },
             "guestMode": null,
-            "embeddedWalletMode": null,
+            "embeddedWalletMode": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://blog.pillarx.app/account-abstraction-and-chain-abstraction-the-benefits-for-pillarx-users/",
+                    "explanation": "PillarX uses Etherspot account abstraction so users log in with social/email and get a smart account deployed in the background without seed phrases, i.e. an embedded/smart-account wallet."
+                  }
+                }
+              ]
+            },
             "timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
           },
           "portfolioManagement": {
@@ -29192,7 +30352,17 @@
                 }
               ]
             },
-            "webApp": null,
+            "webApp": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://allcryptowallets.org/wallets/rabby",
+                    "explanation": "Rabby is distributed only as a browser extension (Chrome/Firefox/Edge), desktop apps (Windows/Mac), and mobile apps (iOS/Android), with no browser-based web app usable without installing something, per its platform listings."
+                  }
+                }
+              ]
+            },
             "ios": {
               "$call": "supported",
               "args": [
@@ -29554,7 +30724,17 @@
                 }
               ]
             },
-            "passkeySignup": null,
+            "passkeySignup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.coingecko.com/learn/how-to-use-rabby-wallet",
+                    "explanation": "Rabby onboarding creates a wallet via a password and seed phrase (or import), with no passkey/WebAuthn signup option described in setup guides."
+                  }
+                }
+              ]
+            },
             "emailSignup": {
               "$call": "notSupportedWithRef",
               "args": [
@@ -29588,7 +30768,17 @@
                 }
               ]
             },
-            "guestMode": null,
+            "guestMode": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.coingecko.com/learn/how-to-use-rabby-wallet",
+                    "explanation": "Rabby's setup requires creating or importing a wallet (password + seed phrase) with no guest mode to try the app without a wallet first, though a watch-only address feature exists after setup."
+                  }
+                }
+              ]
+            },
             "embeddedWalletMode": {
               "$call": "notSupportedWithRef",
               "args": [
@@ -30636,7 +31826,17 @@
                 }
               ]
             },
-            "webApp": null,
+            "webApp": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://rainbow.me/",
+                    "explanation": "Rainbow ships an iOS/Android app and a browser extension only; the official site and store listings offer no standalone browser web app usable without installing the extension."
+                  }
+                }
+              ]
+            },
             "ios": {
               "$call": "supported",
               "args": [
@@ -30690,14 +31890,74 @@
               ]
             },
             "solana": null,
-            "bitcoin": null,
-            "cosmos": null,
-            "ton": null,
+            "bitcoin": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://rainbow.me/support/app/supported-networks",
+                    "explanation": "No official or secondary source lists native BTC support; Rainbow's chain coverage is EVM plus Solana/Sui/Monad, and reviews explicitly note Bitcoin is not supported."
+                  }
+                }
+              ]
+            },
+            "cosmos": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://rainbow.me/support/app/supported-networks",
+                    "explanation": "No source indicates Cosmos SDK/IBC support; Rainbow supports EVM chains plus Solana, Sui, and Monad only."
+                  }
+                }
+              ]
+            },
+            "ton": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://rainbow.me/support/app/supported-networks",
+                    "explanation": "No source indicates TON support; Rainbow's ecosystems are EVM plus Solana, Sui, and Monad."
+                  }
+                }
+              ]
+            },
             "starknet": null,
             "sui": null,
-            "aptos": null,
-            "xrp": null,
-            "cardano": null,
+            "aptos": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://rainbow.me/support/app/supported-networks",
+                    "explanation": "No reliable source lists Aptos support; only EVM chains plus Solana, Sui, and Monad are named."
+                  }
+                }
+              ]
+            },
+            "xrp": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://rainbow.me/support/app/supported-networks",
+                    "explanation": "No source indicates XRP Ledger support; Rainbow's supported ecosystems are EVM plus Solana, Sui, and Monad."
+                  }
+                }
+              ]
+            },
+            "cardano": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://rainbow.me/support/app/supported-networks",
+                    "explanation": "No source indicates Cardano support; Rainbow supports EVM chains plus Solana, Sui, and Monad only."
+                  }
+                }
+              ]
+            },
             "lightning": null,
             "other": []
           },
@@ -30847,14 +32107,54 @@
             "seedPhraseRequiredAtSignup": {
               "$ref": "featureSupported"
             },
-            "passkeySignup": null,
-            "emailSignup": null,
+            "passkeySignup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://rainbow.me/en/support/extension/get-started-with-the-rainbow-extension",
+                    "explanation": "Rainbow onboarding generates an HD seed-phrase wallet secured by a local password; no passkey/WebAuthn signup is documented."
+                  }
+                }
+              ]
+            },
+            "emailSignup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://rainbow.me/en/support/extension/get-started-with-the-rainbow-extension",
+                    "explanation": "Rainbow creates a self-custodial seed-phrase wallet with no email-based account creation option in any documented onboarding flow."
+                  }
+                }
+              ]
+            },
             "phoneSignup": null,
             "kycRequiredForWallet": {
               "$ref": "notSupported"
             },
-            "guestMode": null,
-            "embeddedWalletMode": null,
+            "guestMode": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://apps.apple.com/us/app/rainbow-ethereum-wallet/id1457119021",
+                    "explanation": "Rainbow offers a watch/impersonation mode letting users follow and view any public address in read-only mode without creating a wallet first."
+                  }
+                }
+              ]
+            },
+            "embeddedWalletMode": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://rainbow.me/en/support/extension/get-started-with-the-rainbow-extension",
+                    "explanation": "Rainbow is a self-custodial seed-phrase HD wallet with no no-seed embedded/MPC/smart-account mode created via social or email login."
+                  }
+                }
+              ]
+            },
             "timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
           },
           "portfolioManagement": {
@@ -32074,10 +33374,50 @@
               ]
             },
             "starknet": null,
-            "sui": null,
-            "aptos": null,
-            "xrp": null,
-            "cardano": null,
+            "sui": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.safe.global/en/articles/40795-supported-networks",
+                    "explanation": "Safe is available on EVM chains only and its supported-networks documentation lists no non-EVM chains, so it does not natively support Sui."
+                  }
+                }
+              ]
+            },
+            "aptos": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.safe.global/en/articles/40795-supported-networks",
+                    "explanation": "Safe is deployed only on EVM-compatible chains supporting the same opcodes as its contracts, which excludes the Move-based Aptos network."
+                  }
+                }
+              ]
+            },
+            "xrp": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.safe.global/en/articles/40795-supported-networks",
+                    "explanation": "Safe supports EVM chains only and lists no XRP Ledger deployment, so it does not natively support the XRP Ledger."
+                  }
+                }
+              ]
+            },
+            "cardano": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.safe.global/en/articles/40795-supported-networks",
+                    "explanation": "Safe supports EVM chains only, so it does not natively support the non-EVM Cardano network."
+                  }
+                }
+              ]
+            },
             "lightning": null,
             "other": [
               {
@@ -32301,8 +33641,28 @@
             "kycRequiredForWallet": {
               "$ref": "notSupported"
             },
-            "guestMode": null,
-            "embeddedWalletMode": null,
+            "guestMode": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.safe.global/en/articles/40840-why-do-i-need-to-connect-a-signer-wallet",
+                    "explanation": "Safe{Wallet} requires connecting a signer wallet (e.g. MetaMask, Ledger) as the first step before you can create or use a Safe, offering no guest/browse mode."
+                  }
+                }
+              ]
+            },
+            "embeddedWalletMode": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.safe.global/en/articles/40840-why-do-i-need-to-connect-a-signer-wallet",
+                    "explanation": "The consumer Safe{Wallet} product does not create a no-seed embedded/social-login wallet behind the scenes; it requires the user to bring an existing external signer wallet to control the Safe smart account."
+                  }
+                }
+              ]
+            },
             "timeToFirstWallet": "OnboardingSpeed.PASSKEY_OR_EMAIL_FIRST"
           },
           "portfolioManagement": {
@@ -33481,7 +34841,17 @@
                 }
               ]
             },
-            "webApp": null,
+            "webApp": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://trustwallet.com/browser-extension",
+                    "explanation": "Trust Wallet ships only as a mobile app (iOS/Android) and a browser extension for Chrome/Brave, with no browser-based web app usable without installing an extension or native app."
+                  }
+                }
+              ]
+            },
             "ios": {
               "$call": "supported",
               "args": [
@@ -33854,14 +35224,34 @@
             "seedPhraseRequiredAtSignup": {
               "$ref": "featureSupported"
             },
-            "passkeySignup": null,
+            "passkeySignup": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://trustwallet.com/blog/announcements/trust-wallet-swift-understanding-passkeys-and-recoverability",
+                    "explanation": "Trust Wallet SWIFT automatically creates a passkey (FIDO/WebAuthn, biometric-based) when you create the wallet, using it instead of a password or seed phrase."
+                  }
+                }
+              ]
+            },
             "emailSignup": null,
             "phoneSignup": null,
             "kycRequiredForWallet": {
               "$ref": "notSupported"
             },
             "guestMode": null,
-            "embeddedWalletMode": null,
+            "embeddedWalletMode": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://trustwallet.com/blog/announcements/trust-wallet-swift-understanding-passkeys-and-recoverability",
+                    "explanation": "Trust Wallet SWIFT is a smart-contract wallet powered by account abstraction with passkey-based creation that eliminates the seed phrase, providing a no-seed embedded/smart-account wallet."
+                  }
+                }
+              ]
+            },
             "timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
           },
           "portfolioManagement": {
@@ -35052,14 +36442,84 @@
                 }
               ]
             },
-            "bitcoin": null,
-            "cosmos": null,
-            "ton": null,
+            "bitcoin": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://99bitcoins.com/bitcoin-wallet/uniswap-wallet-review/",
+                    "explanation": "The Uniswap Wallet supports only EVM chains (Ethereum, Base, Arbitrum, etc.) and cannot hold or send native BTC."
+                  }
+                }
+              ]
+            },
+            "cosmos": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
+                    "explanation": "The wallet is EVM-only and provides no Cosmos SDK/IBC chain support per its network documentation and reviews."
+                  }
+                }
+              ]
+            },
+            "ton": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
+                    "explanation": "The wallet supports only EVM chains and has no TON network support."
+                  }
+                }
+              ]
+            },
             "starknet": null,
-            "sui": null,
-            "aptos": null,
-            "xrp": null,
-            "cardano": null,
+            "sui": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
+                    "explanation": "The wallet supports only EVM chains and has no Sui support."
+                  }
+                }
+              ]
+            },
+            "aptos": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
+                    "explanation": "The wallet supports only EVM chains and has no Aptos support."
+                  }
+                }
+              ]
+            },
+            "xrp": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
+                    "explanation": "The wallet supports only EVM chains and has no XRP Ledger support."
+                  }
+                }
+              ]
+            },
+            "cardano": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
+                    "explanation": "The wallet supports only EVM chains and has no Cardano support."
+                  }
+                }
+              ]
+            },
             "lightning": null,
             "other": [
               {
@@ -35223,14 +36683,44 @@
             "seedPhraseRequiredAtSignup": {
               "$ref": "featureSupported"
             },
-            "passkeySignup": null,
-            "emailSignup": null,
+            "passkeySignup": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
+                    "explanation": "The in-app wallet lets you spin up a wallet in a few clicks using FaceID, TouchID, or a passkey."
+                  }
+                }
+              ]
+            },
+            "emailSignup": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
+                    "explanation": "Users can add login methods including Google, Apple, or email for account access across devices."
+                  }
+                }
+              ]
+            },
             "phoneSignup": null,
             "kycRequiredForWallet": {
               "$ref": "notSupported"
             },
             "guestMode": null,
-            "embeddedWalletMode": null,
+            "embeddedWalletMode": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
+                    "explanation": "The new in-app wallet is a no-seed embedded wallet powered by Privy with distributed key material, created via passkey/social/email login."
+                  }
+                }
+              ]
+            },
             "timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
           },
           "portfolioManagement": {
@@ -36281,15 +37771,95 @@
                 }
               ]
             },
-            "solana": null,
-            "bitcoin": null,
-            "cosmos": null,
-            "ton": null,
+            "solana": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.zerion.io/en/articles/8186606-supported-networks-on-zerion",
+                    "explanation": "Zerion natively supports Solana, letting users create/hold/manage Solana assets per its help center and Solana wallet page."
+                  }
+                }
+              ]
+            },
+            "bitcoin": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.zerion.io/en/articles/8186606-supported-networks-on-zerion",
+                    "explanation": "Zerion supports only wrapped Bitcoin (WBTC) on EVM/Solana and does not support native BTC mainnet storage/sending per its supported networks documentation."
+                  }
+                }
+              ]
+            },
+            "cosmos": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.zerion.io/en/articles/8186606-supported-networks-on-zerion",
+                    "explanation": "Zerion's supported networks are Ethereum/EVM chains, Solana, and TRON, with no Cosmos SDK/IBC chain support listed."
+                  }
+                }
+              ]
+            },
+            "ton": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.zerion.io/en/articles/8186606-supported-networks-on-zerion",
+                    "explanation": "TON is not among Zerion's supported networks (Ethereum/EVM, Solana, TRON)."
+                  }
+                }
+              ]
+            },
             "starknet": null,
-            "sui": null,
-            "aptos": null,
-            "xrp": null,
-            "cardano": null,
+            "sui": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.zerion.io/en/articles/8186606-supported-networks-on-zerion",
+                    "explanation": "Sui is not listed among Zerion's supported networks."
+                  }
+                }
+              ]
+            },
+            "aptos": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.zerion.io/en/articles/8186606-supported-networks-on-zerion",
+                    "explanation": "Aptos is not listed among Zerion's supported networks."
+                  }
+                }
+              ]
+            },
+            "xrp": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.zerion.io/en/articles/8186606-supported-networks-on-zerion",
+                    "explanation": "The XRP Ledger is not listed among Zerion's supported networks."
+                  }
+                }
+              ]
+            },
+            "cardano": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.zerion.io/en/articles/8186606-supported-networks-on-zerion",
+                    "explanation": "Cardano is not listed among Zerion's supported networks."
+                  }
+                }
+              ]
+            },
             "lightning": null,
             "other": [
               {
@@ -36447,14 +38017,54 @@
             "seedPhraseRequiredAtSignup": {
               "$ref": "featureSupported"
             },
-            "passkeySignup": null,
-            "emailSignup": null,
+            "passkeySignup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.zerion.io/en/articles/9657118-create-your-first-wallet-in-zerion",
+                    "explanation": "Zerion's standard wallet creation uses a 12-word seed phrase with passcode/password unlock, not passkey signup (passkeys only appear in its separate Account Abstraction API/Safe tech)."
+                  }
+                }
+              ]
+            },
+            "emailSignup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.zerion.io/en/articles/9657118-create-your-first-wallet-in-zerion",
+                    "explanation": "The consumer Zerion app requires creating/importing a seed-phrase wallet and does not offer email signup in its onboarding flow."
+                  }
+                }
+              ]
+            },
             "phoneSignup": null,
             "kycRequiredForWallet": {
               "$ref": "notSupported"
             },
-            "guestMode": null,
-            "embeddedWalletMode": null,
+            "guestMode": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.zerion.io/en/articles/5464678-what-is-the-difference-between-a-watch-address-and-a-connected-wallet",
+                    "explanation": "Zerion lets users add a watch address to track any public wallet without creating or connecting their own wallet, viewing balances/positions."
+                  }
+                }
+              ]
+            },
+            "embeddedWalletMode": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.zerion.io/en/articles/9657118-create-your-first-wallet-in-zerion",
+                    "explanation": "The Zerion consumer app creates a self-custody seed-phrase wallet with no embedded/MPC/social-login smart-account mode (such tech is offered only via its developer API, not the consumer app)."
+                  }
+                }
+              ]
+            },
             "timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
           },
           "portfolioManagement": {
@@ -37555,7 +39165,17 @@
                 }
               ]
             },
-            "webApp": null,
+            "webApp": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/greekfetacheese/zeus",
+                    "explanation": "Zeus's README lists Supported Platforms as Windows and Linux desktop only, distributed as a downloadable executable, with no browser-based web app."
+                  }
+                }
+              ]
+            },
             "ios": {
               "$call": "supported",
               "args": [
@@ -37808,8 +39428,28 @@
               "explanation": "ZEUS docs say ZEUS is self-custodial, no KYC, PIN/passphrase encrypted, and supports connecting to own node/LNDHub.",
               "url": "https://docs.zeusln.app/"
             },
-            "seedPhraseRequiredAtSignup": null,
-            "passkeySignup": null,
+            "seedPhraseRequiredAtSignup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/greekfetacheese/zeus",
+                    "explanation": "The README states Zeus is 'seedless' and onboarding only requires a username and password to derive the HD wallet, so no seed phrase is forced at signup (seed import is optional)."
+                  }
+                }
+              ]
+            },
+            "passkeySignup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/greekfetacheese/zeus",
+                    "explanation": "The README describes signup as entering a username and password hashed with Argon2Id; there is no passkey/WebAuthn/FIDO option."
+                  }
+                }
+              ]
+            },
             "emailSignup": {
               "$call": "notSupportedWithRef",
               "args": [
@@ -37843,8 +39483,28 @@
                 }
               ]
             },
-            "guestMode": null,
-            "embeddedWalletMode": null,
+            "guestMode": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/greekfetacheese/zeus",
+                    "explanation": "The README states that the first time you run Zeus you are prompted to enter a username and password to derive a wallet, with no try-before-wallet guest mode."
+                  }
+                }
+              ]
+            },
+            "embeddedWalletMode": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/greekfetacheese/zeus",
+                    "explanation": "Zeus derives a self-custodial HD wallet locally from a username/password via Argon2Id/BIP32 with no telemetry or third-party service, offering no social/email-login MPC or embedded smart-account wallet."
+                  }
+                }
+              ]
+            },
             "timeToFirstWallet": "OnboardingSpeed.UNKNOWN"
           },
           "portfolioManagement": {

@@ -1,1259 +1,1289 @@
 {
-	"id": "trust-wallet",
-	"source": "software-wallets",
-	"export": "trustWallet",
-	"data": {
-		"metadata": {
-			"id": "trust-wallet",
-			"displayName": "Trust Wallet",
-			"tableName": "Trust Wallet",
-			"blurb": "Trust Wallet is a multi-chain self-custody wallet for mobile and browser extension users.",
-			"contributors": [],
-			"iconExtension": "png",
-			"lastUpdated": "2026-06-07",
-			"urls": {
-				"docs": [
-					"https://support.trustwallet.com/"
-				],
-				"extensions": [
-					"https://chromewebstore.google.com/detail/trust-wallet/egjidjbpglichdcondbcbdnbeeppgdph"
-				],
-				"repositories": [
-					"https://github.com/trustwallet/wallet-core"
-				],
-				"websites": [
-					"https://trustwallet.com/"
-				]
-			}
-		},
-		"features": {
-			"accountSupport": {
-				"defaultAccountType": "AccountType.eoa",
-				"eip7702": {
-					"$ref": "notSupported"
-				},
-				"eoa": {
-					"$call": "supported",
-					"args": [
-						{
-							"ref": {
-								"explanation": "Trust Wallet support says wallets can be imported using a secret phrase, also known as a recovery phrase, seed phrase, or mnemonic.",
-								"url": "https://support.trustwallet.com/support/solutions/articles/67000731384-how-to-import-a-wallet-using-a-secret-phrase-on-trust-wallet"
-							},
-							"canExportPrivateKey": true,
-							"keyDerivation": {
-								"type": "BIP32",
-								"canExportSeedPhrase": true,
-								"derivationPath": "BIP44",
-								"seedPhrase": "BIP39"
-							}
-						}
-					]
-				},
-				"mpc": {
-					"$ref": "notSupported"
-				},
-				"rawErc4337": {
-					"$ref": "notSupported"
-				},
-				"safe": {
-					"$ref": "notSupported"
-				}
-			},
-			"addressResolution": {
-				"ref": {
-					"explanation": "Trust Wallet supports ENS and Web3 domain-name resolution in its wallet UI.",
-					"url": "https://trustwallet.com/"
-				},
-				"chainSpecificAddressing": {
-					"erc7828": {
-						"$ref": "notSupported"
-					},
-					"erc7831": {
-						"$ref": "notSupported"
-					}
-				},
-				"nonChainSpecificEnsResolution": {
-					"$call": "supported",
-					"args": [
-						{
-							"medium": "CHAIN_CLIENT"
-						}
-					]
-				}
-			},
-			"chainAbstraction": {
-				"bridging": {
-					"builtInBridging": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet presents swaps and cross-chain features as part of its multi-chain wallet experience.",
-									"url": "https://trustwallet.com/"
-								}
-							}
-						]
-					},
-					"suggestedBridging": null
-				},
-				"crossChainBalances": {
-					"ref": {
-						"explanation": "Trust Wallet says it supports 100+ blockchains from one self-custody wallet.",
-						"url": "https://trustwallet.com/"
-					},
-					"globalAccountValue": {
-						"$ref": "featureSupported"
-					},
-					"perChainAccountValue": {
-						"$ref": "featureSupported"
-					},
-					"ether": null,
-					"usdc": null
-				}
-			},
-			"chainConfigurability": {
-				"$ref": "featureSupported"
-			},
-			"ecosystem": {
-				"delegation": null
-			},
-			"integration": {
-				"browser": {
-					"1193": {
-						"$ref": "featureSupported"
-					},
-					"2700": null,
-					"6963": null,
-					"ref": {
-						"explanation": "Trust Wallet is available as a browser extension for connecting to Web3 dapps.",
-						"url": "https://trustwallet.com/browser-extension"
-					}
-				},
-				"walletCall": null
-			},
-			"licensing": {
-				"type": "LicensingType.PROPRIETARY",
-				"walletAppLicense": {
-					"ref": {
-						"explanation": "Trust Wallet's full consumer app source is not published as a single open-source app repository; Trust Wallet Core is an Apache-2.0 library used by the wallet.",
-						"url": "https://github.com/trustwallet/wallet-core"
-					},
-					"license": "SourceNotAvailableLicense.PROPRIETARY"
-				}
-			},
-			"monetization": {
-				"ref": {
-					"$ref": "refTodo"
-				},
-				"revenueBreakdownIsPublic": false,
-				"strategies": {
-					"donations": false,
-					"ecosystemGrants": false,
-					"governanceTokenLowFloat": false,
-					"governanceTokenMostlyDistributed": false,
-					"hiddenConvenienceFees": null,
-					"publicOffering": false,
-					"selfFunded": null,
-					"transparentConvenienceFees": true,
-					"ventureCapital": false
-				}
-			},
-			"multiAddress": {
-				"$call": "supported",
-				"args": [
-					{
-						"ref": {
-							"explanation": "Trust Wallet support documents importing wallets from mobile to extension, extension to mobile, and from other Web3 wallets.",
-							"url": "https://support.trustwallet.com/support/solutions/articles/67000731384-how-to-import-a-wallet-using-a-secret-phrase-on-trust-wallet"
-						}
-					}
-				]
-			},
-			"privacy": {
-				"analytics": {
-					"crashReports": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet's App Store privacy label lists Diagnostics as data that may be collected.",
-									"url": "https://apps.apple.com/ch/app/trust-wallet-bitcoin-crypto/id1288339409"
-								}
-							}
-						]
-					},
-					"usage": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet's privacy notice describes automatic collection and use of personal data through its applications and services.",
-									"url": "https://trustwallet.com/privacy-notice"
-								}
-							}
-						]
-					}
-				},
-				"appIsolation": null,
-				"dataCollection": null,
-				"privacyPolicy": "https://trustwallet.com/privacy-notice",
-				"transactionPrivacy": {
-					"defaultFungibleTokenTransferMode": "PUBLIC",
-					"STEALTH_ADDRESSES": {
-						"$ref": "notSupported"
-					},
-					"TORNADO_CASH_NOVA": {
-						"$ref": "notSupported"
-					},
-					"PRIVACY_POOLS": {
-						"$ref": "notSupported"
-					},
-					"RAILGUN": {
-						"$ref": "notSupported"
-					}
-				}
-			},
-			"profile": "WalletProfile.GENERIC",
-			"security": {
-				"accountRecovery": null,
-				"bugBountyProgram": {
-					"$call": "supported",
-					"args": [
-						{
-							"ref": {
-								"explanation": "Trust Wallet's security page links to and describes a bug bounty program.",
-								"url": "https://trustwallet.com/security"
-							},
-							"availability": "BugBountyProgramAvailability.ACTIVE",
-							"upgradePathAvailable": true
-						}
-					]
-				},
-				"duressResistance": {
-					"basicUnlock": {
-						"ref": {
-							"$ref": "refTodo"
-						},
-						"mechanisms": {
-							"PIN": true,
-							"PASSWORD": true,
-							"BIOMETRIC": true,
-							"PATTERN": false
-						}
-					},
-					"duressMode": {
-						"$ref": "notSupported"
-					}
-				},
-				"hardwareWalletSupport": {
-					"ref": {
-						"$ref": "refTodo"
-					},
-					"wallets": {
-						"LEDGER": {
-							"$call": "supported",
-							"args": [
-								{
-									"connectionTypes": [
-										"HardwareWalletConnection.bluetooth",
-										"HardwareWalletConnection.webUSB"
-									]
-								}
-							]
-						}
-					}
-				},
-				"keysHandling": null,
-				"lightClient": {
-					"ethereumL1": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet public docs describe multi-chain wallet network access, but no embedded Ethereum L1 light-client verification path was found.",
-									"url": "https://support.trustwallet.com/"
-								}
-							}
-						]
-					}
-				},
-				"passkeyVerification": {
-					"$ref": "notSupported"
-				},
-				"publicSecurityAudits": [],
-				"scamAlerts": {
-					"contractTransactionWarning": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet's Security Scanner is designed to protect assets by alerting users of risky transactions and providing risk descriptions.",
-									"url": "https://trustwallet.com/blog/web3/a-safer-web3-experience-with-trust-wallet-security-scanner"
-								}
-							}
-						]
-					},
-					"scamUrlWarning": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet's security page describes built-in risk monitoring tools and security partners that help users avoid scams.",
-									"url": "https://trustwallet.com/security"
-								}
-							}
-						]
-					},
-					"sendTransactionWarning": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet's Security Scanner alerts users of risky transactions before signing.",
-									"url": "https://trustwallet.com/blog/web3/a-safer-web3-experience-with-trust-wallet-security-scanner"
-								}
-							}
-						]
-					}
-				},
-				"transactionLegibility": {
-					"transactionSimulations": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet's Security Scanner evaluates transaction risk and shows risk descriptions before users proceed.",
-									"url": "https://trustwallet.com/blog/web3/a-safer-web3-experience-with-trust-wallet-security-scanner"
-								}
-							}
-						]
-					}
-				}
-			},
-			"selfSovereignty": {
-				"permissionsManagement": {
-					"$call": "supported",
-					"args": [
-						{
-							"ref": {
-								"explanation": "Trust Wallet announced an Approvals feature that lets users view active approvals, detect risky approvals, and revoke approvals directly inside the mobile wallet and extension.",
-								"url": "https://trustwallet.com/blog/announcements/control-and-revoke-token-approvals-in-trust-wallet"
-							},
-							"erc20Approvals": "SpendingApprovalsControl.CAN_INSPECT_AND_REVOKE",
-							"erc721Approvals": null,
-							"erc1155Approvals": null
-						}
-					]
-				},
-				"transactionSubmission": {
-					"l1": {
-						"ref": {
-							"explanation": "Trust Wallet public docs describe app-managed network access; no self-hosted-node transaction broadcast configuration was found.",
-							"url": "https://support.trustwallet.com/"
-						},
-						"selfBroadcastViaDirectGossip": {
-							"$ref": "notSupported"
-						},
-						"selfBroadcastViaSelfHostedNode": {
-							"$ref": "notSupported"
-						}
-					},
-					"l2": {
-						"ref": {
-							"$ref": "refTodo"
-						}
-					}
-				}
-			},
-			"transparency": {
-				"releaseTransparency": {
-					"artifactSigning": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet publishes app-store and extension releases, but no independently verifiable signed application artifacts were found.",
-									"url": "https://apps.apple.com/ch/app/trust-wallet-bitcoin-crypto/id1288339409"
-								}
-							}
-						]
-					},
-					"hasPublicChangelog": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet Core publishes public GitHub releases with changelog entries.",
-									"url": "https://github.com/trustwallet/wallet-core/releases"
-								}
-							}
-						]
-					},
-					"reproducibleBuilds": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet does not publish reproducible build instructions for the full consumer wallet apps.",
-									"url": "https://github.com/trustwallet/wallet-core"
-								}
-							}
-						]
-					}
-				}
-			},
-			"product": {
-				"platformCoverage": {
-					"ref": {
-						"explanation": "Trust Wallet download page explicitly lists the mobile app, iOS, Android, APK, and Chrome browser extension channels.",
-						"url": "https://trustwallet.com/download"
-					},
-					"desktopApp": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet describes itself as available as a mobile app and desktop browser extension; no native desktop app is listed on the download page.",
-									"url": "https://trustwallet.com/download"
-								}
-							}
-						]
-					},
-					"mobileApp": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet download page says the wallet is available as a mobile app.",
-									"url": "https://trustwallet.com/download"
-								}
-							}
-						]
-					},
-					"browserExtension": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet download page says the wallet is available as a desktop browser extension.",
-									"url": "https://trustwallet.com/download"
-								}
-							}
-						]
-					},
-					"browserNative": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet is delivered as an app or extension, not as a browser-native wallet built into a browser.",
-									"url": "https://trustwallet.com/download"
-								}
-							}
-						]
-					},
-					"webApp": null,
-					"ios": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet download page links an iOS App Store build.",
-									"url": "https://trustwallet.com/download"
-								}
-							}
-						]
-					},
-					"android": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet download page links Google Play and Android APK builds.",
-									"url": "https://trustwallet.com/download"
-								}
-							}
-						]
-					},
-					"chrome": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet download page links the Chrome Web Store extension.",
-									"url": "https://trustwallet.com/download"
-								}
-							}
-						]
-					},
-					"firefox": null,
-					"safari": null
-				},
-				"supportedEcosystems": {
-					"ref": {
-						"explanation": "Trust Wallet browser-extension page lists 100+ supported blockchains, including Ethereum/EVM, Bitcoin, Cosmos, Aptos, Solana, Sui, TON, XRP, Cardano, and many others.",
-						"url": "https://trustwallet.com/browser-extension"
-					},
-					"evm": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet lists Ethereum, Base, Arbitrum, Optimism, Polygon, BNB Smart Chain, Avalanche C-Chain, and other EVM networks.",
-									"url": "https://trustwallet.com/browser-extension"
-								}
-							}
-						]
-					},
-					"solana": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet lists Solana as a supported blockchain.",
-									"url": "https://trustwallet.com/browser-extension"
-								}
-							}
-						]
-					},
-					"bitcoin": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet lists Bitcoin as a supported blockchain.",
-									"url": "https://trustwallet.com/browser-extension"
-								}
-							}
-						]
-					},
-					"cosmos": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet lists Cosmos and related Cosmos ecosystem chains such as Osmosis and Juno.",
-									"url": "https://trustwallet.com/browser-extension"
-								}
-							}
-						]
-					},
-					"ton": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet lists TON as a supported blockchain.",
-									"url": "https://trustwallet.com/browser-extension"
-								}
-							}
-						]
-					},
-					"starknet": null,
-					"sui": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet lists Sui as a supported blockchain.",
-									"url": "https://trustwallet.com/browser-extension"
-								}
-							}
-						]
-					},
-					"aptos": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet lists Aptos as a supported blockchain.",
-									"url": "https://trustwallet.com/browser-extension"
-								}
-							}
-						]
-					},
-					"xrp": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet lists XRP as a supported blockchain.",
-									"url": "https://trustwallet.com/browser-extension"
-								}
-							}
-						]
-					},
-					"cardano": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet lists Cardano as a supported blockchain.",
-									"url": "https://trustwallet.com/browser-extension"
-								}
-							}
-						]
-					},
-					"lightning": null,
-					"other": [
-						{
-							"name": "Acala",
-							"ref": {
-								"explanation": "Trust Wallet supported-chain list includes Acala.",
-								"url": "https://trustwallet.com/browser-extension"
-							}
-						},
-						{
-							"name": "Algorand",
-							"ref": {
-								"explanation": "Trust Wallet supported-chain list includes Algorand.",
-								"url": "https://trustwallet.com/browser-extension"
-							}
-						},
-						{
-							"name": "Avalanche",
-							"ref": {
-								"explanation": "Trust Wallet supported-chain list includes Avalanche.",
-								"url": "https://trustwallet.com/browser-extension"
-							}
-						},
-						{
-							"name": "BNB Chain",
-							"ref": {
-								"explanation": "Trust Wallet supported-chain list includes BNB Chain.",
-								"url": "https://trustwallet.com/browser-extension"
-							}
-						},
-						{
-							"name": "Polkadot",
-							"ref": {
-								"explanation": "Trust Wallet supported-chain list includes Polkadot.",
-								"url": "https://trustwallet.com/browser-extension"
-							}
-						},
-						{
-							"name": "Stellar",
-							"ref": {
-								"explanation": "Trust Wallet supported-chain list includes Stellar.",
-								"url": "https://trustwallet.com/browser-extension"
-							}
-						},
-						{
-							"name": "TRON",
-							"ref": {
-								"explanation": "Trust Wallet supported-chain list includes TRON.",
-								"url": "https://trustwallet.com/browser-extension"
-							}
-						},
-						{
-							"name": "VeChain",
-							"ref": {
-								"explanation": "Trust Wallet supported-chain list includes VeChain.",
-								"url": "https://trustwallet.com/browser-extension"
-							}
-						}
-					]
-				},
-				"dappExperience": {
-					"ref": {
-						"explanation": "Trust Wallet browser-extension page describes the extension as a gateway to thousands of Web3 dApps and references developer dApp submission.",
-						"url": "https://trustwallet.com/browser-extension"
-					},
-					"inAppBrowser": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet positions the extension as a gateway to thousands of Web3 dApps.",
-									"url": "https://trustwallet.com/browser-extension"
-								}
-							}
-						]
-					},
-					"curatedDappDirectory": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet navigation includes Submit dApp and the extension page describes discovery across Web3 dApps.",
-									"url": "https://trustwallet.com/browser-extension"
-								}
-							}
-						]
-					},
-					"dappSearch": null,
-					"walletConnectOnlyMode": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet supports direct dApp access through its app/extension surface rather than only WalletConnect.",
-									"url": "https://trustwallet.com/browser-extension"
-								}
-							}
-						]
-					},
-					"featuredApps": null,
-					"riskRatedDiscovery": null
-				},
-				"fiatRamps": {
-					"ref": {
-						"explanation": "Trust Wallet browser-extension page states users can buy crypto using debit or credit card, mobile payments, or bank transfers.",
-						"url": "https://trustwallet.com/browser-extension"
-					},
-					"buyCrypto": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet lists buy crypto as a feature and says crypto can be bought with debit/credit card, mobile payments, or bank transfers.",
-									"url": "https://trustwallet.com/browser-extension"
-								}
-							}
-						]
-					},
-					"sellCrypto": null,
-					"bankTransfer": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet says buy crypto supports bank transfers.",
-									"url": "https://trustwallet.com/browser-extension"
-								}
-							}
-						]
-					},
-					"card": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet says buy crypto supports debit or credit card.",
-									"url": "https://trustwallet.com/browser-extension"
-								}
-							}
-						]
-					},
-					"applePay": null,
-					"googlePay": null,
-					"kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
-					"providers": [],
-					"regionalAvailability": "Trust Wallet publishes buy functionality but provider and country availability were not resolved in this pass."
-				},
-				"gasUx": {
-					"ref": {
-						"explanation": "Trust Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://trustwallet.com/"
-					},
-					"gasCustomization": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet supports standard EVM transaction sending where gas settings can be inspected or controlled in the wallet flow.",
-									"url": "https://support.trustwallet.com/"
-								}
-							}
-						]
-					},
-					"gasSponsorship": null,
-					"gasAbstraction": null,
-					"payGasInStablecoins": null,
-					"payGasWithReceivedToken": null,
-					"speedPresets": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": null,
-									"url": "https://support.trustwallet.com/"
-								}
-							}
-						]
-					},
-					"stuckTransactionRecovery": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet support/product materials include stuck or pending transaction recovery guidance.",
-									"url": "https://support.trustwallet.com/"
-								}
-							}
-						]
-					}
-				},
-				"recoveryUx": {
-					"ref": {
-						"explanation": "Trust Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://trustwallet.com/"
-					},
-					"seedOnlyRecovery": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet supports recovery/import through a seed or secret recovery phrase.",
-									"url": "https://support.trustwallet.com/"
-								}
-							}
-						]
-					},
-					"cloudBackup": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet supports cloud-backed wallet backup or recovery for at least some account flows.",
-									"url": "https://trustwallet.com/"
-								}
-							}
-						]
-					},
-					"socialRecovery": null,
-					"guardianRecovery": null,
-					"passkeyRecovery": null,
-					"emergencyKit": null,
-					"recoveryRehearsal": null
-				},
-				"onboardingFriction": {
-					"ref": {
-						"explanation": "Trust Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://trustwallet.com/"
-					},
-					"seedPhraseRequiredAtSignup": {
-						"$ref": "featureSupported"
-					},
-					"passkeySignup": null,
-					"emailSignup": null,
-					"phoneSignup": null,
-					"kycRequiredForWallet": {
-						"$ref": "notSupported"
-					},
-					"guestMode": null,
-					"embeddedWalletMode": null,
-					"timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
-				},
-				"portfolioManagement": {
-					"ref": {
-						"explanation": "Trust Wallet browser-extension page describes earning rewards, managing NFTs, swapping, and multi-wallet management.",
-						"url": "https://trustwallet.com/browser-extension"
-					},
-					"netWorth": null,
-					"pnl": null,
-					"costBasis": null,
-					"tokenCategories": null,
-					"nftSupport": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet says users can explore and manage NFTs.",
-									"url": "https://trustwallet.com/browser-extension"
-								}
-							}
-						]
-					},
-					"collectionViews": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet says users can explore top NFT marketplaces and manage NFTs.",
-									"url": "https://trustwallet.com/browser-extension"
-								}
-							}
-						]
-					},
-					"watchOnlyWallets": null,
-					"multiWalletAggregation": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet says its multi-wallet feature lets users add, import, and manage wallets in one place.",
-									"url": "https://trustwallet.com/browser-extension"
-								}
-							}
-						]
-					}
-				},
-				"notifications": {
-					"ref": {
-						"explanation": "Trust Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://trustwallet.com/"
-					},
-					"sendReceive": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet supports notifications for wallet activity such as sends or receives.",
-									"url": "https://trustwallet.com/"
-								}
-							}
-						]
-					},
-					"priceAlerts": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet supports price or market alerts.",
-									"url": "https://trustwallet.com/"
-								}
-							}
-						]
-					},
-					"approvalAlerts": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet supports approval-related alerts, approval review, or permission warnings.",
-									"url": "https://trustwallet.com/"
-								}
-							}
-						]
-					},
-					"bridgeCompletion": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": null,
-									"url": "https://trustwallet.com/"
-								}
-							}
-						]
-					},
-					"failedTransaction": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet supports wallet activity notifications that can include failed or completed transaction status.",
-									"url": "https://trustwallet.com/"
-								}
-							}
-						]
-					},
-					"securityAlerts": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet supports security alerts or transaction-risk warnings.",
-									"url": "https://trustwallet.com/"
-								}
-							}
-						]
-					},
-					"marketAlerts": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet supports market or price alerts.",
-									"url": "https://trustwallet.com/"
-								}
-							}
-						]
-					}
-				},
-				"nftCapabilities": {
-					"ref": {
-						"explanation": "Trust Wallet browser-extension page says users can explore top NFT marketplaces and manage NFTs securely.",
-						"url": "https://trustwallet.com/browser-extension"
-					},
-					"display": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet says users can manage NFTs.",
-									"url": "https://trustwallet.com/browser-extension"
-								}
-							}
-						]
-					},
-					"send": null,
-					"mint": null,
-					"marketplaceIntegration": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet references top NFT marketplaces from the extension page.",
-									"url": "https://trustwallet.com/browser-extension"
-								}
-							}
-						]
-					},
-					"spamNftHiding": null,
-					"collectionMetadataRefresh": null,
-					"royaltiesOrOffers": null
-				},
-				"defiPositionAwareness": {
-					"ref": {
-						"explanation": "Trust Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://trustwallet.com/"
-					},
-					"lendingPositions": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet surfaces DeFi lending or protocol positions in wallet/portfolio views.",
-									"url": "https://trustwallet.com/"
-								}
-							}
-						]
-					},
-					"stakingPositions": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet surfaces staking or earn positions in wallet/portfolio views.",
-									"url": "https://trustwallet.com/"
-								}
-							}
-						]
-					},
-					"lpPositions": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet surfaces liquidity-pool or DeFi protocol positions.",
-									"url": "https://trustwallet.com/"
-								}
-							}
-						]
-					},
-					"vaultPositions": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet surfaces vault or protocol positions.",
-									"url": "https://trustwallet.com/"
-								}
-							}
-						]
-					},
-					"perProtocolBalances": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet groups DeFi holdings by protocol or app.",
-									"url": "https://trustwallet.com/"
-								}
-							}
-						]
-					},
-					"claimableRewards": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet surfaces claimable rewards or earn balances.",
-									"url": "https://trustwallet.com/"
-								}
-							}
-						]
-					},
-					"liquidationWarnings": null
-				},
-				"stakingEarn": {
-					"ref": {
-						"explanation": "Trust Wallet browser-extension page lists earning rewards and staking as supported features.",
-						"url": "https://trustwallet.com/browser-extension"
-					},
-					"nativeStaking": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet lists staking/earn rewards as a wallet feature.",
-									"url": "https://trustwallet.com/browser-extension"
-								}
-							}
-						]
-					},
-					"liquidStaking": null,
-					"validatorChoice": null,
-					"apyDisplay": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet says users can earn rewards up to 70% APR via providers.",
-									"url": "https://trustwallet.com/browser-extension"
-								}
-							}
-						]
-					},
-					"rewardsClaiming": null,
-					"providerDependency": "Trust Wallet says earn rewards are available via trusted providers.",
-					"lockupDisclosure": null
-				},
-				"customerSupport": {
-					"ref": {
-						"explanation": "Trust Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://trustwallet.com/"
-					},
-					"liveChat": null,
-					"emailSupport": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet publishes support, help center, or contact paths for wallet users.",
-									"url": "https://support.trustwallet.com/"
-								}
-							}
-						]
-					},
-					"aiSupport": null,
-					"publishedSla": null,
-					"inAppHelpCenter": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet provides in-app or product-linked help/support content.",
-									"url": "https://support.trustwallet.com/"
-								}
-							}
-						]
-					},
-					"transactionTroubleshooting": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet support docs include transaction or wallet troubleshooting material.",
-									"url": "https://support.trustwallet.com/"
-								}
-							}
-						]
-					},
-					"scamRecoveryGuidance": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet support/security materials include scam, compromise, or recovery guidance.",
-									"url": "https://trustwallet.com/"
-								}
-							}
-						]
-					}
-				},
-				"developerOffering": {
-					"ref": {
-						"explanation": "Trust Wallet site navigation links developer docs, Wallet Core, dApp submission, asset listing, and Agent Kit.",
-						"url": "https://trustwallet.com/download"
-					},
-					"walletSdk": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet links developer documentation for Web3 applications.",
-									"url": "https://trustwallet.com/download"
-								}
-							}
-						]
-					},
-					"embeddedWalletSdk": null,
-					"whiteLabelOffering": null,
-					"walletConnectSupport": null,
-					"eip6963": null,
-					"eip5792": null,
-					"deepLinks": null,
-					"mobileLinkingQuality": null
-				},
-				"pricingFeeModel": {
-					"ref": {
-						"explanation": "Trust Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://trustwallet.com/"
-					},
-					"swapFees": null,
-					"bridgeFees": null,
-					"onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
-					"spreadDisclosure": {
-						"$ref": "featureSupported"
-					},
-					"subscriptionFeatures": null,
-					"cardFees": "Card fees are provider-dependent where card purchase is available.",
-					"hiddenPartnerRevenue": null
-				},
-				"releaseVelocity": {
-					"ref": {
-						"explanation": "Trust Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://trustwallet.com/"
-					},
-					"latestReleaseDate": "2026-06-07",
-					"releaseFrequency": "ReleaseFrequency.IRREGULAR",
-					"appStoreUpdateCadence": "App-store cadence should be measured from current app-store release history in a deeper pass.",
-					"githubActivity": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet has public GitHub repository activity or releases that can be tracked.",
-									"url": "https://github.com/trustwallet/wallet-core"
-								}
-							}
-						]
-					},
-					"changelogDetail": "ChangelogDetail.BASIC"
-				},
-				"deviceSync": {
-					"ref": {
-						"explanation": "Trust Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://trustwallet.com/"
-					},
-					"syncsAccounts": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet supports account synchronization or account reuse across devices.",
-									"url": "https://trustwallet.com/"
-								}
-							}
-						]
-					},
-					"syncsSettings": null,
-					"syncsContactsOrAddressBook": null,
-					"desktopMobileSync": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Trust Wallet supports cross-device use between mobile and desktop/browser surfaces.",
-									"url": "https://trustwallet.com/"
-								}
-							}
-						]
-					},
-					"cloudBackedSync": null,
-					"requiresSameSeedImport": {
-						"$ref": "notSupported"
-					}
-				}
-			}
-		},
-		"variants": {
-			"MOBILE": true,
-			"BROWSER": true
-		}
-	}
+  "id": "trust-wallet",
+  "source": "software-wallets",
+  "export": "trustWallet",
+  "data": {
+    "metadata": {
+      "id": "trust-wallet",
+      "displayName": "Trust Wallet",
+      "tableName": "Trust Wallet",
+      "blurb": "Trust Wallet is a multi-chain self-custody wallet for mobile and browser extension users.",
+      "contributors": [],
+      "iconExtension": "png",
+      "lastUpdated": "2026-06-07",
+      "urls": {
+        "docs": [
+          "https://support.trustwallet.com/"
+        ],
+        "extensions": [
+          "https://chromewebstore.google.com/detail/trust-wallet/egjidjbpglichdcondbcbdnbeeppgdph"
+        ],
+        "repositories": [
+          "https://github.com/trustwallet/wallet-core"
+        ],
+        "websites": [
+          "https://trustwallet.com/"
+        ]
+      }
+    },
+    "features": {
+      "accountSupport": {
+        "defaultAccountType": "AccountType.eoa",
+        "eip7702": {
+          "$ref": "notSupported"
+        },
+        "eoa": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "explanation": "Trust Wallet support says wallets can be imported using a secret phrase, also known as a recovery phrase, seed phrase, or mnemonic.",
+                "url": "https://support.trustwallet.com/support/solutions/articles/67000731384-how-to-import-a-wallet-using-a-secret-phrase-on-trust-wallet"
+              },
+              "canExportPrivateKey": true,
+              "keyDerivation": {
+                "type": "BIP32",
+                "canExportSeedPhrase": true,
+                "derivationPath": "BIP44",
+                "seedPhrase": "BIP39"
+              }
+            }
+          ]
+        },
+        "mpc": {
+          "$ref": "notSupported"
+        },
+        "rawErc4337": {
+          "$ref": "notSupported"
+        },
+        "safe": {
+          "$ref": "notSupported"
+        }
+      },
+      "addressResolution": {
+        "ref": {
+          "explanation": "Trust Wallet supports ENS and Web3 domain-name resolution in its wallet UI.",
+          "url": "https://trustwallet.com/"
+        },
+        "chainSpecificAddressing": {
+          "erc7828": {
+            "$ref": "notSupported"
+          },
+          "erc7831": {
+            "$ref": "notSupported"
+          }
+        },
+        "nonChainSpecificEnsResolution": {
+          "$call": "supported",
+          "args": [
+            {
+              "medium": "CHAIN_CLIENT"
+            }
+          ]
+        }
+      },
+      "chainAbstraction": {
+        "bridging": {
+          "builtInBridging": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet presents swaps and cross-chain features as part of its multi-chain wallet experience.",
+                  "url": "https://trustwallet.com/"
+                }
+              }
+            ]
+          },
+          "suggestedBridging": null
+        },
+        "crossChainBalances": {
+          "ref": {
+            "explanation": "Trust Wallet says it supports 100+ blockchains from one self-custody wallet.",
+            "url": "https://trustwallet.com/"
+          },
+          "globalAccountValue": {
+            "$ref": "featureSupported"
+          },
+          "perChainAccountValue": {
+            "$ref": "featureSupported"
+          },
+          "ether": null,
+          "usdc": null
+        }
+      },
+      "chainConfigurability": {
+        "$ref": "featureSupported"
+      },
+      "ecosystem": {
+        "delegation": null
+      },
+      "integration": {
+        "browser": {
+          "1193": {
+            "$ref": "featureSupported"
+          },
+          "2700": null,
+          "6963": null,
+          "ref": {
+            "explanation": "Trust Wallet is available as a browser extension for connecting to Web3 dapps.",
+            "url": "https://trustwallet.com/browser-extension"
+          }
+        },
+        "walletCall": null
+      },
+      "licensing": {
+        "type": "LicensingType.PROPRIETARY",
+        "walletAppLicense": {
+          "ref": {
+            "explanation": "Trust Wallet's full consumer app source is not published as a single open-source app repository; Trust Wallet Core is an Apache-2.0 library used by the wallet.",
+            "url": "https://github.com/trustwallet/wallet-core"
+          },
+          "license": "SourceNotAvailableLicense.PROPRIETARY"
+        }
+      },
+      "monetization": {
+        "ref": {
+          "$ref": "refTodo"
+        },
+        "revenueBreakdownIsPublic": false,
+        "strategies": {
+          "donations": false,
+          "ecosystemGrants": false,
+          "governanceTokenLowFloat": false,
+          "governanceTokenMostlyDistributed": false,
+          "hiddenConvenienceFees": null,
+          "publicOffering": false,
+          "selfFunded": null,
+          "transparentConvenienceFees": true,
+          "ventureCapital": false
+        }
+      },
+      "multiAddress": {
+        "$call": "supported",
+        "args": [
+          {
+            "ref": {
+              "explanation": "Trust Wallet support documents importing wallets from mobile to extension, extension to mobile, and from other Web3 wallets.",
+              "url": "https://support.trustwallet.com/support/solutions/articles/67000731384-how-to-import-a-wallet-using-a-secret-phrase-on-trust-wallet"
+            }
+          }
+        ]
+      },
+      "privacy": {
+        "analytics": {
+          "crashReports": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet's App Store privacy label lists Diagnostics as data that may be collected.",
+                  "url": "https://apps.apple.com/ch/app/trust-wallet-bitcoin-crypto/id1288339409"
+                }
+              }
+            ]
+          },
+          "usage": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet's privacy notice describes automatic collection and use of personal data through its applications and services.",
+                  "url": "https://trustwallet.com/privacy-notice"
+                }
+              }
+            ]
+          }
+        },
+        "appIsolation": null,
+        "dataCollection": null,
+        "privacyPolicy": "https://trustwallet.com/privacy-notice",
+        "transactionPrivacy": {
+          "defaultFungibleTokenTransferMode": "PUBLIC",
+          "STEALTH_ADDRESSES": {
+            "$ref": "notSupported"
+          },
+          "TORNADO_CASH_NOVA": {
+            "$ref": "notSupported"
+          },
+          "PRIVACY_POOLS": {
+            "$ref": "notSupported"
+          },
+          "RAILGUN": {
+            "$ref": "notSupported"
+          }
+        }
+      },
+      "profile": "WalletProfile.GENERIC",
+      "security": {
+        "accountRecovery": null,
+        "bugBountyProgram": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "explanation": "Trust Wallet's security page links to and describes a bug bounty program.",
+                "url": "https://trustwallet.com/security"
+              },
+              "availability": "BugBountyProgramAvailability.ACTIVE",
+              "upgradePathAvailable": true
+            }
+          ]
+        },
+        "duressResistance": {
+          "basicUnlock": {
+            "ref": {
+              "$ref": "refTodo"
+            },
+            "mechanisms": {
+              "PIN": true,
+              "PASSWORD": true,
+              "BIOMETRIC": true,
+              "PATTERN": false
+            }
+          },
+          "duressMode": {
+            "$ref": "notSupported"
+          }
+        },
+        "hardwareWalletSupport": {
+          "ref": {
+            "$ref": "refTodo"
+          },
+          "wallets": {
+            "LEDGER": {
+              "$call": "supported",
+              "args": [
+                {
+                  "connectionTypes": [
+                    "HardwareWalletConnection.bluetooth",
+                    "HardwareWalletConnection.webUSB"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "keysHandling": null,
+        "lightClient": {
+          "ethereumL1": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet public docs describe multi-chain wallet network access, but no embedded Ethereum L1 light-client verification path was found.",
+                  "url": "https://support.trustwallet.com/"
+                }
+              }
+            ]
+          }
+        },
+        "passkeyVerification": {
+          "$ref": "notSupported"
+        },
+        "publicSecurityAudits": [],
+        "scamAlerts": {
+          "contractTransactionWarning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet's Security Scanner is designed to protect assets by alerting users of risky transactions and providing risk descriptions.",
+                  "url": "https://trustwallet.com/blog/web3/a-safer-web3-experience-with-trust-wallet-security-scanner"
+                }
+              }
+            ]
+          },
+          "scamUrlWarning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet's security page describes built-in risk monitoring tools and security partners that help users avoid scams.",
+                  "url": "https://trustwallet.com/security"
+                }
+              }
+            ]
+          },
+          "sendTransactionWarning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet's Security Scanner alerts users of risky transactions before signing.",
+                  "url": "https://trustwallet.com/blog/web3/a-safer-web3-experience-with-trust-wallet-security-scanner"
+                }
+              }
+            ]
+          }
+        },
+        "transactionLegibility": {
+          "transactionSimulations": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet's Security Scanner evaluates transaction risk and shows risk descriptions before users proceed.",
+                  "url": "https://trustwallet.com/blog/web3/a-safer-web3-experience-with-trust-wallet-security-scanner"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "selfSovereignty": {
+        "permissionsManagement": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "explanation": "Trust Wallet announced an Approvals feature that lets users view active approvals, detect risky approvals, and revoke approvals directly inside the mobile wallet and extension.",
+                "url": "https://trustwallet.com/blog/announcements/control-and-revoke-token-approvals-in-trust-wallet"
+              },
+              "erc20Approvals": "SpendingApprovalsControl.CAN_INSPECT_AND_REVOKE",
+              "erc721Approvals": null,
+              "erc1155Approvals": null
+            }
+          ]
+        },
+        "transactionSubmission": {
+          "l1": {
+            "ref": {
+              "explanation": "Trust Wallet public docs describe app-managed network access; no self-hosted-node transaction broadcast configuration was found.",
+              "url": "https://support.trustwallet.com/"
+            },
+            "selfBroadcastViaDirectGossip": {
+              "$ref": "notSupported"
+            },
+            "selfBroadcastViaSelfHostedNode": {
+              "$ref": "notSupported"
+            }
+          },
+          "l2": {
+            "ref": {
+              "$ref": "refTodo"
+            }
+          }
+        }
+      },
+      "transparency": {
+        "releaseTransparency": {
+          "artifactSigning": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet publishes app-store and extension releases, but no independently verifiable signed application artifacts were found.",
+                  "url": "https://apps.apple.com/ch/app/trust-wallet-bitcoin-crypto/id1288339409"
+                }
+              }
+            ]
+          },
+          "hasPublicChangelog": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet Core publishes public GitHub releases with changelog entries.",
+                  "url": "https://github.com/trustwallet/wallet-core/releases"
+                }
+              }
+            ]
+          },
+          "reproducibleBuilds": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet does not publish reproducible build instructions for the full consumer wallet apps.",
+                  "url": "https://github.com/trustwallet/wallet-core"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "product": {
+        "platformCoverage": {
+          "ref": {
+            "explanation": "Trust Wallet download page explicitly lists the mobile app, iOS, Android, APK, and Chrome browser extension channels.",
+            "url": "https://trustwallet.com/download"
+          },
+          "desktopApp": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet describes itself as available as a mobile app and desktop browser extension; no native desktop app is listed on the download page.",
+                  "url": "https://trustwallet.com/download"
+                }
+              }
+            ]
+          },
+          "mobileApp": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet download page says the wallet is available as a mobile app.",
+                  "url": "https://trustwallet.com/download"
+                }
+              }
+            ]
+          },
+          "browserExtension": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet download page says the wallet is available as a desktop browser extension.",
+                  "url": "https://trustwallet.com/download"
+                }
+              }
+            ]
+          },
+          "browserNative": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet is delivered as an app or extension, not as a browser-native wallet built into a browser.",
+                  "url": "https://trustwallet.com/download"
+                }
+              }
+            ]
+          },
+          "webApp": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trustwallet.com/browser-extension",
+                  "explanation": "Trust Wallet ships only as a mobile app (iOS/Android) and a browser extension for Chrome/Brave, with no browser-based web app usable without installing an extension or native app."
+                }
+              }
+            ]
+          },
+          "ios": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet download page links an iOS App Store build.",
+                  "url": "https://trustwallet.com/download"
+                }
+              }
+            ]
+          },
+          "android": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet download page links Google Play and Android APK builds.",
+                  "url": "https://trustwallet.com/download"
+                }
+              }
+            ]
+          },
+          "chrome": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet download page links the Chrome Web Store extension.",
+                  "url": "https://trustwallet.com/download"
+                }
+              }
+            ]
+          },
+          "firefox": null,
+          "safari": null
+        },
+        "supportedEcosystems": {
+          "ref": {
+            "explanation": "Trust Wallet browser-extension page lists 100+ supported blockchains, including Ethereum/EVM, Bitcoin, Cosmos, Aptos, Solana, Sui, TON, XRP, Cardano, and many others.",
+            "url": "https://trustwallet.com/browser-extension"
+          },
+          "evm": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet lists Ethereum, Base, Arbitrum, Optimism, Polygon, BNB Smart Chain, Avalanche C-Chain, and other EVM networks.",
+                  "url": "https://trustwallet.com/browser-extension"
+                }
+              }
+            ]
+          },
+          "solana": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet lists Solana as a supported blockchain.",
+                  "url": "https://trustwallet.com/browser-extension"
+                }
+              }
+            ]
+          },
+          "bitcoin": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet lists Bitcoin as a supported blockchain.",
+                  "url": "https://trustwallet.com/browser-extension"
+                }
+              }
+            ]
+          },
+          "cosmos": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet lists Cosmos and related Cosmos ecosystem chains such as Osmosis and Juno.",
+                  "url": "https://trustwallet.com/browser-extension"
+                }
+              }
+            ]
+          },
+          "ton": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet lists TON as a supported blockchain.",
+                  "url": "https://trustwallet.com/browser-extension"
+                }
+              }
+            ]
+          },
+          "starknet": null,
+          "sui": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet lists Sui as a supported blockchain.",
+                  "url": "https://trustwallet.com/browser-extension"
+                }
+              }
+            ]
+          },
+          "aptos": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet lists Aptos as a supported blockchain.",
+                  "url": "https://trustwallet.com/browser-extension"
+                }
+              }
+            ]
+          },
+          "xrp": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet lists XRP as a supported blockchain.",
+                  "url": "https://trustwallet.com/browser-extension"
+                }
+              }
+            ]
+          },
+          "cardano": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet lists Cardano as a supported blockchain.",
+                  "url": "https://trustwallet.com/browser-extension"
+                }
+              }
+            ]
+          },
+          "lightning": null,
+          "other": [
+            {
+              "name": "Acala",
+              "ref": {
+                "explanation": "Trust Wallet supported-chain list includes Acala.",
+                "url": "https://trustwallet.com/browser-extension"
+              }
+            },
+            {
+              "name": "Algorand",
+              "ref": {
+                "explanation": "Trust Wallet supported-chain list includes Algorand.",
+                "url": "https://trustwallet.com/browser-extension"
+              }
+            },
+            {
+              "name": "Avalanche",
+              "ref": {
+                "explanation": "Trust Wallet supported-chain list includes Avalanche.",
+                "url": "https://trustwallet.com/browser-extension"
+              }
+            },
+            {
+              "name": "BNB Chain",
+              "ref": {
+                "explanation": "Trust Wallet supported-chain list includes BNB Chain.",
+                "url": "https://trustwallet.com/browser-extension"
+              }
+            },
+            {
+              "name": "Polkadot",
+              "ref": {
+                "explanation": "Trust Wallet supported-chain list includes Polkadot.",
+                "url": "https://trustwallet.com/browser-extension"
+              }
+            },
+            {
+              "name": "Stellar",
+              "ref": {
+                "explanation": "Trust Wallet supported-chain list includes Stellar.",
+                "url": "https://trustwallet.com/browser-extension"
+              }
+            },
+            {
+              "name": "TRON",
+              "ref": {
+                "explanation": "Trust Wallet supported-chain list includes TRON.",
+                "url": "https://trustwallet.com/browser-extension"
+              }
+            },
+            {
+              "name": "VeChain",
+              "ref": {
+                "explanation": "Trust Wallet supported-chain list includes VeChain.",
+                "url": "https://trustwallet.com/browser-extension"
+              }
+            }
+          ]
+        },
+        "dappExperience": {
+          "ref": {
+            "explanation": "Trust Wallet browser-extension page describes the extension as a gateway to thousands of Web3 dApps and references developer dApp submission.",
+            "url": "https://trustwallet.com/browser-extension"
+          },
+          "inAppBrowser": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet positions the extension as a gateway to thousands of Web3 dApps.",
+                  "url": "https://trustwallet.com/browser-extension"
+                }
+              }
+            ]
+          },
+          "curatedDappDirectory": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet navigation includes Submit dApp and the extension page describes discovery across Web3 dApps.",
+                  "url": "https://trustwallet.com/browser-extension"
+                }
+              }
+            ]
+          },
+          "dappSearch": null,
+          "walletConnectOnlyMode": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet supports direct dApp access through its app/extension surface rather than only WalletConnect.",
+                  "url": "https://trustwallet.com/browser-extension"
+                }
+              }
+            ]
+          },
+          "featuredApps": null,
+          "riskRatedDiscovery": null
+        },
+        "fiatRamps": {
+          "ref": {
+            "explanation": "Trust Wallet browser-extension page states users can buy crypto using debit or credit card, mobile payments, or bank transfers.",
+            "url": "https://trustwallet.com/browser-extension"
+          },
+          "buyCrypto": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet lists buy crypto as a feature and says crypto can be bought with debit/credit card, mobile payments, or bank transfers.",
+                  "url": "https://trustwallet.com/browser-extension"
+                }
+              }
+            ]
+          },
+          "sellCrypto": null,
+          "bankTransfer": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet says buy crypto supports bank transfers.",
+                  "url": "https://trustwallet.com/browser-extension"
+                }
+              }
+            ]
+          },
+          "card": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet says buy crypto supports debit or credit card.",
+                  "url": "https://trustwallet.com/browser-extension"
+                }
+              }
+            ]
+          },
+          "applePay": null,
+          "googlePay": null,
+          "kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
+          "providers": [],
+          "regionalAvailability": "Trust Wallet publishes buy functionality but provider and country availability were not resolved in this pass."
+        },
+        "gasUx": {
+          "ref": {
+            "explanation": "Trust Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://trustwallet.com/"
+          },
+          "gasCustomization": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet supports standard EVM transaction sending where gas settings can be inspected or controlled in the wallet flow.",
+                  "url": "https://support.trustwallet.com/"
+                }
+              }
+            ]
+          },
+          "gasSponsorship": null,
+          "gasAbstraction": null,
+          "payGasInStablecoins": null,
+          "payGasWithReceivedToken": null,
+          "speedPresets": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": null,
+                  "url": "https://support.trustwallet.com/"
+                }
+              }
+            ]
+          },
+          "stuckTransactionRecovery": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet support/product materials include stuck or pending transaction recovery guidance.",
+                  "url": "https://support.trustwallet.com/"
+                }
+              }
+            ]
+          }
+        },
+        "recoveryUx": {
+          "ref": {
+            "explanation": "Trust Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://trustwallet.com/"
+          },
+          "seedOnlyRecovery": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet supports recovery/import through a seed or secret recovery phrase.",
+                  "url": "https://support.trustwallet.com/"
+                }
+              }
+            ]
+          },
+          "cloudBackup": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet supports cloud-backed wallet backup or recovery for at least some account flows.",
+                  "url": "https://trustwallet.com/"
+                }
+              }
+            ]
+          },
+          "socialRecovery": null,
+          "guardianRecovery": null,
+          "passkeyRecovery": null,
+          "emergencyKit": null,
+          "recoveryRehearsal": null
+        },
+        "onboardingFriction": {
+          "ref": {
+            "explanation": "Trust Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://trustwallet.com/"
+          },
+          "seedPhraseRequiredAtSignup": {
+            "$ref": "featureSupported"
+          },
+          "passkeySignup": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trustwallet.com/blog/announcements/trust-wallet-swift-understanding-passkeys-and-recoverability",
+                  "explanation": "Trust Wallet SWIFT automatically creates a passkey (FIDO/WebAuthn, biometric-based) when you create the wallet, using it instead of a password or seed phrase."
+                }
+              }
+            ]
+          },
+          "emailSignup": null,
+          "phoneSignup": null,
+          "kycRequiredForWallet": {
+            "$ref": "notSupported"
+          },
+          "guestMode": null,
+          "embeddedWalletMode": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trustwallet.com/blog/announcements/trust-wallet-swift-understanding-passkeys-and-recoverability",
+                  "explanation": "Trust Wallet SWIFT is a smart-contract wallet powered by account abstraction with passkey-based creation that eliminates the seed phrase, providing a no-seed embedded/smart-account wallet."
+                }
+              }
+            ]
+          },
+          "timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
+        },
+        "portfolioManagement": {
+          "ref": {
+            "explanation": "Trust Wallet browser-extension page describes earning rewards, managing NFTs, swapping, and multi-wallet management.",
+            "url": "https://trustwallet.com/browser-extension"
+          },
+          "netWorth": null,
+          "pnl": null,
+          "costBasis": null,
+          "tokenCategories": null,
+          "nftSupport": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet says users can explore and manage NFTs.",
+                  "url": "https://trustwallet.com/browser-extension"
+                }
+              }
+            ]
+          },
+          "collectionViews": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet says users can explore top NFT marketplaces and manage NFTs.",
+                  "url": "https://trustwallet.com/browser-extension"
+                }
+              }
+            ]
+          },
+          "watchOnlyWallets": null,
+          "multiWalletAggregation": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet says its multi-wallet feature lets users add, import, and manage wallets in one place.",
+                  "url": "https://trustwallet.com/browser-extension"
+                }
+              }
+            ]
+          }
+        },
+        "notifications": {
+          "ref": {
+            "explanation": "Trust Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://trustwallet.com/"
+          },
+          "sendReceive": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet supports notifications for wallet activity such as sends or receives.",
+                  "url": "https://trustwallet.com/"
+                }
+              }
+            ]
+          },
+          "priceAlerts": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet supports price or market alerts.",
+                  "url": "https://trustwallet.com/"
+                }
+              }
+            ]
+          },
+          "approvalAlerts": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet supports approval-related alerts, approval review, or permission warnings.",
+                  "url": "https://trustwallet.com/"
+                }
+              }
+            ]
+          },
+          "bridgeCompletion": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": null,
+                  "url": "https://trustwallet.com/"
+                }
+              }
+            ]
+          },
+          "failedTransaction": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet supports wallet activity notifications that can include failed or completed transaction status.",
+                  "url": "https://trustwallet.com/"
+                }
+              }
+            ]
+          },
+          "securityAlerts": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet supports security alerts or transaction-risk warnings.",
+                  "url": "https://trustwallet.com/"
+                }
+              }
+            ]
+          },
+          "marketAlerts": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet supports market or price alerts.",
+                  "url": "https://trustwallet.com/"
+                }
+              }
+            ]
+          }
+        },
+        "nftCapabilities": {
+          "ref": {
+            "explanation": "Trust Wallet browser-extension page says users can explore top NFT marketplaces and manage NFTs securely.",
+            "url": "https://trustwallet.com/browser-extension"
+          },
+          "display": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet says users can manage NFTs.",
+                  "url": "https://trustwallet.com/browser-extension"
+                }
+              }
+            ]
+          },
+          "send": null,
+          "mint": null,
+          "marketplaceIntegration": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet references top NFT marketplaces from the extension page.",
+                  "url": "https://trustwallet.com/browser-extension"
+                }
+              }
+            ]
+          },
+          "spamNftHiding": null,
+          "collectionMetadataRefresh": null,
+          "royaltiesOrOffers": null
+        },
+        "defiPositionAwareness": {
+          "ref": {
+            "explanation": "Trust Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://trustwallet.com/"
+          },
+          "lendingPositions": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet surfaces DeFi lending or protocol positions in wallet/portfolio views.",
+                  "url": "https://trustwallet.com/"
+                }
+              }
+            ]
+          },
+          "stakingPositions": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet surfaces staking or earn positions in wallet/portfolio views.",
+                  "url": "https://trustwallet.com/"
+                }
+              }
+            ]
+          },
+          "lpPositions": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet surfaces liquidity-pool or DeFi protocol positions.",
+                  "url": "https://trustwallet.com/"
+                }
+              }
+            ]
+          },
+          "vaultPositions": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet surfaces vault or protocol positions.",
+                  "url": "https://trustwallet.com/"
+                }
+              }
+            ]
+          },
+          "perProtocolBalances": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet groups DeFi holdings by protocol or app.",
+                  "url": "https://trustwallet.com/"
+                }
+              }
+            ]
+          },
+          "claimableRewards": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet surfaces claimable rewards or earn balances.",
+                  "url": "https://trustwallet.com/"
+                }
+              }
+            ]
+          },
+          "liquidationWarnings": null
+        },
+        "stakingEarn": {
+          "ref": {
+            "explanation": "Trust Wallet browser-extension page lists earning rewards and staking as supported features.",
+            "url": "https://trustwallet.com/browser-extension"
+          },
+          "nativeStaking": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet lists staking/earn rewards as a wallet feature.",
+                  "url": "https://trustwallet.com/browser-extension"
+                }
+              }
+            ]
+          },
+          "liquidStaking": null,
+          "validatorChoice": null,
+          "apyDisplay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet says users can earn rewards up to 70% APR via providers.",
+                  "url": "https://trustwallet.com/browser-extension"
+                }
+              }
+            ]
+          },
+          "rewardsClaiming": null,
+          "providerDependency": "Trust Wallet says earn rewards are available via trusted providers.",
+          "lockupDisclosure": null
+        },
+        "customerSupport": {
+          "ref": {
+            "explanation": "Trust Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://trustwallet.com/"
+          },
+          "liveChat": null,
+          "emailSupport": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet publishes support, help center, or contact paths for wallet users.",
+                  "url": "https://support.trustwallet.com/"
+                }
+              }
+            ]
+          },
+          "aiSupport": null,
+          "publishedSla": null,
+          "inAppHelpCenter": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet provides in-app or product-linked help/support content.",
+                  "url": "https://support.trustwallet.com/"
+                }
+              }
+            ]
+          },
+          "transactionTroubleshooting": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet support docs include transaction or wallet troubleshooting material.",
+                  "url": "https://support.trustwallet.com/"
+                }
+              }
+            ]
+          },
+          "scamRecoveryGuidance": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet support/security materials include scam, compromise, or recovery guidance.",
+                  "url": "https://trustwallet.com/"
+                }
+              }
+            ]
+          }
+        },
+        "developerOffering": {
+          "ref": {
+            "explanation": "Trust Wallet site navigation links developer docs, Wallet Core, dApp submission, asset listing, and Agent Kit.",
+            "url": "https://trustwallet.com/download"
+          },
+          "walletSdk": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet links developer documentation for Web3 applications.",
+                  "url": "https://trustwallet.com/download"
+                }
+              }
+            ]
+          },
+          "embeddedWalletSdk": null,
+          "whiteLabelOffering": null,
+          "walletConnectSupport": null,
+          "eip6963": null,
+          "eip5792": null,
+          "deepLinks": null,
+          "mobileLinkingQuality": null
+        },
+        "pricingFeeModel": {
+          "ref": {
+            "explanation": "Trust Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://trustwallet.com/"
+          },
+          "swapFees": null,
+          "bridgeFees": null,
+          "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
+          "spreadDisclosure": {
+            "$ref": "featureSupported"
+          },
+          "subscriptionFeatures": null,
+          "cardFees": "Card fees are provider-dependent where card purchase is available.",
+          "hiddenPartnerRevenue": null
+        },
+        "releaseVelocity": {
+          "ref": {
+            "explanation": "Trust Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://trustwallet.com/"
+          },
+          "latestReleaseDate": "2026-06-07",
+          "releaseFrequency": "ReleaseFrequency.IRREGULAR",
+          "appStoreUpdateCadence": "App-store cadence should be measured from current app-store release history in a deeper pass.",
+          "githubActivity": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet has public GitHub repository activity or releases that can be tracked.",
+                  "url": "https://github.com/trustwallet/wallet-core"
+                }
+              }
+            ]
+          },
+          "changelogDetail": "ChangelogDetail.BASIC"
+        },
+        "deviceSync": {
+          "ref": {
+            "explanation": "Trust Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://trustwallet.com/"
+          },
+          "syncsAccounts": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet supports account synchronization or account reuse across devices.",
+                  "url": "https://trustwallet.com/"
+                }
+              }
+            ]
+          },
+          "syncsSettings": null,
+          "syncsContactsOrAddressBook": null,
+          "desktopMobileSync": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Trust Wallet supports cross-device use between mobile and desktop/browser surfaces.",
+                  "url": "https://trustwallet.com/"
+                }
+              }
+            ]
+          },
+          "cloudBackedSync": null,
+          "requiresSameSeedImport": {
+            "$ref": "notSupported"
+          }
+        }
+      }
+    },
+    "variants": {
+      "MOBILE": true,
+      "BROWSER": true
+    }
+  }
 }

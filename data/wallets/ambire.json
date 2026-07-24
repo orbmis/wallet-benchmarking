@@ -1,1866 +1,1906 @@
 {
-	"id": "ambire",
-	"source": "software-wallets",
-	"export": "ambire",
-	"data": {
-		"metadata": {
-			"id": "ambire",
-			"displayName": "Ambire",
-			"tableName": "Ambire",
-			"blurb": "The first hybrid Account abstraction wallet to support Basic (EOA) and Smart accounts, improving security and user experience.",
-			"contributors": [
-				{
-					"$ref": "jiojosbg"
-				},
-				{
-					"$ref": "nconsigny"
-				},
-				{
-					"$ref": "mattmatt"
-				},
-				{
-					"$ref": "polymutex"
-				}
-			],
-			"iconExtension": "svg",
-			"lastUpdated": "2026-01-29",
-			"urls": {
-				"docs": [
-					"https://help.ambire.com/hc/en-us"
-				],
-				"extensions": [
-					"https://chromewebstore.google.com/detail/ambire-web3-wallet/ehgjhhccekdedpbkifaojjaefeohnoea"
-				],
-				"repositories": [
-					"https://github.com/AmbireTech/extension"
-				],
-				"socials": {
-					"discord": "https://discord.com/invite/ambire",
-					"reddit": "https://www.reddit.com/r/Ambire_Wallet/",
-					"telegram": "https://t.me/AmbireOfficial",
-					"x": "https://x.com/ambire",
-					"youtube": "https://www.youtube.com/@AmbireTech"
-				},
-				"websites": [
-					"https://www.ambire.com"
-				]
-			}
-		},
-		"features": {
-			"accountSupport": {
-				"defaultAccountType": "AccountType.eip7702",
-				"eip7702": {
-					"$call": "supported",
-					"args": [
-						{
-							"ref": {
-								"explanation": "Ambire is AA wallet by default. With the introduction of EIP-7702 it allows you to use your existing EOA just like you would use any smart account wallet!",
-								"url": "https://blog.ambire.com/eip-7702-wallet/"
-							},
-							"contract": {
-								"$ref": "ambireDelegatorContract"
-							}
-						}
-					]
-				},
-				"eoa": {
-					"$call": "supported",
-					"args": [
-						{
-							"ref": {
-								"$ref": "refTodo"
-							},
-							"canExportPrivateKey": true,
-							"canExportSeedPhrase": true,
-							"keyDerivation": {
-								"type": "BIP32",
-								"canExportSeedPhrase": true,
-								"derivationPath": "BIP44",
-								"seedPhrase": "BIP39"
-							}
-						}
-					]
-				},
-				"mpc": {
-					"$ref": "notSupported"
-				},
-				"rawErc4337": {
-					"$call": "supported",
-					"args": [
-						{
-							"ref": {
-								"explanation": "Ambire supports ERC-4337 smart contract wallets",
-								"url": "https://github.com/AmbireTech/ambire-common/blob/4cce586884a8224a8ea2a696150207ad37680dc9/contracts/AmbireAccount.sol"
-							},
-							"contract": {
-								"$ref": "ambireAccountContract"
-							},
-							"controllingSharesInSelfCustodyByDefault": "YES",
-							"keyRotationTransactionGeneration": "TransactionGenerationCapability.USING_OPEN_SOURCE_STANDALONE_APP",
-							"tokenTransferTransactionGeneration": "TransactionGenerationCapability.USING_OPEN_SOURCE_STANDALONE_APP"
-						}
-					]
-				},
-				"safe": {
-					"$call": "supported",
-					"args": [
-						{
-							"ref": {
-								"explanation": "Ambire Extension Now Supports Safe Accounts",
-								"url": "https://blog.ambire.com/ambire-supports-safe-accounts/"
-							},
-							"canDeployNew": false,
-							"controllingSharesInSelfCustodyByDefault": "YES",
-							"keyRotationTransactionGeneration": "TransactionGenerationCapability.RELYING_ON_EXTERNAL_API",
-							"supportedOwners": "ANY_NUMBER_OF_SIGNERS",
-							"supportsAddingOrRemovingSigners": false,
-							"supportsKeyRotationWithoutModules": false,
-							"tokenTransferTransactionGeneration": "TransactionGenerationCapability.RELYING_ON_EXTERNAL_API"
-						}
-					]
-				}
-			},
-			"addressResolution": {
-				"ref": {
-					"$ref": "refTodo"
-				},
-				"chainSpecificAddressing": {
-					"erc7828": {
-						"$ref": "notSupported"
-					},
-					"erc7831": {
-						"$ref": "notSupported"
-					}
-				},
-				"nonChainSpecificEnsResolution": {
-					"$call": "supported",
-					"args": [
-						{
-							"medium": "CHAIN_CLIENT"
-						}
-					]
-				}
-			},
-			"chainAbstraction": {
-				"bridging": {
-					"builtInBridging": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "All fees are displayed when agreeing to the bridge",
-									"url": "https://www.ambire.com/"
-								},
-								"feesLargerThan1bps": {
-									"$ref": "comprehensiveFeesShownByDefault"
-								},
-								"risksExplained": "NOT_IN_UI"
-							}
-						]
-					},
-					"suggestedBridging": {
-						"$ref": "notSupported"
-					}
-				},
-				"crossChainBalances": {
-					"ref": {
-						"explanation": "Ambire supports filtering by token name and chain, as well as displaying the total balance from the resulting tokens",
-						"label": "Implementation of token filtering by name",
-						"url": "https://github.com/AmbireTech/extension/blob/851dc597dbe02143876ccc9f013d25cce9b20a51/src/common/modules/dashboard/components/Tokens/Tokens.tsx#L89-L106"
-					},
-					"ether": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire supports filtering by token name.",
-									"label": "Implementation of token filtering by name",
-									"url": "https://github.com/AmbireTech/extension/blob/851dc597dbe02143876ccc9f013d25cce9b20a51/src/common/modules/dashboard/components/Tokens/Tokens.tsx#L89-L106"
-								},
-								"crossChainSumView": {
-									"$ref": "notSupported"
-								},
-								"perChainBalanceViewAcrossMultipleChains": {
-									"$ref": "featureSupported"
-								}
-							}
-						]
-					},
-					"globalAccountValue": {
-						"$ref": "featureSupported"
-					},
-					"perChainAccountValue": {
-						"$ref": "featureSupported"
-					},
-					"usdc": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire supports filtering by token name.",
-									"url": "https://www.ambire.com/"
-								},
-								"crossChainSumView": {
-									"$ref": "notSupported"
-								},
-								"perChainBalanceViewAcrossMultipleChains": {
-									"$ref": "featureSupported"
-								}
-							}
-						]
-					}
-				}
-			},
-			"chainConfigurability": {
-				"$call": "supported",
-				"args": [
-					{
-						"ref": [
-							{
-								"explanation": "Ambire executes generic RPC requests to get user's balance and ENS.",
-								"label": "List of RPCs Ambire uses for default chains",
-								"url": [
-									"https://github.com/AmbireTech/ambire-common/blob/22678d08810b6f28fa55886c4214d3bc54260d1f/src/consts/networks.ts",
-									"https://github.com/AmbireTech/ambire-common/blob/e3a749a1cb2e4bf098b18e547b363a1931a81d29/src/services/ensDomains/ensDomains.ts",
-									"https://github.com/AmbireTech/ambire-common/blob/362e2dc1e2e769d23f5de1717b66ff295c8e91bc/src/libs/portfolio/getOnchainBalances.ts"
-								]
-							},
-							{
-								"explanation": "Ambire lets you customize the chain provider before any request is made to it.",
-								"label": "Ambire tweet announcing onboarding-time chain provider configuration",
-								"url": [
-									"https://x.com/ambire/status/2016861388103373134"
-								]
-							}
-						],
-						"customChainRpcEndpoint": {
-							"$ref": "featureSupported"
-						},
-						"l1": {
-							"$call": "supported",
-							"args": [
-								{
-									"rpcEndpointConfiguration": "RpcEndpointConfiguration.YES_BEFORE_ANY_REQUEST",
-									"withNoConnectivityExceptL1RPCEndpoint": {
-										"accountCreation": {
-											"$ref": "featureSupported"
-										},
-										"accountImport": {
-											"$ref": "featureSupported"
-										},
-										"erc20BalanceLookup": {
-											"$ref": "featureSupported"
-										},
-										"erc20TokenSend": {
-											"$ref": "featureSupported"
-										},
-										"etherBalanceLookup": {
-											"$ref": "featureSupported"
-										}
-									}
-								}
-							]
-						},
-						"nonL1": {
-							"$call": "supported",
-							"args": [
-								{
-									"rpcEndpointConfiguration": "RpcEndpointConfiguration.YES_BEFORE_ANY_REQUEST"
-								}
-							]
-						}
-					}
-				]
-			},
-			"ecosystem": {
-				"delegation": {
-					"duringEOACreation": "NO",
-					"duringEOAImport": "NO",
-					"duringFirst7702Operation": {
-						"$call": "supported",
-						"args": [
-							{
-								"type": "DELEGATION_BUNDLED_WITH_OTHER_OPERATIONS",
-								"nonDelegationTransactionDetailsIdenticalToNormalFlow": true
-							}
-						]
-					},
-					"fee": {
-						"crossChainGas": {
-							"$ref": "featureSupported"
-						},
-						"walletSponsored": {
-							"$ref": "featureSupported"
-						}
-					}
-				}
-			},
-			"integration": {
-				"browser": {
-					"1193": {
-						"$ref": "featureSupported"
-					},
-					"2700": {
-						"$ref": "featureSupported"
-					},
-					"6963": {
-						"$ref": "featureSupported"
-					},
-					"ref": {
-						"url": "https://github.com/AmbireTech/extension/blob/104b0a29114a2133c19dcb833c7425de096fbb92/src/web/extension-services/background/background.ts"
-					}
-				},
-				"walletCall": {
-					"$call": "supported",
-					"args": [
-						{
-							"ref": "https://github.com/AmbireTech/ambire-common/blob/eba5dda7bccbd1c404f293d75c4ea74d939c8d01/src/libs/account/EOA7702.ts#L181-L183",
-							"atomicMultiTransactions": {
-								"$ref": "featureSupported"
-							}
-						}
-					]
-				}
-			},
-			"licensing": {
-				"type": "LicensingType.SINGLE_WALLET_REPO_AND_LICENSE",
-				"walletAppLicense": {
-					"ref": "https://github.com/AmbireTech/extension/blob/82c86aa342b85ece2afbe3689a5b52be9c6e1ff9/LICENSE",
-					"license": "FOSSLicense.GPL_3_0"
-				}
-			},
-			"monetization": {
-				"ref": {
-					"$ref": "refTodo"
-				},
-				"revenueBreakdownIsPublic": false,
-				"strategies": {
-					"donations": false,
-					"ecosystemGrants": true,
-					"governanceTokenLowFloat": false,
-					"governanceTokenMostlyDistributed": false,
-					"hiddenConvenienceFees": false,
-					"publicOffering": false,
-					"selfFunded": true,
-					"transparentConvenienceFees": true,
-					"ventureCapital": true
-				}
-			},
-			"multiAddress": {
-				"$ref": "featureSupported"
-			},
-			"privacy": {
-				"analytics": {
-					"crashReports": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "Ambire integrates Sentry for anonymous crash/error reporting in the web extension context.",
-										"url": "https://github.com/AmbireTech/extension/blob/5942801f127d41d25170ef079e94aa64eb606210/src/common/config/analytics/CrashAnalytics.web.ts"
-									},
-									{
-										"explanation": "Sentry is initialized in the background service worker, and events are only sent when crash analytics are enabled.",
-										"url": "https://github.com/AmbireTech/extension/blob/104b0a29114a2133c19dcb833c7425de096fbb92/src/web/extension-services/background/background.ts"
-									},
-									{
-										"explanation": "Ambire provides a user toggle for enabling/disabling crash analytics in settings.",
-										"url": "https://github.com/AmbireTech/extension/blob/b4e45b584754694555d433a52e8aab8f4e0ac539/src/common/modules/settings/components/General/CrashAnalyticsControlOption/CrashAnalyticsControlOption.tsx"
-									}
-								],
-								"entity": {
-									"$ref": "sentry"
-								},
-								"policy": "CollectionPolicy.BY_DEFAULT"
-							}
-						]
-					},
-					"usage": {
-						"$ref": "notSupported"
-					}
-				},
-				"appIsolation": {
-					"BROWSER": {
-						"createInAppConnectionFlow": {
-							"$ref": "notSupported"
-						},
-						"erc7846WalletConnect": {
-							"$ref": "notSupported"
-						},
-						"ethAccounts": {
-							"$call": "supported",
-							"args": [
-								{
-									"ref": {
-										"$ref": "refTodo"
-									},
-									"defaultBehavior": "ExposedAccountsBehavior.ACTIVE_ACCOUNT_ONLY"
-								}
-							]
-						},
-						"useAppSpecificLastConnectedAddresses": {
-							"$ref": "notSupported"
-						}
-					},
-					"MOBILE": null,
-					"DESKTOP": null
-				},
-				"dataCollection": {
-					"INSTALL": {
-						"collected": []
-					},
-					"NATIVE_SWAP": {
-						"collected": [
-							{
-								"ref": "dataLeakReferences.lifi",
-								"byEntity": {
-									"$ref": "lifi"
-								},
-								"dataCollection": {
-									"IP_ADDRESS": "CollectionPolicy.ALWAYS",
-									"endpoint": {
-										"$ref": "RegularEndpoint"
-									}
-								},
-								"purposes": [
-									"DataCollectionPurpose.ASSET_METADATA"
-								]
-							}
-						]
-					},
-					"ONBOARDING_NEW": {
-						"collected": [
-							{
-								"ref": "dataLeakReferences.ambire",
-								"byEntity": {
-									"$ref": "ambireEntity"
-								},
-								"dataCollection": {
-									"IP_ADDRESS": "CollectionPolicy.BY_DEFAULT",
-									"ACCOUNT_ADDRESS": "CollectionPolicy.BY_DEFAULT",
-									"ASSETS": "CollectionPolicy.BY_DEFAULT",
-									"BALANCE": "CollectionPolicy.BY_DEFAULT",
-									"endpoint": {
-										"$ref": "RegularEndpoint"
-									},
-									"multiAddress": {
-										"type": "MultiAddressPolicy.ACTIVE_ADDRESS_ONLY"
-									}
-								},
-								"purposes": [
-									"DataCollectionPurpose.CHAIN_DATA_LOOKUP"
-								]
-							},
-							{
-								"ref": {
-									"$ref": "refTodo"
-								},
-								"byEntity": {
-									"$ref": "monad"
-								},
-								"dataCollection": {
-									"IP_ADDRESS": "CollectionPolicy.BY_DEFAULT",
-									"ACCOUNT_ADDRESS": "CollectionPolicy.BY_DEFAULT",
-									"endpoint": {
-										"$ref": "RegularEndpoint"
-									},
-									"multiAddress": {
-										"type": "MultiAddressPolicy.ACTIVE_ADDRESS_ONLY"
-									}
-								},
-								"purposes": [
-									"DataCollectionPurpose.CHAIN_DATA_LOOKUP"
-								]
-							},
-							{
-								"ref": {
-									"$ref": "refTodo"
-								},
-								"byEntity": {
-									"$ref": "citrea"
-								},
-								"dataCollection": {
-									"IP_ADDRESS": "CollectionPolicy.BY_DEFAULT",
-									"ACCOUNT_ADDRESS": "CollectionPolicy.BY_DEFAULT",
-									"endpoint": {
-										"$ref": "RegularEndpoint"
-									},
-									"multiAddress": {
-										"type": "MultiAddressPolicy.ACTIVE_ADDRESS_ONLY"
-									}
-								},
-								"purposes": [
-									"DataCollectionPurpose.CHAIN_DATA_LOOKUP"
-								]
-							}
-						],
-						"publishedOnchain": "NO_DATA_PUBLISHED_ONCHAIN"
-					},
-					"ONBOARDING_IMPORT": {
-						"collected": [
-							{
-								"ref": "dataLeakReferences.ambire",
-								"byEntity": {
-									"$ref": "ambireEntity"
-								},
-								"dataCollection": {
-									"IP_ADDRESS": "CollectionPolicy.BY_DEFAULT",
-									"ACCOUNT_ADDRESS": "CollectionPolicy.BY_DEFAULT",
-									"ASSETS": "CollectionPolicy.BY_DEFAULT",
-									"BALANCE": "CollectionPolicy.BY_DEFAULT",
-									"endpoint": {
-										"$ref": "RegularEndpoint"
-									},
-									"multiAddress": {
-										"type": "MultiAddressPolicy.ACTIVE_ADDRESS_ONLY"
-									}
-								},
-								"purposes": [
-									"DataCollectionPurpose.CHAIN_DATA_LOOKUP"
-								]
-							},
-							{
-								"ref": {
-									"$ref": "refTodo"
-								},
-								"byEntity": {
-									"$ref": "monad"
-								},
-								"dataCollection": {
-									"IP_ADDRESS": "CollectionPolicy.BY_DEFAULT",
-									"ACCOUNT_ADDRESS": "CollectionPolicy.BY_DEFAULT",
-									"endpoint": {
-										"$ref": "RegularEndpoint"
-									},
-									"multiAddress": {
-										"type": "MultiAddressPolicy.ACTIVE_ADDRESS_ONLY"
-									}
-								},
-								"purposes": [
-									"DataCollectionPurpose.CHAIN_DATA_LOOKUP"
-								]
-							},
-							{
-								"ref": {
-									"$ref": "refTodo"
-								},
-								"byEntity": {
-									"$ref": "citrea"
-								},
-								"dataCollection": {
-									"IP_ADDRESS": "CollectionPolicy.BY_DEFAULT",
-									"ACCOUNT_ADDRESS": "CollectionPolicy.BY_DEFAULT",
-									"endpoint": {
-										"$ref": "RegularEndpoint"
-									},
-									"multiAddress": {
-										"type": "MultiAddressPolicy.ACTIVE_ADDRESS_ONLY"
-									}
-								},
-								"purposes": [
-									"DataCollectionPurpose.CHAIN_DATA_LOOKUP"
-								]
-							}
-						],
-						"publishedOnchain": "NO_DATA_PUBLISHED_ONCHAIN"
-					},
-					"SEND_ETHER": {
-						"collected": []
-					},
-					"SEND_USDC": {
-						"collected": [
-							{
-								"ref": "dataLeakReferences.ambire",
-								"byEntity": {
-									"$ref": "ambireEntity"
-								},
-								"dataCollection": {
-									"IP_ADDRESS": "CollectionPolicy.BY_DEFAULT",
-									"ACCOUNT_ADDRESS": "CollectionPolicy.BY_DEFAULT",
-									"ASSETS": "CollectionPolicy.BY_DEFAULT",
-									"BALANCE": "CollectionPolicy.BY_DEFAULT",
-									"endpoint": {
-										"$ref": "RegularEndpoint"
-									},
-									"multiAddress": {
-										"type": "MultiAddressPolicy.ACTIVE_ADDRESS_ONLY"
-									}
-								},
-								"purposes": [
-									"DataCollectionPurpose.CHAIN_DATA_LOOKUP"
-								]
-							}
-						]
-					},
-					"APP_CONNECTION": {
-						"collected": []
-					},
-					"MAKE_TRANSACTION": {
-						"collected": [
-							{
-								"ref": "dataLeakReferences.ambire",
-								"byEntity": {
-									"$ref": "ambireEntity"
-								},
-								"dataCollection": {
-									"IP_ADDRESS": "CollectionPolicy.ALWAYS",
-									"MEMPOOL_TRANSACTIONS": "CollectionPolicy.ALWAYS",
-									"ACCOUNT_ADDRESS": "CollectionPolicy.ALWAYS",
-									"endpoint": {
-										"$ref": "RegularEndpoint"
-									},
-									"multiAddress": {
-										"type": "MultiAddressPolicy.ACTIVE_ADDRESS_ONLY"
-									}
-								},
-								"purposes": [
-									"DataCollectionPurpose.CHAIN_DATA_LOOKUP",
-									"DataCollectionPurpose.TRANSACTION_BROADCAST"
-								]
-							},
-							{
-								"ref": "dataLeakReferences.pimlico",
-								"byEntity": {
-									"$ref": "pimlico"
-								},
-								"dataCollection": {
-									"IP_ADDRESS": "CollectionPolicy.ALWAYS",
-									"MEMPOOL_TRANSACTIONS": "CollectionPolicy.ALWAYS",
-									"ACCOUNT_ADDRESS": "CollectionPolicy.ALWAYS",
-									"endpoint": {
-										"$ref": "RegularEndpoint"
-									},
-									"multiAddress": {
-										"type": "MultiAddressPolicy.ACTIVE_ADDRESS_ONLY"
-									}
-								},
-								"purposes": [
-									"DataCollectionPurpose.TRANSACTION_BROADCAST"
-								]
-							},
-							{
-								"ref": "dataLeakReferences.biconomy",
-								"byEntity": {
-									"$ref": "biconomy"
-								},
-								"dataCollection": {
-									"IP_ADDRESS": "CollectionPolicy.ALWAYS",
-									"MEMPOOL_TRANSACTIONS": "CollectionPolicy.ALWAYS",
-									"ACCOUNT_ADDRESS": "CollectionPolicy.ALWAYS",
-									"endpoint": {
-										"$ref": "RegularEndpoint"
-									},
-									"multiAddress": {
-										"type": "MultiAddressPolicy.ACTIVE_ADDRESS_ONLY"
-									}
-								},
-								"purposes": [
-									"DataCollectionPurpose.TRANSACTION_BROADCAST"
-								]
-							}
-						]
-					},
-					"UNCLASSIFIED": {
-						"collected": [
-							{
-								"ref": "dataLeakReferences.github",
-								"byEntity": {
-									"$ref": "github"
-								},
-								"dataCollection": {
-									"IP_ADDRESS": "CollectionPolicy.ALWAYS",
-									"endpoint": {
-										"$ref": "RegularEndpoint"
-									}
-								},
-								"purposes": [
-									"DataCollectionPurpose.UPDATE_CHECKING",
-									"DataCollectionPurpose.STATIC_ASSETS"
-								]
-							}
-						]
-					}
-				},
-				"privacyPolicy": "https://www.ambire.com/Ambire%20ToS%20and%20PP%20(26%20November%202021).pdf",
-				"transactionPrivacy": {
-					"defaultFungibleTokenTransferMode": "PUBLIC",
-					"STEALTH_ADDRESSES": {
-						"$ref": "notSupported"
-					},
-					"TORNADO_CASH_NOVA": {
-						"$ref": "notSupported"
-					},
-					"PRIVACY_POOLS": {
-						"$ref": "notSupported"
-					},
-					"RAILGUN": {
-						"$ref": "notSupported"
-					}
-				}
-			},
-			"profile": "WalletProfile.GENERIC",
-			"security": {
-				"accountRecovery": {
-					"guardianRecovery": {
-						"$ref": "notSupported"
-					}
-				},
-				"bugBountyProgram": {
-					"$call": "supported",
-					"args": [
-						{
-							"ref": [
-								{
-									"explanation": "As from August 2025, this bug bounty program is no longer active.",
-									"url": "https://blog.ambire.com/ambire-x-immunefy-bug-bounty-audit-our-code-and-earn-rewards/"
-								}
-							],
-							"availability": "BugBountyProgramAvailability.INACTIVE",
-							"coverageBreadth": "FULL_SCOPE",
-							"dateStarted": "2021-12-17",
-							"disclosure": {
-								"$ref": "notSupported"
-							},
-							"legalProtections": {
-								"$ref": "notSupported"
-							},
-							"platform": "BugBountyPlatform.SELF_HOSTED",
-							"rewards": {
-								"$ref": "notSupported"
-							},
-							"upgradePathAvailable": false
-						}
-					]
-				},
-				"duressResistance": {
-					"basicUnlock": {
-						"ref": {
-							"$ref": "refTodo"
-						},
-						"mechanisms": {
-							"PIN": false,
-							"PASSWORD": true,
-							"BIOMETRIC": false,
-							"PATTERN": false
-						}
-					},
-					"duressMode": {
-						"$ref": "notSupported"
-					}
-				},
-				"hardwareWalletSupport": {
-					"ref": {
-						"explanation": "You can natively sign transactions with Ledger, Trezor, or GridPlus Lattice1 in Ambire.",
-						"url": "https://www.ambire.com/"
-					},
-					"wallets": {
-						"LEDGER": {
-							"$call": "supported",
-							"args": [
-								{
-									"connectionTypes": [
-										"HardwareWalletConnection.webUSB"
-									]
-								}
-							]
-						},
-						"TREZOR": {
-							"$call": "supported",
-							"args": [
-								{
-									"connectionTypes": [
-										"HardwareWalletConnection.webUSB"
-									]
-								}
-							]
-						},
-						"GRIDPLUS": {
-							"$call": "supported",
-							"args": [
-								{
-									"connectionTypes": [
-										"HardwareWalletConnection.webUSB"
-									]
-								}
-							]
-						},
-						"KEYSTONE": {
-							"$ref": "notSupported"
-						}
-					}
-				},
-				"keysHandling": {
-					"ref": {
-						"$ref": "refTodo"
-					},
-					"keyGeneration": "KeyGenerationLocation.FULLY_ON_USER_DEVICE",
-					"multipartyKeyReconstruction": "MultiPartyKeyReconstruction.NON_MULTIPARTY"
-				},
-				"lightClient": {
-					"ethereumL1": {
-						"$ref": "notSupported"
-					}
-				},
-				"passkeyVerification": {
-					"$ref": "notSupported"
-				},
-				"publicSecurityAudits": [
-					{
-						"ref": "https://github.com/AmbireTech/ambire-common/blob/v2/audits/Pashov-Ambire-security-review.md",
-						"auditDate": "UNKNOWN",
-						"auditor": {
-							"$ref": "pashov-audit-group"
-						},
-						"codeSnapshot": "3f17320132e3bc67fa9a505fafded7bb16fc3e96",
-						"unpatchedFlaws": "NO_HIGH_SEVERITY_FLAWS_FOUND",
-						"variantsScope": "AMBIRE_ACCOUNT_SIGNATURE_VALIDATOR_AND_FACTORY_SMART_CONTRACTS"
-					},
-					{
-						"ref": "https://github.com/AmbireTech/ambire-common/blob/v2/audits/CuriousApple-AmbireRewview01.md",
-						"auditDate": "2023-10-24",
-						"codeSnapshot": "f411456c06a409bbcbbee0c12c7496916202860b",
-						"unpatchedFlaws": "NO_HIGH_SEVERITY_FLAWS_FOUND",
-						"variantsScope": "AMBIRE_ACCOUNT_PAYMASTER_AND_DKIM_RECOVERY_SMART_CONTRACTS"
-					},
-					{
-						"ref": "https://github.com/AmbireTech/ambire-common/blob/v2/audits/Pashov-Ambire-second-security-review.md",
-						"auditDate": "UNKNOWN",
-						"auditor": {
-							"$ref": "pashov-audit-group"
-						},
-						"codeSnapshot": "8521c4e68b147c0002b2e2c337178e4f5d23d594",
-						"unpatchedFlaws": "NO_HIGH_SEVERITY_FLAWS_FOUND",
-						"variantsScope": "AMBIRE_ACCOUNT_AND_DKIM_RECOVERY_SMART_CONTRACTS"
-					},
-					{
-						"ref": "https://github.com/AmbireTech/ambire-common/blob/v2/audits/Pashov-Ambire-third-security-review.md",
-						"auditDate": "UNKNOWN",
-						"auditor": {
-							"$ref": "pashov-audit-group"
-						},
-						"codeSnapshot": "da3ba641a004d1f0143a20ddde48049b619431ad",
-						"unpatchedFlaws": "NO_HIGH_SEVERITY_FLAWS_FOUND",
-						"variantsScope": "AMBIRE_ERC4337_AND_PAYMASTER_SMART_CONTRACTS"
-					}
-				],
-				"scamAlerts": {
-					"contractTransactionWarning": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"$ref": "scamAlertsAndSendTxWarningRefs"
-								},
-								"contractRegistry": true,
-								"leaksContractAddress": true,
-								"leaksUserAddress": false,
-								"leaksUserIp": true,
-								"previousContractInteractionWarning": true,
-								"recentContractWarning": false
-							}
-						]
-					},
-					"scamUrlWarning": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Every 6 hours, Ambire downloads a list of publicly available known scam URLs from an external API. Then, it checks if the website you're connecting to is on that list. If it is, a warning is displayed.",
-									"lastRetrieved": "2025-04-02",
-									"urls": [
-										{
-											"label": "Implementation",
-											"url": "https://github.com/AmbireTech/ambire-common/blob/2216ea165a56b01ccb76ab2895fa1295577af10e/src/controllers/phishing/phishing.ts"
-										}
-									]
-								},
-								"leaksIp": false,
-								"leaksUserAddress": false,
-								"leaksVisitedUrl": "NO"
-							}
-						]
-					},
-					"sendTransactionWarning": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"$ref": "scamAlertsAndSendTxWarningRefs"
-								},
-								"leaksRecipient": true,
-								"leaksUserAddress": false,
-								"leaksUserIp": true,
-								"newRecipientWarning": true,
-								"userWhitelist": false
-							}
-						]
-					}
-				},
-				"securityBestPractices": {
-					"browser": {
-						"ref": {
-							"$ref": "refTodo"
-						},
-						"browserExtensionHardening": {
-							"$call": "parseBrowserExtensionManifest",
-							"args": [
-								{
-									"$ref": "ambireRawExtManifest"
-								}
-							]
-						},
-						"keyStorageMechanism": "KeyStorageMechanism.ENCRYPTED_WITH_USER_SECRET_STANDARDIZED_KDF",
-						"secureRng": "SecureRngSource.OS_CSPRNG"
-					},
-					"desktop": "NOT_A_DESKTOP_APP",
-					"mobile": "NOT_A_MOBILE_APP"
-				},
-				"transactionLegibility": {
-					"ref": {
-						"$ref": "refTodo"
-					},
-					"erc7730": {
-						"$call": "supported",
-						"args": [
-							{
-								"USDC_APPROVAL": {
-									"decoded": "DataDisplayOptions.NOT_IN_UI"
-								},
-								"AAVE_SUPPLY": {
-									"decoded": "DataDisplayOptions.NOT_IN_UI"
-								},
-								"SAFEWALLET_AAVE_SUPPLY_NESTED": {
-									"decoded": "DataDisplayOptions.NOT_IN_UI"
-								},
-								"SAFEWALLET_AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": {
-									"decoded": "DataDisplayOptions.NOT_IN_UI"
-								},
-								"AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": {
-									"decoded": "DataDisplayOptions.NOT_IN_UI"
-								}
-							}
-						]
-					},
-					"erc8213": {
-						"$call": "supported",
-						"args": [
-							{
-								"calldataDisplay": {
-									"RAW_HEX": "DataDisplayOptions.SHOWN_BY_DEFAULT",
-									"COPY_HEX_TO_CLIPBOARD": "DataDisplayOptions.NOT_IN_UI",
-									"FORMATTED": "DataDisplayOptions.NOT_IN_UI",
-									"CALLDATA_DIGEST": "DataDisplayOptions.NOT_IN_UI"
-								},
-								"messageSigningLegibility": {
-									"EIP712_STRUCT": "DataDisplayOptions.SHOWN_BY_DEFAULT",
-									"DOMAIN_HASH": "DataDisplayOptions.NOT_IN_UI",
-									"MESSAGE_HASH": "DataDisplayOptions.NOT_IN_UI",
-									"EIP712_DIGEST": "DataDisplayOptions.NOT_IN_UI"
-								}
-							}
-						]
-					},
-					"transactionDetailsDisplay": {
-						"chain": "DataDisplayOptions.SHOWN_BY_DEFAULT",
-						"from": "DataDisplayOptions.SHOWN_BY_DEFAULT",
-						"gas": "DataDisplayOptions.SHOWN_BY_DEFAULT",
-						"nonce": "DataDisplayOptions.NOT_IN_UI",
-						"to": "DataDisplayOptions.SHOWN_BY_DEFAULT",
-						"value": "DataDisplayOptions.SHOWN_BY_DEFAULT"
-					},
-					"transactionSimulations": {
-						"$call": "supported",
-						"args": [
-							{
-								"ETH_TRANSFER": {
-									"transactionOutcome": "TransactionOutcome.EXPLAINED"
-								},
-								"ZKSYNC_USDC_TRANSFER": {
-									"transactionOutcome": "TransactionOutcome.EXPLAINED"
-								},
-								"ERC_20_TRANSFER": {
-									"transactionOutcome": "TransactionOutcome.EXPLAINED"
-								},
-								"ERC_721_TRANSFER": {
-									"transactionOutcome": "TransactionOutcome.NOT_EXPLAINED"
-								},
-								"ERC_1155_TRANSFER": {
-									"transactionOutcome": "TransactionOutcome.NOT_EXPLAINED"
-								},
-								"USDC_APPROVAL": {
-									"transactionOutcome": "TransactionOutcome.EXPLAINED"
-								},
-								"AAVE_SUPPLY": {
-									"transactionOutcome": "TransactionOutcome.EXPLAINED"
-								},
-								"SAFEWALLET_AAVE_SUPPLY_NESTED": {
-									"transactionOutcome": "TransactionOutcome.NOT_EXPLAINED"
-								},
-								"SAFEWALLET_AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": {
-									"transactionOutcome": "TransactionOutcome.NOT_EXPLAINED"
-								},
-								"AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": {
-									"transactionOutcome": "TransactionOutcome.EXPLAINED"
-								},
-								"FAILED_TRANSACTION": {
-									"failure": "DETECTED"
-								},
-								"NONDETERMINISTIC_TRANSACTION": {
-									"nondeterminism": "STATIC_SINGLE_OUTCOME"
-								}
-							}
-						]
-					}
-				}
-			},
-			"selfSovereignty": {
-				"permissionsManagement": {
-					"$ref": "notSupported"
-				},
-				"transactionSubmission": {
-					"l1": {
-						"ref": {
-							"$ref": "refTodo"
-						},
-						"selfBroadcastViaDirectGossip": {
-							"$ref": "notSupported"
-						},
-						"selfBroadcastViaSelfHostedNode": {
-							"$ref": "featureSupported"
-						}
-					},
-					"l2": {
-						"ref": {
-							"$ref": "refTodo"
-						},
-						"arbitrum": "TransactionSubmissionL2Support.SUPPORTED_BUT_NO_FORCE_INCLUSION",
-						"opStack": "TransactionSubmissionL2Support.SUPPORTED_BUT_NO_FORCE_INCLUSION"
-					}
-				}
-			},
-			"transparency": {
-				"operationFees": {
-					"builtInErc20Swap": {
-						"$call": "supported",
-						"args": [
-							{
-								"$ref": "comprehensiveFeesShownByDefault"
-							}
-						]
-					},
-					"erc20L1Transfer": {
-						"$call": "supported",
-						"args": [
-							{
-								"$ref": "comprehensiveFeesShownByDefault"
-							}
-						]
-					},
-					"ethL1Transfer": {
-						"$call": "supported",
-						"args": [
-							{
-								"$ref": "comprehensiveFeesShownByDefault"
-							}
-						]
-					},
-					"uniswapUSDCToEtherSwap": {
-						"$call": "supported",
-						"args": [
-							{
-								"$ref": "comprehensiveFeesShownByDefault"
-							}
-						]
-					}
-				},
-				"releaseTransparency": {
-					"artifactSigning": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": "https://github.com/AmbireTech/extension/releases",
-								"publication": "GITHUB_RELEASE",
-								"signer": "DEVELOPER_KEY"
-							}
-						]
-					},
-					"dependencyLocking": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "The `setup:ci` script enforces lockfile sync with `yarn install --frozen-lockfile`.",
-										"url": "https://github.com/AmbireTech/extension/blob/19c22dbba374dc12730f1f40e3fce33e71ad2f90/package.json"
-									},
-									{
-										"explanation": "CI workflows execute `yarn setup:ci` before builds.",
-										"url": "https://github.com/AmbireTech/extension/blob/19c22dbba374dc12730f1f40e3fce33e71ad2f90/.github/workflows/build-extensions.yml"
-									}
-								]
-							}
-						]
-					},
-					"dependencyVulnerabilityScanning": {
-						"$ref": "notSupported"
-					},
-					"hasPublicChangelog": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": "https://github.com/AmbireTech/extension/releases"
-							}
-						]
-					},
-					"hermeticBuilds": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "The release build workflow updates git submodules during build execution, requiring network access rather than using a fully pre-fetched offline input set.",
-										"url": "https://github.com/AmbireTech/extension/blob/19c22dbba374dc12730f1f40e3fce33e71ad2f90/.github/workflows/build-extensions.yml"
-									},
-									{
-										"explanation": "Android build workflow runs `yarn setup:ci` during build, so JavaScript dependencies are resolved/fetched at build time.",
-										"url": "https://github.com/AmbireTech/extension/blob/19c22dbba374dc12730f1f40e3fce33e71ad2f90/.github/workflows/_build-android.yml"
-									},
-									{
-										"explanation": "iOS build workflow runs `bundle exec pod install`, which performs dependency resolution/fetching during the build job.",
-										"url": "https://github.com/AmbireTech/extension/blob/19c22dbba374dc12730f1f40e3fce33e71ad2f90/.github/workflows/_build-ios.yml"
-									},
-									{
-										"explanation": "Gecko ARM64 release build pulls base images and installs Alpine packages (`apk add`) at runtime, indicating non-hermetic networked build inputs.",
-										"url": "https://github.com/AmbireTech/extension/blob/19c22dbba374dc12730f1f40e3fce33e71ad2f90/.github/workflows/build-extension-gecko.yml"
-									}
-								]
-							}
-						]
-					},
-					"repositoryChangeControls": null,
-					"reproducibleBuilds": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "Ambire's public extension release workflow builds WebKit extension ZIPs in GitHub Actions from repository code plus GitHub environment variables and secrets, then uploads CI artifacts; this does not provide a public deterministic rebuild/compare process for independently reproducing the released extension artifact.",
-										"url": "https://github.com/AmbireTech/extension/blob/19c22dbba374dc12730f1f40e3fce33e71ad2f90/.github/workflows/build-extensions.yml"
-									},
-									{
-										"explanation": "The same release workflow has a source-code ZIP publication step commented out, so the release path does not currently publish a complete review source bundle alongside the built extension artifact.",
-										"url": "https://github.com/AmbireTech/extension/blob/19c22dbba374dc12730f1f40e3fce33e71ad2f90/.github/workflows/build-extensions.yml"
-									}
-								]
-							}
-						]
-					}
-				}
-			},
-			"product": {
-				"platformCoverage": {
-					"ref": {
-						"explanation": "Ambire product update describes Ambire Extension as a browser extension; no mobile app was found in the official feature article.",
-						"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-					},
-					"desktopApp": null,
-					"mobileApp": null,
-					"browserExtension": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire describes the Ambire Extension as a self-custodial wallet browser extension.",
-									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-								}
-							}
-						]
-					},
-					"browserNative": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire is a browser extension wallet, not browser-native.",
-									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-								}
-							}
-						]
-					},
-					"webApp": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire Help Center covers the Web version of Ambire Wallet.",
-									"url": "https://help.ambire.com/hc/en-us/articles/4410827841298-Which-networks-are-supported-by-Ambire-Wallet-"
-								}
-							}
-						]
-					},
-					"ios": null,
-					"android": null,
-					"chrome": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire Extension is a browser extension for EVM-chain wallet use.",
-									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-								}
-							}
-						]
-					},
-					"firefox": null,
-					"safari": null
-				},
-				"supportedEcosystems": {
-					"ref": {
-						"explanation": "Ambire describes the extension as supporting all EVM chains including Ethereum, Arbitrum, Polygon, and Base.",
-						"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-					},
-					"evm": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire Extension is for all EVM chains.",
-									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-								}
-							}
-						]
-					},
-					"solana": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire feature article scopes the wallet to EVM chains.",
-									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-								}
-							}
-						]
-					},
-					"bitcoin": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire feature article scopes the wallet to EVM chains.",
-									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-								}
-							}
-						]
-					},
-					"cosmos": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire feature article scopes the wallet to EVM chains.",
-									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-								}
-							}
-						]
-					},
-					"ton": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire feature article scopes the wallet to EVM chains.",
-									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-								}
-							}
-						]
-					},
-					"starknet": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire feature article scopes the wallet to EVM chains.",
-									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-								}
-							}
-						]
-					},
-					"sui": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire feature article scopes the wallet to EVM chains.",
-									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-								}
-							}
-						]
-					},
-					"aptos": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire feature article scopes the wallet to EVM chains.",
-									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-								}
-							}
-						]
-					},
-					"xrp": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire feature article scopes the wallet to EVM chains.",
-									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-								}
-							}
-						]
-					},
-					"cardano": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire feature article scopes the wallet to EVM chains.",
-									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-								}
-							}
-						]
-					},
-					"lightning": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire feature article scopes the wallet to EVM chains.",
-									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-								}
-							}
-						]
-					},
-					"other": [
-						{
-							"name": "EIP-7702 smart features",
-							"ref": {
-								"explanation": "Ambire says EOAs can adopt smart features via EIP-7702.",
-								"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-							}
-						}
-					]
-				},
-				"dappExperience": {
-					"ref": {
-						"explanation": "Ambire says users can connect to any apps easily and has a built-in verified app catalog.",
-						"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-					},
-					"inAppBrowser": null,
-					"curatedDappDirectory": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire documents a built-in app catalog of pre-integrated verified apps.",
-									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-								}
-							}
-						]
-					},
-					"dappSearch": null,
-					"walletConnectOnlyMode": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire supports direct extension connections to apps, not WalletConnect-only mode.",
-									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-								}
-							}
-						]
-					},
-					"featuredApps": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire built-in app catalog includes pre-integrated apps and user perks.",
-									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-								}
-							}
-						]
-					},
-					"riskRatedDiscovery": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire runs checks before connecting and warns about fake websites.",
-									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-								}
-							}
-						]
-					}
-				},
-				"fiatRamps": {
-					"ref": {
-						"explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://www.ambire.com"
-					},
-					"buyCrypto": null,
-					"sellCrypto": null,
-					"bankTransfer": null,
-					"card": null,
-					"applePay": null,
-					"googlePay": null,
-					"kycDependency": "KYCDependency.UNKNOWN",
-					"providers": [],
-					"regionalAvailability": null
-				},
-				"gasUx": {
-					"ref": {
-						"explanation": "Ambire documents smart features, transaction batching, Gas Tank, stablecoin/non-native gas payment, and future-balance transactions.",
-						"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-					},
-					"gasCustomization": null,
-					"gasSponsorship": null,
-					"gasAbstraction": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire says users can pay gas through smart features and the Gas Tank without native gas on every chain.",
-									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-								}
-							}
-						]
-					},
-					"payGasInStablecoins": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire says users can pay gas fees in stablecoins or other non-native tokens.",
-									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-								}
-							}
-						]
-					},
-					"payGasWithReceivedToken": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire says users can pay gas directly in USDC or other tokens held in the account.",
-									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-								}
-							}
-						]
-					},
-					"speedPresets": null,
-					"stuckTransactionRecovery": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire activity tab includes repeating transactions; stuck-tx recovery was not separately proven.",
-									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-								}
-							}
-						]
-					}
-				},
-				"recoveryUx": {
-					"ref": {
-						"explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://www.ambire.com"
-					},
-					"seedOnlyRecovery": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire supports recovery/import through a seed or secret recovery phrase.",
-									"url": "https://help.ambire.com/hc/en-us"
-								}
-							}
-						]
-					},
-					"cloudBackup": null,
-					"socialRecovery": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire supports social recovery or recovery through trusted parties/owners/guardians.",
-									"url": "https://www.ambire.com"
-								}
-							}
-						]
-					},
-					"guardianRecovery": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire supports guardian-style recovery or owner-controlled recovery.",
-									"url": "https://www.ambire.com"
-								}
-							}
-						]
-					},
-					"passkeyRecovery": null,
-					"emergencyKit": null,
-					"recoveryRehearsal": null
-				},
-				"onboardingFriction": {
-					"ref": {
-						"explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://www.ambire.com"
-					},
-					"seedPhraseRequiredAtSignup": {
-						"$ref": "featureSupported"
-					},
-					"passkeySignup": null,
-					"emailSignup": null,
-					"phoneSignup": null,
-					"kycRequiredForWallet": {
-						"$ref": "notSupported"
-					},
-					"guestMode": null,
-					"embeddedWalletMode": null,
-					"timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
-				},
-				"portfolioManagement": {
-					"ref": {
-						"explanation": "Ambire describes watch-only accounts, DeFi position tracking, NFT storage, activity history, and multi-account recovery phrase management.",
-						"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-					},
-					"netWorth": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire dashboard shows token balances and USD values for DeFi positions.",
-									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-								}
-							}
-						]
-					},
-					"pnl": null,
-					"costBasis": null,
-					"tokenCategories": null,
-					"nftSupport": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire says users can store/check NFTs inside the extension.",
-									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-								}
-							}
-						]
-					},
-					"collectionViews": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire says NFT collections are displayed inside the extension.",
-									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-								}
-							}
-						]
-					},
-					"watchOnlyWallets": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire says users can watch an address such as an ENS name.",
-									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-								}
-							}
-						]
-					},
-					"multiWalletAggregation": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire lets users manage multiple recovery phrases/accounts in one extension.",
-									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-								}
-							}
-						]
-					}
-				},
-				"notifications": {
-					"ref": {
-						"explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://www.ambire.com"
-					},
-					"sendReceive": null,
-					"priceAlerts": null,
-					"approvalAlerts": null,
-					"bridgeCompletion": null,
-					"failedTransaction": null,
-					"securityAlerts": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire supports security alerts or transaction-risk warnings.",
-									"url": "https://www.ambire.com"
-								}
-							}
-						]
-					},
-					"marketAlerts": null
-				},
-				"nftCapabilities": {
-					"ref": {
-						"explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://www.ambire.com"
-					},
-					"display": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire supports displaying NFTs or collectibles in the wallet.",
-									"url": "https://www.ambire.com"
-								}
-							}
-						]
-					},
-					"send": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire supports wallet NFT transfer flows or NFT asset management.",
-									"url": "https://www.ambire.com"
-								}
-							}
-						]
-					},
-					"mint": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire can connect to dapps and sign NFT mint transactions.",
-									"url": "https://www.ambire.com"
-								}
-							}
-						]
-					},
-					"marketplaceIntegration": null,
-					"spamNftHiding": null,
-					"collectionMetadataRefresh": null,
-					"royaltiesOrOffers": null
-				},
-				"defiPositionAwareness": {
-					"ref": {
-						"explanation": "Ambire says users can track DeFi positions directly in the extension dashboard, including supplied tokens, amount, USD value, and investment health.",
-						"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-					},
-					"lendingPositions": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire cites AAVE supply positions as dashboard-tracked DeFi positions.",
-									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-								}
-							}
-						]
-					},
-					"stakingPositions": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire says tracked DeFi positions include staked tokens.",
-									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-								}
-							}
-						]
-					},
-					"lpPositions": null,
-					"vaultPositions": null,
-					"perProtocolBalances": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire dashboard tracks supplied token, amount, USD value, and health.",
-									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-								}
-							}
-						]
-					},
-					"claimableRewards": null,
-					"liquidationWarnings": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire references investment health information for DeFi positions.",
-									"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-								}
-							}
-						]
-					}
-				},
-				"stakingEarn": {
-					"ref": {
-						"explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://www.ambire.com"
-					},
-					"nativeStaking": null,
-					"liquidStaking": null,
-					"validatorChoice": null,
-					"apyDisplay": null,
-					"rewardsClaiming": null,
-					"providerDependency": null,
-					"lockupDisclosure": null
-				},
-				"customerSupport": {
-					"ref": {
-						"explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://www.ambire.com"
-					},
-					"liveChat": null,
-					"emailSupport": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire publishes support, help center, or contact paths for wallet users.",
-									"url": "https://help.ambire.com/hc/en-us"
-								}
-							}
-						]
-					},
-					"aiSupport": null,
-					"publishedSla": null,
-					"inAppHelpCenter": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire provides in-app or product-linked help/support content.",
-									"url": "https://help.ambire.com/hc/en-us"
-								}
-							}
-						]
-					},
-					"transactionTroubleshooting": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire support docs include transaction or wallet troubleshooting material.",
-									"url": "https://help.ambire.com/hc/en-us"
-								}
-							}
-						]
-					},
-					"scamRecoveryGuidance": null
-				},
-				"developerOffering": {
-					"ref": {
-						"explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://www.ambire.com"
-					},
-					"walletSdk": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire publishes wallet developer docs, SDKs, or public wallet integration repositories.",
-									"url": "https://github.com/AmbireTech/extension"
-								}
-							}
-						]
-					},
-					"embeddedWalletSdk": null,
-					"whiteLabelOffering": null,
-					"walletConnectSupport": {
-						"$ref": "featureSupported"
-					},
-					"eip6963": {
-						"$ref": "featureSupported"
-					},
-					"eip5792": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": "https://github.com/AmbireTech/ambire-common/blob/eba5dda7bccbd1c404f293d75c4ea74d939c8d01/src/libs/account/EOA7702.ts#L181-L183",
-								"atomicMultiTransactions": {
-									"$ref": "featureSupported"
-								}
-							}
-						]
-					},
-					"deepLinks": null,
-					"mobileLinkingQuality": null
-				},
-				"pricingFeeModel": {
-					"ref": {
-						"explanation": "Ambire states built-in swap and bridge has a flat 0.25% fee and uses fee revenue for WALLET token buybacks.",
-						"url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
-					},
-					"swapFees": "Built-in swap and bridge has a flat 0.25% fee.",
-					"bridgeFees": "Built-in swap and bridge has a flat 0.25% fee.",
-					"onRampFees": null,
-					"spreadDisclosure": null,
-					"subscriptionFeatures": null,
-					"cardFees": null,
-					"hiddenPartnerRevenue": null
-				},
-				"releaseVelocity": {
-					"ref": {
-						"explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://www.ambire.com"
-					},
-					"latestReleaseDate": "2026-01-29",
-					"releaseFrequency": "ReleaseFrequency.IRREGULAR",
-					"appStoreUpdateCadence": null,
-					"githubActivity": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Ambire has public GitHub repository activity or releases that can be tracked.",
-									"url": "https://github.com/AmbireTech/extension"
-								}
-							}
-						]
-					},
-					"changelogDetail": "ChangelogDetail.BASIC"
-				},
-				"deviceSync": {
-					"ref": {
-						"explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://www.ambire.com"
-					},
-					"syncsAccounts": null,
-					"syncsSettings": null,
-					"syncsContactsOrAddressBook": null,
-					"desktopMobileSync": null,
-					"cloudBackedSync": null,
-					"requiresSameSeedImport": {
-						"$ref": "featureSupported"
-					}
-				}
-			}
-		},
-		"variants": {
-			"BROWSER": true
-		}
-	}
+  "id": "ambire",
+  "source": "software-wallets",
+  "export": "ambire",
+  "data": {
+    "metadata": {
+      "id": "ambire",
+      "displayName": "Ambire",
+      "tableName": "Ambire",
+      "blurb": "The first hybrid Account abstraction wallet to support Basic (EOA) and Smart accounts, improving security and user experience.",
+      "contributors": [
+        {
+          "$ref": "jiojosbg"
+        },
+        {
+          "$ref": "nconsigny"
+        },
+        {
+          "$ref": "mattmatt"
+        },
+        {
+          "$ref": "polymutex"
+        }
+      ],
+      "iconExtension": "svg",
+      "lastUpdated": "2026-01-29",
+      "urls": {
+        "docs": [
+          "https://help.ambire.com/hc/en-us"
+        ],
+        "extensions": [
+          "https://chromewebstore.google.com/detail/ambire-web3-wallet/ehgjhhccekdedpbkifaojjaefeohnoea"
+        ],
+        "repositories": [
+          "https://github.com/AmbireTech/extension"
+        ],
+        "socials": {
+          "discord": "https://discord.com/invite/ambire",
+          "reddit": "https://www.reddit.com/r/Ambire_Wallet/",
+          "telegram": "https://t.me/AmbireOfficial",
+          "x": "https://x.com/ambire",
+          "youtube": "https://www.youtube.com/@AmbireTech"
+        },
+        "websites": [
+          "https://www.ambire.com"
+        ]
+      }
+    },
+    "features": {
+      "accountSupport": {
+        "defaultAccountType": "AccountType.eip7702",
+        "eip7702": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "explanation": "Ambire is AA wallet by default. With the introduction of EIP-7702 it allows you to use your existing EOA just like you would use any smart account wallet!",
+                "url": "https://blog.ambire.com/eip-7702-wallet/"
+              },
+              "contract": {
+                "$ref": "ambireDelegatorContract"
+              }
+            }
+          ]
+        },
+        "eoa": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "$ref": "refTodo"
+              },
+              "canExportPrivateKey": true,
+              "canExportSeedPhrase": true,
+              "keyDerivation": {
+                "type": "BIP32",
+                "canExportSeedPhrase": true,
+                "derivationPath": "BIP44",
+                "seedPhrase": "BIP39"
+              }
+            }
+          ]
+        },
+        "mpc": {
+          "$ref": "notSupported"
+        },
+        "rawErc4337": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "explanation": "Ambire supports ERC-4337 smart contract wallets",
+                "url": "https://github.com/AmbireTech/ambire-common/blob/4cce586884a8224a8ea2a696150207ad37680dc9/contracts/AmbireAccount.sol"
+              },
+              "contract": {
+                "$ref": "ambireAccountContract"
+              },
+              "controllingSharesInSelfCustodyByDefault": "YES",
+              "keyRotationTransactionGeneration": "TransactionGenerationCapability.USING_OPEN_SOURCE_STANDALONE_APP",
+              "tokenTransferTransactionGeneration": "TransactionGenerationCapability.USING_OPEN_SOURCE_STANDALONE_APP"
+            }
+          ]
+        },
+        "safe": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "explanation": "Ambire Extension Now Supports Safe Accounts",
+                "url": "https://blog.ambire.com/ambire-supports-safe-accounts/"
+              },
+              "canDeployNew": false,
+              "controllingSharesInSelfCustodyByDefault": "YES",
+              "keyRotationTransactionGeneration": "TransactionGenerationCapability.RELYING_ON_EXTERNAL_API",
+              "supportedOwners": "ANY_NUMBER_OF_SIGNERS",
+              "supportsAddingOrRemovingSigners": false,
+              "supportsKeyRotationWithoutModules": false,
+              "tokenTransferTransactionGeneration": "TransactionGenerationCapability.RELYING_ON_EXTERNAL_API"
+            }
+          ]
+        }
+      },
+      "addressResolution": {
+        "ref": {
+          "$ref": "refTodo"
+        },
+        "chainSpecificAddressing": {
+          "erc7828": {
+            "$ref": "notSupported"
+          },
+          "erc7831": {
+            "$ref": "notSupported"
+          }
+        },
+        "nonChainSpecificEnsResolution": {
+          "$call": "supported",
+          "args": [
+            {
+              "medium": "CHAIN_CLIENT"
+            }
+          ]
+        }
+      },
+      "chainAbstraction": {
+        "bridging": {
+          "builtInBridging": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "All fees are displayed when agreeing to the bridge",
+                  "url": "https://www.ambire.com/"
+                },
+                "feesLargerThan1bps": {
+                  "$ref": "comprehensiveFeesShownByDefault"
+                },
+                "risksExplained": "NOT_IN_UI"
+              }
+            ]
+          },
+          "suggestedBridging": {
+            "$ref": "notSupported"
+          }
+        },
+        "crossChainBalances": {
+          "ref": {
+            "explanation": "Ambire supports filtering by token name and chain, as well as displaying the total balance from the resulting tokens",
+            "label": "Implementation of token filtering by name",
+            "url": "https://github.com/AmbireTech/extension/blob/851dc597dbe02143876ccc9f013d25cce9b20a51/src/common/modules/dashboard/components/Tokens/Tokens.tsx#L89-L106"
+          },
+          "ether": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire supports filtering by token name.",
+                  "label": "Implementation of token filtering by name",
+                  "url": "https://github.com/AmbireTech/extension/blob/851dc597dbe02143876ccc9f013d25cce9b20a51/src/common/modules/dashboard/components/Tokens/Tokens.tsx#L89-L106"
+                },
+                "crossChainSumView": {
+                  "$ref": "notSupported"
+                },
+                "perChainBalanceViewAcrossMultipleChains": {
+                  "$ref": "featureSupported"
+                }
+              }
+            ]
+          },
+          "globalAccountValue": {
+            "$ref": "featureSupported"
+          },
+          "perChainAccountValue": {
+            "$ref": "featureSupported"
+          },
+          "usdc": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire supports filtering by token name.",
+                  "url": "https://www.ambire.com/"
+                },
+                "crossChainSumView": {
+                  "$ref": "notSupported"
+                },
+                "perChainBalanceViewAcrossMultipleChains": {
+                  "$ref": "featureSupported"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "chainConfigurability": {
+        "$call": "supported",
+        "args": [
+          {
+            "ref": [
+              {
+                "explanation": "Ambire executes generic RPC requests to get user's balance and ENS.",
+                "label": "List of RPCs Ambire uses for default chains",
+                "url": [
+                  "https://github.com/AmbireTech/ambire-common/blob/22678d08810b6f28fa55886c4214d3bc54260d1f/src/consts/networks.ts",
+                  "https://github.com/AmbireTech/ambire-common/blob/e3a749a1cb2e4bf098b18e547b363a1931a81d29/src/services/ensDomains/ensDomains.ts",
+                  "https://github.com/AmbireTech/ambire-common/blob/362e2dc1e2e769d23f5de1717b66ff295c8e91bc/src/libs/portfolio/getOnchainBalances.ts"
+                ]
+              },
+              {
+                "explanation": "Ambire lets you customize the chain provider before any request is made to it.",
+                "label": "Ambire tweet announcing onboarding-time chain provider configuration",
+                "url": [
+                  "https://x.com/ambire/status/2016861388103373134"
+                ]
+              }
+            ],
+            "customChainRpcEndpoint": {
+              "$ref": "featureSupported"
+            },
+            "l1": {
+              "$call": "supported",
+              "args": [
+                {
+                  "rpcEndpointConfiguration": "RpcEndpointConfiguration.YES_BEFORE_ANY_REQUEST",
+                  "withNoConnectivityExceptL1RPCEndpoint": {
+                    "accountCreation": {
+                      "$ref": "featureSupported"
+                    },
+                    "accountImport": {
+                      "$ref": "featureSupported"
+                    },
+                    "erc20BalanceLookup": {
+                      "$ref": "featureSupported"
+                    },
+                    "erc20TokenSend": {
+                      "$ref": "featureSupported"
+                    },
+                    "etherBalanceLookup": {
+                      "$ref": "featureSupported"
+                    }
+                  }
+                }
+              ]
+            },
+            "nonL1": {
+              "$call": "supported",
+              "args": [
+                {
+                  "rpcEndpointConfiguration": "RpcEndpointConfiguration.YES_BEFORE_ANY_REQUEST"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "ecosystem": {
+        "delegation": {
+          "duringEOACreation": "NO",
+          "duringEOAImport": "NO",
+          "duringFirst7702Operation": {
+            "$call": "supported",
+            "args": [
+              {
+                "type": "DELEGATION_BUNDLED_WITH_OTHER_OPERATIONS",
+                "nonDelegationTransactionDetailsIdenticalToNormalFlow": true
+              }
+            ]
+          },
+          "fee": {
+            "crossChainGas": {
+              "$ref": "featureSupported"
+            },
+            "walletSponsored": {
+              "$ref": "featureSupported"
+            }
+          }
+        }
+      },
+      "integration": {
+        "browser": {
+          "1193": {
+            "$ref": "featureSupported"
+          },
+          "2700": {
+            "$ref": "featureSupported"
+          },
+          "6963": {
+            "$ref": "featureSupported"
+          },
+          "ref": {
+            "url": "https://github.com/AmbireTech/extension/blob/104b0a29114a2133c19dcb833c7425de096fbb92/src/web/extension-services/background/background.ts"
+          }
+        },
+        "walletCall": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": "https://github.com/AmbireTech/ambire-common/blob/eba5dda7bccbd1c404f293d75c4ea74d939c8d01/src/libs/account/EOA7702.ts#L181-L183",
+              "atomicMultiTransactions": {
+                "$ref": "featureSupported"
+              }
+            }
+          ]
+        }
+      },
+      "licensing": {
+        "type": "LicensingType.SINGLE_WALLET_REPO_AND_LICENSE",
+        "walletAppLicense": {
+          "ref": "https://github.com/AmbireTech/extension/blob/82c86aa342b85ece2afbe3689a5b52be9c6e1ff9/LICENSE",
+          "license": "FOSSLicense.GPL_3_0"
+        }
+      },
+      "monetization": {
+        "ref": {
+          "$ref": "refTodo"
+        },
+        "revenueBreakdownIsPublic": false,
+        "strategies": {
+          "donations": false,
+          "ecosystemGrants": true,
+          "governanceTokenLowFloat": false,
+          "governanceTokenMostlyDistributed": false,
+          "hiddenConvenienceFees": false,
+          "publicOffering": false,
+          "selfFunded": true,
+          "transparentConvenienceFees": true,
+          "ventureCapital": true
+        }
+      },
+      "multiAddress": {
+        "$ref": "featureSupported"
+      },
+      "privacy": {
+        "analytics": {
+          "crashReports": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "Ambire integrates Sentry for anonymous crash/error reporting in the web extension context.",
+                    "url": "https://github.com/AmbireTech/extension/blob/5942801f127d41d25170ef079e94aa64eb606210/src/common/config/analytics/CrashAnalytics.web.ts"
+                  },
+                  {
+                    "explanation": "Sentry is initialized in the background service worker, and events are only sent when crash analytics are enabled.",
+                    "url": "https://github.com/AmbireTech/extension/blob/104b0a29114a2133c19dcb833c7425de096fbb92/src/web/extension-services/background/background.ts"
+                  },
+                  {
+                    "explanation": "Ambire provides a user toggle for enabling/disabling crash analytics in settings.",
+                    "url": "https://github.com/AmbireTech/extension/blob/b4e45b584754694555d433a52e8aab8f4e0ac539/src/common/modules/settings/components/General/CrashAnalyticsControlOption/CrashAnalyticsControlOption.tsx"
+                  }
+                ],
+                "entity": {
+                  "$ref": "sentry"
+                },
+                "policy": "CollectionPolicy.BY_DEFAULT"
+              }
+            ]
+          },
+          "usage": {
+            "$ref": "notSupported"
+          }
+        },
+        "appIsolation": {
+          "BROWSER": {
+            "createInAppConnectionFlow": {
+              "$ref": "notSupported"
+            },
+            "erc7846WalletConnect": {
+              "$ref": "notSupported"
+            },
+            "ethAccounts": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "$ref": "refTodo"
+                  },
+                  "defaultBehavior": "ExposedAccountsBehavior.ACTIVE_ACCOUNT_ONLY"
+                }
+              ]
+            },
+            "useAppSpecificLastConnectedAddresses": {
+              "$ref": "notSupported"
+            }
+          },
+          "MOBILE": null,
+          "DESKTOP": null
+        },
+        "dataCollection": {
+          "INSTALL": {
+            "collected": []
+          },
+          "NATIVE_SWAP": {
+            "collected": [
+              {
+                "ref": "dataLeakReferences.lifi",
+                "byEntity": {
+                  "$ref": "lifi"
+                },
+                "dataCollection": {
+                  "IP_ADDRESS": "CollectionPolicy.ALWAYS",
+                  "endpoint": {
+                    "$ref": "RegularEndpoint"
+                  }
+                },
+                "purposes": [
+                  "DataCollectionPurpose.ASSET_METADATA"
+                ]
+              }
+            ]
+          },
+          "ONBOARDING_NEW": {
+            "collected": [
+              {
+                "ref": "dataLeakReferences.ambire",
+                "byEntity": {
+                  "$ref": "ambireEntity"
+                },
+                "dataCollection": {
+                  "IP_ADDRESS": "CollectionPolicy.BY_DEFAULT",
+                  "ACCOUNT_ADDRESS": "CollectionPolicy.BY_DEFAULT",
+                  "ASSETS": "CollectionPolicy.BY_DEFAULT",
+                  "BALANCE": "CollectionPolicy.BY_DEFAULT",
+                  "endpoint": {
+                    "$ref": "RegularEndpoint"
+                  },
+                  "multiAddress": {
+                    "type": "MultiAddressPolicy.ACTIVE_ADDRESS_ONLY"
+                  }
+                },
+                "purposes": [
+                  "DataCollectionPurpose.CHAIN_DATA_LOOKUP"
+                ]
+              },
+              {
+                "ref": {
+                  "$ref": "refTodo"
+                },
+                "byEntity": {
+                  "$ref": "monad"
+                },
+                "dataCollection": {
+                  "IP_ADDRESS": "CollectionPolicy.BY_DEFAULT",
+                  "ACCOUNT_ADDRESS": "CollectionPolicy.BY_DEFAULT",
+                  "endpoint": {
+                    "$ref": "RegularEndpoint"
+                  },
+                  "multiAddress": {
+                    "type": "MultiAddressPolicy.ACTIVE_ADDRESS_ONLY"
+                  }
+                },
+                "purposes": [
+                  "DataCollectionPurpose.CHAIN_DATA_LOOKUP"
+                ]
+              },
+              {
+                "ref": {
+                  "$ref": "refTodo"
+                },
+                "byEntity": {
+                  "$ref": "citrea"
+                },
+                "dataCollection": {
+                  "IP_ADDRESS": "CollectionPolicy.BY_DEFAULT",
+                  "ACCOUNT_ADDRESS": "CollectionPolicy.BY_DEFAULT",
+                  "endpoint": {
+                    "$ref": "RegularEndpoint"
+                  },
+                  "multiAddress": {
+                    "type": "MultiAddressPolicy.ACTIVE_ADDRESS_ONLY"
+                  }
+                },
+                "purposes": [
+                  "DataCollectionPurpose.CHAIN_DATA_LOOKUP"
+                ]
+              }
+            ],
+            "publishedOnchain": "NO_DATA_PUBLISHED_ONCHAIN"
+          },
+          "ONBOARDING_IMPORT": {
+            "collected": [
+              {
+                "ref": "dataLeakReferences.ambire",
+                "byEntity": {
+                  "$ref": "ambireEntity"
+                },
+                "dataCollection": {
+                  "IP_ADDRESS": "CollectionPolicy.BY_DEFAULT",
+                  "ACCOUNT_ADDRESS": "CollectionPolicy.BY_DEFAULT",
+                  "ASSETS": "CollectionPolicy.BY_DEFAULT",
+                  "BALANCE": "CollectionPolicy.BY_DEFAULT",
+                  "endpoint": {
+                    "$ref": "RegularEndpoint"
+                  },
+                  "multiAddress": {
+                    "type": "MultiAddressPolicy.ACTIVE_ADDRESS_ONLY"
+                  }
+                },
+                "purposes": [
+                  "DataCollectionPurpose.CHAIN_DATA_LOOKUP"
+                ]
+              },
+              {
+                "ref": {
+                  "$ref": "refTodo"
+                },
+                "byEntity": {
+                  "$ref": "monad"
+                },
+                "dataCollection": {
+                  "IP_ADDRESS": "CollectionPolicy.BY_DEFAULT",
+                  "ACCOUNT_ADDRESS": "CollectionPolicy.BY_DEFAULT",
+                  "endpoint": {
+                    "$ref": "RegularEndpoint"
+                  },
+                  "multiAddress": {
+                    "type": "MultiAddressPolicy.ACTIVE_ADDRESS_ONLY"
+                  }
+                },
+                "purposes": [
+                  "DataCollectionPurpose.CHAIN_DATA_LOOKUP"
+                ]
+              },
+              {
+                "ref": {
+                  "$ref": "refTodo"
+                },
+                "byEntity": {
+                  "$ref": "citrea"
+                },
+                "dataCollection": {
+                  "IP_ADDRESS": "CollectionPolicy.BY_DEFAULT",
+                  "ACCOUNT_ADDRESS": "CollectionPolicy.BY_DEFAULT",
+                  "endpoint": {
+                    "$ref": "RegularEndpoint"
+                  },
+                  "multiAddress": {
+                    "type": "MultiAddressPolicy.ACTIVE_ADDRESS_ONLY"
+                  }
+                },
+                "purposes": [
+                  "DataCollectionPurpose.CHAIN_DATA_LOOKUP"
+                ]
+              }
+            ],
+            "publishedOnchain": "NO_DATA_PUBLISHED_ONCHAIN"
+          },
+          "SEND_ETHER": {
+            "collected": []
+          },
+          "SEND_USDC": {
+            "collected": [
+              {
+                "ref": "dataLeakReferences.ambire",
+                "byEntity": {
+                  "$ref": "ambireEntity"
+                },
+                "dataCollection": {
+                  "IP_ADDRESS": "CollectionPolicy.BY_DEFAULT",
+                  "ACCOUNT_ADDRESS": "CollectionPolicy.BY_DEFAULT",
+                  "ASSETS": "CollectionPolicy.BY_DEFAULT",
+                  "BALANCE": "CollectionPolicy.BY_DEFAULT",
+                  "endpoint": {
+                    "$ref": "RegularEndpoint"
+                  },
+                  "multiAddress": {
+                    "type": "MultiAddressPolicy.ACTIVE_ADDRESS_ONLY"
+                  }
+                },
+                "purposes": [
+                  "DataCollectionPurpose.CHAIN_DATA_LOOKUP"
+                ]
+              }
+            ]
+          },
+          "APP_CONNECTION": {
+            "collected": []
+          },
+          "MAKE_TRANSACTION": {
+            "collected": [
+              {
+                "ref": "dataLeakReferences.ambire",
+                "byEntity": {
+                  "$ref": "ambireEntity"
+                },
+                "dataCollection": {
+                  "IP_ADDRESS": "CollectionPolicy.ALWAYS",
+                  "MEMPOOL_TRANSACTIONS": "CollectionPolicy.ALWAYS",
+                  "ACCOUNT_ADDRESS": "CollectionPolicy.ALWAYS",
+                  "endpoint": {
+                    "$ref": "RegularEndpoint"
+                  },
+                  "multiAddress": {
+                    "type": "MultiAddressPolicy.ACTIVE_ADDRESS_ONLY"
+                  }
+                },
+                "purposes": [
+                  "DataCollectionPurpose.CHAIN_DATA_LOOKUP",
+                  "DataCollectionPurpose.TRANSACTION_BROADCAST"
+                ]
+              },
+              {
+                "ref": "dataLeakReferences.pimlico",
+                "byEntity": {
+                  "$ref": "pimlico"
+                },
+                "dataCollection": {
+                  "IP_ADDRESS": "CollectionPolicy.ALWAYS",
+                  "MEMPOOL_TRANSACTIONS": "CollectionPolicy.ALWAYS",
+                  "ACCOUNT_ADDRESS": "CollectionPolicy.ALWAYS",
+                  "endpoint": {
+                    "$ref": "RegularEndpoint"
+                  },
+                  "multiAddress": {
+                    "type": "MultiAddressPolicy.ACTIVE_ADDRESS_ONLY"
+                  }
+                },
+                "purposes": [
+                  "DataCollectionPurpose.TRANSACTION_BROADCAST"
+                ]
+              },
+              {
+                "ref": "dataLeakReferences.biconomy",
+                "byEntity": {
+                  "$ref": "biconomy"
+                },
+                "dataCollection": {
+                  "IP_ADDRESS": "CollectionPolicy.ALWAYS",
+                  "MEMPOOL_TRANSACTIONS": "CollectionPolicy.ALWAYS",
+                  "ACCOUNT_ADDRESS": "CollectionPolicy.ALWAYS",
+                  "endpoint": {
+                    "$ref": "RegularEndpoint"
+                  },
+                  "multiAddress": {
+                    "type": "MultiAddressPolicy.ACTIVE_ADDRESS_ONLY"
+                  }
+                },
+                "purposes": [
+                  "DataCollectionPurpose.TRANSACTION_BROADCAST"
+                ]
+              }
+            ]
+          },
+          "UNCLASSIFIED": {
+            "collected": [
+              {
+                "ref": "dataLeakReferences.github",
+                "byEntity": {
+                  "$ref": "github"
+                },
+                "dataCollection": {
+                  "IP_ADDRESS": "CollectionPolicy.ALWAYS",
+                  "endpoint": {
+                    "$ref": "RegularEndpoint"
+                  }
+                },
+                "purposes": [
+                  "DataCollectionPurpose.UPDATE_CHECKING",
+                  "DataCollectionPurpose.STATIC_ASSETS"
+                ]
+              }
+            ]
+          }
+        },
+        "privacyPolicy": "https://www.ambire.com/Ambire%20ToS%20and%20PP%20(26%20November%202021).pdf",
+        "transactionPrivacy": {
+          "defaultFungibleTokenTransferMode": "PUBLIC",
+          "STEALTH_ADDRESSES": {
+            "$ref": "notSupported"
+          },
+          "TORNADO_CASH_NOVA": {
+            "$ref": "notSupported"
+          },
+          "PRIVACY_POOLS": {
+            "$ref": "notSupported"
+          },
+          "RAILGUN": {
+            "$ref": "notSupported"
+          }
+        }
+      },
+      "profile": "WalletProfile.GENERIC",
+      "security": {
+        "accountRecovery": {
+          "guardianRecovery": {
+            "$ref": "notSupported"
+          }
+        },
+        "bugBountyProgram": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": [
+                {
+                  "explanation": "As from August 2025, this bug bounty program is no longer active.",
+                  "url": "https://blog.ambire.com/ambire-x-immunefy-bug-bounty-audit-our-code-and-earn-rewards/"
+                }
+              ],
+              "availability": "BugBountyProgramAvailability.INACTIVE",
+              "coverageBreadth": "FULL_SCOPE",
+              "dateStarted": "2021-12-17",
+              "disclosure": {
+                "$ref": "notSupported"
+              },
+              "legalProtections": {
+                "$ref": "notSupported"
+              },
+              "platform": "BugBountyPlatform.SELF_HOSTED",
+              "rewards": {
+                "$ref": "notSupported"
+              },
+              "upgradePathAvailable": false
+            }
+          ]
+        },
+        "duressResistance": {
+          "basicUnlock": {
+            "ref": {
+              "$ref": "refTodo"
+            },
+            "mechanisms": {
+              "PIN": false,
+              "PASSWORD": true,
+              "BIOMETRIC": false,
+              "PATTERN": false
+            }
+          },
+          "duressMode": {
+            "$ref": "notSupported"
+          }
+        },
+        "hardwareWalletSupport": {
+          "ref": {
+            "explanation": "You can natively sign transactions with Ledger, Trezor, or GridPlus Lattice1 in Ambire.",
+            "url": "https://www.ambire.com/"
+          },
+          "wallets": {
+            "LEDGER": {
+              "$call": "supported",
+              "args": [
+                {
+                  "connectionTypes": [
+                    "HardwareWalletConnection.webUSB"
+                  ]
+                }
+              ]
+            },
+            "TREZOR": {
+              "$call": "supported",
+              "args": [
+                {
+                  "connectionTypes": [
+                    "HardwareWalletConnection.webUSB"
+                  ]
+                }
+              ]
+            },
+            "GRIDPLUS": {
+              "$call": "supported",
+              "args": [
+                {
+                  "connectionTypes": [
+                    "HardwareWalletConnection.webUSB"
+                  ]
+                }
+              ]
+            },
+            "KEYSTONE": {
+              "$ref": "notSupported"
+            }
+          }
+        },
+        "keysHandling": {
+          "ref": {
+            "$ref": "refTodo"
+          },
+          "keyGeneration": "KeyGenerationLocation.FULLY_ON_USER_DEVICE",
+          "multipartyKeyReconstruction": "MultiPartyKeyReconstruction.NON_MULTIPARTY"
+        },
+        "lightClient": {
+          "ethereumL1": {
+            "$ref": "notSupported"
+          }
+        },
+        "passkeyVerification": {
+          "$ref": "notSupported"
+        },
+        "publicSecurityAudits": [
+          {
+            "ref": "https://github.com/AmbireTech/ambire-common/blob/v2/audits/Pashov-Ambire-security-review.md",
+            "auditDate": "UNKNOWN",
+            "auditor": {
+              "$ref": "pashov-audit-group"
+            },
+            "codeSnapshot": "3f17320132e3bc67fa9a505fafded7bb16fc3e96",
+            "unpatchedFlaws": "NO_HIGH_SEVERITY_FLAWS_FOUND",
+            "variantsScope": "AMBIRE_ACCOUNT_SIGNATURE_VALIDATOR_AND_FACTORY_SMART_CONTRACTS"
+          },
+          {
+            "ref": "https://github.com/AmbireTech/ambire-common/blob/v2/audits/CuriousApple-AmbireRewview01.md",
+            "auditDate": "2023-10-24",
+            "codeSnapshot": "f411456c06a409bbcbbee0c12c7496916202860b",
+            "unpatchedFlaws": "NO_HIGH_SEVERITY_FLAWS_FOUND",
+            "variantsScope": "AMBIRE_ACCOUNT_PAYMASTER_AND_DKIM_RECOVERY_SMART_CONTRACTS"
+          },
+          {
+            "ref": "https://github.com/AmbireTech/ambire-common/blob/v2/audits/Pashov-Ambire-second-security-review.md",
+            "auditDate": "UNKNOWN",
+            "auditor": {
+              "$ref": "pashov-audit-group"
+            },
+            "codeSnapshot": "8521c4e68b147c0002b2e2c337178e4f5d23d594",
+            "unpatchedFlaws": "NO_HIGH_SEVERITY_FLAWS_FOUND",
+            "variantsScope": "AMBIRE_ACCOUNT_AND_DKIM_RECOVERY_SMART_CONTRACTS"
+          },
+          {
+            "ref": "https://github.com/AmbireTech/ambire-common/blob/v2/audits/Pashov-Ambire-third-security-review.md",
+            "auditDate": "UNKNOWN",
+            "auditor": {
+              "$ref": "pashov-audit-group"
+            },
+            "codeSnapshot": "da3ba641a004d1f0143a20ddde48049b619431ad",
+            "unpatchedFlaws": "NO_HIGH_SEVERITY_FLAWS_FOUND",
+            "variantsScope": "AMBIRE_ERC4337_AND_PAYMASTER_SMART_CONTRACTS"
+          }
+        ],
+        "scamAlerts": {
+          "contractTransactionWarning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "$ref": "scamAlertsAndSendTxWarningRefs"
+                },
+                "contractRegistry": true,
+                "leaksContractAddress": true,
+                "leaksUserAddress": false,
+                "leaksUserIp": true,
+                "previousContractInteractionWarning": true,
+                "recentContractWarning": false
+              }
+            ]
+          },
+          "scamUrlWarning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Every 6 hours, Ambire downloads a list of publicly available known scam URLs from an external API. Then, it checks if the website you're connecting to is on that list. If it is, a warning is displayed.",
+                  "lastRetrieved": "2025-04-02",
+                  "urls": [
+                    {
+                      "label": "Implementation",
+                      "url": "https://github.com/AmbireTech/ambire-common/blob/2216ea165a56b01ccb76ab2895fa1295577af10e/src/controllers/phishing/phishing.ts"
+                    }
+                  ]
+                },
+                "leaksIp": false,
+                "leaksUserAddress": false,
+                "leaksVisitedUrl": "NO"
+              }
+            ]
+          },
+          "sendTransactionWarning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "$ref": "scamAlertsAndSendTxWarningRefs"
+                },
+                "leaksRecipient": true,
+                "leaksUserAddress": false,
+                "leaksUserIp": true,
+                "newRecipientWarning": true,
+                "userWhitelist": false
+              }
+            ]
+          }
+        },
+        "securityBestPractices": {
+          "browser": {
+            "ref": {
+              "$ref": "refTodo"
+            },
+            "browserExtensionHardening": {
+              "$call": "parseBrowserExtensionManifest",
+              "args": [
+                {
+                  "$ref": "ambireRawExtManifest"
+                }
+              ]
+            },
+            "keyStorageMechanism": "KeyStorageMechanism.ENCRYPTED_WITH_USER_SECRET_STANDARDIZED_KDF",
+            "secureRng": "SecureRngSource.OS_CSPRNG"
+          },
+          "desktop": "NOT_A_DESKTOP_APP",
+          "mobile": "NOT_A_MOBILE_APP"
+        },
+        "transactionLegibility": {
+          "ref": {
+            "$ref": "refTodo"
+          },
+          "erc7730": {
+            "$call": "supported",
+            "args": [
+              {
+                "USDC_APPROVAL": {
+                  "decoded": "DataDisplayOptions.NOT_IN_UI"
+                },
+                "AAVE_SUPPLY": {
+                  "decoded": "DataDisplayOptions.NOT_IN_UI"
+                },
+                "SAFEWALLET_AAVE_SUPPLY_NESTED": {
+                  "decoded": "DataDisplayOptions.NOT_IN_UI"
+                },
+                "SAFEWALLET_AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": {
+                  "decoded": "DataDisplayOptions.NOT_IN_UI"
+                },
+                "AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": {
+                  "decoded": "DataDisplayOptions.NOT_IN_UI"
+                }
+              }
+            ]
+          },
+          "erc8213": {
+            "$call": "supported",
+            "args": [
+              {
+                "calldataDisplay": {
+                  "RAW_HEX": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+                  "COPY_HEX_TO_CLIPBOARD": "DataDisplayOptions.NOT_IN_UI",
+                  "FORMATTED": "DataDisplayOptions.NOT_IN_UI",
+                  "CALLDATA_DIGEST": "DataDisplayOptions.NOT_IN_UI"
+                },
+                "messageSigningLegibility": {
+                  "EIP712_STRUCT": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+                  "DOMAIN_HASH": "DataDisplayOptions.NOT_IN_UI",
+                  "MESSAGE_HASH": "DataDisplayOptions.NOT_IN_UI",
+                  "EIP712_DIGEST": "DataDisplayOptions.NOT_IN_UI"
+                }
+              }
+            ]
+          },
+          "transactionDetailsDisplay": {
+            "chain": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+            "from": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+            "gas": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+            "nonce": "DataDisplayOptions.NOT_IN_UI",
+            "to": "DataDisplayOptions.SHOWN_BY_DEFAULT",
+            "value": "DataDisplayOptions.SHOWN_BY_DEFAULT"
+          },
+          "transactionSimulations": {
+            "$call": "supported",
+            "args": [
+              {
+                "ETH_TRANSFER": {
+                  "transactionOutcome": "TransactionOutcome.EXPLAINED"
+                },
+                "ZKSYNC_USDC_TRANSFER": {
+                  "transactionOutcome": "TransactionOutcome.EXPLAINED"
+                },
+                "ERC_20_TRANSFER": {
+                  "transactionOutcome": "TransactionOutcome.EXPLAINED"
+                },
+                "ERC_721_TRANSFER": {
+                  "transactionOutcome": "TransactionOutcome.NOT_EXPLAINED"
+                },
+                "ERC_1155_TRANSFER": {
+                  "transactionOutcome": "TransactionOutcome.NOT_EXPLAINED"
+                },
+                "USDC_APPROVAL": {
+                  "transactionOutcome": "TransactionOutcome.EXPLAINED"
+                },
+                "AAVE_SUPPLY": {
+                  "transactionOutcome": "TransactionOutcome.EXPLAINED"
+                },
+                "SAFEWALLET_AAVE_SUPPLY_NESTED": {
+                  "transactionOutcome": "TransactionOutcome.NOT_EXPLAINED"
+                },
+                "SAFEWALLET_AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": {
+                  "transactionOutcome": "TransactionOutcome.NOT_EXPLAINED"
+                },
+                "AAVE_USDC_APPROVE_SUPPLY_BATCH_NESTED_MULTISEND": {
+                  "transactionOutcome": "TransactionOutcome.EXPLAINED"
+                },
+                "FAILED_TRANSACTION": {
+                  "failure": "DETECTED"
+                },
+                "NONDETERMINISTIC_TRANSACTION": {
+                  "nondeterminism": "STATIC_SINGLE_OUTCOME"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "selfSovereignty": {
+        "permissionsManagement": {
+          "$ref": "notSupported"
+        },
+        "transactionSubmission": {
+          "l1": {
+            "ref": {
+              "$ref": "refTodo"
+            },
+            "selfBroadcastViaDirectGossip": {
+              "$ref": "notSupported"
+            },
+            "selfBroadcastViaSelfHostedNode": {
+              "$ref": "featureSupported"
+            }
+          },
+          "l2": {
+            "ref": {
+              "$ref": "refTodo"
+            },
+            "arbitrum": "TransactionSubmissionL2Support.SUPPORTED_BUT_NO_FORCE_INCLUSION",
+            "opStack": "TransactionSubmissionL2Support.SUPPORTED_BUT_NO_FORCE_INCLUSION"
+          }
+        }
+      },
+      "transparency": {
+        "operationFees": {
+          "builtInErc20Swap": {
+            "$call": "supported",
+            "args": [
+              {
+                "$ref": "comprehensiveFeesShownByDefault"
+              }
+            ]
+          },
+          "erc20L1Transfer": {
+            "$call": "supported",
+            "args": [
+              {
+                "$ref": "comprehensiveFeesShownByDefault"
+              }
+            ]
+          },
+          "ethL1Transfer": {
+            "$call": "supported",
+            "args": [
+              {
+                "$ref": "comprehensiveFeesShownByDefault"
+              }
+            ]
+          },
+          "uniswapUSDCToEtherSwap": {
+            "$call": "supported",
+            "args": [
+              {
+                "$ref": "comprehensiveFeesShownByDefault"
+              }
+            ]
+          }
+        },
+        "releaseTransparency": {
+          "artifactSigning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": "https://github.com/AmbireTech/extension/releases",
+                "publication": "GITHUB_RELEASE",
+                "signer": "DEVELOPER_KEY"
+              }
+            ]
+          },
+          "dependencyLocking": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "The `setup:ci` script enforces lockfile sync with `yarn install --frozen-lockfile`.",
+                    "url": "https://github.com/AmbireTech/extension/blob/19c22dbba374dc12730f1f40e3fce33e71ad2f90/package.json"
+                  },
+                  {
+                    "explanation": "CI workflows execute `yarn setup:ci` before builds.",
+                    "url": "https://github.com/AmbireTech/extension/blob/19c22dbba374dc12730f1f40e3fce33e71ad2f90/.github/workflows/build-extensions.yml"
+                  }
+                ]
+              }
+            ]
+          },
+          "dependencyVulnerabilityScanning": {
+            "$ref": "notSupported"
+          },
+          "hasPublicChangelog": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": "https://github.com/AmbireTech/extension/releases"
+              }
+            ]
+          },
+          "hermeticBuilds": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "The release build workflow updates git submodules during build execution, requiring network access rather than using a fully pre-fetched offline input set.",
+                    "url": "https://github.com/AmbireTech/extension/blob/19c22dbba374dc12730f1f40e3fce33e71ad2f90/.github/workflows/build-extensions.yml"
+                  },
+                  {
+                    "explanation": "Android build workflow runs `yarn setup:ci` during build, so JavaScript dependencies are resolved/fetched at build time.",
+                    "url": "https://github.com/AmbireTech/extension/blob/19c22dbba374dc12730f1f40e3fce33e71ad2f90/.github/workflows/_build-android.yml"
+                  },
+                  {
+                    "explanation": "iOS build workflow runs `bundle exec pod install`, which performs dependency resolution/fetching during the build job.",
+                    "url": "https://github.com/AmbireTech/extension/blob/19c22dbba374dc12730f1f40e3fce33e71ad2f90/.github/workflows/_build-ios.yml"
+                  },
+                  {
+                    "explanation": "Gecko ARM64 release build pulls base images and installs Alpine packages (`apk add`) at runtime, indicating non-hermetic networked build inputs.",
+                    "url": "https://github.com/AmbireTech/extension/blob/19c22dbba374dc12730f1f40e3fce33e71ad2f90/.github/workflows/build-extension-gecko.yml"
+                  }
+                ]
+              }
+            ]
+          },
+          "repositoryChangeControls": null,
+          "reproducibleBuilds": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "Ambire's public extension release workflow builds WebKit extension ZIPs in GitHub Actions from repository code plus GitHub environment variables and secrets, then uploads CI artifacts; this does not provide a public deterministic rebuild/compare process for independently reproducing the released extension artifact.",
+                    "url": "https://github.com/AmbireTech/extension/blob/19c22dbba374dc12730f1f40e3fce33e71ad2f90/.github/workflows/build-extensions.yml"
+                  },
+                  {
+                    "explanation": "The same release workflow has a source-code ZIP publication step commented out, so the release path does not currently publish a complete review source bundle alongside the built extension artifact.",
+                    "url": "https://github.com/AmbireTech/extension/blob/19c22dbba374dc12730f1f40e3fce33e71ad2f90/.github/workflows/build-extensions.yml"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "product": {
+        "platformCoverage": {
+          "ref": {
+            "explanation": "Ambire product update describes Ambire Extension as a browser extension; no mobile app was found in the official feature article.",
+            "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+          },
+          "desktopApp": null,
+          "mobileApp": null,
+          "browserExtension": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire describes the Ambire Extension as a self-custodial wallet browser extension.",
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+                }
+              }
+            ]
+          },
+          "browserNative": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire is a browser extension wallet, not browser-native.",
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+                }
+              }
+            ]
+          },
+          "webApp": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire Help Center covers the Web version of Ambire Wallet.",
+                  "url": "https://help.ambire.com/hc/en-us/articles/4410827841298-Which-networks-are-supported-by-Ambire-Wallet-"
+                }
+              }
+            ]
+          },
+          "ios": null,
+          "android": null,
+          "chrome": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire Extension is a browser extension for EVM-chain wallet use.",
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+                }
+              }
+            ]
+          },
+          "firefox": null,
+          "safari": null
+        },
+        "supportedEcosystems": {
+          "ref": {
+            "explanation": "Ambire describes the extension as supporting all EVM chains including Ethereum, Arbitrum, Polygon, and Base.",
+            "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+          },
+          "evm": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire Extension is for all EVM chains.",
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+                }
+              }
+            ]
+          },
+          "solana": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire feature article scopes the wallet to EVM chains.",
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+                }
+              }
+            ]
+          },
+          "bitcoin": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire feature article scopes the wallet to EVM chains.",
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+                }
+              }
+            ]
+          },
+          "cosmos": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire feature article scopes the wallet to EVM chains.",
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+                }
+              }
+            ]
+          },
+          "ton": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire feature article scopes the wallet to EVM chains.",
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+                }
+              }
+            ]
+          },
+          "starknet": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire feature article scopes the wallet to EVM chains.",
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+                }
+              }
+            ]
+          },
+          "sui": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire feature article scopes the wallet to EVM chains.",
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+                }
+              }
+            ]
+          },
+          "aptos": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire feature article scopes the wallet to EVM chains.",
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+                }
+              }
+            ]
+          },
+          "xrp": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire feature article scopes the wallet to EVM chains.",
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+                }
+              }
+            ]
+          },
+          "cardano": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire feature article scopes the wallet to EVM chains.",
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+                }
+              }
+            ]
+          },
+          "lightning": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire feature article scopes the wallet to EVM chains.",
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+                }
+              }
+            ]
+          },
+          "other": [
+            {
+              "name": "EIP-7702 smart features",
+              "ref": {
+                "explanation": "Ambire says EOAs can adopt smart features via EIP-7702.",
+                "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+              }
+            }
+          ]
+        },
+        "dappExperience": {
+          "ref": {
+            "explanation": "Ambire says users can connect to any apps easily and has a built-in verified app catalog.",
+            "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+          },
+          "inAppBrowser": null,
+          "curatedDappDirectory": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire documents a built-in app catalog of pre-integrated verified apps.",
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+                }
+              }
+            ]
+          },
+          "dappSearch": null,
+          "walletConnectOnlyMode": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire supports direct extension connections to apps, not WalletConnect-only mode.",
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+                }
+              }
+            ]
+          },
+          "featuredApps": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire built-in app catalog includes pre-integrated apps and user perks.",
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+                }
+              }
+            ]
+          },
+          "riskRatedDiscovery": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire runs checks before connecting and warns about fake websites.",
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+                }
+              }
+            ]
+          }
+        },
+        "fiatRamps": {
+          "ref": {
+            "explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://www.ambire.com"
+          },
+          "buyCrypto": null,
+          "sellCrypto": null,
+          "bankTransfer": null,
+          "card": null,
+          "applePay": null,
+          "googlePay": null,
+          "kycDependency": "KYCDependency.UNKNOWN",
+          "providers": [],
+          "regionalAvailability": null
+        },
+        "gasUx": {
+          "ref": {
+            "explanation": "Ambire documents smart features, transaction batching, Gas Tank, stablecoin/non-native gas payment, and future-balance transactions.",
+            "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+          },
+          "gasCustomization": null,
+          "gasSponsorship": null,
+          "gasAbstraction": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire says users can pay gas through smart features and the Gas Tank without native gas on every chain.",
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+                }
+              }
+            ]
+          },
+          "payGasInStablecoins": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire says users can pay gas fees in stablecoins or other non-native tokens.",
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+                }
+              }
+            ]
+          },
+          "payGasWithReceivedToken": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire says users can pay gas directly in USDC or other tokens held in the account.",
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+                }
+              }
+            ]
+          },
+          "speedPresets": null,
+          "stuckTransactionRecovery": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire activity tab includes repeating transactions; stuck-tx recovery was not separately proven.",
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+                }
+              }
+            ]
+          }
+        },
+        "recoveryUx": {
+          "ref": {
+            "explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://www.ambire.com"
+          },
+          "seedOnlyRecovery": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire supports recovery/import through a seed or secret recovery phrase.",
+                  "url": "https://help.ambire.com/hc/en-us"
+                }
+              }
+            ]
+          },
+          "cloudBackup": null,
+          "socialRecovery": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire supports social recovery or recovery through trusted parties/owners/guardians.",
+                  "url": "https://www.ambire.com"
+                }
+              }
+            ]
+          },
+          "guardianRecovery": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire supports guardian-style recovery or owner-controlled recovery.",
+                  "url": "https://www.ambire.com"
+                }
+              }
+            ]
+          },
+          "passkeyRecovery": null,
+          "emergencyKit": null,
+          "recoveryRehearsal": null
+        },
+        "onboardingFriction": {
+          "ref": {
+            "explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://www.ambire.com"
+          },
+          "seedPhraseRequiredAtSignup": {
+            "$ref": "featureSupported"
+          },
+          "passkeySignup": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.ambire.com/hc/en-us/articles/12506346827036-How-to-create-smart-wallet-account-in-the-browser-extension",
+                  "explanation": "The current Ambire extension/mobile onboarding docs list only hardware wallet, seed phrase, and EOA import methods with no passkey/WebAuthn option."
+                }
+              }
+            ]
+          },
+          "emailSignup": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.ambire.com/en/articles/13714255-how-to-add-your-v1-ambire-smart-account-legacy-to-the-extension",
+                  "explanation": "Email+password signup existed only in the deprecated legacy v1 web wallet, and Ambire's docs confirm email+password accounts cannot be created/imported in the current extension."
+                }
+              }
+            ]
+          },
+          "phoneSignup": null,
+          "kycRequiredForWallet": {
+            "$ref": "notSupported"
+          },
+          "guestMode": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.ambire.com/hc/en-us/articles/12506346827036-How-to-create-smart-wallet-account-in-the-browser-extension",
+                  "explanation": "The extension onboarding requires creating or importing a smart account (via seed phrase/hardware wallet/EOA) with no try-without-wallet or guest/view-only entry point documented."
+                }
+              }
+            ]
+          },
+          "embeddedWalletMode": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.ambire.com/hc/en-us/articles/12506346827036-How-to-create-smart-wallet-account-in-the-browser-extension",
+                  "explanation": "Ambire creates a smart-contract account, but the current product provisions it from a user-controlled seed phrase or EOA key rather than a no-seed social/email/MPC embedded flow (the legacy no-seed email option is deprecated)."
+                }
+              }
+            ]
+          },
+          "timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
+        },
+        "portfolioManagement": {
+          "ref": {
+            "explanation": "Ambire describes watch-only accounts, DeFi position tracking, NFT storage, activity history, and multi-account recovery phrase management.",
+            "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+          },
+          "netWorth": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire dashboard shows token balances and USD values for DeFi positions.",
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+                }
+              }
+            ]
+          },
+          "pnl": null,
+          "costBasis": null,
+          "tokenCategories": null,
+          "nftSupport": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire says users can store/check NFTs inside the extension.",
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+                }
+              }
+            ]
+          },
+          "collectionViews": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire says NFT collections are displayed inside the extension.",
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+                }
+              }
+            ]
+          },
+          "watchOnlyWallets": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire says users can watch an address such as an ENS name.",
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+                }
+              }
+            ]
+          },
+          "multiWalletAggregation": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire lets users manage multiple recovery phrases/accounts in one extension.",
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+                }
+              }
+            ]
+          }
+        },
+        "notifications": {
+          "ref": {
+            "explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://www.ambire.com"
+          },
+          "sendReceive": null,
+          "priceAlerts": null,
+          "approvalAlerts": null,
+          "bridgeCompletion": null,
+          "failedTransaction": null,
+          "securityAlerts": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire supports security alerts or transaction-risk warnings.",
+                  "url": "https://www.ambire.com"
+                }
+              }
+            ]
+          },
+          "marketAlerts": null
+        },
+        "nftCapabilities": {
+          "ref": {
+            "explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://www.ambire.com"
+          },
+          "display": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire supports displaying NFTs or collectibles in the wallet.",
+                  "url": "https://www.ambire.com"
+                }
+              }
+            ]
+          },
+          "send": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire supports wallet NFT transfer flows or NFT asset management.",
+                  "url": "https://www.ambire.com"
+                }
+              }
+            ]
+          },
+          "mint": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire can connect to dapps and sign NFT mint transactions.",
+                  "url": "https://www.ambire.com"
+                }
+              }
+            ]
+          },
+          "marketplaceIntegration": null,
+          "spamNftHiding": null,
+          "collectionMetadataRefresh": null,
+          "royaltiesOrOffers": null
+        },
+        "defiPositionAwareness": {
+          "ref": {
+            "explanation": "Ambire says users can track DeFi positions directly in the extension dashboard, including supplied tokens, amount, USD value, and investment health.",
+            "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+          },
+          "lendingPositions": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire cites AAVE supply positions as dashboard-tracked DeFi positions.",
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+                }
+              }
+            ]
+          },
+          "stakingPositions": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire says tracked DeFi positions include staked tokens.",
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+                }
+              }
+            ]
+          },
+          "lpPositions": null,
+          "vaultPositions": null,
+          "perProtocolBalances": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire dashboard tracks supplied token, amount, USD value, and health.",
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+                }
+              }
+            ]
+          },
+          "claimableRewards": null,
+          "liquidationWarnings": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire references investment health information for DeFi positions.",
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+                }
+              }
+            ]
+          }
+        },
+        "stakingEarn": {
+          "ref": {
+            "explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://www.ambire.com"
+          },
+          "nativeStaking": null,
+          "liquidStaking": null,
+          "validatorChoice": null,
+          "apyDisplay": null,
+          "rewardsClaiming": null,
+          "providerDependency": null,
+          "lockupDisclosure": null
+        },
+        "customerSupport": {
+          "ref": {
+            "explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://www.ambire.com"
+          },
+          "liveChat": null,
+          "emailSupport": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire publishes support, help center, or contact paths for wallet users.",
+                  "url": "https://help.ambire.com/hc/en-us"
+                }
+              }
+            ]
+          },
+          "aiSupport": null,
+          "publishedSla": null,
+          "inAppHelpCenter": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire provides in-app or product-linked help/support content.",
+                  "url": "https://help.ambire.com/hc/en-us"
+                }
+              }
+            ]
+          },
+          "transactionTroubleshooting": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire support docs include transaction or wallet troubleshooting material.",
+                  "url": "https://help.ambire.com/hc/en-us"
+                }
+              }
+            ]
+          },
+          "scamRecoveryGuidance": null
+        },
+        "developerOffering": {
+          "ref": {
+            "explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://www.ambire.com"
+          },
+          "walletSdk": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire publishes wallet developer docs, SDKs, or public wallet integration repositories.",
+                  "url": "https://github.com/AmbireTech/extension"
+                }
+              }
+            ]
+          },
+          "embeddedWalletSdk": null,
+          "whiteLabelOffering": null,
+          "walletConnectSupport": {
+            "$ref": "featureSupported"
+          },
+          "eip6963": {
+            "$ref": "featureSupported"
+          },
+          "eip5792": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": "https://github.com/AmbireTech/ambire-common/blob/eba5dda7bccbd1c404f293d75c4ea74d939c8d01/src/libs/account/EOA7702.ts#L181-L183",
+                "atomicMultiTransactions": {
+                  "$ref": "featureSupported"
+                }
+              }
+            ]
+          },
+          "deepLinks": null,
+          "mobileLinkingQuality": null
+        },
+        "pricingFeeModel": {
+          "ref": {
+            "explanation": "Ambire states built-in swap and bridge has a flat 0.25% fee and uses fee revenue for WALLET token buybacks.",
+            "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
+          },
+          "swapFees": "Built-in swap and bridge has a flat 0.25% fee.",
+          "bridgeFees": "Built-in swap and bridge has a flat 0.25% fee.",
+          "onRampFees": null,
+          "spreadDisclosure": null,
+          "subscriptionFeatures": null,
+          "cardFees": null,
+          "hiddenPartnerRevenue": null
+        },
+        "releaseVelocity": {
+          "ref": {
+            "explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://www.ambire.com"
+          },
+          "latestReleaseDate": "2026-01-29",
+          "releaseFrequency": "ReleaseFrequency.IRREGULAR",
+          "appStoreUpdateCadence": null,
+          "githubActivity": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Ambire has public GitHub repository activity or releases that can be tracked.",
+                  "url": "https://github.com/AmbireTech/extension"
+                }
+              }
+            ]
+          },
+          "changelogDetail": "ChangelogDetail.BASIC"
+        },
+        "deviceSync": {
+          "ref": {
+            "explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://www.ambire.com"
+          },
+          "syncsAccounts": null,
+          "syncsSettings": null,
+          "syncsContactsOrAddressBook": null,
+          "desktopMobileSync": null,
+          "cloudBackedSync": null,
+          "requiresSameSeedImport": {
+            "$ref": "featureSupported"
+          }
+        }
+      }
+    },
+    "variants": {
+      "BROWSER": true
+    }
+  }
 }

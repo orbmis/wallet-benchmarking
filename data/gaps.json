@@ -1,6 +1,6 @@
 {
   "generated": true,
-  "gapCount": 1456,
+  "gapCount": 1290,
   "naCount": 990,
   "gaps": [
     {
@@ -21,46 +21,6 @@
       "category": "Platforms",
       "type": "state",
       "path": "product.platformCoverage.desktopApp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "obPasskey",
-      "label": "Passkey signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.passkeySignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "obEmail",
-      "label": "Email signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.emailSignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "obGuest",
-      "label": "Guest mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "obEmbedded",
-      "label": "Embedded wallet mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.embeddedWalletMode",
       "hasUnsourcedRef": false
     },
     {
@@ -466,66 +426,6 @@
     {
       "walletId": "argent",
       "walletName": "Argent",
-      "metricKey": "pWeb",
-      "label": "Web app",
-      "category": "Platforms",
-      "type": "state",
-      "path": "product.platformCoverage.webApp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "ecoSui",
-      "label": "Sui",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.sui",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "ecoAptos",
-      "label": "Aptos",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.aptos",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "ecoCardano",
-      "label": "Cardano",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.cardano",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "ecoXrp",
-      "label": "XRP Ledger",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.xrp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "obSeed",
-      "label": "Seed phrase at signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.seedPhraseRequiredAtSignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
       "metricKey": "obPasskey",
       "label": "Passkey signup",
       "category": "Onboarding",
@@ -541,16 +441,6 @@
       "category": "Onboarding",
       "type": "state",
       "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "obEmbedded",
-      "label": "Embedded wallet mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.embeddedWalletMode",
       "hasUnsourcedRef": false
     },
     {
@@ -1041,26 +931,6 @@
       "category": "Pricing & fees",
       "type": "state",
       "path": "product.pricingFeeModel.subscriptionFeatures",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "obEmail",
-      "label": "Email signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.emailSignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "obGuest",
-      "label": "Guest mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.guestMode",
       "hasUnsourcedRef": false
     },
     {
@@ -1676,36 +1546,6 @@
     {
       "walletId": "bitget",
       "walletName": "Bitget Wallet",
-      "metricKey": "ecoCosmos",
-      "label": "Cosmos",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.cosmos",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitget",
-      "walletName": "Bitget Wallet",
-      "metricKey": "ecoCardano",
-      "label": "Cardano",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.cardano",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitget",
-      "walletName": "Bitget Wallet",
-      "metricKey": "ecoXrp",
-      "label": "XRP Ledger",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.xrp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitget",
-      "walletName": "Bitget Wallet",
       "metricKey": "obPasskey",
       "label": "Passkey signup",
       "category": "Onboarding",
@@ -1716,31 +1556,11 @@
     {
       "walletId": "bitget",
       "walletName": "Bitget Wallet",
-      "metricKey": "obEmail",
-      "label": "Email signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.emailSignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitget",
-      "walletName": "Bitget Wallet",
       "metricKey": "obGuest",
       "label": "Guest mode",
       "category": "Onboarding",
       "type": "state",
       "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitget",
-      "walletName": "Bitget Wallet",
-      "metricKey": "obEmbedded",
-      "label": "Embedded wallet mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.embeddedWalletMode",
       "hasUnsourcedRef": false
     },
     {
@@ -1946,121 +1766,11 @@
     {
       "walletId": "brave-wallet",
       "walletName": "Brave Wallet",
-      "metricKey": "pWeb",
-      "label": "Web app",
-      "category": "Platforms",
-      "type": "state",
-      "path": "product.platformCoverage.webApp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "ecoBitcoin",
-      "label": "Bitcoin",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.bitcoin",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "ecoCosmos",
-      "label": "Cosmos",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.cosmos",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "ecoTon",
-      "label": "TON",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.ton",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "ecoSui",
-      "label": "Sui",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.sui",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "ecoAptos",
-      "label": "Aptos",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.aptos",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "ecoCardano",
-      "label": "Cardano",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.cardano",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "ecoXrp",
-      "label": "XRP Ledger",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.xrp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "obPasskey",
-      "label": "Passkey signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.passkeySignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "obEmail",
-      "label": "Email signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.emailSignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
       "metricKey": "obGuest",
       "label": "Guest mode",
       "category": "Onboarding",
       "type": "state",
       "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "obEmbedded",
-      "label": "Embedded wallet mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.embeddedWalletMode",
       "hasUnsourcedRef": false
     },
     {
@@ -2586,101 +2296,11 @@
     {
       "walletId": "mtpelerin",
       "walletName": "Bridge Wallet",
-      "metricKey": "pWeb",
-      "label": "Web app",
-      "category": "Platforms",
-      "type": "state",
-      "path": "product.platformCoverage.webApp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "ecoSolana",
-      "label": "Solana",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.solana",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "ecoSui",
-      "label": "Sui",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.sui",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "ecoAptos",
-      "label": "Aptos",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.aptos",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "ecoCardano",
-      "label": "Cardano",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.cardano",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "ecoXrp",
-      "label": "XRP Ledger",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.xrp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "obPasskey",
-      "label": "Passkey signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.passkeySignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "obEmail",
-      "label": "Email signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.emailSignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
       "metricKey": "obGuest",
       "label": "Guest mode",
       "category": "Onboarding",
       "type": "state",
       "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "obEmbedded",
-      "label": "Embedded wallet mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.embeddedWalletMode",
       "hasUnsourcedRef": false
     },
     {
@@ -3146,51 +2766,11 @@
     {
       "walletId": "coinbase-wallet",
       "walletName": "Coinbase Wallet",
-      "metricKey": "pWeb",
-      "label": "Web app",
-      "category": "Platforms",
-      "type": "state",
-      "path": "product.platformCoverage.webApp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "coinbase-wallet",
-      "walletName": "Coinbase Wallet",
-      "metricKey": "obPasskey",
-      "label": "Passkey signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.passkeySignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "coinbase-wallet",
-      "walletName": "Coinbase Wallet",
-      "metricKey": "obEmail",
-      "label": "Email signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.emailSignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "coinbase-wallet",
-      "walletName": "Coinbase Wallet",
       "metricKey": "obGuest",
       "label": "Guest mode",
       "category": "Onboarding",
       "type": "state",
       "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "coinbase-wallet",
-      "walletName": "Coinbase Wallet",
-      "metricKey": "obEmbedded",
-      "label": "Embedded wallet mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.embeddedWalletMode",
       "hasUnsourcedRef": false
     },
     {
@@ -3591,76 +3171,6 @@
       "category": "Platforms",
       "type": "state",
       "path": "product.platformCoverage.browserNative",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "ecoBitcoin",
-      "label": "Bitcoin",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.bitcoin",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "ecoCosmos",
-      "label": "Cosmos",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.cosmos",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "ecoTon",
-      "label": "TON",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.ton",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "ecoSui",
-      "label": "Sui",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.sui",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "ecoAptos",
-      "label": "Aptos",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.aptos",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "ecoCardano",
-      "label": "Cardano",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.cardano",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "ecoXrp",
-      "label": "XRP Ledger",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.xrp",
       "hasUnsourcedRef": false
     },
     {
@@ -4126,26 +3636,6 @@
     {
       "walletId": "elytro",
       "walletName": "Elytro",
-      "metricKey": "pWeb",
-      "label": "Web app",
-      "category": "Platforms",
-      "type": "state",
-      "path": "product.platformCoverage.webApp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "obSeed",
-      "label": "Seed phrase at signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.seedPhraseRequiredAtSignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
       "metricKey": "obPasskey",
       "label": "Passkey signup",
       "category": "Onboarding",
@@ -4171,16 +3661,6 @@
       "category": "Onboarding",
       "type": "state",
       "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "obEmbedded",
-      "label": "Embedded wallet mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.embeddedWalletMode",
       "hasUnsourcedRef": false
     },
     {
@@ -4716,111 +4196,11 @@
     {
       "walletId": "exodus",
       "walletName": "Exodus",
-      "metricKey": "pWeb",
-      "label": "Web app",
-      "category": "Platforms",
-      "type": "state",
-      "path": "product.platformCoverage.webApp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "ecoCosmos",
-      "label": "Cosmos",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.cosmos",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
       "metricKey": "ecoTon",
       "label": "TON",
       "category": "Ecosystems",
       "type": "state",
       "path": "product.supportedEcosystems.ton",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "ecoSui",
-      "label": "Sui",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.sui",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "ecoAptos",
-      "label": "Aptos",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.aptos",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "ecoCardano",
-      "label": "Cardano",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.cardano",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "ecoXrp",
-      "label": "XRP Ledger",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.xrp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "obPasskey",
-      "label": "Passkey signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.passkeySignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "obEmail",
-      "label": "Email signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.emailSignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "obGuest",
-      "label": "Guest mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "obEmbedded",
-      "label": "Embedded wallet mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.embeddedWalletMode",
       "hasUnsourcedRef": false
     },
     {
@@ -5191,86 +4571,6 @@
       "category": "Platforms",
       "type": "state",
       "path": "product.platformCoverage.browserExtension",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "ecoSui",
-      "label": "Sui",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.sui",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "ecoAptos",
-      "label": "Aptos",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.aptos",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "ecoCardano",
-      "label": "Cardano",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.cardano",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "ecoXrp",
-      "label": "XRP Ledger",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.xrp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "obSeed",
-      "label": "Seed phrase at signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.seedPhraseRequiredAtSignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "obPasskey",
-      "label": "Passkey signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.passkeySignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "obGuest",
-      "label": "Guest mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "obEmbedded",
-      "label": "Embedded wallet mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.embeddedWalletMode",
       "hasUnsourcedRef": false
     },
     {
@@ -5926,56 +5226,6 @@
     {
       "walletId": "frame",
       "walletName": "Frame",
-      "metricKey": "pWeb",
-      "label": "Web app",
-      "category": "Platforms",
-      "type": "state",
-      "path": "product.platformCoverage.webApp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "obPasskey",
-      "label": "Passkey signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.passkeySignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "obEmail",
-      "label": "Email signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.emailSignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "obGuest",
-      "label": "Guest mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "obEmbedded",
-      "label": "Embedded wallet mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.embeddedWalletMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
       "metricKey": "rampBuy",
       "label": "Buy crypto",
       "category": "Fiat ramps",
@@ -6501,56 +5751,6 @@
       "category": "Pricing & fees",
       "type": "state",
       "path": "product.pricingFeeModel.subscriptionFeatures",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "pWeb",
-      "label": "Web app",
-      "category": "Platforms",
-      "type": "state",
-      "path": "product.platformCoverage.webApp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "obPasskey",
-      "label": "Passkey signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.passkeySignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "obEmail",
-      "label": "Email signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.emailSignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "obGuest",
-      "label": "Guest mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "obEmbedded",
-      "label": "Embedded wallet mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.embeddedWalletMode",
       "hasUnsourcedRef": false
     },
     {
@@ -7426,111 +6626,11 @@
     {
       "walletId": "imtoken",
       "walletName": "imToken",
-      "metricKey": "pWeb",
-      "label": "Web app",
-      "category": "Platforms",
-      "type": "state",
-      "path": "product.platformCoverage.webApp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "ecoSolana",
-      "label": "Solana",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.solana",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "ecoCosmos",
-      "label": "Cosmos",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.cosmos",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "ecoSui",
-      "label": "Sui",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.sui",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "ecoAptos",
-      "label": "Aptos",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.aptos",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "ecoCardano",
-      "label": "Cardano",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.cardano",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "ecoXrp",
-      "label": "XRP Ledger",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.xrp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "obPasskey",
-      "label": "Passkey signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.passkeySignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "obEmail",
-      "label": "Email signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.emailSignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
       "metricKey": "obGuest",
       "label": "Guest mode",
       "category": "Onboarding",
       "type": "state",
       "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "obEmbedded",
-      "label": "Embedded wallet mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.embeddedWalletMode",
       "hasUnsourcedRef": false
     },
     {
@@ -8456,46 +7556,6 @@
     {
       "walletId": "metamask",
       "walletName": "MetaMask",
-      "metricKey": "obPasskey",
-      "label": "Passkey signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.passkeySignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "metamask",
-      "walletName": "MetaMask",
-      "metricKey": "obEmail",
-      "label": "Email signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.emailSignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "metamask",
-      "walletName": "MetaMask",
-      "metricKey": "obGuest",
-      "label": "Guest mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "metamask",
-      "walletName": "MetaMask",
-      "metricKey": "obEmbedded",
-      "label": "Embedded wallet mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.embeddedWalletMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "metamask",
-      "walletName": "MetaMask",
       "metricKey": "pfPnl",
       "label": "Profit & loss",
       "category": "Portfolio",
@@ -8866,56 +7926,6 @@
     {
       "walletId": "nufi",
       "walletName": "NuFi",
-      "metricKey": "ecoCosmos",
-      "label": "Cosmos",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.cosmos",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "ecoTon",
-      "label": "TON",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.ton",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "ecoSui",
-      "label": "Sui",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.sui",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "ecoAptos",
-      "label": "Aptos",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.aptos",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "ecoXrp",
-      "label": "XRP Ledger",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.xrp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
       "metricKey": "obPasskey",
       "label": "Passkey signup",
       "category": "Onboarding",
@@ -8941,16 +7951,6 @@
       "category": "Onboarding",
       "type": "state",
       "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "obEmbedded",
-      "label": "Embedded wallet mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.embeddedWalletMode",
       "hasUnsourcedRef": false
     },
     {
@@ -9426,71 +8426,11 @@
     {
       "walletId": "okx",
       "walletName": "OKX Wallet",
-      "metricKey": "ecoAptos",
-      "label": "Aptos",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.aptos",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "okx",
-      "walletName": "OKX Wallet",
-      "metricKey": "ecoCardano",
-      "label": "Cardano",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.cardano",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "okx",
-      "walletName": "OKX Wallet",
-      "metricKey": "ecoXrp",
-      "label": "XRP Ledger",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.xrp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "okx",
-      "walletName": "OKX Wallet",
       "metricKey": "obPasskey",
       "label": "Passkey signup",
       "category": "Onboarding",
       "type": "state",
       "path": "product.onboardingFriction.passkeySignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "okx",
-      "walletName": "OKX Wallet",
-      "metricKey": "obEmail",
-      "label": "Email signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.emailSignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "okx",
-      "walletName": "OKX Wallet",
-      "metricKey": "obGuest",
-      "label": "Guest mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "okx",
-      "walletName": "OKX Wallet",
-      "metricKey": "obEmbedded",
-      "label": "Embedded wallet mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.embeddedWalletMode",
       "hasUnsourcedRef": false
     },
     {
@@ -9866,46 +8806,6 @@
     {
       "walletId": "phantom",
       "walletName": "Phantom",
-      "metricKey": "pWeb",
-      "label": "Web app",
-      "category": "Platforms",
-      "type": "state",
-      "path": "product.platformCoverage.webApp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "phantom",
-      "walletName": "Phantom",
-      "metricKey": "obSeed",
-      "label": "Seed phrase at signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.seedPhraseRequiredAtSignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "phantom",
-      "walletName": "Phantom",
-      "metricKey": "obPasskey",
-      "label": "Passkey signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.passkeySignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "phantom",
-      "walletName": "Phantom",
-      "metricKey": "obEmail",
-      "label": "Email signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.emailSignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "phantom",
-      "walletName": "Phantom",
       "metricKey": "obGuest",
       "label": "Guest mode",
       "category": "Onboarding",
@@ -10226,56 +9126,6 @@
     {
       "walletId": "pillarx",
       "walletName": "PillarX",
-      "metricKey": "ecoSui",
-      "label": "Sui",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.sui",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "ecoAptos",
-      "label": "Aptos",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.aptos",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "ecoCardano",
-      "label": "Cardano",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.cardano",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "ecoXrp",
-      "label": "XRP Ledger",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.xrp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "obPasskey",
-      "label": "Passkey signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.passkeySignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
       "metricKey": "obEmail",
       "label": "Email signup",
       "category": "Onboarding",
@@ -10291,16 +9141,6 @@
       "category": "Onboarding",
       "type": "state",
       "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "obEmbedded",
-      "label": "Embedded wallet mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.embeddedWalletMode",
       "hasUnsourcedRef": false
     },
     {
@@ -10836,36 +9676,6 @@
     {
       "walletId": "rabby",
       "walletName": "Rabby",
-      "metricKey": "pWeb",
-      "label": "Web app",
-      "category": "Platforms",
-      "type": "state",
-      "path": "product.platformCoverage.webApp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rabby",
-      "walletName": "Rabby",
-      "metricKey": "obPasskey",
-      "label": "Passkey signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.passkeySignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rabby",
-      "walletName": "Rabby",
-      "metricKey": "obGuest",
-      "label": "Guest mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rabby",
-      "walletName": "Rabby",
       "metricKey": "rampBuy",
       "label": "Buy crypto",
       "category": "Fiat ramps",
@@ -11226,26 +10036,6 @@
     {
       "walletId": "rainbow",
       "walletName": "Rainbow",
-      "metricKey": "pWeb",
-      "label": "Web app",
-      "category": "Platforms",
-      "type": "state",
-      "path": "product.platformCoverage.webApp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "ecoBitcoin",
-      "label": "Bitcoin",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.bitcoin",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
       "metricKey": "ecoSolana",
       "label": "Solana",
       "category": "Ecosystems",
@@ -11256,101 +10046,11 @@
     {
       "walletId": "rainbow",
       "walletName": "Rainbow",
-      "metricKey": "ecoCosmos",
-      "label": "Cosmos",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.cosmos",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "ecoTon",
-      "label": "TON",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.ton",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
       "metricKey": "ecoSui",
       "label": "Sui",
       "category": "Ecosystems",
       "type": "state",
       "path": "product.supportedEcosystems.sui",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "ecoAptos",
-      "label": "Aptos",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.aptos",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "ecoCardano",
-      "label": "Cardano",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.cardano",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "ecoXrp",
-      "label": "XRP Ledger",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.xrp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "obPasskey",
-      "label": "Passkey signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.passkeySignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "obEmail",
-      "label": "Email signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.emailSignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "obGuest",
-      "label": "Guest mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "obEmbedded",
-      "label": "Embedded wallet mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.embeddedWalletMode",
       "hasUnsourcedRef": false
     },
     {
@@ -11781,66 +10481,6 @@
       "category": "Pricing & fees",
       "type": "state",
       "path": "product.pricingFeeModel.subscriptionFeatures",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "ecoSui",
-      "label": "Sui",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.sui",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "ecoAptos",
-      "label": "Aptos",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.aptos",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "ecoCardano",
-      "label": "Cardano",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.cardano",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "ecoXrp",
-      "label": "XRP Ledger",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.xrp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "obGuest",
-      "label": "Guest mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "obEmbedded",
-      "label": "Embedded wallet mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.embeddedWalletMode",
       "hasUnsourcedRef": false
     },
     {
@@ -12426,26 +11066,6 @@
     {
       "walletId": "trust-wallet",
       "walletName": "Trust Wallet",
-      "metricKey": "pWeb",
-      "label": "Web app",
-      "category": "Platforms",
-      "type": "state",
-      "path": "product.platformCoverage.webApp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
-      "metricKey": "obPasskey",
-      "label": "Passkey signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.passkeySignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
       "metricKey": "obEmail",
       "label": "Email signup",
       "category": "Onboarding",
@@ -12461,16 +11081,6 @@
       "category": "Onboarding",
       "type": "state",
       "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
-      "metricKey": "obEmbedded",
-      "label": "Embedded wallet mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.embeddedWalletMode",
       "hasUnsourcedRef": false
     },
     {
@@ -12826,111 +11436,11 @@
     {
       "walletId": "uniswap-wallet",
       "walletName": "Uniswap Wallet",
-      "metricKey": "ecoBitcoin",
-      "label": "Bitcoin",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.bitcoin",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "ecoCosmos",
-      "label": "Cosmos",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.cosmos",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "ecoTon",
-      "label": "TON",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.ton",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "ecoSui",
-      "label": "Sui",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.sui",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "ecoAptos",
-      "label": "Aptos",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.aptos",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "ecoCardano",
-      "label": "Cardano",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.cardano",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "ecoXrp",
-      "label": "XRP Ledger",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.xrp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "obPasskey",
-      "label": "Passkey signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.passkeySignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "obEmail",
-      "label": "Email signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.emailSignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
       "metricKey": "obGuest",
       "label": "Guest mode",
       "category": "Onboarding",
       "type": "state",
       "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "obEmbedded",
-      "label": "Embedded wallet mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.embeddedWalletMode",
       "hasUnsourcedRef": false
     },
     {
@@ -13396,126 +11906,6 @@
     {
       "walletId": "zerion",
       "walletName": "Zerion",
-      "metricKey": "ecoBitcoin",
-      "label": "Bitcoin",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.bitcoin",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "ecoSolana",
-      "label": "Solana",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.solana",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "ecoCosmos",
-      "label": "Cosmos",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.cosmos",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "ecoTon",
-      "label": "TON",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.ton",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "ecoSui",
-      "label": "Sui",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.sui",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "ecoAptos",
-      "label": "Aptos",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.aptos",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "ecoCardano",
-      "label": "Cardano",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.cardano",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "ecoXrp",
-      "label": "XRP Ledger",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.xrp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "obPasskey",
-      "label": "Passkey signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.passkeySignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "obEmail",
-      "label": "Email signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.emailSignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "obGuest",
-      "label": "Guest mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "obEmbedded",
-      "label": "Embedded wallet mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.embeddedWalletMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
       "metricKey": "rampSell",
       "label": "Sell crypto",
       "category": "Fiat ramps",
@@ -13921,56 +12311,6 @@
       "category": "Pricing & fees",
       "type": "state",
       "path": "product.pricingFeeModel.subscriptionFeatures",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "pWeb",
-      "label": "Web app",
-      "category": "Platforms",
-      "type": "state",
-      "path": "product.platformCoverage.webApp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "obSeed",
-      "label": "Seed phrase at signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.seedPhraseRequiredAtSignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "obPasskey",
-      "label": "Passkey signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.passkeySignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "obGuest",
-      "label": "Guest mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "obEmbedded",
-      "label": "Embedded wallet mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.embeddedWalletMode",
       "hasUnsourcedRef": false
     },
     {

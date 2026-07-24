@@ -1,1120 +1,1210 @@
 {
-	"id": "mtpelerin",
-	"source": "software-wallets",
-	"export": "mtpelerin",
-	"data": {
-		"metadata": {
-			"id": "mtpelerin",
-			"displayName": "Bridge Wallet",
-			"tableName": "Bridge Wallet",
-			"blurb": "Buy, swap, and sell crypto with the lowest fees, zero hidden costs, and full control over your cryptoassets.",
-			"contributors": [
-				{
-					"$ref": "sigri"
-				},
-				{
-					"$ref": "mattmatt"
-				}
-			],
-			"iconExtension": "svg",
-			"lastUpdated": "2025-08-26",
-			"urls": {
-				"repositories": [
-					"https://github.com/mtpelerin"
-				],
-				"socials": {
-					"discord": "https://discord.com/invite/WErDKTvMr7",
-					"facebook": "https://www.facebook.com/mtpelerin/",
-					"instagram": "https://www.instagram.com/mtpelerin/",
-					"linkedin": "https://www.linkedin.com/company/mt-pelerin/",
-					"x": "https://x.com/mtpelerin",
-					"youtube": "https://www.youtube.com/@mtpelerin"
-				},
-				"websites": [
-					"https://www.mtpelerin.com/"
-				]
-			}
-		},
-		"features": {
-			"accountSupport": {
-				"defaultAccountType": "AccountType.eoa",
-				"eip7702": {
-					"$call": "notSupportedWithRef",
-					"args": [
-						{
-							"ref": [
-								{
-									"explanation": "Mt Pelerin documents Bridge Wallet as a non-custodial wallet controlled through the user's secret phrase; no public Bridge Wallet documentation was found for smart-account, MPC, Safe, ERC-4337, or EIP-7702 account support.",
-									"url": "https://www.mtpelerin.com/support"
-								},
-								{
-									"explanation": "The Bridge Wallet product page describes a self-custodial wallet where Mt Pelerin does not hold, control, or access users' crypto-assets or private keys.",
-									"url": "https://www.mtpelerin.com/bridge-wallet"
-								}
-							]
-						}
-					]
-				},
-				"eoa": {
-					"$call": "supported",
-					"args": [
-						{
-							"ref": [
-								{
-									"explanation": "Mt Pelerin describes Bridge Wallet as a non-custodial app where the user controls the wallet through a secret phrase.",
-									"url": "https://www.mtpelerin.com/support"
-								},
-								{
-									"explanation": "The Google Play listing describes Bridge Wallet as self-custodial and says nobody else can control the user's funds.",
-									"url": "https://play.google.com/store/apps/details?id=com.mtpelerin.bridge"
-								}
-							],
-							"keyDerivation": {
-								"seedPhrase": "BIP39"
-							}
-						}
-					]
-				},
-				"mpc": {
-					"$call": "notSupportedWithRef",
-					"args": [
-						{
-							"ref": [
-								{
-									"explanation": "Mt Pelerin documents Bridge Wallet as a non-custodial wallet controlled through the user's secret phrase; no public Bridge Wallet documentation was found for smart-account, MPC, Safe, ERC-4337, or EIP-7702 account support.",
-									"url": "https://www.mtpelerin.com/support"
-								},
-								{
-									"explanation": "The Bridge Wallet product page describes a self-custodial wallet where Mt Pelerin does not hold, control, or access users' crypto-assets or private keys.",
-									"url": "https://www.mtpelerin.com/bridge-wallet"
-								}
-							]
-						}
-					]
-				},
-				"rawErc4337": {
-					"$call": "notSupportedWithRef",
-					"args": [
-						{
-							"ref": [
-								{
-									"explanation": "Mt Pelerin documents Bridge Wallet as a non-custodial wallet controlled through the user's secret phrase; no public Bridge Wallet documentation was found for smart-account, MPC, Safe, ERC-4337, or EIP-7702 account support.",
-									"url": "https://www.mtpelerin.com/support"
-								},
-								{
-									"explanation": "The Bridge Wallet product page describes a self-custodial wallet where Mt Pelerin does not hold, control, or access users' crypto-assets or private keys.",
-									"url": "https://www.mtpelerin.com/bridge-wallet"
-								}
-							]
-						}
-					]
-				},
-				"safe": {
-					"$call": "notSupportedWithRef",
-					"args": [
-						{
-							"ref": [
-								{
-									"explanation": "Mt Pelerin documents Bridge Wallet as a non-custodial wallet controlled through the user's secret phrase; no public Bridge Wallet documentation was found for smart-account, MPC, Safe, ERC-4337, or EIP-7702 account support.",
-									"url": "https://www.mtpelerin.com/support"
-								},
-								{
-									"explanation": "The Bridge Wallet product page describes a self-custodial wallet where Mt Pelerin does not hold, control, or access users' crypto-assets or private keys.",
-									"url": "https://www.mtpelerin.com/bridge-wallet"
-								}
-							]
-						}
-					]
-				}
-			},
-			"addressResolution": {
-				"ref": {
-					"explanation": "Bridge Wallet support documents sending funds by typing, scanning, or selecting a destination wallet address, with no ENS-name recipient format described.",
-					"url": "https://www.mtpelerin.com/support"
-				},
-				"chainSpecificAddressing": {
-					"erc7828": null,
-					"erc7831": null
-				},
-				"nonChainSpecificEnsResolution": {
-					"$call": "notSupportedWithRef",
-					"args": [
-						{
-							"ref": {
-								"explanation": "Bridge Wallet's send instructions tell users to type, scan, or select the address of the destination wallet and warn that wrong addresses lose funds; they do not document ENS-name resolution for recipients.",
-								"url": "https://www.mtpelerin.com/support"
-							}
-						}
-					]
-				}
-			},
-			"chainAbstraction": {
-				"bridging": {
-					"builtInBridging": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "Bridge Wallet's product page says users can exchange cryptocurrencies with each other and across the 15 chains supported by the app.",
-										"url": "https://www.mtpelerin.com/bridge-wallet"
-									},
-									{
-										"explanation": "The Google Play listing says Bridge Wallet can swap cryptocurrencies and transfer them across 15 chains.",
-										"url": "https://play.google.com/store/apps/details?id=com.mtpelerin.bridge"
-									}
-								]
-							}
-						]
-					},
-					"suggestedBridging": null
-				},
-				"crossChainBalances": {
-					"ref": {
-						"explanation": "Mt Pelerin lists the mainnet networks supported by Bridge Wallet, including Ethereum, Arbitrum, Avalanche C-Chain, Base, BNB Chain, Celo, Gnosis Chain, Optimism, Polygon, Rootstock, Sonic, Tezos, zkSync Era, Bitcoin, and Lightning.",
-						"url": "https://www.mtpelerin.com/support"
-					},
-					"globalAccountValue": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "The Bridge Wallet product page describes watching the user's crypto portfolio grow and presents the wallet as a multi-chain crypto super-app across the supported chains.",
-									"url": "https://www.mtpelerin.com/bridge-wallet"
-								}
-							}
-						]
-					},
-					"perChainAccountValue": null
-				}
-			},
-			"chainConfigurability": null,
-			"ecosystem": {
-				"delegation": null
-			},
-			"integration": {
-				"browser": {
-					"1193": null,
-					"2700": null,
-					"6963": null,
-					"ref": {
-						"$ref": "refTodo"
-					}
-				},
-				"walletCall": null
-			},
-			"licensing": {
-				"type": "LicensingType.SINGLE_WALLET_REPO_AND_LICENSE",
-				"walletAppLicense": {
-					"ref": {
-						"$ref": "refNotNecessary"
-					},
-					"license": "SourceNotAvailableLicense.PROPRIETARY"
-				}
-			},
-			"monetization": {
-				"ref": "https://developers.mtpelerin.com/service-information/revenue-sharing",
-				"revenueBreakdownIsPublic": false,
-				"strategies": {
-					"donations": null,
-					"ecosystemGrants": null,
-					"governanceTokenLowFloat": null,
-					"governanceTokenMostlyDistributed": null,
-					"hiddenConvenienceFees": null,
-					"publicOffering": null,
-					"selfFunded": true,
-					"transparentConvenienceFees": null,
-					"ventureCapital": null
-				}
-			},
-			"multiAddress": {
-				"$ref": "featureSupported"
-			},
-			"privacy": {
-				"analytics": {
-					"crashReports": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Apple's App Store privacy disclosure for Bridge Wallet lists crash data under diagnostics used for analytics.",
-									"url": "https://apps.apple.com/us/app/bridge-wallet-bitcoin-crypto/id1481859680"
-								}
-							}
-						]
-					},
-					"usage": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Apple's App Store privacy disclosure for Bridge Wallet lists product interaction usage data and identifiers under analytics.",
-									"url": "https://apps.apple.com/us/app/bridge-wallet-bitcoin-crypto/id1481859680"
-								}
-							}
-						]
-					}
-				},
-				"appIsolation": null,
-				"dataCollection": null,
-				"privacyPolicy": "https://www.mtpelerin.com/privacy-policy",
-				"transactionPrivacy": {
-					"defaultFungibleTokenTransferMode": "PUBLIC",
-					"STEALTH_ADDRESSES": {
-						"$ref": "notSupported"
-					},
-					"TORNADO_CASH_NOVA": {
-						"$ref": "notSupported"
-					},
-					"PRIVACY_POOLS": {
-						"$ref": "notSupported"
-					},
-					"RAILGUN": {
-						"$ref": "notSupported"
-					}
-				}
-			},
-			"profile": "WalletProfile.GENERIC",
-			"security": {
-				"accountRecovery": null,
-				"bugBountyProgram": {
-					"$call": "supported",
-					"args": [
-						{
-							"ref": [
-								{
-									"explanation": "The bug bounty program is focused around its smart contracts, mobile apps and website, and is mostly aimed at addressing serious security issues directly affecting fund safety and user data protection.",
-									"url": "https://immunefi.com/bug-bounty/mtpelerin/information/"
-								}
-							],
-							"availability": "BugBountyProgramAvailability.ACTIVE",
-							"coverageBreadth": "FULL_SCOPE",
-							"dateStarted": "2021-02-08",
-							"disclosure": {
-								"$ref": "notSupported"
-							},
-							"legalProtections": {
-								"$ref": "notSupported"
-							},
-							"platform": "BugBountyPlatform.IMMUNEFI",
-							"rewards": {
-								"$call": "supported",
-								"args": [
-									{
-										"currency": "USD",
-										"maximum": 100000,
-										"minimum": 1000
-									}
-								]
-							},
-							"upgradePathAvailable": false
-						}
-					]
-				},
-				"duressResistance": {
-					"basicUnlock": {
-						"ref": {
-							"explanation": "Mt Pelerin's support page says Bridge Wallet uses a password to encrypt and secure the secret phrase on the device, and that restoring on a new device starts by creating a new password.",
-							"url": "https://www.mtpelerin.com/support"
-						},
-						"mechanisms": {
-							"PIN": false,
-							"PASSWORD": true,
-							"BIOMETRIC": false,
-							"PATTERN": false
-						}
-					},
-					"duressMode": {
-						"$ref": "notSupported"
-					}
-				},
-				"hardwareWalletSupport": {
-					"ref": {
-						"$ref": "refTodo"
-					},
-					"wallets": {}
-				},
-				"keysHandling": null,
-				"lightClient": {
-					"ethereumL1": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Mt Pelerin documents Bridge Wallet around a fixed list of supported blockchain networks and app-selected network switching, with no embedded Ethereum L1 light-client mode described.",
-									"url": "https://www.mtpelerin.com/support"
-								}
-							}
-						]
-					}
-				},
-				"passkeyVerification": {
-					"$ref": "notSupported"
-				},
-				"publicSecurityAudits": [
-					{
-						"ref": "https://old.chainsecurity.com/wp-content/uploads/2019/09/ChainSecurity_MtPelerin.pdf",
-						"auditDate": "2019-09-01",
-						"auditor": {
-							"$ref": "chainsecurity"
-						},
-						"unpatchedFlaws": "UNKNOWN",
-						"variantsScope": "BRIDGE_PROTOCOL_SMART_CONTRACTS"
-					}
-				],
-				"scamAlerts": {
-					"contractTransactionWarning": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet's WalletConnect and send-flow support material gives general safety guidance and manual gas/data controls, but does not document malicious-contract registry checks or contract-risk warnings.",
-									"url": "https://www.mtpelerin.com/support"
-								}
-							}
-						]
-					},
-					"scamUrlWarning": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Mt Pelerin's Bridge Wallet support safety notice tells users to verify website URLs before connecting through WalletConnect, avoid untrusted websites, and treat private-message wallet links as scams.",
-									"url": "https://www.mtpelerin.com/support"
-								},
-								"leaksIp": null,
-								"leaksUserAddress": null,
-								"leaksVisitedUrl": null
-							}
-						]
-					},
-					"sendTransactionWarning": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet's send flow tells users to double-check the destination address and notes that transfers are immediately initiated after clicking Send, but does not document automated risky-recipient, new-recipient, or whitelist warnings.",
-									"url": "https://www.mtpelerin.com/support"
-								}
-							}
-						]
-					}
-				},
-				"securityBestPractices": null,
-				"transactionLegibility": {
-					"ref": {
-						"explanation": "Bridge Wallet's product page says WalletConnect lets users connect to DeFi apps and review, approve, or reject transactions from the phone.",
-						"url": "https://www.mtpelerin.com/bridge-wallet"
-					},
-					"transactionDetailsDisplay": {
-						"$call": "supported",
-						"args": [
-							{
-								"from": null,
-								"to": null,
-								"value": null
-							}
-						]
-					},
-					"transactionSimulations": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet's send flow documents address entry, amount entry, optional manual gas/data changes, and immediate transfer initiation after clicking Send; it does not describe transaction outcome simulation before signing.",
-									"url": "https://www.mtpelerin.com/support"
-								}
-							}
-						]
-					}
-				}
-			},
-			"selfSovereignty": {
-				"permissionsManagement": {
-					"$call": "notSupportedWithRef",
-					"args": [
-						{
-							"ref": {
-								"explanation": "Bridge Wallet support documents receiving, sending, WalletConnect use, manual token addition, and pending transaction cancellation, but not wallet-native token approval inspection or revocation.",
-								"url": "https://www.mtpelerin.com/support"
-							}
-						}
-					]
-				},
-				"transactionSubmission": {
-					"l1": {
-						"ref": {
-							"explanation": "Mt Pelerin support documents transaction submission through Bridge Wallet on its supported networks; users select supported app networks and can adjust gas/data parameters, but the app documentation does not expose a user-selected Ethereum mainnet RPC/self-hosted-node broadcast path.",
-							"url": "https://www.mtpelerin.com/support"
-						},
-						"selfBroadcastViaDirectGossip": null,
-						"selfBroadcastViaSelfHostedNode": {
-							"$call": "notSupportedWithRef",
-							"args": [
-								{
-									"ref": {
-										"explanation": "Bridge Wallet support describes a fixed supported-network model and send flow inside the app, rather than configuring Ethereum mainnet RPC or broadcasting via a self-hosted node.",
-										"url": "https://www.mtpelerin.com/support"
-									}
-								}
-							]
-						}
-					},
-					"l2": {
-						"arbitrum": null,
-						"opStack": null,
-						"ref": {
-							"$ref": "refTodo"
-						}
-					}
-				}
-			},
-			"transparency": {
-				"operationFees": null,
-				"releaseTransparency": {
-					"artifactSigning": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Mt Pelerin publishes the Bridge Wallet APK and a SHA256 fingerprint for verifying the APK signing certificate.",
-									"url": "https://www.mtpelerin.com/bridge-wallet"
-								}
-							}
-						]
-					},
-					"dependencyLocking": null,
-					"dependencyVulnerabilityScanning": null,
-					"hasPublicChangelog": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": [
-									{
-										"explanation": "Apple's App Store page includes Bridge Wallet version history and release notes.",
-										"url": "https://apps.apple.com/us/app/bridge-wallet-bitcoin-crypto/id1481859680"
-									},
-									{
-										"explanation": "Mt Pelerin's Bridge Wallet page publishes the current APK version.",
-										"url": "https://www.mtpelerin.com/bridge-wallet"
-									}
-								]
-							}
-						]
-					},
-					"hermeticBuilds": null,
-					"repositoryChangeControls": null,
-					"reproducibleBuilds": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet is distributed as a proprietary/source-unavailable app; no public source tree or reproducible-build instructions are published for independently reproducing the release artifact.",
-									"url": "https://www.mtpelerin.com/bridge-wallet"
-								}
-							}
-						]
-					}
-				}
-			},
-			"product": {
-				"platformCoverage": {
-					"ref": {
-						"explanation": "Mt Pelerin support describes Bridge Wallet as a mobile app and Google Play listing provides Android app details.",
-						"url": "https://www.mtpelerin.com/support"
-					},
-					"desktopApp": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet support focuses on mobile app; no desktop app is described.",
-									"url": "https://www.mtpelerin.com/support"
-								}
-							}
-						]
-					},
-					"mobileApp": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet support has a Mobile app section and Google Play app listing.",
-									"url": "https://www.mtpelerin.com/support"
-								}
-							}
-						]
-					},
-					"browserExtension": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet support describes mobile app and WalletConnect, not a browser extension.",
-									"url": "https://www.mtpelerin.com/support"
-								}
-							}
-						]
-					},
-					"browserNative": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet is not browser-native.",
-									"url": "https://www.mtpelerin.com/support"
-								}
-							}
-						]
-					},
-					"webApp": null,
-					"ios": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet is a mobile app; iOS support is implied by app docs but not separately opened in this pass.",
-									"url": "https://www.mtpelerin.com/support"
-								}
-							}
-						]
-					},
-					"android": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet Google Play listing is available.",
-									"url": "https://play.google.com/store/apps/details?hl=en&id=com.mtpelerin.bridge"
-								}
-							}
-						]
-					},
-					"chrome": null,
-					"firefox": null,
-					"safari": null
-				},
-				"supportedEcosystems": {
-					"ref": {
-						"explanation": "Mt Pelerin support lists Bridge Wallet networks: Arbitrum, Avalanche C-Chain, Base, BNB, Bitcoin, Bitcoin Lightning, Celo, Ethereum, Fantom, Gnosis, Optimism, Polygon, Rootstock, Sonic, Tezos, and zkSync Era.",
-						"url": "https://www.mtpelerin.com/support"
-					},
-					"evm": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet supports many EVM networks including Ethereum, Arbitrum, Base, BNB, Optimism, Polygon, zkSync Era, and more.",
-									"url": "https://www.mtpelerin.com/support"
-								}
-							}
-						]
-					},
-					"solana": null,
-					"bitcoin": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet supports Bitcoin.",
-									"url": "https://www.mtpelerin.com/support"
-								}
-							}
-						]
-					},
-					"cosmos": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet supported-network list reviewed does not include Cosmos.",
-									"url": "https://www.mtpelerin.com/support"
-								}
-							}
-						]
-					},
-					"ton": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet supported-network list reviewed does not include TON.",
-									"url": "https://www.mtpelerin.com/support"
-								}
-							}
-						]
-					},
-					"starknet": null,
-					"sui": null,
-					"aptos": null,
-					"xrp": null,
-					"cardano": null,
-					"lightning": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet supports Bitcoin Lightning.",
-									"url": "https://www.mtpelerin.com/support"
-								}
-							}
-						]
-					},
-					"other": [
-						{
-							"name": "Tezos",
-							"ref": {
-								"explanation": "Bridge Wallet supports Tezos.",
-								"url": "https://www.mtpelerin.com/support"
-							}
-						}
-					]
-				},
-				"dappExperience": {
-					"ref": {
-						"explanation": "Bridge Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://www.mtpelerin.com/"
-					},
-					"inAppBrowser": null,
-					"curatedDappDirectory": null,
-					"dappSearch": null,
-					"walletConnectOnlyMode": {
-						"$ref": "notSupported"
-					},
-					"featuredApps": null,
-					"riskRatedDiscovery": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet provides risk warnings or risk-aware dapp/transaction discovery cues.",
-									"url": "https://www.mtpelerin.com/"
-								}
-							}
-						]
-					}
-				},
-				"fiatRamps": {
-					"ref": {
-						"explanation": "Bridge Wallet Google Play and Mt Pelerin support describe buying/selling crypto, bank transfers, card, Google Pay, personal IBAN, and supported fiat corridors.",
-						"url": "https://play.google.com/store/apps/details?hl=en&id=com.mtpelerin.bridge"
-					},
-					"buyCrypto": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet supports buying crypto by bank transfer, card, or Google Pay.",
-									"url": "https://play.google.com/store/apps/details?hl=en&id=com.mtpelerin.bridge"
-								}
-							}
-						]
-					},
-					"sellCrypto": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet supports cashing out/selling crypto to bank transfers.",
-									"url": "https://play.google.com/store/apps/details?hl=en&id=com.mtpelerin.bridge"
-								}
-							}
-						]
-					},
-					"bankTransfer": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet supports bank transfers and personal IBAN flows.",
-									"url": "https://www.mtpelerin.com/support"
-								}
-							}
-						]
-					},
-					"card": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet supports card purchases.",
-									"url": "https://play.google.com/store/apps/details?hl=en&id=com.mtpelerin.bridge"
-								}
-							}
-						]
-					},
-					"applePay": null,
-					"googlePay": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet supports Google Pay purchases.",
-									"url": "https://play.google.com/store/apps/details?hl=en&id=com.mtpelerin.bridge"
-								}
-							}
-						]
-					},
-					"kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
-					"providers": [
-						"Mt Pelerin"
-					],
-					"regionalAvailability": "Mt Pelerin publishes multiple country/fiat rails; exact limits and identification depend on profile/transaction rules."
-				},
-				"gasUx": {
-					"ref": {
-						"explanation": "Mt Pelerin support says Bridge Wallet lets users manually change gas and data parameters under Advanced and must cover network costs.",
-						"url": "https://www.mtpelerin.com/support"
-					},
-					"gasCustomization": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet send flow allows changing gas and data parameters under Advanced.",
-									"url": "https://www.mtpelerin.com/support"
-								}
-							}
-						]
-					},
-					"gasSponsorship": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Mt Pelerin support says users must cover network costs.",
-									"url": "https://www.mtpelerin.com/support"
-								}
-							}
-						]
-					},
-					"gasAbstraction": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Mt Pelerin support says users need native network-cost assets for withdrawal/swap/send.",
-									"url": "https://www.mtpelerin.com/support"
-								}
-							}
-						]
-					},
-					"payGasInStablecoins": null,
-					"payGasWithReceivedToken": null,
-					"speedPresets": null,
-					"stuckTransactionRecovery": null
-				},
-				"recoveryUx": {
-					"ref": {
-						"explanation": "Mt Pelerin support says Bridge Wallet is controlled by a secret phrase and restored by entering the phrase; password cannot be recovered without restoring the wallet.",
-						"url": "https://www.mtpelerin.com/support"
-					},
-					"seedOnlyRecovery": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet is controlled/restored through a secret phrase.",
-									"url": "https://www.mtpelerin.com/support"
-								}
-							}
-						]
-					},
-					"cloudBackup": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet support says no password/secret phrase is stored elsewhere.",
-									"url": "https://www.mtpelerin.com/support"
-								}
-							}
-						]
-					},
-					"socialRecovery": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet support describes secret-phrase recovery, not social recovery.",
-									"url": "https://www.mtpelerin.com/support"
-								}
-							}
-						]
-					},
-					"guardianRecovery": {
-						"$call": "notSupportedWithRef",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet support describes secret-phrase recovery, not guardian recovery.",
-									"url": "https://www.mtpelerin.com/support"
-								}
-							}
-						]
-					},
-					"passkeyRecovery": null,
-					"emergencyKit": null,
-					"recoveryRehearsal": null
-				},
-				"onboardingFriction": {
-					"ref": {
-						"explanation": "Bridge Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://www.mtpelerin.com/"
-					},
-					"seedPhraseRequiredAtSignup": {
-						"$ref": "featureSupported"
-					},
-					"passkeySignup": null,
-					"emailSignup": null,
-					"phoneSignup": null,
-					"kycRequiredForWallet": {
-						"$ref": "notSupported"
-					},
-					"guestMode": null,
-					"embeddedWalletMode": null,
-					"timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
-				},
-				"portfolioManagement": {
-					"ref": {
-						"explanation": "Bridge Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://www.mtpelerin.com/"
-					},
-					"netWorth": {
-						"$ref": "featureSupported"
-					},
-					"pnl": null,
-					"costBasis": null,
-					"tokenCategories": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet provides token balance and asset-list portfolio views.",
-									"url": "https://www.mtpelerin.com/"
-								}
-							}
-						]
-					},
-					"nftSupport": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet supports NFT display or NFT portfolio management in at least one wallet surface.",
-									"url": "https://www.mtpelerin.com/"
-								}
-							}
-						]
-					},
-					"collectionViews": null,
-					"watchOnlyWallets": null,
-					"multiWalletAggregation": {
-						"$ref": "featureSupported"
-					}
-				},
-				"notifications": {
-					"ref": {
-						"explanation": "Bridge Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://www.mtpelerin.com/"
-					},
-					"sendReceive": null,
-					"priceAlerts": null,
-					"approvalAlerts": null,
-					"bridgeCompletion": null,
-					"failedTransaction": null,
-					"securityAlerts": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet supports security alerts or transaction-risk warnings.",
-									"url": "https://www.mtpelerin.com/"
-								}
-							}
-						]
-					},
-					"marketAlerts": null
-				},
-				"nftCapabilities": {
-					"ref": {
-						"explanation": "Bridge Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://www.mtpelerin.com/"
-					},
-					"display": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet supports displaying NFTs or collectibles in the wallet.",
-									"url": "https://www.mtpelerin.com/"
-								}
-							}
-						]
-					},
-					"send": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet supports wallet NFT transfer flows or NFT asset management.",
-									"url": "https://www.mtpelerin.com/"
-								}
-							}
-						]
-					},
-					"mint": null,
-					"marketplaceIntegration": null,
-					"spamNftHiding": null,
-					"collectionMetadataRefresh": null,
-					"royaltiesOrOffers": null
-				},
-				"defiPositionAwareness": {
-					"ref": {
-						"explanation": "Bridge Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://www.mtpelerin.com/"
-					},
-					"lendingPositions": null,
-					"stakingPositions": null,
-					"lpPositions": null,
-					"vaultPositions": null,
-					"perProtocolBalances": null,
-					"claimableRewards": null,
-					"liquidationWarnings": null
-				},
-				"stakingEarn": {
-					"ref": {
-						"explanation": "Bridge Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://www.mtpelerin.com/"
-					},
-					"nativeStaking": null,
-					"liquidStaking": null,
-					"validatorChoice": null,
-					"apyDisplay": null,
-					"rewardsClaiming": null,
-					"providerDependency": null,
-					"lockupDisclosure": null
-				},
-				"customerSupport": {
-					"ref": {
-						"explanation": "Bridge Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://www.mtpelerin.com/"
-					},
-					"liveChat": null,
-					"emailSupport": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet publishes support, help center, or contact paths for wallet users.",
-									"url": "https://www.mtpelerin.com/"
-								}
-							}
-						]
-					},
-					"aiSupport": null,
-					"publishedSla": null,
-					"inAppHelpCenter": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet provides in-app or product-linked help/support content.",
-									"url": "https://www.mtpelerin.com/"
-								}
-							}
-						]
-					},
-					"transactionTroubleshooting": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet support docs include transaction or wallet troubleshooting material.",
-									"url": "https://www.mtpelerin.com/"
-								}
-							}
-						]
-					},
-					"scamRecoveryGuidance": null
-				},
-				"developerOffering": {
-					"ref": {
-						"explanation": "Bridge Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://www.mtpelerin.com/"
-					},
-					"walletSdk": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet publishes wallet developer docs, SDKs, or public wallet integration repositories.",
-									"url": "https://github.com/mtpelerin"
-								}
-							}
-						]
-					},
-					"embeddedWalletSdk": null,
-					"whiteLabelOffering": null,
-					"walletConnectSupport": null,
-					"eip6963": null,
-					"eip5792": null,
-					"deepLinks": null,
-					"mobileLinkingQuality": null
-				},
-				"pricingFeeModel": {
-					"ref": {
-						"explanation": "Bridge Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://www.mtpelerin.com/"
-					},
-					"swapFees": null,
-					"bridgeFees": null,
-					"onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
-					"spreadDisclosure": null,
-					"subscriptionFeatures": null,
-					"cardFees": "Card fees are provider-dependent where card purchase is available.",
-					"hiddenPartnerRevenue": null
-				},
-				"releaseVelocity": {
-					"ref": {
-						"explanation": "Bridge Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://www.mtpelerin.com/"
-					},
-					"latestReleaseDate": "2025-08-26",
-					"releaseFrequency": "ReleaseFrequency.IRREGULAR",
-					"appStoreUpdateCadence": "App-store cadence should be measured from current app-store release history in a deeper pass.",
-					"githubActivity": {
-						"$call": "supported",
-						"args": [
-							{
-								"ref": {
-									"explanation": "Bridge Wallet has public GitHub repository activity or releases that can be tracked.",
-									"url": "https://github.com/mtpelerin"
-								}
-							}
-						]
-					},
-					"changelogDetail": "ChangelogDetail.BASIC"
-				},
-				"deviceSync": {
-					"ref": {
-						"explanation": "Bridge Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
-						"url": "https://www.mtpelerin.com/"
-					},
-					"syncsAccounts": null,
-					"syncsSettings": null,
-					"syncsContactsOrAddressBook": null,
-					"desktopMobileSync": null,
-					"cloudBackedSync": null,
-					"requiresSameSeedImport": {
-						"$ref": "featureSupported"
-					}
-				}
-			}
-		},
-		"variants": {
-			"MOBILE": true,
-			"BROWSER": true
-		}
-	}
+  "id": "mtpelerin",
+  "source": "software-wallets",
+  "export": "mtpelerin",
+  "data": {
+    "metadata": {
+      "id": "mtpelerin",
+      "displayName": "Bridge Wallet",
+      "tableName": "Bridge Wallet",
+      "blurb": "Buy, swap, and sell crypto with the lowest fees, zero hidden costs, and full control over your cryptoassets.",
+      "contributors": [
+        {
+          "$ref": "sigri"
+        },
+        {
+          "$ref": "mattmatt"
+        }
+      ],
+      "iconExtension": "svg",
+      "lastUpdated": "2025-08-26",
+      "urls": {
+        "repositories": [
+          "https://github.com/mtpelerin"
+        ],
+        "socials": {
+          "discord": "https://discord.com/invite/WErDKTvMr7",
+          "facebook": "https://www.facebook.com/mtpelerin/",
+          "instagram": "https://www.instagram.com/mtpelerin/",
+          "linkedin": "https://www.linkedin.com/company/mt-pelerin/",
+          "x": "https://x.com/mtpelerin",
+          "youtube": "https://www.youtube.com/@mtpelerin"
+        },
+        "websites": [
+          "https://www.mtpelerin.com/"
+        ]
+      }
+    },
+    "features": {
+      "accountSupport": {
+        "defaultAccountType": "AccountType.eoa",
+        "eip7702": {
+          "$call": "notSupportedWithRef",
+          "args": [
+            {
+              "ref": [
+                {
+                  "explanation": "Mt Pelerin documents Bridge Wallet as a non-custodial wallet controlled through the user's secret phrase; no public Bridge Wallet documentation was found for smart-account, MPC, Safe, ERC-4337, or EIP-7702 account support.",
+                  "url": "https://www.mtpelerin.com/support"
+                },
+                {
+                  "explanation": "The Bridge Wallet product page describes a self-custodial wallet where Mt Pelerin does not hold, control, or access users' crypto-assets or private keys.",
+                  "url": "https://www.mtpelerin.com/bridge-wallet"
+                }
+              ]
+            }
+          ]
+        },
+        "eoa": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": [
+                {
+                  "explanation": "Mt Pelerin describes Bridge Wallet as a non-custodial app where the user controls the wallet through a secret phrase.",
+                  "url": "https://www.mtpelerin.com/support"
+                },
+                {
+                  "explanation": "The Google Play listing describes Bridge Wallet as self-custodial and says nobody else can control the user's funds.",
+                  "url": "https://play.google.com/store/apps/details?id=com.mtpelerin.bridge"
+                }
+              ],
+              "keyDerivation": {
+                "seedPhrase": "BIP39"
+              }
+            }
+          ]
+        },
+        "mpc": {
+          "$call": "notSupportedWithRef",
+          "args": [
+            {
+              "ref": [
+                {
+                  "explanation": "Mt Pelerin documents Bridge Wallet as a non-custodial wallet controlled through the user's secret phrase; no public Bridge Wallet documentation was found for smart-account, MPC, Safe, ERC-4337, or EIP-7702 account support.",
+                  "url": "https://www.mtpelerin.com/support"
+                },
+                {
+                  "explanation": "The Bridge Wallet product page describes a self-custodial wallet where Mt Pelerin does not hold, control, or access users' crypto-assets or private keys.",
+                  "url": "https://www.mtpelerin.com/bridge-wallet"
+                }
+              ]
+            }
+          ]
+        },
+        "rawErc4337": {
+          "$call": "notSupportedWithRef",
+          "args": [
+            {
+              "ref": [
+                {
+                  "explanation": "Mt Pelerin documents Bridge Wallet as a non-custodial wallet controlled through the user's secret phrase; no public Bridge Wallet documentation was found for smart-account, MPC, Safe, ERC-4337, or EIP-7702 account support.",
+                  "url": "https://www.mtpelerin.com/support"
+                },
+                {
+                  "explanation": "The Bridge Wallet product page describes a self-custodial wallet where Mt Pelerin does not hold, control, or access users' crypto-assets or private keys.",
+                  "url": "https://www.mtpelerin.com/bridge-wallet"
+                }
+              ]
+            }
+          ]
+        },
+        "safe": {
+          "$call": "notSupportedWithRef",
+          "args": [
+            {
+              "ref": [
+                {
+                  "explanation": "Mt Pelerin documents Bridge Wallet as a non-custodial wallet controlled through the user's secret phrase; no public Bridge Wallet documentation was found for smart-account, MPC, Safe, ERC-4337, or EIP-7702 account support.",
+                  "url": "https://www.mtpelerin.com/support"
+                },
+                {
+                  "explanation": "The Bridge Wallet product page describes a self-custodial wallet where Mt Pelerin does not hold, control, or access users' crypto-assets or private keys.",
+                  "url": "https://www.mtpelerin.com/bridge-wallet"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "addressResolution": {
+        "ref": {
+          "explanation": "Bridge Wallet support documents sending funds by typing, scanning, or selecting a destination wallet address, with no ENS-name recipient format described.",
+          "url": "https://www.mtpelerin.com/support"
+        },
+        "chainSpecificAddressing": {
+          "erc7828": null,
+          "erc7831": null
+        },
+        "nonChainSpecificEnsResolution": {
+          "$call": "notSupportedWithRef",
+          "args": [
+            {
+              "ref": {
+                "explanation": "Bridge Wallet's send instructions tell users to type, scan, or select the address of the destination wallet and warn that wrong addresses lose funds; they do not document ENS-name resolution for recipients.",
+                "url": "https://www.mtpelerin.com/support"
+              }
+            }
+          ]
+        }
+      },
+      "chainAbstraction": {
+        "bridging": {
+          "builtInBridging": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "Bridge Wallet's product page says users can exchange cryptocurrencies with each other and across the 15 chains supported by the app.",
+                    "url": "https://www.mtpelerin.com/bridge-wallet"
+                  },
+                  {
+                    "explanation": "The Google Play listing says Bridge Wallet can swap cryptocurrencies and transfer them across 15 chains.",
+                    "url": "https://play.google.com/store/apps/details?id=com.mtpelerin.bridge"
+                  }
+                ]
+              }
+            ]
+          },
+          "suggestedBridging": null
+        },
+        "crossChainBalances": {
+          "ref": {
+            "explanation": "Mt Pelerin lists the mainnet networks supported by Bridge Wallet, including Ethereum, Arbitrum, Avalanche C-Chain, Base, BNB Chain, Celo, Gnosis Chain, Optimism, Polygon, Rootstock, Sonic, Tezos, zkSync Era, Bitcoin, and Lightning.",
+            "url": "https://www.mtpelerin.com/support"
+          },
+          "globalAccountValue": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "The Bridge Wallet product page describes watching the user's crypto portfolio grow and presents the wallet as a multi-chain crypto super-app across the supported chains.",
+                  "url": "https://www.mtpelerin.com/bridge-wallet"
+                }
+              }
+            ]
+          },
+          "perChainAccountValue": null
+        }
+      },
+      "chainConfigurability": null,
+      "ecosystem": {
+        "delegation": null
+      },
+      "integration": {
+        "browser": {
+          "1193": null,
+          "2700": null,
+          "6963": null,
+          "ref": {
+            "$ref": "refTodo"
+          }
+        },
+        "walletCall": null
+      },
+      "licensing": {
+        "type": "LicensingType.SINGLE_WALLET_REPO_AND_LICENSE",
+        "walletAppLicense": {
+          "ref": {
+            "$ref": "refNotNecessary"
+          },
+          "license": "SourceNotAvailableLicense.PROPRIETARY"
+        }
+      },
+      "monetization": {
+        "ref": "https://developers.mtpelerin.com/service-information/revenue-sharing",
+        "revenueBreakdownIsPublic": false,
+        "strategies": {
+          "donations": null,
+          "ecosystemGrants": null,
+          "governanceTokenLowFloat": null,
+          "governanceTokenMostlyDistributed": null,
+          "hiddenConvenienceFees": null,
+          "publicOffering": null,
+          "selfFunded": true,
+          "transparentConvenienceFees": null,
+          "ventureCapital": null
+        }
+      },
+      "multiAddress": {
+        "$ref": "featureSupported"
+      },
+      "privacy": {
+        "analytics": {
+          "crashReports": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Apple's App Store privacy disclosure for Bridge Wallet lists crash data under diagnostics used for analytics.",
+                  "url": "https://apps.apple.com/us/app/bridge-wallet-bitcoin-crypto/id1481859680"
+                }
+              }
+            ]
+          },
+          "usage": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Apple's App Store privacy disclosure for Bridge Wallet lists product interaction usage data and identifiers under analytics.",
+                  "url": "https://apps.apple.com/us/app/bridge-wallet-bitcoin-crypto/id1481859680"
+                }
+              }
+            ]
+          }
+        },
+        "appIsolation": null,
+        "dataCollection": null,
+        "privacyPolicy": "https://www.mtpelerin.com/privacy-policy",
+        "transactionPrivacy": {
+          "defaultFungibleTokenTransferMode": "PUBLIC",
+          "STEALTH_ADDRESSES": {
+            "$ref": "notSupported"
+          },
+          "TORNADO_CASH_NOVA": {
+            "$ref": "notSupported"
+          },
+          "PRIVACY_POOLS": {
+            "$ref": "notSupported"
+          },
+          "RAILGUN": {
+            "$ref": "notSupported"
+          }
+        }
+      },
+      "profile": "WalletProfile.GENERIC",
+      "security": {
+        "accountRecovery": null,
+        "bugBountyProgram": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": [
+                {
+                  "explanation": "The bug bounty program is focused around its smart contracts, mobile apps and website, and is mostly aimed at addressing serious security issues directly affecting fund safety and user data protection.",
+                  "url": "https://immunefi.com/bug-bounty/mtpelerin/information/"
+                }
+              ],
+              "availability": "BugBountyProgramAvailability.ACTIVE",
+              "coverageBreadth": "FULL_SCOPE",
+              "dateStarted": "2021-02-08",
+              "disclosure": {
+                "$ref": "notSupported"
+              },
+              "legalProtections": {
+                "$ref": "notSupported"
+              },
+              "platform": "BugBountyPlatform.IMMUNEFI",
+              "rewards": {
+                "$call": "supported",
+                "args": [
+                  {
+                    "currency": "USD",
+                    "maximum": 100000,
+                    "minimum": 1000
+                  }
+                ]
+              },
+              "upgradePathAvailable": false
+            }
+          ]
+        },
+        "duressResistance": {
+          "basicUnlock": {
+            "ref": {
+              "explanation": "Mt Pelerin's support page says Bridge Wallet uses a password to encrypt and secure the secret phrase on the device, and that restoring on a new device starts by creating a new password.",
+              "url": "https://www.mtpelerin.com/support"
+            },
+            "mechanisms": {
+              "PIN": false,
+              "PASSWORD": true,
+              "BIOMETRIC": false,
+              "PATTERN": false
+            }
+          },
+          "duressMode": {
+            "$ref": "notSupported"
+          }
+        },
+        "hardwareWalletSupport": {
+          "ref": {
+            "$ref": "refTodo"
+          },
+          "wallets": {}
+        },
+        "keysHandling": null,
+        "lightClient": {
+          "ethereumL1": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Mt Pelerin documents Bridge Wallet around a fixed list of supported blockchain networks and app-selected network switching, with no embedded Ethereum L1 light-client mode described.",
+                  "url": "https://www.mtpelerin.com/support"
+                }
+              }
+            ]
+          }
+        },
+        "passkeyVerification": {
+          "$ref": "notSupported"
+        },
+        "publicSecurityAudits": [
+          {
+            "ref": "https://old.chainsecurity.com/wp-content/uploads/2019/09/ChainSecurity_MtPelerin.pdf",
+            "auditDate": "2019-09-01",
+            "auditor": {
+              "$ref": "chainsecurity"
+            },
+            "unpatchedFlaws": "UNKNOWN",
+            "variantsScope": "BRIDGE_PROTOCOL_SMART_CONTRACTS"
+          }
+        ],
+        "scamAlerts": {
+          "contractTransactionWarning": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet's WalletConnect and send-flow support material gives general safety guidance and manual gas/data controls, but does not document malicious-contract registry checks or contract-risk warnings.",
+                  "url": "https://www.mtpelerin.com/support"
+                }
+              }
+            ]
+          },
+          "scamUrlWarning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Mt Pelerin's Bridge Wallet support safety notice tells users to verify website URLs before connecting through WalletConnect, avoid untrusted websites, and treat private-message wallet links as scams.",
+                  "url": "https://www.mtpelerin.com/support"
+                },
+                "leaksIp": null,
+                "leaksUserAddress": null,
+                "leaksVisitedUrl": null
+              }
+            ]
+          },
+          "sendTransactionWarning": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet's send flow tells users to double-check the destination address and notes that transfers are immediately initiated after clicking Send, but does not document automated risky-recipient, new-recipient, or whitelist warnings.",
+                  "url": "https://www.mtpelerin.com/support"
+                }
+              }
+            ]
+          }
+        },
+        "securityBestPractices": null,
+        "transactionLegibility": {
+          "ref": {
+            "explanation": "Bridge Wallet's product page says WalletConnect lets users connect to DeFi apps and review, approve, or reject transactions from the phone.",
+            "url": "https://www.mtpelerin.com/bridge-wallet"
+          },
+          "transactionDetailsDisplay": {
+            "$call": "supported",
+            "args": [
+              {
+                "from": null,
+                "to": null,
+                "value": null
+              }
+            ]
+          },
+          "transactionSimulations": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet's send flow documents address entry, amount entry, optional manual gas/data changes, and immediate transfer initiation after clicking Send; it does not describe transaction outcome simulation before signing.",
+                  "url": "https://www.mtpelerin.com/support"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "selfSovereignty": {
+        "permissionsManagement": {
+          "$call": "notSupportedWithRef",
+          "args": [
+            {
+              "ref": {
+                "explanation": "Bridge Wallet support documents receiving, sending, WalletConnect use, manual token addition, and pending transaction cancellation, but not wallet-native token approval inspection or revocation.",
+                "url": "https://www.mtpelerin.com/support"
+              }
+            }
+          ]
+        },
+        "transactionSubmission": {
+          "l1": {
+            "ref": {
+              "explanation": "Mt Pelerin support documents transaction submission through Bridge Wallet on its supported networks; users select supported app networks and can adjust gas/data parameters, but the app documentation does not expose a user-selected Ethereum mainnet RPC/self-hosted-node broadcast path.",
+              "url": "https://www.mtpelerin.com/support"
+            },
+            "selfBroadcastViaDirectGossip": null,
+            "selfBroadcastViaSelfHostedNode": {
+              "$call": "notSupportedWithRef",
+              "args": [
+                {
+                  "ref": {
+                    "explanation": "Bridge Wallet support describes a fixed supported-network model and send flow inside the app, rather than configuring Ethereum mainnet RPC or broadcasting via a self-hosted node.",
+                    "url": "https://www.mtpelerin.com/support"
+                  }
+                }
+              ]
+            }
+          },
+          "l2": {
+            "arbitrum": null,
+            "opStack": null,
+            "ref": {
+              "$ref": "refTodo"
+            }
+          }
+        }
+      },
+      "transparency": {
+        "operationFees": null,
+        "releaseTransparency": {
+          "artifactSigning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Mt Pelerin publishes the Bridge Wallet APK and a SHA256 fingerprint for verifying the APK signing certificate.",
+                  "url": "https://www.mtpelerin.com/bridge-wallet"
+                }
+              }
+            ]
+          },
+          "dependencyLocking": null,
+          "dependencyVulnerabilityScanning": null,
+          "hasPublicChangelog": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": [
+                  {
+                    "explanation": "Apple's App Store page includes Bridge Wallet version history and release notes.",
+                    "url": "https://apps.apple.com/us/app/bridge-wallet-bitcoin-crypto/id1481859680"
+                  },
+                  {
+                    "explanation": "Mt Pelerin's Bridge Wallet page publishes the current APK version.",
+                    "url": "https://www.mtpelerin.com/bridge-wallet"
+                  }
+                ]
+              }
+            ]
+          },
+          "hermeticBuilds": null,
+          "repositoryChangeControls": null,
+          "reproducibleBuilds": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet is distributed as a proprietary/source-unavailable app; no public source tree or reproducible-build instructions are published for independently reproducing the release artifact.",
+                  "url": "https://www.mtpelerin.com/bridge-wallet"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "product": {
+        "platformCoverage": {
+          "ref": {
+            "explanation": "Mt Pelerin support describes Bridge Wallet as a mobile app and Google Play listing provides Android app details.",
+            "url": "https://www.mtpelerin.com/support"
+          },
+          "desktopApp": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet support focuses on mobile app; no desktop app is described.",
+                  "url": "https://www.mtpelerin.com/support"
+                }
+              }
+            ]
+          },
+          "mobileApp": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet support has a Mobile app section and Google Play app listing.",
+                  "url": "https://www.mtpelerin.com/support"
+                }
+              }
+            ]
+          },
+          "browserExtension": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet support describes mobile app and WalletConnect, not a browser extension.",
+                  "url": "https://www.mtpelerin.com/support"
+                }
+              }
+            ]
+          },
+          "browserNative": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet is not browser-native.",
+                  "url": "https://www.mtpelerin.com/support"
+                }
+              }
+            ]
+          },
+          "webApp": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/bridge-wallet",
+                  "explanation": "The official Bridge Wallet page offers a 'continue on web / Launch app' option pointing to app.mtpelerin.com, a browser-based self-custodial wallet usable without installing the mobile app."
+                }
+              }
+            ]
+          },
+          "ios": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet is a mobile app; iOS support is implied by app docs but not separately opened in this pass.",
+                  "url": "https://www.mtpelerin.com/support"
+                }
+              }
+            ]
+          },
+          "android": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet Google Play listing is available.",
+                  "url": "https://play.google.com/store/apps/details?hl=en&id=com.mtpelerin.bridge"
+                }
+              }
+            ]
+          },
+          "chrome": null,
+          "firefox": null,
+          "safari": null
+        },
+        "supportedEcosystems": {
+          "ref": {
+            "explanation": "Mt Pelerin support lists Bridge Wallet networks: Arbitrum, Avalanche C-Chain, Base, BNB, Bitcoin, Bitcoin Lightning, Celo, Ethereum, Fantom, Gnosis, Optimism, Polygon, Rootstock, Sonic, Tezos, and zkSync Era.",
+            "url": "https://www.mtpelerin.com/support"
+          },
+          "evm": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet supports many EVM networks including Ethereum, Arbitrum, Base, BNB, Optimism, Polygon, zkSync Era, and more.",
+                  "url": "https://www.mtpelerin.com/support"
+                }
+              }
+            ]
+          },
+          "solana": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/bridge-wallet",
+                  "explanation": "Mt Pelerin's official supported-network list (Bitcoin, Lightning, Ethereum, Arbitrum, Avalanche, Base, BNB Chain, Celo, Gnosis, Optimism, Polygon, Rootstock, Sonic, Tempo, Tezos, zkSync) does not include Solana."
+                }
+              }
+            ]
+          },
+          "bitcoin": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet supports Bitcoin.",
+                  "url": "https://www.mtpelerin.com/support"
+                }
+              }
+            ]
+          },
+          "cosmos": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet supported-network list reviewed does not include Cosmos.",
+                  "url": "https://www.mtpelerin.com/support"
+                }
+              }
+            ]
+          },
+          "ton": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet supported-network list reviewed does not include TON.",
+                  "url": "https://www.mtpelerin.com/support"
+                }
+              }
+            ]
+          },
+          "starknet": null,
+          "sui": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/bridge-wallet",
+                  "explanation": "Sui is not in Mt Pelerin's official list of supported networks for Bridge Wallet."
+                }
+              }
+            ]
+          },
+          "aptos": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/bridge-wallet",
+                  "explanation": "Aptos is not in Mt Pelerin's official list of supported networks for Bridge Wallet."
+                }
+              }
+            ]
+          },
+          "xrp": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/bridge-wallet",
+                  "explanation": "The XRP Ledger is not in Mt Pelerin's official list of supported networks (which covers Bitcoin, Tezos and EVM chains only)."
+                }
+              }
+            ]
+          },
+          "cardano": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/bridge-wallet",
+                  "explanation": "Cardano is not in Mt Pelerin's official list of supported networks for Bridge Wallet."
+                }
+              }
+            ]
+          },
+          "lightning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet supports Bitcoin Lightning.",
+                  "url": "https://www.mtpelerin.com/support"
+                }
+              }
+            ]
+          },
+          "other": [
+            {
+              "name": "Tezos",
+              "ref": {
+                "explanation": "Bridge Wallet supports Tezos.",
+                "url": "https://www.mtpelerin.com/support"
+              }
+            }
+          ]
+        },
+        "dappExperience": {
+          "ref": {
+            "explanation": "Bridge Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://www.mtpelerin.com/"
+          },
+          "inAppBrowser": null,
+          "curatedDappDirectory": null,
+          "dappSearch": null,
+          "walletConnectOnlyMode": {
+            "$ref": "notSupported"
+          },
+          "featuredApps": null,
+          "riskRatedDiscovery": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet provides risk warnings or risk-aware dapp/transaction discovery cues.",
+                  "url": "https://www.mtpelerin.com/"
+                }
+              }
+            ]
+          }
+        },
+        "fiatRamps": {
+          "ref": {
+            "explanation": "Bridge Wallet Google Play and Mt Pelerin support describe buying/selling crypto, bank transfers, card, Google Pay, personal IBAN, and supported fiat corridors.",
+            "url": "https://play.google.com/store/apps/details?hl=en&id=com.mtpelerin.bridge"
+          },
+          "buyCrypto": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet supports buying crypto by bank transfer, card, or Google Pay.",
+                  "url": "https://play.google.com/store/apps/details?hl=en&id=com.mtpelerin.bridge"
+                }
+              }
+            ]
+          },
+          "sellCrypto": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet supports cashing out/selling crypto to bank transfers.",
+                  "url": "https://play.google.com/store/apps/details?hl=en&id=com.mtpelerin.bridge"
+                }
+              }
+            ]
+          },
+          "bankTransfer": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet supports bank transfers and personal IBAN flows.",
+                  "url": "https://www.mtpelerin.com/support"
+                }
+              }
+            ]
+          },
+          "card": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet supports card purchases.",
+                  "url": "https://play.google.com/store/apps/details?hl=en&id=com.mtpelerin.bridge"
+                }
+              }
+            ]
+          },
+          "applePay": null,
+          "googlePay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet supports Google Pay purchases.",
+                  "url": "https://play.google.com/store/apps/details?hl=en&id=com.mtpelerin.bridge"
+                }
+              }
+            ]
+          },
+          "kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
+          "providers": [
+            "Mt Pelerin"
+          ],
+          "regionalAvailability": "Mt Pelerin publishes multiple country/fiat rails; exact limits and identification depend on profile/transaction rules."
+        },
+        "gasUx": {
+          "ref": {
+            "explanation": "Mt Pelerin support says Bridge Wallet lets users manually change gas and data parameters under Advanced and must cover network costs.",
+            "url": "https://www.mtpelerin.com/support"
+          },
+          "gasCustomization": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet send flow allows changing gas and data parameters under Advanced.",
+                  "url": "https://www.mtpelerin.com/support"
+                }
+              }
+            ]
+          },
+          "gasSponsorship": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Mt Pelerin support says users must cover network costs.",
+                  "url": "https://www.mtpelerin.com/support"
+                }
+              }
+            ]
+          },
+          "gasAbstraction": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Mt Pelerin support says users need native network-cost assets for withdrawal/swap/send.",
+                  "url": "https://www.mtpelerin.com/support"
+                }
+              }
+            ]
+          },
+          "payGasInStablecoins": null,
+          "payGasWithReceivedToken": null,
+          "speedPresets": null,
+          "stuckTransactionRecovery": null
+        },
+        "recoveryUx": {
+          "ref": {
+            "explanation": "Mt Pelerin support says Bridge Wallet is controlled by a secret phrase and restored by entering the phrase; password cannot be recovered without restoring the wallet.",
+            "url": "https://www.mtpelerin.com/support"
+          },
+          "seedOnlyRecovery": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet is controlled/restored through a secret phrase.",
+                  "url": "https://www.mtpelerin.com/support"
+                }
+              }
+            ]
+          },
+          "cloudBackup": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet support says no password/secret phrase is stored elsewhere.",
+                  "url": "https://www.mtpelerin.com/support"
+                }
+              }
+            ]
+          },
+          "socialRecovery": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet support describes secret-phrase recovery, not social recovery.",
+                  "url": "https://www.mtpelerin.com/support"
+                }
+              }
+            ]
+          },
+          "guardianRecovery": {
+            "$call": "notSupportedWithRef",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet support describes secret-phrase recovery, not guardian recovery.",
+                  "url": "https://www.mtpelerin.com/support"
+                }
+              }
+            ]
+          },
+          "passkeyRecovery": null,
+          "emergencyKit": null,
+          "recoveryRehearsal": null
+        },
+        "onboardingFriction": {
+          "ref": {
+            "explanation": "Bridge Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://www.mtpelerin.com/"
+          },
+          "seedPhraseRequiredAtSignup": {
+            "$ref": "featureSupported"
+          },
+          "passkeySignup": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/bridge-wallet",
+                  "explanation": "Bridge Wallet onboarding is built around a self-custodial secret/seed phrase with password and biometric/PIN unlock; official support and product pages describe no passkey/WebAuthn signup."
+                }
+              }
+            ]
+          },
+          "emailSignup": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/support",
+                  "explanation": "Wallet creation is seed-phrase based and self-custodial; the email/SMS collected is for KYC identity verification to buy/sell crypto, not for creating or accessing the wallet."
+                }
+              }
+            ]
+          },
+          "phoneSignup": null,
+          "kycRequiredForWallet": {
+            "$ref": "notSupported"
+          },
+          "guestMode": null,
+          "embeddedWalletMode": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/bridge-wallet",
+                  "explanation": "Bridge Wallet is explicitly fully self-custodial where the user holds their own secret phrase, with no no-seed embedded/MPC/smart-account wallet created via social/email login."
+                }
+              }
+            ]
+          },
+          "timeToFirstWallet": "OnboardingSpeed.SEED_FIRST"
+        },
+        "portfolioManagement": {
+          "ref": {
+            "explanation": "Bridge Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://www.mtpelerin.com/"
+          },
+          "netWorth": {
+            "$ref": "featureSupported"
+          },
+          "pnl": null,
+          "costBasis": null,
+          "tokenCategories": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet provides token balance and asset-list portfolio views.",
+                  "url": "https://www.mtpelerin.com/"
+                }
+              }
+            ]
+          },
+          "nftSupport": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet supports NFT display or NFT portfolio management in at least one wallet surface.",
+                  "url": "https://www.mtpelerin.com/"
+                }
+              }
+            ]
+          },
+          "collectionViews": null,
+          "watchOnlyWallets": null,
+          "multiWalletAggregation": {
+            "$ref": "featureSupported"
+          }
+        },
+        "notifications": {
+          "ref": {
+            "explanation": "Bridge Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://www.mtpelerin.com/"
+          },
+          "sendReceive": null,
+          "priceAlerts": null,
+          "approvalAlerts": null,
+          "bridgeCompletion": null,
+          "failedTransaction": null,
+          "securityAlerts": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet supports security alerts or transaction-risk warnings.",
+                  "url": "https://www.mtpelerin.com/"
+                }
+              }
+            ]
+          },
+          "marketAlerts": null
+        },
+        "nftCapabilities": {
+          "ref": {
+            "explanation": "Bridge Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://www.mtpelerin.com/"
+          },
+          "display": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet supports displaying NFTs or collectibles in the wallet.",
+                  "url": "https://www.mtpelerin.com/"
+                }
+              }
+            ]
+          },
+          "send": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet supports wallet NFT transfer flows or NFT asset management.",
+                  "url": "https://www.mtpelerin.com/"
+                }
+              }
+            ]
+          },
+          "mint": null,
+          "marketplaceIntegration": null,
+          "spamNftHiding": null,
+          "collectionMetadataRefresh": null,
+          "royaltiesOrOffers": null
+        },
+        "defiPositionAwareness": {
+          "ref": {
+            "explanation": "Bridge Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://www.mtpelerin.com/"
+          },
+          "lendingPositions": null,
+          "stakingPositions": null,
+          "lpPositions": null,
+          "vaultPositions": null,
+          "perProtocolBalances": null,
+          "claimableRewards": null,
+          "liquidationWarnings": null
+        },
+        "stakingEarn": {
+          "ref": {
+            "explanation": "Bridge Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://www.mtpelerin.com/"
+          },
+          "nativeStaking": null,
+          "liquidStaking": null,
+          "validatorChoice": null,
+          "apyDisplay": null,
+          "rewardsClaiming": null,
+          "providerDependency": null,
+          "lockupDisclosure": null
+        },
+        "customerSupport": {
+          "ref": {
+            "explanation": "Bridge Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://www.mtpelerin.com/"
+          },
+          "liveChat": null,
+          "emailSupport": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet publishes support, help center, or contact paths for wallet users.",
+                  "url": "https://www.mtpelerin.com/"
+                }
+              }
+            ]
+          },
+          "aiSupport": null,
+          "publishedSla": null,
+          "inAppHelpCenter": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet provides in-app or product-linked help/support content.",
+                  "url": "https://www.mtpelerin.com/"
+                }
+              }
+            ]
+          },
+          "transactionTroubleshooting": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet support docs include transaction or wallet troubleshooting material.",
+                  "url": "https://www.mtpelerin.com/"
+                }
+              }
+            ]
+          },
+          "scamRecoveryGuidance": null
+        },
+        "developerOffering": {
+          "ref": {
+            "explanation": "Bridge Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://www.mtpelerin.com/"
+          },
+          "walletSdk": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet publishes wallet developer docs, SDKs, or public wallet integration repositories.",
+                  "url": "https://github.com/mtpelerin"
+                }
+              }
+            ]
+          },
+          "embeddedWalletSdk": null,
+          "whiteLabelOffering": null,
+          "walletConnectSupport": null,
+          "eip6963": null,
+          "eip5792": null,
+          "deepLinks": null,
+          "mobileLinkingQuality": null
+        },
+        "pricingFeeModel": {
+          "ref": {
+            "explanation": "Bridge Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://www.mtpelerin.com/"
+          },
+          "swapFees": null,
+          "bridgeFees": null,
+          "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
+          "spreadDisclosure": null,
+          "subscriptionFeatures": null,
+          "cardFees": "Card fees are provider-dependent where card purchase is available.",
+          "hiddenPartnerRevenue": null
+        },
+        "releaseVelocity": {
+          "ref": {
+            "explanation": "Bridge Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://www.mtpelerin.com/"
+          },
+          "latestReleaseDate": "2025-08-26",
+          "releaseFrequency": "ReleaseFrequency.IRREGULAR",
+          "appStoreUpdateCadence": "App-store cadence should be measured from current app-store release history in a deeper pass.",
+          "githubActivity": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "explanation": "Bridge Wallet has public GitHub repository activity or releases that can be tracked.",
+                  "url": "https://github.com/mtpelerin"
+                }
+              }
+            ]
+          },
+          "changelogDetail": "ChangelogDetail.BASIC"
+        },
+        "deviceSync": {
+          "ref": {
+            "explanation": "Bridge Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
+            "url": "https://www.mtpelerin.com/"
+          },
+          "syncsAccounts": null,
+          "syncsSettings": null,
+          "syncsContactsOrAddressBook": null,
+          "desktopMobileSync": null,
+          "cloudBackedSync": null,
+          "requiresSameSeedImport": {
+            "$ref": "featureSupported"
+          }
+        }
+      }
+    },
+    "variants": {
+      "MOBILE": true,
+      "BROWSER": true
+    }
+  }
 }
