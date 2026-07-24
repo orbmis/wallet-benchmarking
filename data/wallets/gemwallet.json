@@ -1008,13 +1008,63 @@
             "explanation": "Gem Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://gemwallet.com"
           },
-          "lendingPositions": null,
+          "lendingPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.gemwallet.com/features/",
+                  "explanation": "Gem Wallet only connects to lending protocols like Aave/Compound via WalletConnect and does not surface/read existing lending or borrowing positions in its own interface."
+                }
+              }
+            ]
+          },
           "stakingPositions": null,
-          "lpPositions": null,
-          "vaultPositions": null,
+          "lpPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.gemwallet.com/features/",
+                  "explanation": "No authoritative source indicates Gem Wallet reads or displays external liquidity-pool positions; DeFi interaction is limited to WalletConnect dApp access."
+                }
+              }
+            ]
+          },
+          "vaultPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.gemwallet.com/features/",
+                  "explanation": "No authoritative source indicates Gem Wallet surfaces yield-vault positions (e.g. Yearn, Morpho); its feature set has no DeFi-position reading."
+                }
+              }
+            ]
+          },
           "perProtocolBalances": null,
-          "claimableRewards": null,
-          "liquidationWarnings": null
+          "claimableRewards": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.gemwallet.com/features/",
+                  "explanation": "Gem Wallet lets users claim native staking rewards but there is no evidence it surfaces claimable rewards from external DeFi protocols."
+                }
+              }
+            ]
+          },
+          "liquidationWarnings": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.gemwallet.com/features/",
+                  "explanation": "No authoritative source indicates Gem Wallet provides liquidation risk warnings, as it does not read external borrow positions."
+                }
+              }
+            ]
+          }
         },
         "stakingEarn": {
           "ref": {
@@ -1032,7 +1082,17 @@
               }
             ]
           },
-          "liquidStaking": null,
+          "liquidStaking": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.gemwallet.com/faq/liquid-staking/",
+                  "explanation": "Gem Wallet's liquid-staking page is an educational explainer listing external platforms (Lido, Ankr, Marinade); no evidence of in-app liquid staking, and the staking product is native delegated staking."
+                }
+              }
+            ]
+          },
           "validatorChoice": {
             "$call": "supported",
             "args": [

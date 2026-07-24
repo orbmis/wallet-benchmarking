@@ -907,8 +907,28 @@
           "netWorth": {
             "$ref": "featureSupported"
           },
-          "pnl": null,
-          "costBasis": null,
+          "pnl": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/blog/launch",
+                  "explanation": "Family's official feature pages, launch blog, and FAQs describe balances, swap, NFTs, and watch-only wallets but no profit/loss tracking (https://family.co/blog/launch)."
+                }
+              }
+            ]
+          },
+          "costBasis": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/faqs",
+                  "explanation": "No cost-basis tracking is mentioned anywhere in Family's official documentation or FAQs (https://family.co/faqs)."
+                }
+              }
+            ]
+          },
           "tokenCategories": {
             "$call": "supported",
             "args": [
@@ -1028,24 +1048,134 @@
             "explanation": "Family source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://family.co"
           },
-          "lendingPositions": null,
-          "stakingPositions": null,
-          "lpPositions": null,
-          "vaultPositions": null,
+          "lendingPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/faqs",
+                  "explanation": "No lending/borrowing position surfacing is described in Family's launch blog or FAQs (https://family.co/faqs)."
+                }
+              }
+            ]
+          },
+          "stakingPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/blog/launch",
+                  "explanation": "Family's documented features cover send/receive/swap, NFTs, and dApp browsing but do not surface staking positions held in external DeFi protocols (https://family.co/blog/launch)."
+                }
+              }
+            ]
+          },
+          "lpPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/blog/launch",
+                  "explanation": "Family's feature set makes no mention of surfacing liquidity-pool positions (https://family.co/blog/launch)."
+                }
+              }
+            ]
+          },
+          "vaultPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/faqs",
+                  "explanation": "No yield-vault position tracking is referenced in Family's official materials (https://family.co/faqs)."
+                }
+              }
+            ]
+          },
           "perProtocolBalances": null,
-          "claimableRewards": null,
-          "liquidationWarnings": null
+          "claimableRewards": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/blog/launch",
+                  "explanation": "Family's documentation does not describe surfacing claimable DeFi rewards (https://family.co/blog/launch)."
+                }
+              }
+            ]
+          },
+          "liquidationWarnings": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/faqs",
+                  "explanation": "No liquidation-risk warnings are mentioned in Family's feature documentation or FAQs (https://family.co/faqs)."
+                }
+              }
+            ]
+          }
         },
         "stakingEarn": {
           "ref": {
             "explanation": "Family source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://family.co"
           },
-          "nativeStaking": null,
-          "liquidStaking": null,
-          "validatorChoice": null,
-          "apyDisplay": null,
-          "rewardsClaiming": null,
+          "nativeStaking": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/blog/launch",
+                  "explanation": "Family's launch announcement and FAQs list swap and dApp features but no in-app native staking (https://family.co/blog/launch)."
+                }
+              }
+            ]
+          },
+          "liquidStaking": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/faqs",
+                  "explanation": "No in-app liquid staking is offered per Family's official documentation (https://family.co/faqs)."
+                }
+              }
+            ]
+          },
+          "validatorChoice": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/blog/launch",
+                  "explanation": "Family offers no in-app staking, so there is no validator selection in its documented features (https://family.co/blog/launch)."
+                }
+              }
+            ]
+          },
+          "apyDisplay": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/blog/launch",
+                  "explanation": "Family provides no staking/earn feature and thus no APY display in its documented features (https://family.co/blog/launch)."
+                }
+              }
+            ]
+          },
+          "rewardsClaiming": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/faqs",
+                  "explanation": "No in-app staking rewards claiming is described in Family's materials (https://family.co/faqs)."
+                }
+              }
+            ]
+          },
           "providerDependency": null,
           "lockupDisclosure": null
         },

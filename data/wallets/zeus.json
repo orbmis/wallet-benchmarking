@@ -1046,8 +1046,28 @@
           "netWorth": {
             "$ref": "featureSupported"
           },
-          "pnl": null,
-          "costBasis": null,
+          "pnl": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/greekfetacheese/zeus",
+                  "explanation": "The official repository describes only 'Basic Portfolio Tracking: Monitor your assets with a simple interface' with no profit/loss feature."
+                }
+              }
+            ]
+          },
+          "costBasis": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/greekfetacheese/zeus",
+                  "explanation": "No cost-basis tracking is mentioned in the repository; portfolio tracking is described as basic asset monitoring only."
+                }
+              }
+            ]
+          },
           "tokenCategories": {
             "$call": "supported",
             "args": [
@@ -1059,9 +1079,29 @@
               }
             ]
           },
-          "nftSupport": null,
+          "nftSupport": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/greekfetacheese/zeus",
+                  "explanation": "The repository lists only ETH/ERC-20 assets and basic portfolio tracking, with no NFT support mentioned."
+                }
+              }
+            ]
+          },
           "collectionViews": null,
-          "watchOnlyWallets": null,
+          "watchOnlyWallets": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/greekfetacheese/zeus",
+                  "explanation": "The wallet is built around HD wallets derived from username/password or imported keys, with no watch-only/address-tracking feature documented."
+                }
+              }
+            ]
+          },
           "multiWalletAggregation": {
             "$ref": "featureSupported"
           }
@@ -1107,24 +1147,134 @@
             "explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://github.com/greekfetacheese/zeus"
           },
-          "lendingPositions": null,
-          "stakingPositions": null,
-          "lpPositions": null,
-          "vaultPositions": null,
+          "lendingPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/greekfetacheese/zeus",
+                  "explanation": "No lending/borrowing position surfacing (Aave/Compound) is described; the wallet is deliberately RPC-only with no DeFi data services."
+                }
+              }
+            ]
+          },
+          "stakingPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/greekfetacheese/zeus",
+                  "explanation": "Zeus relies solely on the Ethereum RPC API with no third-party services, and documents no surfacing of external staking positions."
+                }
+              }
+            ]
+          },
+          "lpPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/greekfetacheese/zeus",
+                  "explanation": "The wallet supports Uniswap swaps but does not document surfacing of LP positions."
+                }
+              }
+            ]
+          },
+          "vaultPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/greekfetacheese/zeus",
+                  "explanation": "No yield-vault position surfacing (Yearn/Morpho) is described in the repository feature set."
+                }
+              }
+            ]
+          },
           "perProtocolBalances": null,
-          "claimableRewards": null,
-          "liquidationWarnings": null
+          "claimableRewards": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/greekfetacheese/zeus",
+                  "explanation": "No claimable DeFi rewards surfacing is mentioned in the documented features."
+                }
+              }
+            ]
+          },
+          "liquidationWarnings": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/greekfetacheese/zeus",
+                  "explanation": "No borrow positions or liquidation-risk warnings are documented; the wallet has no DeFi lending awareness."
+                }
+              }
+            ]
+          }
         },
         "stakingEarn": {
           "ref": {
             "explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://github.com/greekfetacheese/zeus"
           },
-          "nativeStaking": null,
-          "liquidStaking": null,
-          "validatorChoice": null,
-          "apyDisplay": null,
-          "rewardsClaiming": null,
+          "nativeStaking": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/greekfetacheese/zeus",
+                  "explanation": "Documented actions are send, Uniswap swap, and Across bridging only; no in-app native staking is offered."
+                }
+              }
+            ]
+          },
+          "liquidStaking": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/greekfetacheese/zeus",
+                  "explanation": "No liquid staking (Lido/Rocket Pool style) functionality is described in the repository."
+                }
+              }
+            ]
+          },
+          "validatorChoice": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/greekfetacheese/zeus",
+                  "explanation": "No staking feature exists, so there is no validator selection in the app."
+                }
+              }
+            ]
+          },
+          "apyDisplay": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/greekfetacheese/zeus",
+                  "explanation": "With no staking/earn feature, no APY display is documented."
+                }
+              }
+            ]
+          },
+          "rewardsClaiming": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/greekfetacheese/zeus",
+                  "explanation": "No in-app staking rewards claiming is described; the wallet offers no staking functionality."
+                }
+              }
+            ]
+          },
           "providerDependency": null,
           "lockupDisclosure": null
         },

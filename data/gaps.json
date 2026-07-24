@@ -1,6 +1,6 @@
 {
   "generated": true,
-  "gapCount": 1290,
+  "gapCount": 1069,
   "naCount": 990,
   "gaps": [
     {
@@ -86,36 +86,6 @@
     {
       "walletId": "ambire",
       "walletName": "Ambire",
-      "metricKey": "pfPnl",
-      "label": "Profit & loss",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.pnl",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "pfCostBasis",
-      "label": "Cost basis",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.costBasis",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "defiLp",
-      "label": "LP positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lpPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
       "metricKey": "defiVault",
       "label": "Vault positions",
       "category": "DeFi positions",
@@ -131,56 +101,6 @@
       "category": "DeFi positions",
       "type": "state",
       "path": "product.defiPositionAwareness.claimableRewards",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "stakeNative",
-      "label": "Native staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.nativeStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "stakeLiquid",
-      "label": "Liquid staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.liquidStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "stakeApy",
-      "label": "APY display",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.apyDisplay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "stakeClaim",
-      "label": "Rewards claiming",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.rewardsClaiming",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "stakeValidator",
-      "label": "Validator choice",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.validatorChoice",
       "hasUnsourcedRef": false
     },
     {
@@ -496,61 +416,11 @@
     {
       "walletId": "argent",
       "walletName": "Argent",
-      "metricKey": "pfCostBasis",
-      "label": "Cost basis",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.costBasis",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "pfWatchOnly",
-      "label": "Watch-only wallets",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.watchOnlyWallets",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
       "metricKey": "defiStaking",
       "label": "Staking positions",
       "category": "DeFi positions",
       "type": "state",
       "path": "product.defiPositionAwareness.stakingPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "defiLending",
-      "label": "Lending positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lendingPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "defiLp",
-      "label": "LP positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lpPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "defiVault",
-      "label": "Vault positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.vaultPositions",
       "hasUnsourcedRef": false
     },
     {
@@ -581,16 +451,6 @@
       "category": "Staking & earn",
       "type": "state",
       "path": "product.stakingEarn.nativeStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "stakeLiquid",
-      "label": "Liquid staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.liquidStaking",
       "hasUnsourcedRef": false
     },
     {
@@ -976,51 +836,11 @@
     {
       "walletId": "base-app",
       "walletName": "Base App",
-      "metricKey": "pfPnl",
-      "label": "Profit & loss",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.pnl",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "pfCostBasis",
-      "label": "Cost basis",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.costBasis",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "pfMultiWallet",
-      "label": "Multi-wallet aggregation",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.multiWalletAggregation",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
       "metricKey": "pfWatchOnly",
       "label": "Watch-only wallets",
       "category": "Portfolio",
       "type": "state",
       "path": "product.portfolioManagement.watchOnlyWallets",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "defiStaking",
-      "label": "Staking positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.stakingPositions",
       "hasUnsourcedRef": false
     },
     {
@@ -1076,26 +896,6 @@
     {
       "walletId": "base-app",
       "walletName": "Base App",
-      "metricKey": "stakeNative",
-      "label": "Native staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.nativeStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "stakeLiquid",
-      "label": "Liquid staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.liquidStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
       "metricKey": "stakeApy",
       "label": "APY display",
       "category": "Staking & earn",
@@ -1111,16 +911,6 @@
       "category": "Staking & earn",
       "type": "state",
       "path": "product.stakingEarn.rewardsClaiming",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "stakeValidator",
-      "label": "Validator choice",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.validatorChoice",
       "hasUnsourcedRef": false
     },
     {
@@ -1566,31 +1356,11 @@
     {
       "walletId": "bitget",
       "walletName": "Bitget Wallet",
-      "metricKey": "pfWatchOnly",
-      "label": "Watch-only wallets",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.watchOnlyWallets",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitget",
-      "walletName": "Bitget Wallet",
       "metricKey": "defiLiq",
       "label": "Liquidation warnings",
       "category": "DeFi positions",
       "type": "state",
       "path": "product.defiPositionAwareness.liquidationWarnings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitget",
-      "walletName": "Bitget Wallet",
-      "metricKey": "stakeValidator",
-      "label": "Validator choice",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.validatorChoice",
       "hasUnsourcedRef": false
     },
     {
@@ -1816,151 +1586,11 @@
     {
       "walletId": "brave-wallet",
       "walletName": "Brave Wallet",
-      "metricKey": "pfPnl",
-      "label": "Profit & loss",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.pnl",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "pfCostBasis",
-      "label": "Cost basis",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.costBasis",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "pfMultiWallet",
-      "label": "Multi-wallet aggregation",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.multiWalletAggregation",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
       "metricKey": "pfWatchOnly",
       "label": "Watch-only wallets",
       "category": "Portfolio",
       "type": "state",
       "path": "product.portfolioManagement.watchOnlyWallets",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "defiStaking",
-      "label": "Staking positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.stakingPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "defiLending",
-      "label": "Lending positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lendingPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "defiLp",
-      "label": "LP positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lpPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "defiVault",
-      "label": "Vault positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.vaultPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "defiRewards",
-      "label": "Claimable rewards",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.claimableRewards",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "defiLiq",
-      "label": "Liquidation warnings",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "stakeNative",
-      "label": "Native staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.nativeStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "stakeLiquid",
-      "label": "Liquid staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.liquidStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "stakeApy",
-      "label": "APY display",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.apyDisplay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "stakeClaim",
-      "label": "Rewards claiming",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.rewardsClaiming",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "stakeValidator",
-      "label": "Validator choice",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.validatorChoice",
       "hasUnsourcedRef": false
     },
     {
@@ -2311,146 +1941,6 @@
       "category": "Fiat ramps",
       "type": "state",
       "path": "product.fiatRamps.applePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "pfPnl",
-      "label": "Profit & loss",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.pnl",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "pfCostBasis",
-      "label": "Cost basis",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.costBasis",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "pfWatchOnly",
-      "label": "Watch-only wallets",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.watchOnlyWallets",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "defiStaking",
-      "label": "Staking positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.stakingPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "defiLending",
-      "label": "Lending positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lendingPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "defiLp",
-      "label": "LP positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lpPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "defiVault",
-      "label": "Vault positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.vaultPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "defiRewards",
-      "label": "Claimable rewards",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.claimableRewards",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "defiLiq",
-      "label": "Liquidation warnings",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "stakeNative",
-      "label": "Native staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.nativeStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "stakeLiquid",
-      "label": "Liquid staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.liquidStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "stakeApy",
-      "label": "APY display",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.apyDisplay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "stakeClaim",
-      "label": "Rewards claiming",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.rewardsClaiming",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "stakeValidator",
-      "label": "Validator choice",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.validatorChoice",
       "hasUnsourcedRef": false
     },
     {
@@ -2826,26 +2316,6 @@
     {
       "walletId": "coinbase-wallet",
       "walletName": "Coinbase Wallet",
-      "metricKey": "stakeLiquid",
-      "label": "Liquid staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.liquidStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "coinbase-wallet",
-      "walletName": "Coinbase Wallet",
-      "metricKey": "stakeValidator",
-      "label": "Validator choice",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.validatorChoice",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "coinbase-wallet",
-      "walletName": "Coinbase Wallet",
       "metricKey": "gasAbstraction",
       "label": "Gas abstraction",
       "category": "Gas UX",
@@ -3201,156 +2671,6 @@
       "category": "Fiat ramps",
       "type": "state",
       "path": "product.fiatRamps.googlePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "pfNetWorth",
-      "label": "Net worth view",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.netWorth",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "pfPnl",
-      "label": "Profit & loss",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.pnl",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "pfCostBasis",
-      "label": "Cost basis",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.costBasis",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "pfWatchOnly",
-      "label": "Watch-only wallets",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.watchOnlyWallets",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "defiStaking",
-      "label": "Staking positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.stakingPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "defiLending",
-      "label": "Lending positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lendingPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "defiLp",
-      "label": "LP positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lpPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "defiVault",
-      "label": "Vault positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.vaultPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "defiRewards",
-      "label": "Claimable rewards",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.claimableRewards",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "defiLiq",
-      "label": "Liquidation warnings",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "stakeNative",
-      "label": "Native staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.nativeStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "stakeLiquid",
-      "label": "Liquid staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.liquidStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "stakeApy",
-      "label": "APY display",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.apyDisplay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "stakeClaim",
-      "label": "Rewards claiming",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.rewardsClaiming",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "stakeValidator",
-      "label": "Validator choice",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.validatorChoice",
       "hasUnsourcedRef": false
     },
     {
@@ -3726,156 +3046,6 @@
     {
       "walletId": "elytro",
       "walletName": "Elytro",
-      "metricKey": "pfNetWorth",
-      "label": "Net worth view",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.netWorth",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "pfPnl",
-      "label": "Profit & loss",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.pnl",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "pfCostBasis",
-      "label": "Cost basis",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.costBasis",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "pfWatchOnly",
-      "label": "Watch-only wallets",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.watchOnlyWallets",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "defiStaking",
-      "label": "Staking positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.stakingPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "defiLending",
-      "label": "Lending positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lendingPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "defiLp",
-      "label": "LP positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lpPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "defiVault",
-      "label": "Vault positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.vaultPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "defiRewards",
-      "label": "Claimable rewards",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.claimableRewards",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "defiLiq",
-      "label": "Liquidation warnings",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "stakeNative",
-      "label": "Native staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.nativeStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "stakeLiquid",
-      "label": "Liquid staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.liquidStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "stakeApy",
-      "label": "APY display",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.apyDisplay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "stakeClaim",
-      "label": "Rewards claiming",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.rewardsClaiming",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "stakeValidator",
-      "label": "Validator choice",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.validatorChoice",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
       "metricKey": "nftMint",
       "label": "NFT mint",
       "category": "NFTs",
@@ -4206,96 +3376,6 @@
     {
       "walletId": "exodus",
       "walletName": "Exodus",
-      "metricKey": "pfCostBasis",
-      "label": "Cost basis",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.costBasis",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "pfWatchOnly",
-      "label": "Watch-only wallets",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.watchOnlyWallets",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "defiLending",
-      "label": "Lending positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lendingPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "defiLp",
-      "label": "LP positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lpPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "defiVault",
-      "label": "Vault positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.vaultPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "defiLiq",
-      "label": "Liquidation warnings",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "stakeLiquid",
-      "label": "Liquid staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.liquidStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "stakeApy",
-      "label": "APY display",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.apyDisplay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "stakeValidator",
-      "label": "Validator choice",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.validatorChoice",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
       "metricKey": "nftSend",
       "label": "NFT send",
       "category": "NFTs",
@@ -4611,136 +3691,6 @@
       "category": "Fiat ramps",
       "type": "state",
       "path": "product.fiatRamps.googlePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "pfPnl",
-      "label": "Profit & loss",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.pnl",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "pfCostBasis",
-      "label": "Cost basis",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.costBasis",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "defiStaking",
-      "label": "Staking positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.stakingPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "defiLending",
-      "label": "Lending positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lendingPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "defiLp",
-      "label": "LP positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lpPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "defiVault",
-      "label": "Vault positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.vaultPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "defiRewards",
-      "label": "Claimable rewards",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.claimableRewards",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "defiLiq",
-      "label": "Liquidation warnings",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "stakeNative",
-      "label": "Native staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.nativeStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "stakeLiquid",
-      "label": "Liquid staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.liquidStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "stakeApy",
-      "label": "APY display",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.apyDisplay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "stakeClaim",
-      "label": "Rewards claiming",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.rewardsClaiming",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "stakeValidator",
-      "label": "Validator choice",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.validatorChoice",
       "hasUnsourcedRef": false
     },
     {
@@ -5286,141 +4236,11 @@
     {
       "walletId": "frame",
       "walletName": "Frame",
-      "metricKey": "pfPnl",
-      "label": "Profit & loss",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.pnl",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "pfCostBasis",
-      "label": "Cost basis",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.costBasis",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
       "metricKey": "pfWatchOnly",
       "label": "Watch-only wallets",
       "category": "Portfolio",
       "type": "state",
       "path": "product.portfolioManagement.watchOnlyWallets",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "defiStaking",
-      "label": "Staking positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.stakingPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "defiLending",
-      "label": "Lending positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lendingPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "defiLp",
-      "label": "LP positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lpPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "defiVault",
-      "label": "Vault positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.vaultPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "defiRewards",
-      "label": "Claimable rewards",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.claimableRewards",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "defiLiq",
-      "label": "Liquidation warnings",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "stakeNative",
-      "label": "Native staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.nativeStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "stakeLiquid",
-      "label": "Liquid staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.liquidStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "stakeApy",
-      "label": "APY display",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.apyDisplay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "stakeClaim",
-      "label": "Rewards claiming",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.rewardsClaiming",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "stakeValidator",
-      "label": "Validator choice",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.validatorChoice",
       "hasUnsourcedRef": false
     },
     {
@@ -5851,66 +4671,6 @@
       "category": "DeFi positions",
       "type": "state",
       "path": "product.defiPositionAwareness.stakingPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "defiLending",
-      "label": "Lending positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lendingPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "defiLp",
-      "label": "LP positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lpPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "defiVault",
-      "label": "Vault positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.vaultPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "defiRewards",
-      "label": "Claimable rewards",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.claimableRewards",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "defiLiq",
-      "label": "Liquidation warnings",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "stakeLiquid",
-      "label": "Liquid staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.liquidStaking",
       "hasUnsourcedRef": false
     },
     {
@@ -6706,26 +5466,6 @@
     {
       "walletId": "imtoken",
       "walletName": "imToken",
-      "metricKey": "pfPnl",
-      "label": "Profit & loss",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.pnl",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "pfCostBasis",
-      "label": "Cost basis",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.costBasis",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
       "metricKey": "defiLending",
       "label": "Lending positions",
       "category": "DeFi positions",
@@ -6751,26 +5491,6 @@
       "category": "DeFi positions",
       "type": "state",
       "path": "product.defiPositionAwareness.vaultPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "defiLiq",
-      "label": "Liquidation warnings",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "stakeLiquid",
-      "label": "Liquid staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.liquidStaking",
       "hasUnsourcedRef": false
     },
     {
@@ -7556,36 +6276,6 @@
     {
       "walletId": "metamask",
       "walletName": "MetaMask",
-      "metricKey": "pfPnl",
-      "label": "Profit & loss",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.pnl",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "metamask",
-      "walletName": "MetaMask",
-      "metricKey": "pfCostBasis",
-      "label": "Cost basis",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.costBasis",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "metamask",
-      "walletName": "MetaMask",
-      "metricKey": "defiLiq",
-      "label": "Liquidation warnings",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "metamask",
-      "walletName": "MetaMask",
       "metricKey": "stakeValidator",
       "label": "Validator choice",
       "category": "Staking & earn",
@@ -7996,101 +6686,11 @@
     {
       "walletId": "nufi",
       "walletName": "NuFi",
-      "metricKey": "pfPnl",
-      "label": "Profit & loss",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.pnl",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "pfCostBasis",
-      "label": "Cost basis",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.costBasis",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
       "metricKey": "pfWatchOnly",
       "label": "Watch-only wallets",
       "category": "Portfolio",
       "type": "state",
       "path": "product.portfolioManagement.watchOnlyWallets",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "defiLending",
-      "label": "Lending positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lendingPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "defiLp",
-      "label": "LP positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lpPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "defiVault",
-      "label": "Vault positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.vaultPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "defiLiq",
-      "label": "Liquidation warnings",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "stakeLiquid",
-      "label": "Liquid staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.liquidStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "stakeApy",
-      "label": "APY display",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.apyDisplay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "stakeValidator",
-      "label": "Validator choice",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.validatorChoice",
       "hasUnsourcedRef": false
     },
     {
@@ -8431,16 +7031,6 @@
       "category": "Onboarding",
       "type": "state",
       "path": "product.onboardingFriction.passkeySignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "okx",
-      "walletName": "OKX Wallet",
-      "metricKey": "pfWatchOnly",
-      "label": "Watch-only wallets",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.watchOnlyWallets",
       "hasUnsourcedRef": false
     },
     {
@@ -8836,26 +7426,6 @@
     {
       "walletId": "phantom",
       "walletName": "Phantom",
-      "metricKey": "pfPnl",
-      "label": "Profit & loss",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.pnl",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "phantom",
-      "walletName": "Phantom",
-      "metricKey": "pfCostBasis",
-      "label": "Cost basis",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.costBasis",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "phantom",
-      "walletName": "Phantom",
       "metricKey": "defiLending",
       "label": "Lending positions",
       "category": "DeFi positions",
@@ -9206,106 +7776,6 @@
     {
       "walletId": "pillarx",
       "walletName": "PillarX",
-      "metricKey": "pfPnl",
-      "label": "Profit & loss",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.pnl",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "pfCostBasis",
-      "label": "Cost basis",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.costBasis",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "pfMultiWallet",
-      "label": "Multi-wallet aggregation",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.multiWalletAggregation",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "pfWatchOnly",
-      "label": "Watch-only wallets",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.watchOnlyWallets",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "defiStaking",
-      "label": "Staking positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.stakingPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "defiLending",
-      "label": "Lending positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lendingPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "defiLp",
-      "label": "LP positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lpPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "defiVault",
-      "label": "Vault positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.vaultPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "defiRewards",
-      "label": "Claimable rewards",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.claimableRewards",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "defiLiq",
-      "label": "Liquidation warnings",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
       "metricKey": "stakeNative",
       "label": "Native staking",
       "category": "Staking & earn",
@@ -9316,41 +7786,11 @@
     {
       "walletId": "pillarx",
       "walletName": "PillarX",
-      "metricKey": "stakeLiquid",
-      "label": "Liquid staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.liquidStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
       "metricKey": "stakeApy",
       "label": "APY display",
       "category": "Staking & earn",
       "type": "state",
       "path": "product.stakingEarn.apyDisplay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "stakeClaim",
-      "label": "Rewards claiming",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.rewardsClaiming",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "stakeValidator",
-      "label": "Validator choice",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.validatorChoice",
       "hasUnsourcedRef": false
     },
     {
@@ -9746,91 +8186,11 @@
     {
       "walletId": "rabby",
       "walletName": "Rabby",
-      "metricKey": "pfCostBasis",
-      "label": "Cost basis",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.costBasis",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rabby",
-      "walletName": "Rabby",
-      "metricKey": "defiVault",
-      "label": "Vault positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.vaultPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rabby",
-      "walletName": "Rabby",
-      "metricKey": "defiRewards",
-      "label": "Claimable rewards",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.claimableRewards",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rabby",
-      "walletName": "Rabby",
       "metricKey": "defiLiq",
       "label": "Liquidation warnings",
       "category": "DeFi positions",
       "type": "state",
       "path": "product.defiPositionAwareness.liquidationWarnings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rabby",
-      "walletName": "Rabby",
-      "metricKey": "stakeNative",
-      "label": "Native staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.nativeStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rabby",
-      "walletName": "Rabby",
-      "metricKey": "stakeLiquid",
-      "label": "Liquid staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.liquidStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rabby",
-      "walletName": "Rabby",
-      "metricKey": "stakeApy",
-      "label": "APY display",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.apyDisplay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rabby",
-      "walletName": "Rabby",
-      "metricKey": "stakeClaim",
-      "label": "Rewards claiming",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.rewardsClaiming",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rabby",
-      "walletName": "Rabby",
-      "metricKey": "stakeValidator",
-      "label": "Validator choice",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.validatorChoice",
       "hasUnsourcedRef": false
     },
     {
@@ -10096,16 +8456,6 @@
     {
       "walletId": "rainbow",
       "walletName": "Rainbow",
-      "metricKey": "pfNetWorth",
-      "label": "Net worth view",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.netWorth",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
       "metricKey": "pfPnl",
       "label": "Profit & loss",
       "category": "Portfolio",
@@ -10136,16 +8486,6 @@
     {
       "walletId": "rainbow",
       "walletName": "Rainbow",
-      "metricKey": "defiLending",
-      "label": "Lending positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lendingPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
       "metricKey": "defiLp",
       "label": "LP positions",
       "category": "DeFi positions",
@@ -10156,51 +8496,11 @@
     {
       "walletId": "rainbow",
       "walletName": "Rainbow",
-      "metricKey": "defiVault",
-      "label": "Vault positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.vaultPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "defiRewards",
-      "label": "Claimable rewards",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.claimableRewards",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
       "metricKey": "defiLiq",
       "label": "Liquidation warnings",
       "category": "DeFi positions",
       "type": "state",
       "path": "product.defiPositionAwareness.liquidationWarnings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "stakeNative",
-      "label": "Native staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.nativeStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "stakeLiquid",
-      "label": "Liquid staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.liquidStaking",
       "hasUnsourcedRef": false
     },
     {
@@ -10221,16 +8521,6 @@
       "category": "Staking & earn",
       "type": "state",
       "path": "product.stakingEarn.rewardsClaiming",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "stakeValidator",
-      "label": "Validator choice",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.validatorChoice",
       "hasUnsourcedRef": false
     },
     {
@@ -10521,86 +8811,6 @@
       "category": "Fiat ramps",
       "type": "state",
       "path": "product.fiatRamps.bankTransfer",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "pfPnl",
-      "label": "Profit & loss",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.pnl",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "pfCostBasis",
-      "label": "Cost basis",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.costBasis",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "defiLiq",
-      "label": "Liquidation warnings",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "stakeNative",
-      "label": "Native staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.nativeStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "stakeLiquid",
-      "label": "Liquid staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.liquidStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "stakeApy",
-      "label": "APY display",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.apyDisplay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "stakeClaim",
-      "label": "Rewards claiming",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.rewardsClaiming",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "stakeValidator",
-      "label": "Validator choice",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.validatorChoice",
       "hasUnsourcedRef": false
     },
     {
@@ -11116,86 +9326,6 @@
     {
       "walletId": "trust-wallet",
       "walletName": "Trust Wallet",
-      "metricKey": "pfNetWorth",
-      "label": "Net worth view",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.netWorth",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
-      "metricKey": "pfPnl",
-      "label": "Profit & loss",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.pnl",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
-      "metricKey": "pfCostBasis",
-      "label": "Cost basis",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.costBasis",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
-      "metricKey": "pfWatchOnly",
-      "label": "Watch-only wallets",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.watchOnlyWallets",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
-      "metricKey": "defiLiq",
-      "label": "Liquidation warnings",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
-      "metricKey": "stakeLiquid",
-      "label": "Liquid staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.liquidStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
-      "metricKey": "stakeClaim",
-      "label": "Rewards claiming",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.rewardsClaiming",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
-      "metricKey": "stakeValidator",
-      "label": "Validator choice",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.validatorChoice",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
       "metricKey": "nftSend",
       "label": "NFT send",
       "category": "NFTs",
@@ -11486,141 +9616,11 @@
     {
       "walletId": "uniswap-wallet",
       "walletName": "Uniswap Wallet",
-      "metricKey": "pfPnl",
-      "label": "Profit & loss",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.pnl",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "pfCostBasis",
-      "label": "Cost basis",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.costBasis",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "pfWatchOnly",
-      "label": "Watch-only wallets",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.watchOnlyWallets",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "defiStaking",
-      "label": "Staking positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.stakingPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "defiLending",
-      "label": "Lending positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lendingPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "defiLp",
-      "label": "LP positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lpPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "defiVault",
-      "label": "Vault positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.vaultPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
       "metricKey": "defiRewards",
       "label": "Claimable rewards",
       "category": "DeFi positions",
       "type": "state",
       "path": "product.defiPositionAwareness.claimableRewards",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "defiLiq",
-      "label": "Liquidation warnings",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "stakeNative",
-      "label": "Native staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.nativeStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "stakeLiquid",
-      "label": "Liquid staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.liquidStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "stakeApy",
-      "label": "APY display",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.apyDisplay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "stakeClaim",
-      "label": "Rewards claiming",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.rewardsClaiming",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "stakeValidator",
-      "label": "Validator choice",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.validatorChoice",
       "hasUnsourcedRef": false
     },
     {
@@ -11946,71 +9946,11 @@
     {
       "walletId": "zerion",
       "walletName": "Zerion",
-      "metricKey": "pfPnl",
-      "label": "Profit & loss",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.pnl",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
       "metricKey": "pfCostBasis",
       "label": "Cost basis",
       "category": "Portfolio",
       "type": "state",
       "path": "product.portfolioManagement.costBasis",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "defiLiq",
-      "label": "Liquidation warnings",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "stakeNative",
-      "label": "Native staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.nativeStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "stakeLiquid",
-      "label": "Liquid staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.liquidStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "stakeApy",
-      "label": "APY display",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.apyDisplay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "stakeClaim",
-      "label": "Rewards claiming",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.rewardsClaiming",
       "hasUnsourcedRef": false
     },
     {
@@ -12371,156 +10311,6 @@
       "category": "Fiat ramps",
       "type": "state",
       "path": "product.fiatRamps.bankTransfer",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "pfPnl",
-      "label": "Profit & loss",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.pnl",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "pfCostBasis",
-      "label": "Cost basis",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.costBasis",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "pfWatchOnly",
-      "label": "Watch-only wallets",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.watchOnlyWallets",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "pfNft",
-      "label": "NFT portfolio",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.nftSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "defiStaking",
-      "label": "Staking positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.stakingPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "defiLending",
-      "label": "Lending positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lendingPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "defiLp",
-      "label": "LP positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lpPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "defiVault",
-      "label": "Vault positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.vaultPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "defiRewards",
-      "label": "Claimable rewards",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.claimableRewards",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "defiLiq",
-      "label": "Liquidation warnings",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "stakeNative",
-      "label": "Native staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.nativeStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "stakeLiquid",
-      "label": "Liquid staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.liquidStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "stakeApy",
-      "label": "APY display",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.apyDisplay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "stakeClaim",
-      "label": "Rewards claiming",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.rewardsClaiming",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "stakeValidator",
-      "label": "Validator choice",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.validatorChoice",
       "hasUnsourcedRef": false
     },
     {

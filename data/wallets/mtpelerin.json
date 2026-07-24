@@ -973,8 +973,28 @@
           "netWorth": {
             "$ref": "featureSupported"
           },
-          "pnl": null,
-          "costBasis": null,
+          "pnl": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/support",
+                  "explanation": "Bridge Wallet's official site and support pages describe portfolio holdings/balances and DCA but make no mention of any profit-and-loss tracking feature."
+                }
+              }
+            ]
+          },
+          "costBasis": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/support",
+                  "explanation": "No cost-basis tracking is described anywhere on the official Bridge Wallet or support pages, which focus on buying/swapping/cashing out crypto."
+                }
+              }
+            ]
+          },
           "tokenCategories": {
             "$call": "supported",
             "args": [
@@ -998,7 +1018,17 @@
             ]
           },
           "collectionViews": null,
-          "watchOnlyWallets": null,
+          "watchOnlyWallets": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/bitcoin-wallet",
+                  "explanation": "The only external-address feature mentioned is linking an external cold address as a DCA delivery destination for purchases, not adding watch-only addresses to view/track balances in-app."
+                }
+              }
+            ]
+          },
           "multiWalletAggregation": {
             "$ref": "featureSupported"
           }
@@ -1064,24 +1094,134 @@
             "explanation": "Bridge Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://www.mtpelerin.com/"
           },
-          "lendingPositions": null,
-          "stakingPositions": null,
-          "lpPositions": null,
-          "vaultPositions": null,
+          "lendingPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/bridge-wallet",
+                  "explanation": "DeFi lending protocols are accessed only via WalletConnect out to external dApps; the wallet does not surface lending/borrowing positions in-app."
+                }
+              }
+            ]
+          },
+          "stakingPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/bridge-wallet",
+                  "explanation": "Bridge Wallet connects to external DeFi apps only via WalletConnect and does not surface/read existing staking positions in its own UI."
+                }
+              }
+            ]
+          },
+          "lpPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/bridge-wallet",
+                  "explanation": "No liquidity-pool position surfacing is described; DeFi is handled externally through WalletConnect."
+                }
+              }
+            ]
+          },
+          "vaultPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/support",
+                  "explanation": "No yield-vault position surfacing is mentioned on the official product or support pages."
+                }
+              }
+            ]
+          },
           "perProtocolBalances": null,
-          "claimableRewards": null,
-          "liquidationWarnings": null
+          "claimableRewards": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/support",
+                  "explanation": "No feature for surfacing claimable DeFi rewards is described in the official documentation."
+                }
+              }
+            ]
+          },
+          "liquidationWarnings": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/support",
+                  "explanation": "No liquidation-risk warnings for borrow positions are mentioned; the wallet does not read DeFi positions."
+                }
+              }
+            ]
+          }
         },
         "stakingEarn": {
           "ref": {
             "explanation": "Bridge Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://www.mtpelerin.com/"
           },
-          "nativeStaking": null,
-          "liquidStaking": null,
-          "validatorChoice": null,
-          "apyDisplay": null,
-          "rewardsClaiming": null,
+          "nativeStaking": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/support",
+                  "explanation": "The official Bridge Wallet and support pages describe buy/swap/cash-out and IBAN features but no in-app native protocol staking."
+                }
+              }
+            ]
+          },
+          "liquidStaking": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/support",
+                  "explanation": "No liquid staking (LST) feature is offered or mentioned in Bridge Wallet's documentation."
+                }
+              }
+            ]
+          },
+          "validatorChoice": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/support",
+                  "explanation": "No validator selection is possible as the wallet provides no native staking feature."
+                }
+              }
+            ]
+          },
+          "apyDisplay": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/blog/earn-free-bitcoin-with-our-new-rewards",
+                  "explanation": "With no staking/earn product, no staking APY is displayed; the only 'earn' is BTC quest rewards, not yield with an APY."
+                }
+              }
+            ]
+          },
+          "rewardsClaiming": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/support",
+                  "explanation": "No in-app staking rewards claiming exists since the wallet offers no staking product."
+                }
+              }
+            ]
+          },
           "providerDependency": null,
           "lockupDisclosure": null
         },

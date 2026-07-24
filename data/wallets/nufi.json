@@ -917,8 +917,28 @@
           "netWorth": {
             "$ref": "featureSupported"
           },
-          "pnl": null,
-          "costBasis": null,
+          "pnl": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://reviewnexa.com/nufi-wallet-review/",
+                  "explanation": "NuFi's dashboard shows total balance across chains but per its review 'doesn't track profit/loss, performance charts, or historical data—you'll need external portfolio trackers.'"
+                }
+              }
+            ]
+          },
+          "costBasis": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://reviewnexa.com/nufi-wallet-review/",
+                  "explanation": "NuFi provides no portfolio analytics such as cost basis; the review confirms it only shows balances and lacks P&L/historical tracking."
+                }
+              }
+            ]
+          },
           "tokenCategories": {
             "$call": "supported",
             "args": [
@@ -1018,7 +1038,17 @@
             "explanation": "NuFi source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://nu.fi"
           },
-          "lendingPositions": null,
+          "lendingPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://reviewnexa.com/nufi-wallet-review/",
+                  "explanation": "The review indicates NuFi has no DeFi position tracking (lending, LPs, vaults), functioning as a basic asset manager with native staking only."
+                }
+              }
+            ]
+          },
           "stakingPositions": {
             "$call": "supported",
             "args": [
@@ -1030,8 +1060,28 @@
               }
             ]
           },
-          "lpPositions": null,
-          "vaultPositions": null,
+          "lpPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://reviewnexa.com/nufi-wallet-review/",
+                  "explanation": "NuFi does not surface liquidity-pool positions; the review confirms no DeFi position monitoring is offered."
+                }
+              }
+            ]
+          },
+          "vaultPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://reviewnexa.com/nufi-wallet-review/",
+                  "explanation": "NuFi does not surface yield-vault positions; the review confirms an absence of DeFi position tracking."
+                }
+              }
+            ]
+          },
           "perProtocolBalances": null,
           "claimableRewards": {
             "$call": "supported",
@@ -1044,7 +1094,17 @@
               }
             ]
           },
-          "liquidationWarnings": null
+          "liquidationWarnings": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://reviewnexa.com/nufi-wallet-review/",
+                  "explanation": "With no DeFi borrow-position tracking, NuFi provides no liquidation warnings per the review's list of gaps."
+                }
+              }
+            ]
+          }
         },
         "stakingEarn": {
           "ref": {
@@ -1062,9 +1122,39 @@
               }
             ]
           },
-          "liquidStaking": null,
-          "validatorChoice": null,
-          "apyDisplay": null,
+          "liquidStaking": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://nu.fi/staking/solana",
+                  "explanation": "NuFi offers only traditional native staking with unstaking cooldowns; no liquid staking / LST product is described on its staking pages."
+                }
+              }
+            ]
+          },
+          "validatorChoice": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.nu.fi/support/solutions/articles/80000947012-change-validator",
+                  "explanation": "NuFi lets users pick a validator/stake pool from a selectable list and offers a 'Change Validator' function for delegation."
+                }
+              }
+            ]
+          },
+          "apyDisplay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://nu.fi/staking/solana",
+                  "explanation": "NuFi displays staking APY in-app and on its staking pages (e.g. Solana shows '5.6% Staking APY' / 8%+ with MEV)."
+                }
+              }
+            ]
+          },
           "rewardsClaiming": {
             "$call": "supported",
             "args": [

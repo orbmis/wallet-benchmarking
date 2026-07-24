@@ -840,8 +840,28 @@
               }
             ]
           },
-          "pnl": null,
-          "costBasis": null,
+          "pnl": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://brave.com/wallet/",
+                  "explanation": "Brave Wallet's portfolio shows token balances, market prices and trends (via CoinGecko) but there is no profit/loss tracking documented on its features page."
+                }
+              }
+            ]
+          },
+          "costBasis": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://brave.com/wallet/",
+                  "explanation": "No cost-basis/acquisition-cost tracking is described in Brave Wallet's official features or portfolio documentation; it only displays current balances and prices."
+                }
+              }
+            ]
+          },
           "tokenCategories": {
             "$call": "supported",
             "args": [
@@ -876,7 +896,17 @@
             ]
           },
           "watchOnlyWallets": null,
-          "multiWalletAggregation": null
+          "multiWalletAggregation": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.brave.com/hc/en-us/articles/4416863200141-How-do-I-manage-crypto-assets-in-Brave-Wallet",
+                  "explanation": "Brave Wallet lets users add and manage multiple accounts (including imported MetaMask/Ledger/Trezor accounts) across chains in one portfolio view."
+                }
+              }
+            ]
+          }
         },
         "notifications": {
           "ref": {
@@ -929,24 +959,134 @@
             "explanation": "Brave Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://brave.com/wallet/"
           },
-          "lendingPositions": null,
-          "stakingPositions": null,
-          "lpPositions": null,
-          "vaultPositions": null,
+          "lendingPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://brave.com/wallet/",
+                  "explanation": "No Brave Wallet documentation indicates it surfaces lending/borrowing positions (Aave, Compound, etc.); it only shows wallet token balances."
+                }
+              }
+            ]
+          },
+          "stakingPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://brave.com/wallet/",
+                  "explanation": "Brave Wallet displays token/NFT balances and prices only; there is no documented feature that surfaces staking positions held in external DeFi protocols."
+                }
+              }
+            ]
+          },
+          "lpPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://brave.com/wallet/",
+                  "explanation": "Brave Wallet does not document any reading of liquidity-pool positions; its portfolio is limited to token and NFT balances."
+                }
+              }
+            ]
+          },
+          "vaultPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://brave.com/wallet/",
+                  "explanation": "No documentation shows Brave Wallet surfacing yield-vault positions such as Yearn or Morpho."
+                }
+              }
+            ]
+          },
           "perProtocolBalances": null,
-          "claimableRewards": null,
-          "liquidationWarnings": null
+          "claimableRewards": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://brave.com/wallet/",
+                  "explanation": "Brave Wallet does not document surfacing of claimable DeFi rewards from external protocols."
+                }
+              }
+            ]
+          },
+          "liquidationWarnings": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://brave.com/wallet/",
+                  "explanation": "With no DeFi borrow-position awareness in the wallet, there are no documented liquidation-risk warnings."
+                }
+              }
+            ]
+          }
         },
         "stakingEarn": {
           "ref": {
             "explanation": "Brave Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://brave.com/wallet/"
           },
-          "nativeStaking": null,
-          "liquidStaking": null,
-          "validatorChoice": null,
-          "apyDisplay": null,
-          "rewardsClaiming": null,
+          "nativeStaking": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/brave/brave-browser/issues/43216",
+                  "explanation": "Native in-app staking is an open, unimplemented feature request (GitHub issue #43216, opened Jan 2025) and Brave staff confirmed staking is not available directly within the wallet interface."
+                }
+              }
+            ]
+          },
+          "liquidStaking": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://community.brave.app/t/staking-sol-held-in-brave-wallet/454680",
+                  "explanation": "Brave Wallet offers no in-app liquid staking; users are advised only to manually swap to LSTs like stSOL as a workaround, not an integrated feature."
+                }
+              }
+            ]
+          },
+          "validatorChoice": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/brave/brave-browser/issues/43216",
+                  "explanation": "Validator selection is only part of the unimplemented native-staking feature request, so it is not available in Brave Wallet."
+                }
+              }
+            ]
+          },
+          "apyDisplay": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/brave/brave-browser/issues/43216",
+                  "explanation": "With no in-app staking/earn product, Brave Wallet does not display staking/earn APY."
+                }
+              }
+            ]
+          },
+          "rewardsClaiming": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/brave/brave-browser/issues/43216",
+                  "explanation": "No in-app staking exists, so there is no in-app rewards-claiming functionality in Brave Wallet."
+                }
+              }
+            ]
+          },
           "providerDependency": null,
           "lockupDisclosure": null
         },

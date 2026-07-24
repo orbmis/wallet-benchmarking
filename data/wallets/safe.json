@@ -1169,8 +1169,28 @@
           "netWorth": {
             "$ref": "featureSupported"
           },
-          "pnl": null,
-          "costBasis": null,
+          "pnl": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.safe.global/en/articles/40843-how-is-the-fiat-value-of-assets-calculated",
+                  "explanation": "Safe{Wallet}'s Assets view displays fiat value of holdings from CoinGecko pricing but does not provide profit-and-loss tracking."
+                }
+              }
+            ]
+          },
+          "costBasis": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.safe.global/en/articles/40843-how-is-the-fiat-value-of-assets-calculated",
+                  "explanation": "Safe{Wallet} only shows current fiat value of assets and provides no acquisition cost-basis tracking, which users must obtain from external trackers."
+                }
+              }
+            ]
+          },
           "tokenCategories": {
             "$call": "supported",
             "args": [
@@ -1336,18 +1356,78 @@
               }
             ]
           },
-          "liquidationWarnings": null
+          "liquidationWarnings": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.safe.global/articles/4071700443-defi-lending-in-safewallet",
+                  "explanation": "Safe's DeFi Earn feature is a lending/supply product with no borrowing and no liquidation warnings, and it does not surface external borrow positions."
+                }
+              }
+            ]
+          }
         },
         "stakingEarn": {
           "ref": {
             "explanation": "Safe source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://safe.global"
           },
-          "nativeStaking": null,
-          "liquidStaking": null,
-          "validatorChoice": null,
-          "apyDisplay": null,
-          "rewardsClaiming": null,
+          "nativeStaking": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.safe.global/en/articles/222615-safe-staking",
+                  "explanation": "Safe{Staking} offers in-app native full-node ETH staking in multiples of 32 ETH via a Kiln integration."
+                }
+              }
+            ]
+          },
+          "liquidStaking": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.safe.global/en/articles/222615-safe-staking",
+                  "explanation": "Safe staking documentation describes only native full-node staking and lists liquid staking (for amounts under 32 ETH) as a planned/forthcoming feature, not currently shipped."
+                }
+              }
+            ]
+          },
+          "validatorChoice": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.kiln.fi/post/stake-eth-from-safe-wallet-with-the-new-kiln-integration",
+                  "explanation": "The Kiln integration uses Dedicated Validators automatically; users only choose the ETH amount (multiples of 32) and cannot select a specific validator."
+                }
+              }
+            ]
+          },
+          "apyDisplay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.safe.global/articles/4071700443-defi-lending-in-safewallet",
+                  "explanation": "Safe's staking/Earn UI displays the current reward rate offered by the protocol to users."
+                }
+              }
+            ]
+          },
+          "rewardsClaiming": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.safe.global/en/articles/222615-safe-staking",
+                  "explanation": "Safe{Staking} requires and allows users to manually withdraw/claim their accumulated staking rewards in-app."
+                }
+              }
+            ]
+          },
           "providerDependency": null,
           "lockupDisclosure": null
         },

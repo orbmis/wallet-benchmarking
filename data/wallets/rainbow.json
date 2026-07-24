@@ -1009,7 +1009,17 @@
             "explanation": "Rainbow homepage says users can manage hundreds of wallets, import/organize wallets, watch/impersonate wallets, manage NFTs, and swap/bridge.",
             "url": "https://rainbow.me/"
           },
-          "netWorth": null,
+          "netWorth": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbow.me/support/app/using-watch-mode",
+                  "explanation": "Rainbow displays a wallet's aggregate net worth across tokens and NFTs, including for watched addresses via Watch Mode."
+                }
+              }
+            ]
+          },
           "pnl": null,
           "costBasis": null,
           "tokenCategories": null,
@@ -1139,12 +1149,42 @@
             "explanation": "Rainbow source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://rainbow.me"
           },
-          "lendingPositions": null,
+          "lendingPositions": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbow.me/support/app/defi-positions-in-rainbow",
+                  "explanation": "Rainbow's DeFi Positions feature surfaces lending/borrowing positions held in Aave (v2/v3) and Compound across supported chains."
+                }
+              }
+            ]
+          },
           "stakingPositions": null,
           "lpPositions": null,
-          "vaultPositions": null,
+          "vaultPositions": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbow.me/support/app/defi-positions-in-rainbow",
+                  "explanation": "Rainbow surfaces yield-vault positions, explicitly listing Yearn v2 among supported DeFi Positions protocols."
+                }
+              }
+            ]
+          },
           "perProtocolBalances": null,
-          "claimableRewards": null,
+          "claimableRewards": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbow.me/support/app/claimables-in-rainbow",
+                  "explanation": "Rainbow's Claimables feature surfaces and lets users claim DeFi rewards from integrated protocols such as Morpho, Moxie and Hypersub."
+                }
+              }
+            ]
+          },
           "liquidationWarnings": null
         },
         "stakingEarn": {
@@ -1152,9 +1192,39 @@
             "explanation": "Rainbow source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://rainbow.me"
           },
-          "nativeStaking": null,
-          "liquidStaking": null,
-          "validatorChoice": null,
+          "nativeStaking": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbow.me/support/app/staking-rnbw",
+                  "explanation": "Rainbow's only in-app staking is committing its own RNBW cashback token to the protocol; it does not offer native ETH/SOL protocol staking."
+                }
+              }
+            ]
+          },
+          "liquidStaking": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbow.me/support/app/staking-rnbw",
+                  "explanation": "Rainbow's in-app staking is limited to the RNBW token and is explicitly not liquid staking of ETH/SOL via LSTs."
+                }
+              }
+            ]
+          },
+          "validatorChoice": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbow.me/support/app/staking-rnbw",
+                  "explanation": "Rainbow's RNBW staking is a protocol rewards/membership program with no validator selection, and no native staking with validator choice exists."
+                }
+              }
+            ]
+          },
           "apyDisplay": null,
           "rewardsClaiming": null,
           "providerDependency": null,

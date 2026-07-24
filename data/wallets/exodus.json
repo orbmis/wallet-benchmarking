@@ -879,7 +879,17 @@
               }
             ]
           },
-          "costBasis": null,
+          "costBasis": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.exodus.com/support/en/articles/8598723-what-is-the-total-value-of-my-exodus-wallet",
+                  "explanation": "Exodus's portfolio shows real-time balances, value and 24h/percentage performance but there is no evidence of acquisition cost-basis tracking, and reviews/support describe only current value and price-change tracking."
+                }
+              }
+            ]
+          },
           "tokenCategories": null,
           "nftSupport": {
             "$call": "supported",
@@ -903,7 +913,17 @@
               }
             ]
           },
-          "watchOnlyWallets": null,
+          "watchOnlyWallets": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.exodus.com/support/en/articles/8598671-how-do-i-see-all-of-my-wallet-s-addresses",
+                  "explanation": "Exodus is a private-key self-custody wallet that only tracks addresses derived from your own seed, with no documented ability to add watch-only/view-only addresses you don't control."
+                }
+              }
+            ]
+          },
           "multiWalletAggregation": {
             "$call": "supported",
             "args": [
@@ -1007,7 +1027,17 @@
             "explanation": "Exodus source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://www.exodus.com/"
           },
-          "lendingPositions": null,
+          "lendingPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.exodus.com/support/en/articles/8598871-what-is-defi",
+                  "explanation": "Exodus lets users connect to DeFi lending protocols (e.g. Compound/Aave) via its Web3 dApp browser but there is no evidence it surfaces/reads existing external lending positions in its own portfolio UI."
+                }
+              }
+            ]
+          },
           "stakingPositions": {
             "$call": "supported",
             "args": [
@@ -1019,8 +1049,28 @@
               }
             ]
           },
-          "lpPositions": null,
-          "vaultPositions": null,
+          "lpPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.exodus.com/support/en/articles/8598871-what-is-defi",
+                  "explanation": "Exodus can connect to DEXs/LP dApps through its Web3 wallet but no source indicates it aggregates or displays external liquidity-pool positions within the wallet's portfolio view."
+                }
+              }
+            ]
+          },
+          "vaultPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.exodus.com/support/en/articles/8598871-what-is-defi",
+                  "explanation": "No evidence that Exodus surfaces or reads yield-vault positions (Yearn/Morpho-style) held in external protocols; its DeFi involvement is limited to dApp connectivity, not position tracking."
+                }
+              }
+            ]
+          },
           "perProtocolBalances": null,
           "claimableRewards": {
             "$call": "supported",
@@ -1033,7 +1083,17 @@
               }
             ]
           },
-          "liquidationWarnings": null
+          "liquidationWarnings": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.exodus.com/support/en/articles/8598871-what-is-defi",
+                  "explanation": "Since Exodus does not surface external borrow/lending positions, there is no documented liquidation-risk warning feature for DeFi borrow positions."
+                }
+              }
+            ]
+          }
         },
         "stakingEarn": {
           "ref": {
@@ -1051,9 +1111,39 @@
               }
             ]
           },
-          "liquidStaking": null,
-          "validatorChoice": null,
-          "apyDisplay": null,
+          "liquidStaking": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.exodus.com/support/en/articles/8598878-how-do-i-stake-eth-and-other-crypto-on-lido",
+                  "explanation": "Exodus supports liquid staking of ETH via Lido (receiving stETH) through its Web3 wallet/mobile, as documented in its knowledge base."
+                }
+              }
+            ]
+          },
+          "validatorChoice": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://everstake.one/resources/blog/how-to-stake-sol-with-exodus-mobile-wallet-a-step-by-step-guide",
+                  "explanation": "Exodus staking automatically delegates to its third-party provider Everstake with no manual validator selection supported, per multiple staking guides."
+                }
+              }
+            ]
+          },
+          "apyDisplay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.exodus.com/support/en/articles/8598663-what-is-apy",
+                  "explanation": "Exodus displays estimated staking APY for stakeable assets in the wallet's staking section, as described in its support articles on staking and APY."
+                }
+              }
+            ]
+          },
           "rewardsClaiming": {
             "$call": "supported",
             "args": [

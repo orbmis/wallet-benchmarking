@@ -1105,8 +1105,28 @@
           "netWorth": {
             "$ref": "featureSupported"
           },
-          "pnl": null,
-          "costBasis": null,
+          "pnl": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://phantom.com/learn/blog/solana-profit-loss",
+                  "explanation": "Phantom's official blog and help center document a Profit & Loss feature showing realized P&L, unrealized P&L, and total return for Solana token holdings in the mobile app and extension."
+                }
+              }
+            ]
+          },
+          "costBasis": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://phantom.com/learn/blog/solana-profit-loss",
+                  "explanation": "Phantom's official P&L page states it displays Cost Basis ('what you paid for the tokens you currently hold'), calculated via weighted average cost, alongside P&L metrics."
+                }
+              }
+            ]
+          },
           "tokenCategories": {
             "$call": "supported",
             "args": [

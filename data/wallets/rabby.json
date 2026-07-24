@@ -1664,7 +1664,17 @@
             ]
           },
           "pnl": null,
-          "costBasis": null,
+          "costBasis": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://cryptoslate.com/crypto-wallets/rabby-wallet-review/",
+                  "explanation": "No authoritative source indicates the Rabby wallet tracks acquisition cost basis of holdings; reviews describe it as a security/portfolio-viewing wallet without cost-basis analytics."
+                }
+              }
+            ]
+          },
           "tokenCategories": null,
           "nftSupport": {
             "$call": "supported",
@@ -1815,7 +1825,17 @@
               }
             ]
           },
-          "vaultPositions": null,
+          "vaultPositions": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.dextools.io/tutorials/how-to-use-rabby-wallet-multi-chain-evm-tutorial-2026",
+                  "explanation": "Rabby uses DeBank's data engine to automatically surface DeFi positions including staking, lending, liquidity provision and yield-farming/vault positions across EVM protocols in its portfolio view."
+                }
+              }
+            ]
+          },
           "perProtocolBalances": {
             "$call": "supported",
             "args": [
@@ -1827,7 +1847,17 @@
               }
             ]
           },
-          "claimableRewards": null,
+          "claimableRewards": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.dextools.io/tutorials/how-to-use-rabby-wallet-multi-chain-evm-tutorial-2026",
+                  "explanation": "Rabby's portfolio view displays pending/claimable rewards (and claimable airdrops) alongside surfaced DeFi positions via the DeBank data engine."
+                }
+              }
+            ]
+          },
           "liquidationWarnings": null
         },
         "stakingEarn": {
@@ -1835,11 +1865,61 @@
             "explanation": "Rabby source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://rabby.io"
           },
-          "nativeStaking": null,
-          "liquidStaking": null,
-          "validatorChoice": null,
-          "apyDisplay": null,
-          "rewardsClaiming": null,
+          "nativeStaking": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://cryptoslate.com/crypto-wallets/rabby-wallet-review/",
+                  "explanation": "Reviews explicitly state there is no one-tap/native staking product in Rabby; it only surfaces staking positions users already hold and directs them to external protocols."
+                }
+              }
+            ]
+          },
+          "liquidStaking": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.bitdegree.org/crypto/rabby-wallet-review",
+                  "explanation": "Rabby offers no in-app staking of any kind including liquid staking; reviews confirm users cannot do anything with tokens beyond swapping, dApp use, and transfers."
+                }
+              }
+            ]
+          },
+          "validatorChoice": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://cryptoslate.com/crypto-wallets/rabby-wallet-review/",
+                  "explanation": "With no native staking product, Rabby offers no validator selection; reviews confirm delegated staking must be done at the protocol directly."
+                }
+              }
+            ]
+          },
+          "apyDisplay": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://cryptoslate.com/crypto-wallets/rabby-wallet-review/",
+                  "explanation": "Rabby has no in-app staking/earn interface and reviews confirm no APY comparison or display for staking within the wallet."
+                }
+              }
+            ]
+          },
+          "rewardsClaiming": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://cryptoslate.com/crypto-wallets/rabby-wallet-review/",
+                  "explanation": "Rabby provides no native staking, so there is no in-app staking-reward claiming interface; users must interact with the underlying protocols directly."
+                }
+              }
+            ]
+          },
           "providerDependency": null,
           "lockupDisclosure": null
         },
