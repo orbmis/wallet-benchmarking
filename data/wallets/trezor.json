@@ -209,7 +209,17 @@
         "firmware": null,
         "keysHandling": null,
         "lightClient": {
-          "ethereumL1": null
+          "ethereumL1": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trezor.io/learn/supported-assets/ethereum-layer-2-EVM/ethereum-erc-20-tokens-on-trezor",
+                  "explanation": "Trezor Suite relies on backend/RPC data rather than an embedded trust-minimized Ethereum L1 light client to verify state."
+                }
+              }
+            ]
+          }
         },
         "publicSecurityAudits": null,
         "secureElement": {
@@ -255,9 +265,58 @@
           "erc7730": {
             "$ref": "notSupported"
           },
-          "erc8213": null
+          "erc8213": null,
+          "transactionSimulations": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trezor.io/learn/supported-assets/ethereum-layer-2-EVM/ethereum-erc-20-tokens-on-trezor",
+                  "explanation": "Trezor Suite has users review raw transaction/EIP-712 data on the device but does not simulate net balance changes before signing."
+                }
+              }
+            ]
+          }
         },
-        "userSafety": null
+        "userSafety": null,
+        "hardwareWalletSupport": {
+          "$ref": "notApplicable"
+        },
+        "scamAlerts": {
+          "sendTransactionWarning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trezor.io/support/troubleshooting/coins-tokens/address-poisoning-attacks",
+                  "explanation": "Trezor Suite detects address-poisoning and airdrop scam tokens, blurring them and labeling transactions as unverified/phishing."
+                }
+              }
+            ]
+          },
+          "contractTransactionWarning": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trezor.io/support/troubleshooting/coins-tokens/malicious-smart-contracts",
+                  "explanation": "Trezor's guidance directs users to external tools like Etherscan's token approval checker and offers no built-in flagged/malicious-contract warning before signing."
+                }
+              }
+            ]
+          }
+        },
+        "passkeyVerification": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://trezor.io/guides/bonus-tools/using-your-trezor-as-a-security-key-fido-2-and-u2f",
+                "explanation": "Trezor Model T and Safe family devices work as FIDO2/passkey security keys for phishing-resistant 2FA and passwordless login."
+              }
+            }
+          ]
+        }
       },
       "selfSovereignty": {
         "interoperability": null,

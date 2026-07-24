@@ -1242,7 +1242,17 @@
             "explanation": "Exodus source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://www.exodus.com/"
           },
-          "swapFees": null,
+          "swapFees": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.exodus.com/support/en/articles/8598637-how-does-exodus-make-money",
+                  "explanation": "Exodus's official 'How does Exodus make money' support page and swap UI disclose that it earns via the spread and shows the exact amount you pay/receive (fixed rate from ~0.5%) before confirming a swap."
+                }
+              }
+            ]
+          },
           "bridgeFees": null,
           "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
           "spreadDisclosure": {
@@ -1260,7 +1270,17 @@
             ]
           },
           "cardFees": "Card fees are provider-dependent where card purchase is available.",
-          "hiddenPartnerRevenue": null
+          "hiddenPartnerRevenue": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.exodus.com/support/en/articles/8598637-how-does-exodus-make-money",
+                  "explanation": "Exodus openly discloses on its official support page that it earns from the swap spread and receives a small share of third-party fiat providers' processing fees, and it shows the full quote (spread) before confirmation, so the revenue is not undisclosed."
+                }
+              }
+            ]
+          }
         },
         "releaseVelocity": {
           "ref": {

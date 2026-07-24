@@ -1464,12 +1464,52 @@
             "url": "https://base.app/"
           },
           "swapFees": null,
-          "bridgeFees": null,
+          "bridgeFees": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.coinbase.com/en/wallet/bridging",
+                  "explanation": "Coinbase's bridging help page discloses a 'Coinbase Fee' charged for bridging to networks other than Base, plus network transaction fees."
+                }
+              }
+            ]
+          },
           "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
-          "spreadDisclosure": null,
-          "subscriptionFeatures": null,
+          "spreadDisclosure": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://cryptoslate.com/crypto-wallets/base-wallet-review/",
+                  "explanation": "Reviews note the swap fee is embedded in the quoted rate rather than shown as a separate line item, and no official page discloses a specific spread/markup on quotes."
+                }
+              }
+            ]
+          },
+          "subscriptionFeatures": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://cryptoslate.com/crypto-wallets/base-wallet-review/",
+                  "explanation": "Base App is free with no subscription/premium tier within the wallet; Coinbase One is a separate Coinbase product not offered inside the app."
+                }
+              }
+            ]
+          },
           "cardFees": "Card fees are provider-dependent where card purchase is available.",
-          "hiddenPartnerRevenue": null
+          "hiddenPartnerRevenue": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.coinbase.com/en/wallet/getting-started/dex-swap",
+                  "explanation": "The 1% Coinbase swap fee and DEX-aggregator fees are documented on Coinbase's official pages, with no evidence of undisclosed partner/referral revenue."
+                }
+              }
+            ]
+          }
         },
         "releaseVelocity": {
           "ref": {

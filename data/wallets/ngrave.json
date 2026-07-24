@@ -180,11 +180,33 @@
             }
           ]
         },
-        "duressResistance": null,
+        "duressResistance": {
+          "duressMode": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.ngrave.io/hc/en-us/articles/14915071703581-Passphrase-FAQ",
+                  "explanation": "NGRAVE documents that a passphrase creates a hidden wallet and a small-balance passphrase wallet can act as a duress/decoy wallet surrendered under coercion."
+                }
+              }
+            ]
+          }
+        },
         "firmware": null,
         "keysHandling": null,
         "lightClient": {
-          "ethereumL1": null
+          "ethereumL1": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://ngrave.io/en/liquid",
+                  "explanation": "LIQUID is a portfolio/broadcast app relying on standard RPC/QR flow with no documented trust-minimized Ethereum L1 light client."
+                }
+              }
+            ]
+          }
         },
         "publicSecurityAudits": null,
         "secureElement": {
@@ -227,7 +249,10 @@
           },
           "erc8213": null
         },
-        "userSafety": null
+        "userSafety": null,
+        "hardwareWalletSupport": {
+          "$ref": "notApplicable"
+        }
       },
       "selfSovereignty": {
         "interoperability": null,

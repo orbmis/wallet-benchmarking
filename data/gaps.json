@@ -1,7 +1,7 @@
 {
   "generated": true,
-  "gapCount": 968,
-  "naCount": 990,
+  "gapCount": 808,
+  "naCount": 1004,
   "gaps": [
     {
       "walletId": "ambire",
@@ -261,26 +261,6 @@
       "category": "Pricing & fees",
       "type": "state",
       "path": "product.pricingFeeModel.spreadDisclosure",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "feeHidden",
-      "label": "Hidden partner revenue",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "feeSubscription",
-      "label": "Subscription features",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.subscriptionFeatures",
       "hasUnsourcedRef": false
     },
     {
@@ -646,51 +626,11 @@
     {
       "walletId": "argent",
       "walletName": "Argent",
-      "metricKey": "feeSwap",
-      "label": "Swap fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.swapFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "feeBridge",
-      "label": "Bridge fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.bridgeFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
       "metricKey": "feeSpread",
       "label": "Spread disclosure",
       "category": "Pricing & fees",
       "type": "state",
       "path": "product.pricingFeeModel.spreadDisclosure",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "feeHidden",
-      "label": "Hidden partner revenue",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "feeSubscription",
-      "label": "Subscription features",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.subscriptionFeatures",
       "hasUnsourcedRef": false
     },
     {
@@ -954,46 +894,6 @@
       "hasUnsourcedRef": false
     },
     {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "feeBridge",
-      "label": "Bridge fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.bridgeFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "feeSpread",
-      "label": "Spread disclosure",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.spreadDisclosure",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "feeHidden",
-      "label": "Hidden partner revenue",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "feeSubscription",
-      "label": "Subscription features",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.subscriptionFeatures",
-      "hasUnsourcedRef": false
-    },
-    {
       "walletId": "bitbox",
       "walletName": "BitBox",
       "metricKey": "eoa",
@@ -1056,56 +956,6 @@
     {
       "walletId": "bitbox",
       "walletName": "BitBox",
-      "metricKey": "hwSupport",
-      "label": "Hardware wallet support",
-      "category": "Security",
-      "type": "support",
-      "path": "security.hardwareWalletSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitbox",
-      "walletName": "BitBox",
-      "metricKey": "scamUrl",
-      "label": "Scam URL warnings",
-      "category": "Security",
-      "type": "state",
-      "path": "security.scamAlerts.scamUrlWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitbox",
-      "walletName": "BitBox",
-      "metricKey": "scamSend",
-      "label": "Risky-send warnings",
-      "category": "Security",
-      "type": "state",
-      "path": "security.scamAlerts.sendTransactionWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitbox",
-      "walletName": "BitBox",
-      "metricKey": "scamContract",
-      "label": "Malicious-contract warnings",
-      "category": "Security",
-      "type": "state",
-      "path": "security.scamAlerts.contractTransactionWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitbox",
-      "walletName": "BitBox",
-      "metricKey": "txSim",
-      "label": "Transaction simulation",
-      "category": "Security",
-      "type": "state",
-      "path": "security.transactionLegibility.transactionSimulations",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitbox",
-      "walletName": "BitBox",
       "metricKey": "audits",
       "label": "Public audits",
       "category": "Security",
@@ -1121,36 +971,6 @@
       "category": "Security",
       "type": "count_low",
       "path": "security.publicSecurityAudits",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitbox",
-      "walletName": "BitBox",
-      "metricKey": "duress",
-      "label": "Duress / decoy mode",
-      "category": "Security",
-      "type": "state",
-      "path": "security.duressResistance.duressMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitbox",
-      "walletName": "BitBox",
-      "metricKey": "passkey",
-      "label": "Passkey verification",
-      "category": "Security",
-      "type": "state",
-      "path": "security.passkeyVerification",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitbox",
-      "walletName": "BitBox",
-      "metricKey": "lightClient",
-      "label": "L1 light client",
-      "category": "Security",
-      "type": "state",
-      "path": "security.lightClient.ethereumL1",
       "hasUnsourcedRef": false
     },
     {
@@ -1341,46 +1161,6 @@
       "category": "Developer offering",
       "type": "state",
       "path": "product.developerOffering.whiteLabelOffering",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitget",
-      "walletName": "Bitget Wallet",
-      "metricKey": "feeSwap",
-      "label": "Swap fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.swapFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitget",
-      "walletName": "Bitget Wallet",
-      "metricKey": "feeBridge",
-      "label": "Bridge fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.bridgeFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitget",
-      "walletName": "Bitget Wallet",
-      "metricKey": "feeHidden",
-      "label": "Hidden partner revenue",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitget",
-      "walletName": "Bitget Wallet",
-      "metricKey": "feeSubscription",
-      "label": "Subscription features",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.subscriptionFeatures",
       "hasUnsourcedRef": false
     },
     {
@@ -1676,51 +1456,11 @@
     {
       "walletId": "brave-wallet",
       "walletName": "Brave Wallet",
-      "metricKey": "feeSwap",
-      "label": "Swap fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.swapFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "feeBridge",
-      "label": "Bridge fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.bridgeFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
       "metricKey": "feeSpread",
       "label": "Spread disclosure",
       "category": "Pricing & fees",
       "type": "state",
       "path": "product.pricingFeeModel.spreadDisclosure",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "feeHidden",
-      "label": "Hidden partner revenue",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "feeSubscription",
-      "label": "Subscription features",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.subscriptionFeatures",
       "hasUnsourcedRef": false
     },
     {
@@ -1984,56 +1724,6 @@
       "hasUnsourcedRef": false
     },
     {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "feeSwap",
-      "label": "Swap fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.swapFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "feeBridge",
-      "label": "Bridge fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.bridgeFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "feeSpread",
-      "label": "Spread disclosure",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.spreadDisclosure",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "feeHidden",
-      "label": "Hidden partner revenue",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "feeSubscription",
-      "label": "Subscription features",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.subscriptionFeatures",
-      "hasUnsourcedRef": false
-    },
-    {
       "walletId": "coinbase-wallet",
       "walletName": "Coinbase Wallet",
       "metricKey": "pDesktop",
@@ -2156,41 +1846,11 @@
     {
       "walletId": "coinbase-wallet",
       "walletName": "Coinbase Wallet",
-      "metricKey": "feeSwap",
-      "label": "Swap fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.swapFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "coinbase-wallet",
-      "walletName": "Coinbase Wallet",
       "metricKey": "feeBridge",
       "label": "Bridge fees disclosed",
       "category": "Pricing & fees",
       "type": "state",
       "path": "product.pricingFeeModel.bridgeFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "coinbase-wallet",
-      "walletName": "Coinbase Wallet",
-      "metricKey": "feeHidden",
-      "label": "Hidden partner revenue",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "coinbase-wallet",
-      "walletName": "Coinbase Wallet",
-      "metricKey": "feeSubscription",
-      "label": "Subscription features",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.subscriptionFeatures",
       "hasUnsourcedRef": false
     },
     {
@@ -2256,16 +1916,6 @@
     {
       "walletId": "cypherock",
       "walletName": "Cypherock Wallet",
-      "metricKey": "hwSupport",
-      "label": "Hardware wallet support",
-      "category": "Security",
-      "type": "support",
-      "path": "security.hardwareWalletSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "cypherock",
-      "walletName": "Cypherock Wallet",
       "metricKey": "scamUrl",
       "label": "Scam URL warnings",
       "category": "Security",
@@ -2276,61 +1926,11 @@
     {
       "walletId": "cypherock",
       "walletName": "Cypherock Wallet",
-      "metricKey": "scamSend",
-      "label": "Risky-send warnings",
-      "category": "Security",
-      "type": "state",
-      "path": "security.scamAlerts.sendTransactionWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "cypherock",
-      "walletName": "Cypherock Wallet",
-      "metricKey": "scamContract",
-      "label": "Malicious-contract warnings",
-      "category": "Security",
-      "type": "state",
-      "path": "security.scamAlerts.contractTransactionWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "cypherock",
-      "walletName": "Cypherock Wallet",
-      "metricKey": "txSim",
-      "label": "Transaction simulation",
-      "category": "Security",
-      "type": "state",
-      "path": "security.transactionLegibility.transactionSimulations",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "cypherock",
-      "walletName": "Cypherock Wallet",
       "metricKey": "duress",
       "label": "Duress / decoy mode",
       "category": "Security",
       "type": "state",
       "path": "security.duressResistance.duressMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "cypherock",
-      "walletName": "Cypherock Wallet",
-      "metricKey": "passkey",
-      "label": "Passkey verification",
-      "category": "Security",
-      "type": "state",
-      "path": "security.passkeyVerification",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "cypherock",
-      "walletName": "Cypherock Wallet",
-      "metricKey": "lightClient",
-      "label": "L1 light client",
-      "category": "Security",
-      "type": "state",
-      "path": "security.lightClient.ethereumL1",
       "hasUnsourcedRef": false
     },
     {
@@ -2656,51 +2256,11 @@
     {
       "walletId": "daimo",
       "walletName": "Daimo",
-      "metricKey": "feeSwap",
-      "label": "Swap fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.swapFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "feeBridge",
-      "label": "Bridge fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.bridgeFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "feeSpread",
-      "label": "Spread disclosure",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.spreadDisclosure",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
       "metricKey": "feeHidden",
       "label": "Hidden partner revenue",
       "category": "Pricing & fees",
       "type": "state",
       "path": "product.pricingFeeModel.hiddenPartnerRevenue",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "feeSubscription",
-      "label": "Subscription features",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.subscriptionFeatures",
       "hasUnsourcedRef": false
     },
     {
@@ -3006,51 +2566,11 @@
     {
       "walletId": "elytro",
       "walletName": "Elytro",
-      "metricKey": "feeSwap",
-      "label": "Swap fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.swapFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "feeBridge",
-      "label": "Bridge fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.bridgeFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "feeSpread",
-      "label": "Spread disclosure",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.spreadDisclosure",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
       "metricKey": "feeHidden",
       "label": "Hidden partner revenue",
       "category": "Pricing & fees",
       "type": "state",
       "path": "product.pricingFeeModel.hiddenPartnerRevenue",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "feeSubscription",
-      "label": "Subscription features",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.subscriptionFeatures",
       "hasUnsourcedRef": false
     },
     {
@@ -3306,31 +2826,11 @@
     {
       "walletId": "exodus",
       "walletName": "Exodus",
-      "metricKey": "feeSwap",
-      "label": "Swap fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.swapFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
       "metricKey": "feeBridge",
       "label": "Bridge fees disclosed",
       "category": "Pricing & fees",
       "type": "state",
       "path": "product.pricingFeeModel.bridgeFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "feeHidden",
-      "label": "Hidden partner revenue",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
       "hasUnsourcedRef": false
     },
     {
@@ -3606,51 +3106,11 @@
     {
       "walletId": "family",
       "walletName": "Family",
-      "metricKey": "feeSwap",
-      "label": "Swap fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.swapFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "feeBridge",
-      "label": "Bridge fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.bridgeFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
       "metricKey": "feeSpread",
       "label": "Spread disclosure",
       "category": "Pricing & fees",
       "type": "state",
       "path": "product.pricingFeeModel.spreadDisclosure",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "feeHidden",
-      "label": "Hidden partner revenue",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "feeSubscription",
-      "label": "Subscription features",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.subscriptionFeatures",
       "hasUnsourcedRef": false
     },
     {
@@ -3711,16 +3171,6 @@
       "category": "Accounts",
       "type": "state",
       "path": "multiAddress",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "firefly",
-      "walletName": "Firefly Wallet",
-      "metricKey": "hwSupport",
-      "label": "Hardware wallet support",
-      "category": "Security",
-      "type": "support",
-      "path": "security.hardwareWalletSupport",
       "hasUnsourcedRef": false
     },
     {
@@ -3791,26 +3241,6 @@
       "category": "Security",
       "type": "state",
       "path": "security.duressResistance.duressMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "firefly",
-      "walletName": "Firefly Wallet",
-      "metricKey": "passkey",
-      "label": "Passkey verification",
-      "category": "Security",
-      "type": "state",
-      "path": "security.passkeyVerification",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "firefly",
-      "walletName": "Firefly Wallet",
-      "metricKey": "lightClient",
-      "label": "L1 light client",
-      "category": "Security",
-      "type": "state",
-      "path": "security.lightClient.ethereumL1",
       "hasUnsourcedRef": false
     },
     {
@@ -4131,56 +3561,6 @@
       "category": "Developer offering",
       "type": "state",
       "path": "product.developerOffering.whiteLabelOffering",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "feeSwap",
-      "label": "Swap fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.swapFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "feeBridge",
-      "label": "Bridge fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.bridgeFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "feeSpread",
-      "label": "Spread disclosure",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.spreadDisclosure",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "feeHidden",
-      "label": "Hidden partner revenue",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "feeSubscription",
-      "label": "Subscription features",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.subscriptionFeatures",
       "hasUnsourcedRef": false
     },
     {
@@ -4514,56 +3894,6 @@
       "hasUnsourcedRef": false
     },
     {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "feeSwap",
-      "label": "Swap fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.swapFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "feeBridge",
-      "label": "Bridge fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.bridgeFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "feeSpread",
-      "label": "Spread disclosure",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.spreadDisclosure",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "feeHidden",
-      "label": "Hidden partner revenue",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "feeSubscription",
-      "label": "Subscription features",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.subscriptionFeatures",
-      "hasUnsourcedRef": false
-    },
-    {
       "walletId": "gridplus",
       "walletName": "GridPlus Wallet",
       "metricKey": "multiAddress",
@@ -4581,16 +3911,6 @@
       "category": "Privacy",
       "type": "state",
       "path": "privacy.analytics.crashReports",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gridplus",
-      "walletName": "GridPlus Wallet",
-      "metricKey": "hwSupport",
-      "label": "Hardware wallet support",
-      "category": "Security",
-      "type": "support",
-      "path": "security.hardwareWalletSupport",
       "hasUnsourcedRef": false
     },
     {
@@ -4616,26 +3936,6 @@
     {
       "walletId": "gridplus",
       "walletName": "GridPlus Wallet",
-      "metricKey": "scamContract",
-      "label": "Malicious-contract warnings",
-      "category": "Security",
-      "type": "state",
-      "path": "security.scamAlerts.contractTransactionWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gridplus",
-      "walletName": "GridPlus Wallet",
-      "metricKey": "txSim",
-      "label": "Transaction simulation",
-      "category": "Security",
-      "type": "state",
-      "path": "security.transactionLegibility.transactionSimulations",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gridplus",
-      "walletName": "GridPlus Wallet",
       "metricKey": "audits",
       "label": "Public audits",
       "category": "Security",
@@ -4651,36 +3951,6 @@
       "category": "Security",
       "type": "count_low",
       "path": "security.publicSecurityAudits",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gridplus",
-      "walletName": "GridPlus Wallet",
-      "metricKey": "duress",
-      "label": "Duress / decoy mode",
-      "category": "Security",
-      "type": "state",
-      "path": "security.duressResistance.duressMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gridplus",
-      "walletName": "GridPlus Wallet",
-      "metricKey": "passkey",
-      "label": "Passkey verification",
-      "category": "Security",
-      "type": "state",
-      "path": "security.passkeyVerification",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gridplus",
-      "walletName": "GridPlus Wallet",
-      "metricKey": "lightClient",
-      "label": "L1 light client",
-      "category": "Security",
-      "type": "state",
-      "path": "security.lightClient.ethereumL1",
       "hasUnsourcedRef": false
     },
     {
@@ -4756,16 +4026,6 @@
     {
       "walletId": "imkey",
       "walletName": "imKey",
-      "metricKey": "hwSupport",
-      "label": "Hardware wallet support",
-      "category": "Security",
-      "type": "support",
-      "path": "security.hardwareWalletSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imkey",
-      "walletName": "imKey",
       "metricKey": "scamUrl",
       "label": "Scam URL warnings",
       "category": "Security",
@@ -4776,41 +4036,11 @@
     {
       "walletId": "imkey",
       "walletName": "imKey",
-      "metricKey": "scamSend",
-      "label": "Risky-send warnings",
-      "category": "Security",
-      "type": "state",
-      "path": "security.scamAlerts.sendTransactionWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imkey",
-      "walletName": "imKey",
-      "metricKey": "scamContract",
-      "label": "Malicious-contract warnings",
-      "category": "Security",
-      "type": "state",
-      "path": "security.scamAlerts.contractTransactionWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imkey",
-      "walletName": "imKey",
       "metricKey": "txSim",
       "label": "Transaction simulation",
       "category": "Security",
       "type": "state",
       "path": "security.transactionLegibility.transactionSimulations",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imkey",
-      "walletName": "imKey",
-      "metricKey": "bugBounty",
-      "label": "Bug bounty program",
-      "category": "Security",
-      "type": "state",
-      "path": "security.bugBountyProgram",
       "hasUnsourcedRef": false
     },
     {
@@ -4836,31 +4066,11 @@
     {
       "walletId": "imkey",
       "walletName": "imKey",
-      "metricKey": "duress",
-      "label": "Duress / decoy mode",
-      "category": "Security",
-      "type": "state",
-      "path": "security.duressResistance.duressMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imkey",
-      "walletName": "imKey",
       "metricKey": "passkey",
       "label": "Passkey verification",
       "category": "Security",
       "type": "state",
       "path": "security.passkeyVerification",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imkey",
-      "walletName": "imKey",
-      "metricKey": "lightClient",
-      "label": "L1 light client",
-      "category": "Security",
-      "type": "state",
-      "path": "security.lightClient.ethereumL1",
       "hasUnsourcedRef": false
     },
     {
@@ -5196,51 +4406,11 @@
     {
       "walletId": "imtoken",
       "walletName": "imToken",
-      "metricKey": "feeSwap",
-      "label": "Swap fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.swapFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "feeBridge",
-      "label": "Bridge fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.bridgeFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
       "metricKey": "feeSpread",
       "label": "Spread disclosure",
       "category": "Pricing & fees",
       "type": "state",
       "path": "product.pricingFeeModel.spreadDisclosure",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "feeHidden",
-      "label": "Hidden partner revenue",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "feeSubscription",
-      "label": "Subscription features",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.subscriptionFeatures",
       "hasUnsourcedRef": false
     },
     {
@@ -5306,66 +4476,6 @@
     {
       "walletId": "keycard-shell",
       "walletName": "Keycard Shell",
-      "metricKey": "hwSupport",
-      "label": "Hardware wallet support",
-      "category": "Security",
-      "type": "support",
-      "path": "security.hardwareWalletSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "keycard-shell",
-      "walletName": "Keycard Shell",
-      "metricKey": "scamUrl",
-      "label": "Scam URL warnings",
-      "category": "Security",
-      "type": "state",
-      "path": "security.scamAlerts.scamUrlWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "keycard-shell",
-      "walletName": "Keycard Shell",
-      "metricKey": "scamSend",
-      "label": "Risky-send warnings",
-      "category": "Security",
-      "type": "state",
-      "path": "security.scamAlerts.sendTransactionWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "keycard-shell",
-      "walletName": "Keycard Shell",
-      "metricKey": "scamContract",
-      "label": "Malicious-contract warnings",
-      "category": "Security",
-      "type": "state",
-      "path": "security.scamAlerts.contractTransactionWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "keycard-shell",
-      "walletName": "Keycard Shell",
-      "metricKey": "txSim",
-      "label": "Transaction simulation",
-      "category": "Security",
-      "type": "state",
-      "path": "security.transactionLegibility.transactionSimulations",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "keycard-shell",
-      "walletName": "Keycard Shell",
-      "metricKey": "bugBounty",
-      "label": "Bug bounty program",
-      "category": "Security",
-      "type": "state",
-      "path": "security.bugBountyProgram",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "keycard-shell",
-      "walletName": "Keycard Shell",
       "metricKey": "audits",
       "label": "Public audits",
       "category": "Security",
@@ -5381,26 +4491,6 @@
       "category": "Security",
       "type": "count_low",
       "path": "security.publicSecurityAudits",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "keycard-shell",
-      "walletName": "Keycard Shell",
-      "metricKey": "passkey",
-      "label": "Passkey verification",
-      "category": "Security",
-      "type": "state",
-      "path": "security.passkeyVerification",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "keycard-shell",
-      "walletName": "Keycard Shell",
-      "metricKey": "lightClient",
-      "label": "L1 light client",
-      "category": "Security",
-      "type": "state",
-      "path": "security.lightClient.ethereumL1",
       "hasUnsourcedRef": false
     },
     {
@@ -5476,16 +4566,6 @@
     {
       "walletId": "keystone",
       "walletName": "Keystone Wallet",
-      "metricKey": "hwSupport",
-      "label": "Hardware wallet support",
-      "category": "Security",
-      "type": "support",
-      "path": "security.hardwareWalletSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "keystone",
-      "walletName": "Keystone Wallet",
       "metricKey": "scamUrl",
       "label": "Scam URL warnings",
       "category": "Security",
@@ -5511,46 +4591,6 @@
       "category": "Security",
       "type": "state",
       "path": "security.scamAlerts.contractTransactionWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "keystone",
-      "walletName": "Keystone Wallet",
-      "metricKey": "txSim",
-      "label": "Transaction simulation",
-      "category": "Security",
-      "type": "state",
-      "path": "security.transactionLegibility.transactionSimulations",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "keystone",
-      "walletName": "Keystone Wallet",
-      "metricKey": "duress",
-      "label": "Duress / decoy mode",
-      "category": "Security",
-      "type": "state",
-      "path": "security.duressResistance.duressMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "keystone",
-      "walletName": "Keystone Wallet",
-      "metricKey": "passkey",
-      "label": "Passkey verification",
-      "category": "Security",
-      "type": "state",
-      "path": "security.passkeyVerification",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "keystone",
-      "walletName": "Keystone Wallet",
-      "metricKey": "lightClient",
-      "label": "L1 light client",
-      "category": "Security",
-      "type": "state",
-      "path": "security.lightClient.ethereumL1",
       "hasUnsourcedRef": false
     },
     {
@@ -5636,56 +4676,6 @@
     {
       "walletId": "ledgerWallet",
       "walletName": "ledgerWallet",
-      "metricKey": "hwSupport",
-      "label": "Hardware wallet support",
-      "category": "Security",
-      "type": "support",
-      "path": "security.hardwareWalletSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ledgerWallet",
-      "walletName": "ledgerWallet",
-      "metricKey": "scamUrl",
-      "label": "Scam URL warnings",
-      "category": "Security",
-      "type": "state",
-      "path": "security.scamAlerts.scamUrlWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ledgerWallet",
-      "walletName": "ledgerWallet",
-      "metricKey": "scamSend",
-      "label": "Risky-send warnings",
-      "category": "Security",
-      "type": "state",
-      "path": "security.scamAlerts.sendTransactionWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ledgerWallet",
-      "walletName": "ledgerWallet",
-      "metricKey": "scamContract",
-      "label": "Malicious-contract warnings",
-      "category": "Security",
-      "type": "state",
-      "path": "security.scamAlerts.contractTransactionWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ledgerWallet",
-      "walletName": "ledgerWallet",
-      "metricKey": "txSim",
-      "label": "Transaction simulation",
-      "category": "Security",
-      "type": "state",
-      "path": "security.transactionLegibility.transactionSimulations",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ledgerWallet",
-      "walletName": "ledgerWallet",
       "metricKey": "audits",
       "label": "Public audits",
       "category": "Security",
@@ -5701,36 +4691,6 @@
       "category": "Security",
       "type": "count_low",
       "path": "security.publicSecurityAudits",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ledgerWallet",
-      "walletName": "ledgerWallet",
-      "metricKey": "duress",
-      "label": "Duress / decoy mode",
-      "category": "Security",
-      "type": "state",
-      "path": "security.duressResistance.duressMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ledgerWallet",
-      "walletName": "ledgerWallet",
-      "metricKey": "passkey",
-      "label": "Passkey verification",
-      "category": "Security",
-      "type": "state",
-      "path": "security.passkeyVerification",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ledgerWallet",
-      "walletName": "ledgerWallet",
-      "metricKey": "lightClient",
-      "label": "L1 light client",
-      "category": "Security",
-      "type": "state",
-      "path": "security.lightClient.ethereumL1",
       "hasUnsourcedRef": false
     },
     {
@@ -5874,46 +4834,6 @@
       "hasUnsourcedRef": false
     },
     {
-      "walletId": "metamask",
-      "walletName": "MetaMask",
-      "metricKey": "feeSwap",
-      "label": "Swap fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.swapFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "metamask",
-      "walletName": "MetaMask",
-      "metricKey": "feeBridge",
-      "label": "Bridge fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.bridgeFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "metamask",
-      "walletName": "MetaMask",
-      "metricKey": "feeHidden",
-      "label": "Hidden partner revenue",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "metamask",
-      "walletName": "MetaMask",
-      "metricKey": "feeSubscription",
-      "label": "Subscription features",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.subscriptionFeatures",
-      "hasUnsourcedRef": false
-    },
-    {
       "walletId": "ngrave",
       "walletName": "NGRAVE Zero",
       "metricKey": "eoa",
@@ -5971,16 +4891,6 @@
       "category": "Accounts",
       "type": "state",
       "path": "multiAddress",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ngrave",
-      "walletName": "NGRAVE Zero",
-      "metricKey": "hwSupport",
-      "label": "Hardware wallet support",
-      "category": "Security",
-      "type": "support",
-      "path": "security.hardwareWalletSupport",
       "hasUnsourcedRef": false
     },
     {
@@ -6046,31 +4956,11 @@
     {
       "walletId": "ngrave",
       "walletName": "NGRAVE Zero",
-      "metricKey": "duress",
-      "label": "Duress / decoy mode",
-      "category": "Security",
-      "type": "state",
-      "path": "security.duressResistance.duressMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ngrave",
-      "walletName": "NGRAVE Zero",
       "metricKey": "passkey",
       "label": "Passkey verification",
       "category": "Security",
       "type": "state",
       "path": "security.passkeyVerification",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ngrave",
-      "walletName": "NGRAVE Zero",
-      "metricKey": "lightClient",
-      "label": "L1 light client",
-      "category": "Security",
-      "type": "state",
-      "path": "security.lightClient.ethereumL1",
       "hasUnsourcedRef": false
     },
     {
@@ -6376,16 +5266,6 @@
     {
       "walletId": "nufi",
       "walletName": "NuFi",
-      "metricKey": "feeSwap",
-      "label": "Swap fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.swapFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
       "metricKey": "feeBridge",
       "label": "Bridge fees disclosed",
       "category": "Pricing & fees",
@@ -6411,16 +5291,6 @@
       "category": "Pricing & fees",
       "type": "state",
       "path": "product.pricingFeeModel.hiddenPartnerRevenue",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "feeSubscription",
-      "label": "Subscription features",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.subscriptionFeatures",
       "hasUnsourcedRef": false
     },
     {
@@ -6606,41 +5476,11 @@
     {
       "walletId": "okx",
       "walletName": "OKX Wallet",
-      "metricKey": "feeSwap",
-      "label": "Swap fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.swapFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "okx",
-      "walletName": "OKX Wallet",
       "metricKey": "feeBridge",
       "label": "Bridge fees disclosed",
       "category": "Pricing & fees",
       "type": "state",
       "path": "product.pricingFeeModel.bridgeFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "okx",
-      "walletName": "OKX Wallet",
-      "metricKey": "feeHidden",
-      "label": "Hidden partner revenue",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "okx",
-      "walletName": "OKX Wallet",
-      "metricKey": "feeSubscription",
-      "label": "Subscription features",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.subscriptionFeatures",
       "hasUnsourcedRef": false
     },
     {
@@ -6716,16 +5556,6 @@
     {
       "walletId": "onekey",
       "walletName": "OneKey Pro",
-      "metricKey": "hwSupport",
-      "label": "Hardware wallet support",
-      "category": "Security",
-      "type": "support",
-      "path": "security.hardwareWalletSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "onekey",
-      "walletName": "OneKey Pro",
       "metricKey": "scamUrl",
       "label": "Scam URL warnings",
       "category": "Security",
@@ -6741,56 +5571,6 @@
       "category": "Security",
       "type": "state",
       "path": "security.scamAlerts.sendTransactionWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "onekey",
-      "walletName": "OneKey Pro",
-      "metricKey": "scamContract",
-      "label": "Malicious-contract warnings",
-      "category": "Security",
-      "type": "state",
-      "path": "security.scamAlerts.contractTransactionWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "onekey",
-      "walletName": "OneKey Pro",
-      "metricKey": "txSim",
-      "label": "Transaction simulation",
-      "category": "Security",
-      "type": "state",
-      "path": "security.transactionLegibility.transactionSimulations",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "onekey",
-      "walletName": "OneKey Pro",
-      "metricKey": "duress",
-      "label": "Duress / decoy mode",
-      "category": "Security",
-      "type": "state",
-      "path": "security.duressResistance.duressMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "onekey",
-      "walletName": "OneKey Pro",
-      "metricKey": "passkey",
-      "label": "Passkey verification",
-      "category": "Security",
-      "type": "state",
-      "path": "security.passkeyVerification",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "onekey",
-      "walletName": "OneKey Pro",
-      "metricKey": "lightClient",
-      "label": "L1 light client",
-      "category": "Security",
-      "type": "state",
-      "path": "security.lightClient.ethereumL1",
       "hasUnsourcedRef": false
     },
     {
@@ -6991,36 +5771,6 @@
       "category": "Developer offering",
       "type": "state",
       "path": "product.developerOffering.whiteLabelOffering",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "phantom",
-      "walletName": "Phantom",
-      "metricKey": "feeSwap",
-      "label": "Swap fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.swapFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "phantom",
-      "walletName": "Phantom",
-      "metricKey": "feeBridge",
-      "label": "Bridge fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.bridgeFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "phantom",
-      "walletName": "Phantom",
-      "metricKey": "feeHidden",
-      "label": "Hidden partner revenue",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
       "hasUnsourcedRef": false
     },
     {
@@ -7366,51 +6116,11 @@
     {
       "walletId": "pillarx",
       "walletName": "PillarX",
-      "metricKey": "feeSwap",
-      "label": "Swap fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.swapFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "feeBridge",
-      "label": "Bridge fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.bridgeFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "feeSpread",
-      "label": "Spread disclosure",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.spreadDisclosure",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
       "metricKey": "feeHidden",
       "label": "Hidden partner revenue",
       "category": "Pricing & fees",
       "type": "state",
       "path": "product.pricingFeeModel.hiddenPartnerRevenue",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "feeSubscription",
-      "label": "Subscription features",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.subscriptionFeatures",
       "hasUnsourcedRef": false
     },
     {
@@ -7586,16 +6296,6 @@
     {
       "walletId": "rabby",
       "walletName": "Rabby",
-      "metricKey": "feeSwap",
-      "label": "Swap fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.swapFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rabby",
-      "walletName": "Rabby",
       "metricKey": "feeBridge",
       "label": "Bridge fees disclosed",
       "category": "Pricing & fees",
@@ -7611,26 +6311,6 @@
       "category": "Pricing & fees",
       "type": "state",
       "path": "product.pricingFeeModel.spreadDisclosure",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rabby",
-      "walletName": "Rabby",
-      "metricKey": "feeHidden",
-      "label": "Hidden partner revenue",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rabby",
-      "walletName": "Rabby",
-      "metricKey": "feeSubscription",
-      "label": "Subscription features",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.subscriptionFeatures",
       "hasUnsourcedRef": false
     },
     {
@@ -7926,51 +6606,11 @@
     {
       "walletId": "rainbow",
       "walletName": "Rainbow",
-      "metricKey": "feeSwap",
-      "label": "Swap fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.swapFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "feeBridge",
-      "label": "Bridge fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.bridgeFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
       "metricKey": "feeSpread",
       "label": "Spread disclosure",
       "category": "Pricing & fees",
       "type": "state",
       "path": "product.pricingFeeModel.spreadDisclosure",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "feeHidden",
-      "label": "Hidden partner revenue",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "feeSubscription",
-      "label": "Subscription features",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.subscriptionFeatures",
       "hasUnsourcedRef": false
     },
     {
@@ -8226,46 +6866,6 @@
     {
       "walletId": "safe",
       "walletName": "Safe",
-      "metricKey": "feeSwap",
-      "label": "Swap fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.swapFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "feeBridge",
-      "label": "Bridge fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.bridgeFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "feeSpread",
-      "label": "Spread disclosure",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.spreadDisclosure",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "feeHidden",
-      "label": "Hidden partner revenue",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
       "metricKey": "feeSubscription",
       "label": "Subscription features",
       "category": "Pricing & fees",
@@ -8336,51 +6936,11 @@
     {
       "walletId": "trezor",
       "walletName": "Trezor Wallet",
-      "metricKey": "hwSupport",
-      "label": "Hardware wallet support",
-      "category": "Security",
-      "type": "support",
-      "path": "security.hardwareWalletSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trezor",
-      "walletName": "Trezor Wallet",
       "metricKey": "scamUrl",
       "label": "Scam URL warnings",
       "category": "Security",
       "type": "state",
       "path": "security.scamAlerts.scamUrlWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trezor",
-      "walletName": "Trezor Wallet",
-      "metricKey": "scamSend",
-      "label": "Risky-send warnings",
-      "category": "Security",
-      "type": "state",
-      "path": "security.scamAlerts.sendTransactionWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trezor",
-      "walletName": "Trezor Wallet",
-      "metricKey": "scamContract",
-      "label": "Malicious-contract warnings",
-      "category": "Security",
-      "type": "state",
-      "path": "security.scamAlerts.contractTransactionWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trezor",
-      "walletName": "Trezor Wallet",
-      "metricKey": "txSim",
-      "label": "Transaction simulation",
-      "category": "Security",
-      "type": "state",
-      "path": "security.transactionLegibility.transactionSimulations",
       "hasUnsourcedRef": false
     },
     {
@@ -8411,26 +6971,6 @@
       "category": "Security",
       "type": "state",
       "path": "security.duressResistance.duressMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trezor",
-      "walletName": "Trezor Wallet",
-      "metricKey": "passkey",
-      "label": "Passkey verification",
-      "category": "Security",
-      "type": "state",
-      "path": "security.passkeyVerification",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trezor",
-      "walletName": "Trezor Wallet",
-      "metricKey": "lightClient",
-      "label": "L1 light client",
-      "category": "Security",
-      "type": "state",
-      "path": "security.lightClient.ethereumL1",
       "hasUnsourcedRef": false
     },
     {
@@ -8676,16 +7216,6 @@
     {
       "walletId": "trust-wallet",
       "walletName": "Trust Wallet",
-      "metricKey": "feeSwap",
-      "label": "Swap fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.swapFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
       "metricKey": "feeBridge",
       "label": "Bridge fees disclosed",
       "category": "Pricing & fees",
@@ -8701,16 +7231,6 @@
       "category": "Pricing & fees",
       "type": "state",
       "path": "product.pricingFeeModel.hiddenPartnerRevenue",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
-      "metricKey": "feeSubscription",
-      "label": "Subscription features",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.subscriptionFeatures",
       "hasUnsourcedRef": false
     },
     {
@@ -8974,36 +7494,6 @@
       "hasUnsourcedRef": false
     },
     {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "feeSpread",
-      "label": "Spread disclosure",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.spreadDisclosure",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "feeHidden",
-      "label": "Hidden partner revenue",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "feeSubscription",
-      "label": "Subscription features",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.subscriptionFeatures",
-      "hasUnsourcedRef": false
-    },
-    {
       "walletId": "zerion",
       "walletName": "Zerion",
       "metricKey": "stakeValidator",
@@ -9256,51 +7746,11 @@
     {
       "walletId": "zerion",
       "walletName": "Zerion",
-      "metricKey": "feeSwap",
-      "label": "Swap fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.swapFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "feeBridge",
-      "label": "Bridge fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.bridgeFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
       "metricKey": "feeSpread",
       "label": "Spread disclosure",
       "category": "Pricing & fees",
       "type": "state",
       "path": "product.pricingFeeModel.spreadDisclosure",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "feeHidden",
-      "label": "Hidden partner revenue",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "feeSubscription",
-      "label": "Subscription features",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.subscriptionFeatures",
       "hasUnsourcedRef": false
     },
     {
@@ -9631,56 +8081,6 @@
       "category": "Developer offering",
       "type": "state",
       "path": "product.developerOffering.whiteLabelOffering",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "feeSwap",
-      "label": "Swap fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.swapFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "feeBridge",
-      "label": "Bridge fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.bridgeFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "feeSpread",
-      "label": "Spread disclosure",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.spreadDisclosure",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "feeHidden",
-      "label": "Hidden partner revenue",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "feeSubscription",
-      "label": "Subscription features",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.subscriptionFeatures",
       "hasUnsourcedRef": false
     }
   ]

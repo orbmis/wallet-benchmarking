@@ -179,7 +179,19 @@
             }
           ]
         },
-        "duressResistance": null,
+        "duressResistance": {
+          "duressMode": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.onekey.so/en/articles/11461220-passphrases-and-hidden-wallets",
+                  "explanation": "OneKey supports passphrase-based hidden wallets attachable to a secondary PIN, providing plausible deniability under coercion."
+                }
+              }
+            ]
+          }
+        },
         "firmware": {
           "type": "FirmwareType.FAIL",
           "customFirmware": "FirmwareType.FAIL",
@@ -189,7 +201,9 @@
         },
         "keysHandling": null,
         "lightClient": {
-          "ethereumL1": null
+          "ethereumL1": {
+            "$ref": "notSupported"
+          }
         },
         "publicSecurityAudits": [
           {
@@ -253,9 +267,47 @@
           "erc7730": {
             "$ref": "notSupported"
           },
-          "erc8213": null
+          "erc8213": null,
+          "transactionSimulations": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://onekey.so/blog/ecosystem/sign-guard-by-one-key-clear-signing-preview-with-real-time-scam-detection/",
+                  "explanation": "The OneKey app simulates transactions and displays key details (methods, approval amounts, target addresses) with Blockaid-powered clear signing before signing."
+                }
+              }
+            ]
+          }
         },
-        "userSafety": null
+        "userSafety": null,
+        "hardwareWalletSupport": {
+          "$ref": "notApplicable"
+        },
+        "scamAlerts": {
+          "contractTransactionWarning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.onekey.so/en/articles/12058229-signguard-and-clear-signing-how-they-protect-you-from-web3-phishing-and-scams",
+                  "explanation": "SignGuard integrates GoPlus, Blockaid and ScamSniffer to warn on interaction with malicious/flagged contracts before signing."
+                }
+              }
+            ]
+          }
+        },
+        "passkeyVerification": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://help.onekey.so/en/articles/11461109-onekey-supports-fido-and-fido2-authentication",
+                "explanation": "OneKey hardware wallets support FIDO and FIDO2 (WebAuthn/passkey) authentication as a security key."
+              }
+            }
+          ]
+        }
       },
       "selfSovereignty": {
         "interoperability": null,

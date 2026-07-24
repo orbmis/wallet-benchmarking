@@ -1843,15 +1843,55 @@
             "explanation": "MetaMask buy/sell and card fee docs publish provider/region fee dependency and specific MetaMask fees where applicable.",
             "url": "https://support.metamask.io/manage-crypto/move-crypto/sell/how-to-sell-your-crypto-assets-for-fiat-currency-in-metamask"
           },
-          "swapFees": null,
-          "bridgeFees": null,
+          "swapFees": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.metamask.io/trade/swap/user-guide-swaps/",
+                  "explanation": "MetaMask's support user-guide page explicitly discloses a 0.875% MetaMask swap service fee in its fee breakdown."
+                }
+              }
+            ]
+          },
+          "bridgeFees": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.metamask.io/metamask-portfolio/bridge/how-are-bridge-fees-calculated/",
+                  "explanation": "MetaMask's support page 'How are bridge fees calculated?' discloses a 0.875% MetaMask fee applied on each bridge transaction."
+                }
+              }
+            ]
+          },
           "onRampFees": "On-ramp fees are provider-, payment-method-, token-, and region-dependent.",
           "spreadDisclosure": {
             "$ref": "featureSupported"
           },
-          "subscriptionFeatures": null,
+          "subscriptionFeatures": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://metamask.io/transaction-shield",
+                  "explanation": "MetaMask offers paid subscription tiers including Transaction Shield ($9.99/month security subscription) and the Metal Card annual membership ($199/yr)."
+                }
+              }
+            ]
+          },
           "cardFees": "MetaMask sell docs say MetaMask receives a 1% fee on sell transactions from providers; MetaMask Card docs list card fee rows such as 0.875% for some non-stablecoin spending contexts.",
-          "hiddenPartnerRevenue": null
+          "hiddenPartnerRevenue": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.metamask.io/trade/swap/user-guide-swaps/",
+                  "explanation": "MetaMask openly publishes its 0.875% swap and bridge fees in support docs, indicating a transparent fee model rather than undisclosed partner markup."
+                }
+              }
+            ]
+          }
         },
         "releaseVelocity": {
           "ref": {

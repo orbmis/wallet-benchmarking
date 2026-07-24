@@ -1214,13 +1214,53 @@
             "explanation": "Brave Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://brave.com/wallet/"
           },
-          "swapFees": null,
-          "bridgeFees": null,
+          "swapFees": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/brave/brave-browser/issues/38566",
+                  "explanation": "Brave discloses its swap fee policy, stating in its help center and blog that Brave does not add its own fees to in-wallet swaps (its former swap fee was removed in v1.67.x, tracked in brave-browser issue #38566)."
+                }
+              }
+            ]
+          },
+          "bridgeFees": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://brave.com/blog/cross-chain-swaps/",
+                  "explanation": "Brave's cross-chain swaps blog and help center clearly state 'Brave does not add fees to swaps or bridges performed within Brave Wallet,' disclosing its bridge fee policy."
+                }
+              }
+            ]
+          },
           "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
           "spreadDisclosure": null,
-          "subscriptionFeatures": null,
+          "subscriptionFeatures": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.brave.app/hc/en-us/articles/4415497656461-Brave-Wallet-FAQ",
+                  "explanation": "Brave Wallet is entirely free with no paid subscription or premium tier for the wallet itself (Brave's premium products like VPN/Leo are separate non-wallet services)."
+                }
+              }
+            ]
+          },
           "cardFees": "Card fees are provider-dependent where card purchase is available.",
-          "hiddenPartnerRevenue": null
+          "hiddenPartnerRevenue": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://brave.com/blog/cross-chain-swaps/",
+                  "explanation": "Brave publicly states it does not add fees to swaps or bridges and removed its former swap fee, indicating a transparent fee model with no evidence of undisclosed partner/referral revenue."
+                }
+              }
+            ]
+          }
         },
         "releaseVelocity": {
           "ref": {

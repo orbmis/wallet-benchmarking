@@ -185,7 +185,19 @@
             }
           ]
         },
-        "duressResistance": null,
+        "duressResistance": {
+          "duressMode": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.keyst.one/advanced-features/passphrase",
+                  "explanation": "Keystone supports an optional passphrase 'hidden vault' for plausible deniability, with a default sentinel wallet shown under duress while assets stay in passphrase-protected wallets."
+                }
+              }
+            ]
+          }
+        },
         "firmware": {
           "type": "FirmwareType.PASS",
           "customFirmware": null,
@@ -195,7 +207,17 @@
         },
         "keysHandling": null,
         "lightClient": {
-          "ethereumL1": null
+          "ethereumL1": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://shop.keyst.one/products/keystone-3-pro",
+                  "explanation": "Keystone is an air-gapped cold signer relying on connected third-party wallets/RPCs and provides no trust-minimized Ethereum L1 light client."
+                }
+              }
+            ]
+          }
         },
         "publicSecurityAudits": [
           {
@@ -284,9 +306,34 @@
               }
             ]
           },
-          "erc8213": null
+          "erc8213": null,
+          "transactionSimulations": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.keyst.one/blind-signing-a-security-black-hole-for-the-ethereum-community-13f909b848b6",
+                  "explanation": "Keystone decodes and displays full transaction/contract details on-device (anti-blind-signing) but there is no evidence of net-balance-change simulation like Blockaid/Blowfish."
+                }
+              }
+            ]
+          }
         },
-        "userSafety": null
+        "userSafety": null,
+        "hardwareWalletSupport": {
+          "$ref": "notApplicable"
+        },
+        "passkeyVerification": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://keyst.one/authentication",
+                "explanation": "Keystone 3 Pro uses PIN/fingerprint and QR-based device verification; no source indicates passkey/WebAuthn/FIDO2 as a verification factor."
+              }
+            }
+          ]
+        }
       },
       "selfSovereignty": {
         "interoperability": null,

@@ -246,7 +246,19 @@
             }
           ]
         },
-        "duressResistance": null,
+        "duressResistance": {
+          "duressMode": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.bitbox.swiss/en_US/optional-passphrase/understanding-bitbox02-optional-passphrase",
+                  "explanation": "BitBox02's optional passphrase creates hidden wallets and can be used to set up a duress/decoy wallet with a small balance to reveal under coercion."
+                }
+              }
+            ]
+          }
+        },
         "firmware": {
           "type": "FirmwareType.PASS",
           "customFirmware": null,
@@ -256,7 +268,17 @@
         },
         "keysHandling": null,
         "lightClient": {
-          "ethereumL1": null
+          "ethereumL1": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://bitbox.swiss/bitbox02/security-features/",
+                  "explanation": "BitBoxApp connects to backend/RPC nodes (or a user's own full node for Bitcoin) and provides no trust-minimized Ethereum L1 light client verification."
+                }
+              }
+            ]
+          }
         },
         "publicSecurityAudits": null,
         "secureElement": null,
@@ -286,9 +308,69 @@
           "erc7730": {
             "$ref": "notSupported"
           },
-          "erc8213": null
+          "erc8213": null,
+          "transactionSimulations": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.bitbox.swiss/en_US/ethereum-co/send-eth-erc20-tokens",
+                  "explanation": "BitBoxApp shows raw transaction details for on-device confirmation but does not simulate/preview net balance changes (no Blockaid/Blowfish-style simulation)."
+                }
+              }
+            ]
+          }
         },
-        "userSafety": null
+        "userSafety": null,
+        "hardwareWalletSupport": {
+          "$ref": "notApplicable"
+        },
+        "scamAlerts": {
+          "scamUrlWarning": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://bitbox.swiss/bitbox02/security-features/",
+                  "explanation": "BitBoxApp provides no known-malicious/phishing URL warning feature; its security model relies on manual on-device verification and its security-features page lists no such detection."
+                }
+              }
+            ]
+          },
+          "sendTransactionWarning": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.bitbox.swiss/en_US/ethereum-co/send-eth-erc20-tokens",
+                  "explanation": "BitBoxApp does not warn on risky sends such as address poisoning or unknown recipients, instead instructing users to manually verify all transaction details on the device screen."
+                }
+              }
+            ]
+          },
+          "contractTransactionWarning": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://bitbox.swiss/bitbox02/security-features/",
+                  "explanation": "No evidence BitBoxApp flags interactions with known-malicious contracts; its security-features and send docs describe only on-device detail verification, not contract reputation checks."
+                }
+              }
+            ]
+          }
+        },
+        "passkeyVerification": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://support.bitbox.swiss/en_US/using-the-bitbox02-as-a-fido-u2f-authenticator",
+                "explanation": "The BitBox02 Multi edition functions as a FIDO U2F authenticator for two-factor authentication on websites like Google and GitHub."
+              }
+            }
+          ]
+        }
       },
       "selfSovereignty": {
         "interoperability": null,

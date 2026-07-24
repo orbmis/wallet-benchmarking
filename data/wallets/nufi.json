@@ -1308,11 +1308,31 @@
             "explanation": "NuFi source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://nu.fi"
           },
-          "swapFees": null,
+          "swapFees": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.nu.fi/support/solutions/articles/80001148272-exchange-cardano-tokens",
+                  "explanation": "NuFi's Cardano exchange support article states users need ADA to pay a transaction fee 'plus a service fee for using the swap functionality,' but no fee amount or percentage is disclosed, and the Jupiter DEX swap article discloses no NuFi fee at all."
+                }
+              }
+            ]
+          },
           "bridgeFees": null,
           "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
           "spreadDisclosure": null,
-          "subscriptionFeatures": null,
+          "subscriptionFeatures": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://reviewnexa.com/nufi-wallet-review/",
+                  "explanation": "Multiple reviews indicate NuFi is free with no premium tiers or subscription features, and no official NuFi page advertises a paid tier."
+                }
+              }
+            ]
+          },
           "cardFees": "Card fees are provider-dependent where card purchase is available.",
           "hiddenPartnerRevenue": null
         },

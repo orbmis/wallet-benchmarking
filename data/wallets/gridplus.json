@@ -237,7 +237,19 @@
             }
           ]
         },
-        "duressResistance": null,
+        "duressResistance": {
+          "duressMode": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.gridplus.io/lattice1/how-to-manage-your-seed-phrase",
+                  "explanation": "The Lattice1 supports an optional BIP39 passphrase (a 25th word) that generates a separate hidden wallet, functioning as a decoy/hidden-wallet mechanism."
+                }
+              }
+            ]
+          }
+        },
         "firmware": {
           "type": "FirmwareType.FAIL",
           "customFirmware": "FirmwareType.FAIL",
@@ -257,7 +269,17 @@
           "multipartyKeyReconstruction": "MultiPartyKeyReconstruction.NON_MULTIPARTY"
         },
         "lightClient": {
-          "ethereumL1": null
+          "ethereumL1": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.gridplus.io/lattice1/security-features",
+                  "explanation": "The Lattice1 relies on connected software wallets/RPCs for chain state and provides no trust-minimized Ethereum L1 light client."
+                }
+              }
+            ]
+          }
         },
         "publicSecurityAudits": null,
         "secureElement": {
@@ -308,9 +330,47 @@
               }
             ]
           },
-          "erc8213": null
+          "erc8213": null,
+          "transactionSimulations": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.gridplus.io/lattice1/how-the-lattice1-makes-transactions-readable-with-abi-decoding",
+                  "explanation": "The Lattice1 provides ABI-decoded clear signing of raw transaction data but does not simulate/predict net balance changes before signing."
+                }
+              }
+            ]
+          }
         },
-        "userSafety": null
+        "userSafety": null,
+        "hardwareWalletSupport": {
+          "$ref": "notApplicable"
+        },
+        "scamAlerts": {
+          "contractTransactionWarning": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.gridplus.io/lattice1/how-the-lattice1-makes-transactions-readable-with-abi-decoding",
+                  "explanation": "The Lattice1 uses ABI decoding to make calldata human-readable but does not flag/blocklist known-malicious contracts; it relies on the user reading the decoded data."
+                }
+              }
+            ]
+          }
+        },
+        "passkeyVerification": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://docs.gridplus.io/lattice1/security-features",
+                "explanation": "The Lattice1 uses a device PIN and SafeCard PIN for authentication with no mention of passkeys/WebAuthn/FIDO in its security documentation."
+              }
+            }
+          ]
+        }
       },
       "selfSovereignty": {
         "interoperability": null,

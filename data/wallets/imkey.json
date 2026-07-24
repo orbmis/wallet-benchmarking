@@ -145,8 +145,30 @@
       "profile": "WalletProfile.GENERIC",
       "security": {
         "accountRecovery": null,
-        "bugBountyProgram": null,
-        "duressResistance": null,
+        "bugBountyProgram": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://slowmist.io/imtoken/",
+                "explanation": "imKey runs a public 'Vulnerability and Threat Intelligence Bounty Program' and imToken runs a bounty program with SlowMist."
+              }
+            }
+          ]
+        },
+        "duressResistance": {
+          "duressMode": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://imkey.im/products/imkey-pro-crypto-hardware-wallet",
+                  "explanation": "imKey Pro documentation describes only a standard 6-8 digit PIN (auto-reset after 5 failed attempts) with no passphrase-based hidden wallet or decoy/duress mode."
+                }
+              }
+            ]
+          }
+        },
         "firmware": {
           "type": "FirmwareType.PASS",
           "customFirmware": null,
@@ -158,7 +180,17 @@
         },
         "keysHandling": null,
         "lightClient": {
-          "ethereumL1": null
+          "ethereumL1": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/31423984023961-Scam-Warning-Fraudulent-RPC-Node-Adjustments",
+                  "explanation": "imToken/imKey rely on RPC nodes for chain state with no indication of a trust-minimized Ethereum L1 light client."
+                }
+              }
+            ]
+          }
         },
         "publicSecurityAudits": null,
         "secureElement": null,
@@ -201,7 +233,34 @@
           },
           "erc8213": null
         },
-        "userSafety": null
+        "userSafety": null,
+        "hardwareWalletSupport": {
+          "$ref": "notApplicable"
+        },
+        "scamAlerts": {
+          "sendTransactionWarning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/23417185602841-Inventory-of-Common-Address-Phishing-Tactics",
+                  "explanation": "imToken automatically hides high-risk address-poisoning transactions and shows a security reminder when a user copies an address from transaction history."
+                }
+              }
+            ]
+          },
+          "contractTransactionWarning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/360039457914-Why-is-the-token-tagged-as-Warning",
+                  "explanation": "imToken tags risky tokens/contracts as 'Warning' (pops a security alert on transfer) and hides 'Risk/High Risk' tokens to protect users from malicious contracts."
+                }
+              }
+            ]
+          }
+        }
       },
       "selfSovereignty": {
         "interoperability": {

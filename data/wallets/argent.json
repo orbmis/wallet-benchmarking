@@ -1182,13 +1182,53 @@
             "explanation": "Argent source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://www.argent.xyz/"
           },
-          "swapFees": null,
-          "bridgeFees": null,
+          "swapFees": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.argent.xyz/hc/en-us/articles/360012726038-How-does-Argent-make-money",
+                  "explanation": "Argent's support pages ('How does Argent make money' and 'All fees') disclose that it takes a share of the exchange fee on in-app crypto-to-crypto swaps via Paraswap/AVNU, with secondary sources citing ~0.5%."
+                }
+              }
+            ]
+          },
+          "bridgeFees": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.argent.xyz/hc/en-us/articles/10441581423133-All-fees-for-using-Argent-Starknet-mobile-wallet",
+                  "explanation": "Argent bridging relies on third-party bridges (Layerswap, Rhino.fi, StarkGate) and its docs state only network gas fees apply, with no disclosed Argent-charged bridge fee."
+                }
+              }
+            ]
+          },
           "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
           "spreadDisclosure": null,
-          "subscriptionFeatures": null,
+          "subscriptionFeatures": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://cryptocashbackcards.com/ready-card-review/",
+                  "explanation": "Argent/Ready offers an optional paid premium tier, Ready Metal, at 120 USDC/year with higher cashback and 0% FX vs the free Lite tier."
+                }
+              }
+            ]
+          },
           "cardFees": "Card fees are provider-dependent where card purchase is available.",
-          "hiddenPartnerRevenue": null
+          "hiddenPartnerRevenue": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.argent.xyz/hc/en-us/articles/360012726038-How-does-Argent-make-money",
+                  "explanation": "Argent transparently discloses its revenue as a share of the DEX-aggregator exchange fee, so partner/swap revenue is not undisclosed."
+                }
+              }
+            ]
+          }
         },
         "releaseVelocity": {
           "ref": {

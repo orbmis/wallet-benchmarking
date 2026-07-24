@@ -203,7 +203,17 @@
         },
         "keysHandling": null,
         "lightClient": {
-          "ethereumL1": null
+          "ethereumL1": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.cypherock.com/cysync",
+                  "explanation": "cySync relies on standard RPC/backend for account and history data with no trust-minimized Ethereum L1 light client."
+                }
+              }
+            ]
+          }
         },
         "publicSecurityAudits": [
           {
@@ -270,9 +280,58 @@
           "erc7730": {
             "$ref": "notSupported"
           },
-          "erc8213": null
+          "erc8213": null,
+          "transactionSimulations": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.cypherock.com/cysync",
+                  "explanation": "cySync shows transaction details for on-device verification but does not simulate/preview net balance changes before signing."
+                }
+              }
+            ]
+          }
         },
-        "userSafety": null
+        "userSafety": null,
+        "hardwareWalletSupport": {
+          "$ref": "notApplicable"
+        },
+        "scamAlerts": {
+          "sendTransactionWarning": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.cypherock.com/cysync",
+                  "explanation": "cySync provides on-device address verification but no automated risky-send warnings such as address poisoning or new-recipient alerts are documented."
+                }
+              }
+            ]
+          },
+          "contractTransactionWarning": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://coinbureau.com/review/cypherock-review",
+                  "explanation": "cySync relies on manual review of permissions on the Vault screen and offers no automated malicious-contract flagging."
+                }
+              }
+            ]
+          }
+        },
+        "passkeyVerification": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://www.cypherock.com/cysync",
+                "explanation": "No evidence Cypherock X1 or cySync uses passkeys/WebAuthn/FIDO; it uses card-tap plus PIN for verification."
+              }
+            }
+          ]
+        }
       },
       "selfSovereignty": {
         "interoperability": null

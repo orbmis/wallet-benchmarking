@@ -1194,11 +1194,51 @@
             "explanation": "PillarX source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://pillarx.app"
           },
-          "swapFees": null,
-          "bridgeFees": null,
+          "swapFees": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.pillarx.app/",
+                  "explanation": "Neither PillarX's site, developer docs (docs.pillarx.app), nor its App Store listing disclose any fee charged on in-app swaps/Offers Engine, so the swap fee is not clearly disclosed."
+                }
+              }
+            ]
+          },
+          "bridgeFees": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.pillarx.app/",
+                  "explanation": "PillarX offers cross-chain swaps but no official page discloses any bridging fee it charges; the docs cover only dapp development, not fees."
+                }
+              }
+            ]
+          },
           "onRampFees": null,
-          "spreadDisclosure": null,
-          "subscriptionFeatures": null,
+          "spreadDisclosure": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://pillarx.app/",
+                  "explanation": "No PillarX page discloses any price spread or markup applied on swap quotes from its aggregator/Offers Engine."
+                }
+              }
+            ]
+          },
+          "subscriptionFeatures": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+                  "explanation": "The App Store listing shows PillarX as free with no in-app purchases, and no site/docs material mentions any paid subscription or premium tier."
+                }
+              }
+            ]
+          },
           "cardFees": null,
           "hiddenPartnerRevenue": null
         },

@@ -1477,15 +1477,55 @@
             "explanation": "Bitget Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://web3.bitget.com/"
           },
-          "swapFees": null,
-          "bridgeFees": null,
+          "swapFees": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://coinbureau.com/review/bitget-wallet-review",
+                  "explanation": "Bitget Wallet discloses a swap service fee (~0.3% via its Super DEX aggregator) with transparent quotes shown before transactions, per the Coin Bureau review and Bitget's own swap materials stating the fee is shown before completing any transaction."
+                }
+              }
+            ]
+          },
+          "bridgeFees": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://coinbureau.com/review/bitget-wallet-review",
+                  "explanation": "Bridge/provider fees for cross-chain transactions are displayed transparently in the quote before execution in Bitget Wallet's Super DEX interface, per the Coin Bureau review."
+                }
+              }
+            ]
+          },
           "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
           "spreadDisclosure": {
             "$ref": "featureSupported"
           },
-          "subscriptionFeatures": null,
+          "subscriptionFeatures": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://coinbureau.com/review/bitget-wallet-review",
+                  "explanation": "Reviews of Bitget Wallet describe no optional paid subscription or premium membership tier for the wallet itself (only a tiered card cashback program), indicating no subscription features."
+                }
+              }
+            ]
+          },
           "cardFees": "Card fees are provider-dependent where card purchase is available.",
-          "hiddenPartnerRevenue": null
+          "hiddenPartnerRevenue": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://coinbureau.com/review/bitget-wallet-review",
+                  "explanation": "Sources indicate Bitget Wallet uses transparent upfront quotes for swap/bridge fees with no evidence of undisclosed partner markups or rate mark-ups, so no hidden partner revenue is indicated."
+                }
+              }
+            ]
+          }
         },
         "releaseVelocity": {
           "ref": {

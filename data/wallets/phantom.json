@@ -1559,8 +1559,28 @@
             "explanation": "Phantom source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://phantom.com"
           },
-          "swapFees": null,
-          "bridgeFees": null,
+          "swapFees": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.phantom.com/hc/en-us/articles/6048249796243-How-to-swap-tokens-in-Phantom",
+                  "explanation": "Phantom's official help documentation discloses a 0.85% swap fee (shown in the fee disclosure before confirmation) on in-app swaps."
+                }
+              }
+            ]
+          },
+          "bridgeFees": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.phantom.com/hc/en-us/articles/51384804802195-Bridge-crypto-in-Phantom",
+                  "explanation": "Phantom's cross-chain swap/bridge quote screen discloses Phantom's fee plus the bridge provider fee and network fees before the user confirms."
+                }
+              }
+            ]
+          },
           "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
           "spreadDisclosure": {
             "$ref": "featureSupported"
@@ -1577,7 +1597,17 @@
             ]
           },
           "cardFees": "Card fees are provider-dependent where card purchase is available.",
-          "hiddenPartnerRevenue": null
+          "hiddenPartnerRevenue": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.phantom.com/hc/en-us/articles/6048249796243-How-to-swap-tokens-in-Phantom",
+                  "explanation": "Phantom transparently discloses its 0.85% platform fee and bridge/aggregator fees in-app and in help docs, so there is no evidence of undisclosed partner revenue."
+                }
+              }
+            ]
+          }
         },
         "releaseVelocity": {
           "ref": {

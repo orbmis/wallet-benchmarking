@@ -150,11 +150,33 @@
             }
           ]
         },
-        "duressResistance": null,
+        "duressResistance": {
+          "duressMode": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.ledger.com/academy/passphrase-an-advanced-security-feature",
+                  "explanation": "Ledger's passphrase feature creates hidden wallets for plausible deniability, letting a user reveal only a decoy standard account under coercion."
+                }
+              }
+            ]
+          }
+        },
         "firmware": null,
         "keysHandling": null,
         "lightClient": {
-          "ethereumL1": null
+          "ethereumL1": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.ledger.com/article/how-to-enhance-the-safety-of-your-ethereum-transactions-with-transaction-check",
+                  "explanation": "Ledger Live relies on standard/third-party RPC providers and Ledger's own backend rather than a trust-minimized Ethereum L1 light client; no such feature is documented."
+                }
+              }
+            ]
+          }
         },
         "publicSecurityAudits": null,
         "secureElement": {
@@ -192,9 +214,69 @@
           "erc7730": {
             "$ref": "notSupported"
           },
-          "erc8213": null
+          "erc8213": null,
+          "transactionSimulations": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.blockaid.io/blog/how-blockaid-helps-ledgers-transaction-check-mitigate-blind-signing-risks",
+                  "explanation": "Ledger's Transaction Check simulates the transaction and validates its outcomes (via Blockaid/Tenderly/Cyvers) before signing."
+                }
+              }
+            ]
+          }
         },
-        "userSafety": null
+        "userSafety": null,
+        "hardwareWalletSupport": {
+          "$ref": "notApplicable"
+        },
+        "scamAlerts": {
+          "scamUrlWarning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.blockaid.io/blog/how-blockaid-helps-ledgers-transaction-check-mitigate-blind-signing-risks",
+                  "explanation": "Ledger Live's Transaction Check (powered by Blockaid) flags interactions with questionable dApps/scam sites as potential risks or critical threats before signing."
+                }
+              }
+            ]
+          },
+          "sendTransactionWarning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.ledger.com/article/how-to-enhance-the-safety-of-your-ethereum-transactions-with-transaction-check",
+                  "explanation": "Transaction Check flags sending assets to an unknown address as a potential risk before the transaction is signed."
+                }
+              }
+            ]
+          },
+          "contractTransactionWarning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.blockaid.io/blog/how-blockaid-helps-ledgers-transaction-check-mitigate-blind-signing-risks",
+                  "explanation": "Transaction Check via Blockaid identifies transactions involving malicious contracts or stolen funds and flags them as critical threats."
+                }
+              }
+            ]
+          }
+        },
+        "passkeyVerification": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://www.ledger.com/blog/strengthen-the-security-of-your-accounts-with-webauthn",
+                "explanation": "Ledger devices run a Security Key application implementing FIDO U2F/FIDO2/WebAuthn for use as a 2FA/MFA authentication factor."
+              }
+            }
+          ]
+        }
       },
       "selfSovereignty": {
         "interoperability": null,
