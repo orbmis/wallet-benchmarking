@@ -801,12 +801,72 @@
             "explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://elytro.com"
           },
-          "buyCrypto": null,
-          "sellCrypto": null,
-          "bankTransfer": null,
-          "card": null,
-          "applePay": null,
-          "googlePay": null,
+          "buyCrypto": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/faq",
+                  "explanation": "Elytro's official site and FAQ describe only on-chain features (send/receive, swap, bridge, stablecoin gas) with no fiat-to-crypto on-ramp mentioned anywhere."
+                }
+              }
+            ]
+          },
+          "sellCrypto": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/faq",
+                  "explanation": "No crypto-to-fiat off-ramp is mentioned on Elytro's site or FAQ; the wallet only supports on-chain swaps/bridges, not cashing out to fiat."
+                }
+              }
+            ]
+          },
+          "bankTransfer": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/",
+                  "explanation": "No fiat ramp exists in Elytro, so bank transfer (ACH/SEPA/wire) is not available as a payment method per the official site and FAQ."
+                }
+              }
+            ]
+          },
+          "card": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/",
+                  "explanation": "Since Elytro has no integrated fiat ramp, no card payment method is available; the official site lists only on-chain operations."
+                }
+              }
+            ]
+          },
+          "applePay": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/",
+                  "explanation": "No fiat ramp exists in Elytro, so Apple Pay is not offered as a payment method per the official site and FAQ."
+                }
+              }
+            ]
+          },
+          "googlePay": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/",
+                  "explanation": "No fiat ramp exists in Elytro, so Google Pay is not offered as a payment method per the official site and FAQ."
+                }
+              }
+            ]
+          },
           "kycDependency": "KYCDependency.UNKNOWN",
           "providers": [],
           "regionalAvailability": null

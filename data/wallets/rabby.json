@@ -1447,12 +1447,72 @@
             "explanation": "Rabby source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://rabby.io"
           },
-          "buyCrypto": null,
-          "sellCrypto": null,
-          "bankTransfer": null,
-          "card": null,
-          "applePay": null,
-          "googlePay": null,
+          "buyCrypto": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://cryptoslate.com/crypto-wallets/rabby-wallet-review/",
+                  "explanation": "Multiple reviews confirm Rabby has no fiat on-ramp; the CryptoSlate review states 'There is also no fiat on-ramp of any kind,' with users funding via external transfers only."
+                }
+              }
+            ]
+          },
+          "sellCrypto": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://cryptoslate.com/crypto-wallets/rabby-wallet-review/",
+                  "explanation": "Rabby has no fiat ramps at all, so no crypto-to-fiat off-ramp exists in-app."
+                }
+              }
+            ]
+          },
+          "bankTransfer": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://cryptoslate.com/crypto-wallets/rabby-wallet-review/",
+                  "explanation": "No fiat ramp exists in Rabby, so bank transfer is not available as a payment method."
+                }
+              }
+            ]
+          },
+          "card": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://cryptoslate.com/crypto-wallets/rabby-wallet-review/",
+                  "explanation": "With no fiat on-ramp present in Rabby, no card payment method is offered."
+                }
+              }
+            ]
+          },
+          "applePay": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://cryptoslate.com/crypto-wallets/rabby-wallet-review/",
+                  "explanation": "No fiat ramp exists in Rabby, so Apple Pay is not available as a payment method."
+                }
+              }
+            ]
+          },
+          "googlePay": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://cryptoslate.com/crypto-wallets/rabby-wallet-review/",
+                  "explanation": "No fiat ramp exists in Rabby, so Google Pay is not available as a payment method."
+                }
+              }
+            ]
+          },
           "kycDependency": "KYCDependency.UNKNOWN",
           "providers": [],
           "regionalAvailability": null

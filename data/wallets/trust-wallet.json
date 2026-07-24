@@ -723,7 +723,17 @@
               }
             ]
           },
-          "sellCrypto": null,
+          "sellCrypto": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.trustwallet.com/support/solutions/articles/67000734511-moonpay-your-gateway-to-seamless-crypto-transactions",
+                  "explanation": "Trust Wallet offers an in-app crypto-to-fiat off-ramp via integrated providers like MoonPay and Ramp, with a Sell button that connects users to convert crypto to fiat."
+                }
+              }
+            ]
+          },
           "bankTransfer": {
             "$call": "supported",
             "args": [
@@ -746,8 +756,28 @@
               }
             ]
           },
-          "applePay": null,
-          "googlePay": null,
+          "applePay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trustwallet.com/blog/announcements/buy-crypto-with-apple-pay-and-google-pay-in-trust-wallet",
+                  "explanation": "Trust Wallet's official announcement states it supports Apple Pay as a buy-crypto payment option via its Express Buy feature powered by third-party partners."
+                }
+              }
+            ]
+          },
+          "googlePay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trustwallet.com/blog/announcements/buy-crypto-with-apple-pay-and-google-pay-in-trust-wallet",
+                  "explanation": "Trust Wallet's official announcement states it supports Google Pay as a buy-crypto payment option via its Express Buy feature powered by third-party partners."
+                }
+              }
+            ]
+          },
           "kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
           "providers": [],
           "regionalAvailability": "Trust Wallet publishes buy functionality but provider and country availability were not resolved in this pass."

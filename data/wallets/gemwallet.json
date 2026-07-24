@@ -759,10 +759,50 @@
             "explanation": "Gem Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://gemwallet.com"
           },
-          "buyCrypto": null,
-          "sellCrypto": null,
-          "bankTransfer": null,
-          "card": null,
+          "buyCrypto": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.gemwallet.com/faq/fiat-provider/",
+                  "explanation": "Gem Wallet's fiat provider docs list integrated on-ramp providers (Mercuryo, MoonPay, Transak, Paybis, Banxa, Cash App) that let users buy crypto in-app."
+                }
+              }
+            ]
+          },
+          "sellCrypto": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.gemwallet.com/faq/fiat-provider/",
+                  "explanation": "The docs state Mercuryo, MoonPay, Transak and Paybis support both buying and selling crypto (fiat off-ramp) within Gem Wallet."
+                }
+              }
+            ]
+          },
+          "bankTransfer": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.gemwallet.com/faq/fiat-provider/",
+                  "explanation": "The fiat provider docs state buying is available via 'supported bank payment options' alongside cards and mobile payments."
+                }
+              }
+            ]
+          },
+          "card": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.gemwallet.com/faq/fiat-provider/",
+                  "explanation": "The fiat provider docs state users can buy crypto with traditional payment methods such as cards."
+                }
+              }
+            ]
+          },
           "applePay": null,
           "googlePay": null,
           "kycDependency": "KYCDependency.UNKNOWN",
@@ -889,8 +929,28 @@
             "url": "https://docs.gemwallet.com/features/"
           },
           "netWorth": null,
-          "pnl": null,
-          "costBasis": null,
+          "pnl": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.coingecko.com/learn/how-to-use-gem-wallet",
+                  "explanation": "Guides describing Gem Wallet cover balances and staking but no profit/loss tracking, and reviews note portfolio-tracking limitations."
+                }
+              }
+            ]
+          },
+          "costBasis": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.coingecko.com/learn/how-to-use-gem-wallet",
+                  "explanation": "No source indicates Gem Wallet tracks acquisition cost basis; it displays current balances only."
+                }
+              }
+            ]
+          },
           "tokenCategories": null,
           "nftSupport": {
             "$call": "supported",
@@ -1019,7 +1079,17 @@
               }
             ]
           },
-          "stakingPositions": null,
+          "stakingPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://99bitcoins.com/bitcoin-wallet/gemwallet-review/",
+                  "explanation": "Gem Wallet offers its own native staking but reviews note it is missing DeFi positions, meaning it does not surface external DeFi protocol positions."
+                }
+              }
+            ]
+          },
           "lpPositions": {
             "$call": "notSupported",
             "args": [

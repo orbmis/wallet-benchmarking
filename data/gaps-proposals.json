@@ -2,1768 +2,811 @@
   "proposals": [
     {
       "walletId": "ambire",
-      "metricKey": "pfPnl",
-      "path": "product.portfolioManagement.pnl",
-      "decision": "no",
-      "citationUrl": "https://www.ambire.com/",
-      "explanation": "Ambire's dashboard shows token/DeFi balances and USD values but no source describes profit-and-loss tracking on holdings; per the official site it only displays tokens, DeFi positions, apps and NFTs (https://www.ambire.com/)."
-    },
-    {
-      "walletId": "ambire",
-      "metricKey": "pfCostBasis",
-      "path": "product.portfolioManagement.costBasis",
-      "decision": "no",
-      "citationUrl": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/",
-      "explanation": "No official or secondary source indicates Ambire tracks acquisition cost basis; the portfolio only shows current balances and USD values (https://blog.ambire.com/make-the-most-out-of-ambire-wallet/)."
-    },
-    {
-      "walletId": "ambire",
-      "metricKey": "defiLp",
-      "path": "product.defiPositionAwareness.lpPositions",
+      "metricKey": "rampBuy",
+      "path": "product.fiatRamps.buyCrypto",
       "decision": "yes",
-      "citationUrl": "https://blog.ambire.com/dev-update-q4-2024/",
-      "explanation": "Ambire surfaces liquidity-pool positions, letting users check that their Uniswap liquidity is in range directly from the extension dashboard (https://blog.ambire.com/dev-update-q4-2024/)."
+      "citationUrl": "https://blog.ambire.com/moonpay-integration-released-seamlessly-on-off-ramp-solution-for-ambire/",
+      "explanation": "Ambire offers in-app fiat-to-crypto buying via integrated providers (Ramp Network, Transak, MoonPay, Guardarian) from the wallet's Deposit tab."
     },
     {
       "walletId": "ambire",
-      "metricKey": "stakeNative",
-      "path": "product.stakingEarn.nativeStaking",
-      "decision": "no",
-      "citationUrl": "https://blog.ambire.com/ambire-extension-launch/",
-      "explanation": "The current Ambire extension offers no in-app native protocol staking; its own $WALLET/xWALLET token staking is a governance-token program, not ETH/SOL native staking (https://blog.ambire.com/ambire-extension-launch/)."
+      "metricKey": "rampSell",
+      "path": "product.fiatRamps.sellCrypto",
+      "decision": "yes",
+      "citationUrl": "https://blog.ambire.com/ambire-releases-fiat-off-ramp-feature-becoming-your-true-one-stop-shop-for-crypto/",
+      "explanation": "Ambire released an in-app fiat off-ramp (via Guardarian and MoonPay) letting users sell crypto and receive cash directly to their bank account."
     },
     {
       "walletId": "ambire",
-      "metricKey": "stakeLiquid",
-      "path": "product.stakingEarn.liquidStaking",
-      "decision": "no",
-      "citationUrl": "https://blog.ambire.com/liquid-staking-explained/",
-      "explanation": "Liquid staking is not a native in-app feature; users must connect to Lido's external dApp widget/site to stake ETH rather than doing it within Ambire's own UI (https://blog.ambire.com/liquid-staking-explained/)."
+      "metricKey": "rampCard",
+      "path": "product.fiatRamps.card",
+      "decision": "yes",
+      "citationUrl": "https://blog.ambire.com/moonpay-integration-released-seamlessly-on-off-ramp-solution-for-ambire/",
+      "explanation": "The MoonPay integration supports credit/debit cards (Visa, Mastercard) for buying crypto in-app, and Transak supports card purchases too."
     },
     {
       "walletId": "ambire",
-      "metricKey": "stakeApy",
-      "path": "product.stakingEarn.apyDisplay",
-      "decision": "no",
-      "citationUrl": "https://blog.ambire.com/liquid-staking-explained/",
-      "explanation": "Because staking is done via external Lido widget and there is no native staking feature, Ambire's own UI does not display a staking/earn APY (https://blog.ambire.com/liquid-staking-explained/)."
+      "metricKey": "rampApple",
+      "path": "product.fiatRamps.applePay",
+      "decision": "yes",
+      "citationUrl": "https://blog.ambire.com/moonpay-integration-released-seamlessly-on-off-ramp-solution-for-ambire/",
+      "explanation": "The MoonPay integration in Ambire explicitly supports Apple Pay as a payment method for buying crypto."
     },
     {
       "walletId": "ambire",
-      "metricKey": "stakeClaim",
-      "path": "product.stakingEarn.rewardsClaiming",
-      "decision": "no",
-      "citationUrl": "https://blog.ambire.com/liquid-staking-explained/",
-      "explanation": "Ambire has no native staking feature and thus no in-app staking-rewards claiming; the only claim flow is for its own $WALLET token rewards, not protocol staking rewards (https://blog.ambire.com/liquid-staking-explained/)."
+      "metricKey": "rampGoogle",
+      "path": "product.fiatRamps.googlePay",
+      "decision": "yes",
+      "citationUrl": "https://blog.ambire.com/moonpay-integration-released-seamlessly-on-off-ramp-solution-for-ambire/",
+      "explanation": "The MoonPay integration in Ambire explicitly supports Google Pay as a payment method for buying crypto."
     },
     {
       "walletId": "ambire",
-      "metricKey": "stakeValidator",
-      "path": "product.stakingEarn.validatorChoice",
-      "decision": "no",
-      "citationUrl": "https://blog.ambire.com/liquid-staking-explained/",
-      "explanation": "With no native staking product, Ambire provides no validator-selection option; liquid staking via Lido pools stake without user validator choice (https://blog.ambire.com/liquid-staking-explained/)."
+      "metricKey": "rampBank",
+      "path": "product.fiatRamps.bankTransfer",
+      "decision": "yes",
+      "citationUrl": "https://blog.ambire.com/moonpay-integration-released-seamlessly-on-off-ramp-solution-for-ambire/",
+      "explanation": "Ambire's ramps support bank transfer methods (SEPA, ACH, wire) via MoonPay and Guardarian for both on- and off-ramping."
     },
     {
       "walletId": "argent",
-      "metricKey": "pfCostBasis",
-      "path": "product.portfolioManagement.costBasis",
-      "decision": "no",
-      "citationUrl": "https://www.cryptovantage.com/best-crypto-wallets/argent-wallet/",
-      "explanation": "Argent is a self-custody DeFi wallet with no cost-basis tracking; reviews explicitly note users rely on external trackers (e.g. CoinTracking) for cost basis, and no official source describes an in-app cost-basis feature."
+      "metricKey": "rampApple",
+      "path": "product.fiatRamps.applePay",
+      "decision": "yes",
+      "citationUrl": "https://www.ready.co/learn/ready-how-to-fund-tutorial",
+      "explanation": "Ready lets users buy crypto via Ramp or Banxa using Apple Pay, per its funding tutorial and Card FAQs."
     },
     {
       "walletId": "argent",
-      "metricKey": "pfWatchOnly",
-      "path": "product.portfolioManagement.watchOnlyWallets",
-      "decision": "no",
-      "citationUrl": "https://www.cryptovantage.com/best-crypto-wallets/argent-wallet/",
-      "explanation": "No official or secondary source describes watch-only address tracking in Argent/Ready, which is a self-custody signing wallet rather than a portfolio aggregator."
+      "metricKey": "rampGoogle",
+      "path": "product.fiatRamps.googlePay",
+      "decision": "yes",
+      "citationUrl": "https://www.ready.co/learn/ready-how-to-fund-tutorial",
+      "explanation": "Ready's integrated Ramp/Banxa on-ramp supports Google Pay as a payment method for buying crypto."
     },
     {
       "walletId": "argent",
-      "metricKey": "defiLending",
-      "path": "product.defiPositionAwareness.lendingPositions",
+      "metricKey": "rampBank",
+      "path": "product.fiatRamps.bankTransfer",
       "decision": "yes",
-      "citationUrl": "https://www.ready.co/blog/how-to-earn-interest-with-aave-on-layer-2",
-      "explanation": "Argent integrates Aave lending where aTokens accrue interest directly in the wallet, so the lending position and accrued interest are surfaced in-app."
+      "citationUrl": "https://www.ready.co/learn/ready-how-to-fund-tutorial",
+      "explanation": "Ready supports bank transfer for buying/funding crypto via Banxa/Ramp (also virtual bank details for USDC deposits)."
     },
     {
       "walletId": "argent",
-      "metricKey": "defiLp",
-      "path": "product.defiPositionAwareness.lpPositions",
-      "decision": "yes",
-      "citationUrl": "https://www.bankless.com/how-to-maximize-your-argent-wallet",
-      "explanation": "Argent's Invest section supports providing liquidity to pools (e.g. Balancer/Uniswap) and holds the resulting LP positions in-app."
-    },
-    {
-      "walletId": "argent",
-      "metricKey": "defiVault",
-      "path": "product.defiPositionAwareness.vaultPositions",
-      "decision": "yes",
-      "citationUrl": "https://support.argent.xyz/hc/en-us/articles/360015729618-Using-Yearn-with-Argent",
-      "explanation": "Argent integrates Yearn vaults, where yTokens representing the user's vault share are held and displayed in the wallet."
-    },
-    {
-      "walletId": "argent",
-      "metricKey": "stakeLiquid",
-      "path": "product.stakingEarn.liquidStaking",
-      "decision": "yes",
-      "citationUrl": "https://www.ready.co/learn/what-is-staking",
-      "explanation": "Argent offers in-app ETH liquid staking via Lido, giving the user stETH (or wstETH on Starknet) as a liquid staking token."
-    },
-    {
-      "walletId": "base-app",
-      "metricKey": "pfPnl",
-      "path": "product.portfolioManagement.pnl",
-      "decision": "no",
-      "citationUrl": "https://www.gncrypto.news/news/coinbase-wallet-review/",
-      "explanation": "Coinbase Wallet/Base app shows a simple portfolio and history but has no built-in profit/loss tracking; reviews and user guidance note assets held in the wallet are excluded from Coinbase performance tracking and require third-party tools."
-    },
-    {
-      "walletId": "base-app",
-      "metricKey": "pfCostBasis",
-      "path": "product.portfolioManagement.costBasis",
-      "decision": "no",
-      "citationUrl": "https://www.gncrypto.news/news/coinbase-wallet-review/",
-      "explanation": "No cost-basis tracking is present in the Base app; transactions in the self-custody wallet are not included in Coinbase's cost-basis/performance data and require external trackers."
-    },
-    {
-      "walletId": "base-app",
-      "metricKey": "pfMultiWallet",
-      "path": "product.portfolioManagement.multiWalletAggregation",
-      "decision": "yes",
-      "citationUrl": "https://apps.apple.com/us/app/base-formerly-coinbase-wallet/id1278383455",
-      "explanation": "The Coinbase Wallet web app/Base app offers a 360-degree view letting users connect multiple wallets and see crypto, NFTs, and DeFi positions across all wallets in one place, filterable by chain and address."
-    },
-    {
-      "walletId": "base-app",
-      "metricKey": "defiStaking",
-      "path": "product.defiPositionAwareness.stakingPositions",
-      "decision": "yes",
-      "citationUrl": "https://apps.apple.com/us/app/base-formerly-coinbase-wallet/id1278383455",
-      "explanation": "The app's 360-degree portfolio view surfaces DeFi positions including staking across connected wallets, filterable by chain and address."
-    },
-    {
-      "walletId": "base-app",
-      "metricKey": "stakeNative",
-      "path": "product.stakingEarn.nativeStaking",
-      "decision": "yes",
-      "citationUrl": "https://help.coinbase.com/en/wallet/dapps-and-defi/staking-e-th",
-      "explanation": "The Base app offers in-app ETH staking, letting anyone lock ETH to participate in Ethereum proof-of-stake consensus and earn rewards."
-    },
-    {
-      "walletId": "base-app",
-      "metricKey": "stakeLiquid",
-      "path": "product.stakingEarn.liquidStaking",
-      "decision": "yes",
-      "citationUrl": "https://help.coinbase.com/en/wallet/dapps-and-defi/staking-e-th",
-      "explanation": "The Base app offers ETH staking plus access to liquid staking tokens including cbETH (Coinbase Wrapped Staked ETH)."
-    },
-    {
-      "walletId": "base-app",
-      "metricKey": "stakeValidator",
-      "path": "product.stakingEarn.validatorChoice",
-      "decision": "no",
-      "citationUrl": "https://help.coinbase.com/en/wallet/dapps-and-defi/staking-e-th",
-      "explanation": "Base app staking abstracts the technical work and routes to staking protocols without exposing individual validator selection to the user."
-    },
-    {
-      "walletId": "bitget",
-      "metricKey": "pfWatchOnly",
-      "path": "product.portfolioManagement.watchOnlyWallets",
-      "decision": "yes",
-      "citationUrl": "https://web3.bitget.com/en/blog/articles/bitkeep-v7-3-1-released-added-new-watch-only-mode",
-      "explanation": "Bitget Wallet added a Watch-only Mode (from v7.3.1) letting users import a public address to monitor balances and transactions without holding the keys."
-    },
-    {
-      "walletId": "bitget",
-      "metricKey": "stakeValidator",
-      "path": "product.stakingEarn.validatorChoice",
-      "decision": "no",
-      "citationUrl": "https://web3.bitget.com/en/academy/how-to-stake-crypto-on-bitget-wallet",
-      "explanation": "Bitget Wallet's in-app Earn/staking flow is a one-click flow routed through protocols like Lido and Stader with automatic delegation, and the documented flow (select token, enter amount, confirm) provides no option to pick a specific validator."
-    },
-    {
-      "walletId": "brave-wallet",
-      "metricKey": "pfPnl",
-      "path": "product.portfolioManagement.pnl",
-      "decision": "no",
-      "citationUrl": "https://brave.com/wallet/",
-      "explanation": "Brave Wallet's portfolio shows token balances, market prices and trends (via CoinGecko) but there is no profit/loss tracking documented on its features page."
-    },
-    {
-      "walletId": "brave-wallet",
-      "metricKey": "pfCostBasis",
-      "path": "product.portfolioManagement.costBasis",
-      "decision": "no",
-      "citationUrl": "https://brave.com/wallet/",
-      "explanation": "No cost-basis/acquisition-cost tracking is described in Brave Wallet's official features or portfolio documentation; it only displays current balances and prices."
-    },
-    {
-      "walletId": "brave-wallet",
-      "metricKey": "pfMultiWallet",
-      "path": "product.portfolioManagement.multiWalletAggregation",
-      "decision": "yes",
-      "citationUrl": "https://support.brave.com/hc/en-us/articles/4416863200141-How-do-I-manage-crypto-assets-in-Brave-Wallet",
-      "explanation": "Brave Wallet lets users add and manage multiple accounts (including imported MetaMask/Ledger/Trezor accounts) across chains in one portfolio view."
-    },
-    {
-      "walletId": "brave-wallet",
-      "metricKey": "defiStaking",
-      "path": "product.defiPositionAwareness.stakingPositions",
-      "decision": "no",
-      "citationUrl": "https://brave.com/wallet/",
-      "explanation": "Brave Wallet displays token/NFT balances and prices only; there is no documented feature that surfaces staking positions held in external DeFi protocols."
-    },
-    {
-      "walletId": "brave-wallet",
-      "metricKey": "defiLending",
-      "path": "product.defiPositionAwareness.lendingPositions",
-      "decision": "no",
-      "citationUrl": "https://brave.com/wallet/",
-      "explanation": "No Brave Wallet documentation indicates it surfaces lending/borrowing positions (Aave, Compound, etc.); it only shows wallet token balances."
-    },
-    {
-      "walletId": "brave-wallet",
-      "metricKey": "defiLp",
-      "path": "product.defiPositionAwareness.lpPositions",
-      "decision": "no",
-      "citationUrl": "https://brave.com/wallet/",
-      "explanation": "Brave Wallet does not document any reading of liquidity-pool positions; its portfolio is limited to token and NFT balances."
-    },
-    {
-      "walletId": "brave-wallet",
-      "metricKey": "defiVault",
-      "path": "product.defiPositionAwareness.vaultPositions",
-      "decision": "no",
-      "citationUrl": "https://brave.com/wallet/",
-      "explanation": "No documentation shows Brave Wallet surfacing yield-vault positions such as Yearn or Morpho."
-    },
-    {
-      "walletId": "brave-wallet",
       "metricKey": "defiRewards",
       "path": "product.defiPositionAwareness.claimableRewards",
+      "decision": "yes",
+      "citationUrl": "https://www.ready.co/blog/strk-staking",
+      "explanation": "Ready displays accumulated/claimable staking rewards and lets users claim them directly in the app."
+    },
+    {
+      "walletId": "base-app",
+      "metricKey": "rampCard",
+      "path": "product.fiatRamps.card",
+      "decision": "yes",
+      "citationUrl": "https://docs.cdp.coinbase.com/onramp/coinbase-hosted-onramp/overview",
+      "explanation": "Base App buys crypto via integrated Coinbase Onramp, which supports debit card payments (guest checkout with debit card is explicitly available)."
+    },
+    {
+      "walletId": "base-app",
+      "metricKey": "rampApple",
+      "path": "product.fiatRamps.applePay",
+      "decision": "yes",
+      "citationUrl": "https://docs.cdp.coinbase.com/onramp/coinbase-hosted-onramp/overview",
+      "explanation": "Base App announced buying crypto with Apple Pay, and Coinbase Onramp (its integrated ramp) lists Apple Pay as a supported payment method."
+    },
+    {
+      "walletId": "base-app",
+      "metricKey": "rampGoogle",
+      "path": "product.fiatRamps.googlePay",
+      "decision": "yes",
+      "citationUrl": "https://docs.cdp.coinbase.com/onramp/coinbase-hosted-onramp/overview",
+      "explanation": "Coinbase Onramp, the ramp integrated into Base App, lists Google Pay as a supported payment method."
+    },
+    {
+      "walletId": "base-app",
+      "metricKey": "rampBank",
+      "path": "product.fiatRamps.bankTransfer",
+      "decision": "yes",
+      "citationUrl": "https://docs.cdp.coinbase.com/onramp/coinbase-hosted-onramp/overview",
+      "explanation": "Coinbase Onramp supports funding from a linked bank account (ACH), available in-app when a Coinbase account is connected."
+    },
+    {
+      "walletId": "base-app",
+      "metricKey": "pfWatchOnly",
+      "path": "product.portfolioManagement.watchOnlyWallets",
       "decision": "no",
-      "citationUrl": "https://brave.com/wallet/",
-      "explanation": "Brave Wallet does not document surfacing of claimable DeFi rewards from external protocols."
+      "citationUrl": "https://cointelegraph.com/news/coinbase-unified-onchain-monitoring-new-wallet-app",
+      "explanation": "Base App/Coinbase Wallet aggregates multiple wallets by connecting self-custodial wallets via WalletConnect (wallets the user controls), with no documented ability to add public addresses you do not hold keys for as watch-only."
     },
     {
       "walletId": "brave-wallet",
-      "metricKey": "defiLiq",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "decision": "no",
-      "citationUrl": "https://brave.com/wallet/",
-      "explanation": "With no DeFi borrow-position awareness in the wallet, there are no documented liquidation-risk warnings."
+      "metricKey": "rampCard",
+      "path": "product.fiatRamps.card",
+      "decision": "yes",
+      "citationUrl": "https://support.rampnetwork.com/en/articles/12630-what-payment-methods-does-ramp-network-support-for-buying-crypto",
+      "explanation": "Ramp Network (Brave Wallet's integrated on/off-ramp) supports Visa/Mastercard debit and credit cards per Ramp's official payment-methods support page."
     },
     {
       "walletId": "brave-wallet",
-      "metricKey": "stakeNative",
-      "path": "product.stakingEarn.nativeStaking",
-      "decision": "no",
-      "citationUrl": "https://github.com/brave/brave-browser/issues/43216",
-      "explanation": "Native in-app staking is an open, unimplemented feature request (GitHub issue #43216, opened Jan 2025) and Brave staff confirmed staking is not available directly within the wallet interface."
+      "metricKey": "rampApple",
+      "path": "product.fiatRamps.applePay",
+      "decision": "yes",
+      "citationUrl": "https://support.rampnetwork.com/en/articles/12630-what-payment-methods-does-ramp-network-support-for-buying-crypto",
+      "explanation": "Ramp supports Apple Pay (with a linked Visa/Mastercard), as confirmed by Ramp's payment-methods page and Brave's own off-ramp blog stating Ramp integrates Apple Pay."
     },
     {
       "walletId": "brave-wallet",
-      "metricKey": "stakeLiquid",
-      "path": "product.stakingEarn.liquidStaking",
-      "decision": "no",
-      "citationUrl": "https://community.brave.app/t/staking-sol-held-in-brave-wallet/454680",
-      "explanation": "Brave Wallet offers no in-app liquid staking; users are advised only to manually swap to LSTs like stSOL as a workaround, not an integrated feature."
+      "metricKey": "rampGoogle",
+      "path": "product.fiatRamps.googlePay",
+      "decision": "yes",
+      "citationUrl": "https://support.rampnetwork.com/en/articles/12630-what-payment-methods-does-ramp-network-support-for-buying-crypto",
+      "explanation": "Ramp supports Google Pay (with a linked Visa/Mastercard) per Ramp's official payment-methods page, and Brave's off-ramp blog lists Google Pay among Ramp's integrated methods."
     },
     {
       "walletId": "brave-wallet",
-      "metricKey": "stakeApy",
-      "path": "product.stakingEarn.apyDisplay",
-      "decision": "no",
-      "citationUrl": "https://github.com/brave/brave-browser/issues/43216",
-      "explanation": "With no in-app staking/earn product, Brave Wallet does not display staking/earn APY."
+      "metricKey": "rampBank",
+      "path": "product.fiatRamps.bankTransfer",
+      "decision": "yes",
+      "citationUrl": "https://support.rampnetwork.com/en/articles/12630-what-payment-methods-does-ramp-network-support-for-buying-crypto",
+      "explanation": "Ramp supports bank transfers (SEPA/Easy Bank Transfer/manual transfers) per its payment-methods page, and Brave's off-ramp blog confirms bank transfers are among Ramp's supported methods in Brave Wallet."
     },
     {
       "walletId": "brave-wallet",
-      "metricKey": "stakeClaim",
-      "path": "product.stakingEarn.rewardsClaiming",
+      "metricKey": "pfWatchOnly",
+      "path": "product.portfolioManagement.watchOnlyWallets",
       "decision": "no",
-      "citationUrl": "https://github.com/brave/brave-browser/issues/43216",
-      "explanation": "No in-app staking exists, so there is no in-app rewards-claiming functionality in Brave Wallet."
-    },
-    {
-      "walletId": "brave-wallet",
-      "metricKey": "stakeValidator",
-      "path": "product.stakingEarn.validatorChoice",
-      "decision": "no",
-      "citationUrl": "https://github.com/brave/brave-browser/issues/43216",
-      "explanation": "Validator selection is only part of the unimplemented native-staking feature request, so it is not available in Brave Wallet."
+      "citationUrl": "https://github.com/brave/brave-browser/wiki/Wallet-support-FAQ",
+      "explanation": "Brave Wallet's official import options cover only recovery phrase, private key, and JSON keystore imports, with no documented ability to add a public address as a watch-only/view-only account; the internal 'Watch-Only' NFT label merely flags unowned NFTs rather than a deliberate watch-address feature."
     },
     {
       "walletId": "coinbase-wallet",
-      "metricKey": "stakeLiquid",
-      "path": "product.stakingEarn.liquidStaking",
+      "metricKey": "rampSell",
+      "path": "product.fiatRamps.sellCrypto",
       "decision": "yes",
-      "citationUrl": "https://www.coinbase.com/learn/wallet/how-to-stake-ether",
-      "explanation": "Coinbase Wallet is non-custodial and lets users stake ETH in-app by routing to on-chain liquid-staking protocols (e.g. Lido/Rocket Pool) while keeping their keys."
+      "citationUrl": "https://help.coinbase.com/en/wallet/managing-account/sell-cash-out",
+      "explanation": "Coinbase Wallet's official 'Sell or cash out crypto' help article confirms an in-app crypto-to-fiat off-ramp (cash out) available in 130+ countries via a Coinbase account or third-party providers."
     },
     {
       "walletId": "coinbase-wallet",
-      "metricKey": "stakeValidator",
-      "path": "product.stakingEarn.validatorChoice",
-      "decision": "no",
-      "citationUrl": "https://www.coinbase.com/blog/coinbase-cloud-and-kiln-unlock-native-eth-staking",
-      "explanation": "In-app ETH staking uses pooled staking via Kiln smart contracts where funds are aggregated and validators are selected by the protocol, so the user does not choose the validator."
-    },
-    {
-      "walletId": "daimo",
-      "metricKey": "pfNetWorth",
-      "path": "product.portfolioManagement.netWorth",
-      "decision": "no",
-      "citationUrl": "https://beta.walletbeat.eth.limo/daimo/",
-      "explanation": "Daimo is a minimal single-stablecoin (USDC on Base) payments app with no aggregate net-worth portfolio view per its docs and Walletbeat profile."
-    },
-    {
-      "walletId": "daimo",
-      "metricKey": "pfPnl",
-      "path": "product.portfolioManagement.pnl",
-      "decision": "no",
-      "citationUrl": "https://beta.walletbeat.eth.limo/daimo/",
-      "explanation": "Daimo focuses on stablecoin payments and offers no profit/loss tracking per its documentation and Walletbeat profile."
-    },
-    {
-      "walletId": "daimo",
       "metricKey": "pfCostBasis",
       "path": "product.portfolioManagement.costBasis",
       "decision": "no",
-      "citationUrl": "https://beta.walletbeat.eth.limo/daimo/",
-      "explanation": "No cost-basis tracking exists in Daimo, a simple USDC payments wallet, per its docs and Walletbeat."
+      "citationUrl": "https://www.coinbase.com/learn/tips-and-tutorials/understanding-estimated-gains-and-losses",
+      "explanation": "Coinbase states transactions on Coinbase Wallet are not included in cost-basis/gain-loss calculations (assumed $0 cost basis), and no source shows the wallet tracking acquisition cost basis of holdings."
     },
     {
       "walletId": "daimo",
-      "metricKey": "pfWatchOnly",
-      "path": "product.portfolioManagement.watchOnlyWallets",
+      "metricKey": "rampSell",
+      "path": "product.fiatRamps.sellCrypto",
       "decision": "no",
-      "citationUrl": "https://beta.walletbeat.eth.limo/daimo/",
-      "explanation": "Daimo uses device-secured passkey accounts for payments and provides no watch-only address tracking per its documentation."
+      "citationUrl": "https://github.com/daimo-eth/daimo",
+      "explanation": "The Daimo consumer app integrated Coinbase Onramp for in-app deposits/buying (on-ramp) only; its withdrawal was on-chain crypto withdrawal, and neither the archived app README (github.com/daimo-eth/daimo) nor Daimo docs document any in-app crypto-to-fiat sell/off-ramp."
     },
     {
       "walletId": "daimo",
-      "metricKey": "defiStaking",
-      "path": "product.defiPositionAwareness.stakingPositions",
-      "decision": "no",
-      "citationUrl": "https://docs.daimo.com/",
-      "explanation": "Daimo is a stablecoin payments/deposit product and does not surface external DeFi staking positions."
-    },
-    {
-      "walletId": "daimo",
-      "metricKey": "defiLending",
-      "path": "product.defiPositionAwareness.lendingPositions",
-      "decision": "no",
-      "citationUrl": "https://docs.daimo.com/",
-      "explanation": "Daimo does not surface lending/borrowing positions; it is a stablecoin payments app with no DeFi position awareness."
-    },
-    {
-      "walletId": "daimo",
-      "metricKey": "defiLp",
-      "path": "product.defiPositionAwareness.lpPositions",
-      "decision": "no",
-      "citationUrl": "https://docs.daimo.com/",
-      "explanation": "Daimo shows no liquidity-pool positions, being a minimal USDC payments wallet."
-    },
-    {
-      "walletId": "daimo",
-      "metricKey": "defiVault",
-      "path": "product.defiPositionAwareness.vaultPositions",
-      "decision": "no",
-      "citationUrl": "https://docs.daimo.com/",
-      "explanation": "Daimo does not surface yield-vault positions per its payments-focused documentation."
-    },
-    {
-      "walletId": "daimo",
-      "metricKey": "defiRewards",
-      "path": "product.defiPositionAwareness.claimableRewards",
-      "decision": "no",
-      "citationUrl": "https://docs.daimo.com/",
-      "explanation": "Daimo surfaces no claimable DeFi rewards, offering only stablecoin send/receive/deposit functionality."
-    },
-    {
-      "walletId": "daimo",
-      "metricKey": "defiLiq",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "decision": "no",
-      "citationUrl": "https://docs.daimo.com/",
-      "explanation": "Daimo has no borrow positions or liquidation warnings, being a stablecoin payments app."
-    },
-    {
-      "walletId": "daimo",
-      "metricKey": "stakeNative",
-      "path": "product.stakingEarn.nativeStaking",
-      "decision": "no",
-      "citationUrl": "https://beta.walletbeat.eth.limo/daimo/",
-      "explanation": "Daimo offers no in-app native staking; it is a USDC payments-only wallet per its docs and Walletbeat."
-    },
-    {
-      "walletId": "daimo",
-      "metricKey": "stakeLiquid",
-      "path": "product.stakingEarn.liquidStaking",
-      "decision": "no",
-      "citationUrl": "https://beta.walletbeat.eth.limo/daimo/",
-      "explanation": "Daimo offers no in-app liquid staking per its payments-focused documentation and Walletbeat profile."
-    },
-    {
-      "walletId": "daimo",
-      "metricKey": "stakeApy",
-      "path": "product.stakingEarn.apyDisplay",
-      "decision": "no",
-      "citationUrl": "https://beta.walletbeat.eth.limo/daimo/",
-      "explanation": "Daimo displays no staking/earn APY as it has no staking or earn products."
-    },
-    {
-      "walletId": "daimo",
-      "metricKey": "stakeClaim",
-      "path": "product.stakingEarn.rewardsClaiming",
-      "decision": "no",
-      "citationUrl": "https://beta.walletbeat.eth.limo/daimo/",
-      "explanation": "Daimo provides no in-app staking rewards claiming, offering only stablecoin payments."
-    },
-    {
-      "walletId": "daimo",
-      "metricKey": "stakeValidator",
-      "path": "product.stakingEarn.validatorChoice",
-      "decision": "no",
-      "citationUrl": "https://beta.walletbeat.eth.limo/daimo/",
-      "explanation": "Daimo has no staking feature and thus no validator selection per its docs and Walletbeat."
-    },
-    {
-      "walletId": "elytro",
-      "metricKey": "pfNetWorth",
-      "path": "product.portfolioManagement.netWorth",
-      "decision": "no",
-      "citationUrl": "https://elytro.com/faq",
-      "explanation": "Elytro's official site and FAQ describe only balance-checking, send/receive/swap and security features with no aggregate net-worth/portfolio view."
-    },
-    {
-      "walletId": "elytro",
-      "metricKey": "pfPnl",
-      "path": "product.portfolioManagement.pnl",
-      "decision": "no",
-      "citationUrl": "https://elytro.com/",
-      "explanation": "No profit/loss tracking is mentioned anywhere on Elytro's official site or FAQ, which cover only transactions and security controls."
-    },
-    {
-      "walletId": "elytro",
-      "metricKey": "pfCostBasis",
-      "path": "product.portfolioManagement.costBasis",
-      "decision": "no",
-      "citationUrl": "https://elytro.com/faq",
-      "explanation": "Elytro documents no cost-basis or acquisition-price tracking on its official site or FAQ."
-    },
-    {
-      "walletId": "elytro",
-      "metricKey": "pfWatchOnly",
-      "path": "product.portfolioManagement.watchOnlyWallets",
-      "decision": "no",
-      "citationUrl": "https://elytro.com/faq",
-      "explanation": "Elytro is a smart-contract account you control via passcode/keys with no documented watch-only address tracking on its official site or FAQ."
-    },
-    {
-      "walletId": "elytro",
-      "metricKey": "defiStaking",
-      "path": "product.defiPositionAwareness.stakingPositions",
-      "decision": "no",
-      "citationUrl": "https://elytro.com/",
-      "explanation": "Elytro surfaces token balances only; no reading/display of external staking positions is documented on its site or FAQ."
-    },
-    {
-      "walletId": "elytro",
-      "metricKey": "defiLending",
-      "path": "product.defiPositionAwareness.lendingPositions",
-      "decision": "no",
-      "citationUrl": "https://elytro.com/",
-      "explanation": "No lending/borrowing position surfacing (e.g. Aave/Compound) is described in Elytro's official materials."
-    },
-    {
-      "walletId": "elytro",
-      "metricKey": "defiLp",
-      "path": "product.defiPositionAwareness.lpPositions",
-      "decision": "no",
-      "citationUrl": "https://elytro.com/faq",
-      "explanation": "Elytro documents no liquidity-pool position tracking on its official site or FAQ."
-    },
-    {
-      "walletId": "elytro",
-      "metricKey": "defiVault",
-      "path": "product.defiPositionAwareness.vaultPositions",
-      "decision": "no",
-      "citationUrl": "https://elytro.com/",
-      "explanation": "No yield-vault position surfacing (e.g. Yearn/Morpho) is documented for Elytro."
-    },
-    {
-      "walletId": "elytro",
-      "metricKey": "defiRewards",
-      "path": "product.defiPositionAwareness.claimableRewards",
-      "decision": "no",
-      "citationUrl": "https://elytro.com/faq",
-      "explanation": "Elytro's documented features include no claimable-DeFi-rewards surfacing."
-    },
-    {
-      "walletId": "elytro",
-      "metricKey": "defiLiq",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "decision": "no",
-      "citationUrl": "https://elytro.com/",
-      "explanation": "Elytro provides no borrow/liquidation-risk warnings; it has no DeFi position awareness in its documented feature set."
-    },
-    {
-      "walletId": "elytro",
-      "metricKey": "stakeNative",
-      "path": "product.stakingEarn.nativeStaking",
-      "decision": "no",
-      "citationUrl": "https://elytro.com/",
-      "explanation": "Elytro offers send/receive/swap/bridge and security controls but no in-app native protocol staking per its official site."
-    },
-    {
-      "walletId": "elytro",
-      "metricKey": "stakeLiquid",
-      "path": "product.stakingEarn.liquidStaking",
-      "decision": "no",
-      "citationUrl": "https://elytro.com/",
-      "explanation": "No in-app liquid staking (Lido/Rocket Pool style) is documented in Elytro's official materials."
-    },
-    {
-      "walletId": "elytro",
-      "metricKey": "stakeApy",
-      "path": "product.stakingEarn.apyDisplay",
-      "decision": "no",
-      "citationUrl": "https://elytro.com/faq",
-      "explanation": "Elytro displays no staking/earn APY as it offers no staking/earn product per its site and FAQ."
-    },
-    {
-      "walletId": "elytro",
-      "metricKey": "stakeClaim",
-      "path": "product.stakingEarn.rewardsClaiming",
-      "decision": "no",
-      "citationUrl": "https://elytro.com/",
-      "explanation": "Elytro has no in-app rewards-claiming feature since it offers no staking product."
-    },
-    {
-      "walletId": "elytro",
-      "metricKey": "stakeValidator",
-      "path": "product.stakingEarn.validatorChoice",
-      "decision": "no",
-      "citationUrl": "https://elytro.com/faq",
-      "explanation": "With no in-app staking, Elytro offers no validator selection per its official site and FAQ."
-    },
-    {
-      "walletId": "exodus",
-      "metricKey": "pfCostBasis",
-      "path": "product.portfolioManagement.costBasis",
-      "decision": "no",
-      "citationUrl": "https://www.exodus.com/support/en/articles/8598723-what-is-the-total-value-of-my-exodus-wallet",
-      "explanation": "Exodus's portfolio shows real-time balances, value and 24h/percentage performance but there is no evidence of acquisition cost-basis tracking, and reviews/support describe only current value and price-change tracking."
-    },
-    {
-      "walletId": "exodus",
-      "metricKey": "pfWatchOnly",
-      "path": "product.portfolioManagement.watchOnlyWallets",
-      "decision": "no",
-      "citationUrl": "https://www.exodus.com/support/en/articles/8598671-how-do-i-see-all-of-my-wallet-s-addresses",
-      "explanation": "Exodus is a private-key self-custody wallet that only tracks addresses derived from your own seed, with no documented ability to add watch-only/view-only addresses you don't control."
-    },
-    {
-      "walletId": "exodus",
-      "metricKey": "defiLending",
-      "path": "product.defiPositionAwareness.lendingPositions",
-      "decision": "no",
-      "citationUrl": "https://www.exodus.com/support/en/articles/8598871-what-is-defi",
-      "explanation": "Exodus lets users connect to DeFi lending protocols (e.g. Compound/Aave) via its Web3 dApp browser but there is no evidence it surfaces/reads existing external lending positions in its own portfolio UI."
-    },
-    {
-      "walletId": "exodus",
-      "metricKey": "defiLp",
-      "path": "product.defiPositionAwareness.lpPositions",
-      "decision": "no",
-      "citationUrl": "https://www.exodus.com/support/en/articles/8598871-what-is-defi",
-      "explanation": "Exodus can connect to DEXs/LP dApps through its Web3 wallet but no source indicates it aggregates or displays external liquidity-pool positions within the wallet's portfolio view."
-    },
-    {
-      "walletId": "exodus",
-      "metricKey": "defiVault",
-      "path": "product.defiPositionAwareness.vaultPositions",
-      "decision": "no",
-      "citationUrl": "https://www.exodus.com/support/en/articles/8598871-what-is-defi",
-      "explanation": "No evidence that Exodus surfaces or reads yield-vault positions (Yearn/Morpho-style) held in external protocols; its DeFi involvement is limited to dApp connectivity, not position tracking."
-    },
-    {
-      "walletId": "exodus",
-      "metricKey": "defiLiq",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "decision": "no",
-      "citationUrl": "https://www.exodus.com/support/en/articles/8598871-what-is-defi",
-      "explanation": "Since Exodus does not surface external borrow/lending positions, there is no documented liquidation-risk warning feature for DeFi borrow positions."
-    },
-    {
-      "walletId": "exodus",
-      "metricKey": "stakeLiquid",
-      "path": "product.stakingEarn.liquidStaking",
+      "metricKey": "rampCard",
+      "path": "product.fiatRamps.card",
       "decision": "yes",
-      "citationUrl": "https://www.exodus.com/support/en/articles/8598878-how-do-i-stake-eth-and-other-crypto-on-lido",
-      "explanation": "Exodus supports liquid staking of ETH via Lido (receiving stETH) through its Web3 wallet/mobile, as documented in its knowledge base."
+      "citationUrl": "https://docs.cdp.coinbase.com/onramp/coinbase-hosted-onramp/overview",
+      "explanation": "Coinbase Onramp was live in the Daimo app as its in-app buy/deposit provider, and Coinbase Onramp's supported payment methods include debit cards per Coinbase's developer documentation."
     },
     {
-      "walletId": "exodus",
-      "metricKey": "stakeApy",
-      "path": "product.stakingEarn.apyDisplay",
+      "walletId": "elytro",
+      "metricKey": "rampBuy",
+      "path": "product.fiatRamps.buyCrypto",
+      "decision": "no",
+      "citationUrl": "https://elytro.com/faq",
+      "explanation": "Elytro's official site and FAQ describe only on-chain features (send/receive, swap, bridge, stablecoin gas) with no fiat-to-crypto on-ramp mentioned anywhere."
+    },
+    {
+      "walletId": "elytro",
+      "metricKey": "rampSell",
+      "path": "product.fiatRamps.sellCrypto",
+      "decision": "no",
+      "citationUrl": "https://elytro.com/faq",
+      "explanation": "No crypto-to-fiat off-ramp is mentioned on Elytro's site or FAQ; the wallet only supports on-chain swaps/bridges, not cashing out to fiat."
+    },
+    {
+      "walletId": "elytro",
+      "metricKey": "rampCard",
+      "path": "product.fiatRamps.card",
+      "decision": "no",
+      "citationUrl": "https://elytro.com/",
+      "explanation": "Since Elytro has no integrated fiat ramp, no card payment method is available; the official site lists only on-chain operations."
+    },
+    {
+      "walletId": "elytro",
+      "metricKey": "rampApple",
+      "path": "product.fiatRamps.applePay",
+      "decision": "no",
+      "citationUrl": "https://elytro.com/",
+      "explanation": "No fiat ramp exists in Elytro, so Apple Pay is not offered as a payment method per the official site and FAQ."
+    },
+    {
+      "walletId": "elytro",
+      "metricKey": "rampGoogle",
+      "path": "product.fiatRamps.googlePay",
+      "decision": "no",
+      "citationUrl": "https://elytro.com/",
+      "explanation": "No fiat ramp exists in Elytro, so Google Pay is not offered as a payment method per the official site and FAQ."
+    },
+    {
+      "walletId": "elytro",
+      "metricKey": "rampBank",
+      "path": "product.fiatRamps.bankTransfer",
+      "decision": "no",
+      "citationUrl": "https://elytro.com/",
+      "explanation": "No fiat ramp exists in Elytro, so bank transfer (ACH/SEPA/wire) is not available as a payment method per the official site and FAQ."
+    },
+    {
+      "walletId": "family",
+      "metricKey": "rampSell",
+      "path": "product.fiatRamps.sellCrypto",
+      "decision": "no",
+      "citationUrl": "https://family.co/support/buy-crypto",
+      "explanation": "Family's fiat integration via Stripe is documented only for buying crypto (on-ramp); no sell/cash-out to fiat feature appears in Family's support or FAQ pages."
+    },
+    {
+      "walletId": "frame",
+      "metricKey": "rampBuy",
+      "path": "product.fiatRamps.buyCrypto",
+      "decision": "no",
+      "citationUrl": "https://docs.frame.sh/",
+      "explanation": "Frame is a desktop Ethereum dapp wallet with no integrated fiat on-ramp; its docs describe only hardware/software signers and watch accounts, and reviews confirm purchases must be done via external exchanges."
+    },
+    {
+      "walletId": "frame",
+      "metricKey": "rampSell",
+      "path": "product.fiatRamps.sellCrypto",
+      "decision": "no",
+      "citationUrl": "https://docs.frame.sh/",
+      "explanation": "Frame provides no in-app crypto-to-fiat off-ramp; there is no buy/sell functionality in the wallet, only dapp connectivity and signing."
+    },
+    {
+      "walletId": "frame",
+      "metricKey": "rampCard",
+      "path": "product.fiatRamps.card",
+      "decision": "no",
+      "citationUrl": "https://docs.frame.sh/",
+      "explanation": "With no fiat ramp present in Frame, there is no card payment method available."
+    },
+    {
+      "walletId": "frame",
+      "metricKey": "rampApple",
+      "path": "product.fiatRamps.applePay",
+      "decision": "no",
+      "citationUrl": "https://docs.frame.sh/",
+      "explanation": "With no fiat ramp present in Frame, Apple Pay is not available."
+    },
+    {
+      "walletId": "frame",
+      "metricKey": "rampGoogle",
+      "path": "product.fiatRamps.googlePay",
+      "decision": "no",
+      "citationUrl": "https://docs.frame.sh/",
+      "explanation": "With no fiat ramp present in Frame, Google Pay is not available."
+    },
+    {
+      "walletId": "frame",
+      "metricKey": "rampBank",
+      "path": "product.fiatRamps.bankTransfer",
+      "decision": "no",
+      "citationUrl": "https://docs.frame.sh/",
+      "explanation": "With no fiat ramp present in Frame, bank transfer is not available."
+    },
+    {
+      "walletId": "frame",
+      "metricKey": "pfWatchOnly",
+      "path": "product.portfolioManagement.watchOnlyWallets",
       "decision": "yes",
-      "citationUrl": "https://www.exodus.com/support/en/articles/8598663-what-is-apy",
-      "explanation": "Exodus displays estimated staking APY for stakeable assets in the wallet's staking section, as described in its support articles on staking and APY."
+      "citationUrl": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Unlocking%20Accounts/",
+      "explanation": "Frame's docs describe Watch Accounts that are 'solely for viewing assets and connecting to protocols' without signing, i.e. watch-only accounts."
     },
     {
-      "walletId": "exodus",
-      "metricKey": "stakeValidator",
-      "path": "product.stakingEarn.validatorChoice",
-      "decision": "no",
-      "citationUrl": "https://everstake.one/resources/blog/how-to-stake-sol-with-exodus-mobile-wallet-a-step-by-step-guide",
-      "explanation": "Exodus staking automatically delegates to its third-party provider Everstake with no manual validator selection supported, per multiple staking guides."
+      "walletId": "gemwallet",
+      "metricKey": "rampBuy",
+      "path": "product.fiatRamps.buyCrypto",
+      "decision": "yes",
+      "citationUrl": "https://docs.gemwallet.com/faq/fiat-provider/",
+      "explanation": "Gem Wallet's fiat provider docs list integrated on-ramp providers (Mercuryo, MoonPay, Transak, Paybis, Banxa, Cash App) that let users buy crypto in-app."
     },
     {
-      "walletId": "family",
+      "walletId": "gemwallet",
+      "metricKey": "rampSell",
+      "path": "product.fiatRamps.sellCrypto",
+      "decision": "yes",
+      "citationUrl": "https://docs.gemwallet.com/faq/fiat-provider/",
+      "explanation": "The docs state Mercuryo, MoonPay, Transak and Paybis support both buying and selling crypto (fiat off-ramp) within Gem Wallet."
+    },
+    {
+      "walletId": "gemwallet",
+      "metricKey": "rampCard",
+      "path": "product.fiatRamps.card",
+      "decision": "yes",
+      "citationUrl": "https://docs.gemwallet.com/faq/fiat-provider/",
+      "explanation": "The fiat provider docs state users can buy crypto with traditional payment methods such as cards."
+    },
+    {
+      "walletId": "gemwallet",
+      "metricKey": "rampBank",
+      "path": "product.fiatRamps.bankTransfer",
+      "decision": "yes",
+      "citationUrl": "https://docs.gemwallet.com/faq/fiat-provider/",
+      "explanation": "The fiat provider docs state buying is available via 'supported bank payment options' alongside cards and mobile payments."
+    },
+    {
+      "walletId": "gemwallet",
       "metricKey": "pfPnl",
       "path": "product.portfolioManagement.pnl",
       "decision": "no",
-      "citationUrl": "https://family.co/blog/launch",
-      "explanation": "Family's official feature pages, launch blog, and FAQs describe balances, swap, NFTs, and watch-only wallets but no profit/loss tracking (https://family.co/blog/launch)."
+      "citationUrl": "https://www.coingecko.com/learn/how-to-use-gem-wallet",
+      "explanation": "Guides describing Gem Wallet cover balances and staking but no profit/loss tracking, and reviews note portfolio-tracking limitations."
     },
     {
-      "walletId": "family",
+      "walletId": "gemwallet",
       "metricKey": "pfCostBasis",
       "path": "product.portfolioManagement.costBasis",
       "decision": "no",
-      "citationUrl": "https://family.co/faqs",
-      "explanation": "No cost-basis tracking is mentioned anywhere in Family's official documentation or FAQs (https://family.co/faqs)."
+      "citationUrl": "https://www.coingecko.com/learn/how-to-use-gem-wallet",
+      "explanation": "No source indicates Gem Wallet tracks acquisition cost basis; it displays current balances only."
     },
     {
-      "walletId": "family",
+      "walletId": "gemwallet",
       "metricKey": "defiStaking",
       "path": "product.defiPositionAwareness.stakingPositions",
       "decision": "no",
-      "citationUrl": "https://family.co/blog/launch",
-      "explanation": "Family's documented features cover send/receive/swap, NFTs, and dApp browsing but do not surface staking positions held in external DeFi protocols (https://family.co/blog/launch)."
-    },
-    {
-      "walletId": "family",
-      "metricKey": "defiLending",
-      "path": "product.defiPositionAwareness.lendingPositions",
-      "decision": "no",
-      "citationUrl": "https://family.co/faqs",
-      "explanation": "No lending/borrowing position surfacing is described in Family's launch blog or FAQs (https://family.co/faqs)."
-    },
-    {
-      "walletId": "family",
-      "metricKey": "defiLp",
-      "path": "product.defiPositionAwareness.lpPositions",
-      "decision": "no",
-      "citationUrl": "https://family.co/blog/launch",
-      "explanation": "Family's feature set makes no mention of surfacing liquidity-pool positions (https://family.co/blog/launch)."
-    },
-    {
-      "walletId": "family",
-      "metricKey": "defiVault",
-      "path": "product.defiPositionAwareness.vaultPositions",
-      "decision": "no",
-      "citationUrl": "https://family.co/faqs",
-      "explanation": "No yield-vault position tracking is referenced in Family's official materials (https://family.co/faqs)."
-    },
-    {
-      "walletId": "family",
-      "metricKey": "defiRewards",
-      "path": "product.defiPositionAwareness.claimableRewards",
-      "decision": "no",
-      "citationUrl": "https://family.co/blog/launch",
-      "explanation": "Family's documentation does not describe surfacing claimable DeFi rewards (https://family.co/blog/launch)."
-    },
-    {
-      "walletId": "family",
-      "metricKey": "defiLiq",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "decision": "no",
-      "citationUrl": "https://family.co/faqs",
-      "explanation": "No liquidation-risk warnings are mentioned in Family's feature documentation or FAQs (https://family.co/faqs)."
-    },
-    {
-      "walletId": "family",
-      "metricKey": "stakeNative",
-      "path": "product.stakingEarn.nativeStaking",
-      "decision": "no",
-      "citationUrl": "https://family.co/blog/launch",
-      "explanation": "Family's launch announcement and FAQs list swap and dApp features but no in-app native staking (https://family.co/blog/launch)."
-    },
-    {
-      "walletId": "family",
-      "metricKey": "stakeLiquid",
-      "path": "product.stakingEarn.liquidStaking",
-      "decision": "no",
-      "citationUrl": "https://family.co/faqs",
-      "explanation": "No in-app liquid staking is offered per Family's official documentation (https://family.co/faqs)."
-    },
-    {
-      "walletId": "family",
-      "metricKey": "stakeApy",
-      "path": "product.stakingEarn.apyDisplay",
-      "decision": "no",
-      "citationUrl": "https://family.co/blog/launch",
-      "explanation": "Family provides no staking/earn feature and thus no APY display in its documented features (https://family.co/blog/launch)."
-    },
-    {
-      "walletId": "family",
-      "metricKey": "stakeClaim",
-      "path": "product.stakingEarn.rewardsClaiming",
-      "decision": "no",
-      "citationUrl": "https://family.co/faqs",
-      "explanation": "No in-app staking rewards claiming is described in Family's materials (https://family.co/faqs)."
-    },
-    {
-      "walletId": "family",
-      "metricKey": "stakeValidator",
-      "path": "product.stakingEarn.validatorChoice",
-      "decision": "no",
-      "citationUrl": "https://family.co/blog/launch",
-      "explanation": "Family offers no in-app staking, so there is no validator selection in its documented features (https://family.co/blog/launch)."
-    },
-    {
-      "walletId": "frame",
-      "metricKey": "pfPnl",
-      "path": "product.portfolioManagement.pnl",
-      "decision": "no",
-      "citationUrl": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Balances/",
-      "explanation": "Frame's Balances module shows only the $ value and daily percentage change per token, with no profit/loss tracking documented (https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Balances/)."
-    },
-    {
-      "walletId": "frame",
-      "metricKey": "pfCostBasis",
-      "path": "product.portfolioManagement.costBasis",
-      "decision": "no",
-      "citationUrl": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Balances/",
-      "explanation": "The Balances documentation lists only current value and daily change, with no acquisition cost-basis feature (https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Balances/)."
-    },
-    {
-      "walletId": "frame",
-      "metricKey": "defiStaking",
-      "path": "product.defiPositionAwareness.stakingPositions",
-      "decision": "no",
-      "citationUrl": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/",
-      "explanation": "Frame's account modules are Balances, Inventory, Dapps, Chain Monitor and Signer; there is no module that surfaces staking positions, and LSTs like stETH appear only as ordinary token balances (https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/)."
-    },
-    {
-      "walletId": "frame",
-      "metricKey": "defiLending",
-      "path": "product.defiPositionAwareness.lendingPositions",
-      "decision": "no",
-      "citationUrl": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/",
-      "explanation": "No documented module surfaces lending/borrowing positions among Frame's account modules (https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/)."
-    },
-    {
-      "walletId": "frame",
-      "metricKey": "defiLp",
-      "path": "product.defiPositionAwareness.lpPositions",
-      "decision": "no",
-      "citationUrl": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/",
-      "explanation": "Frame's modules list does not include any liquidity-pool position tracking (https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/)."
-    },
-    {
-      "walletId": "frame",
-      "metricKey": "defiVault",
-      "path": "product.defiPositionAwareness.vaultPositions",
-      "decision": "no",
-      "citationUrl": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/",
-      "explanation": "No vault/yield-position module exists in Frame's documented account modules (https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/)."
-    },
-    {
-      "walletId": "frame",
-      "metricKey": "defiRewards",
-      "path": "product.defiPositionAwareness.claimableRewards",
-      "decision": "no",
-      "citationUrl": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/",
-      "explanation": "Frame does not document any module surfacing claimable DeFi rewards (https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/)."
-    },
-    {
-      "walletId": "frame",
-      "metricKey": "defiLiq",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "decision": "no",
-      "citationUrl": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/",
-      "explanation": "Frame provides no borrow-position tracking, so no liquidation warnings are documented (https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/)."
-    },
-    {
-      "walletId": "frame",
-      "metricKey": "stakeNative",
-      "path": "product.stakingEarn.nativeStaking",
-      "decision": "no",
-      "citationUrl": "https://docs.frame.sh/docs/Introduction/",
-      "explanation": "Frame is a key-management/dApp-connection wallet with no in-app native staking feature documented; staking is done via connected dApps (https://docs.frame.sh/docs/Introduction/)."
-    },
-    {
-      "walletId": "frame",
-      "metricKey": "stakeLiquid",
-      "path": "product.stakingEarn.liquidStaking",
-      "decision": "no",
-      "citationUrl": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Balances/",
-      "explanation": "No in-app liquid staking is offered; stETH appears only as a held token balance, not an in-app staking flow (https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Balances/)."
-    },
-    {
-      "walletId": "frame",
-      "metricKey": "stakeApy",
-      "path": "product.stakingEarn.apyDisplay",
-      "decision": "no",
-      "citationUrl": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/",
-      "explanation": "Frame has no in-app staking/earn feature and its docs display no staking APY (https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/)."
-    },
-    {
-      "walletId": "frame",
-      "metricKey": "stakeClaim",
-      "path": "product.stakingEarn.rewardsClaiming",
-      "decision": "no",
-      "citationUrl": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/",
-      "explanation": "Frame provides no in-app staking, therefore no in-app rewards-claiming feature is documented (https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/)."
-    },
-    {
-      "walletId": "frame",
-      "metricKey": "stakeValidator",
-      "path": "product.stakingEarn.validatorChoice",
-      "decision": "no",
-      "citationUrl": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/",
-      "explanation": "With no in-app staking, Frame offers no validator selection (https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/)."
-    },
-    {
-      "walletId": "gemwallet",
-      "metricKey": "defiLending",
-      "path": "product.defiPositionAwareness.lendingPositions",
-      "decision": "no",
-      "citationUrl": "https://docs.gemwallet.com/features/",
-      "explanation": "Gem Wallet only connects to lending protocols like Aave/Compound via WalletConnect and does not surface/read existing lending or borrowing positions in its own interface."
-    },
-    {
-      "walletId": "gemwallet",
-      "metricKey": "defiLp",
-      "path": "product.defiPositionAwareness.lpPositions",
-      "decision": "no",
-      "citationUrl": "https://docs.gemwallet.com/features/",
-      "explanation": "No authoritative source indicates Gem Wallet reads or displays external liquidity-pool positions; DeFi interaction is limited to WalletConnect dApp access."
-    },
-    {
-      "walletId": "gemwallet",
-      "metricKey": "defiVault",
-      "path": "product.defiPositionAwareness.vaultPositions",
-      "decision": "no",
-      "citationUrl": "https://docs.gemwallet.com/features/",
-      "explanation": "No authoritative source indicates Gem Wallet surfaces yield-vault positions (e.g. Yearn, Morpho); its feature set has no DeFi-position reading."
-    },
-    {
-      "walletId": "gemwallet",
-      "metricKey": "defiRewards",
-      "path": "product.defiPositionAwareness.claimableRewards",
-      "decision": "no",
-      "citationUrl": "https://docs.gemwallet.com/features/",
-      "explanation": "Gem Wallet lets users claim native staking rewards but there is no evidence it surfaces claimable rewards from external DeFi protocols."
-    },
-    {
-      "walletId": "gemwallet",
-      "metricKey": "defiLiq",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "decision": "no",
-      "citationUrl": "https://docs.gemwallet.com/features/",
-      "explanation": "No authoritative source indicates Gem Wallet provides liquidation risk warnings, as it does not read external borrow positions."
-    },
-    {
-      "walletId": "gemwallet",
-      "metricKey": "stakeLiquid",
-      "path": "product.stakingEarn.liquidStaking",
-      "decision": "no",
-      "citationUrl": "https://docs.gemwallet.com/faq/liquid-staking/",
-      "explanation": "Gem Wallet's liquid-staking page is an educational explainer listing external platforms (Lido, Ankr, Marinade); no evidence of in-app liquid staking, and the staking product is native delegated staking."
+      "citationUrl": "https://99bitcoins.com/bitcoin-wallet/gemwallet-review/",
+      "explanation": "Gem Wallet offers its own native staking but reviews note it is missing DeFi positions, meaning it does not surface external DeFi protocol positions."
     },
     {
       "walletId": "imtoken",
-      "metricKey": "pfPnl",
-      "path": "product.portfolioManagement.pnl",
-      "decision": "no",
-      "explanation": "No official source indicates imToken tracks realized/unrealized profit and loss on holdings; its asset view shows balances and market prices only."
-    },
-    {
-      "walletId": "imtoken",
-      "metricKey": "pfCostBasis",
-      "path": "product.portfolioManagement.costBasis",
-      "decision": "no",
-      "explanation": "No official documentation indicates imToken tracks acquisition cost basis of holdings."
-    },
-    {
-      "walletId": "imtoken",
-      "metricKey": "defiLiq",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "decision": "no",
-      "explanation": "No official source indicates imToken provides liquidation-risk warnings on borrow positions."
-    },
-    {
-      "walletId": "imtoken",
-      "metricKey": "stakeLiquid",
-      "path": "product.stakingEarn.liquidStaking",
+      "metricKey": "rampBuy",
+      "path": "product.fiatRamps.buyCrypto",
       "decision": "yes",
-      "citationUrl": "https://support.token.im/hc/en-us/articles/9992787324313-How-to-stake-ETH-with-Lido-",
-      "explanation": "imToken offers in-app ETH staking via liquid staking providers including Lido (receiving stETH) and Rocket Pool, accessible from the wallet's Stake/DeFi section."
+      "citationUrl": "https://www.moonpay.com/newsroom/imtoken",
+      "explanation": "imToken integrates MoonPay (and OpenC) for in-app fiat-to-crypto purchases via a 'Buy' button on the wallet home, per imToken's help center and the MoonPay partnership announcement."
     },
     {
-      "walletId": "metamask",
-      "metricKey": "pfPnl",
-      "path": "product.portfolioManagement.pnl",
-      "decision": "no",
-      "citationUrl": "https://community.metamask.io/t/feature-request-track-profit-and-loss-per-cryptocurrency-based-on-purchase-history/30857",
-      "explanation": "MetaMask Portfolio shows balances and current token values but does not natively track profit and loss over time; users are directed to third-party tools, and this remains an open feature request."
+      "walletId": "imtoken",
+      "metricKey": "rampCard",
+      "path": "product.fiatRamps.card",
+      "decision": "yes",
+      "citationUrl": "https://support.token.im/hc/en-us/articles/37321215580057-How-to-get-tokens-via-MoonPay-in-imToken",
+      "explanation": "imToken's help documentation states the MoonPay integration lets users pay with Visa (card), alongside Apple Pay and Google Pay."
     },
     {
-      "walletId": "metamask",
-      "metricKey": "pfCostBasis",
-      "path": "product.portfolioManagement.costBasis",
-      "decision": "no",
-      "citationUrl": "https://community.metamask.io/t/feature-request-track-profit-and-loss-per-cryptocurrency-based-on-purchase-history/30857",
-      "explanation": "MetaMask does not provide cost basis or acquisition-price tracking natively (only current balances/values), with cost-basis calculations listed among the still-unimplemented requested features."
+      "walletId": "imtoken",
+      "metricKey": "rampApple",
+      "path": "product.fiatRamps.applePay",
+      "decision": "yes",
+      "citationUrl": "https://support.token.im/hc/en-us/articles/37321215580057-How-to-get-tokens-via-MoonPay-in-imToken",
+      "explanation": "imToken's help documentation states the MoonPay integration supports Apple Pay as a payment method for buying tokens."
     },
     {
-      "walletId": "metamask",
-      "metricKey": "defiLiq",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "decision": "no",
-      "citationUrl": "https://support.metamask.io/manage-crypto/portfolio/how-to-use-the-defi-dashboard-in-metamask-portfolio",
-      "explanation": "The MetaMask Portfolio DeFi dashboard surfaces external positions (balance, rewards, value) but does not natively warn about liquidation risk on borrow positions; liquidation alerts only exist via a third-party Snap (Mendi Finance) for one protocol."
+      "walletId": "imtoken",
+      "metricKey": "rampGoogle",
+      "path": "product.fiatRamps.googlePay",
+      "decision": "yes",
+      "citationUrl": "https://support.token.im/hc/en-us/articles/37321215580057-How-to-get-tokens-via-MoonPay-in-imToken",
+      "explanation": "imToken's help documentation states the MoonPay integration supports Google Pay as a payment method for buying tokens."
+    },
+    {
+      "walletId": "imtoken",
+      "metricKey": "defiLending",
+      "path": "product.defiPositionAwareness.lendingPositions",
+      "decision": "yes",
+      "citationUrl": "https://medium.com/imtoken/new-on-imtoken-defi-portfolio-manager-powered-by-debank-61302b6feeec",
+      "explanation": "The DeBank-powered DeFi Portfolio Manager surfaces lending/borrowing positions (loans) across protocols like Aave and Compound."
+    },
+    {
+      "walletId": "imtoken",
+      "metricKey": "defiLp",
+      "path": "product.defiPositionAwareness.lpPositions",
+      "decision": "yes",
+      "citationUrl": "https://medium.com/imtoken/new-on-imtoken-defi-portfolio-manager-powered-by-debank-61302b6feeec",
+      "explanation": "The DeBank-powered DeFi Portfolio Manager surfaces AMM/DEX liquidity-pool balances (e.g. Uniswap, PancakeSwap positions)."
+    },
+    {
+      "walletId": "imtoken",
+      "metricKey": "defiVault",
+      "path": "product.defiPositionAwareness.vaultPositions",
+      "decision": "yes",
+      "citationUrl": "https://medium.com/imtoken/new-on-imtoken-defi-portfolio-manager-powered-by-debank-61302b6feeec",
+      "explanation": "The DeBank-powered DeFi Portfolio Manager surfaces yield-vault/yield-aggregator and farm positions among the DeFi balances it displays."
     },
     {
       "walletId": "mtpelerin",
-      "metricKey": "pfPnl",
-      "path": "product.portfolioManagement.pnl",
-      "decision": "no",
-      "citationUrl": "https://www.mtpelerin.com/support",
-      "explanation": "Bridge Wallet's official site and support pages describe portfolio holdings/balances and DCA but make no mention of any profit-and-loss tracking feature."
+      "metricKey": "rampApple",
+      "path": "product.fiatRamps.applePay",
+      "decision": "yes",
+      "citationUrl": "https://www.mtpelerin.com/buy-crypto",
+      "explanation": "Mt Pelerin's official buy-crypto page confirms Bridge Wallet's integrated buy feature supports Apple Pay for instant crypto purchases."
     },
     {
-      "walletId": "mtpelerin",
-      "metricKey": "pfCostBasis",
-      "path": "product.portfolioManagement.costBasis",
-      "decision": "no",
-      "citationUrl": "https://www.mtpelerin.com/support",
-      "explanation": "No cost-basis tracking is described anywhere on the official Bridge Wallet or support pages, which focus on buying/swapping/cashing out crypto."
+      "walletId": "nufi",
+      "metricKey": "rampCard",
+      "path": "product.fiatRamps.card",
+      "decision": "yes",
+      "citationUrl": "https://support.nu.fi/support/solutions/articles/80001165993-how-to-buy-crypto",
+      "explanation": "NuFi's official support page states you can buy crypto via the integrated MoonPay ramp using 'a bank card, Apple Pay, Google Pay, bank transfer and other payment options.'"
     },
     {
-      "walletId": "mtpelerin",
+      "walletId": "nufi",
+      "metricKey": "rampApple",
+      "path": "product.fiatRamps.applePay",
+      "decision": "yes",
+      "citationUrl": "https://support.nu.fi/support/solutions/articles/80001165993-how-to-buy-crypto",
+      "explanation": "NuFi's official 'How to buy crypto' support page explicitly lists Apple Pay as a supported payment method through the integrated MoonPay ramp."
+    },
+    {
+      "walletId": "nufi",
+      "metricKey": "rampGoogle",
+      "path": "product.fiatRamps.googlePay",
+      "decision": "yes",
+      "citationUrl": "https://support.nu.fi/support/solutions/articles/80001165993-how-to-buy-crypto",
+      "explanation": "NuFi's official 'How to buy crypto' support page explicitly lists Google Pay as a supported payment method through the integrated MoonPay ramp."
+    },
+    {
+      "walletId": "nufi",
+      "metricKey": "rampBank",
+      "path": "product.fiatRamps.bankTransfer",
+      "decision": "yes",
+      "citationUrl": "https://support.nu.fi/support/solutions/articles/80001165993-how-to-buy-crypto",
+      "explanation": "NuFi's official 'How to buy crypto' support page explicitly lists bank transfer as a supported payment method through the integrated MoonPay ramp."
+    },
+    {
+      "walletId": "nufi",
       "metricKey": "pfWatchOnly",
       "path": "product.portfolioManagement.watchOnlyWallets",
       "decision": "no",
-      "citationUrl": "https://www.mtpelerin.com/bitcoin-wallet",
-      "explanation": "The only external-address feature mentioned is linking an external cold address as a DCA delivery destination for purchases, not adding watch-only addresses to view/track balances in-app."
-    },
-    {
-      "walletId": "mtpelerin",
-      "metricKey": "defiStaking",
-      "path": "product.defiPositionAwareness.stakingPositions",
-      "decision": "no",
-      "citationUrl": "https://www.mtpelerin.com/bridge-wallet",
-      "explanation": "Bridge Wallet connects to external DeFi apps only via WalletConnect and does not surface/read existing staking positions in its own UI."
-    },
-    {
-      "walletId": "mtpelerin",
-      "metricKey": "defiLending",
-      "path": "product.defiPositionAwareness.lendingPositions",
-      "decision": "no",
-      "citationUrl": "https://www.mtpelerin.com/bridge-wallet",
-      "explanation": "DeFi lending protocols are accessed only via WalletConnect out to external dApps; the wallet does not surface lending/borrowing positions in-app."
-    },
-    {
-      "walletId": "mtpelerin",
-      "metricKey": "defiLp",
-      "path": "product.defiPositionAwareness.lpPositions",
-      "decision": "no",
-      "citationUrl": "https://www.mtpelerin.com/bridge-wallet",
-      "explanation": "No liquidity-pool position surfacing is described; DeFi is handled externally through WalletConnect."
-    },
-    {
-      "walletId": "mtpelerin",
-      "metricKey": "defiVault",
-      "path": "product.defiPositionAwareness.vaultPositions",
-      "decision": "no",
-      "citationUrl": "https://www.mtpelerin.com/support",
-      "explanation": "No yield-vault position surfacing is mentioned on the official product or support pages."
-    },
-    {
-      "walletId": "mtpelerin",
-      "metricKey": "defiRewards",
-      "path": "product.defiPositionAwareness.claimableRewards",
-      "decision": "no",
-      "citationUrl": "https://www.mtpelerin.com/support",
-      "explanation": "No feature for surfacing claimable DeFi rewards is described in the official documentation."
-    },
-    {
-      "walletId": "mtpelerin",
-      "metricKey": "defiLiq",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "decision": "no",
-      "citationUrl": "https://www.mtpelerin.com/support",
-      "explanation": "No liquidation-risk warnings for borrow positions are mentioned; the wallet does not read DeFi positions."
-    },
-    {
-      "walletId": "mtpelerin",
-      "metricKey": "stakeNative",
-      "path": "product.stakingEarn.nativeStaking",
-      "decision": "no",
-      "citationUrl": "https://www.mtpelerin.com/support",
-      "explanation": "The official Bridge Wallet and support pages describe buy/swap/cash-out and IBAN features but no in-app native protocol staking."
-    },
-    {
-      "walletId": "mtpelerin",
-      "metricKey": "stakeLiquid",
-      "path": "product.stakingEarn.liquidStaking",
-      "decision": "no",
-      "citationUrl": "https://www.mtpelerin.com/support",
-      "explanation": "No liquid staking (LST) feature is offered or mentioned in Bridge Wallet's documentation."
-    },
-    {
-      "walletId": "mtpelerin",
-      "metricKey": "stakeApy",
-      "path": "product.stakingEarn.apyDisplay",
-      "decision": "no",
-      "citationUrl": "https://www.mtpelerin.com/blog/earn-free-bitcoin-with-our-new-rewards",
-      "explanation": "With no staking/earn product, no staking APY is displayed; the only 'earn' is BTC quest rewards, not yield with an APY."
-    },
-    {
-      "walletId": "mtpelerin",
-      "metricKey": "stakeClaim",
-      "path": "product.stakingEarn.rewardsClaiming",
-      "decision": "no",
-      "citationUrl": "https://www.mtpelerin.com/support",
-      "explanation": "No in-app staking rewards claiming exists since the wallet offers no staking product."
-    },
-    {
-      "walletId": "mtpelerin",
-      "metricKey": "stakeValidator",
-      "path": "product.stakingEarn.validatorChoice",
-      "decision": "no",
-      "citationUrl": "https://www.mtpelerin.com/support",
-      "explanation": "No validator selection is possible as the wallet provides no native staking feature."
-    },
-    {
-      "walletId": "nufi",
-      "metricKey": "pfPnl",
-      "path": "product.portfolioManagement.pnl",
-      "decision": "no",
-      "citationUrl": "https://reviewnexa.com/nufi-wallet-review/",
-      "explanation": "NuFi's dashboard shows total balance across chains but per its review 'doesn't track profit/loss, performance charts, or historical data\u2014you'll need external portfolio trackers.'"
-    },
-    {
-      "walletId": "nufi",
-      "metricKey": "pfCostBasis",
-      "path": "product.portfolioManagement.costBasis",
-      "decision": "no",
-      "citationUrl": "https://reviewnexa.com/nufi-wallet-review/",
-      "explanation": "NuFi provides no portfolio analytics such as cost basis; the review confirms it only shows balances and lacks P&L/historical tracking."
-    },
-    {
-      "walletId": "nufi",
-      "metricKey": "defiLending",
-      "path": "product.defiPositionAwareness.lendingPositions",
-      "decision": "no",
-      "citationUrl": "https://reviewnexa.com/nufi-wallet-review/",
-      "explanation": "The review indicates NuFi has no DeFi position tracking (lending, LPs, vaults), functioning as a basic asset manager with native staking only."
-    },
-    {
-      "walletId": "nufi",
-      "metricKey": "defiLp",
-      "path": "product.defiPositionAwareness.lpPositions",
-      "decision": "no",
-      "citationUrl": "https://reviewnexa.com/nufi-wallet-review/",
-      "explanation": "NuFi does not surface liquidity-pool positions; the review confirms no DeFi position monitoring is offered."
-    },
-    {
-      "walletId": "nufi",
-      "metricKey": "defiVault",
-      "path": "product.defiPositionAwareness.vaultPositions",
-      "decision": "no",
-      "citationUrl": "https://reviewnexa.com/nufi-wallet-review/",
-      "explanation": "NuFi does not surface yield-vault positions; the review confirms an absence of DeFi position tracking."
-    },
-    {
-      "walletId": "nufi",
-      "metricKey": "defiLiq",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "decision": "no",
-      "citationUrl": "https://reviewnexa.com/nufi-wallet-review/",
-      "explanation": "With no DeFi borrow-position tracking, NuFi provides no liquidation warnings per the review's list of gaps."
-    },
-    {
-      "walletId": "nufi",
-      "metricKey": "stakeLiquid",
-      "path": "product.stakingEarn.liquidStaking",
-      "decision": "no",
-      "citationUrl": "https://nu.fi/staking/solana",
-      "explanation": "NuFi offers only traditional native staking with unstaking cooldowns; no liquid staking / LST product is described on its staking pages."
-    },
-    {
-      "walletId": "nufi",
-      "metricKey": "stakeApy",
-      "path": "product.stakingEarn.apyDisplay",
-      "decision": "yes",
-      "citationUrl": "https://nu.fi/staking/solana",
-      "explanation": "NuFi displays staking APY in-app and on its staking pages (e.g. Solana shows '5.6% Staking APY' / 8%+ with MEV)."
-    },
-    {
-      "walletId": "nufi",
-      "metricKey": "stakeValidator",
-      "path": "product.stakingEarn.validatorChoice",
-      "decision": "yes",
-      "citationUrl": "https://support.nu.fi/support/solutions/articles/80000947012-change-validator",
-      "explanation": "NuFi lets users pick a validator/stake pool from a selectable list and offers a 'Change Validator' function for delegation."
-    },
-    {
-      "walletId": "okx",
-      "metricKey": "pfWatchOnly",
-      "path": "product.portfolioManagement.watchOnlyWallets",
-      "decision": "yes",
-      "citationUrl": "https://web3.okx.com/help/how-do-i-manage-my-wallet-app",
-      "explanation": "OKX Wallet supports adding watch-only wallets under Portfolio to monitor an address's assets, NFT, DeFi and transactions without holding the keys, per its official help docs."
+      "citationUrl": "https://support.nu.fi/support/solutions/articles/80000951670-add-account-hot-wallet",
+      "explanation": "NuFi's 'Add Account' options are limited to creating hot wallet accounts tied to your own seed phrase or pairing hardware wallets you hold keys for, with no option to add a watch-only/view-only address."
     },
     {
       "walletId": "phantom",
-      "metricKey": "pfPnl",
-      "path": "product.portfolioManagement.pnl",
+      "metricKey": "rampSell",
+      "path": "product.fiatRamps.sellCrypto",
       "decision": "yes",
-      "citationUrl": "https://phantom.com/learn/blog/solana-profit-loss",
-      "explanation": "Phantom's official blog and help center document a Profit & Loss feature showing realized P&L, unrealized P&L, and total return for Solana token holdings in the mobile app and extension."
+      "citationUrl": "https://help.phantom.com/hc/en-us/articles/28469415977491-Withdraw-crypto-to-your-bank-account",
+      "explanation": "Phantom's official help center documents an in-app crypto-to-fiat off-ramp via a 'Sell Crypto' flow (Home > Cash > Add Cash > Sell Crypto) and a 'Withdraw crypto to your bank account' feature."
     },
     {
       "walletId": "phantom",
-      "metricKey": "pfCostBasis",
-      "path": "product.portfolioManagement.costBasis",
+      "metricKey": "rampBank",
+      "path": "product.fiatRamps.bankTransfer",
       "decision": "yes",
-      "citationUrl": "https://phantom.com/learn/blog/solana-profit-loss",
-      "explanation": "Phantom's official P&L page states it displays Cost Basis ('what you paid for the tokens you currently hold'), calculated via weighted average cost, alongside P&L metrics."
+      "citationUrl": "https://help.phantom.com/hc/en-us/articles/28469415977491-Withdraw-crypto-to-your-bank-account",
+      "explanation": "Phantom's help center confirms bank transfer as a supported method for funding/withdrawing the Cash account, including a dedicated 1:1 USD bank withdrawal to your own bank account."
     },
     {
-      "walletId": "pillarx",
-      "metricKey": "pfPnl",
-      "path": "product.portfolioManagement.pnl",
-      "decision": "yes",
-      "citationUrl": "https://blog.pillarx.app/introducing-pnl-track-your-trading-results-on-pillarx/",
-      "explanation": "PillarX's official blog 'Introducing PnL' describes tracking realised and unrealised profit and loss on holdings."
-    },
-    {
-      "walletId": "pillarx",
-      "metricKey": "pfCostBasis",
-      "path": "product.portfolioManagement.costBasis",
-      "decision": "yes",
-      "citationUrl": "https://blog.pillarx.app/introducing-pnl-track-your-trading-results-on-pillarx/",
-      "explanation": "The same PnL blog post states PillarX uses a Weighted Average Cost method to combine multiple buys into one clear average cost basis."
-    },
-    {
-      "walletId": "pillarx",
-      "metricKey": "pfMultiWallet",
-      "path": "product.portfolioManagement.multiWalletAggregation",
-      "decision": "no",
-      "citationUrl": "https://pillar.fi/",
-      "explanation": "PillarX is a single self-custodial smart-contract wallet with one unified address across chains, and no source describes aggregating multiple separate wallets/accounts into one portfolio view."
-    },
-    {
-      "walletId": "pillarx",
-      "metricKey": "pfWatchOnly",
-      "path": "product.portfolioManagement.watchOnlyWallets",
-      "decision": "no",
-      "citationUrl": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
-      "explanation": "No official source (site, App Store listing, or blog) describes any watch-only address tracking feature in PillarX."
-    },
-    {
-      "walletId": "pillarx",
-      "metricKey": "defiStaking",
-      "path": "product.defiPositionAwareness.stakingPositions",
-      "decision": "no",
-      "citationUrl": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
-      "explanation": "PillarX centers on swaps, PnL and in-app yield strategies but no source shows it surfaces the user's existing external staking positions."
-    },
-    {
-      "walletId": "pillarx",
+      "walletId": "phantom",
       "metricKey": "defiLending",
       "path": "product.defiPositionAwareness.lendingPositions",
       "decision": "no",
-      "citationUrl": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
-      "explanation": "No PillarX source describes surfacing existing lending/borrowing positions from protocols like Aave or Compound in its UI."
+      "citationUrl": "https://www.datawallet.com/crypto/phantom-wallet-review",
+      "explanation": "Phantom lets users access lending dApps (e.g. Kamino, Aave) via its dApp browser but its own portfolio/Terminal only surfaces token balances and its native trading/perps positions, not external lending/borrowing positions, which require third-party trackers like Step Finance."
     },
     {
-      "walletId": "pillarx",
+      "walletId": "phantom",
       "metricKey": "defiLp",
       "path": "product.defiPositionAwareness.lpPositions",
       "decision": "no",
-      "citationUrl": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
-      "explanation": "No PillarX source describes reading or displaying the user's existing liquidity-pool positions."
+      "citationUrl": "https://www.datawallet.com/crypto/phantom-wallet-review",
+      "explanation": "No official or reputable source indicates Phantom surfaces liquidity-pool positions held in external protocols; its portfolio shows balances and native trading positions only."
     },
     {
-      "walletId": "pillarx",
+      "walletId": "phantom",
       "metricKey": "defiVault",
       "path": "product.defiPositionAwareness.vaultPositions",
       "decision": "no",
-      "citationUrl": "https://blog.pillarx.app/lobster-protocol-top-tier-defi-strategies-in-pillarx/",
-      "explanation": "PillarX's Lobster integration lets users deposit into automated yield strategies in-app, but no source shows it surfaces the user's existing external vault positions for tracking."
+      "citationUrl": "https://www.datawallet.com/crypto/phantom-wallet-review",
+      "explanation": "No evidence Phantom reads/displays external yield-vault positions; its native views cover token balances and Phantom's own products rather than aggregating third-party vault positions."
     },
     {
-      "walletId": "pillarx",
-      "metricKey": "defiRewards",
-      "path": "product.defiPositionAwareness.claimableRewards",
-      "decision": "no",
-      "citationUrl": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
-      "explanation": "No PillarX source describes surfacing claimable DeFi rewards from external protocols in the wallet."
-    },
-    {
-      "walletId": "pillarx",
+      "walletId": "phantom",
       "metricKey": "defiLiq",
       "path": "product.defiPositionAwareness.liquidationWarnings",
       "decision": "no",
+      "citationUrl": "https://help.phantom.com/hc/en-us/articles/46527102843027-Trade-tokens-and-perps-in-Phantom-Terminal",
+      "explanation": "Liquidation levels/warnings in Phantom's Terminal apply only to its own Hyperliquid-powered perps product, not to borrow positions in external DeFi lending protocols."
+    },
+    {
+      "walletId": "pillarx",
+      "metricKey": "rampBuy",
+      "path": "product.fiatRamps.buyCrypto",
+      "decision": "no",
       "citationUrl": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
-      "explanation": "No PillarX source describes liquidation-risk warnings for borrow positions."
+      "explanation": "The current PillarX App Store listing's release notes (v3.31.1, 09/02/2025) state the app \"removed the option to buy and sell using third party sites,\" and the current description only lists cross-chain swaps and stablecoin gas with no fiat on-ramp."
     },
     {
       "walletId": "pillarx",
-      "metricKey": "stakeLiquid",
-      "path": "product.stakingEarn.liquidStaking",
+      "metricKey": "rampSell",
+      "path": "product.fiatRamps.sellCrypto",
       "decision": "no",
-      "citationUrl": "https://blog.pillarx.app/",
-      "explanation": "No PillarX source describes in-app liquid staking via Lido/Rocket Pool-style LSTs."
+      "citationUrl": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+      "explanation": "The same App Store release notes (v3.31.1, 09/02/2025) confirm buy AND sell via third-party providers was removed, so the current shipping PillarX app offers no fiat off-ramp."
     },
     {
       "walletId": "pillarx",
-      "metricKey": "stakeClaim",
-      "path": "product.stakingEarn.rewardsClaiming",
+      "metricKey": "rampCard",
+      "path": "product.fiatRamps.card",
       "decision": "no",
-      "citationUrl": "https://blog.pillarx.app/",
-      "explanation": "No PillarX source describes an in-app staking rewards claiming feature."
+      "citationUrl": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+      "explanation": "With in-app buy/sell removed in the current PillarX app (v3.31.1, 09/02/2025), no fiat ramp exists, so card payments are not available in the shipping product."
     },
     {
       "walletId": "pillarx",
-      "metricKey": "stakeValidator",
-      "path": "product.stakingEarn.validatorChoice",
+      "metricKey": "rampApple",
+      "path": "product.fiatRamps.applePay",
       "decision": "no",
-      "citationUrl": "https://blog.pillarx.app/lobster-protocol-top-tier-defi-strategies-in-pillarx/",
-      "explanation": "No PillarX source describes letting users choose a validator to stake with; its yield strategies are automated with no validator selection."
+      "citationUrl": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+      "explanation": "No in-app fiat ramp exists in the current PillarX app after buy/sell was removed (v3.31.1, 09/02/2025), so Apple Pay is not offered as a ramp payment method."
     },
     {
-      "walletId": "rabby",
-      "metricKey": "pfCostBasis",
-      "path": "product.portfolioManagement.costBasis",
+      "walletId": "pillarx",
+      "metricKey": "rampGoogle",
+      "path": "product.fiatRamps.googlePay",
       "decision": "no",
-      "citationUrl": "https://cryptoslate.com/crypto-wallets/rabby-wallet-review/",
-      "explanation": "No authoritative source indicates the Rabby wallet tracks acquisition cost basis of holdings; reviews describe it as a security/portfolio-viewing wallet without cost-basis analytics."
+      "citationUrl": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+      "explanation": "No in-app fiat ramp exists in the current PillarX app after buy/sell was removed (v3.31.1, 09/02/2025), so Google Pay is not offered as a ramp payment method."
+    },
+    {
+      "walletId": "pillarx",
+      "metricKey": "rampBank",
+      "path": "product.fiatRamps.bankTransfer",
+      "decision": "no",
+      "citationUrl": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+      "explanation": "No in-app fiat ramp exists in the current PillarX app after buy/sell was removed (v3.31.1, 09/02/2025), so bank transfer is not offered as a ramp payment method."
     },
     {
       "walletId": "rabby",
-      "metricKey": "defiVault",
-      "path": "product.defiPositionAwareness.vaultPositions",
-      "decision": "yes",
-      "citationUrl": "https://www.dextools.io/tutorials/how-to-use-rabby-wallet-multi-chain-evm-tutorial-2026",
-      "explanation": "Rabby uses DeBank's data engine to automatically surface DeFi positions including staking, lending, liquidity provision and yield-farming/vault positions across EVM protocols in its portfolio view."
-    },
-    {
-      "walletId": "rabby",
-      "metricKey": "defiRewards",
-      "path": "product.defiPositionAwareness.claimableRewards",
-      "decision": "yes",
-      "citationUrl": "https://www.dextools.io/tutorials/how-to-use-rabby-wallet-multi-chain-evm-tutorial-2026",
-      "explanation": "Rabby's portfolio view displays pending/claimable rewards (and claimable airdrops) alongside surfaced DeFi positions via the DeBank data engine."
-    },
-    {
-      "walletId": "rabby",
-      "metricKey": "stakeNative",
-      "path": "product.stakingEarn.nativeStaking",
+      "metricKey": "rampBuy",
+      "path": "product.fiatRamps.buyCrypto",
       "decision": "no",
       "citationUrl": "https://cryptoslate.com/crypto-wallets/rabby-wallet-review/",
-      "explanation": "Reviews explicitly state there is no one-tap/native staking product in Rabby; it only surfaces staking positions users already hold and directs them to external protocols."
+      "explanation": "Multiple reviews confirm Rabby has no fiat on-ramp; the CryptoSlate review states 'There is also no fiat on-ramp of any kind,' with users funding via external transfers only."
     },
     {
       "walletId": "rabby",
-      "metricKey": "stakeLiquid",
-      "path": "product.stakingEarn.liquidStaking",
-      "decision": "no",
-      "citationUrl": "https://www.bitdegree.org/crypto/rabby-wallet-review",
-      "explanation": "Rabby offers no in-app staking of any kind including liquid staking; reviews confirm users cannot do anything with tokens beyond swapping, dApp use, and transfers."
-    },
-    {
-      "walletId": "rabby",
-      "metricKey": "stakeApy",
-      "path": "product.stakingEarn.apyDisplay",
+      "metricKey": "rampSell",
+      "path": "product.fiatRamps.sellCrypto",
       "decision": "no",
       "citationUrl": "https://cryptoslate.com/crypto-wallets/rabby-wallet-review/",
-      "explanation": "Rabby has no in-app staking/earn interface and reviews confirm no APY comparison or display for staking within the wallet."
+      "explanation": "Rabby has no fiat ramps at all, so no crypto-to-fiat off-ramp exists in-app."
     },
     {
       "walletId": "rabby",
-      "metricKey": "stakeClaim",
-      "path": "product.stakingEarn.rewardsClaiming",
+      "metricKey": "rampCard",
+      "path": "product.fiatRamps.card",
       "decision": "no",
       "citationUrl": "https://cryptoslate.com/crypto-wallets/rabby-wallet-review/",
-      "explanation": "Rabby provides no native staking, so there is no in-app staking-reward claiming interface; users must interact with the underlying protocols directly."
+      "explanation": "With no fiat on-ramp present in Rabby, no card payment method is offered."
     },
     {
       "walletId": "rabby",
-      "metricKey": "stakeValidator",
-      "path": "product.stakingEarn.validatorChoice",
+      "metricKey": "rampApple",
+      "path": "product.fiatRamps.applePay",
       "decision": "no",
       "citationUrl": "https://cryptoslate.com/crypto-wallets/rabby-wallet-review/",
-      "explanation": "With no native staking product, Rabby offers no validator selection; reviews confirm delegated staking must be done at the protocol directly."
+      "explanation": "No fiat ramp exists in Rabby, so Apple Pay is not available as a payment method."
+    },
+    {
+      "walletId": "rabby",
+      "metricKey": "rampGoogle",
+      "path": "product.fiatRamps.googlePay",
+      "decision": "no",
+      "citationUrl": "https://cryptoslate.com/crypto-wallets/rabby-wallet-review/",
+      "explanation": "No fiat ramp exists in Rabby, so Google Pay is not available as a payment method."
+    },
+    {
+      "walletId": "rabby",
+      "metricKey": "rampBank",
+      "path": "product.fiatRamps.bankTransfer",
+      "decision": "no",
+      "citationUrl": "https://cryptoslate.com/crypto-wallets/rabby-wallet-review/",
+      "explanation": "No fiat ramp exists in Rabby, so bank transfer is not available as a payment method."
     },
     {
       "walletId": "rainbow",
-      "metricKey": "pfNetWorth",
-      "path": "product.portfolioManagement.netWorth",
-      "decision": "yes",
-      "citationUrl": "https://rainbow.me/support/app/using-watch-mode",
-      "explanation": "Rainbow displays a wallet's aggregate net worth across tokens and NFTs, including for watched addresses via Watch Mode."
+      "metricKey": "rampSell",
+      "path": "product.fiatRamps.sellCrypto",
+      "decision": "no",
+      "citationUrl": "https://rainbow.me/support/app/withdraw-from-rainbow",
+      "explanation": "Rainbow's official support page states it does not support selling crypto to fiat within the app and instead directs users to transfer assets to a centralized exchange to cash out."
     },
     {
       "walletId": "rainbow",
-      "metricKey": "defiLending",
-      "path": "product.defiPositionAwareness.lendingPositions",
+      "metricKey": "rampApple",
+      "path": "product.fiatRamps.applePay",
       "decision": "yes",
+      "citationUrl": "https://learn.rainbow.me/buying-crypto-with-rainbow",
+      "explanation": "Rainbow's buy-crypto guide lists Apple Pay as a supported payment method across its integrated on-ramp providers (Ramp, MoonPay, Coinbase Pay)."
+    },
+    {
+      "walletId": "rainbow",
+      "metricKey": "rampBank",
+      "path": "product.fiatRamps.bankTransfer",
+      "decision": "yes",
+      "citationUrl": "https://learn.rainbow.me/buying-crypto-with-rainbow",
+      "explanation": "Rainbow's buy-crypto guide lists ACH (bank transfers) as a supported payment method via its on-ramp providers."
+    },
+    {
+      "walletId": "rainbow",
+      "metricKey": "defiLp",
+      "path": "product.defiPositionAwareness.lpPositions",
+      "decision": "no",
       "citationUrl": "https://rainbow.me/support/app/defi-positions-in-rainbow",
-      "explanation": "Rainbow's DeFi Positions feature surfaces lending/borrowing positions held in Aave (v2/v3) and Compound across supported chains."
+      "explanation": "Rainbow's DeFi positions page lists only Aave, Compound, Yearn, and Maker, none of which are liquidity-pool protocols (no Uniswap, Curve, or Balancer), so LP positions are not surfaced."
     },
     {
-      "walletId": "rainbow",
-      "metricKey": "defiVault",
-      "path": "product.defiPositionAwareness.vaultPositions",
+      "walletId": "safe",
+      "metricKey": "rampSell",
+      "path": "product.fiatRamps.sellCrypto",
+      "decision": "no",
+      "citationUrl": "https://safe.global/blog/fiat-on-ramp-now-available-in-safe-wallet-mobile-app-ios",
+      "explanation": "Safe{Wallet}'s only documented fiat ramp is a MoonPay-powered buy/on-ramp for iOS; no official source describes an off-ramp or selling crypto to fiat."
+    },
+    {
+      "walletId": "safe",
+      "metricKey": "rampApple",
+      "path": "product.fiatRamps.applePay",
       "decision": "yes",
-      "citationUrl": "https://rainbow.me/support/app/defi-positions-in-rainbow",
-      "explanation": "Rainbow surfaces yield-vault positions, explicitly listing Yearn v2 among supported DeFi Positions protocols."
+      "citationUrl": "https://safe.global/blog/fiat-on-ramp-now-available-in-safe-wallet-mobile-app-ios",
+      "explanation": "Safe's official on-ramp announcement states users can buy crypto within Safe{Wallet} using debit/credit card or Apple Pay via MoonPay."
     },
     {
-      "walletId": "rainbow",
+      "walletId": "trust-wallet",
+      "metricKey": "rampSell",
+      "path": "product.fiatRamps.sellCrypto",
+      "decision": "yes",
+      "citationUrl": "https://support.trustwallet.com/support/solutions/articles/67000734511-moonpay-your-gateway-to-seamless-crypto-transactions",
+      "explanation": "Trust Wallet offers an in-app crypto-to-fiat off-ramp via integrated providers like MoonPay and Ramp, with a Sell button that connects users to convert crypto to fiat."
+    },
+    {
+      "walletId": "trust-wallet",
+      "metricKey": "rampApple",
+      "path": "product.fiatRamps.applePay",
+      "decision": "yes",
+      "citationUrl": "https://trustwallet.com/blog/announcements/buy-crypto-with-apple-pay-and-google-pay-in-trust-wallet",
+      "explanation": "Trust Wallet's official announcement states it supports Apple Pay as a buy-crypto payment option via its Express Buy feature powered by third-party partners."
+    },
+    {
+      "walletId": "trust-wallet",
+      "metricKey": "rampGoogle",
+      "path": "product.fiatRamps.googlePay",
+      "decision": "yes",
+      "citationUrl": "https://trustwallet.com/blog/announcements/buy-crypto-with-apple-pay-and-google-pay-in-trust-wallet",
+      "explanation": "Trust Wallet's official announcement states it supports Google Pay as a buy-crypto payment option via its Express Buy feature powered by third-party partners."
+    },
+    {
+      "walletId": "uniswap-wallet",
+      "metricKey": "rampCard",
+      "path": "product.fiatRamps.card",
+      "decision": "yes",
+      "citationUrl": "https://support.uniswap.org/hc/en-us/articles/11306614164877-What-payment-methods-are-accepted-when-buying-crypto",
+      "explanation": "Uniswap's integrated fiat on-ramp accepts bank cards including MasterCard, Visa and Maestro (debit/credit) as a payment method."
+    },
+    {
+      "walletId": "uniswap-wallet",
+      "metricKey": "rampApple",
+      "path": "product.fiatRamps.applePay",
+      "decision": "yes",
+      "citationUrl": "https://blog.uniswap.org/revolut-onramp-now-live",
+      "explanation": "Uniswap's ramp supports Apple Pay, listed among accepted payment methods and available via integrated providers such as Revolut, MoonPay and Transak."
+    },
+    {
+      "walletId": "uniswap-wallet",
+      "metricKey": "rampGoogle",
+      "path": "product.fiatRamps.googlePay",
+      "decision": "yes",
+      "citationUrl": "https://blog.uniswap.org/revolut-onramp-now-live",
+      "explanation": "The official Uniswap blog confirms the Revolut on-ramp in Uniswap supports Google Pay (\"Revolut Pay, Apple Pay, Google Pay, cards\")."
+    },
+    {
+      "walletId": "uniswap-wallet",
+      "metricKey": "rampBank",
+      "path": "product.fiatRamps.bankTransfer",
+      "decision": "yes",
+      "citationUrl": "https://support.uniswap.org/hc/en-us/articles/11306614164877-What-payment-methods-are-accepted-when-buying-crypto",
+      "explanation": "Uniswap's fiat on-ramp supports bank transfers (including SEPA and US/UK/Brazil bank transfers) as a payment method."
+    },
+    {
+      "walletId": "uniswap-wallet",
       "metricKey": "defiRewards",
       "path": "product.defiPositionAwareness.claimableRewards",
       "decision": "yes",
-      "citationUrl": "https://rainbow.me/support/app/claimables-in-rainbow",
-      "explanation": "Rainbow's Claimables feature surfaces and lets users claim DeFi rewards from integrated protocols such as Morpho, Moxie and Hypersub."
+      "citationUrl": "https://support.uniswap.org/hc/en-us/articles/33829507086989-How-to-collect-fees-from-a-liquidity-pool-on-Uniswap-v4",
+      "explanation": "The Uniswap app surfaces liquidity positions with uncollected/claimable fees that users can collect directly in the UI via the Collect fees action."
     },
     {
-      "walletId": "rainbow",
-      "metricKey": "stakeNative",
-      "path": "product.stakingEarn.nativeStaking",
+      "walletId": "zerion",
+      "metricKey": "rampSell",
+      "path": "product.fiatRamps.sellCrypto",
       "decision": "no",
-      "citationUrl": "https://rainbow.me/support/app/staking-rnbw",
-      "explanation": "Rainbow's only in-app staking is committing its own RNBW cashback token to the protocol; it does not offer native ETH/SOL protocol staking."
+      "citationUrl": "https://help.zerion.io/en/articles/5351052-sell-crypto-withdraw-to-bank-with-zerion",
+      "explanation": "Zerion's own help center states \"Currently, Zerion doesn't support selling crypto directly for fiat currencies\" and requires transferring to an external exchange to cash out."
     },
     {
-      "walletId": "rainbow",
-      "metricKey": "stakeLiquid",
-      "path": "product.stakingEarn.liquidStaking",
-      "decision": "no",
-      "citationUrl": "https://rainbow.me/support/app/staking-rnbw",
-      "explanation": "Rainbow's in-app staking is limited to the RNBW token and is explicitly not liquid staking of ETH/SOL via LSTs."
-    },
-    {
-      "walletId": "rainbow",
-      "metricKey": "stakeValidator",
-      "path": "product.stakingEarn.validatorChoice",
-      "decision": "no",
-      "citationUrl": "https://rainbow.me/support/app/staking-rnbw",
-      "explanation": "Rainbow's RNBW staking is a protocol rewards/membership program with no validator selection, and no native staking with validator choice exists."
-    },
-    {
-      "walletId": "safe",
-      "metricKey": "pfPnl",
-      "path": "product.portfolioManagement.pnl",
-      "decision": "no",
-      "citationUrl": "https://help.safe.global/en/articles/40843-how-is-the-fiat-value-of-assets-calculated",
-      "explanation": "Safe{Wallet}'s Assets view displays fiat value of holdings from CoinGecko pricing but does not provide profit-and-loss tracking."
-    },
-    {
-      "walletId": "safe",
-      "metricKey": "pfCostBasis",
-      "path": "product.portfolioManagement.costBasis",
-      "decision": "no",
-      "citationUrl": "https://help.safe.global/en/articles/40843-how-is-the-fiat-value-of-assets-calculated",
-      "explanation": "Safe{Wallet} only shows current fiat value of assets and provides no acquisition cost-basis tracking, which users must obtain from external trackers."
-    },
-    {
-      "walletId": "safe",
-      "metricKey": "defiLiq",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "decision": "no",
-      "citationUrl": "https://help.safe.global/articles/4071700443-defi-lending-in-safewallet",
-      "explanation": "Safe's DeFi Earn feature is a lending/supply product with no borrowing and no liquidation warnings, and it does not surface external borrow positions."
-    },
-    {
-      "walletId": "safe",
-      "metricKey": "stakeNative",
-      "path": "product.stakingEarn.nativeStaking",
+      "walletId": "zerion",
+      "metricKey": "rampApple",
+      "path": "product.fiatRamps.applePay",
       "decision": "yes",
-      "citationUrl": "https://help.safe.global/en/articles/222615-safe-staking",
-      "explanation": "Safe{Staking} offers in-app native full-node ETH staking in multiples of 32 ETH via a Kiln integration."
+      "citationUrl": "https://zerion.io/blog/how-to-fund-zerion-wallet/",
+      "explanation": "Zerion's funding guide lists integrated providers MoonPay and Mercuryo as supporting Apple Pay as a payment method for buying crypto."
     },
     {
-      "walletId": "safe",
-      "metricKey": "stakeLiquid",
-      "path": "product.stakingEarn.liquidStaking",
-      "decision": "no",
-      "citationUrl": "https://help.safe.global/en/articles/222615-safe-staking",
-      "explanation": "Safe staking documentation describes only native full-node staking and lists liquid staking (for amounts under 32 ETH) as a planned/forthcoming feature, not currently shipped."
-    },
-    {
-      "walletId": "safe",
-      "metricKey": "stakeApy",
-      "path": "product.stakingEarn.apyDisplay",
+      "walletId": "zerion",
+      "metricKey": "rampGoogle",
+      "path": "product.fiatRamps.googlePay",
       "decision": "yes",
-      "citationUrl": "https://help.safe.global/articles/4071700443-defi-lending-in-safewallet",
-      "explanation": "Safe's staking/Earn UI displays the current reward rate offered by the protocol to users."
+      "citationUrl": "https://zerion.io/blog/how-to-fund-zerion-wallet/",
+      "explanation": "Zerion's funding guide lists MoonPay (integrated provider) as supporting Google Pay as a payment method for buying crypto in-app."
     },
     {
-      "walletId": "safe",
-      "metricKey": "stakeClaim",
-      "path": "product.stakingEarn.rewardsClaiming",
+      "walletId": "zerion",
+      "metricKey": "rampBank",
+      "path": "product.fiatRamps.bankTransfer",
       "decision": "yes",
-      "citationUrl": "https://help.safe.global/en/articles/222615-safe-staking",
-      "explanation": "Safe{Staking} requires and allows users to manually withdraw/claim their accumulated staking rewards in-app."
+      "citationUrl": "https://zerion.io/blog/how-to-fund-zerion-wallet/",
+      "explanation": "Zerion's funding guide states its integrated ramps (MoonPay, Ramp, Mercuryo) support bank transfers including SEPA/SEPA Instant and Faster Payments Service."
     },
     {
-      "walletId": "safe",
-      "metricKey": "stakeValidator",
-      "path": "product.stakingEarn.validatorChoice",
-      "decision": "no",
-      "citationUrl": "https://www.kiln.fi/post/stake-eth-from-safe-wallet-with-the-new-kiln-integration",
-      "explanation": "The Kiln integration uses Dedicated Validators automatically; users only choose the ETH amount (multiples of 32) and cannot select a specific validator."
-    },
-    {
-      "walletId": "trust-wallet",
-      "metricKey": "pfNetWorth",
-      "path": "product.portfolioManagement.netWorth",
-      "decision": "yes",
-      "citationUrl": "https://trustwallet.com/blog/web3/how-to-track-your-portfolio-in-trust-wallet",
-      "explanation": "Trust Wallet's home screen shows total portfolio value in the user's preferred currency, aggregating holdings across chains."
-    },
-    {
-      "walletId": "trust-wallet",
-      "metricKey": "pfPnl",
-      "path": "product.portfolioManagement.pnl",
-      "decision": "yes",
-      "citationUrl": "https://www.tradingview.com/news/coindar:51c14e4e4094b:0-trust-wallet-added-pnl-cards-to-trades/",
-      "explanation": "Trust Wallet added profit-and-loss (PnL) cards to trades, showing P&L information in a dedicated card."
-    },
-    {
-      "walletId": "trust-wallet",
-      "metricKey": "pfCostBasis",
-      "path": "product.portfolioManagement.costBasis",
-      "decision": "no",
-      "citationUrl": "https://trustwallet.com/blog/web3/how-to-track-your-portfolio-in-trust-wallet",
-      "explanation": "Trust Wallet's portfolio view surfaces value and percentage changes but no native cost-basis tracking; cost basis is only available via third-party tools like CoinLedger."
-    },
-    {
-      "walletId": "trust-wallet",
-      "metricKey": "pfWatchOnly",
-      "path": "product.portfolioManagement.watchOnlyWallets",
-      "decision": "yes",
-      "citationUrl": "https://support.trustwallet.com/support/solutions/articles/67000731857-how-to-add-a-watch-only-wallet-address",
-      "explanation": "Trust Wallet supports adding a View-only (watch-only) wallet address to track tokens, collectibles, and transaction history without holding keys."
-    },
-    {
-      "walletId": "trust-wallet",
-      "metricKey": "defiLiq",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "decision": "no",
-      "citationUrl": "https://trustwallet.com/blog/web3/how-to-track-your-portfolio-in-trust-wallet",
-      "explanation": "No authoritative source indicates Trust Wallet natively surfaces external DeFi lending positions or warns of liquidation/health-factor risk on borrow positions."
-    },
-    {
-      "walletId": "trust-wallet",
-      "metricKey": "stakeLiquid",
-      "path": "product.stakingEarn.liquidStaking",
-      "decision": "no",
-      "citationUrl": "https://trustwallet.com/blog/staking/what-is-liquid-staking",
-      "explanation": "Trust Wallet does not offer native in-app liquid staking; its liquid staking article only describes receiving/managing LSTs obtained from another wallet or exchange."
-    },
-    {
-      "walletId": "trust-wallet",
-      "metricKey": "stakeClaim",
-      "path": "product.stakingEarn.rewardsClaiming",
-      "decision": "yes",
-      "citationUrl": "https://trustwallet.com/blog/staking/staking-made-simple-how-to-earn-rewards-in-trust-wallet",
-      "explanation": "Trust Wallet's in-app Earn/staking section shows unclaimed rewards with a Claim button to transfer earned tokens to the wallet balance."
-    },
-    {
-      "walletId": "trust-wallet",
-      "metricKey": "stakeValidator",
-      "path": "product.stakingEarn.validatorChoice",
-      "decision": "yes",
-      "citationUrl": "https://trustwallet.com/blog/staking/staking-made-simple-how-to-earn-rewards-in-trust-wallet",
-      "explanation": "Trust Wallet's in-app staking flow presents a list of available validators with APR so users can choose which validator to delegate to."
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "metricKey": "pfPnl",
-      "path": "product.portfolioManagement.pnl",
-      "decision": "yes",
-      "citationUrl": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
-      "explanation": "Uniswap's official blog confirms realized and unrealized profit-and-loss metrics are live across the Web App, Wallet, and Extension for every token and at the wallet level."
-    },
-    {
-      "walletId": "uniswap-wallet",
+      "walletId": "zerion",
       "metricKey": "pfCostBasis",
       "path": "product.portfolioManagement.costBasis",
       "decision": "yes",
-      "citationUrl": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
-      "explanation": "The official blog states cost basis is calculated from swap history (and price at time of receipt for transferred tokens) to drive the P&L display."
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "metricKey": "pfWatchOnly",
-      "path": "product.portfolioManagement.watchOnlyWallets",
-      "decision": "yes",
-      "citationUrl": "https://support.uniswap.org/hc/en-us/articles/13520440420365-How-to-add-a-view-only-wallet",
-      "explanation": "Uniswap Labs support documents a 'view-only wallet' feature letting users add and follow any address whose keys they do not hold to see its tokens and NFTs."
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "metricKey": "defiStaking",
-      "path": "product.defiPositionAwareness.stakingPositions",
-      "decision": "no",
-      "citationUrl": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
-      "explanation": "Uniswap's apps surface only its own protocol's liquidity positions and portfolio balances, with no evidence it reads/displays external staking positions from other DeFi protocols."
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "metricKey": "defiLending",
-      "path": "product.defiPositionAwareness.lendingPositions",
-      "decision": "no",
-      "citationUrl": "https://app.uniswap.org/positions",
-      "explanation": "No official source indicates Uniswap surfaces third-party lending/borrowing positions (Aave, Compound); its position views are limited to Uniswap liquidity pools."
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "metricKey": "defiLp",
-      "path": "product.defiPositionAwareness.lpPositions",
-      "decision": "yes",
-      "citationUrl": "https://support.uniswap.org/hc/en-us/articles/20901267003789-How-to-collect-fees-from-a-liquidity-pool-on-Uniswap-v3",
-      "explanation": "The Uniswap Web App's Positions/Pool page displays and manages the user's Uniswap liquidity-pool positions including fees earned."
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "metricKey": "defiVault",
-      "path": "product.defiPositionAwareness.vaultPositions",
-      "decision": "no",
-      "citationUrl": "https://app.uniswap.org/positions",
-      "explanation": "No official source shows Uniswap surfacing external yield-vault positions (e.g. Yearn, Morpho); position views cover only Uniswap liquidity pools."
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "metricKey": "defiLiq",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "decision": "no",
-      "citationUrl": "https://app.uniswap.org/positions",
-      "explanation": "Uniswap does not offer borrow positions and no source indicates it surfaces liquidation-risk warnings for external lending protocols."
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "metricKey": "stakeNative",
-      "path": "product.stakingEarn.nativeStaking",
-      "decision": "no",
-      "citationUrl": "https://support.uniswap.org/hc/en-us/articles/11306214484237-Can-I-create-or-view-my-liquidity-position-in-the-Uniswap-Wallet",
-      "explanation": "Uniswap's wallet/app centers on swaps and liquidity provision and does not offer in-app native protocol staking such as ETH or SOL staking."
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "metricKey": "stakeLiquid",
-      "path": "product.stakingEarn.liquidStaking",
-      "decision": "no",
-      "citationUrl": "https://app.uniswap.org/explore/tokens/ethereum/0x8c1bed5b9a0928467c9b1341da1d7bd5e10b6549",
-      "explanation": "Uniswap only lets users swap for liquid-staking tokens on the DEX rather than offering an in-app liquid-staking earn product; there is no Lido/Rocket-Pool-style staking flow in the wallet."
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "metricKey": "stakeApy",
-      "path": "product.stakingEarn.apyDisplay",
-      "decision": "no",
-      "citationUrl": "https://blog.uniswap.org/lp-rewards",
-      "explanation": "The app displays reward/APR only for liquidity pools, not for any staking/earn product, since Uniswap offers no in-app staking."
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "metricKey": "stakeClaim",
-      "path": "product.stakingEarn.rewardsClaiming",
-      "decision": "no",
-      "citationUrl": "https://support.uniswap.org/hc/en-us/articles/20901267003789-How-to-collect-fees-from-a-liquidity-pool-on-Uniswap-v3",
-      "explanation": "Users can claim LP fees/rewards but there is no in-app staking product, so no staking-reward claiming exists."
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "metricKey": "stakeValidator",
-      "path": "product.stakingEarn.validatorChoice",
-      "decision": "no",
-      "citationUrl": "https://support.uniswap.org/hc/en-us/articles/11306214484237-Can-I-create-or-view-my-liquidity-position-in-the-Uniswap-Wallet",
-      "explanation": "Uniswap offers no in-app native/validator staking flow, so users cannot pick a validator within the wallet."
-    },
-    {
-      "walletId": "zerion",
-      "metricKey": "pfPnl",
-      "path": "product.portfolioManagement.pnl",
-      "decision": "yes",
-      "citationUrl": "https://zerion.io/defi-portfolio-tracker",
-      "explanation": "Zerion's wallet advertises 'Real PnL: realized and unrealized' as a Premium portfolio feature and offers detailed unrealized/realized PnL per token."
-    },
-    {
-      "walletId": "zerion",
-      "metricKey": "defiLiq",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "decision": "no",
-      "citationUrl": "https://zerion.io/blog/aave-interest-bearing-tokens/",
-      "explanation": "Zerion surfaces Aave debts/borrow positions in the Tokens tab but its own documentation shows no liquidation-risk warning or health-factor alert feature in the UI."
-    },
-    {
-      "walletId": "zerion",
-      "metricKey": "stakeNative",
-      "path": "product.stakingEarn.nativeStaking",
-      "decision": "yes",
-      "citationUrl": "https://stakekit.ghost.io/stakekit-powers-zerions-new-earn-page-unlock-self-custodial-yield-opportunities/",
-      "explanation": "Zerion's StakeKit-powered Earn section offers in-app staking including native protocol staking (staking, restaking, liquid staking, vaults, lending) across networks like Ethereum, Avalanche and Polygon."
-    },
-    {
-      "walletId": "zerion",
-      "metricKey": "stakeLiquid",
-      "path": "product.stakingEarn.liquidStaking",
-      "decision": "yes",
-      "citationUrl": "https://blockworks.com/news/stakekit-self-custodial-yield-api",
-      "explanation": "The Earn section explicitly supports liquid staking (e.g. staked AVAX/sAVAX, MATIC via Lido) alongside staking and restaking, all self-custodial in-app."
-    },
-    {
-      "walletId": "zerion",
-      "metricKey": "stakeApy",
-      "path": "product.stakingEarn.apyDisplay",
-      "decision": "yes",
-      "citationUrl": "https://zerion.io/blog/how-to-stake-avax-with-benqi-and-zerion/",
-      "explanation": "Zerion displays the current APY for stakeable assets in the Earn flow, e.g. 'For any asset, including AVAX, Zerion shows the current APY.'"
-    },
-    {
-      "walletId": "zerion",
-      "metricKey": "stakeClaim",
-      "path": "product.stakingEarn.rewardsClaiming",
-      "decision": "yes",
-      "citationUrl": "https://zerion.io/blog/how-to-stake-avax-with-benqi-and-zerion/",
-      "explanation": "Zerion's Earn lets users manage staked positions and withdraw staked assets plus accumulated rewards in-app (e.g. withdraw staked AVAX and rewards after the cooldown)."
+      "citationUrl": "https://zerion.io/blog/profit-and-loss-now-on-zerion/",
+      "explanation": "Zerion's Profit and Loss feature tracks \"Average Cost\" (cost basis of holdings) and invested amount per asset to compute realized/unrealized gains."
     },
     {
       "walletId": "zeus",
-      "metricKey": "pfPnl",
-      "path": "product.portfolioManagement.pnl",
+      "metricKey": "rampBuy",
+      "path": "product.fiatRamps.buyCrypto",
       "decision": "no",
       "citationUrl": "https://github.com/greekfetacheese/zeus",
-      "explanation": "The official repository describes only 'Basic Portfolio Tracking: Monitor your assets with a simple interface' with no profit/loss feature."
+      "explanation": "Zeus is a self-custodial desktop Ethereum wallet whose README lists its features (send, bridge, swap, portfolio, simulations) with no fiat on-ramp, and explicitly states it does not rely on any third-party service."
     },
     {
       "walletId": "zeus",
-      "metricKey": "pfCostBasis",
-      "path": "product.portfolioManagement.costBasis",
+      "metricKey": "rampSell",
+      "path": "product.fiatRamps.sellCrypto",
       "decision": "no",
       "citationUrl": "https://github.com/greekfetacheese/zeus",
-      "explanation": "No cost-basis tracking is mentioned in the repository; portfolio tracking is described as basic asset monitoring only."
+      "explanation": "The README documents no crypto-to-fiat off-ramp; only crypto operations like swaps and bridging are supported, and a GitHub code search found zero references to any ramp providers."
     },
     {
       "walletId": "zeus",
-      "metricKey": "pfWatchOnly",
-      "path": "product.portfolioManagement.watchOnlyWallets",
+      "metricKey": "rampCard",
+      "path": "product.fiatRamps.card",
       "decision": "no",
       "citationUrl": "https://github.com/greekfetacheese/zeus",
-      "explanation": "The wallet is built around HD wallets derived from username/password or imported keys, with no watch-only/address-tracking feature documented."
+      "explanation": "Zeus has no fiat ramp at all, so card payments are not available as a purchase method."
     },
     {
       "walletId": "zeus",
-      "metricKey": "pfNft",
-      "path": "product.portfolioManagement.nftSupport",
+      "metricKey": "rampApple",
+      "path": "product.fiatRamps.applePay",
       "decision": "no",
       "citationUrl": "https://github.com/greekfetacheese/zeus",
-      "explanation": "The repository lists only ETH/ERC-20 assets and basic portfolio tracking, with no NFT support mentioned."
+      "explanation": "Zeus has no fiat ramp, so Apple Pay is not available as a payment method."
     },
     {
       "walletId": "zeus",
-      "metricKey": "defiStaking",
-      "path": "product.defiPositionAwareness.stakingPositions",
+      "metricKey": "rampGoogle",
+      "path": "product.fiatRamps.googlePay",
       "decision": "no",
       "citationUrl": "https://github.com/greekfetacheese/zeus",
-      "explanation": "Zeus relies solely on the Ethereum RPC API with no third-party services, and documents no surfacing of external staking positions."
+      "explanation": "Zeus has no fiat ramp, so Google Pay is not available as a payment method."
     },
     {
       "walletId": "zeus",
-      "metricKey": "defiLending",
-      "path": "product.defiPositionAwareness.lendingPositions",
+      "metricKey": "rampBank",
+      "path": "product.fiatRamps.bankTransfer",
       "decision": "no",
       "citationUrl": "https://github.com/greekfetacheese/zeus",
-      "explanation": "No lending/borrowing position surfacing (Aave/Compound) is described; the wallet is deliberately RPC-only with no DeFi data services."
-    },
-    {
-      "walletId": "zeus",
-      "metricKey": "defiLp",
-      "path": "product.defiPositionAwareness.lpPositions",
-      "decision": "no",
-      "citationUrl": "https://github.com/greekfetacheese/zeus",
-      "explanation": "The wallet supports Uniswap swaps but does not document surfacing of LP positions."
-    },
-    {
-      "walletId": "zeus",
-      "metricKey": "defiVault",
-      "path": "product.defiPositionAwareness.vaultPositions",
-      "decision": "no",
-      "citationUrl": "https://github.com/greekfetacheese/zeus",
-      "explanation": "No yield-vault position surfacing (Yearn/Morpho) is described in the repository feature set."
-    },
-    {
-      "walletId": "zeus",
-      "metricKey": "defiRewards",
-      "path": "product.defiPositionAwareness.claimableRewards",
-      "decision": "no",
-      "citationUrl": "https://github.com/greekfetacheese/zeus",
-      "explanation": "No claimable DeFi rewards surfacing is mentioned in the documented features."
-    },
-    {
-      "walletId": "zeus",
-      "metricKey": "defiLiq",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "decision": "no",
-      "citationUrl": "https://github.com/greekfetacheese/zeus",
-      "explanation": "No borrow positions or liquidation-risk warnings are documented; the wallet has no DeFi lending awareness."
-    },
-    {
-      "walletId": "zeus",
-      "metricKey": "stakeNative",
-      "path": "product.stakingEarn.nativeStaking",
-      "decision": "no",
-      "citationUrl": "https://github.com/greekfetacheese/zeus",
-      "explanation": "Documented actions are send, Uniswap swap, and Across bridging only; no in-app native staking is offered."
-    },
-    {
-      "walletId": "zeus",
-      "metricKey": "stakeLiquid",
-      "path": "product.stakingEarn.liquidStaking",
-      "decision": "no",
-      "citationUrl": "https://github.com/greekfetacheese/zeus",
-      "explanation": "No liquid staking (Lido/Rocket Pool style) functionality is described in the repository."
-    },
-    {
-      "walletId": "zeus",
-      "metricKey": "stakeApy",
-      "path": "product.stakingEarn.apyDisplay",
-      "decision": "no",
-      "citationUrl": "https://github.com/greekfetacheese/zeus",
-      "explanation": "With no staking/earn feature, no APY display is documented."
-    },
-    {
-      "walletId": "zeus",
-      "metricKey": "stakeClaim",
-      "path": "product.stakingEarn.rewardsClaiming",
-      "decision": "no",
-      "citationUrl": "https://github.com/greekfetacheese/zeus",
-      "explanation": "No in-app staking rewards claiming is described; the wallet offers no staking functionality."
-    },
-    {
-      "walletId": "zeus",
-      "metricKey": "stakeValidator",
-      "path": "product.stakingEarn.validatorChoice",
-      "decision": "no",
-      "citationUrl": "https://github.com/greekfetacheese/zeus",
-      "explanation": "No staking feature exists, so there is no validator selection in the app."
+      "explanation": "Zeus has no fiat ramp, so bank transfer (ACH/SEPA/wire) is not available as a payment method."
     }
   ]
 }

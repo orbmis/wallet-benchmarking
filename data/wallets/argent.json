@@ -697,7 +697,17 @@
             ]
           },
           "sellCrypto": null,
-          "bankTransfer": null,
+          "bankTransfer": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.ready.co/learn/ready-how-to-fund-tutorial",
+                  "explanation": "Ready supports bank transfer for buying/funding crypto via Banxa/Ramp (also virtual bank details for USDC deposits)."
+                }
+              }
+            ]
+          },
           "card": {
             "$call": "supported",
             "args": [
@@ -709,8 +719,28 @@
               }
             ]
           },
-          "applePay": null,
-          "googlePay": null,
+          "applePay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.ready.co/learn/ready-how-to-fund-tutorial",
+                  "explanation": "Ready lets users buy crypto via Ramp or Banxa using Apple Pay, per its funding tutorial and Card FAQs."
+                }
+              }
+            ]
+          },
+          "googlePay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.ready.co/learn/ready-how-to-fund-tutorial",
+                  "explanation": "Ready's integrated Ramp/Banxa on-ramp supports Google Pay as a payment method for buying crypto."
+                }
+              }
+            ]
+          },
           "kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
           "providers": [
             {
@@ -1044,7 +1074,17 @@
             ]
           },
           "perProtocolBalances": null,
-          "claimableRewards": null,
+          "claimableRewards": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.ready.co/blog/strk-staking",
+                  "explanation": "Ready displays accumulated/claimable staking rewards and lets users claim them directly in the app."
+                }
+              }
+            ]
+          },
           "liquidationWarnings": null
         },
         "stakingEarn": {

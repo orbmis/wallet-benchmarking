@@ -908,12 +908,72 @@
             "explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://github.com/greekfetacheese/zeus"
           },
-          "buyCrypto": null,
-          "sellCrypto": null,
-          "bankTransfer": null,
-          "card": null,
-          "applePay": null,
-          "googlePay": null,
+          "buyCrypto": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/greekfetacheese/zeus",
+                  "explanation": "Zeus is a self-custodial desktop Ethereum wallet whose README lists its features (send, bridge, swap, portfolio, simulations) with no fiat on-ramp, and explicitly states it does not rely on any third-party service."
+                }
+              }
+            ]
+          },
+          "sellCrypto": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/greekfetacheese/zeus",
+                  "explanation": "The README documents no crypto-to-fiat off-ramp; only crypto operations like swaps and bridging are supported, and a GitHub code search found zero references to any ramp providers."
+                }
+              }
+            ]
+          },
+          "bankTransfer": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/greekfetacheese/zeus",
+                  "explanation": "Zeus has no fiat ramp, so bank transfer (ACH/SEPA/wire) is not available as a payment method."
+                }
+              }
+            ]
+          },
+          "card": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/greekfetacheese/zeus",
+                  "explanation": "Zeus has no fiat ramp at all, so card payments are not available as a purchase method."
+                }
+              }
+            ]
+          },
+          "applePay": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/greekfetacheese/zeus",
+                  "explanation": "Zeus has no fiat ramp, so Apple Pay is not available as a payment method."
+                }
+              }
+            ]
+          },
+          "googlePay": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/greekfetacheese/zeus",
+                  "explanation": "Zeus has no fiat ramp, so Google Pay is not available as a payment method."
+                }
+              }
+            ]
+          },
           "kycDependency": "KYCDependency.UNKNOWN",
           "providers": [],
           "regionalAvailability": null

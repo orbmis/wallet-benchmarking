@@ -1,6 +1,6 @@
 {
   "generated": true,
-  "gapCount": 1069,
+  "gapCount": 968,
   "naCount": 990,
   "gaps": [
     {
@@ -21,66 +21,6 @@
       "category": "Platforms",
       "type": "state",
       "path": "product.platformCoverage.desktopApp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "rampBuy",
-      "label": "Buy crypto",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.buyCrypto",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "rampSell",
-      "label": "Sell crypto",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.sellCrypto",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "rampCard",
-      "label": "Card payments",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.card",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "rampApple",
-      "label": "Apple Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.applePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "rampGoogle",
-      "label": "Google Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.googlePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "rampBank",
-      "label": "Bank transfer",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.bankTransfer",
       "hasUnsourcedRef": false
     },
     {
@@ -376,36 +316,6 @@
     {
       "walletId": "argent",
       "walletName": "Argent",
-      "metricKey": "rampApple",
-      "label": "Apple Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.applePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "rampGoogle",
-      "label": "Google Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.googlePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "rampBank",
-      "label": "Bank transfer",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.bankTransfer",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
       "metricKey": "pfPnl",
       "label": "Profit & loss",
       "category": "Portfolio",
@@ -421,16 +331,6 @@
       "category": "DeFi positions",
       "type": "state",
       "path": "product.defiPositionAwareness.stakingPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "defiRewards",
-      "label": "Claimable rewards",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.claimableRewards",
       "hasUnsourcedRef": false
     },
     {
@@ -791,56 +691,6 @@
       "category": "Pricing & fees",
       "type": "state",
       "path": "product.pricingFeeModel.subscriptionFeatures",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "rampCard",
-      "label": "Card payments",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.card",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "rampApple",
-      "label": "Apple Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.applePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "rampGoogle",
-      "label": "Google Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.googlePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "rampBank",
-      "label": "Bank transfer",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.bankTransfer",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "pfWatchOnly",
-      "label": "Watch-only wallets",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.watchOnlyWallets",
       "hasUnsourcedRef": false
     },
     {
@@ -1546,56 +1396,6 @@
     {
       "walletId": "brave-wallet",
       "walletName": "Brave Wallet",
-      "metricKey": "rampCard",
-      "label": "Card payments",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.card",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "rampApple",
-      "label": "Apple Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.applePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "rampGoogle",
-      "label": "Google Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.googlePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "rampBank",
-      "label": "Bank transfer",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.bankTransfer",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "pfWatchOnly",
-      "label": "Watch-only wallets",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.watchOnlyWallets",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
       "metricKey": "nftMint",
       "label": "NFT mint",
       "category": "NFTs",
@@ -1936,16 +1736,6 @@
     {
       "walletId": "mtpelerin",
       "walletName": "Bridge Wallet",
-      "metricKey": "rampApple",
-      "label": "Apple Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.applePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
       "metricKey": "nftMint",
       "label": "NFT mint",
       "category": "NFTs",
@@ -2266,31 +2056,11 @@
     {
       "walletId": "coinbase-wallet",
       "walletName": "Coinbase Wallet",
-      "metricKey": "rampSell",
-      "label": "Sell crypto",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.sellCrypto",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "coinbase-wallet",
-      "walletName": "Coinbase Wallet",
       "metricKey": "pfPnl",
       "label": "Profit & loss",
       "category": "Portfolio",
       "type": "state",
       "path": "product.portfolioManagement.pnl",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "coinbase-wallet",
-      "walletName": "Coinbase Wallet",
-      "metricKey": "pfCostBasis",
-      "label": "Cost basis",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.costBasis",
       "hasUnsourcedRef": false
     },
     {
@@ -2646,26 +2416,6 @@
     {
       "walletId": "daimo",
       "walletName": "Daimo",
-      "metricKey": "rampSell",
-      "label": "Sell crypto",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.sellCrypto",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "rampCard",
-      "label": "Card payments",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.card",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
       "metricKey": "rampGoogle",
       "label": "Google Pay",
       "category": "Fiat ramps",
@@ -2981,66 +2731,6 @@
       "category": "Onboarding",
       "type": "state",
       "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "rampBuy",
-      "label": "Buy crypto",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.buyCrypto",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "rampSell",
-      "label": "Sell crypto",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.sellCrypto",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "rampCard",
-      "label": "Card payments",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.card",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "rampApple",
-      "label": "Apple Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.applePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "rampGoogle",
-      "label": "Google Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.googlePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "rampBank",
-      "label": "Bank transfer",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.bankTransfer",
       "hasUnsourcedRef": false
     },
     {
@@ -3656,16 +3346,6 @@
     {
       "walletId": "family",
       "walletName": "Family",
-      "metricKey": "rampSell",
-      "label": "Sell crypto",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.sellCrypto",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
       "metricKey": "rampCard",
       "label": "Card payments",
       "category": "Fiat ramps",
@@ -4176,76 +3856,6 @@
     {
       "walletId": "frame",
       "walletName": "Frame",
-      "metricKey": "rampBuy",
-      "label": "Buy crypto",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.buyCrypto",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "rampSell",
-      "label": "Sell crypto",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.sellCrypto",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "rampCard",
-      "label": "Card payments",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.card",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "rampApple",
-      "label": "Apple Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.applePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "rampGoogle",
-      "label": "Google Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.googlePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "rampBank",
-      "label": "Bank transfer",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.bankTransfer",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "pfWatchOnly",
-      "label": "Watch-only wallets",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.watchOnlyWallets",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
       "metricKey": "nftMarket",
       "label": "Marketplace integration",
       "category": "NFTs",
@@ -4576,36 +4186,6 @@
     {
       "walletId": "gemwallet",
       "walletName": "Gem Wallet",
-      "metricKey": "rampBuy",
-      "label": "Buy crypto",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.buyCrypto",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "rampSell",
-      "label": "Sell crypto",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.sellCrypto",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "rampCard",
-      "label": "Card payments",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.card",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
       "metricKey": "rampApple",
       "label": "Apple Pay",
       "category": "Fiat ramps",
@@ -4626,51 +4206,11 @@
     {
       "walletId": "gemwallet",
       "walletName": "Gem Wallet",
-      "metricKey": "rampBank",
-      "label": "Bank transfer",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.bankTransfer",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
       "metricKey": "pfNetWorth",
       "label": "Net worth view",
       "category": "Portfolio",
       "type": "state",
       "path": "product.portfolioManagement.netWorth",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "pfPnl",
-      "label": "Profit & loss",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.pnl",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "pfCostBasis",
-      "label": "Cost basis",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.costBasis",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "defiStaking",
-      "label": "Staking positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.stakingPositions",
       "hasUnsourcedRef": false
     },
     {
@@ -5396,51 +4936,11 @@
     {
       "walletId": "imtoken",
       "walletName": "imToken",
-      "metricKey": "rampBuy",
-      "label": "Buy crypto",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.buyCrypto",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
       "metricKey": "rampSell",
       "label": "Sell crypto",
       "category": "Fiat ramps",
       "type": "state",
       "path": "product.fiatRamps.sellCrypto",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "rampCard",
-      "label": "Card payments",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.card",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "rampApple",
-      "label": "Apple Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.applePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "rampGoogle",
-      "label": "Google Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.googlePay",
       "hasUnsourcedRef": false
     },
     {
@@ -5461,36 +4961,6 @@
       "category": "Portfolio",
       "type": "state",
       "path": "product.portfolioManagement.netWorth",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "defiLending",
-      "label": "Lending positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lendingPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "defiLp",
-      "label": "LP positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lpPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "defiVault",
-      "label": "Vault positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.vaultPositions",
       "hasUnsourcedRef": false
     },
     {
@@ -6646,56 +6116,6 @@
     {
       "walletId": "nufi",
       "walletName": "NuFi",
-      "metricKey": "rampCard",
-      "label": "Card payments",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.card",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "rampApple",
-      "label": "Apple Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.applePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "rampGoogle",
-      "label": "Google Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.googlePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "rampBank",
-      "label": "Bank transfer",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.bankTransfer",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "pfWatchOnly",
-      "label": "Watch-only wallets",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.watchOnlyWallets",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
       "metricKey": "nftMarket",
       "label": "Marketplace integration",
       "category": "NFTs",
@@ -7406,66 +6826,6 @@
     {
       "walletId": "phantom",
       "walletName": "Phantom",
-      "metricKey": "rampSell",
-      "label": "Sell crypto",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.sellCrypto",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "phantom",
-      "walletName": "Phantom",
-      "metricKey": "rampBank",
-      "label": "Bank transfer",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.bankTransfer",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "phantom",
-      "walletName": "Phantom",
-      "metricKey": "defiLending",
-      "label": "Lending positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lendingPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "phantom",
-      "walletName": "Phantom",
-      "metricKey": "defiLp",
-      "label": "LP positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lpPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "phantom",
-      "walletName": "Phantom",
-      "metricKey": "defiVault",
-      "label": "Vault positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.vaultPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "phantom",
-      "walletName": "Phantom",
-      "metricKey": "defiLiq",
-      "label": "Liquidation warnings",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "phantom",
-      "walletName": "Phantom",
       "metricKey": "nftMint",
       "label": "NFT mint",
       "category": "NFTs",
@@ -7711,66 +7071,6 @@
       "category": "Onboarding",
       "type": "state",
       "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "rampBuy",
-      "label": "Buy crypto",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.buyCrypto",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "rampSell",
-      "label": "Sell crypto",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.sellCrypto",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "rampCard",
-      "label": "Card payments",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.card",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "rampApple",
-      "label": "Apple Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.applePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "rampGoogle",
-      "label": "Google Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.googlePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "rampBank",
-      "label": "Bank transfer",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.bankTransfer",
       "hasUnsourcedRef": false
     },
     {
@@ -8116,66 +7416,6 @@
     {
       "walletId": "rabby",
       "walletName": "Rabby",
-      "metricKey": "rampBuy",
-      "label": "Buy crypto",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.buyCrypto",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rabby",
-      "walletName": "Rabby",
-      "metricKey": "rampSell",
-      "label": "Sell crypto",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.sellCrypto",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rabby",
-      "walletName": "Rabby",
-      "metricKey": "rampCard",
-      "label": "Card payments",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.card",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rabby",
-      "walletName": "Rabby",
-      "metricKey": "rampApple",
-      "label": "Apple Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.applePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rabby",
-      "walletName": "Rabby",
-      "metricKey": "rampGoogle",
-      "label": "Google Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.googlePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rabby",
-      "walletName": "Rabby",
-      "metricKey": "rampBank",
-      "label": "Bank transfer",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.bankTransfer",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rabby",
-      "walletName": "Rabby",
       "metricKey": "pfPnl",
       "label": "Profit & loss",
       "category": "Portfolio",
@@ -8416,41 +7656,11 @@
     {
       "walletId": "rainbow",
       "walletName": "Rainbow",
-      "metricKey": "rampSell",
-      "label": "Sell crypto",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.sellCrypto",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "rampApple",
-      "label": "Apple Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.applePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
       "metricKey": "rampGoogle",
       "label": "Google Pay",
       "category": "Fiat ramps",
       "type": "state",
       "path": "product.fiatRamps.googlePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "rampBank",
-      "label": "Bank transfer",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.bankTransfer",
       "hasUnsourcedRef": false
     },
     {
@@ -8481,16 +7691,6 @@
       "category": "DeFi positions",
       "type": "state",
       "path": "product.defiPositionAwareness.stakingPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "defiLp",
-      "label": "LP positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lpPositions",
       "hasUnsourcedRef": false
     },
     {
@@ -8771,26 +7971,6 @@
       "category": "Pricing & fees",
       "type": "state",
       "path": "product.pricingFeeModel.subscriptionFeatures",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "rampSell",
-      "label": "Sell crypto",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.sellCrypto",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "rampApple",
-      "label": "Apple Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.applePay",
       "hasUnsourcedRef": false
     },
     {
@@ -9296,36 +8476,6 @@
     {
       "walletId": "trust-wallet",
       "walletName": "Trust Wallet",
-      "metricKey": "rampSell",
-      "label": "Sell crypto",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.sellCrypto",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
-      "metricKey": "rampApple",
-      "label": "Apple Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.applePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
-      "metricKey": "rampGoogle",
-      "label": "Google Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.googlePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
       "metricKey": "nftSend",
       "label": "NFT send",
       "category": "NFTs",
@@ -9571,56 +8721,6 @@
       "category": "Onboarding",
       "type": "state",
       "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "rampCard",
-      "label": "Card payments",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.card",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "rampApple",
-      "label": "Apple Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.applePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "rampGoogle",
-      "label": "Google Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.googlePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "rampBank",
-      "label": "Bank transfer",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.bankTransfer",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "defiRewards",
-      "label": "Claimable rewards",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.claimableRewards",
       "hasUnsourcedRef": false
     },
     {
@@ -9901,56 +9001,6 @@
       "category": "Pricing & fees",
       "type": "state",
       "path": "product.pricingFeeModel.subscriptionFeatures",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "rampSell",
-      "label": "Sell crypto",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.sellCrypto",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "rampApple",
-      "label": "Apple Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.applePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "rampGoogle",
-      "label": "Google Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.googlePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "rampBank",
-      "label": "Bank transfer",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.bankTransfer",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "pfCostBasis",
-      "label": "Cost basis",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.costBasis",
       "hasUnsourcedRef": false
     },
     {
@@ -10251,66 +9301,6 @@
       "category": "Pricing & fees",
       "type": "state",
       "path": "product.pricingFeeModel.subscriptionFeatures",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "rampBuy",
-      "label": "Buy crypto",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.buyCrypto",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "rampSell",
-      "label": "Sell crypto",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.sellCrypto",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "rampCard",
-      "label": "Card payments",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.card",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "rampApple",
-      "label": "Apple Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.applePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "rampGoogle",
-      "label": "Google Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.googlePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "rampBank",
-      "label": "Bank transfer",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.bankTransfer",
       "hasUnsourcedRef": false
     },
     {

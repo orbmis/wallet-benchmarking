@@ -808,12 +808,72 @@
             "explanation": "Frame source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://frame.sh"
           },
-          "buyCrypto": null,
-          "sellCrypto": null,
-          "bankTransfer": null,
-          "card": null,
-          "applePay": null,
-          "googlePay": null,
+          "buyCrypto": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.frame.sh/",
+                  "explanation": "Frame is a desktop Ethereum dapp wallet with no integrated fiat on-ramp; its docs describe only hardware/software signers and watch accounts, and reviews confirm purchases must be done via external exchanges."
+                }
+              }
+            ]
+          },
+          "sellCrypto": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.frame.sh/",
+                  "explanation": "Frame provides no in-app crypto-to-fiat off-ramp; there is no buy/sell functionality in the wallet, only dapp connectivity and signing."
+                }
+              }
+            ]
+          },
+          "bankTransfer": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.frame.sh/",
+                  "explanation": "With no fiat ramp present in Frame, bank transfer is not available."
+                }
+              }
+            ]
+          },
+          "card": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.frame.sh/",
+                  "explanation": "With no fiat ramp present in Frame, there is no card payment method available."
+                }
+              }
+            ]
+          },
+          "applePay": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.frame.sh/",
+                  "explanation": "With no fiat ramp present in Frame, Apple Pay is not available."
+                }
+              }
+            ]
+          },
+          "googlePay": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.frame.sh/",
+                  "explanation": "With no fiat ramp present in Frame, Google Pay is not available."
+                }
+              }
+            ]
+          },
           "kycDependency": "KYCDependency.UNKNOWN",
           "providers": [],
           "regionalAvailability": null
@@ -985,7 +1045,17 @@
             ]
           },
           "collectionViews": null,
-          "watchOnlyWallets": null,
+          "watchOnlyWallets": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Unlocking%20Accounts/",
+                  "explanation": "Frame's docs describe Watch Accounts that are 'solely for viewing assets and connecting to protocols' without signing, i.e. watch-only accounts."
+                }
+              }
+            ]
+          },
           "multiWalletAggregation": {
             "$ref": "featureSupported"
           }

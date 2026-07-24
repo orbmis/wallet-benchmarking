@@ -934,10 +934,50 @@
               }
             ]
           },
-          "bankTransfer": null,
-          "card": null,
-          "applePay": null,
-          "googlePay": null,
+          "bankTransfer": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.uniswap.org/hc/en-us/articles/11306614164877-What-payment-methods-are-accepted-when-buying-crypto",
+                  "explanation": "Uniswap's fiat on-ramp supports bank transfers (including SEPA and US/UK/Brazil bank transfers) as a payment method."
+                }
+              }
+            ]
+          },
+          "card": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.uniswap.org/hc/en-us/articles/11306614164877-What-payment-methods-are-accepted-when-buying-crypto",
+                  "explanation": "Uniswap's integrated fiat on-ramp accepts bank cards including MasterCard, Visa and Maestro (debit/credit) as a payment method."
+                }
+              }
+            ]
+          },
+          "applePay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.uniswap.org/revolut-onramp-now-live",
+                  "explanation": "Uniswap's ramp supports Apple Pay, listed among accepted payment methods and available via integrated providers such as Revolut, MoonPay and Transak."
+                }
+              }
+            ]
+          },
+          "googlePay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.uniswap.org/revolut-onramp-now-live",
+                  "explanation": "The official Uniswap blog confirms the Revolut on-ramp in Uniswap supports Google Pay (\"Revolut Pay, Apple Pay, Google Pay, cards\")."
+                }
+              }
+            ]
+          },
           "kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
           "providers": [],
           "regionalAvailability": "Uniswap Wallet advertises buy/sell, but provider and country matrix were not resolved in this pass."
@@ -1260,7 +1300,17 @@
             ]
           },
           "perProtocolBalances": null,
-          "claimableRewards": null,
+          "claimableRewards": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.uniswap.org/hc/en-us/articles/33829507086989-How-to-collect-fees-from-a-liquidity-pool-on-Uniswap-v4",
+                  "explanation": "The Uniswap app surfaces liquidity positions with uncollected/claimable fees that users can collect directly in the UI via the Collect fees action."
+                }
+              }
+            ]
+          },
           "liquidationWarnings": {
             "$call": "notSupported",
             "args": [

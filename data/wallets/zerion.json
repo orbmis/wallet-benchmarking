@@ -899,8 +899,28 @@
               }
             ]
           },
-          "sellCrypto": null,
-          "bankTransfer": null,
+          "sellCrypto": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.zerion.io/en/articles/5351052-sell-crypto-withdraw-to-bank-with-zerion",
+                  "explanation": "Zerion's own help center states \"Currently, Zerion doesn't support selling crypto directly for fiat currencies\" and requires transferring to an external exchange to cash out."
+                }
+              }
+            ]
+          },
+          "bankTransfer": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://zerion.io/blog/how-to-fund-zerion-wallet/",
+                  "explanation": "Zerion's funding guide states its integrated ramps (MoonPay, Ramp, Mercuryo) support bank transfers including SEPA/SEPA Instant and Faster Payments Service."
+                }
+              }
+            ]
+          },
           "card": {
             "$call": "supported",
             "args": [
@@ -912,8 +932,28 @@
               }
             ]
           },
-          "applePay": null,
-          "googlePay": null,
+          "applePay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://zerion.io/blog/how-to-fund-zerion-wallet/",
+                  "explanation": "Zerion's funding guide lists integrated providers MoonPay and Mercuryo as supporting Apple Pay as a payment method for buying crypto."
+                }
+              }
+            ]
+          },
+          "googlePay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://zerion.io/blog/how-to-fund-zerion-wallet/",
+                  "explanation": "Zerion's funding guide lists MoonPay (integrated provider) as supporting Google Pay as a payment method for buying crypto in-app."
+                }
+              }
+            ]
+          },
           "kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
           "providers": [
             {
@@ -1074,7 +1114,17 @@
               }
             ]
           },
-          "costBasis": null,
+          "costBasis": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://zerion.io/blog/profit-and-loss-now-on-zerion/",
+                  "explanation": "Zerion's Profit and Loss feature tracks \"Average Cost\" (cost basis of holdings) and invested amount per asset to compute realized/unrealized gains."
+                }
+              }
+            ]
+          },
           "tokenCategories": {
             "$call": "supported",
             "args": [

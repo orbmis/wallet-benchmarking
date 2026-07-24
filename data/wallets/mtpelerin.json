@@ -803,7 +803,17 @@
               }
             ]
           },
-          "applePay": null,
+          "applePay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/buy-crypto",
+                  "explanation": "Mt Pelerin's official buy-crypto page confirms Bridge Wallet's integrated buy feature supports Apple Pay for instant crypto purchases."
+                }
+              }
+            ]
+          },
           "googlePay": {
             "$call": "supported",
             "args": [
