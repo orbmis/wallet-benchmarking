@@ -872,7 +872,17 @@
           "payGasInStablecoins": null,
           "payGasWithReceivedToken": null,
           "speedPresets": null,
-          "stuckTransactionRecovery": null
+          "stuckTransactionRecovery": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/blog/how-to-cancel-a-pending-ethereum-transaction",
+                  "explanation": "Mt Pelerin's blog describes cancelling a stuck Ethereum transaction in Bridge Wallet via the Advanced menu with a higher gas price and the same nonce."
+                }
+              }
+            ]
+          }
         },
         "recoveryUx": {
           "ref": {
@@ -1423,11 +1433,51 @@
             "explanation": "Bridge Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://www.mtpelerin.com/"
           },
-          "syncsAccounts": null,
-          "syncsSettings": null,
+          "syncsAccounts": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/bridge-wallet",
+                  "explanation": "Bridge Wallet is self-custodial and mobile-only, offering only seed-phrase manual export/import with no automatic cross-device account sync."
+                }
+              }
+            ]
+          },
+          "syncsSettings": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/bridge-wallet",
+                  "explanation": "No settings sync feature is documented for Bridge Wallet; it is self-custodial with local key storage and no cloud sync."
+                }
+              }
+            ]
+          },
           "syncsContactsOrAddressBook": null,
-          "desktopMobileSync": null,
-          "cloudBackedSync": null,
+          "desktopMobileSync": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/bridge-wallet",
+                  "explanation": "Bridge Wallet is a mobile app with an auxiliary web interface but no documented sync mechanism between the web interface and mobile."
+                }
+              }
+            ]
+          },
+          "cloudBackedSync": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/bridge-wallet",
+                  "explanation": "Bridge Wallet is self-custody where the user holds their own secret phrase; no cloud backup feature is documented."
+                }
+              }
+            ]
+          },
           "requiresSameSeedImport": {
             "$ref": "featureSupported"
           }

@@ -989,9 +989,39 @@
               }
             ]
           },
-          "gasSponsorship": null,
-          "gasAbstraction": null,
-          "payGasInStablecoins": null,
+          "gasSponsorship": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.cryptotimes.io/2026/05/22/zero-network-shutting-down-as-zerion-pivots-to-wallet-and-api/",
+                  "explanation": "Zerion's gas sponsorship was delivered via ZERO Network's paymaster, which shut down in May 2026; no replacement on other chains is documented."
+                }
+              }
+            ]
+          },
+          "gasAbstraction": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.cryptotimes.io/2026/05/22/zero-network-shutting-down-as-zerion-pivots-to-wallet-and-api/",
+                  "explanation": "Zerion's gasless UX was exclusive to its ZERO Network L2, which shut down in May 2026; Zerion Wallet on other chains has no documented gas abstraction."
+                }
+              }
+            ]
+          },
+          "payGasInStablecoins": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://zerion.io/blog/welcome-to-a-world-without-gas-fees/",
+                  "explanation": "Zerion's gas-free UX came via its own ZERO Network paymaster (sponsored); there is no user-facing option to pay gas in USDC/USDT on standard chains."
+                }
+              }
+            ]
+          },
           "payGasWithReceivedToken": null,
           "speedPresets": {
             "$call": "supported",
@@ -1004,7 +1034,17 @@
               }
             ]
           },
-          "stuckTransactionRecovery": null
+          "stuckTransactionRecovery": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.zerion.io/en/articles/9653365-how-to-speed-up-or-cancel-your-pending-transaction",
+                  "explanation": "Zerion's help center describes speed-up and cancel options for pending transactions via the Activity tab in the mobile app."
+                }
+              }
+            ]
+          }
         },
         "recoveryUx": {
           "ref": {
@@ -1611,11 +1651,51 @@
             "explanation": "Zerion source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://zerion.io"
           },
-          "syncsAccounts": null,
-          "syncsSettings": null,
+          "syncsAccounts": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://zerion.io/blog/zerion-for-ios-mac-and-ipad-with-icloud-sync/",
+                  "explanation": "Zerion's Device Sync syncs personal and watched wallets across Apple devices via iCloud (Google One on Android)."
+                }
+              }
+            ]
+          },
+          "syncsSettings": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.zerion.io/en/articles/5518337-how-do-i-set-up-icloud-sync",
+                  "explanation": "Zerion's Device Sync backs up and syncs watch addresses, favorite dApps, assets, and app settings across devices via iCloud or Google One."
+                }
+              }
+            ]
+          },
           "syncsContactsOrAddressBook": null,
-          "desktopMobileSync": null,
-          "cloudBackedSync": null,
+          "desktopMobileSync": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://zerion.io/download",
+                  "explanation": "Zerion ships on mobile, macOS, iPad, and as a browser extension; the same wallet syncs assets and history across all platforms."
+                }
+              }
+            ]
+          },
+          "cloudBackedSync": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://zerion.io/blog/zerion-for-ios-mac-and-ipad-with-icloud-sync/",
+                  "explanation": "Zerion offers iCloud-backed Device Sync on iOS/macOS/iPad (Google Drive on Android), encrypting wallet data and settings to the cloud."
+                }
+              }
+            ]
+          },
           "requiresSameSeedImport": {
             "$ref": "featureSupported"
           }

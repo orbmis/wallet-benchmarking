@@ -846,9 +846,39 @@
               }
             ]
           },
-          "gasSponsorship": null,
-          "gasAbstraction": null,
-          "payGasInStablecoins": null,
+          "gasSponsorship": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/39943011404441-Announcement-imToken-Web-Beta-is-Live",
+                  "explanation": "imToken Web Beta states projects can sponsor gas fees via imToken Paymaster so users interact without needing any gas token."
+                }
+              }
+            ]
+          },
+          "gasAbstraction": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/39943011404441-Announcement-imToken-Web-Beta-is-Live",
+                  "explanation": "imToken Web Beta introduced AA accounts with paymaster support, letting users pay gas in ERC-20 tokens like USDC rather than holding the native token."
+                }
+              }
+            ]
+          },
+          "payGasInStablecoins": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/39943011404441-Announcement-imToken-Web-Beta-is-Live",
+                  "explanation": "imToken Web Beta's AA accounts with paymaster support let users pay gas in ERC-20 stablecoins like USDC rather than the native token."
+                }
+              }
+            ]
+          },
           "payGasWithReceivedToken": null,
           "speedPresets": {
             "$call": "supported",
@@ -1408,11 +1438,33 @@
             "explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://token.im"
           },
-          "syncsAccounts": null,
+          "syncsAccounts": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/53068264411289-How-to-Keep-Your-Account-Safe",
+                  "explanation": "imToken's passkey accounts sync via iCloud Keychain or Google Password Manager, restoring the wallet on a new device with the same account after biometric verification."
+                }
+              }
+            ]
+          },
           "syncsSettings": null,
           "syncsContactsOrAddressBook": null,
-          "desktopMobileSync": null,
-          "cloudBackedSync": null,
+          "desktopMobileSync": {
+            "$ref": "notApplicable"
+          },
+          "cloudBackedSync": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/53068264411289-How-to-Keep-Your-Account-Safe",
+                  "explanation": "imToken supports Cloud Sync via iCloud Keychain or Google Password Manager; the encrypted key syncs to the user's account and restores the wallet on a new device."
+                }
+              }
+            ]
+          },
           "requiresSameSeedImport": {
             "$ref": "featureSupported"
           }

@@ -993,9 +993,39 @@
               }
             ]
           },
-          "gasSponsorship": null,
-          "gasAbstraction": null,
-          "payGasInStablecoins": null,
+          "gasSponsorship": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.phantom.com/hc/en-us/articles/41191481594643-About-gasless-transactions-on-Solana-in-Phantom",
+                  "explanation": "Phantom's gasless swaps deduct fees from the token being swapped — the user still pays; no external party sponsors the gas cost."
+                }
+              }
+            ]
+          },
+          "gasAbstraction": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.phantom.com/hc/en-us/articles/41191481594643-About-gasless-transactions-on-Solana-in-Phantom",
+                  "explanation": "Phantom automatically deducts the Solana transaction fee from the token being swapped when the SOL balance is insufficient, abstracting the need to hold SOL for gas."
+                }
+              }
+            ]
+          },
+          "payGasInStablecoins": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.phantom.com/hc/en-us/articles/44032849295379-About-network-fees-gas",
+                  "explanation": "Phantom's network fees documentation states fees cannot be paid in USDC/stablecoins, only in the network's native token."
+                }
+              }
+            ]
+          },
           "payGasWithReceivedToken": null,
           "speedPresets": {
             "$call": "supported",

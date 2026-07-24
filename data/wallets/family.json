@@ -775,9 +775,39 @@
               }
             ]
           },
-          "gasSponsorship": null,
-          "gasAbstraction": null,
-          "payGasInStablecoins": null,
+          "gasSponsorship": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/faqs",
+                  "explanation": "Family's FAQ states standard network fees apply with no mention of gas sponsorship, paymasters, or dApp-sponsored transactions."
+                }
+              }
+            ]
+          },
+          "gasAbstraction": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/faqs",
+                  "explanation": "Family's FAQ confirms standard network fees apply with no account abstraction, ERC-4337, or gasless UX documented."
+                }
+              }
+            ]
+          },
+          "payGasInStablecoins": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/faqs",
+                  "explanation": "Family's FAQ states standard network fees apply and documents no stablecoin gas payment feature."
+                }
+              }
+            ]
+          },
           "payGasWithReceivedToken": null,
           "speedPresets": {
             "$call": "supported",
@@ -790,7 +820,17 @@
               }
             ]
           },
-          "stuckTransactionRecovery": null
+          "stuckTransactionRecovery": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/support",
+                  "explanation": "Family's support site lists dedicated 'Speed up a transaction' and 'Cancel a transaction' articles, confirming both features."
+                }
+              }
+            ]
+          }
         },
         "recoveryUx": {
           "ref": {
@@ -1372,7 +1412,9 @@
               }
             ]
           },
-          "desktopMobileSync": null,
+          "desktopMobileSync": {
+            "$ref": "notApplicable"
+          },
           "cloudBackedSync": {
             "$call": "supported",
             "args": [

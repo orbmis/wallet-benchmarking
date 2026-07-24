@@ -890,7 +890,17 @@
             "explanation": "Bitget Wallet GetGas help says GetGas is a prepaid gas account funded with stablecoins or accepted tokens for gas across multiple chains.",
             "url": "https://web3.bitget.com/es/helpCenter/779"
           },
-          "gasCustomization": null,
+          "gasCustomization": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://web3.bitget.com/en/academy/how-to-set-up-and-use-bitget-wallet",
+                  "explanation": "Bitget Wallet offers Slow/Average/Fast/Custom gas tiers and lets users tap the gas fee to adjust it before confirming a transaction."
+                }
+              }
+            ]
+          },
           "gasSponsorship": {
             "$call": "supported",
             "args": [
@@ -936,7 +946,17 @@
             ]
           },
           "speedPresets": null,
-          "stuckTransactionRecovery": null
+          "stuckTransactionRecovery": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.bitget.com/news/detail/12560604558687",
+                  "explanation": "Bitget Wallet has a Speed Up button that replaces a stuck tx at a higher fee and a Cancel button that sends a 0-value same-nonce replacement."
+                }
+              }
+            ]
+          }
         },
         "recoveryUx": {
           "ref": {
@@ -1563,11 +1583,41 @@
             "explanation": "Bitget Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://web3.bitget.com/"
           },
-          "syncsAccounts": null,
+          "syncsAccounts": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.bitget.com/wiki/how-to-sync-computer-and-phone-bitcoin-wallet",
+                  "explanation": "Bitget Wallet requires manually importing the same seed phrase on each device; this is seed-based restoration, not automatic account sync."
+                }
+              }
+            ]
+          },
           "syncsSettings": null,
           "syncsContactsOrAddressBook": null,
-          "desktopMobileSync": null,
-          "cloudBackedSync": null,
+          "desktopMobileSync": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.bitget.com/wiki/how-to-sync-computer-and-phone-bitcoin-wallet",
+                  "explanation": "Bitget Wallet offers both a mobile app and browser extension; the same wallet syncs balances and transaction history across desktop and mobile."
+                }
+              }
+            ]
+          },
+          "cloudBackedSync": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://web3.bitget.com/en/academy/secure-wallet-transfer-new-device",
+                  "explanation": "Bitget Wallet's MPC wallet supports cloud backup via iCloud or Google Drive with a double-encryption mechanism; cloud restore invalidates old-device key shares."
+                }
+              }
+            ]
+          },
           "requiresSameSeedImport": {
             "$ref": "featureSupported"
           }

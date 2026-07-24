@@ -1484,7 +1484,17 @@
             "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
           },
           "gasCustomization": null,
-          "gasSponsorship": null,
+          "gasSponsorship": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.ambire.com/gas-abstraction-explained/",
+                  "explanation": "Ambire sponsors gas on Gnosis Chain for extension users and supports ERC-4337 paymasters enabling dApp-sponsored gasless transactions."
+                }
+              }
+            ]
+          },
           "gasAbstraction": {
             "$call": "supported",
             "args": [
@@ -1518,7 +1528,17 @@
               }
             ]
           },
-          "speedPresets": null,
+          "speedPresets": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.ambire.com/en/articles/13752143-web-version-how-can-i-fill-up-the-gas-tank",
+                  "explanation": "Ambire's help docs confirm users can choose transaction speed (fast vs slow), with higher fees for faster transactions."
+                }
+              }
+            ]
+          },
           "stuckTransactionRecovery": {
             "$call": "supported",
             "args": [
@@ -2078,11 +2098,51 @@
             "explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://www.ambire.com"
           },
-          "syncsAccounts": null,
-          "syncsSettings": null,
+          "syncsAccounts": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.ambire.com/en/articles/13752061-web-version-what-is-ambire-cloud",
+                  "explanation": "Ambire Cloud backs up encrypted private keys but does not sync accounts across devices; a JSON backup import is required to access an account elsewhere."
+                }
+              }
+            ]
+          },
+          "syncsSettings": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.ambire.com/en/articles/13752061-web-version-what-is-ambire-cloud",
+                  "explanation": "No settings sync is documented for Ambire; Ambire Cloud is strictly an encrypted private-key backup, not a preferences sync."
+                }
+              }
+            ]
+          },
           "syncsContactsOrAddressBook": null,
-          "desktopMobileSync": null,
-          "cloudBackedSync": null,
+          "desktopMobileSync": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.ambire.com/mobile-app-under-rebuild/",
+                  "explanation": "Ambire V1 (mobile) and V2 (extension) accounts are currently incompatible and cannot be synced; the team lists it as a future goal."
+                }
+              }
+            ]
+          },
+          "cloudBackedSync": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.ambire.com/en/articles/13752061-web-version-what-is-ambire-cloud",
+                  "explanation": "Ambire Cloud stores one of the two private keys for email/password accounts encrypted on Ambire's cloud servers, enabling access without a local backup file."
+                }
+              }
+            ]
+          },
           "requiresSameSeedImport": {
             "$ref": "featureSupported"
           }

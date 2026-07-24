@@ -1052,8 +1052,28 @@
             "explanation": "Safe users page says users can batch multiple transactions to sign once and save gas, and build/simulate multi-step transactions before signing.",
             "url": "https://safe.global/users"
           },
-          "gasCustomization": null,
-          "gasSponsorship": null,
+          "gasCustomization": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/5afe/safe-react/issues/838",
+                  "explanation": "Safe's UI and GitHub history confirm advanced users can manually set nonce, gas price, and gas limit when initiating a transaction."
+                }
+              }
+            ]
+          },
+          "gasSponsorship": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.safe.global/sdk/relay-kit",
+                  "explanation": "Safe's Relay Kit enables dApp-sponsored gas via Gelato relay and ERC-4337 paymasters, letting dApps cover gas so Safe users transact without native tokens."
+                }
+              }
+            ]
+          },
           "gasAbstraction": {
             "$call": "supported",
             "args": [
@@ -1067,8 +1087,28 @@
           },
           "payGasInStablecoins": null,
           "payGasWithReceivedToken": null,
-          "speedPresets": null,
-          "stuckTransactionRecovery": null
+          "speedPresets": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/5afe/safe/issues/199",
+                  "explanation": "A GitHub issue on the archived Safe repo confirms gas speed presets were never implemented in Safe."
+                }
+              }
+            ]
+          },
+          "stuckTransactionRecovery": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/safe-global/safe-wallet-monorepo/issues/3611",
+                  "explanation": "Safe added a speed-up option for pending transactions and supports cancellation via a replacement transaction, per the resolved GitHub issue and help docs."
+                }
+              }
+            ]
+          }
         },
         "recoveryUx": {
           "ref": {
@@ -1683,7 +1723,17 @@
               }
             ]
           },
-          "cloudBackedSync": null,
+          "cloudBackedSync": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.safe.global/en/articles/40829-how-signer-keys-are-stored",
+                  "explanation": "Safe Mobile stores signer keys encrypted only in the local device database via the Android Keystore; it explicitly provides no cloud syncing or restore."
+                }
+              }
+            ]
+          },
           "requiresSameSeedImport": {
             "$ref": "notSupported"
           }

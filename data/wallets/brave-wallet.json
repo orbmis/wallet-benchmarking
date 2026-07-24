@@ -766,9 +766,39 @@
               }
             ]
           },
-          "gasSponsorship": null,
-          "gasAbstraction": null,
-          "payGasInStablecoins": null,
+          "gasSponsorship": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://brave.com/wallet/",
+                  "explanation": "Brave Wallet is a traditional EOA wallet with no account abstraction layer; official sources show no paymaster or dApp gas sponsorship."
+                }
+              }
+            ]
+          },
+          "gasAbstraction": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://brave.com/wallet/",
+                  "explanation": "Brave Wallet is a traditional EOA wallet; official pages describe standard gas fees with no account abstraction, paymasters, or gasless UX."
+                }
+              }
+            ]
+          },
+          "payGasInStablecoins": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.brave.app/hc/en-us/articles/15086424245389-Understanding-Gas-and-Fees",
+                  "explanation": "Brave Wallet's gas documentation describes only native-token gas payments with no stablecoin gas option."
+                }
+              }
+            ]
+          },
           "payGasWithReceivedToken": null,
           "speedPresets": {
             "$call": "supported",
@@ -1328,11 +1358,51 @@
             "explanation": "Brave Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://brave.com/wallet/"
           },
-          "syncsAccounts": null,
-          "syncsSettings": null,
+          "syncsAccounts": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/brave/brave-browser/issues/21283",
+                  "explanation": "Brave Wallet is excluded from Brave Sync (open feature request since 2022); accounts do not sync across devices."
+                }
+              }
+            ]
+          },
+          "syncsSettings": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/brave/brave-browser/issues/21283",
+                  "explanation": "Brave Wallet is excluded from Brave Sync (open request since 2022); wallet settings and preferences do not sync across devices."
+                }
+              }
+            ]
+          },
           "syncsContactsOrAddressBook": null,
-          "desktopMobileSync": null,
-          "cloudBackedSync": null,
+          "desktopMobileSync": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/brave/brave-browser/issues/21283",
+                  "explanation": "Brave Wallet is excluded from Brave Sync; the 2022 GitHub request for desktop-mobile wallet sync remains open and unimplemented."
+                }
+              }
+            ]
+          },
+          "cloudBackedSync": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/brave/brave-browser/issues/51904",
+                  "explanation": "Brave Wallet offers no cloud-backed sync or backup; the open GitHub issue confirms cloud backup is a requested but unimplemented feature."
+                }
+              }
+            ]
+          },
           "requiresSameSeedImport": {
             "$ref": "featureSupported"
           }

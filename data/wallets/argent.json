@@ -765,7 +765,17 @@
             "explanation": "Argent source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://www.argent.xyz/"
           },
-          "gasCustomization": null,
+          "gasCustomization": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.ready.co/blog/easy-gas-controls",
+                  "explanation": "Argent's own blog states it deliberately does not offer full gas customization to avoid stuck transactions; users only pick from preset speed tiers."
+                }
+              }
+            ]
+          },
           "gasSponsorship": {
             "$call": "supported",
             "args": [
@@ -788,7 +798,17 @@
               }
             ]
           },
-          "payGasInStablecoins": null,
+          "payGasInStablecoins": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.starknet.io/blog/starknet-2025-year-in-review/",
+                  "explanation": "Argent's Starknet paymaster lets users pay gas in STRK, USDC, or other ERC-20 tokens, with EVM L2 paymaster integrations extended in 2024-2025."
+                }
+              }
+            ]
+          },
           "payGasWithReceivedToken": null,
           "speedPresets": {
             "$call": "supported",
@@ -801,7 +821,17 @@
               }
             ]
           },
-          "stuckTransactionRecovery": null
+          "stuckTransactionRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.argent.xyz/hc/en-us/articles/360022628632-I-have-not-received-a-transaction-I-was-expecting",
+                  "explanation": "Argent avoids gas customization to prevent stuck transactions; its support doc directs users to email support rather than offering in-app speed-up/cancel."
+                }
+              }
+            ]
+          }
         },
         "recoveryUx": {
           "ref": {
@@ -1298,11 +1328,41 @@
             "explanation": "Argent source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://www.argent.xyz/"
           },
-          "syncsAccounts": null,
+          "syncsAccounts": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.argent.xyz/hc/en-us/articles/18117728511389-Importing-a-Smart-account-Argent-X-into-your-Argent-mobile-wallet",
+                  "explanation": "Argent requires a manual export/QR import to access accounts on a second device; accounts do not automatically sync across devices."
+                }
+              }
+            ]
+          },
           "syncsSettings": null,
           "syncsContactsOrAddressBook": null,
-          "desktopMobileSync": null,
-          "cloudBackedSync": null,
+          "desktopMobileSync": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.argent.xyz/hc/en-us/articles/8802158124957-Can-I-import-my-mobile-Argent-wallet-into-the-browser-extension",
+                  "explanation": "The mobile private key cannot be imported into Argent X; accounts migrate one-way from extension to mobile with no bidirectional sync."
+                }
+              }
+            ]
+          },
+          "cloudBackedSync": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.argent.xyz/hc/en-us/articles/4410361683601-Saving-Encrypted-Recovery-Kit-for-offchain-recovery",
+                  "explanation": "Argent stores an Encrypted Recovery Kit in the user's iCloud or Google Drive, enabling wallet restoration on a new device via cloud-backed encrypted backup."
+                }
+              }
+            ]
+          },
           "requiresSameSeedImport": null
         }
       }

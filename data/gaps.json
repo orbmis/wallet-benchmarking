@@ -1,7 +1,7 @@
 {
   "generated": true,
-  "gapCount": 703,
-  "naCount": 1013,
+  "gapCount": 577,
+  "naCount": 1027,
   "gaps": [
     {
       "walletId": "ambire",
@@ -66,31 +66,11 @@
     {
       "walletId": "ambire",
       "walletName": "Ambire",
-      "metricKey": "gasSponsorship",
-      "label": "Gas sponsorship",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasSponsorship",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
       "metricKey": "gasCustom",
       "label": "Gas customization",
       "category": "Gas UX",
       "type": "state",
       "path": "product.gasUx.gasCustomization",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "gasPresets",
-      "label": "Speed presets",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.speedPresets",
       "hasUnsourcedRef": false
     },
     {
@@ -161,46 +141,6 @@
       "category": "Recovery UX",
       "type": "state",
       "path": "product.recoveryUx.passkeyRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "syncDesktopMobile",
-      "label": "Desktop\u21c4mobile sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.desktopMobileSync",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "syncCloud",
-      "label": "Cloud-backed sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.cloudBackedSync",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "syncAccounts",
-      "label": "Syncs accounts",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.syncsAccounts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "syncSettings",
-      "label": "Syncs settings",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.syncsSettings",
       "hasUnsourcedRef": false
     },
     {
@@ -366,36 +306,6 @@
     {
       "walletId": "argent",
       "walletName": "Argent",
-      "metricKey": "gasCustom",
-      "label": "Gas customization",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasCustomization",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "gasStables",
-      "label": "Pay gas in stablecoins",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.payGasInStablecoins",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "gasStuck",
-      "label": "Stuck-tx recovery",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.stuckTransactionRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
       "metricKey": "dappBrowser",
       "label": "In-app dApp browser",
       "category": "dApp experience",
@@ -471,36 +381,6 @@
       "category": "Recovery UX",
       "type": "state",
       "path": "product.recoveryUx.passkeyRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "syncDesktopMobile",
-      "label": "Desktop\u21c4mobile sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.desktopMobileSync",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "syncCloud",
-      "label": "Cloud-backed sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.cloudBackedSync",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "syncAccounts",
-      "label": "Syncs accounts",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.syncsAccounts",
       "hasUnsourcedRef": false
     },
     {
@@ -646,46 +526,6 @@
     {
       "walletId": "base-app",
       "walletName": "Base App",
-      "metricKey": "gasCustom",
-      "label": "Gas customization",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasCustomization",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "gasPresets",
-      "label": "Speed presets",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.speedPresets",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "gasStables",
-      "label": "Pay gas in stablecoins",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.payGasInStablecoins",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "gasStuck",
-      "label": "Stuck-tx recovery",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.stuckTransactionRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
       "metricKey": "dappSearch",
       "label": "dApp search",
       "category": "dApp experience",
@@ -721,16 +561,6 @@
       "category": "Recovery UX",
       "type": "state",
       "path": "product.recoveryUx.guardianRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "syncDesktopMobile",
-      "label": "Desktop\u21c4mobile sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.desktopMobileSync",
       "hasUnsourcedRef": false
     },
     {
@@ -916,31 +746,11 @@
     {
       "walletId": "bitget",
       "walletName": "Bitget Wallet",
-      "metricKey": "gasCustom",
-      "label": "Gas customization",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasCustomization",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitget",
-      "walletName": "Bitget Wallet",
       "metricKey": "gasPresets",
       "label": "Speed presets",
       "category": "Gas UX",
       "type": "state",
       "path": "product.gasUx.speedPresets",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitget",
-      "walletName": "Bitget Wallet",
-      "metricKey": "gasStuck",
-      "label": "Stuck-tx recovery",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.stuckTransactionRecovery",
       "hasUnsourcedRef": false
     },
     {
@@ -971,36 +781,6 @@
       "category": "Recovery UX",
       "type": "state",
       "path": "product.recoveryUx.passkeyRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitget",
-      "walletName": "Bitget Wallet",
-      "metricKey": "syncDesktopMobile",
-      "label": "Desktop\u21c4mobile sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.desktopMobileSync",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitget",
-      "walletName": "Bitget Wallet",
-      "metricKey": "syncCloud",
-      "label": "Cloud-backed sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.cloudBackedSync",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitget",
-      "walletName": "Bitget Wallet",
-      "metricKey": "syncAccounts",
-      "label": "Syncs accounts",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.syncsAccounts",
       "hasUnsourcedRef": false
     },
     {
@@ -1051,36 +831,6 @@
       "category": "NFTs",
       "type": "state",
       "path": "product.nftCapabilities.spamNftHiding",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "gasAbstraction",
-      "label": "Gas abstraction",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasAbstraction",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "gasSponsorship",
-      "label": "Gas sponsorship",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasSponsorship",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "gasStables",
-      "label": "Pay gas in stablecoins",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.payGasInStablecoins",
       "hasUnsourcedRef": false
     },
     {
@@ -1196,46 +946,6 @@
     {
       "walletId": "brave-wallet",
       "walletName": "Brave Wallet",
-      "metricKey": "syncDesktopMobile",
-      "label": "Desktop\u21c4mobile sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.desktopMobileSync",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "syncCloud",
-      "label": "Cloud-backed sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.cloudBackedSync",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "syncAccounts",
-      "label": "Syncs accounts",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.syncsAccounts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "syncSettings",
-      "label": "Syncs settings",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.syncsSettings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
       "metricKey": "supLiveChat",
       "label": "Live chat",
       "category": "Customer support",
@@ -1336,16 +1046,6 @@
     {
       "walletId": "mtpelerin",
       "walletName": "Bridge Wallet",
-      "metricKey": "gasStuck",
-      "label": "Stuck-tx recovery",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.stuckTransactionRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
       "metricKey": "dappBrowser",
       "label": "In-app dApp browser",
       "category": "dApp experience",
@@ -1411,46 +1111,6 @@
       "category": "Recovery UX",
       "type": "state",
       "path": "product.recoveryUx.passkeyRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "syncDesktopMobile",
-      "label": "Desktop\u21c4mobile sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.desktopMobileSync",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "syncCloud",
-      "label": "Cloud-backed sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.cloudBackedSync",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "syncAccounts",
-      "label": "Syncs accounts",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.syncsAccounts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "syncSettings",
-      "label": "Syncs settings",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.syncsSettings",
       "hasUnsourcedRef": false
     },
     {
@@ -1541,36 +1201,6 @@
       "category": "DeFi positions",
       "type": "state",
       "path": "product.defiPositionAwareness.liquidationWarnings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "coinbase-wallet",
-      "walletName": "Coinbase Wallet",
-      "metricKey": "gasAbstraction",
-      "label": "Gas abstraction",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasAbstraction",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "coinbase-wallet",
-      "walletName": "Coinbase Wallet",
-      "metricKey": "gasSponsorship",
-      "label": "Gas sponsorship",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasSponsorship",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "coinbase-wallet",
-      "walletName": "Coinbase Wallet",
-      "metricKey": "gasStables",
-      "label": "Pay gas in stablecoins",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.payGasInStablecoins",
       "hasUnsourcedRef": false
     },
     {
@@ -1776,16 +1406,6 @@
     {
       "walletId": "daimo",
       "walletName": "Daimo",
-      "metricKey": "gasCustom",
-      "label": "Gas customization",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasCustomization",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
       "metricKey": "gasStuck",
       "label": "Stuck-tx recovery",
       "category": "Gas UX",
@@ -1881,36 +1501,6 @@
       "category": "Recovery UX",
       "type": "state",
       "path": "product.recoveryUx.cloudBackup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "syncDesktopMobile",
-      "label": "Desktop\u21c4mobile sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.desktopMobileSync",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "syncCloud",
-      "label": "Cloud-backed sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.cloudBackedSync",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "syncAccounts",
-      "label": "Syncs accounts",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.syncsAccounts",
       "hasUnsourcedRef": false
     },
     {
@@ -2166,26 +1756,6 @@
     {
       "walletId": "elytro",
       "walletName": "Elytro",
-      "metricKey": "syncDesktopMobile",
-      "label": "Desktop\u21c4mobile sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.desktopMobileSync",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "syncCloud",
-      "label": "Cloud-backed sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.cloudBackedSync",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
       "metricKey": "syncAccounts",
       "label": "Syncs accounts",
       "category": "Device sync",
@@ -2326,36 +1896,6 @@
     {
       "walletId": "exodus",
       "walletName": "Exodus",
-      "metricKey": "gasAbstraction",
-      "label": "Gas abstraction",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasAbstraction",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "gasSponsorship",
-      "label": "Gas sponsorship",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasSponsorship",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "gasStables",
-      "label": "Pay gas in stablecoins",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.payGasInStablecoins",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
       "metricKey": "dappDirectory",
       "label": "Curated dApp directory",
       "category": "dApp experience",
@@ -2431,26 +1971,6 @@
       "category": "Recovery UX",
       "type": "state",
       "path": "product.recoveryUx.cloudBackup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "syncCloud",
-      "label": "Cloud-backed sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.cloudBackedSync",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "syncSettings",
-      "label": "Syncs settings",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.syncsSettings",
       "hasUnsourcedRef": false
     },
     {
@@ -2576,46 +2096,6 @@
     {
       "walletId": "family",
       "walletName": "Family",
-      "metricKey": "gasAbstraction",
-      "label": "Gas abstraction",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasAbstraction",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "gasSponsorship",
-      "label": "Gas sponsorship",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasSponsorship",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "gasStables",
-      "label": "Pay gas in stablecoins",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.payGasInStablecoins",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "gasStuck",
-      "label": "Stuck-tx recovery",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.stuckTransactionRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
       "metricKey": "dappBrowser",
       "label": "In-app dApp browser",
       "category": "dApp experience",
@@ -2691,16 +2171,6 @@
       "category": "Recovery UX",
       "type": "state",
       "path": "product.recoveryUx.passkeyRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "syncDesktopMobile",
-      "label": "Desktop\u21c4mobile sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.desktopMobileSync",
       "hasUnsourcedRef": false
     },
     {
@@ -2896,36 +2366,6 @@
     {
       "walletId": "frame",
       "walletName": "Frame",
-      "metricKey": "gasAbstraction",
-      "label": "Gas abstraction",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasAbstraction",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "gasSponsorship",
-      "label": "Gas sponsorship",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasSponsorship",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "gasStables",
-      "label": "Pay gas in stablecoins",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.payGasInStablecoins",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
       "metricKey": "gasStuck",
       "label": "Stuck-tx recovery",
       "category": "Gas UX",
@@ -3041,46 +2481,6 @@
       "category": "Recovery UX",
       "type": "state",
       "path": "product.recoveryUx.passkeyRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "syncDesktopMobile",
-      "label": "Desktop\u21c4mobile sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.desktopMobileSync",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "syncCloud",
-      "label": "Cloud-backed sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.cloudBackedSync",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "syncAccounts",
-      "label": "Syncs accounts",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.syncsAccounts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "syncSettings",
-      "label": "Syncs settings",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.syncsSettings",
       "hasUnsourcedRef": false
     },
     {
@@ -3346,41 +2746,11 @@
     {
       "walletId": "gemwallet",
       "walletName": "Gem Wallet",
-      "metricKey": "syncDesktopMobile",
-      "label": "Desktop\u21c4mobile sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.desktopMobileSync",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
       "metricKey": "syncCloud",
       "label": "Cloud-backed sync",
       "category": "Device sync",
       "type": "state",
       "path": "product.deviceSync.cloudBackedSync",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "syncAccounts",
-      "label": "Syncs accounts",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.syncsAccounts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "syncSettings",
-      "label": "Syncs settings",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.syncsSettings",
       "hasUnsourcedRef": false
     },
     {
@@ -3706,36 +3076,6 @@
     {
       "walletId": "imtoken",
       "walletName": "imToken",
-      "metricKey": "gasAbstraction",
-      "label": "Gas abstraction",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasAbstraction",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "gasSponsorship",
-      "label": "Gas sponsorship",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasSponsorship",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "gasStables",
-      "label": "Pay gas in stablecoins",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.payGasInStablecoins",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
       "metricKey": "dappDirectory",
       "label": "Curated dApp directory",
       "category": "dApp experience",
@@ -3801,36 +3141,6 @@
       "category": "Recovery UX",
       "type": "state",
       "path": "product.recoveryUx.passkeyRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "syncDesktopMobile",
-      "label": "Desktop\u21c4mobile sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.desktopMobileSync",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "syncCloud",
-      "label": "Cloud-backed sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.cloudBackedSync",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "syncAccounts",
-      "label": "Syncs accounts",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.syncsAccounts",
       "hasUnsourcedRef": false
     },
     {
@@ -4186,36 +3496,6 @@
     {
       "walletId": "metamask",
       "walletName": "MetaMask",
-      "metricKey": "gasAbstraction",
-      "label": "Gas abstraction",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasAbstraction",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "metamask",
-      "walletName": "MetaMask",
-      "metricKey": "gasSponsorship",
-      "label": "Gas sponsorship",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasSponsorship",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "metamask",
-      "walletName": "MetaMask",
-      "metricKey": "gasStables",
-      "label": "Pay gas in stablecoins",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.payGasInStablecoins",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "metamask",
-      "walletName": "MetaMask",
       "metricKey": "dappSearch",
       "label": "dApp search",
       "category": "dApp experience",
@@ -4251,16 +3531,6 @@
       "category": "Recovery UX",
       "type": "state",
       "path": "product.recoveryUx.passkeyRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "metamask",
-      "walletName": "MetaMask",
-      "metricKey": "syncSettings",
-      "label": "Syncs settings",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.syncsSettings",
       "hasUnsourcedRef": false
     },
     {
@@ -4426,36 +3696,6 @@
     {
       "walletId": "nufi",
       "walletName": "NuFi",
-      "metricKey": "gasAbstraction",
-      "label": "Gas abstraction",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasAbstraction",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "gasSponsorship",
-      "label": "Gas sponsorship",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasSponsorship",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "gasStables",
-      "label": "Pay gas in stablecoins",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.payGasInStablecoins",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
       "metricKey": "gasStuck",
       "label": "Stuck-tx recovery",
       "category": "Gas UX",
@@ -4576,46 +3816,6 @@
     {
       "walletId": "nufi",
       "walletName": "NuFi",
-      "metricKey": "syncDesktopMobile",
-      "label": "Desktop\u21c4mobile sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.desktopMobileSync",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "syncCloud",
-      "label": "Cloud-backed sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.cloudBackedSync",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "syncAccounts",
-      "label": "Syncs accounts",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.syncsAccounts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "syncSettings",
-      "label": "Syncs settings",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.syncsSettings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
       "metricKey": "supLiveChat",
       "label": "Live chat",
       "category": "Customer support",
@@ -4706,36 +3906,6 @@
     {
       "walletId": "okx",
       "walletName": "OKX Wallet",
-      "metricKey": "gasCustom",
-      "label": "Gas customization",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasCustomization",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "okx",
-      "walletName": "OKX Wallet",
-      "metricKey": "gasPresets",
-      "label": "Speed presets",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.speedPresets",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "okx",
-      "walletName": "OKX Wallet",
-      "metricKey": "gasStuck",
-      "label": "Stuck-tx recovery",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.stuckTransactionRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "okx",
-      "walletName": "OKX Wallet",
       "metricKey": "dappSearch",
       "label": "dApp search",
       "category": "dApp experience",
@@ -4771,26 +3941,6 @@
       "category": "Recovery UX",
       "type": "state",
       "path": "product.recoveryUx.passkeyRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "okx",
-      "walletName": "OKX Wallet",
-      "metricKey": "syncDesktopMobile",
-      "label": "Desktop\u21c4mobile sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.desktopMobileSync",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "okx",
-      "walletName": "OKX Wallet",
-      "metricKey": "syncCloud",
-      "label": "Cloud-backed sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.cloudBackedSync",
       "hasUnsourcedRef": false
     },
     {
@@ -4941,36 +4091,6 @@
       "category": "NFTs",
       "type": "state",
       "path": "product.nftCapabilities.spamNftHiding",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "phantom",
-      "walletName": "Phantom",
-      "metricKey": "gasAbstraction",
-      "label": "Gas abstraction",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasAbstraction",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "phantom",
-      "walletName": "Phantom",
-      "metricKey": "gasSponsorship",
-      "label": "Gas sponsorship",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasSponsorship",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "phantom",
-      "walletName": "Phantom",
-      "metricKey": "gasStables",
-      "label": "Pay gas in stablecoins",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.payGasInStablecoins",
       "hasUnsourcedRef": false
     },
     {
@@ -5156,16 +4276,6 @@
     {
       "walletId": "pillarx",
       "walletName": "PillarX",
-      "metricKey": "gasSponsorship",
-      "label": "Gas sponsorship",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasSponsorship",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
       "metricKey": "gasCustom",
       "label": "Gas customization",
       "category": "Gas UX",
@@ -5286,16 +4396,6 @@
     {
       "walletId": "pillarx",
       "walletName": "PillarX",
-      "metricKey": "syncDesktopMobile",
-      "label": "Desktop\u21c4mobile sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.desktopMobileSync",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
       "metricKey": "syncCloud",
       "label": "Cloud-backed sync",
       "category": "Device sync",
@@ -5411,26 +4511,6 @@
       "category": "NFTs",
       "type": "state",
       "path": "product.nftCapabilities.spamNftHiding",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rabby",
-      "walletName": "Rabby",
-      "metricKey": "gasCustom",
-      "label": "Gas customization",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasCustomization",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rabby",
-      "walletName": "Rabby",
-      "metricKey": "gasPresets",
-      "label": "Speed presets",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.speedPresets",
       "hasUnsourcedRef": false
     },
     {
@@ -5676,16 +4756,6 @@
     {
       "walletId": "rainbow",
       "walletName": "Rainbow",
-      "metricKey": "gasStables",
-      "label": "Pay gas in stablecoins",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.payGasInStablecoins",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
       "metricKey": "dappBrowser",
       "label": "In-app dApp browser",
       "category": "dApp experience",
@@ -5846,51 +4916,11 @@
     {
       "walletId": "safe",
       "walletName": "Safe",
-      "metricKey": "gasSponsorship",
-      "label": "Gas sponsorship",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasSponsorship",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "gasCustom",
-      "label": "Gas customization",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasCustomization",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "gasPresets",
-      "label": "Speed presets",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.speedPresets",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
       "metricKey": "gasStables",
       "label": "Pay gas in stablecoins",
       "category": "Gas UX",
       "type": "state",
       "path": "product.gasUx.payGasInStablecoins",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "gasStuck",
-      "label": "Stuck-tx recovery",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.stuckTransactionRecovery",
       "hasUnsourcedRef": false
     },
     {
@@ -5951,16 +4981,6 @@
       "category": "Recovery UX",
       "type": "state",
       "path": "product.recoveryUx.cloudBackup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "syncCloud",
-      "label": "Cloud-backed sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.cloudBackedSync",
       "hasUnsourcedRef": false
     },
     {
@@ -6156,36 +5176,6 @@
     {
       "walletId": "trust-wallet",
       "walletName": "Trust Wallet",
-      "metricKey": "gasAbstraction",
-      "label": "Gas abstraction",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasAbstraction",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
-      "metricKey": "gasSponsorship",
-      "label": "Gas sponsorship",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasSponsorship",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
-      "metricKey": "gasStables",
-      "label": "Pay gas in stablecoins",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.payGasInStablecoins",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
       "metricKey": "dappSearch",
       "label": "dApp search",
       "category": "dApp experience",
@@ -6231,26 +5221,6 @@
       "category": "Recovery UX",
       "type": "state",
       "path": "product.recoveryUx.passkeyRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
-      "metricKey": "syncCloud",
-      "label": "Cloud-backed sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.cloudBackedSync",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
-      "metricKey": "syncSettings",
-      "label": "Syncs settings",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.syncsSettings",
       "hasUnsourcedRef": false
     },
     {
@@ -6331,26 +5301,6 @@
       "category": "Gas UX",
       "type": "state",
       "path": "product.gasUx.speedPresets",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "gasStables",
-      "label": "Pay gas in stablecoins",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.payGasInStablecoins",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "gasStuck",
-      "label": "Stuck-tx recovery",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.stuckTransactionRecovery",
       "hasUnsourcedRef": false
     },
     {
@@ -6446,36 +5396,6 @@
     {
       "walletId": "uniswap-wallet",
       "walletName": "Uniswap Wallet",
-      "metricKey": "syncDesktopMobile",
-      "label": "Desktop\u21c4mobile sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.desktopMobileSync",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "syncCloud",
-      "label": "Cloud-backed sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.cloudBackedSync",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "syncAccounts",
-      "label": "Syncs accounts",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.syncsAccounts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
       "metricKey": "syncSettings",
       "label": "Syncs settings",
       "category": "Device sync",
@@ -6521,46 +5441,6 @@
       "category": "Staking & earn",
       "type": "state",
       "path": "product.stakingEarn.validatorChoice",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "gasAbstraction",
-      "label": "Gas abstraction",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasAbstraction",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "gasSponsorship",
-      "label": "Gas sponsorship",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasSponsorship",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "gasStables",
-      "label": "Pay gas in stablecoins",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.payGasInStablecoins",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "gasStuck",
-      "label": "Stuck-tx recovery",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.stuckTransactionRecovery",
       "hasUnsourcedRef": false
     },
     {
@@ -6666,46 +5546,6 @@
     {
       "walletId": "zerion",
       "walletName": "Zerion",
-      "metricKey": "syncDesktopMobile",
-      "label": "Desktop\u21c4mobile sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.desktopMobileSync",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "syncCloud",
-      "label": "Cloud-backed sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.cloudBackedSync",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "syncAccounts",
-      "label": "Syncs accounts",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.syncsAccounts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "syncSettings",
-      "label": "Syncs settings",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.syncsSettings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
       "metricKey": "supLiveChat",
       "label": "Live chat",
       "category": "Customer support",
@@ -6796,66 +5636,6 @@
     {
       "walletId": "zeus",
       "walletName": "Zeus",
-      "metricKey": "gasAbstraction",
-      "label": "Gas abstraction",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasAbstraction",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "gasSponsorship",
-      "label": "Gas sponsorship",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasSponsorship",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "gasCustom",
-      "label": "Gas customization",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.gasCustomization",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "gasPresets",
-      "label": "Speed presets",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.speedPresets",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "gasStables",
-      "label": "Pay gas in stablecoins",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.payGasInStablecoins",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "gasStuck",
-      "label": "Stuck-tx recovery",
-      "category": "Gas UX",
-      "type": "state",
-      "path": "product.gasUx.stuckTransactionRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
       "metricKey": "dappSearch",
       "label": "dApp search",
       "category": "dApp experience",
@@ -6941,46 +5721,6 @@
       "category": "Recovery UX",
       "type": "state",
       "path": "product.recoveryUx.passkeyRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "syncDesktopMobile",
-      "label": "Desktop\u21c4mobile sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.desktopMobileSync",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "syncCloud",
-      "label": "Cloud-backed sync",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.cloudBackedSync",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "syncAccounts",
-      "label": "Syncs accounts",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.syncsAccounts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "syncSettings",
-      "label": "Syncs settings",
-      "category": "Device sync",
-      "type": "state",
-      "path": "product.deviceSync.syncsSettings",
       "hasUnsourcedRef": false
     },
     {

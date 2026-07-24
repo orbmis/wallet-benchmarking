@@ -918,7 +918,17 @@
           },
           "gasSponsorship": null,
           "gasAbstraction": null,
-          "payGasInStablecoins": null,
+          "payGasInStablecoins": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://learn.rainbow.me/gas-fees-explained",
+                  "explanation": "Rainbow's gas fees documentation states gas is always paid in ETH and mentions no stablecoin gas payment."
+                }
+              }
+            ]
+          },
           "payGasWithReceivedToken": null,
           "speedPresets": {
             "$call": "supported",

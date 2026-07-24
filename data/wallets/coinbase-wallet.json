@@ -734,9 +734,39 @@
               }
             ]
           },
-          "gasSponsorship": null,
-          "gasAbstraction": null,
-          "payGasInStablecoins": null,
+          "gasSponsorship": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.coinbase.com/blog/a-new-era-in-crypto-wallets-smart-wallet-is-here",
+                  "explanation": "Coinbase Smart Wallet ships with dApp-sponsored gas via the CDP Paymaster on Base, sponsored by default for smart wallet users."
+                }
+              }
+            ]
+          },
+          "gasAbstraction": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.coinbase.com/blog/a-new-era-in-crypto-wallets-smart-wallet-is-here",
+                  "explanation": "Coinbase Smart Wallet is a passkey-native ERC-4337 smart account; on Base gas is sponsored by default, abstracting the need to hold a native gas token."
+                }
+              }
+            ]
+          },
+          "payGasInStablecoins": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.coinbase.com/en-gb/developer-platform/discover/launches/paymaster-custom-gas",
+                  "explanation": "Coinbase Wallet enables ERC-20 gas payments via its Paymaster on Base, supporting USDC as a gas token for smart wallet users."
+                }
+              }
+            ]
+          },
           "payGasWithReceivedToken": null,
           "speedPresets": {
             "$call": "supported",

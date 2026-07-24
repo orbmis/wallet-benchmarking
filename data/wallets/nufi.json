@@ -881,9 +881,39 @@
               }
             ]
           },
-          "gasSponsorship": null,
-          "gasAbstraction": null,
-          "payGasInStablecoins": null,
+          "gasSponsorship": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.nu.fi/support/solutions/articles/80001178239-evm-smart-accounts-in-nufi-wallet",
+                  "explanation": "NuFi smart account documentation covers transaction batching only; no gas sponsorship or paymaster functionality is mentioned for end users."
+                }
+              }
+            ]
+          },
+          "gasAbstraction": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.nu.fi/support/solutions/articles/80001178239-evm-smart-accounts-in-nufi-wallet",
+                  "explanation": "NuFi's EVM smart accounts support transaction batching but official docs make no mention of gas abstraction or paying fees in non-native tokens."
+                }
+              }
+            ]
+          },
+          "payGasInStablecoins": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://nu.fi/blog/what-are-gas-fees-and-how-they-work",
+                  "explanation": "NuFi's gas documentation describes standard native-token gas payments; users can edit fees but not pay them in stablecoins."
+                }
+              }
+            ]
+          },
           "payGasWithReceivedToken": null,
           "speedPresets": {
             "$call": "supported",
@@ -1402,11 +1432,43 @@
             "explanation": "NuFi source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://nu.fi"
           },
-          "syncsAccounts": null,
-          "syncsSettings": null,
+          "syncsAccounts": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.nu.fi/support/solutions/articles/80001016927-changelog",
+                  "explanation": "NuFi Release 2.3.0 changelog explicitly states a wallet's accounts (and settings) are now synchronised across devices."
+                }
+              }
+            ]
+          },
+          "syncsSettings": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.nu.fi/support/solutions/articles/80001016927-changelog",
+                  "explanation": "NuFi Release 2.3.0 changelog explicitly states both accounts and settings are synchronised across devices, including custom account names and tokens."
+                }
+              }
+            ]
+          },
           "syncsContactsOrAddressBook": null,
-          "desktopMobileSync": null,
-          "cloudBackedSync": null,
+          "desktopMobileSync": {
+            "$ref": "notApplicable"
+          },
+          "cloudBackedSync": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.nu.fi/support/solutions/articles/80000941833-create-a-wallet-backup",
+                  "explanation": "NuFi's backup docs describe only a local JSON backup and recovery phrase; cloud backup is a planned future feature, not yet available."
+                }
+              }
+            ]
+          },
           "requiresSameSeedImport": {
             "$ref": "featureSupported"
           }

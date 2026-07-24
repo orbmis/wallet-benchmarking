@@ -798,9 +798,39 @@
               }
             ]
           },
-          "gasSponsorship": null,
-          "gasAbstraction": null,
-          "payGasInStablecoins": null,
+          "gasSponsorship": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trustwallet.com/blog/announcements/trust-wallet-now-sponsors-your-gas-fees",
+                  "explanation": "Trust Wallet's Gas Sponsorship feature covers Ethereum, BNB Chain, and Solana fees for users with zero native balance (up to 4 sponsored swaps/day)."
+                }
+              }
+            ]
+          },
+          "gasAbstraction": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trustwallet.com/blog/announcements/introducing-trust-wallet-swift",
+                  "explanation": "Trust Wallet SWIFT is an ERC-4337 smart account supporting gas fee payment in 200+ tokens, so users need not hold the native chain token."
+                }
+              }
+            ]
+          },
+          "payGasInStablecoins": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trustwallet.com/blog/announcements/flex-gas-pay-for-gas-with-twt-usdt-or-bnb",
+                  "explanation": "Trust Wallet FlexGas (EIP-7702) lets users pay gas fees in USDC and USDT on BNB Smart Chain, Ethereum, Arbitrum, Optimism, and Base."
+                }
+              }
+            ]
+          },
           "payGasWithReceivedToken": null,
           "speedPresets": {
             "$call": "supported",
@@ -1441,20 +1471,40 @@
               }
             ]
           },
-          "syncsSettings": null,
+          "syncsSettings": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trustwallet.com/blog/announcements/introducing-qr-sync-import-your-mobile-wallet-to-the-desktop-extension",
+                  "explanation": "Trust Wallet's QR Sync is a one-time wallet import from mobile to extension, not ongoing sync; settings/preferences are not synchronised."
+                }
+              }
+            ]
+          },
           "syncsContactsOrAddressBook": null,
           "desktopMobileSync": {
             "$call": "supported",
             "args": [
               {
                 "ref": {
-                  "explanation": "Trust Wallet supports cross-device use between mobile and desktop/browser surfaces.",
-                  "url": "https://trustwallet.com/"
+                  "url": "https://trustwallet.com/blog/announcements/introducing-qr-sync-import-your-mobile-wallet-to-the-desktop-extension",
+                  "explanation": "Trust Wallet's QR Sync imports the mobile wallet into the browser extension via QR code, keeping the wallet connected across mobile and desktop."
                 }
               }
             ]
           },
-          "cloudBackedSync": null,
+          "cloudBackedSync": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trustwallet.com/blog/announcements/introducing-qr-sync-import-your-mobile-wallet-to-the-desktop-extension",
+                  "explanation": "Trust Wallet supports cloud backup of private keys to iCloud (iOS) and Google Drive (Android) via an encrypted backup file."
+                }
+              }
+            ]
+          },
           "requiresSameSeedImport": {
             "$ref": "notSupported"
           }

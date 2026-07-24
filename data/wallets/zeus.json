@@ -983,13 +983,25 @@
             "explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://github.com/greekfetacheese/zeus"
           },
-          "gasCustomization": null,
-          "gasSponsorship": null,
-          "gasAbstraction": null,
-          "payGasInStablecoins": null,
+          "gasCustomization": {
+            "$ref": "notApplicable"
+          },
+          "gasSponsorship": {
+            "$ref": "notApplicable"
+          },
+          "gasAbstraction": {
+            "$ref": "notApplicable"
+          },
+          "payGasInStablecoins": {
+            "$ref": "notApplicable"
+          },
           "payGasWithReceivedToken": null,
-          "speedPresets": null,
-          "stuckTransactionRecovery": null
+          "speedPresets": {
+            "$ref": "notApplicable"
+          },
+          "stuckTransactionRecovery": {
+            "$ref": "notApplicable"
+          }
         },
         "recoveryUx": {
           "ref": {
@@ -1508,11 +1520,43 @@
             "explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://github.com/greekfetacheese/zeus"
           },
-          "syncsAccounts": null,
-          "syncsSettings": null,
+          "syncsAccounts": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.zeusln.app/",
+                  "explanation": "Zeus runs on a single device connected to a Lightning node; node account connections are not synced across devices."
+                }
+              }
+            ]
+          },
+          "syncsSettings": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.zeusln.app/",
+                  "explanation": "Zeus stores settings locally per device and is designed as a single-device node manager; no settings sync across devices is documented."
+                }
+              }
+            ]
+          },
           "syncsContactsOrAddressBook": null,
-          "desktopMobileSync": null,
-          "cloudBackedSync": null,
+          "desktopMobileSync": {
+            "$ref": "notApplicable"
+          },
+          "cloudBackedSync": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.zeusln.app/for-users/embedded-node/backup-and-recovery/",
+                  "explanation": "Zeus automatically backs up Lightning channel disaster-recovery data to OLYMPUS servers, encrypted with the user's 24-word seed phrase."
+                }
+              }
+            ]
+          },
           "requiresSameSeedImport": {
             "$ref": "featureSupported"
           }
