@@ -985,9 +985,39 @@
               }
             ]
           },
-          "socialRecovery": null,
-          "guardianRecovery": null,
-          "passkeyRecovery": null,
+          "socialRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://web3.bitget.com/en/academy/how-to-use-an-mpc-wallet-or-a-mnemonic-wallet",
+                  "explanation": "Bitget's recovery documentation describes MPC cloud backup and seed phrases only; no live social recovery via trusted parties is confirmed."
+                }
+              }
+            ]
+          },
+          "guardianRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://web3.bitget.com/en/academy/how-to-use-an-mpc-wallet-or-a-mnemonic-wallet",
+                  "explanation": "Bitget Wallet offers MPC wallets backed up to iCloud/Google Drive; no live guardian-designation feature is documented."
+                }
+              }
+            ]
+          },
+          "passkeyRecovery": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://web3.bitget.com/crypto-news/solana-wallet-login-access-and-authentication-guide",
+                  "explanation": "Bitget Wallet added passkey authentication built on FIDO2/WebAuthn, allowing access and recovery via Face ID, Touch ID, or hardware security keys."
+                }
+              }
+            ]
+          },
           "emergencyKit": null,
           "recoveryRehearsal": null
         },

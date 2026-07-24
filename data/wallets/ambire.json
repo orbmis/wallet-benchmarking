@@ -1567,7 +1567,17 @@
               }
             ]
           },
-          "cloudBackup": null,
+          "cloudBackup": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.ambire.com/en/articles/13752061-web-version-what-is-ambire-cloud",
+                  "explanation": "Ambire Cloud is Ambire's own encrypted key storage, not iCloud/Google Drive; the alternative is a JSON file download, not a consumer cloud backup."
+                }
+              }
+            ]
+          },
           "socialRecovery": {
             "$call": "supported",
             "args": [
@@ -1590,7 +1600,17 @@
               }
             ]
           },
-          "passkeyRecovery": null,
+          "passkeyRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.ambire.com/en",
+                  "explanation": "Ambire recovery uses email/password sign-up and JSON file backup; no WebAuthn passkey-based recovery is documented."
+                }
+              }
+            ]
+          },
           "emergencyKit": null,
           "recoveryRehearsal": null
         },
@@ -1933,7 +1953,17 @@
             "explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://www.ambire.com"
           },
-          "liveChat": null,
+          "liveChat": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.ambire.com/en",
+                  "explanation": "Ambire offers ticket-based support and community channels only; no real-time human live chat."
+                }
+              }
+            ]
+          },
           "emailSupport": {
             "$call": "supported",
             "args": [
@@ -1945,7 +1975,17 @@
               }
             ]
           },
-          "aiSupport": null,
+          "aiSupport": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.ambire.com/en",
+                  "explanation": "Ambire's help center lists a ticket system, social channels, and self-service articles — no AI chatbot is mentioned."
+                }
+              }
+            ]
+          },
           "publishedSla": null,
           "inAppHelpCenter": {
             "$call": "supported",
@@ -1969,7 +2009,17 @@
               }
             ]
           },
-          "scamRecoveryGuidance": null
+          "scamRecoveryGuidance": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.ambire.com/hc/en-us",
+                  "explanation": "Ambire's help center has a Security section (2FA, scam-token detection) but no dedicated article guiding users who have already been scammed or lost funds."
+                }
+              }
+            ]
+          }
         },
         "developerOffering": {
           "ref": {

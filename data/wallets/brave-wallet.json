@@ -839,10 +839,50 @@
               }
             ]
           },
-          "cloudBackup": null,
-          "socialRecovery": null,
-          "guardianRecovery": null,
-          "passkeyRecovery": null,
+          "cloudBackup": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.brave.com/hc/en-us/articles/16291144373261-BIP-39-Recovery-Phrase",
+                  "explanation": "Brave Wallet documentation describes only BIP-39 recovery phrase backup with no iCloud/Google Drive cloud backup."
+                }
+              }
+            ]
+          },
+          "socialRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.brave.app/hc/en-us/articles/16291144373261-What-is-a-Recovery-Phrase",
+                  "explanation": "Brave Wallet recovery is seed-phrase only; no social recovery via trusted parties is offered."
+                }
+              }
+            ]
+          },
+          "guardianRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.brave.app/hc/en-us/articles/16291144373261-What-is-a-Recovery-Phrase",
+                  "explanation": "Brave Wallet is a standard BIP-39 EOA wallet; no guardian-based recovery mechanism is documented."
+                }
+              }
+            ]
+          },
+          "passkeyRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.brave.com/hc/en-us/articles/16291144373261-BIP-39-Recovery-Phrase",
+                  "explanation": "Brave Wallet recovery documentation describes only BIP-39 seed phrase recovery; no passkey/WebAuthn recovery."
+                }
+              }
+            ]
+          },
           "emergencyKit": null,
           "recoveryRehearsal": null
         },
@@ -1175,7 +1215,17 @@
             "explanation": "Brave Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://brave.com/wallet/"
           },
-          "liveChat": null,
+          "liveChat": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.brave.app/hc/en-us",
+                  "explanation": "The Brave Help Center provides knowledge-base articles for wallet support but no live chat with human agents."
+                }
+              }
+            ]
+          },
           "emailSupport": {
             "$call": "supported",
             "args": [
@@ -1187,7 +1237,17 @@
               }
             ]
           },
-          "aiSupport": null,
+          "aiSupport": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.brave.app/hc/en-us/categories/360001062531-Wallet",
+                  "explanation": "Brave Wallet's support is a self-service knowledge base; Brave Leo is a general browser assistant, not a dedicated wallet support chatbot."
+                }
+              }
+            ]
+          },
           "publishedSla": null,
           "inAppHelpCenter": {
             "$call": "supported",
@@ -1211,7 +1271,17 @@
               }
             ]
           },
-          "scamRecoveryGuidance": null
+          "scamRecoveryGuidance": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.brave.com/hc/en-us/sections/12678113362701-Crypto-Wallet-Basics",
+                  "explanation": "Brave's wallet support focuses on setup, recovery phrase, and asset management; no article guides users on what to do after being scammed."
+                }
+              }
+            ]
+          }
         },
         "developerOffering": {
           "ref": {

@@ -824,7 +824,17 @@
           "guardianRecovery": {
             "$ref": "notSupported"
           },
-          "passkeyRecovery": null,
+          "passkeyRecovery": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.coinbase.com/en/wallet/getting-started/smart-wallet",
+                  "explanation": "Coinbase Smart Wallet uses a WebAuthn passkey as the primary signer, with cross-device recovery via iCloud Keychain or Google Password Manager sync."
+                }
+              }
+            ]
+          },
           "emergencyKit": null,
           "recoveryRehearsal": null
         },

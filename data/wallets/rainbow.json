@@ -980,9 +980,39 @@
               }
             ]
           },
-          "socialRecovery": null,
-          "guardianRecovery": null,
-          "passkeyRecovery": null,
+          "socialRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbow.me/support/safety/protect-your-wallet",
+                  "explanation": "Rainbow recovery relies on an encrypted cloud-backed seed phrase; there is no social recovery via trusted human guardians."
+                }
+              }
+            ]
+          },
+          "guardianRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbow.me/support/safety/protect-your-wallet",
+                  "explanation": "Rainbow recovery is via iCloud/Google Drive cloud backup or written seed phrase; no guardian designation for recovery is offered."
+                }
+              }
+            ]
+          },
+          "passkeyRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbow.me/support/app/the-importance-of-backups",
+                  "explanation": "Rainbow's backup documentation describes iCloud/Google Drive seed-phrase backup and manual backup only; no passkey/WebAuthn recovery."
+                }
+              }
+            ]
+          },
           "emergencyKit": null,
           "recoveryRehearsal": null
         },
@@ -1285,7 +1315,17 @@
             "explanation": "Rainbow source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://rainbow.me"
           },
-          "liveChat": null,
+          "liveChat": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbow.me/support",
+                  "explanation": "Rainbow provides only email and social-media support; no real-time live chat with human agents."
+                }
+              }
+            ]
+          },
           "emailSupport": {
             "$call": "supported",
             "args": [
@@ -1297,7 +1337,17 @@
               }
             ]
           },
-          "aiSupport": null,
+          "aiSupport": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbow.me/support",
+                  "explanation": "Rainbow's support offers email and Twitter; no AI chatbot is present."
+                }
+              }
+            ]
+          },
           "publishedSla": null,
           "inAppHelpCenter": {
             "$call": "supported",

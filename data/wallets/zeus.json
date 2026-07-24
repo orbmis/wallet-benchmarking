@@ -1019,10 +1019,50 @@
               }
             ]
           },
-          "cloudBackup": null,
-          "socialRecovery": null,
-          "guardianRecovery": null,
-          "passkeyRecovery": null,
+          "cloudBackup": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.zeusln.app/for-users/embedded-node/backup-and-recovery/",
+                  "explanation": "Zeus uses an aezeed 24-word seed phrase and LND Static Channel Backup; no native iCloud/Google Drive cloud backup is documented."
+                }
+              }
+            ]
+          },
+          "socialRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.zeusln.app/for-users/embedded-node/backup-and-recovery/",
+                  "explanation": "Zeus is a Bitcoin/Lightning wallet with aezeed seed phrase recovery only; no social recovery via trusted parties is offered."
+                }
+              }
+            ]
+          },
+          "guardianRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.zeusln.app/for-users/embedded-node/backup-and-recovery/",
+                  "explanation": "Zeus (Bitcoin/Lightning, LND-based) uses a 24-word aezeed seed phrase; no guardian-based recovery mechanism is described."
+                }
+              }
+            ]
+          },
+          "passkeyRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://zeusln.com/wallet",
+                  "explanation": "Zeus is a Bitcoin/Lightning wallet using aezeed seed phrases; no passkey/WebAuthn recovery feature is documented."
+                }
+              }
+            ]
+          },
           "emergencyKit": null,
           "recoveryRehearsal": null
         },
@@ -1355,7 +1395,17 @@
             "explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://github.com/greekfetacheese/zeus"
           },
-          "liveChat": null,
+          "liveChat": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.zeusln.app/",
+                  "explanation": "Zeus provides community-only support through Telegram and GitHub; no real-time live chat with human agents."
+                }
+              }
+            ]
+          },
           "emailSupport": {
             "$call": "supported",
             "args": [
@@ -1367,9 +1417,29 @@
               }
             ]
           },
-          "aiSupport": null,
+          "aiSupport": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.zeusln.app/",
+                  "explanation": "Zeus lists Telegram, Twitter, developer Slack, and GitHub as support channels; no AI chatbot is offered."
+                }
+              }
+            ]
+          },
           "publishedSla": null,
-          "inAppHelpCenter": null,
+          "inAppHelpCenter": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.zeusln.app/",
+                  "explanation": "Zeus directs users to external documentation and Telegram; no in-app help center accessible from within the app is mentioned."
+                }
+              }
+            ]
+          },
           "transactionTroubleshooting": {
             "$call": "supported",
             "args": [
@@ -1381,7 +1451,17 @@
               }
             ]
           },
-          "scamRecoveryGuidance": null
+          "scamRecoveryGuidance": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.zeusln.app",
+                  "explanation": "Zeus documentation covers local wallets, remote connections, and self-custody but no guidance for users who have been scammed or lost funds."
+                }
+              }
+            ]
+          }
         },
         "developerOffering": {
           "ref": {

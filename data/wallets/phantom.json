@@ -1077,9 +1077,39 @@
               }
             ]
           },
-          "socialRecovery": null,
-          "guardianRecovery": null,
-          "passkeyRecovery": null,
+          "socialRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.phantom.com/hc/en-us/articles/45135465489555-Create-a-new-Phantom-wallet-with-a-recovery-phrase",
+                  "explanation": "Phantom recovery is seed-phrase or social-login + PIN; no social recovery via trusted guardians is offered."
+                }
+              }
+            ]
+          },
+          "guardianRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.phantom.com/hc/en-us/articles/45135465489555-Create-a-new-Phantom-wallet-with-a-recovery-phrase",
+                  "explanation": "Phantom recovers via 12-word seed phrase; no guardian-based recovery mechanism is documented."
+                }
+              }
+            ]
+          },
+          "passkeyRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.phantom.com/hc/en-us/articles/48398730321811-Can-I-restore-Phantom-from-iCloud-or-Google-Drive",
+                  "explanation": "Phantom's help docs describe seed phrase and social-login recovery only, not WebAuthn passkeys."
+                }
+              }
+            ]
+          },
           "emergencyKit": null,
           "recoveryRehearsal": null
         },
@@ -1492,7 +1522,17 @@
             "explanation": "Phantom source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://phantom.com"
           },
-          "liveChat": null,
+          "liveChat": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.phantom.com/hc/en-us/articles/42012633428115-What-to-expect-from-Phantom-Support",
+                  "explanation": "Phantom's support flows through the Sarah chatbot which opens tickets with email follow-up; no synchronous human live chat."
+                }
+              }
+            ]
+          },
           "emailSupport": {
             "$call": "supported",
             "args": [
@@ -1504,7 +1544,17 @@
               }
             ]
           },
-          "aiSupport": null,
+          "aiSupport": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.phantom.com/hc/en-us/articles/6953810233619-Get-help-from-Phantom",
+                  "explanation": "Phantom's help page confirms an AI chatbot named Sarah handles support requests on help.phantom.com and in-app."
+                }
+              }
+            ]
+          },
           "publishedSla": null,
           "inAppHelpCenter": {
             "$call": "supported",

@@ -859,9 +859,39 @@
               }
             ]
           },
-          "socialRecovery": null,
-          "guardianRecovery": null,
-          "passkeyRecovery": null,
+          "socialRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/faqs",
+                  "explanation": "Family recovery relies on seed phrase and cloud backups; no social recovery via trusted parties is documented."
+                }
+              }
+            ]
+          },
+          "guardianRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/faqs",
+                  "explanation": "Family's recovery options are Family Backup, iCloud, and manual seed phrase; no guardian designation for recovery is mentioned."
+                }
+              }
+            ]
+          },
+          "passkeyRecovery": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/faqs",
+                  "explanation": "Family's FAQs confirm users can create and manage wallets using a passkey, with passkey-based login as the default passwordless option on iOS."
+                }
+              }
+            ]
+          },
           "emergencyKit": null,
           "recoveryRehearsal": null
         },
@@ -1234,7 +1264,17 @@
             "explanation": "Family source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://family.co"
           },
-          "liveChat": null,
+          "liveChat": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/support",
+                  "explanation": "Family offers documentation and contact forms only; no real-time live chat with human agents."
+                }
+              }
+            ]
+          },
           "emailSupport": {
             "$call": "supported",
             "args": [
@@ -1246,7 +1286,17 @@
               }
             ]
           },
-          "aiSupport": null,
+          "aiSupport": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/support",
+                  "explanation": "Family's support page shows self-service help articles, a feedback link, and an issue report option; no AI chatbot is present."
+                }
+              }
+            ]
+          },
           "publishedSla": null,
           "inAppHelpCenter": {
             "$call": "supported",
@@ -1270,7 +1320,17 @@
               }
             ]
           },
-          "scamRecoveryGuidance": null
+          "scamRecoveryGuidance": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/support",
+                  "explanation": "Family's support center covers wallet setup, send/receive/swap, and browser categories but no article on scam recovery or stolen funds."
+                }
+              }
+            ]
+          }
         },
         "developerOffering": {
           "ref": {

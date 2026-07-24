@@ -933,7 +933,17 @@
               }
             ]
           },
-          "passkeyRecovery": null,
+          "passkeyRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/support",
+                  "explanation": "Bridge Wallet support describes only password and secret-phrase recovery; no passkey/WebAuthn feature is documented."
+                }
+              }
+            ]
+          },
           "emergencyKit": null,
           "recoveryRehearsal": null
         },
@@ -1250,7 +1260,17 @@
             "explanation": "Bridge Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://www.mtpelerin.com/"
           },
-          "liveChat": null,
+          "liveChat": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/support",
+                  "explanation": "Mt Pelerin support is limited to FAQ articles and a contact form/email; no live chat with human agents."
+                }
+              }
+            ]
+          },
           "emailSupport": {
             "$call": "supported",
             "args": [
@@ -1262,7 +1282,17 @@
               }
             ]
           },
-          "aiSupport": null,
+          "aiSupport": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/support",
+                  "explanation": "Mt Pelerin's support offers an FAQ and email/contact form only; no AI chatbot is present."
+                }
+              }
+            ]
+          },
           "publishedSla": null,
           "inAppHelpCenter": {
             "$call": "supported",
@@ -1286,7 +1316,17 @@
               }
             ]
           },
-          "scamRecoveryGuidance": null
+          "scamRecoveryGuidance": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/blog/how-to-stay-safe-in-crypto",
+                  "explanation": "Mt Pelerin's scam article is prevention-focused; it warns against recovery scammers but provides no dedicated victim recovery flow."
+                }
+              }
+            ]
+          }
         },
         "developerOffering": {
           "ref": {

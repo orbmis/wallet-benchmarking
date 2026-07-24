@@ -858,10 +858,50 @@
               }
             ]
           },
-          "cloudBackup": null,
-          "socialRecovery": null,
-          "guardianRecovery": null,
-          "passkeyRecovery": null,
+          "cloudBackup": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.gemwallet.com/guides/backup-wallet/",
+                  "explanation": "Gem Wallet's documentation explicitly warns against cloud storage and supports only offline recovery-phrase backup."
+                }
+              }
+            ]
+          },
+          "socialRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.gemwallet.com/guides/restore-wallet/",
+                  "explanation": "Gem Wallet uses BIP-39 seed phrase recovery; no social recovery mechanism via trusted parties is described."
+                }
+              }
+            ]
+          },
+          "guardianRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.gemwallet.com/guides/restore-wallet/",
+                  "explanation": "Gem Wallet (gemwallet.com mobile) restores via a BIP-39 recovery phrase only; no guardian-based recovery is described."
+                }
+              }
+            ]
+          },
+          "passkeyRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.gemwallet.com/guides/backup-wallet/",
+                  "explanation": "Gem Wallet's documentation describes only offline recovery-phrase backup with no passkey/WebAuthn-based recovery."
+                }
+              }
+            ]
+          },
           "emergencyKit": null,
           "recoveryRehearsal": null
         },
@@ -1194,7 +1234,17 @@
             "explanation": "Gem Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://gemwallet.com"
           },
-          "liveChat": null,
+          "liveChat": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://gemwallet.com/support/",
+                  "explanation": "Gem Wallet offers Discord community chat and email support only; no real-time live chat with human agents."
+                }
+              }
+            ]
+          },
           "emailSupport": {
             "$call": "supported",
             "args": [
@@ -1206,7 +1256,17 @@
               }
             ]
           },
-          "aiSupport": null,
+          "aiSupport": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://gemwallet.com/support/",
+                  "explanation": "Gem Wallet's support lists docs, Discord community, and email; no AI chatbot is mentioned."
+                }
+              }
+            ]
+          },
           "publishedSla": null,
           "inAppHelpCenter": {
             "$call": "supported",
@@ -1230,7 +1290,17 @@
               }
             ]
           },
-          "scamRecoveryGuidance": null
+          "scamRecoveryGuidance": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.gemwallet.com/guides/how-to-spot-telegram-scams/",
+                  "explanation": "Gem Wallet (gemwallet.com) publishes prevention-focused scam-awareness articles; none provide post-scam victim recovery guidance."
+                }
+              }
+            ]
+          }
         },
         "developerOffering": {
           "ref": {

@@ -1,6 +1,6 @@
 {
   "generated": true,
-  "gapCount": 577,
+  "gapCount": 444,
   "naCount": 1027,
   "gaps": [
     {
@@ -121,56 +121,6 @@
       "category": "Notifications",
       "type": "state",
       "path": "product.notifications.approvalAlerts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "recCloud",
-      "label": "Cloud backup",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.cloudBackup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "recPasskey",
-      "label": "Passkey recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.passkeyRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "supLiveChat",
-      "label": "Live chat",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.liveChat",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "supAi",
-      "label": "AI support",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.aiSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "supScam",
-      "label": "Scam recovery guidance",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.scamRecoveryGuidance",
       "hasUnsourcedRef": false
     },
     {
@@ -376,51 +326,11 @@
     {
       "walletId": "argent",
       "walletName": "Argent",
-      "metricKey": "recPasskey",
-      "label": "Passkey recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.passkeyRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
       "metricKey": "syncSettings",
       "label": "Syncs settings",
       "category": "Device sync",
       "type": "state",
       "path": "product.deviceSync.syncsSettings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "supLiveChat",
-      "label": "Live chat",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.liveChat",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "supAi",
-      "label": "AI support",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.aiSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "supScam",
-      "label": "Scam recovery guidance",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.scamRecoveryGuidance",
       "hasUnsourcedRef": false
     },
     {
@@ -541,56 +451,6 @@
       "category": "Notifications",
       "type": "state",
       "path": "product.notifications.priceAlerts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "recSocial",
-      "label": "Social recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.socialRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "recGuardian",
-      "label": "Guardian recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.guardianRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "supLiveChat",
-      "label": "Live chat",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.liveChat",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "supAi",
-      "label": "AI support",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.aiSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "supScam",
-      "label": "Scam recovery guidance",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.scamRecoveryGuidance",
       "hasUnsourcedRef": false
     },
     {
@@ -756,36 +616,6 @@
     {
       "walletId": "bitget",
       "walletName": "Bitget Wallet",
-      "metricKey": "recSocial",
-      "label": "Social recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.socialRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitget",
-      "walletName": "Bitget Wallet",
-      "metricKey": "recGuardian",
-      "label": "Guardian recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.guardianRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitget",
-      "walletName": "Bitget Wallet",
-      "metricKey": "recPasskey",
-      "label": "Passkey recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.passkeyRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitget",
-      "walletName": "Bitget Wallet",
       "metricKey": "syncSettings",
       "label": "Syncs settings",
       "category": "Device sync",
@@ -901,76 +731,6 @@
       "category": "Notifications",
       "type": "state",
       "path": "product.notifications.approvalAlerts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "recSocial",
-      "label": "Social recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.socialRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "recGuardian",
-      "label": "Guardian recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.guardianRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "recCloud",
-      "label": "Cloud backup",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.cloudBackup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "recPasskey",
-      "label": "Passkey recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.passkeyRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "supLiveChat",
-      "label": "Live chat",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.liveChat",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "supAi",
-      "label": "AI support",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.aiSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "supScam",
-      "label": "Scam recovery guidance",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.scamRecoveryGuidance",
       "hasUnsourcedRef": false
     },
     {
@@ -1106,46 +866,6 @@
     {
       "walletId": "mtpelerin",
       "walletName": "Bridge Wallet",
-      "metricKey": "recPasskey",
-      "label": "Passkey recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.passkeyRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "supLiveChat",
-      "label": "Live chat",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.liveChat",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "supAi",
-      "label": "AI support",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.aiSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "supScam",
-      "label": "Scam recovery guidance",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.scamRecoveryGuidance",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
       "metricKey": "devEip5792",
       "label": "EIP-5792",
       "category": "Developer offering",
@@ -1201,16 +921,6 @@
       "category": "DeFi positions",
       "type": "state",
       "path": "product.defiPositionAwareness.liquidationWarnings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "coinbase-wallet",
-      "walletName": "Coinbase Wallet",
-      "metricKey": "recPasskey",
-      "label": "Passkey recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.passkeyRecovery",
       "hasUnsourcedRef": false
     },
     {
@@ -1476,71 +1186,11 @@
     {
       "walletId": "daimo",
       "walletName": "Daimo",
-      "metricKey": "recSocial",
-      "label": "Social recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.socialRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "recGuardian",
-      "label": "Guardian recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.guardianRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "recCloud",
-      "label": "Cloud backup",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.cloudBackup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
       "metricKey": "syncSettings",
       "label": "Syncs settings",
       "category": "Device sync",
       "type": "state",
       "path": "product.deviceSync.syncsSettings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "supLiveChat",
-      "label": "Live chat",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.liveChat",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "supAi",
-      "label": "AI support",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.aiSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "supScam",
-      "label": "Scam recovery guidance",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.scamRecoveryGuidance",
       "hasUnsourcedRef": false
     },
     {
@@ -1736,26 +1386,6 @@
     {
       "walletId": "elytro",
       "walletName": "Elytro",
-      "metricKey": "recCloud",
-      "label": "Cloud backup",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.cloudBackup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "recPasskey",
-      "label": "Passkey recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.passkeyRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
       "metricKey": "syncAccounts",
       "label": "Syncs accounts",
       "category": "Device sync",
@@ -1771,36 +1401,6 @@
       "category": "Device sync",
       "type": "state",
       "path": "product.deviceSync.syncsSettings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "supLiveChat",
-      "label": "Live chat",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.liveChat",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "supAi",
-      "label": "AI support",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.aiSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "supScam",
-      "label": "Scam recovery guidance",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.scamRecoveryGuidance",
       "hasUnsourcedRef": false
     },
     {
@@ -1946,66 +1546,6 @@
     {
       "walletId": "exodus",
       "walletName": "Exodus",
-      "metricKey": "recSocial",
-      "label": "Social recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.socialRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "recGuardian",
-      "label": "Guardian recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.guardianRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "recCloud",
-      "label": "Cloud backup",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.cloudBackup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "supLiveChat",
-      "label": "Live chat",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.liveChat",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "supAi",
-      "label": "AI support",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.aiSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "supScam",
-      "label": "Scam recovery guidance",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.scamRecoveryGuidance",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
       "metricKey": "devEip6963",
       "label": "EIP-6963",
       "category": "Developer offering",
@@ -2141,66 +1681,6 @@
       "category": "Notifications",
       "type": "state",
       "path": "product.notifications.approvalAlerts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "recSocial",
-      "label": "Social recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.socialRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "recGuardian",
-      "label": "Guardian recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.guardianRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "recPasskey",
-      "label": "Passkey recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.passkeyRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "supLiveChat",
-      "label": "Live chat",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.liveChat",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "supAi",
-      "label": "AI support",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.aiSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "supScam",
-      "label": "Scam recovery guidance",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.scamRecoveryGuidance",
       "hasUnsourcedRef": false
     },
     {
@@ -2446,76 +1926,6 @@
     {
       "walletId": "frame",
       "walletName": "Frame",
-      "metricKey": "recSocial",
-      "label": "Social recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.socialRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "recGuardian",
-      "label": "Guardian recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.guardianRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "recCloud",
-      "label": "Cloud backup",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.cloudBackup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "recPasskey",
-      "label": "Passkey recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.passkeyRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "supLiveChat",
-      "label": "Live chat",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.liveChat",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "supAi",
-      "label": "AI support",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.aiSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "supScam",
-      "label": "Scam recovery guidance",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.scamRecoveryGuidance",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
       "metricKey": "devEip6963",
       "label": "EIP-6963",
       "category": "Developer offering",
@@ -2706,81 +2116,11 @@
     {
       "walletId": "gemwallet",
       "walletName": "Gem Wallet",
-      "metricKey": "recSocial",
-      "label": "Social recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.socialRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "recGuardian",
-      "label": "Guardian recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.guardianRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "recCloud",
-      "label": "Cloud backup",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.cloudBackup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "recPasskey",
-      "label": "Passkey recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.passkeyRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
       "metricKey": "syncCloud",
       "label": "Cloud-backed sync",
       "category": "Device sync",
       "type": "state",
       "path": "product.deviceSync.cloudBackedSync",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "supLiveChat",
-      "label": "Live chat",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.liveChat",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "supAi",
-      "label": "AI support",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.aiSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "supScam",
-      "label": "Scam recovery guidance",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.scamRecoveryGuidance",
       "hasUnsourcedRef": false
     },
     {
@@ -3106,81 +2446,11 @@
     {
       "walletId": "imtoken",
       "walletName": "imToken",
-      "metricKey": "recSocial",
-      "label": "Social recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.socialRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "recGuardian",
-      "label": "Guardian recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.guardianRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "recCloud",
-      "label": "Cloud backup",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.cloudBackup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "recPasskey",
-      "label": "Passkey recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.passkeyRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
       "metricKey": "syncSettings",
       "label": "Syncs settings",
       "category": "Device sync",
       "type": "state",
       "path": "product.deviceSync.syncsSettings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "supLiveChat",
-      "label": "Live chat",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.liveChat",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "supAi",
-      "label": "AI support",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.aiSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "supScam",
-      "label": "Scam recovery guidance",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.scamRecoveryGuidance",
       "hasUnsourcedRef": false
     },
     {
@@ -3524,36 +2794,6 @@
       "hasUnsourcedRef": false
     },
     {
-      "walletId": "metamask",
-      "walletName": "MetaMask",
-      "metricKey": "recPasskey",
-      "label": "Passkey recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.passkeyRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "metamask",
-      "walletName": "MetaMask",
-      "metricKey": "supLiveChat",
-      "label": "Live chat",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.liveChat",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "metamask",
-      "walletName": "MetaMask",
-      "metricKey": "supAi",
-      "label": "AI support",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.aiSupport",
-      "hasUnsourcedRef": false
-    },
-    {
       "walletId": "ngrave",
       "walletName": "NGRAVE Zero",
       "metricKey": "eoa",
@@ -3776,76 +3016,6 @@
     {
       "walletId": "nufi",
       "walletName": "NuFi",
-      "metricKey": "recSocial",
-      "label": "Social recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.socialRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "recGuardian",
-      "label": "Guardian recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.guardianRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "recCloud",
-      "label": "Cloud backup",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.cloudBackup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "recPasskey",
-      "label": "Passkey recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.passkeyRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "supLiveChat",
-      "label": "Live chat",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.liveChat",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "supAi",
-      "label": "AI support",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.aiSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "supScam",
-      "label": "Scam recovery guidance",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.scamRecoveryGuidance",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
       "metricKey": "feeBridge",
       "label": "Bridge fees disclosed",
       "category": "Pricing & fees",
@@ -3911,36 +3081,6 @@
       "category": "dApp experience",
       "type": "state",
       "path": "product.dappExperience.dappSearch",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "okx",
-      "walletName": "OKX Wallet",
-      "metricKey": "recSocial",
-      "label": "Social recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.socialRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "okx",
-      "walletName": "OKX Wallet",
-      "metricKey": "recGuardian",
-      "label": "Guardian recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.guardianRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "okx",
-      "walletName": "OKX Wallet",
-      "metricKey": "recPasskey",
-      "label": "Passkey recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.passkeyRecovery",
       "hasUnsourcedRef": false
     },
     {
@@ -4111,56 +3251,6 @@
       "category": "dApp experience",
       "type": "state",
       "path": "product.dappExperience.riskRatedDiscovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "phantom",
-      "walletName": "Phantom",
-      "metricKey": "recSocial",
-      "label": "Social recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.socialRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "phantom",
-      "walletName": "Phantom",
-      "metricKey": "recGuardian",
-      "label": "Guardian recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.guardianRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "phantom",
-      "walletName": "Phantom",
-      "metricKey": "recPasskey",
-      "label": "Passkey recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.passkeyRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "phantom",
-      "walletName": "Phantom",
-      "metricKey": "supLiveChat",
-      "label": "Live chat",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.liveChat",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "phantom",
-      "walletName": "Phantom",
-      "metricKey": "supAi",
-      "label": "AI support",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.aiSupport",
       "hasUnsourcedRef": false
     },
     {
@@ -4426,36 +3516,6 @@
     {
       "walletId": "pillarx",
       "walletName": "PillarX",
-      "metricKey": "supLiveChat",
-      "label": "Live chat",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.liveChat",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "supAi",
-      "label": "AI support",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.aiSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "supScam",
-      "label": "Scam recovery guidance",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.scamRecoveryGuidance",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
       "metricKey": "devEip5792",
       "label": "EIP-5792",
       "category": "Developer offering",
@@ -4546,16 +3606,6 @@
     {
       "walletId": "rabby",
       "walletName": "Rabby",
-      "metricKey": "recPasskey",
-      "label": "Passkey recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.passkeyRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rabby",
-      "walletName": "Rabby",
       "metricKey": "syncAccounts",
       "label": "Syncs accounts",
       "category": "Device sync",
@@ -4571,26 +3621,6 @@
       "category": "Device sync",
       "type": "state",
       "path": "product.deviceSync.syncsSettings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rabby",
-      "walletName": "Rabby",
-      "metricKey": "supLiveChat",
-      "label": "Live chat",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.liveChat",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rabby",
-      "walletName": "Rabby",
-      "metricKey": "supAi",
-      "label": "AI support",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.aiSupport",
       "hasUnsourcedRef": false
     },
     {
@@ -4814,56 +3844,6 @@
       "hasUnsourcedRef": false
     },
     {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "recSocial",
-      "label": "Social recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.socialRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "recGuardian",
-      "label": "Guardian recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.guardianRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "recPasskey",
-      "label": "Passkey recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.passkeyRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "supLiveChat",
-      "label": "Live chat",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.liveChat",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "supAi",
-      "label": "AI support",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.aiSupport",
-      "hasUnsourcedRef": false
-    },
-    {
       "walletId": "safe",
       "walletName": "Safe",
       "metricKey": "rampGoogle",
@@ -4976,51 +3956,11 @@
     {
       "walletId": "safe",
       "walletName": "Safe",
-      "metricKey": "recCloud",
-      "label": "Cloud backup",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.cloudBackup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
       "metricKey": "syncSettings",
       "label": "Syncs settings",
       "category": "Device sync",
       "type": "state",
       "path": "product.deviceSync.syncsSettings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "supLiveChat",
-      "label": "Live chat",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.liveChat",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "supAi",
-      "label": "AI support",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.aiSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "supScam",
-      "label": "Scam recovery guidance",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.scamRecoveryGuidance",
       "hasUnsourcedRef": false
     },
     {
@@ -5196,56 +4136,6 @@
     {
       "walletId": "trust-wallet",
       "walletName": "Trust Wallet",
-      "metricKey": "recSocial",
-      "label": "Social recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.socialRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
-      "metricKey": "recGuardian",
-      "label": "Guardian recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.guardianRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
-      "metricKey": "recPasskey",
-      "label": "Passkey recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.passkeyRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
-      "metricKey": "supLiveChat",
-      "label": "Live chat",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.liveChat",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
-      "metricKey": "supAi",
-      "label": "AI support",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.aiSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
       "metricKey": "devEip5792",
       "label": "EIP-5792",
       "category": "Developer offering",
@@ -5356,81 +4246,11 @@
     {
       "walletId": "uniswap-wallet",
       "walletName": "Uniswap Wallet",
-      "metricKey": "recSocial",
-      "label": "Social recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.socialRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "recGuardian",
-      "label": "Guardian recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.guardianRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "recCloud",
-      "label": "Cloud backup",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.cloudBackup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "recPasskey",
-      "label": "Passkey recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.passkeyRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
       "metricKey": "syncSettings",
       "label": "Syncs settings",
       "category": "Device sync",
       "type": "state",
       "path": "product.deviceSync.syncsSettings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "supLiveChat",
-      "label": "Live chat",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.liveChat",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "supAi",
-      "label": "AI support",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.aiSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "supScam",
-      "label": "Scam recovery guidance",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.scamRecoveryGuidance",
       "hasUnsourcedRef": false
     },
     {
@@ -5501,76 +4321,6 @@
       "category": "Notifications",
       "type": "state",
       "path": "product.notifications.approvalAlerts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "recSocial",
-      "label": "Social recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.socialRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "recGuardian",
-      "label": "Guardian recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.guardianRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "recCloud",
-      "label": "Cloud backup",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.cloudBackup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "recPasskey",
-      "label": "Passkey recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.passkeyRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "supLiveChat",
-      "label": "Live chat",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.liveChat",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "supAi",
-      "label": "AI support",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.aiSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "supScam",
-      "label": "Scam recovery guidance",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.scamRecoveryGuidance",
       "hasUnsourcedRef": false
     },
     {
@@ -5681,86 +4431,6 @@
       "category": "Notifications",
       "type": "state",
       "path": "product.notifications.approvalAlerts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "recSocial",
-      "label": "Social recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.socialRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "recGuardian",
-      "label": "Guardian recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.guardianRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "recCloud",
-      "label": "Cloud backup",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.cloudBackup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "recPasskey",
-      "label": "Passkey recovery",
-      "category": "Recovery UX",
-      "type": "state",
-      "path": "product.recoveryUx.passkeyRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "supLiveChat",
-      "label": "Live chat",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.liveChat",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "supAi",
-      "label": "AI support",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.aiSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "supHelp",
-      "label": "In-app help center",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.inAppHelpCenter",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "supScam",
-      "label": "Scam recovery guidance",
-      "category": "Customer support",
-      "type": "state",
-      "path": "product.customerSupport.scamRecoveryGuidance",
       "hasUnsourcedRef": false
     },
     {

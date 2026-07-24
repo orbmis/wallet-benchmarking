@@ -807,9 +807,39 @@
               }
             ]
           },
-          "cloudBackup": null,
-          "socialRecovery": null,
-          "guardianRecovery": null,
+          "cloudBackup": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.exodus.com/support/en/articles/8598900-how-do-i-back-up-my-wallet-with-icloud-or-google-drive",
+                  "explanation": "Exodus Mobile supports encrypted wallet backup to iCloud (iOS) or Google Drive (Android) protected by a passkey."
+                }
+              }
+            ]
+          },
+          "socialRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.exodus.com/article/42-how-do-i-restore-from-my-secret-12-word-phrase",
+                  "explanation": "Exodus recovery is seed-phrase only; social recovery via trusted parties is not a feature."
+                }
+              }
+            ]
+          },
+          "guardianRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.exodus.com/article/42-how-do-i-restore-from-my-secret-12-word-phrase",
+                  "explanation": "Exodus uses a 12-word BIP-39 recovery phrase; no guardian-based recovery is offered."
+                }
+              }
+            ]
+          },
           "passkeyRecovery": {
             "$call": "supported",
             "args": [
@@ -1203,7 +1233,17 @@
             "explanation": "Exodus desktop page and getting-started guide reference online help and 24/7 customer support.",
             "url": "https://www.exodus.com/"
           },
-          "liveChat": null,
+          "liveChat": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.exodus.com/support/en/articles/8598657-how-do-i-contact-exodus-support",
+                  "explanation": "Exodus escalates unresolved chatbot queries to email support only; no real-time human live chat."
+                }
+              }
+            ]
+          },
           "emailSupport": {
             "$call": "supported",
             "args": [
@@ -1215,7 +1255,17 @@
               }
             ]
           },
-          "aiSupport": null,
+          "aiSupport": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.exodus.com/support/en/articles/8598657-how-do-i-contact-exodus-support",
+                  "explanation": "Exodus AI Support uses natural language models and its Knowledge Base to provide instant guidance in-app and via a website chat icon."
+                }
+              }
+            ]
+          },
           "publishedSla": null,
           "inAppHelpCenter": {
             "$call": "supported",
@@ -1229,7 +1279,17 @@
             ]
           },
           "transactionTroubleshooting": null,
-          "scamRecoveryGuidance": null
+          "scamRecoveryGuidance": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.exodus.com/article/2491-compromised-wallet",
+                  "explanation": "Exodus publishes a dedicated support article ('Next steps if your crypto is stolen') with explicit victim guidance: move remaining assets, wipe device if malware suspected, contact law enforcement, and email support."
+                }
+              }
+            ]
+          }
         },
         "developerOffering": {
           "ref": {
