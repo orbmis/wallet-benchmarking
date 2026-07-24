@@ -1063,7 +1063,17 @@
               }
             ]
           },
-          "pnl": null,
+          "pnl": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://zerion.io/defi-portfolio-tracker",
+                  "explanation": "Zerion's wallet advertises 'Real PnL: realized and unrealized' as a Premium portfolio feature and offers detailed unrealized/realized PnL per token."
+                }
+              }
+            ]
+          },
           "costBasis": null,
           "tokenCategories": {
             "$call": "supported",
@@ -1298,18 +1308,68 @@
               }
             ]
           },
-          "liquidationWarnings": null
+          "liquidationWarnings": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://zerion.io/blog/aave-interest-bearing-tokens/",
+                  "explanation": "Zerion surfaces Aave debts/borrow positions in the Tokens tab but its own documentation shows no liquidation-risk warning or health-factor alert feature in the UI."
+                }
+              }
+            ]
+          }
         },
         "stakingEarn": {
           "ref": {
             "explanation": "Zerion source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://zerion.io"
           },
-          "nativeStaking": null,
-          "liquidStaking": null,
+          "nativeStaking": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://stakekit.ghost.io/stakekit-powers-zerions-new-earn-page-unlock-self-custodial-yield-opportunities/",
+                  "explanation": "Zerion's StakeKit-powered Earn section offers in-app staking including native protocol staking (staking, restaking, liquid staking, vaults, lending) across networks like Ethereum, Avalanche and Polygon."
+                }
+              }
+            ]
+          },
+          "liquidStaking": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blockworks.com/news/stakekit-self-custodial-yield-api",
+                  "explanation": "The Earn section explicitly supports liquid staking (e.g. staked AVAX/sAVAX, MATIC via Lido) alongside staking and restaking, all self-custodial in-app."
+                }
+              }
+            ]
+          },
           "validatorChoice": null,
-          "apyDisplay": null,
-          "rewardsClaiming": null,
+          "apyDisplay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://zerion.io/blog/how-to-stake-avax-with-benqi-and-zerion/",
+                  "explanation": "Zerion displays the current APY for stakeable assets in the Earn flow, e.g. 'For any asset, including AVAX, Zerion shows the current APY.'"
+                }
+              }
+            ]
+          },
+          "rewardsClaiming": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://zerion.io/blog/how-to-stake-avax-with-benqi-and-zerion/",
+                  "explanation": "Zerion's Earn lets users manage staked positions and withdraw staked assets plus accumulated rewards in-app (e.g. withdraw staked AVAX and rewards after the cooldown)."
+                }
+              }
+            ]
+          },
           "providerDependency": null,
           "lockupDisclosure": null
         },

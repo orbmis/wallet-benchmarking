@@ -1588,8 +1588,28 @@
               }
             ]
           },
-          "pnl": null,
-          "costBasis": null,
+          "pnl": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.ambire.com/",
+                  "explanation": "Ambire's dashboard shows token/DeFi balances and USD values but no source describes profit-and-loss tracking on holdings; per the official site it only displays tokens, DeFi positions, apps and NFTs (https://www.ambire.com/)."
+                }
+              }
+            ]
+          },
+          "costBasis": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/",
+                  "explanation": "No official or secondary source indicates Ambire tracks acquisition cost basis; the portfolio only shows current balances and USD values (https://blog.ambire.com/make-the-most-out-of-ambire-wallet/)."
+                }
+              }
+            ]
+          },
           "tokenCategories": null,
           "nftSupport": {
             "$call": "supported",
@@ -1729,7 +1749,17 @@
               }
             ]
           },
-          "lpPositions": null,
+          "lpPositions": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.ambire.com/dev-update-q4-2024/",
+                  "explanation": "Ambire surfaces liquidity-pool positions, letting users check that their Uniswap liquidity is in range directly from the extension dashboard (https://blog.ambire.com/dev-update-q4-2024/)."
+                }
+              }
+            ]
+          },
           "vaultPositions": null,
           "perProtocolBalances": {
             "$call": "supported",
@@ -1760,11 +1790,61 @@
             "explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://www.ambire.com"
           },
-          "nativeStaking": null,
-          "liquidStaking": null,
-          "validatorChoice": null,
-          "apyDisplay": null,
-          "rewardsClaiming": null,
+          "nativeStaking": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.ambire.com/ambire-extension-launch/",
+                  "explanation": "The current Ambire extension offers no in-app native protocol staking; its own $WALLET/xWALLET token staking is a governance-token program, not ETH/SOL native staking (https://blog.ambire.com/ambire-extension-launch/)."
+                }
+              }
+            ]
+          },
+          "liquidStaking": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.ambire.com/liquid-staking-explained/",
+                  "explanation": "Liquid staking is not a native in-app feature; users must connect to Lido's external dApp widget/site to stake ETH rather than doing it within Ambire's own UI (https://blog.ambire.com/liquid-staking-explained/)."
+                }
+              }
+            ]
+          },
+          "validatorChoice": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.ambire.com/liquid-staking-explained/",
+                  "explanation": "With no native staking product, Ambire provides no validator-selection option; liquid staking via Lido pools stake without user validator choice (https://blog.ambire.com/liquid-staking-explained/)."
+                }
+              }
+            ]
+          },
+          "apyDisplay": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.ambire.com/liquid-staking-explained/",
+                  "explanation": "Because staking is done via external Lido widget and there is no native staking feature, Ambire's own UI does not display a staking/earn APY (https://blog.ambire.com/liquid-staking-explained/)."
+                }
+              }
+            ]
+          },
+          "rewardsClaiming": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.ambire.com/liquid-staking-explained/",
+                  "explanation": "Ambire has no native staking feature and thus no in-app staking-rewards claiming; the only claim flow is for its own $WALLET token rewards, not protocol staking rewards (https://blog.ambire.com/liquid-staking-explained/)."
+                }
+              }
+            ]
+          },
           "providerDependency": null,
           "lockupDisclosure": null
         },

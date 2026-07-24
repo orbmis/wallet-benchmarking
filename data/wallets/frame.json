@@ -940,8 +940,28 @@
           "netWorth": {
             "$ref": "featureSupported"
           },
-          "pnl": null,
-          "costBasis": null,
+          "pnl": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Balances/",
+                  "explanation": "Frame's Balances module shows only the $ value and daily percentage change per token, with no profit/loss tracking documented (https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Balances/)."
+                }
+              }
+            ]
+          },
+          "costBasis": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Balances/",
+                  "explanation": "The Balances documentation lists only current value and daily change, with no acquisition cost-basis feature (https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Balances/)."
+                }
+              }
+            ]
+          },
           "tokenCategories": {
             "$call": "supported",
             "args": [
@@ -1041,24 +1061,134 @@
             "explanation": "Frame source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://frame.sh"
           },
-          "lendingPositions": null,
-          "stakingPositions": null,
-          "lpPositions": null,
-          "vaultPositions": null,
+          "lendingPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/",
+                  "explanation": "No documented module surfaces lending/borrowing positions among Frame's account modules (https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/)."
+                }
+              }
+            ]
+          },
+          "stakingPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/",
+                  "explanation": "Frame's account modules are Balances, Inventory, Dapps, Chain Monitor and Signer; there is no module that surfaces staking positions, and LSTs like stETH appear only as ordinary token balances (https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/)."
+                }
+              }
+            ]
+          },
+          "lpPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/",
+                  "explanation": "Frame's modules list does not include any liquidity-pool position tracking (https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/)."
+                }
+              }
+            ]
+          },
+          "vaultPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/",
+                  "explanation": "No vault/yield-position module exists in Frame's documented account modules (https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/)."
+                }
+              }
+            ]
+          },
           "perProtocolBalances": null,
-          "claimableRewards": null,
-          "liquidationWarnings": null
+          "claimableRewards": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/",
+                  "explanation": "Frame does not document any module surfacing claimable DeFi rewards (https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/)."
+                }
+              }
+            ]
+          },
+          "liquidationWarnings": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/",
+                  "explanation": "Frame provides no borrow-position tracking, so no liquidation warnings are documented (https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/)."
+                }
+              }
+            ]
+          }
         },
         "stakingEarn": {
           "ref": {
             "explanation": "Frame source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://frame.sh"
           },
-          "nativeStaking": null,
-          "liquidStaking": null,
-          "validatorChoice": null,
-          "apyDisplay": null,
-          "rewardsClaiming": null,
+          "nativeStaking": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.frame.sh/docs/Introduction/",
+                  "explanation": "Frame is a key-management/dApp-connection wallet with no in-app native staking feature documented; staking is done via connected dApps (https://docs.frame.sh/docs/Introduction/)."
+                }
+              }
+            ]
+          },
+          "liquidStaking": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Balances/",
+                  "explanation": "No in-app liquid staking is offered; stETH appears only as a held token balance, not an in-app staking flow (https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Balances/)."
+                }
+              }
+            ]
+          },
+          "validatorChoice": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/",
+                  "explanation": "With no in-app staking, Frame offers no validator selection (https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/)."
+                }
+              }
+            ]
+          },
+          "apyDisplay": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/",
+                  "explanation": "Frame has no in-app staking/earn feature and its docs display no staking APY (https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/)."
+                }
+              }
+            ]
+          },
+          "rewardsClaiming": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/",
+                  "explanation": "Frame provides no in-app staking, therefore no in-app rewards-claiming feature is documented (https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Modules/)."
+                }
+              }
+            ]
+          },
           "providerDependency": null,
           "lockupDisclosure": null
         },

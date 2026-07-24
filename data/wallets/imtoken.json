@@ -910,8 +910,12 @@
             "url": "https://token.im"
           },
           "netWorth": null,
-          "pnl": null,
-          "costBasis": null,
+          "pnl": {
+            "$ref": "notSupported"
+          },
+          "costBasis": {
+            "$ref": "notSupported"
+          },
           "tokenCategories": null,
           "nftSupport": {
             "$call": "supported",
@@ -1097,7 +1101,9 @@
               }
             ]
           },
-          "liquidationWarnings": null
+          "liquidationWarnings": {
+            "$ref": "notSupported"
+          }
         },
         "stakingEarn": {
           "ref": {
@@ -1115,7 +1121,17 @@
               }
             ]
           },
-          "liquidStaking": null,
+          "liquidStaking": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/9992787324313-How-to-stake-ETH-with-Lido-",
+                  "explanation": "imToken offers in-app ETH staking via liquid staking providers including Lido (receiving stETH) and Rocket Pool, accessible from the wallet's Stake/DeFi section."
+                }
+              }
+            ]
+          },
           "validatorChoice": {
             "$call": "supported",
             "args": [

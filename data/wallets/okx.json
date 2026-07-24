@@ -1165,7 +1165,17 @@
               }
             ]
           },
-          "watchOnlyWallets": null,
+          "watchOnlyWallets": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://web3.okx.com/help/how-do-i-manage-my-wallet-app",
+                  "explanation": "OKX Wallet supports adding watch-only wallets under Portfolio to monitor an address's assets, NFT, DeFi and transactions without holding the keys, per its official help docs."
+                }
+              }
+            ]
+          },
           "multiWalletAggregation": {
             "$ref": "featureSupported"
           }

@@ -1413,8 +1413,28 @@
               }
             ]
           },
-          "pnl": null,
-          "costBasis": null,
+          "pnl": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://community.metamask.io/t/feature-request-track-profit-and-loss-per-cryptocurrency-based-on-purchase-history/30857",
+                  "explanation": "MetaMask Portfolio shows balances and current token values but does not natively track profit and loss over time; users are directed to third-party tools, and this remains an open feature request."
+                }
+              }
+            ]
+          },
+          "costBasis": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://community.metamask.io/t/feature-request-track-profit-and-loss-per-cryptocurrency-based-on-purchase-history/30857",
+                  "explanation": "MetaMask does not provide cost basis or acquisition-price tracking natively (only current balances/values), with cost-basis calculations listed among the still-unimplemented requested features."
+                }
+              }
+            ]
+          },
           "tokenCategories": {
             "$call": "supported",
             "args": [
@@ -1640,7 +1660,17 @@
               }
             ]
           },
-          "liquidationWarnings": null
+          "liquidationWarnings": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.metamask.io/manage-crypto/portfolio/how-to-use-the-defi-dashboard-in-metamask-portfolio",
+                  "explanation": "The MetaMask Portfolio DeFi dashboard surfaces external positions (balance, rewards, value) but does not natively warn about liquidation risk on borrow positions; liquidation alerts only exist via a third-party Snap (Mendi Finance) for one protocol."
+                }
+              }
+            ]
+          }
         },
         "stakingEarn": {
           "ref": {

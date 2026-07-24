@@ -1072,7 +1072,17 @@
               }
             ]
           },
-          "watchOnlyWallets": null,
+          "watchOnlyWallets": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://web3.bitget.com/en/blog/articles/bitkeep-v7-3-1-released-added-new-watch-only-mode",
+                  "explanation": "Bitget Wallet added a Watch-only Mode (from v7.3.1) letting users import a public address to monitor balances and transactions without holding the keys."
+                }
+              }
+            ]
+          },
           "multiWalletAggregation": {
             "$ref": "featureSupported"
           }
@@ -1313,7 +1323,17 @@
               }
             ]
           },
-          "validatorChoice": null,
+          "validatorChoice": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://web3.bitget.com/en/academy/how-to-stake-crypto-on-bitget-wallet",
+                  "explanation": "Bitget Wallet's in-app Earn/staking flow is a one-click flow routed through protocols like Lido and Stader with automatic delegation, and the documented flow (select token, enter amount, confirm) provides no option to pick a specific validator."
+                }
+              }
+            ]
+          },
           "apyDisplay": {
             "$call": "supported",
             "args": [

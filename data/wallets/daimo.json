@@ -1098,9 +1098,39 @@
             "explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://daimo.com"
           },
-          "netWorth": null,
-          "pnl": null,
-          "costBasis": null,
+          "netWorth": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://beta.walletbeat.eth.limo/daimo/",
+                  "explanation": "Daimo is a minimal single-stablecoin (USDC on Base) payments app with no aggregate net-worth portfolio view per its docs and Walletbeat profile."
+                }
+              }
+            ]
+          },
+          "pnl": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://beta.walletbeat.eth.limo/daimo/",
+                  "explanation": "Daimo focuses on stablecoin payments and offers no profit/loss tracking per its documentation and Walletbeat profile."
+                }
+              }
+            ]
+          },
+          "costBasis": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://beta.walletbeat.eth.limo/daimo/",
+                  "explanation": "No cost-basis tracking exists in Daimo, a simple USDC payments wallet, per its docs and Walletbeat."
+                }
+              }
+            ]
+          },
           "tokenCategories": null,
           "nftSupport": {
             "$call": "supported",
@@ -1114,7 +1144,17 @@
             ]
           },
           "collectionViews": null,
-          "watchOnlyWallets": null,
+          "watchOnlyWallets": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://beta.walletbeat.eth.limo/daimo/",
+                  "explanation": "Daimo uses device-secured passkey accounts for payments and provides no watch-only address tracking per its documentation."
+                }
+              }
+            ]
+          },
           "multiWalletAggregation": {
             "$ref": "featureSupported"
           }
@@ -1180,24 +1220,134 @@
             "explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://daimo.com"
           },
-          "lendingPositions": null,
-          "stakingPositions": null,
-          "lpPositions": null,
-          "vaultPositions": null,
+          "lendingPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.daimo.com/",
+                  "explanation": "Daimo does not surface lending/borrowing positions; it is a stablecoin payments app with no DeFi position awareness."
+                }
+              }
+            ]
+          },
+          "stakingPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.daimo.com/",
+                  "explanation": "Daimo is a stablecoin payments/deposit product and does not surface external DeFi staking positions."
+                }
+              }
+            ]
+          },
+          "lpPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.daimo.com/",
+                  "explanation": "Daimo shows no liquidity-pool positions, being a minimal USDC payments wallet."
+                }
+              }
+            ]
+          },
+          "vaultPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.daimo.com/",
+                  "explanation": "Daimo does not surface yield-vault positions per its payments-focused documentation."
+                }
+              }
+            ]
+          },
           "perProtocolBalances": null,
-          "claimableRewards": null,
-          "liquidationWarnings": null
+          "claimableRewards": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.daimo.com/",
+                  "explanation": "Daimo surfaces no claimable DeFi rewards, offering only stablecoin send/receive/deposit functionality."
+                }
+              }
+            ]
+          },
+          "liquidationWarnings": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.daimo.com/",
+                  "explanation": "Daimo has no borrow positions or liquidation warnings, being a stablecoin payments app."
+                }
+              }
+            ]
+          }
         },
         "stakingEarn": {
           "ref": {
             "explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://daimo.com"
           },
-          "nativeStaking": null,
-          "liquidStaking": null,
-          "validatorChoice": null,
-          "apyDisplay": null,
-          "rewardsClaiming": null,
+          "nativeStaking": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://beta.walletbeat.eth.limo/daimo/",
+                  "explanation": "Daimo offers no in-app native staking; it is a USDC payments-only wallet per its docs and Walletbeat."
+                }
+              }
+            ]
+          },
+          "liquidStaking": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://beta.walletbeat.eth.limo/daimo/",
+                  "explanation": "Daimo offers no in-app liquid staking per its payments-focused documentation and Walletbeat profile."
+                }
+              }
+            ]
+          },
+          "validatorChoice": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://beta.walletbeat.eth.limo/daimo/",
+                  "explanation": "Daimo has no staking feature and thus no validator selection per its docs and Walletbeat."
+                }
+              }
+            ]
+          },
+          "apyDisplay": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://beta.walletbeat.eth.limo/daimo/",
+                  "explanation": "Daimo displays no staking/earn APY as it has no staking or earn products."
+                }
+              }
+            ]
+          },
+          "rewardsClaiming": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://beta.walletbeat.eth.limo/daimo/",
+                  "explanation": "Daimo provides no in-app staking rewards claiming, offering only stablecoin payments."
+                }
+              }
+            ]
+          },
           "providerDependency": null,
           "lockupDisclosure": null
         },

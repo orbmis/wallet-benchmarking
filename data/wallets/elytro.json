@@ -918,9 +918,39 @@
             "explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://elytro.com"
           },
-          "netWorth": null,
-          "pnl": null,
-          "costBasis": null,
+          "netWorth": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/faq",
+                  "explanation": "Elytro's official site and FAQ describe only balance-checking, send/receive/swap and security features with no aggregate net-worth/portfolio view."
+                }
+              }
+            ]
+          },
+          "pnl": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/",
+                  "explanation": "No profit/loss tracking is mentioned anywhere on Elytro's official site or FAQ, which cover only transactions and security controls."
+                }
+              }
+            ]
+          },
+          "costBasis": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/faq",
+                  "explanation": "Elytro documents no cost-basis or acquisition-price tracking on its official site or FAQ."
+                }
+              }
+            ]
+          },
           "tokenCategories": null,
           "nftSupport": {
             "$call": "supported",
@@ -934,7 +964,17 @@
             ]
           },
           "collectionViews": null,
-          "watchOnlyWallets": null,
+          "watchOnlyWallets": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/faq",
+                  "explanation": "Elytro is a smart-contract account you control via passcode/keys with no documented watch-only address tracking on its official site or FAQ."
+                }
+              }
+            ]
+          },
           "multiWalletAggregation": {
             "$ref": "featureSupported"
           }
@@ -1000,24 +1040,134 @@
             "explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://elytro.com"
           },
-          "lendingPositions": null,
-          "stakingPositions": null,
-          "lpPositions": null,
-          "vaultPositions": null,
+          "lendingPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/",
+                  "explanation": "No lending/borrowing position surfacing (e.g. Aave/Compound) is described in Elytro's official materials."
+                }
+              }
+            ]
+          },
+          "stakingPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/",
+                  "explanation": "Elytro surfaces token balances only; no reading/display of external staking positions is documented on its site or FAQ."
+                }
+              }
+            ]
+          },
+          "lpPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/faq",
+                  "explanation": "Elytro documents no liquidity-pool position tracking on its official site or FAQ."
+                }
+              }
+            ]
+          },
+          "vaultPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/",
+                  "explanation": "No yield-vault position surfacing (e.g. Yearn/Morpho) is documented for Elytro."
+                }
+              }
+            ]
+          },
           "perProtocolBalances": null,
-          "claimableRewards": null,
-          "liquidationWarnings": null
+          "claimableRewards": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/faq",
+                  "explanation": "Elytro's documented features include no claimable-DeFi-rewards surfacing."
+                }
+              }
+            ]
+          },
+          "liquidationWarnings": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/",
+                  "explanation": "Elytro provides no borrow/liquidation-risk warnings; it has no DeFi position awareness in its documented feature set."
+                }
+              }
+            ]
+          }
         },
         "stakingEarn": {
           "ref": {
             "explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://elytro.com"
           },
-          "nativeStaking": null,
-          "liquidStaking": null,
-          "validatorChoice": null,
-          "apyDisplay": null,
-          "rewardsClaiming": null,
+          "nativeStaking": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/",
+                  "explanation": "Elytro offers send/receive/swap/bridge and security controls but no in-app native protocol staking per its official site."
+                }
+              }
+            ]
+          },
+          "liquidStaking": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/",
+                  "explanation": "No in-app liquid staking (Lido/Rocket Pool style) is documented in Elytro's official materials."
+                }
+              }
+            ]
+          },
+          "validatorChoice": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/faq",
+                  "explanation": "With no in-app staking, Elytro offers no validator selection per its official site and FAQ."
+                }
+              }
+            ]
+          },
+          "apyDisplay": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/faq",
+                  "explanation": "Elytro displays no staking/earn APY as it offers no staking/earn product per its site and FAQ."
+                }
+              }
+            ]
+          },
+          "rewardsClaiming": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/",
+                  "explanation": "Elytro has no in-app rewards-claiming feature since it offers no staking product."
+                }
+              }
+            ]
+          },
           "providerDependency": null,
           "lockupDisclosure": null
         },

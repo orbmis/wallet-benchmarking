@@ -1054,8 +1054,28 @@
           "netWorth": {
             "$ref": "featureSupported"
           },
-          "pnl": null,
-          "costBasis": null,
+          "pnl": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
+                  "explanation": "Uniswap's official blog confirms realized and unrealized profit-and-loss metrics are live across the Web App, Wallet, and Extension for every token and at the wallet level."
+                }
+              }
+            ]
+          },
+          "costBasis": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
+                  "explanation": "The official blog states cost basis is calculated from swap history (and price at time of receipt for transferred tokens) to drive the P&L display."
+                }
+              }
+            ]
+          },
           "tokenCategories": {
             "$call": "supported",
             "args": [
@@ -1089,7 +1109,17 @@
               }
             ]
           },
-          "watchOnlyWallets": null,
+          "watchOnlyWallets": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.uniswap.org/hc/en-us/articles/13520440420365-How-to-add-a-view-only-wallet",
+                  "explanation": "Uniswap Labs support documents a 'view-only wallet' feature letting users add and follow any address whose keys they do not hold to see its tokens and NFTs."
+                }
+              }
+            ]
+          },
           "multiWalletAggregation": {
             "$ref": "featureSupported"
           }
@@ -1185,24 +1215,124 @@
             "explanation": "Uniswap Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://wallet.uniswap.org/"
           },
-          "lendingPositions": null,
-          "stakingPositions": null,
-          "lpPositions": null,
-          "vaultPositions": null,
+          "lendingPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://app.uniswap.org/positions",
+                  "explanation": "No official source indicates Uniswap surfaces third-party lending/borrowing positions (Aave, Compound); its position views are limited to Uniswap liquidity pools."
+                }
+              }
+            ]
+          },
+          "stakingPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
+                  "explanation": "Uniswap's apps surface only its own protocol's liquidity positions and portfolio balances, with no evidence it reads/displays external staking positions from other DeFi protocols."
+                }
+              }
+            ]
+          },
+          "lpPositions": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.uniswap.org/hc/en-us/articles/20901267003789-How-to-collect-fees-from-a-liquidity-pool-on-Uniswap-v3",
+                  "explanation": "The Uniswap Web App's Positions/Pool page displays and manages the user's Uniswap liquidity-pool positions including fees earned."
+                }
+              }
+            ]
+          },
+          "vaultPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://app.uniswap.org/positions",
+                  "explanation": "No official source shows Uniswap surfacing external yield-vault positions (e.g. Yearn, Morpho); position views cover only Uniswap liquidity pools."
+                }
+              }
+            ]
+          },
           "perProtocolBalances": null,
           "claimableRewards": null,
-          "liquidationWarnings": null
+          "liquidationWarnings": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://app.uniswap.org/positions",
+                  "explanation": "Uniswap does not offer borrow positions and no source indicates it surfaces liquidation-risk warnings for external lending protocols."
+                }
+              }
+            ]
+          }
         },
         "stakingEarn": {
           "ref": {
             "explanation": "Uniswap Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://wallet.uniswap.org/"
           },
-          "nativeStaking": null,
-          "liquidStaking": null,
-          "validatorChoice": null,
-          "apyDisplay": null,
-          "rewardsClaiming": null,
+          "nativeStaking": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.uniswap.org/hc/en-us/articles/11306214484237-Can-I-create-or-view-my-liquidity-position-in-the-Uniswap-Wallet",
+                  "explanation": "Uniswap's wallet/app centers on swaps and liquidity provision and does not offer in-app native protocol staking such as ETH or SOL staking."
+                }
+              }
+            ]
+          },
+          "liquidStaking": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://app.uniswap.org/explore/tokens/ethereum/0x8c1bed5b9a0928467c9b1341da1d7bd5e10b6549",
+                  "explanation": "Uniswap only lets users swap for liquid-staking tokens on the DEX rather than offering an in-app liquid-staking earn product; there is no Lido/Rocket-Pool-style staking flow in the wallet."
+                }
+              }
+            ]
+          },
+          "validatorChoice": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.uniswap.org/hc/en-us/articles/11306214484237-Can-I-create-or-view-my-liquidity-position-in-the-Uniswap-Wallet",
+                  "explanation": "Uniswap offers no in-app native/validator staking flow, so users cannot pick a validator within the wallet."
+                }
+              }
+            ]
+          },
+          "apyDisplay": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.uniswap.org/lp-rewards",
+                  "explanation": "The app displays reward/APR only for liquidity pools, not for any staking/earn product, since Uniswap offers no in-app staking."
+                }
+              }
+            ]
+          },
+          "rewardsClaiming": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.uniswap.org/hc/en-us/articles/20901267003789-How-to-collect-fees-from-a-liquidity-pool-on-Uniswap-v3",
+                  "explanation": "Users can claim LP fees/rewards but there is no in-app staking product, so no staking-reward claiming exists."
+                }
+              }
+            ]
+          },
           "providerDependency": null,
           "lockupDisclosure": null
         },

@@ -871,9 +871,39 @@
             "explanation": "Trust Wallet browser-extension page describes earning rewards, managing NFTs, swapping, and multi-wallet management.",
             "url": "https://trustwallet.com/browser-extension"
           },
-          "netWorth": null,
-          "pnl": null,
-          "costBasis": null,
+          "netWorth": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trustwallet.com/blog/web3/how-to-track-your-portfolio-in-trust-wallet",
+                  "explanation": "Trust Wallet's home screen shows total portfolio value in the user's preferred currency, aggregating holdings across chains."
+                }
+              }
+            ]
+          },
+          "pnl": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.tradingview.com/news/coindar:51c14e4e4094b:0-trust-wallet-added-pnl-cards-to-trades/",
+                  "explanation": "Trust Wallet added profit-and-loss (PnL) cards to trades, showing P&L information in a dedicated card."
+                }
+              }
+            ]
+          },
+          "costBasis": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trustwallet.com/blog/web3/how-to-track-your-portfolio-in-trust-wallet",
+                  "explanation": "Trust Wallet's portfolio view surfaces value and percentage changes but no native cost-basis tracking; cost basis is only available via third-party tools like CoinLedger."
+                }
+              }
+            ]
+          },
           "tokenCategories": null,
           "nftSupport": {
             "$call": "supported",
@@ -897,7 +927,17 @@
               }
             ]
           },
-          "watchOnlyWallets": null,
+          "watchOnlyWallets": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.trustwallet.com/support/solutions/articles/67000731857-how-to-add-a-watch-only-wallet-address",
+                  "explanation": "Trust Wallet supports adding a View-only (watch-only) wallet address to track tokens, collectibles, and transaction history without holding keys."
+                }
+              }
+            ]
+          },
           "multiWalletAggregation": {
             "$call": "supported",
             "args": [
@@ -1097,7 +1137,17 @@
               }
             ]
           },
-          "liquidationWarnings": null
+          "liquidationWarnings": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trustwallet.com/blog/web3/how-to-track-your-portfolio-in-trust-wallet",
+                  "explanation": "No authoritative source indicates Trust Wallet natively surfaces external DeFi lending positions or warns of liquidation/health-factor risk on borrow positions."
+                }
+              }
+            ]
+          }
         },
         "stakingEarn": {
           "ref": {
@@ -1115,8 +1165,28 @@
               }
             ]
           },
-          "liquidStaking": null,
-          "validatorChoice": null,
+          "liquidStaking": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trustwallet.com/blog/staking/what-is-liquid-staking",
+                  "explanation": "Trust Wallet does not offer native in-app liquid staking; its liquid staking article only describes receiving/managing LSTs obtained from another wallet or exchange."
+                }
+              }
+            ]
+          },
+          "validatorChoice": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trustwallet.com/blog/staking/staking-made-simple-how-to-earn-rewards-in-trust-wallet",
+                  "explanation": "Trust Wallet's in-app staking flow presents a list of available validators with APR so users can choose which validator to delegate to."
+                }
+              }
+            ]
+          },
           "apyDisplay": {
             "$call": "supported",
             "args": [
@@ -1128,7 +1198,17 @@
               }
             ]
           },
-          "rewardsClaiming": null,
+          "rewardsClaiming": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trustwallet.com/blog/staking/staking-made-simple-how-to-earn-rewards-in-trust-wallet",
+                  "explanation": "Trust Wallet's in-app Earn/staking section shows unclaimed rewards with a Claim button to transfer earned tokens to the wallet balance."
+                }
+              }
+            ]
+          },
           "providerDependency": "Trust Wallet says earn rewards are available via trusted providers.",
           "lockupDisclosure": null
         },

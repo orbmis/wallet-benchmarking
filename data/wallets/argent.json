@@ -909,7 +909,17 @@
             "$ref": "featureSupported"
           },
           "pnl": null,
-          "costBasis": null,
+          "costBasis": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.cryptovantage.com/best-crypto-wallets/argent-wallet/",
+                  "explanation": "Argent is a self-custody DeFi wallet with no cost-basis tracking; reviews explicitly note users rely on external trackers (e.g. CoinTracking) for cost basis, and no official source describes an in-app cost-basis feature."
+                }
+              }
+            ]
+          },
           "tokenCategories": {
             "$call": "supported",
             "args": [
@@ -933,7 +943,17 @@
             ]
           },
           "collectionViews": null,
-          "watchOnlyWallets": null,
+          "watchOnlyWallets": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.cryptovantage.com/best-crypto-wallets/argent-wallet/",
+                  "explanation": "No official or secondary source describes watch-only address tracking in Argent/Ready, which is a self-custody signing wallet rather than a portfolio aggregator."
+                }
+              }
+            ]
+          },
           "multiWalletAggregation": {
             "$ref": "featureSupported"
           }
@@ -989,10 +1009,40 @@
             "explanation": "Argent source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://www.argent.xyz/"
           },
-          "lendingPositions": null,
+          "lendingPositions": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.ready.co/blog/how-to-earn-interest-with-aave-on-layer-2",
+                  "explanation": "Argent integrates Aave lending where aTokens accrue interest directly in the wallet, so the lending position and accrued interest are surfaced in-app."
+                }
+              }
+            ]
+          },
           "stakingPositions": null,
-          "lpPositions": null,
-          "vaultPositions": null,
+          "lpPositions": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.bankless.com/how-to-maximize-your-argent-wallet",
+                  "explanation": "Argent's Invest section supports providing liquidity to pools (e.g. Balancer/Uniswap) and holds the resulting LP positions in-app."
+                }
+              }
+            ]
+          },
+          "vaultPositions": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.argent.xyz/hc/en-us/articles/360015729618-Using-Yearn-with-Argent",
+                  "explanation": "Argent integrates Yearn vaults, where yTokens representing the user's vault share are held and displayed in the wallet."
+                }
+              }
+            ]
+          },
           "perProtocolBalances": null,
           "claimableRewards": null,
           "liquidationWarnings": null
@@ -1003,7 +1053,17 @@
             "url": "https://www.argent.xyz/"
           },
           "nativeStaking": null,
-          "liquidStaking": null,
+          "liquidStaking": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.ready.co/learn/what-is-staking",
+                  "explanation": "Argent offers in-app ETH liquid staking via Lido, giving the user stETH (or wstETH on Starknet) as a liquid staking token."
+                }
+              }
+            ]
+          },
           "validatorChoice": null,
           "apyDisplay": null,
           "rewardsClaiming": null,

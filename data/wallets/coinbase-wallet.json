@@ -1139,8 +1139,28 @@
               }
             ]
           },
-          "liquidStaking": null,
-          "validatorChoice": null,
+          "liquidStaking": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.coinbase.com/learn/wallet/how-to-stake-ether",
+                  "explanation": "Coinbase Wallet is non-custodial and lets users stake ETH in-app by routing to on-chain liquid-staking protocols (e.g. Lido/Rocket Pool) while keeping their keys."
+                }
+              }
+            ]
+          },
+          "validatorChoice": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.coinbase.com/blog/coinbase-cloud-and-kiln-unlock-native-eth-staking",
+                  "explanation": "In-app ETH staking uses pooled staking via Kiln smart contracts where funds are aggregated and validators are selected by the protocol, so the user does not choose the validator."
+                }
+              }
+            ]
+          },
           "apyDisplay": {
             "$call": "supported",
             "args": [

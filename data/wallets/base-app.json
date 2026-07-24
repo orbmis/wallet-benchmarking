@@ -1101,8 +1101,28 @@
           "netWorth": {
             "$ref": "featureSupported"
           },
-          "pnl": null,
-          "costBasis": null,
+          "pnl": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.gncrypto.news/news/coinbase-wallet-review/",
+                  "explanation": "Coinbase Wallet/Base app shows a simple portfolio and history but has no built-in profit/loss tracking; reviews and user guidance note assets held in the wallet are excluded from Coinbase performance tracking and require third-party tools."
+                }
+              }
+            ]
+          },
+          "costBasis": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.gncrypto.news/news/coinbase-wallet-review/",
+                  "explanation": "No cost-basis tracking is present in the Base app; transactions in the self-custody wallet are not included in Coinbase's cost-basis/performance data and require external trackers."
+                }
+              }
+            ]
+          },
           "tokenCategories": {
             "$call": "supported",
             "args": [
@@ -1127,7 +1147,17 @@
           },
           "collectionViews": null,
           "watchOnlyWallets": null,
-          "multiWalletAggregation": null
+          "multiWalletAggregation": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://apps.apple.com/us/app/base-formerly-coinbase-wallet/id1278383455",
+                  "explanation": "The Coinbase Wallet web app/Base app offers a 360-degree view letting users connect multiple wallets and see crypto, NFTs, and DeFi positions across all wallets in one place, filterable by chain and address."
+                }
+              }
+            ]
+          }
         },
         "notifications": {
           "ref": {
@@ -1241,7 +1271,17 @@
             "url": "https://base.app/"
           },
           "lendingPositions": null,
-          "stakingPositions": null,
+          "stakingPositions": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://apps.apple.com/us/app/base-formerly-coinbase-wallet/id1278383455",
+                  "explanation": "The app's 360-degree portfolio view surfaces DeFi positions including staking across connected wallets, filterable by chain and address."
+                }
+              }
+            ]
+          },
           "lpPositions": null,
           "vaultPositions": null,
           "perProtocolBalances": null,
@@ -1253,9 +1293,39 @@
             "explanation": "Base App source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://base.app/"
           },
-          "nativeStaking": null,
-          "liquidStaking": null,
-          "validatorChoice": null,
+          "nativeStaking": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.coinbase.com/en/wallet/dapps-and-defi/staking-e-th",
+                  "explanation": "The Base app offers in-app ETH staking, letting anyone lock ETH to participate in Ethereum proof-of-stake consensus and earn rewards."
+                }
+              }
+            ]
+          },
+          "liquidStaking": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.coinbase.com/en/wallet/dapps-and-defi/staking-e-th",
+                  "explanation": "The Base app offers ETH staking plus access to liquid staking tokens including cbETH (Coinbase Wrapped Staked ETH)."
+                }
+              }
+            ]
+          },
+          "validatorChoice": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.coinbase.com/en/wallet/dapps-and-defi/staking-e-th",
+                  "explanation": "Base app staking abstracts the technical work and routes to staking protocols without exposing individual validator selection to the user."
+                }
+              }
+            ]
+          },
           "apyDisplay": null,
           "rewardsClaiming": null,
           "providerDependency": null,

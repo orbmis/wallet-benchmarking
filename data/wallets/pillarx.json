@@ -820,8 +820,28 @@
           "netWorth": {
             "$ref": "featureSupported"
           },
-          "pnl": null,
-          "costBasis": null,
+          "pnl": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.pillarx.app/introducing-pnl-track-your-trading-results-on-pillarx/",
+                  "explanation": "PillarX's official blog 'Introducing PnL' describes tracking realised and unrealised profit and loss on holdings."
+                }
+              }
+            ]
+          },
+          "costBasis": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.pillarx.app/introducing-pnl-track-your-trading-results-on-pillarx/",
+                  "explanation": "The same PnL blog post states PillarX uses a Weighted Average Cost method to combine multiple buys into one clear average cost basis."
+                }
+              }
+            ]
+          },
           "tokenCategories": {
             "$call": "supported",
             "args": [
@@ -845,8 +865,28 @@
             ]
           },
           "collectionViews": null,
-          "watchOnlyWallets": null,
-          "multiWalletAggregation": null
+          "watchOnlyWallets": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+                  "explanation": "No official source (site, App Store listing, or blog) describes any watch-only address tracking feature in PillarX."
+                }
+              }
+            ]
+          },
+          "multiWalletAggregation": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://pillar.fi/",
+                  "explanation": "PillarX is a single self-custodial smart-contract wallet with one unified address across chains, and no source describes aggregating multiple separate wallets/accounts into one portfolio view."
+                }
+              }
+            ]
+          }
         },
         "notifications": {
           "ref": {
@@ -909,13 +949,73 @@
             "explanation": "PillarX source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://pillarx.app"
           },
-          "lendingPositions": null,
-          "stakingPositions": null,
-          "lpPositions": null,
-          "vaultPositions": null,
+          "lendingPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+                  "explanation": "No PillarX source describes surfacing existing lending/borrowing positions from protocols like Aave or Compound in its UI."
+                }
+              }
+            ]
+          },
+          "stakingPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+                  "explanation": "PillarX centers on swaps, PnL and in-app yield strategies but no source shows it surfaces the user's existing external staking positions."
+                }
+              }
+            ]
+          },
+          "lpPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+                  "explanation": "No PillarX source describes reading or displaying the user's existing liquidity-pool positions."
+                }
+              }
+            ]
+          },
+          "vaultPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.pillarx.app/lobster-protocol-top-tier-defi-strategies-in-pillarx/",
+                  "explanation": "PillarX's Lobster integration lets users deposit into automated yield strategies in-app, but no source shows it surfaces the user's existing external vault positions for tracking."
+                }
+              }
+            ]
+          },
           "perProtocolBalances": null,
-          "claimableRewards": null,
-          "liquidationWarnings": null
+          "claimableRewards": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+                  "explanation": "No PillarX source describes surfacing claimable DeFi rewards from external protocols in the wallet."
+                }
+              }
+            ]
+          },
+          "liquidationWarnings": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+                  "explanation": "No PillarX source describes liquidation-risk warnings for borrow positions."
+                }
+              }
+            ]
+          }
         },
         "stakingEarn": {
           "ref": {
@@ -923,10 +1023,40 @@
             "url": "https://pillarx.app"
           },
           "nativeStaking": null,
-          "liquidStaking": null,
-          "validatorChoice": null,
+          "liquidStaking": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.pillarx.app/",
+                  "explanation": "No PillarX source describes in-app liquid staking via Lido/Rocket Pool-style LSTs."
+                }
+              }
+            ]
+          },
+          "validatorChoice": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.pillarx.app/lobster-protocol-top-tier-defi-strategies-in-pillarx/",
+                  "explanation": "No PillarX source describes letting users choose a validator to stake with; its yield strategies are automated with no validator selection."
+                }
+              }
+            ]
+          },
           "apyDisplay": null,
-          "rewardsClaiming": null,
+          "rewardsClaiming": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.pillarx.app/",
+                  "explanation": "No PillarX source describes an in-app staking rewards claiming feature."
+                }
+              }
+            ]
+          },
           "providerDependency": null,
           "lockupDisclosure": null
         },
