@@ -1349,8 +1349,28 @@
               }
             ]
           },
-          "embeddedWalletSdk": null,
-          "whiteLabelOffering": null,
+          "embeddedWalletSdk": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbowkit.com/docs/introduction",
+                  "explanation": "RainbowKit is a React wallet-connection library providing a UI layer to connect to existing wallets, not an embedded wallet SDK."
+                }
+              }
+            ]
+          },
+          "whiteLabelOffering": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbowkit.com/docs/introduction",
+                  "explanation": "RainbowKit is a dApp wallet-connection library; Rainbow wallet has no publicly documented WaaS or white-label product for businesses."
+                }
+              }
+            ]
+          },
           "walletConnectSupport": {
             "$ref": "featureSupported"
           },

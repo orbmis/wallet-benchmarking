@@ -1522,8 +1522,28 @@
               }
             ]
           },
-          "embeddedWalletSdk": null,
-          "whiteLabelOffering": null,
+          "embeddedWalletSdk": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://zerion.io/blog/zerion-api-dashboard-for-enterprise-wallet-data/",
+                  "explanation": "Zerion's developer API is a portfolio data API for reading on-chain data, not an embedded wallet SDK for key management or wallet creation."
+                }
+              }
+            ]
+          },
+          "whiteLabelOffering": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://zerion.io/api/",
+                  "explanation": "Zerion offers an enterprise wallet data API (a data layer), not a white-label wallet product for businesses to deploy under their own brand."
+                }
+              }
+            ]
+          },
           "walletConnectSupport": {
             "$ref": "featureSupported"
           },

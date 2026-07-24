@@ -1473,7 +1473,9 @@
               }
             ]
           },
-          "eip6963": null,
+          "eip6963": {
+            "$ref": "notApplicable"
+          },
           "eip5792": null,
           "deepLinks": null,
           "mobileLinkingQuality": null

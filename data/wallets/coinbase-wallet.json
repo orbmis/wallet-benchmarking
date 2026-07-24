@@ -1360,8 +1360,28 @@
           "walletConnectSupport": {
             "$ref": "featureSupported"
           },
-          "eip6963": null,
-          "eip5792": null,
+          "eip6963": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://reown.com/blog/eip6963-is-now-approved",
+                  "explanation": "Coinbase Wallet is explicitly named in WalletConnect/Reown's EIP-6963 approval announcement as adopting the standard."
+                }
+              }
+            ]
+          },
+          "eip5792": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.eip5792.xyz/ecosystem/wallets",
+                  "explanation": "Coinbase Smart Wallet is listed on the EIP-5792 ecosystem wallets page and corroborated by thirdweb and WalletConnect as supporting wallet_sendCalls."
+                }
+              }
+            ]
+          },
           "deepLinks": {
             "$call": "supported",
             "args": [

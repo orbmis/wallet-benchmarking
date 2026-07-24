@@ -1291,7 +1291,17 @@
               }
             ]
           },
-          "whiteLabelOffering": null,
+          "whiteLabelOffering": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/Elytro-eth/elytro-wallet-core",
+                  "explanation": "Elytro publishes an open-source ERC-4337 smart contract wallet framework but no white-label WaaS or enterprise product for businesses to deploy a branded wallet."
+                }
+              }
+            ]
+          },
           "walletConnectSupport": null,
           "eip6963": null,
           "eip5792": null,

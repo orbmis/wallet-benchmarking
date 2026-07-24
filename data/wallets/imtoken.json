@@ -1327,12 +1327,24 @@
               }
             ]
           },
-          "embeddedWalletSdk": null,
+          "embeddedWalletSdk": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.token.im/dapp-sdk/en/",
+                  "explanation": "imToken's DApp SDK is a provider-style API for dApps to interact with the imToken app, not an embedded wallet SDK for creating/managing keys inside third-party apps."
+                }
+              }
+            ]
+          },
           "whiteLabelOffering": null,
           "walletConnectSupport": {
             "$ref": "featureSupported"
           },
-          "eip6963": null,
+          "eip6963": {
+            "$ref": "notApplicable"
+          },
           "eip5792": null,
           "deepLinks": {
             "$call": "supported",

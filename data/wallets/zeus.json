@@ -1399,11 +1399,35 @@
               }
             ]
           },
-          "embeddedWalletSdk": null,
+          "embeddedWalletSdk": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.zeusln.app/",
+                  "explanation": "Zeus is an open-source Bitcoin/Lightning mobile wallet; its docs and repo show no developer-facing embedded wallet SDK."
+                }
+              }
+            ]
+          },
           "whiteLabelOffering": null,
-          "walletConnectSupport": null,
-          "eip6963": null,
-          "eip5792": null,
+          "walletConnectSupport": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.zeusln.app/",
+                  "explanation": "Zeus supports Nostr Wallet Connect (a distinct protocol) but not the WalletConnect standard; WalletConnect is not mentioned in its official docs or README."
+                }
+              }
+            ]
+          },
+          "eip6963": {
+            "$ref": "notApplicable"
+          },
+          "eip5792": {
+            "$ref": "notApplicable"
+          },
           "deepLinks": null,
           "mobileLinkingQuality": null
         },

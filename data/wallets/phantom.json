@@ -1567,9 +1567,39 @@
               }
             ]
           },
-          "whiteLabelOffering": null,
-          "walletConnectSupport": null,
-          "eip6963": null,
+          "whiteLabelOffering": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.phantom.com/introduction",
+                  "explanation": "Phantom's SDK is for integrating with Phantom's own wallet, not for deploying an independently branded white-label wallet-as-a-service."
+                }
+              }
+            ]
+          },
+          "walletConnectSupport": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://walletconnect.com/explorer/phantom",
+                  "explanation": "Phantom is listed on the WalletConnect explorer and supports the WalletConnect protocol for connecting to dApps."
+                }
+              }
+            ]
+          },
+          "eip6963": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.phantom.com/ethereum-monad-testnet-base-and-polygon/getting-started",
+                  "explanation": "Phantom's developer documentation explicitly states it supports EIP-6963 for ease of integration."
+                }
+              }
+            ]
+          },
           "eip5792": null,
           "deepLinks": {
             "$call": "supported",
