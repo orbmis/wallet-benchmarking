@@ -708,12 +708,72 @@
             "explanation": "PillarX source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://pillarx.app"
           },
-          "buyCrypto": null,
-          "sellCrypto": null,
-          "bankTransfer": null,
-          "card": null,
-          "applePay": null,
-          "googlePay": null,
+          "buyCrypto": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+                  "explanation": "The current PillarX App Store listing's release notes (v3.31.1, 09/02/2025) state the app \"removed the option to buy and sell using third party sites,\" and the current description only lists cross-chain swaps and stablecoin gas with no fiat on-ramp."
+                }
+              }
+            ]
+          },
+          "sellCrypto": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+                  "explanation": "The same App Store release notes (v3.31.1, 09/02/2025) confirm buy AND sell via third-party providers was removed, so the current shipping PillarX app offers no fiat off-ramp."
+                }
+              }
+            ]
+          },
+          "bankTransfer": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+                  "explanation": "No in-app fiat ramp exists in the current PillarX app after buy/sell was removed (v3.31.1, 09/02/2025), so bank transfer is not offered as a ramp payment method."
+                }
+              }
+            ]
+          },
+          "card": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+                  "explanation": "With in-app buy/sell removed in the current PillarX app (v3.31.1, 09/02/2025), no fiat ramp exists, so card payments are not available in the shipping product."
+                }
+              }
+            ]
+          },
+          "applePay": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+                  "explanation": "No in-app fiat ramp exists in the current PillarX app after buy/sell was removed (v3.31.1, 09/02/2025), so Apple Pay is not offered as a ramp payment method."
+                }
+              }
+            ]
+          },
+          "googlePay": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+                  "explanation": "No in-app fiat ramp exists in the current PillarX app after buy/sell was removed (v3.31.1, 09/02/2025), so Google Pay is not offered as a ramp payment method."
+                }
+              }
+            ]
+          },
           "kycDependency": "KYCDependency.UNKNOWN",
           "providers": [],
           "regionalAvailability": null

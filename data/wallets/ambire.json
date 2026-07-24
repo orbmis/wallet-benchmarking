@@ -1408,12 +1408,72 @@
             "explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://www.ambire.com"
           },
-          "buyCrypto": null,
-          "sellCrypto": null,
-          "bankTransfer": null,
-          "card": null,
-          "applePay": null,
-          "googlePay": null,
+          "buyCrypto": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.ambire.com/moonpay-integration-released-seamlessly-on-off-ramp-solution-for-ambire/",
+                  "explanation": "Ambire offers in-app fiat-to-crypto buying via integrated providers (Ramp Network, Transak, MoonPay, Guardarian) from the wallet's Deposit tab."
+                }
+              }
+            ]
+          },
+          "sellCrypto": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.ambire.com/ambire-releases-fiat-off-ramp-feature-becoming-your-true-one-stop-shop-for-crypto/",
+                  "explanation": "Ambire released an in-app fiat off-ramp (via Guardarian and MoonPay) letting users sell crypto and receive cash directly to their bank account."
+                }
+              }
+            ]
+          },
+          "bankTransfer": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.ambire.com/moonpay-integration-released-seamlessly-on-off-ramp-solution-for-ambire/",
+                  "explanation": "Ambire's ramps support bank transfer methods (SEPA, ACH, wire) via MoonPay and Guardarian for both on- and off-ramping."
+                }
+              }
+            ]
+          },
+          "card": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.ambire.com/moonpay-integration-released-seamlessly-on-off-ramp-solution-for-ambire/",
+                  "explanation": "The MoonPay integration supports credit/debit cards (Visa, Mastercard) for buying crypto in-app, and Transak supports card purchases too."
+                }
+              }
+            ]
+          },
+          "applePay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.ambire.com/moonpay-integration-released-seamlessly-on-off-ramp-solution-for-ambire/",
+                  "explanation": "The MoonPay integration in Ambire explicitly supports Apple Pay as a payment method for buying crypto."
+                }
+              }
+            ]
+          },
+          "googlePay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.ambire.com/moonpay-integration-released-seamlessly-on-off-ramp-solution-for-ambire/",
+                  "explanation": "The MoonPay integration in Ambire explicitly supports Google Pay as a payment method for buying crypto."
+                }
+              }
+            ]
+          },
           "kycDependency": "KYCDependency.UNKNOWN",
           "providers": [],
           "regionalAvailability": null

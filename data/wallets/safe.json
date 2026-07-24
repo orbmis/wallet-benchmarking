@@ -993,7 +993,17 @@
               }
             ]
           },
-          "sellCrypto": null,
+          "sellCrypto": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://safe.global/blog/fiat-on-ramp-now-available-in-safe-wallet-mobile-app-ios",
+                  "explanation": "Safe{Wallet}'s only documented fiat ramp is a MoonPay-powered buy/on-ramp for iOS; no official source describes an off-ramp or selling crypto to fiat."
+                }
+              }
+            ]
+          },
           "bankTransfer": null,
           "card": {
             "$call": "supported",
@@ -1006,7 +1016,17 @@
               }
             ]
           },
-          "applePay": null,
+          "applePay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://safe.global/blog/fiat-on-ramp-now-available-in-safe-wallet-mobile-app-ios",
+                  "explanation": "Safe's official on-ramp announcement states users can buy crypto within Safe{Wallet} using debit/credit card or Apple Pay via MoonPay."
+                }
+              }
+            ]
+          },
           "googlePay": null,
           "kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
           "providers": [

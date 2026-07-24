@@ -730,7 +730,17 @@
               }
             ]
           },
-          "sellCrypto": null,
+          "sellCrypto": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/support/buy-crypto",
+                  "explanation": "Family's fiat integration via Stripe is documented only for buying crypto (on-ramp); no sell/cash-out to fiat feature appears in Family's support or FAQ pages."
+                }
+              }
+            ]
+          },
           "bankTransfer": {
             "$call": "supported",
             "args": [

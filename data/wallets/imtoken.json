@@ -780,12 +780,52 @@
             "explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://token.im"
           },
-          "buyCrypto": null,
+          "buyCrypto": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.moonpay.com/newsroom/imtoken",
+                  "explanation": "imToken integrates MoonPay (and OpenC) for in-app fiat-to-crypto purchases via a 'Buy' button on the wallet home, per imToken's help center and the MoonPay partnership announcement."
+                }
+              }
+            ]
+          },
           "sellCrypto": null,
           "bankTransfer": null,
-          "card": null,
-          "applePay": null,
-          "googlePay": null,
+          "card": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/37321215580057-How-to-get-tokens-via-MoonPay-in-imToken",
+                  "explanation": "imToken's help documentation states the MoonPay integration lets users pay with Visa (card), alongside Apple Pay and Google Pay."
+                }
+              }
+            ]
+          },
+          "applePay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/37321215580057-How-to-get-tokens-via-MoonPay-in-imToken",
+                  "explanation": "imToken's help documentation states the MoonPay integration supports Apple Pay as a payment method for buying tokens."
+                }
+              }
+            ]
+          },
+          "googlePay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/37321215580057-How-to-get-tokens-via-MoonPay-in-imToken",
+                  "explanation": "imToken's help documentation states the MoonPay integration supports Google Pay as a payment method for buying tokens."
+                }
+              }
+            ]
+          },
           "kycDependency": "KYCDependency.UNKNOWN",
           "providers": [],
           "regionalAvailability": null
@@ -1075,7 +1115,17 @@
             "explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://token.im"
           },
-          "lendingPositions": null,
+          "lendingPositions": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://medium.com/imtoken/new-on-imtoken-defi-portfolio-manager-powered-by-debank-61302b6feeec",
+                  "explanation": "The DeBank-powered DeFi Portfolio Manager surfaces lending/borrowing positions (loans) across protocols like Aave and Compound."
+                }
+              }
+            ]
+          },
           "stakingPositions": {
             "$call": "supported",
             "args": [
@@ -1087,8 +1137,28 @@
               }
             ]
           },
-          "lpPositions": null,
-          "vaultPositions": null,
+          "lpPositions": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://medium.com/imtoken/new-on-imtoken-defi-portfolio-manager-powered-by-debank-61302b6feeec",
+                  "explanation": "The DeBank-powered DeFi Portfolio Manager surfaces AMM/DEX liquidity-pool balances (e.g. Uniswap, PancakeSwap positions)."
+                }
+              }
+            ]
+          },
+          "vaultPositions": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://medium.com/imtoken/new-on-imtoken-defi-portfolio-manager-powered-by-debank-61302b6feeec",
+                  "explanation": "The DeBank-powered DeFi Portfolio Manager surfaces yield-vault/yield-aggregator and farm positions among the DeFi balances it displays."
+                }
+              }
+            ]
+          },
           "perProtocolBalances": null,
           "claimableRewards": {
             "$call": "supported",

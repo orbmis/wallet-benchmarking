@@ -910,7 +910,17 @@
               }
             ]
           },
-          "sellCrypto": null,
+          "sellCrypto": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/daimo-eth/daimo",
+                  "explanation": "The Daimo consumer app integrated Coinbase Onramp for in-app deposits/buying (on-ramp) only; its withdrawal was on-chain crypto withdrawal, and neither the archived app README (github.com/daimo-eth/daimo) nor Daimo docs document any in-app crypto-to-fiat sell/off-ramp."
+                }
+              }
+            ]
+          },
           "bankTransfer": {
             "$call": "supported",
             "args": [
@@ -922,7 +932,17 @@
               }
             ]
           },
-          "card": null,
+          "card": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.cdp.coinbase.com/onramp/coinbase-hosted-onramp/overview",
+                  "explanation": "Coinbase Onramp was live in the Daimo app as its in-app buy/deposit provider, and Coinbase Onramp's supported payment methods include debit cards per Coinbase's developer documentation."
+                }
+              }
+            ]
+          },
           "applePay": {
             "$call": "supported",
             "args": [

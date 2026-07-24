@@ -702,10 +702,50 @@
               }
             ]
           },
-          "bankTransfer": null,
-          "card": null,
-          "applePay": null,
-          "googlePay": null,
+          "bankTransfer": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.rampnetwork.com/en/articles/12630-what-payment-methods-does-ramp-network-support-for-buying-crypto",
+                  "explanation": "Ramp supports bank transfers (SEPA/Easy Bank Transfer/manual transfers) per its payment-methods page, and Brave's off-ramp blog confirms bank transfers are among Ramp's supported methods in Brave Wallet."
+                }
+              }
+            ]
+          },
+          "card": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.rampnetwork.com/en/articles/12630-what-payment-methods-does-ramp-network-support-for-buying-crypto",
+                  "explanation": "Ramp Network (Brave Wallet's integrated on/off-ramp) supports Visa/Mastercard debit and credit cards per Ramp's official payment-methods support page."
+                }
+              }
+            ]
+          },
+          "applePay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.rampnetwork.com/en/articles/12630-what-payment-methods-does-ramp-network-support-for-buying-crypto",
+                  "explanation": "Ramp supports Apple Pay (with a linked Visa/Mastercard), as confirmed by Ramp's payment-methods page and Brave's own off-ramp blog stating Ramp integrates Apple Pay."
+                }
+              }
+            ]
+          },
+          "googlePay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.rampnetwork.com/en/articles/12630-what-payment-methods-does-ramp-network-support-for-buying-crypto",
+                  "explanation": "Ramp supports Google Pay (with a linked Visa/Mastercard) per Ramp's official payment-methods page, and Brave's off-ramp blog lists Google Pay among Ramp's integrated methods."
+                }
+              }
+            ]
+          },
           "kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
           "providers": [],
           "regionalAvailability": "Brave feature matrix says off-ramps are available in select countries."
@@ -895,7 +935,17 @@
               }
             ]
           },
-          "watchOnlyWallets": null,
+          "watchOnlyWallets": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/brave/brave-browser/wiki/Wallet-support-FAQ",
+                  "explanation": "Brave Wallet's official import options cover only recovery phrase, private key, and JSON keystore imports, with no documented ability to add a public address as a watch-only/view-only account; the internal 'Watch-Only' NFT label merely flags unowned NFTs rather than a deliberate watch-address feature."
+                }
+              }
+            ]
+          },
           "multiWalletAggregation": {
             "$call": "supported",
             "args": [

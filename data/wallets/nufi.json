@@ -817,10 +817,50 @@
               }
             ]
           },
-          "bankTransfer": null,
-          "card": null,
-          "applePay": null,
-          "googlePay": null,
+          "bankTransfer": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.nu.fi/support/solutions/articles/80001165993-how-to-buy-crypto",
+                  "explanation": "NuFi's official 'How to buy crypto' support page explicitly lists bank transfer as a supported payment method through the integrated MoonPay ramp."
+                }
+              }
+            ]
+          },
+          "card": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.nu.fi/support/solutions/articles/80001165993-how-to-buy-crypto",
+                  "explanation": "NuFi's official support page states you can buy crypto via the integrated MoonPay ramp using 'a bank card, Apple Pay, Google Pay, bank transfer and other payment options.'"
+                }
+              }
+            ]
+          },
+          "applePay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.nu.fi/support/solutions/articles/80001165993-how-to-buy-crypto",
+                  "explanation": "NuFi's official 'How to buy crypto' support page explicitly lists Apple Pay as a supported payment method through the integrated MoonPay ramp."
+                }
+              }
+            ]
+          },
+          "googlePay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.nu.fi/support/solutions/articles/80001165993-how-to-buy-crypto",
+                  "explanation": "NuFi's official 'How to buy crypto' support page explicitly lists Google Pay as a supported payment method through the integrated MoonPay ramp."
+                }
+              }
+            ]
+          },
           "kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
           "providers": [],
           "regionalAvailability": "NuFi publishes buy/sell support but provider and regional details were not resolved."
@@ -962,7 +1002,17 @@
             ]
           },
           "collectionViews": null,
-          "watchOnlyWallets": null,
+          "watchOnlyWallets": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.nu.fi/support/solutions/articles/80000951670-add-account-hot-wallet",
+                  "explanation": "NuFi's 'Add Account' options are limited to creating hot wallet accounts tied to your own seed phrase or pairing hardware wallets you hold keys for, with no option to add a watch-only/view-only address."
+                }
+              }
+            ]
+          },
           "multiWalletAggregation": {
             "$ref": "featureSupported"
           }

@@ -836,8 +836,28 @@
               }
             ]
           },
-          "sellCrypto": null,
-          "bankTransfer": null,
+          "sellCrypto": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbow.me/support/app/withdraw-from-rainbow",
+                  "explanation": "Rainbow's official support page states it does not support selling crypto to fiat within the app and instead directs users to transfer assets to a centralized exchange to cash out."
+                }
+              }
+            ]
+          },
+          "bankTransfer": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://learn.rainbow.me/buying-crypto-with-rainbow",
+                  "explanation": "Rainbow's buy-crypto guide lists ACH (bank transfers) as a supported payment method via its on-ramp providers."
+                }
+              }
+            ]
+          },
           "card": {
             "$call": "supported",
             "args": [
@@ -849,7 +869,17 @@
               }
             ]
           },
-          "applePay": null,
+          "applePay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://learn.rainbow.me/buying-crypto-with-rainbow",
+                  "explanation": "Rainbow's buy-crypto guide lists Apple Pay as a supported payment method across its integrated on-ramp providers (Ramp, MoonPay, Coinbase Pay)."
+                }
+              }
+            ]
+          },
           "googlePay": null,
           "kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
           "providers": [
@@ -1161,7 +1191,17 @@
             ]
           },
           "stakingPositions": null,
-          "lpPositions": null,
+          "lpPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbow.me/support/app/defi-positions-in-rainbow",
+                  "explanation": "Rainbow's DeFi positions page lists only Aave, Compound, Yearn, and Maker, none of which are liquidity-pool protocols (no Uniswap, Curve, or Balancer), so LP positions are not surfaced."
+                }
+              }
+            ]
+          },
           "vaultPositions": {
             "$call": "supported",
             "args": [

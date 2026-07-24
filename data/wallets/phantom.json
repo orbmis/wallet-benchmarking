@@ -889,8 +889,28 @@
               }
             ]
           },
-          "sellCrypto": null,
-          "bankTransfer": null,
+          "sellCrypto": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.phantom.com/hc/en-us/articles/28469415977491-Withdraw-crypto-to-your-bank-account",
+                  "explanation": "Phantom's official help center documents an in-app crypto-to-fiat off-ramp via a 'Sell Crypto' flow (Home > Cash > Add Cash > Sell Crypto) and a 'Withdraw crypto to your bank account' feature."
+                }
+              }
+            ]
+          },
+          "bankTransfer": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.phantom.com/hc/en-us/articles/28469415977491-Withdraw-crypto-to-your-bank-account",
+                  "explanation": "Phantom's help center confirms bank transfer as a supported method for funding/withdrawing the Cash account, including a dedicated 1:1 USD bank withdrawal to your own bank account."
+                }
+              }
+            ]
+          },
           "card": {
             "$call": "supported",
             "args": [
@@ -1296,7 +1316,17 @@
             "explanation": "Phantom source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://phantom.com"
           },
-          "lendingPositions": null,
+          "lendingPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.datawallet.com/crypto/phantom-wallet-review",
+                  "explanation": "Phantom lets users access lending dApps (e.g. Kamino, Aave) via its dApp browser but its own portfolio/Terminal only surfaces token balances and its native trading/perps positions, not external lending/borrowing positions, which require third-party trackers like Step Finance."
+                }
+              }
+            ]
+          },
           "stakingPositions": {
             "$call": "supported",
             "args": [
@@ -1308,8 +1338,28 @@
               }
             ]
           },
-          "lpPositions": null,
-          "vaultPositions": null,
+          "lpPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.datawallet.com/crypto/phantom-wallet-review",
+                  "explanation": "No official or reputable source indicates Phantom surfaces liquidity-pool positions held in external protocols; its portfolio shows balances and native trading positions only."
+                }
+              }
+            ]
+          },
+          "vaultPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.datawallet.com/crypto/phantom-wallet-review",
+                  "explanation": "No evidence Phantom reads/displays external yield-vault positions; its native views cover token balances and Phantom's own products rather than aggregating third-party vault positions."
+                }
+              }
+            ]
+          },
           "perProtocolBalances": null,
           "claimableRewards": {
             "$call": "supported",
@@ -1322,7 +1372,17 @@
               }
             ]
           },
-          "liquidationWarnings": null
+          "liquidationWarnings": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.phantom.com/hc/en-us/articles/46527102843027-Trade-tokens-and-perps-in-Phantom-Terminal",
+                  "explanation": "Liquidation levels/warnings in Phantom's Terminal apply only to its own Hyperliquid-powered perps product, not to borrow positions in external DeFi lending protocols."
+                }
+              }
+            ]
+          }
         },
         "stakingEarn": {
           "ref": {

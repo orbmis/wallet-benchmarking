@@ -651,7 +651,17 @@
               }
             ]
           },
-          "sellCrypto": null,
+          "sellCrypto": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.coinbase.com/en/wallet/managing-account/sell-cash-out",
+                  "explanation": "Coinbase Wallet's official 'Sell or cash out crypto' help article confirms an in-app crypto-to-fiat off-ramp (cash out) available in 130+ countries via a Coinbase account or third-party providers."
+                }
+              }
+            ]
+          },
           "bankTransfer": {
             "$call": "supported",
             "args": [
@@ -845,7 +855,17 @@
             "$ref": "featureSupported"
           },
           "pnl": null,
-          "costBasis": null,
+          "costBasis": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.coinbase.com/learn/tips-and-tutorials/understanding-estimated-gains-and-losses",
+                  "explanation": "Coinbase states transactions on Coinbase Wallet are not included in cost-basis/gain-loss calculations (assumed $0 cost basis), and no source shows the wallet tracking acquisition cost basis of holdings."
+                }
+              }
+            ]
+          },
           "tokenCategories": {
             "$call": "supported",
             "args": [

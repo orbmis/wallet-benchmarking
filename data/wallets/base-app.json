@@ -927,10 +927,50 @@
               }
             ]
           },
-          "bankTransfer": null,
-          "card": null,
-          "applePay": null,
-          "googlePay": null,
+          "bankTransfer": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.cdp.coinbase.com/onramp/coinbase-hosted-onramp/overview",
+                  "explanation": "Coinbase Onramp supports funding from a linked bank account (ACH), available in-app when a Coinbase account is connected."
+                }
+              }
+            ]
+          },
+          "card": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.cdp.coinbase.com/onramp/coinbase-hosted-onramp/overview",
+                  "explanation": "Base App buys crypto via integrated Coinbase Onramp, which supports debit card payments (guest checkout with debit card is explicitly available)."
+                }
+              }
+            ]
+          },
+          "applePay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.cdp.coinbase.com/onramp/coinbase-hosted-onramp/overview",
+                  "explanation": "Base App announced buying crypto with Apple Pay, and Coinbase Onramp (its integrated ramp) lists Apple Pay as a supported payment method."
+                }
+              }
+            ]
+          },
+          "googlePay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.cdp.coinbase.com/onramp/coinbase-hosted-onramp/overview",
+                  "explanation": "Coinbase Onramp, the ramp integrated into Base App, lists Google Pay as a supported payment method."
+                }
+              }
+            ]
+          },
           "kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
           "providers": [
             "Coinbase Onramp",
@@ -1146,7 +1186,17 @@
             ]
           },
           "collectionViews": null,
-          "watchOnlyWallets": null,
+          "watchOnlyWallets": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://cointelegraph.com/news/coinbase-unified-onchain-monitoring-new-wallet-app",
+                  "explanation": "Base App/Coinbase Wallet aggregates multiple wallets by connecting self-custodial wallets via WalletConnect (wallets the user controls), with no documented ability to add public addresses you do not hold keys for as watch-only."
+                }
+              }
+            ]
+          },
           "multiWalletAggregation": {
             "$call": "supported",
             "args": [
