@@ -1217,8 +1217,28 @@
               }
             ]
           },
-          "embeddedWalletSdk": null,
-          "whiteLabelOffering": null,
+          "embeddedWalletSdk": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.exodus.com/wallet-as-a-service",
+                  "explanation": "Exodus offers Wallet-as-a-Service (white-label embedded wallet) plus the open-source Hydra SDK for building custom wallets with key management and signing."
+                }
+              }
+            ]
+          },
+          "whiteLabelOffering": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.exodus.com/wallet-as-a-service",
+                  "explanation": "Exodus operates a Wallet-as-a-Service page describing a custom-built, white-label web3 wallet solution for dApps and businesses."
+                }
+              }
+            ]
+          },
           "walletConnectSupport": {
             "$ref": "featureSupported"
           },

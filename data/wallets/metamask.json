@@ -1805,7 +1805,17 @@
               }
             ]
           },
-          "whiteLabelOffering": null,
+          "whiteLabelOffering": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://metamask.io/developer/embedded-wallets",
+                  "explanation": "MetaMask Embedded Wallets offers white-labeled login UI and fully customizable branded wallet experiences for businesses on paid tiers."
+                }
+              }
+            ]
+          },
           "walletConnectSupport": {
             "$ref": "featureSupported"
           },

@@ -1311,10 +1311,50 @@
               }
             ]
           },
-          "embeddedWalletSdk": null,
-          "whiteLabelOffering": null,
-          "walletConnectSupport": null,
-          "eip6963": null,
+          "embeddedWalletSdk": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://developer.trustwallet.com/developer/wallet-core",
+                  "explanation": "Trust Wallet Core is an open-source library providing embedded wallet functionality (key management, address derivation, signing) for 130+ chains, used by third-party apps."
+                }
+              }
+            ]
+          },
+          "whiteLabelOffering": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trustwallet.com/blog/announcements/introducing-trust-wallet-waas-powering-decentralized-services-for-every-business",
+                  "explanation": "Trust Wallet launched a WaaS product with white-label capability; Binance's Web3 Wallet is cited as a partner deploying a branded wallet powered by Trust Wallet's WaaS."
+                }
+              }
+            ]
+          },
+          "walletConnectSupport": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trustwallet.com/blog/guides/how-to-use-walletconnect-with-trust-wallet",
+                  "explanation": "Trust Wallet supports WalletConnect v2.0 with multi-chain capabilities, documented in its official blog and developer docs."
+                }
+              }
+            ]
+          },
+          "eip6963": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://developer.trustwallet.com/developer/develop-for-trust/browser-extension/evm",
+                  "explanation": "Trust Wallet's developer documentation states it supports EIP-6963 to announce itself and instructs developers to use that discovery mechanism."
+                }
+              }
+            ]
+          },
           "eip5792": null,
           "deepLinks": null,
           "mobileLinkingQuality": null

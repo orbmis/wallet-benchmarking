@@ -1,7 +1,7 @@
 {
   "generated": true,
-  "gapCount": 768,
-  "naCount": 1004,
+  "gapCount": 703,
+  "naCount": 1013,
   "gaps": [
     {
       "walletId": "ambire",
@@ -231,26 +231,6 @@
       "category": "Customer support",
       "type": "state",
       "path": "product.customerSupport.scamRecoveryGuidance",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "devSdk",
-      "label": "Embedded wallet SDK",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.embeddedWalletSdk",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "devWhiteLabel",
-      "label": "White-label offering",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.whiteLabelOffering",
       "hasUnsourcedRef": false
     },
     {
@@ -566,51 +546,11 @@
     {
       "walletId": "argent",
       "walletName": "Argent",
-      "metricKey": "devWalletConnect",
-      "label": "WalletConnect",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.walletConnectSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "devEip6963",
-      "label": "EIP-6963",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.eip6963",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
       "metricKey": "devEip5792",
       "label": "EIP-5792",
       "category": "Developer offering",
       "type": "state",
       "path": "product.developerOffering.eip5792",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "devSdk",
-      "label": "Embedded wallet SDK",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.embeddedWalletSdk",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "devWhiteLabel",
-      "label": "White-label offering",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.whiteLabelOffering",
       "hasUnsourcedRef": false
     },
     {
@@ -821,46 +761,6 @@
       "category": "Customer support",
       "type": "state",
       "path": "product.customerSupport.scamRecoveryGuidance",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "devWalletConnect",
-      "label": "WalletConnect",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.walletConnectSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "devEip6963",
-      "label": "EIP-6963",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.eip6963",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "devEip5792",
-      "label": "EIP-5792",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.eip5792",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "devWhiteLabel",
-      "label": "White-label offering",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.whiteLabelOffering",
       "hasUnsourcedRef": false
     },
     {
@@ -1111,26 +1011,6 @@
       "category": "Device sync",
       "type": "state",
       "path": "product.deviceSync.syncsSettings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitget",
-      "walletName": "Bitget Wallet",
-      "metricKey": "devSdk",
-      "label": "Embedded wallet SDK",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.embeddedWalletSdk",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitget",
-      "walletName": "Bitget Wallet",
-      "metricKey": "devWhiteLabel",
-      "label": "White-label offering",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.whiteLabelOffering",
       "hasUnsourcedRef": false
     },
     {
@@ -1386,41 +1266,11 @@
     {
       "walletId": "brave-wallet",
       "walletName": "Brave Wallet",
-      "metricKey": "devEip6963",
-      "label": "EIP-6963",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.eip6963",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
       "metricKey": "devEip5792",
       "label": "EIP-5792",
       "category": "Developer offering",
       "type": "state",
       "path": "product.developerOffering.eip5792",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "devSdk",
-      "label": "Embedded wallet SDK",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.embeddedWalletSdk",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "devWhiteLabel",
-      "label": "White-label offering",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.whiteLabelOffering",
       "hasUnsourcedRef": false
     },
     {
@@ -1636,51 +1486,11 @@
     {
       "walletId": "mtpelerin",
       "walletName": "Bridge Wallet",
-      "metricKey": "devWalletConnect",
-      "label": "WalletConnect",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.walletConnectSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "devEip6963",
-      "label": "EIP-6963",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.eip6963",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
       "metricKey": "devEip5792",
       "label": "EIP-5792",
       "category": "Developer offering",
       "type": "state",
       "path": "product.developerOffering.eip5792",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "devSdk",
-      "label": "Embedded wallet SDK",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.embeddedWalletSdk",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "devWhiteLabel",
-      "label": "White-label offering",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.whiteLabelOffering",
       "hasUnsourcedRef": false
     },
     {
@@ -1781,26 +1591,6 @@
       "category": "Device sync",
       "type": "state",
       "path": "product.deviceSync.syncsSettings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "coinbase-wallet",
-      "walletName": "Coinbase Wallet",
-      "metricKey": "devEip6963",
-      "label": "EIP-6963",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.eip6963",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "coinbase-wallet",
-      "walletName": "Coinbase Wallet",
-      "metricKey": "devEip5792",
-      "label": "EIP-5792",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.eip5792",
       "hasUnsourcedRef": false
     },
     {
@@ -2166,16 +1956,6 @@
     {
       "walletId": "daimo",
       "walletName": "Daimo",
-      "metricKey": "devEip6963",
-      "label": "EIP-6963",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.eip6963",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
       "metricKey": "devEip5792",
       "label": "EIP-5792",
       "category": "Developer offering",
@@ -2486,16 +2266,6 @@
     {
       "walletId": "elytro",
       "walletName": "Elytro",
-      "metricKey": "devWhiteLabel",
-      "label": "White-label offering",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.whiteLabelOffering",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
       "metricKey": "feeHidden",
       "label": "Hidden partner revenue",
       "category": "Pricing & fees",
@@ -2734,26 +2504,6 @@
       "hasUnsourcedRef": false
     },
     {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "devSdk",
-      "label": "Embedded wallet SDK",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.embeddedWalletSdk",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "devWhiteLabel",
-      "label": "White-label offering",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.whiteLabelOffering",
-      "hasUnsourcedRef": false
-    },
-    {
       "walletId": "family",
       "walletName": "Family",
       "metricKey": "pExtension",
@@ -2986,31 +2736,11 @@
     {
       "walletId": "family",
       "walletName": "Family",
-      "metricKey": "devEip6963",
-      "label": "EIP-6963",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.eip6963",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
       "metricKey": "devEip5792",
       "label": "EIP-5792",
       "category": "Developer offering",
       "type": "state",
       "path": "product.developerOffering.eip5792",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "devSdk",
-      "label": "Embedded wallet SDK",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.embeddedWalletSdk",
       "hasUnsourcedRef": false
     },
     {
@@ -3404,26 +3134,6 @@
       "hasUnsourcedRef": false
     },
     {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "devSdk",
-      "label": "Embedded wallet SDK",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.embeddedWalletSdk",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "devWhiteLabel",
-      "label": "White-label offering",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.whiteLabelOffering",
-      "hasUnsourcedRef": false
-    },
-    {
       "walletId": "gemwallet",
       "walletName": "Gem Wallet",
       "metricKey": "rampApple",
@@ -3711,16 +3421,6 @@
       "category": "Developer offering",
       "type": "state",
       "path": "product.developerOffering.walletConnectSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "devEip6963",
-      "label": "EIP-6963",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.eip6963",
       "hasUnsourcedRef": false
     },
     {
@@ -4176,31 +3876,11 @@
     {
       "walletId": "imtoken",
       "walletName": "imToken",
-      "metricKey": "devEip6963",
-      "label": "EIP-6963",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.eip6963",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
       "metricKey": "devEip5792",
       "label": "EIP-5792",
       "category": "Developer offering",
       "type": "state",
       "path": "product.developerOffering.eip5792",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "devSdk",
-      "label": "Embedded wallet SDK",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.embeddedWalletSdk",
       "hasUnsourcedRef": false
     },
     {
@@ -4604,16 +4284,6 @@
       "hasUnsourcedRef": false
     },
     {
-      "walletId": "metamask",
-      "walletName": "MetaMask",
-      "metricKey": "devWhiteLabel",
-      "label": "White-label offering",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.whiteLabelOffering",
-      "hasUnsourcedRef": false
-    },
-    {
       "walletId": "ngrave",
       "walletName": "NGRAVE Zero",
       "metricKey": "eoa",
@@ -4976,26 +4646,6 @@
     {
       "walletId": "nufi",
       "walletName": "NuFi",
-      "metricKey": "devSdk",
-      "label": "Embedded wallet SDK",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.embeddedWalletSdk",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "devWhiteLabel",
-      "label": "White-label offering",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.whiteLabelOffering",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
       "metricKey": "feeBridge",
       "label": "Bridge fees disclosed",
       "category": "Pricing & fees",
@@ -5161,26 +4811,6 @@
       "category": "Device sync",
       "type": "state",
       "path": "product.deviceSync.syncsSettings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "okx",
-      "walletName": "OKX Wallet",
-      "metricKey": "devSdk",
-      "label": "Embedded wallet SDK",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.embeddedWalletSdk",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "okx",
-      "walletName": "OKX Wallet",
-      "metricKey": "devWhiteLabel",
-      "label": "White-label offering",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.whiteLabelOffering",
       "hasUnsourcedRef": false
     },
     {
@@ -5416,41 +5046,11 @@
     {
       "walletId": "phantom",
       "walletName": "Phantom",
-      "metricKey": "devWalletConnect",
-      "label": "WalletConnect",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.walletConnectSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "phantom",
-      "walletName": "Phantom",
-      "metricKey": "devEip6963",
-      "label": "EIP-6963",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.eip6963",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "phantom",
-      "walletName": "Phantom",
       "metricKey": "devEip5792",
       "label": "EIP-5792",
       "category": "Developer offering",
       "type": "state",
       "path": "product.developerOffering.eip5792",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "phantom",
-      "walletName": "Phantom",
-      "metricKey": "devWhiteLabel",
-      "label": "White-label offering",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.whiteLabelOffering",
       "hasUnsourcedRef": false
     },
     {
@@ -5756,41 +5356,11 @@
     {
       "walletId": "pillarx",
       "walletName": "PillarX",
-      "metricKey": "devWalletConnect",
-      "label": "WalletConnect",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.walletConnectSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
       "metricKey": "devEip5792",
       "label": "EIP-5792",
       "category": "Developer offering",
       "type": "state",
       "path": "product.developerOffering.eip5792",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "devSdk",
-      "label": "Embedded wallet SDK",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.embeddedWalletSdk",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "devWhiteLabel",
-      "label": "White-label offering",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.whiteLabelOffering",
       "hasUnsourcedRef": false
     },
     {
@@ -5951,26 +5521,6 @@
       "category": "Customer support",
       "type": "state",
       "path": "product.customerSupport.inAppHelpCenter",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rabby",
-      "walletName": "Rabby",
-      "metricKey": "devSdk",
-      "label": "Embedded wallet SDK",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.embeddedWalletSdk",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rabby",
-      "walletName": "Rabby",
-      "metricKey": "devWhiteLabel",
-      "label": "White-label offering",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.whiteLabelOffering",
       "hasUnsourcedRef": false
     },
     {
@@ -6244,26 +5794,6 @@
       "hasUnsourcedRef": false
     },
     {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "devSdk",
-      "label": "Embedded wallet SDK",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.embeddedWalletSdk",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "devWhiteLabel",
-      "label": "White-label offering",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.whiteLabelOffering",
-      "hasUnsourcedRef": false
-    },
-    {
       "walletId": "safe",
       "walletName": "Safe",
       "metricKey": "rampGoogle",
@@ -6471,46 +6001,6 @@
       "category": "Customer support",
       "type": "state",
       "path": "product.customerSupport.scamRecoveryGuidance",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "devEip6963",
-      "label": "EIP-6963",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.eip6963",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "devEip5792",
-      "label": "EIP-5792",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.eip5792",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "devSdk",
-      "label": "Embedded wallet SDK",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.embeddedWalletSdk",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "devWhiteLabel",
-      "label": "White-label offering",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.whiteLabelOffering",
       "hasUnsourcedRef": false
     },
     {
@@ -6786,51 +6276,11 @@
     {
       "walletId": "trust-wallet",
       "walletName": "Trust Wallet",
-      "metricKey": "devWalletConnect",
-      "label": "WalletConnect",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.walletConnectSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
-      "metricKey": "devEip6963",
-      "label": "EIP-6963",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.eip6963",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
       "metricKey": "devEip5792",
       "label": "EIP-5792",
       "category": "Developer offering",
       "type": "state",
       "path": "product.developerOffering.eip5792",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
-      "metricKey": "devSdk",
-      "label": "Embedded wallet SDK",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.embeddedWalletSdk",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
-      "metricKey": "devWhiteLabel",
-      "label": "White-label offering",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.whiteLabelOffering",
       "hasUnsourcedRef": false
     },
     {
@@ -7064,46 +6514,6 @@
       "hasUnsourcedRef": false
     },
     {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "devEip6963",
-      "label": "EIP-6963",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.eip6963",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "devEip5792",
-      "label": "EIP-5792",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.eip5792",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "devSdk",
-      "label": "Embedded wallet SDK",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.embeddedWalletSdk",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "devWhiteLabel",
-      "label": "White-label offering",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.whiteLabelOffering",
-      "hasUnsourcedRef": false
-    },
-    {
       "walletId": "zerion",
       "walletName": "Zerion",
       "metricKey": "stakeValidator",
@@ -7331,26 +6741,6 @@
       "category": "Developer offering",
       "type": "state",
       "path": "product.developerOffering.eip5792",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "devSdk",
-      "label": "Embedded wallet SDK",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.embeddedWalletSdk",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "devWhiteLabel",
-      "label": "White-label offering",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.whiteLabelOffering",
       "hasUnsourcedRef": false
     },
     {
@@ -7631,46 +7021,6 @@
       "category": "Customer support",
       "type": "state",
       "path": "product.customerSupport.scamRecoveryGuidance",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "devWalletConnect",
-      "label": "WalletConnect",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.walletConnectSupport",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "devEip6963",
-      "label": "EIP-6963",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.eip6963",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "devEip5792",
-      "label": "EIP-5792",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.eip5792",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "devSdk",
-      "label": "Embedded wallet SDK",
-      "category": "Developer offering",
-      "type": "state",
-      "path": "product.developerOffering.embeddedWalletSdk",
       "hasUnsourcedRef": false
     },
     {

@@ -1445,13 +1445,53 @@
               }
             ]
           },
-          "embeddedWalletSdk": null,
-          "whiteLabelOffering": null,
+          "embeddedWalletSdk": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.uniswap.org/sdk/introduction",
+                  "explanation": "Uniswap's SDKs cover swap routing and protocol integration; there is no embedded wallet SDK for key management or wallet creation inside third-party apps."
+                }
+              }
+            ]
+          },
+          "whiteLabelOffering": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/Uniswap/wallet",
+                  "explanation": "Uniswap Wallet is a self-custodial consumer wallet by Uniswap Labs with no publicly documented white-label or WaaS offering."
+                }
+              }
+            ]
+          },
           "walletConnectSupport": {
             "$ref": "featureSupported"
           },
-          "eip6963": null,
-          "eip5792": null,
+          "eip6963": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.uniswap.org/hc/en-us/articles/25811698471565-Connecting-the-Uniswap-Extension-to-other-dapps",
+                  "explanation": "Uniswap's support docs state a dApp must support EIP-6963 to connect the Uniswap Extension, confirming the extension implements EIP-6963 provider discovery."
+                }
+              }
+            ]
+          },
+          "eip5792": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.uniswap.org/smart-wallets-are-live",
+                  "explanation": "Uniswap's blog confirms the Uniswap Wallet creates smart wallets by default and combines approvals and swaps via EIP-5792 batch calls."
+                }
+              }
+            ]
+          },
           "deepLinks": {
             "$call": "supported",
             "args": [

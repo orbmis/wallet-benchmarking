@@ -2042,8 +2042,28 @@
               }
             ]
           },
-          "embeddedWalletSdk": null,
-          "whiteLabelOffering": null,
+          "embeddedWalletSdk": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rabbykit.rabby.io/",
+                  "explanation": "RabbyKit is a dApp wallet-connection UI library, not an embedded wallet SDK; it does not embed key management or wallet creation in third-party apps."
+                }
+              }
+            ]
+          },
+          "whiteLabelOffering": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/RabbyHub/Rabby",
+                  "explanation": "Rabby is a consumer browser extension by DeBank with no publicly documented white-label, WaaS, or enterprise B2B wallet offering."
+                }
+              }
+            ]
+          },
           "walletConnectSupport": {
             "$ref": "featureSupported"
           },

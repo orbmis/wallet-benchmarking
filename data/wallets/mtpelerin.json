@@ -1294,10 +1294,42 @@
               }
             ]
           },
-          "embeddedWalletSdk": null,
-          "whiteLabelOffering": null,
-          "walletConnectSupport": null,
-          "eip6963": null,
+          "embeddedWalletSdk": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://developers.mtpelerin.com/",
+                  "explanation": "Mt Pelerin's developer offering is a fiat on/off-ramp integration API, not an embedded wallet SDK for key management or wallet creation."
+                }
+              }
+            ]
+          },
+          "whiteLabelOffering": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://developers.mtpelerin.com",
+                  "explanation": "Mt Pelerin's developer docs describe only an embeddable crypto-fiat exchange widget, not a white-label wallet or WaaS product."
+                }
+              }
+            ]
+          },
+          "walletConnectSupport": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/blog/how-to-use-walletconnect",
+                  "explanation": "Mt Pelerin's Bridge Wallet supports WalletConnect v2, documented in an official tutorial showing connections to Aave, Curve, and Yearn."
+                }
+              }
+            ]
+          },
+          "eip6963": {
+            "$ref": "notApplicable"
+          },
           "eip5792": null,
           "deepLinks": null,
           "mobileLinkingQuality": null

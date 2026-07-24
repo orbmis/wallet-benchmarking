@@ -1199,12 +1199,42 @@
               }
             ]
           },
-          "embeddedWalletSdk": null,
-          "whiteLabelOffering": null,
+          "embeddedWalletSdk": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://wallet-docs.brave.com/",
+                  "explanation": "Brave Wallet exposes only the standard window.ethereum provider to dApps; it has no embedded wallet SDK for embedding wallet functionality in third-party apps."
+                }
+              }
+            ]
+          },
+          "whiteLabelOffering": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://brave.com/wallet/",
+                  "explanation": "Brave Wallet is a browser-embedded consumer wallet with no white-label, WaaS, or enterprise business offering documented."
+                }
+              }
+            ]
+          },
           "walletConnectSupport": {
             "$ref": "featureSupported"
           },
-          "eip6963": null,
+          "eip6963": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://brave.com/blog/eip-6963/",
+                  "explanation": "Brave's official blog announces EIP-6963 support in Brave Wallet across iOS, Android, and Desktop."
+                }
+              }
+            ]
+          },
           "eip5792": null,
           "deepLinks": null,
           "mobileLinkingQuality": null

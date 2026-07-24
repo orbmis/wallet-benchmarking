@@ -1169,10 +1169,42 @@
               }
             ]
           },
-          "embeddedWalletSdk": null,
-          "whiteLabelOffering": null,
-          "walletConnectSupport": null,
-          "eip6963": null,
+          "embeddedWalletSdk": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.ready.co/developers",
+                  "explanation": "Argent (Ready) provides StarknetKit, a developer SDK enabling embedded wallet creation via email/social login with session keys and paymaster integration."
+                }
+              }
+            ]
+          },
+          "whiteLabelOffering": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://ready.co/developers",
+                  "explanation": "Argent (Ready) offers a StarknetKit SDK and accelerator program but no white-label wallet/WaaS product for third parties to brand as their own."
+                }
+              }
+            ]
+          },
+          "walletConnectSupport": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.argent.xyz/hc/en-us/articles/360006851458-Connecting-your-Argent-Vault-to-desktop-Dapps-through-WalletConnect",
+                  "explanation": "Argent's support center documents connecting to desktop dApps via WalletConnect by scanning a QR code."
+                }
+              }
+            ]
+          },
+          "eip6963": {
+            "$ref": "notApplicable"
+          },
           "eip5792": null,
           "deepLinks": null,
           "mobileLinkingQuality": null

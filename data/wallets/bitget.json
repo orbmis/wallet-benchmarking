@@ -1448,8 +1448,28 @@
             "url": "https://web3.bitget.com/"
           },
           "walletSdk": null,
-          "embeddedWalletSdk": null,
-          "whiteLabelOffering": null,
+          "embeddedWalletSdk": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://web3.bitget.com/en/crypto-news/2025-guide-wallet-sdk-app-integration",
+                  "explanation": "Bitget Wallet launched an API portal and publishes embedded wallet SDK/WaaS documentation for integrating wallet creation and key management into third-party apps."
+                }
+              }
+            ]
+          },
+          "whiteLabelOffering": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://web3.bitget.com/en/developers",
+                  "explanation": "Bitget Wallet's developer/business pages focus on consumer features and a swap API but offer no white-label/WaaS product for third parties to brand."
+                }
+              }
+            ]
+          },
           "walletConnectSupport": {
             "$ref": "featureSupported"
           },

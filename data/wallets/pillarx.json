@@ -1179,9 +1179,39 @@
               }
             ]
           },
-          "embeddedWalletSdk": null,
-          "whiteLabelOffering": null,
-          "walletConnectSupport": null,
+          "embeddedWalletSdk": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/pillarwallet/pillarwallet-nodejs-sdk",
+                  "explanation": "The Pillar Node.js SDK is a deprecated backend-services wrapper, not an embedded wallet SDK; no current embedded wallet SDK for PillarX is documented."
+                }
+              }
+            ]
+          },
+          "whiteLabelOffering": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/pillarwallet/pillarwallet-nodejs-sdk",
+                  "explanation": "Pillar's Node.js SDK interacts with Pillar's backend services; it is not a white-label product for businesses to deploy a branded wallet."
+                }
+              }
+            ]
+          },
+          "walletConnectSupport": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://medium.com/@pillarproject/walletconnect-integrated-watch-out-metamask-6ca3511627f0",
+                  "explanation": "Pillar (now PillarX) integrated WalletConnect with multi-chain network switching, per official Pillar blog posts."
+                }
+              }
+            ]
+          },
           "eip6963": {
             "$ref": "notSupported"
           },

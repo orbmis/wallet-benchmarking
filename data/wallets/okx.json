@@ -1551,8 +1551,28 @@
             "url": "https://web3.okx.com/"
           },
           "walletSdk": null,
-          "embeddedWalletSdk": null,
-          "whiteLabelOffering": null,
+          "embeddedWalletSdk": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://web3.okx.com/onchainos/docs/waas/walletapi-introduction",
+                  "explanation": "OKX offers a WaaS Wallet API with JS/Go signing SDKs, enabling developers to build multi-chain wallets with key management and signing inside third-party apps."
+                }
+              }
+            ]
+          },
+          "whiteLabelOffering": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://web3.okx.com/onchainos/docs/waas/walletapi-quickstart-multi-chain",
+                  "explanation": "OKX OS Wallet API is a WaaS toolkit letting developers build their own multi-chain wallets, enabling independently branded wallet products on OKX infrastructure."
+                }
+              }
+            ]
+          },
           "walletConnectSupport": {
             "$ref": "featureSupported"
           },

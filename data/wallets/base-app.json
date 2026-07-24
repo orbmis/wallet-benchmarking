@@ -1451,10 +1451,50 @@
               }
             ]
           },
-          "whiteLabelOffering": null,
-          "walletConnectSupport": null,
-          "eip6963": null,
-          "eip5792": null,
+          "whiteLabelOffering": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.coinbase.com/blog/coinbase-announces-wallet-as-a-service-now-any-company-can-seamlessly",
+                  "explanation": "Coinbase (vendor behind Base App) offers Wallet as a Service, letting any company embed customizable white-labeled onchain wallets via the Coinbase Developer Platform."
+                }
+              }
+            ]
+          },
+          "walletConnectSupport": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.coinbase.com/en/base",
+                  "explanation": "The Base app (formerly Coinbase Wallet) supports WalletConnect QR-code pairing to connect to dApps, per Coinbase's help center."
+                }
+              }
+            ]
+          },
+          "eip6963": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://reown.com/blog/eip6963-is-now-approved",
+                  "explanation": "Base App (Coinbase Wallet) is named by WalletConnect/Reown as an EIP-6963 adopter and ships a browser extension implementing provider discovery."
+                }
+              }
+            ]
+          },
+          "eip5792": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.eip5792.xyz/ecosystem/wallets",
+                  "explanation": "Base App (Coinbase Smart Wallet) is listed as a confirmed EIP-5792 supporter on the eip5792.xyz ecosystem page, corroborated by Coinbase and WalletConnect sources."
+                }
+              }
+            ]
+          },
           "deepLinks": null,
           "mobileLinkingQuality": null
         },

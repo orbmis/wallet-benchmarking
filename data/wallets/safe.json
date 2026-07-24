@@ -1510,8 +1510,28 @@
               }
             ]
           },
-          "embeddedWalletSdk": null,
-          "whiteLabelOffering": null,
+          "embeddedWalletSdk": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/safe-global/safe-core-sdk",
+                  "explanation": "Safe{Core} SDK lets developers embed Safe smart account creation, key management, signing, and execution inside their own apps."
+                }
+              }
+            ]
+          },
+          "whiteLabelOffering": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://safe.global/blog/safe-launches-safe-core-developer-stack",
+                  "explanation": "Safe{Core} is an open-source modular stack enabling businesses to build white-label smart account wallets on Safe's infrastructure (e.g. Worldcoin, Gnosis Pay 'powered by Safe')."
+                }
+              }
+            ]
+          },
           "walletConnectSupport": {
             "$call": "supported",
             "args": [
@@ -1523,8 +1543,20 @@
               }
             ]
           },
-          "eip6963": null,
-          "eip5792": null,
+          "eip6963": {
+            "$ref": "notApplicable"
+          },
+          "eip5792": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/safe-global/safe-wallet-monorepo/issues/3576",
+                  "explanation": "WalletConnect identified Safe as adding wallet_sendCalls support; Safe launched EIP-5792 transaction bundling in early 2024, with the update PR merged."
+                }
+              }
+            ]
+          },
           "deepLinks": {
             "$call": "supported",
             "args": [

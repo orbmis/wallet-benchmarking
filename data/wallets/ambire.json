@@ -1967,8 +1967,28 @@
               }
             ]
           },
-          "embeddedWalletSdk": null,
-          "whiteLabelOffering": null,
+          "embeddedWalletSdk": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/AmbireTech/wallet-login-sdk",
+                  "explanation": "Ambire publishes wallet-login-sdk enabling third-party dApps to embed self-custodial account creation and sign-in flows."
+                }
+              }
+            ]
+          },
+          "whiteLabelOffering": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.ambire.com/",
+                  "explanation": "Ambire's homepage and GitHub present only a consumer browser extension with no white-label, WaaS, or enterprise branding program."
+                }
+              }
+            ]
+          },
           "walletConnectSupport": {
             "$ref": "featureSupported"
           },

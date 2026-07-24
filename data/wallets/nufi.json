@@ -1278,8 +1278,28 @@
               }
             ]
           },
-          "embeddedWalletSdk": null,
-          "whiteLabelOffering": null,
+          "embeddedWalletSdk": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://nufi.gitbook.io/developer-docs",
+                  "explanation": "NuFi provides NuFiConnect, an SSO SDK that embeds a non-custodial wallet widget creating wallets for social-login users inside dApps."
+                }
+              }
+            ]
+          },
+          "whiteLabelOffering": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.alchemy.com/dapps/nufi",
+                  "explanation": "NuFi is a consumer multi-chain self-custodial wallet by Vacuumlabs with no publicly documented white-label or WaaS offering."
+                }
+              }
+            ]
+          },
           "walletConnectSupport": {
             "$ref": "featureSupported"
           },

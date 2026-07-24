@@ -1641,6 +1641,526 @@
       "decision": "no",
       "citationUrl": "https://ngrave.io/en/zero",
       "explanation": "NGRAVE ZERO authenticates via an 8-digit PIN and fingerprint; no passkey/WebAuthn/FIDO2 authentication is documented."
+    },
+    {
+      "walletId": "base-app",
+      "metricKey": "devEip5792",
+      "path": "product.developerOffering.eip5792",
+      "decision": "yes",
+      "citationUrl": "https://www.eip5792.xyz/ecosystem/wallets",
+      "explanation": "Base App (Coinbase Smart Wallet) is listed as a confirmed EIP-5792 supporter on the eip5792.xyz ecosystem page, corroborated by Coinbase and WalletConnect sources."
+    },
+    {
+      "walletId": "coinbase-wallet",
+      "metricKey": "devEip5792",
+      "path": "product.developerOffering.eip5792",
+      "decision": "yes",
+      "citationUrl": "https://www.eip5792.xyz/ecosystem/wallets",
+      "explanation": "Coinbase Smart Wallet is listed on the EIP-5792 ecosystem wallets page and corroborated by thirdweb and WalletConnect as supporting wallet_sendCalls."
+    },
+    {
+      "walletId": "safe",
+      "metricKey": "devEip5792",
+      "path": "product.developerOffering.eip5792",
+      "decision": "yes",
+      "citationUrl": "https://github.com/safe-global/safe-wallet-monorepo/issues/3576",
+      "explanation": "WalletConnect identified Safe as adding wallet_sendCalls support; Safe launched EIP-5792 transaction bundling in early 2024, with the update PR merged."
+    },
+    {
+      "walletId": "uniswap-wallet",
+      "metricKey": "devEip5792",
+      "path": "product.developerOffering.eip5792",
+      "decision": "yes",
+      "citationUrl": "https://blog.uniswap.org/smart-wallets-are-live",
+      "explanation": "Uniswap's blog confirms the Uniswap Wallet creates smart wallets by default and combines approvals and swaps via EIP-5792 batch calls."
+    },
+    {
+      "walletId": "zeus",
+      "metricKey": "devEip5792",
+      "path": "product.developerOffering.eip5792",
+      "decision": "na",
+      "citationUrl": "",
+      "explanation": "Zeus is a Bitcoin/Lightning-only wallet with no EVM support; EIP-5792 is an EVM standard and does not apply."
+    },
+    {
+      "walletId": "base-app",
+      "metricKey": "devEip6963",
+      "path": "product.developerOffering.eip6963",
+      "decision": "yes",
+      "citationUrl": "https://reown.com/blog/eip6963-is-now-approved",
+      "explanation": "Base App (Coinbase Wallet) is named by WalletConnect/Reown as an EIP-6963 adopter and ships a browser extension implementing provider discovery."
+    },
+    {
+      "walletId": "brave-wallet",
+      "metricKey": "devEip6963",
+      "path": "product.developerOffering.eip6963",
+      "decision": "yes",
+      "citationUrl": "https://brave.com/blog/eip-6963/",
+      "explanation": "Brave's official blog announces EIP-6963 support in Brave Wallet across iOS, Android, and Desktop."
+    },
+    {
+      "walletId": "coinbase-wallet",
+      "metricKey": "devEip6963",
+      "path": "product.developerOffering.eip6963",
+      "decision": "yes",
+      "citationUrl": "https://reown.com/blog/eip6963-is-now-approved",
+      "explanation": "Coinbase Wallet is explicitly named in WalletConnect/Reown's EIP-6963 approval announcement as adopting the standard."
+    },
+    {
+      "walletId": "phantom",
+      "metricKey": "devEip6963",
+      "path": "product.developerOffering.eip6963",
+      "decision": "yes",
+      "citationUrl": "https://docs.phantom.com/ethereum-monad-testnet-base-and-polygon/getting-started",
+      "explanation": "Phantom's developer documentation explicitly states it supports EIP-6963 for ease of integration."
+    },
+    {
+      "walletId": "trust-wallet",
+      "metricKey": "devEip6963",
+      "path": "product.developerOffering.eip6963",
+      "decision": "yes",
+      "citationUrl": "https://developer.trustwallet.com/developer/develop-for-trust/browser-extension/evm",
+      "explanation": "Trust Wallet's developer documentation states it supports EIP-6963 to announce itself and instructs developers to use that discovery mechanism."
+    },
+    {
+      "walletId": "uniswap-wallet",
+      "metricKey": "devEip6963",
+      "path": "product.developerOffering.eip6963",
+      "decision": "yes",
+      "citationUrl": "https://support.uniswap.org/hc/en-us/articles/25811698471565-Connecting-the-Uniswap-Extension-to-other-dapps",
+      "explanation": "Uniswap's support docs state a dApp must support EIP-6963 to connect the Uniswap Extension, confirming the extension implements EIP-6963 provider discovery."
+    },
+    {
+      "walletId": "argent",
+      "metricKey": "devEip6963",
+      "path": "product.developerOffering.eip6963",
+      "decision": "na",
+      "citationUrl": "",
+      "explanation": "Argent's EVM product is mobile-only (Argent X is a StarkNet-only extension); with no EVM browser injection, EIP-6963 does not apply."
+    },
+    {
+      "walletId": "daimo",
+      "metricKey": "devEip6963",
+      "path": "product.developerOffering.eip6963",
+      "decision": "na",
+      "citationUrl": "",
+      "explanation": "Daimo is a mobile-only ERC-4337 wallet with no browser extension; EIP-6963's injected-provider discovery does not apply."
+    },
+    {
+      "walletId": "family",
+      "metricKey": "devEip6963",
+      "path": "product.developerOffering.eip6963",
+      "decision": "na",
+      "citationUrl": "",
+      "explanation": "Family is an iOS-only mobile wallet with no browser extension; EIP-6963's injected-provider discovery does not apply."
+    },
+    {
+      "walletId": "gemwallet",
+      "metricKey": "devEip6963",
+      "path": "product.developerOffering.eip6963",
+      "decision": "na",
+      "citationUrl": "",
+      "explanation": "Gem Wallet is a mobile-only app (iOS/Android) with no browser extension; EIP-6963's injected-provider discovery does not apply."
+    },
+    {
+      "walletId": "imtoken",
+      "metricKey": "devEip6963",
+      "path": "product.developerOffering.eip6963",
+      "decision": "na",
+      "citationUrl": "",
+      "explanation": "imToken is a mobile-only wallet with no browser extension; EIP-6963's injected-provider discovery does not apply."
+    },
+    {
+      "walletId": "mtpelerin",
+      "metricKey": "devEip6963",
+      "path": "product.developerOffering.eip6963",
+      "decision": "na",
+      "citationUrl": "",
+      "explanation": "Bridge Wallet is a mobile app that connects via WalletConnect with no browser extension; EIP-6963's injected-provider discovery does not apply."
+    },
+    {
+      "walletId": "safe",
+      "metricKey": "devEip6963",
+      "path": "product.developerOffering.eip6963",
+      "decision": "na",
+      "citationUrl": "",
+      "explanation": "Safe is a web/mobile app with no browser extension that injects an EVM provider; EIP-6963's injected-provider discovery does not apply."
+    },
+    {
+      "walletId": "zeus",
+      "metricKey": "devEip6963",
+      "path": "product.developerOffering.eip6963",
+      "decision": "na",
+      "citationUrl": "",
+      "explanation": "Zeus is a Bitcoin/Lightning-only mobile wallet with no EVM support and no browser extension; EIP-6963 does not apply."
+    },
+    {
+      "walletId": "ambire",
+      "metricKey": "devSdk",
+      "path": "product.developerOffering.embeddedWalletSdk",
+      "decision": "yes",
+      "citationUrl": "https://github.com/AmbireTech/wallet-login-sdk",
+      "explanation": "Ambire publishes wallet-login-sdk enabling third-party dApps to embed self-custodial account creation and sign-in flows."
+    },
+    {
+      "walletId": "argent",
+      "metricKey": "devSdk",
+      "path": "product.developerOffering.embeddedWalletSdk",
+      "decision": "yes",
+      "citationUrl": "https://www.ready.co/developers",
+      "explanation": "Argent (Ready) provides StarknetKit, a developer SDK enabling embedded wallet creation via email/social login with session keys and paymaster integration."
+    },
+    {
+      "walletId": "bitget",
+      "metricKey": "devSdk",
+      "path": "product.developerOffering.embeddedWalletSdk",
+      "decision": "yes",
+      "citationUrl": "https://web3.bitget.com/en/crypto-news/2025-guide-wallet-sdk-app-integration",
+      "explanation": "Bitget Wallet launched an API portal and publishes embedded wallet SDK/WaaS documentation for integrating wallet creation and key management into third-party apps."
+    },
+    {
+      "walletId": "exodus",
+      "metricKey": "devSdk",
+      "path": "product.developerOffering.embeddedWalletSdk",
+      "decision": "yes",
+      "citationUrl": "https://www.exodus.com/wallet-as-a-service",
+      "explanation": "Exodus offers Wallet-as-a-Service (white-label embedded wallet) plus the open-source Hydra SDK for building custom wallets with key management and signing."
+    },
+    {
+      "walletId": "family",
+      "metricKey": "devSdk",
+      "path": "product.developerOffering.embeddedWalletSdk",
+      "decision": "yes",
+      "citationUrl": "https://family.co/docs/",
+      "explanation": "Family provides ConnectKit and a Family Account SDK for embedding self-custodial wallet creation (passkey-secured, no seed phrase) inside third-party apps."
+    },
+    {
+      "walletId": "nufi",
+      "metricKey": "devSdk",
+      "path": "product.developerOffering.embeddedWalletSdk",
+      "decision": "yes",
+      "citationUrl": "https://nufi.gitbook.io/developer-docs",
+      "explanation": "NuFi provides NuFiConnect, an SSO SDK that embeds a non-custodial wallet widget creating wallets for social-login users inside dApps."
+    },
+    {
+      "walletId": "okx",
+      "metricKey": "devSdk",
+      "path": "product.developerOffering.embeddedWalletSdk",
+      "decision": "yes",
+      "citationUrl": "https://web3.okx.com/onchainos/docs/waas/walletapi-introduction",
+      "explanation": "OKX offers a WaaS Wallet API with JS/Go signing SDKs, enabling developers to build multi-chain wallets with key management and signing inside third-party apps."
+    },
+    {
+      "walletId": "safe",
+      "metricKey": "devSdk",
+      "path": "product.developerOffering.embeddedWalletSdk",
+      "decision": "yes",
+      "citationUrl": "https://github.com/safe-global/safe-core-sdk",
+      "explanation": "Safe{Core} SDK lets developers embed Safe smart account creation, key management, signing, and execution inside their own apps."
+    },
+    {
+      "walletId": "trust-wallet",
+      "metricKey": "devSdk",
+      "path": "product.developerOffering.embeddedWalletSdk",
+      "decision": "yes",
+      "citationUrl": "https://developer.trustwallet.com/developer/wallet-core",
+      "explanation": "Trust Wallet Core is an open-source library providing embedded wallet functionality (key management, address derivation, signing) for 130+ chains, used by third-party apps."
+    },
+    {
+      "walletId": "brave-wallet",
+      "metricKey": "devSdk",
+      "path": "product.developerOffering.embeddedWalletSdk",
+      "decision": "no",
+      "citationUrl": "https://wallet-docs.brave.com/",
+      "explanation": "Brave Wallet exposes only the standard window.ethereum provider to dApps; it has no embedded wallet SDK for embedding wallet functionality in third-party apps."
+    },
+    {
+      "walletId": "frame",
+      "metricKey": "devSdk",
+      "path": "product.developerOffering.embeddedWalletSdk",
+      "decision": "no",
+      "citationUrl": "https://frame.sh",
+      "explanation": "Frame is a desktop wallet that injects a web3 provider; it offers no embedded wallet SDK for third-party developers."
+    },
+    {
+      "walletId": "imtoken",
+      "metricKey": "devSdk",
+      "path": "product.developerOffering.embeddedWalletSdk",
+      "decision": "no",
+      "citationUrl": "https://docs.token.im/dapp-sdk/en/",
+      "explanation": "imToken's DApp SDK is a provider-style API for dApps to interact with the imToken app, not an embedded wallet SDK for creating/managing keys inside third-party apps."
+    },
+    {
+      "walletId": "mtpelerin",
+      "metricKey": "devSdk",
+      "path": "product.developerOffering.embeddedWalletSdk",
+      "decision": "no",
+      "citationUrl": "https://developers.mtpelerin.com/",
+      "explanation": "Mt Pelerin's developer offering is a fiat on/off-ramp integration API, not an embedded wallet SDK for key management or wallet creation."
+    },
+    {
+      "walletId": "pillarx",
+      "metricKey": "devSdk",
+      "path": "product.developerOffering.embeddedWalletSdk",
+      "decision": "no",
+      "citationUrl": "https://github.com/pillarwallet/pillarwallet-nodejs-sdk",
+      "explanation": "The Pillar Node.js SDK is a deprecated backend-services wrapper, not an embedded wallet SDK; no current embedded wallet SDK for PillarX is documented."
+    },
+    {
+      "walletId": "rabby",
+      "metricKey": "devSdk",
+      "path": "product.developerOffering.embeddedWalletSdk",
+      "decision": "no",
+      "citationUrl": "https://rabbykit.rabby.io/",
+      "explanation": "RabbyKit is a dApp wallet-connection UI library, not an embedded wallet SDK; it does not embed key management or wallet creation in third-party apps."
+    },
+    {
+      "walletId": "rainbow",
+      "metricKey": "devSdk",
+      "path": "product.developerOffering.embeddedWalletSdk",
+      "decision": "no",
+      "citationUrl": "https://rainbowkit.com/docs/introduction",
+      "explanation": "RainbowKit is a React wallet-connection library providing a UI layer to connect to existing wallets, not an embedded wallet SDK."
+    },
+    {
+      "walletId": "uniswap-wallet",
+      "metricKey": "devSdk",
+      "path": "product.developerOffering.embeddedWalletSdk",
+      "decision": "no",
+      "citationUrl": "https://docs.uniswap.org/sdk/introduction",
+      "explanation": "Uniswap's SDKs cover swap routing and protocol integration; there is no embedded wallet SDK for key management or wallet creation inside third-party apps."
+    },
+    {
+      "walletId": "zerion",
+      "metricKey": "devSdk",
+      "path": "product.developerOffering.embeddedWalletSdk",
+      "decision": "no",
+      "citationUrl": "https://zerion.io/blog/zerion-api-dashboard-for-enterprise-wallet-data/",
+      "explanation": "Zerion's developer API is a portfolio data API for reading on-chain data, not an embedded wallet SDK for key management or wallet creation."
+    },
+    {
+      "walletId": "zeus",
+      "metricKey": "devSdk",
+      "path": "product.developerOffering.embeddedWalletSdk",
+      "decision": "no",
+      "citationUrl": "https://docs.zeusln.app/",
+      "explanation": "Zeus is an open-source Bitcoin/Lightning mobile wallet; its docs and repo show no developer-facing embedded wallet SDK."
+    },
+    {
+      "walletId": "argent",
+      "metricKey": "devWalletConnect",
+      "path": "product.developerOffering.walletConnectSupport",
+      "decision": "yes",
+      "citationUrl": "https://support.argent.xyz/hc/en-us/articles/360006851458-Connecting-your-Argent-Vault-to-desktop-Dapps-through-WalletConnect",
+      "explanation": "Argent's support center documents connecting to desktop dApps via WalletConnect by scanning a QR code."
+    },
+    {
+      "walletId": "base-app",
+      "metricKey": "devWalletConnect",
+      "path": "product.developerOffering.walletConnectSupport",
+      "decision": "yes",
+      "citationUrl": "https://help.coinbase.com/en/base",
+      "explanation": "The Base app (formerly Coinbase Wallet) supports WalletConnect QR-code pairing to connect to dApps, per Coinbase's help center."
+    },
+    {
+      "walletId": "mtpelerin",
+      "metricKey": "devWalletConnect",
+      "path": "product.developerOffering.walletConnectSupport",
+      "decision": "yes",
+      "citationUrl": "https://www.mtpelerin.com/blog/how-to-use-walletconnect",
+      "explanation": "Mt Pelerin's Bridge Wallet supports WalletConnect v2, documented in an official tutorial showing connections to Aave, Curve, and Yearn."
+    },
+    {
+      "walletId": "phantom",
+      "metricKey": "devWalletConnect",
+      "path": "product.developerOffering.walletConnectSupport",
+      "decision": "yes",
+      "citationUrl": "https://walletconnect.com/explorer/phantom",
+      "explanation": "Phantom is listed on the WalletConnect explorer and supports the WalletConnect protocol for connecting to dApps."
+    },
+    {
+      "walletId": "pillarx",
+      "metricKey": "devWalletConnect",
+      "path": "product.developerOffering.walletConnectSupport",
+      "decision": "yes",
+      "citationUrl": "https://medium.com/@pillarproject/walletconnect-integrated-watch-out-metamask-6ca3511627f0",
+      "explanation": "Pillar (now PillarX) integrated WalletConnect with multi-chain network switching, per official Pillar blog posts."
+    },
+    {
+      "walletId": "trust-wallet",
+      "metricKey": "devWalletConnect",
+      "path": "product.developerOffering.walletConnectSupport",
+      "decision": "yes",
+      "citationUrl": "https://trustwallet.com/blog/guides/how-to-use-walletconnect-with-trust-wallet",
+      "explanation": "Trust Wallet supports WalletConnect v2.0 with multi-chain capabilities, documented in its official blog and developer docs."
+    },
+    {
+      "walletId": "zeus",
+      "metricKey": "devWalletConnect",
+      "path": "product.developerOffering.walletConnectSupport",
+      "decision": "no",
+      "citationUrl": "https://docs.zeusln.app/",
+      "explanation": "Zeus supports Nostr Wallet Connect (a distinct protocol) but not the WalletConnect standard; WalletConnect is not mentioned in its official docs or README."
+    },
+    {
+      "walletId": "base-app",
+      "metricKey": "devWhiteLabel",
+      "path": "product.developerOffering.whiteLabelOffering",
+      "decision": "yes",
+      "citationUrl": "https://www.coinbase.com/blog/coinbase-announces-wallet-as-a-service-now-any-company-can-seamlessly",
+      "explanation": "Coinbase (vendor behind Base App) offers Wallet as a Service, letting any company embed customizable white-labeled onchain wallets via the Coinbase Developer Platform."
+    },
+    {
+      "walletId": "exodus",
+      "metricKey": "devWhiteLabel",
+      "path": "product.developerOffering.whiteLabelOffering",
+      "decision": "yes",
+      "citationUrl": "https://www.exodus.com/wallet-as-a-service",
+      "explanation": "Exodus operates a Wallet-as-a-Service page describing a custom-built, white-label web3 wallet solution for dApps and businesses."
+    },
+    {
+      "walletId": "metamask",
+      "metricKey": "devWhiteLabel",
+      "path": "product.developerOffering.whiteLabelOffering",
+      "decision": "yes",
+      "citationUrl": "https://metamask.io/developer/embedded-wallets",
+      "explanation": "MetaMask Embedded Wallets offers white-labeled login UI and fully customizable branded wallet experiences for businesses on paid tiers."
+    },
+    {
+      "walletId": "okx",
+      "metricKey": "devWhiteLabel",
+      "path": "product.developerOffering.whiteLabelOffering",
+      "decision": "yes",
+      "citationUrl": "https://web3.okx.com/onchainos/docs/waas/walletapi-quickstart-multi-chain",
+      "explanation": "OKX OS Wallet API is a WaaS toolkit letting developers build their own multi-chain wallets, enabling independently branded wallet products on OKX infrastructure."
+    },
+    {
+      "walletId": "safe",
+      "metricKey": "devWhiteLabel",
+      "path": "product.developerOffering.whiteLabelOffering",
+      "decision": "yes",
+      "citationUrl": "https://safe.global/blog/safe-launches-safe-core-developer-stack",
+      "explanation": "Safe{Core} is an open-source modular stack enabling businesses to build white-label smart account wallets on Safe's infrastructure (e.g. Worldcoin, Gnosis Pay 'powered by Safe')."
+    },
+    {
+      "walletId": "trust-wallet",
+      "metricKey": "devWhiteLabel",
+      "path": "product.developerOffering.whiteLabelOffering",
+      "decision": "yes",
+      "citationUrl": "https://trustwallet.com/blog/announcements/introducing-trust-wallet-waas-powering-decentralized-services-for-every-business",
+      "explanation": "Trust Wallet launched a WaaS product with white-label capability; Binance's Web3 Wallet is cited as a partner deploying a branded wallet powered by Trust Wallet's WaaS."
+    },
+    {
+      "walletId": "ambire",
+      "metricKey": "devWhiteLabel",
+      "path": "product.developerOffering.whiteLabelOffering",
+      "decision": "no",
+      "citationUrl": "https://www.ambire.com/",
+      "explanation": "Ambire's homepage and GitHub present only a consumer browser extension with no white-label, WaaS, or enterprise branding program."
+    },
+    {
+      "walletId": "argent",
+      "metricKey": "devWhiteLabel",
+      "path": "product.developerOffering.whiteLabelOffering",
+      "decision": "no",
+      "citationUrl": "https://ready.co/developers",
+      "explanation": "Argent (Ready) offers a StarknetKit SDK and accelerator program but no white-label wallet/WaaS product for third parties to brand as their own."
+    },
+    {
+      "walletId": "bitget",
+      "metricKey": "devWhiteLabel",
+      "path": "product.developerOffering.whiteLabelOffering",
+      "decision": "no",
+      "citationUrl": "https://web3.bitget.com/en/developers",
+      "explanation": "Bitget Wallet's developer/business pages focus on consumer features and a swap API but offer no white-label/WaaS product for third parties to brand."
+    },
+    {
+      "walletId": "brave-wallet",
+      "metricKey": "devWhiteLabel",
+      "path": "product.developerOffering.whiteLabelOffering",
+      "decision": "no",
+      "citationUrl": "https://brave.com/wallet/",
+      "explanation": "Brave Wallet is a browser-embedded consumer wallet with no white-label, WaaS, or enterprise business offering documented."
+    },
+    {
+      "walletId": "elytro",
+      "metricKey": "devWhiteLabel",
+      "path": "product.developerOffering.whiteLabelOffering",
+      "decision": "no",
+      "citationUrl": "https://github.com/Elytro-eth/elytro-wallet-core",
+      "explanation": "Elytro publishes an open-source ERC-4337 smart contract wallet framework but no white-label WaaS or enterprise product for businesses to deploy a branded wallet."
+    },
+    {
+      "walletId": "frame",
+      "metricKey": "devWhiteLabel",
+      "path": "product.developerOffering.whiteLabelOffering",
+      "decision": "no",
+      "citationUrl": "https://frame.sh",
+      "explanation": "Frame.sh describes Frame as a consumer desktop web3 wallet with no white-label, WaaS, or enterprise SDK offering."
+    },
+    {
+      "walletId": "mtpelerin",
+      "metricKey": "devWhiteLabel",
+      "path": "product.developerOffering.whiteLabelOffering",
+      "decision": "no",
+      "citationUrl": "https://developers.mtpelerin.com",
+      "explanation": "Mt Pelerin's developer docs describe only an embeddable crypto-fiat exchange widget, not a white-label wallet or WaaS product."
+    },
+    {
+      "walletId": "nufi",
+      "metricKey": "devWhiteLabel",
+      "path": "product.developerOffering.whiteLabelOffering",
+      "decision": "no",
+      "citationUrl": "https://www.alchemy.com/dapps/nufi",
+      "explanation": "NuFi is a consumer multi-chain self-custodial wallet by Vacuumlabs with no publicly documented white-label or WaaS offering."
+    },
+    {
+      "walletId": "phantom",
+      "metricKey": "devWhiteLabel",
+      "path": "product.developerOffering.whiteLabelOffering",
+      "decision": "no",
+      "citationUrl": "https://docs.phantom.com/introduction",
+      "explanation": "Phantom's SDK is for integrating with Phantom's own wallet, not for deploying an independently branded white-label wallet-as-a-service."
+    },
+    {
+      "walletId": "pillarx",
+      "metricKey": "devWhiteLabel",
+      "path": "product.developerOffering.whiteLabelOffering",
+      "decision": "no",
+      "citationUrl": "https://github.com/pillarwallet/pillarwallet-nodejs-sdk",
+      "explanation": "Pillar's Node.js SDK interacts with Pillar's backend services; it is not a white-label product for businesses to deploy a branded wallet."
+    },
+    {
+      "walletId": "rabby",
+      "metricKey": "devWhiteLabel",
+      "path": "product.developerOffering.whiteLabelOffering",
+      "decision": "no",
+      "citationUrl": "https://github.com/RabbyHub/Rabby",
+      "explanation": "Rabby is a consumer browser extension by DeBank with no publicly documented white-label, WaaS, or enterprise B2B wallet offering."
+    },
+    {
+      "walletId": "rainbow",
+      "metricKey": "devWhiteLabel",
+      "path": "product.developerOffering.whiteLabelOffering",
+      "decision": "no",
+      "citationUrl": "https://rainbowkit.com/docs/introduction",
+      "explanation": "RainbowKit is a dApp wallet-connection library; Rainbow wallet has no publicly documented WaaS or white-label product for businesses."
+    },
+    {
+      "walletId": "uniswap-wallet",
+      "metricKey": "devWhiteLabel",
+      "path": "product.developerOffering.whiteLabelOffering",
+      "decision": "no",
+      "citationUrl": "https://github.com/Uniswap/wallet",
+      "explanation": "Uniswap Wallet is a self-custodial consumer wallet by Uniswap Labs with no publicly documented white-label or WaaS offering."
+    },
+    {
+      "walletId": "zerion",
+      "metricKey": "devWhiteLabel",
+      "path": "product.developerOffering.whiteLabelOffering",
+      "decision": "no",
+      "citationUrl": "https://zerion.io/api/",
+      "explanation": "Zerion offers an enterprise wallet data API (a data layer), not a white-label wallet product for businesses to deploy under their own brand."
     }
   ]
 }

@@ -1238,12 +1238,24 @@
             "url": "https://family.co"
           },
           "walletSdk": null,
-          "embeddedWalletSdk": null,
+          "embeddedWalletSdk": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/docs/",
+                  "explanation": "Family provides ConnectKit and a Family Account SDK for embedding self-custodial wallet creation (passkey-secured, no seed phrase) inside third-party apps."
+                }
+              }
+            ]
+          },
           "whiteLabelOffering": null,
           "walletConnectSupport": {
             "$ref": "featureSupported"
           },
-          "eip6963": null,
+          "eip6963": {
+            "$ref": "notApplicable"
+          },
           "eip5792": null,
           "deepLinks": null,
           "mobileLinkingQuality": null

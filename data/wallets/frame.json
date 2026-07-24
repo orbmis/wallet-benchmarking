@@ -1321,8 +1321,28 @@
               }
             ]
           },
-          "embeddedWalletSdk": null,
-          "whiteLabelOffering": null,
+          "embeddedWalletSdk": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://frame.sh",
+                  "explanation": "Frame is a desktop wallet that injects a web3 provider; it offers no embedded wallet SDK for third-party developers."
+                }
+              }
+            ]
+          },
+          "whiteLabelOffering": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://frame.sh",
+                  "explanation": "Frame.sh describes Frame as a consumer desktop web3 wallet with no white-label, WaaS, or enterprise SDK offering."
+                }
+              }
+            ]
+          },
           "walletConnectSupport": {
             "$ref": "featureSupported"
           },
