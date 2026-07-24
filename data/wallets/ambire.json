@@ -1997,7 +1997,17 @@
           "swapFees": "Built-in swap and bridge has a flat 0.25% fee.",
           "bridgeFees": "Built-in swap and bridge has a flat 0.25% fee.",
           "onRampFees": null,
-          "spreadDisclosure": null,
+          "spreadDisclosure": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.ambire.com/swap-bridge-fee-increase/",
+                  "explanation": "Ambire publicly discloses a 0.5% swap and bridge fee and states wallet fees are made transparent to the user before confirmation."
+                }
+              }
+            ]
+          },
           "subscriptionFeatures": {
             "$call": "notSupported",
             "args": [

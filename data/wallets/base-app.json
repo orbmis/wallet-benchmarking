@@ -1463,7 +1463,17 @@
             "explanation": "Base App source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://base.app/"
           },
-          "swapFees": null,
+          "swapFees": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://university.cex.io/coinbase-wallet-base-review/",
+                  "explanation": "Base App (formerly Coinbase Wallet) shows swap fees (up to ~1% Coinbase fee) on the confirmation screen before the user confirms the swap."
+                }
+              }
+            ]
+          },
           "bridgeFees": {
             "$call": "supported",
             "args": [

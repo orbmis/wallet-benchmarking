@@ -1321,7 +1321,17 @@
           },
           "bridgeFees": null,
           "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
-          "spreadDisclosure": null,
+          "spreadDisclosure": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://nu.fi/blog/what-is-the-best-crypto-wallet",
+                  "explanation": "NuFi states it charges no swap fees (only network fees), routing through aggregators; the underlying aggregator spread is not separately surfaced to the user."
+                }
+              }
+            ]
+          },
           "subscriptionFeatures": {
             "$call": "notSupported",
             "args": [
@@ -1334,7 +1344,17 @@
             ]
           },
           "cardFees": "Card fees are provider-dependent where card purchase is available.",
-          "hiddenPartnerRevenue": null
+          "hiddenPartnerRevenue": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://reviewnexa.com/nufi-wallet-review/",
+                  "explanation": "NuFi discloses that it earns referral fees from integrated on-ramps and swap aggregators; no evidence of undisclosed/hidden partner revenue was found."
+                }
+              }
+            ]
+          }
         },
         "releaseVelocity": {
           "ref": {

@@ -634,7 +634,7 @@
       "path": "product.pricingFeeModel.bridgeFees",
       "decision": "yes",
       "citationUrl": "https://support.token.im/hc/en-us/articles/7539476790681-Token-bridging-across-different-blockchains-with-Celer-cBridge",
-      "explanation": "imToken's help center documents cross-chain bridging via Celer cBridge (0%\u20130.04%) and other bridges with their fee structures explained per protocol."
+      "explanation": "imToken's help center documents cross-chain bridging via Celer cBridge (0%–0.04%) and other bridges with their fee structures explained per protocol."
     },
     {
       "walletId": "imtoken",
@@ -1273,6 +1273,374 @@
       "decision": "no",
       "citationUrl": "https://github.com/greekfetacheese/zeus",
       "explanation": "Zeus is a free MIT-licensed open-source wallet with no optional paid subscription or premium tier offered."
+    },
+    {
+      "walletId": "coinbase-wallet",
+      "metricKey": "feeBridge",
+      "path": "product.pricingFeeModel.bridgeFees",
+      "decision": "yes",
+      "citationUrl": "https://help.coinbase.com/en/wallet/bridging",
+      "explanation": "Coinbase Wallet shows a Bridge Fee and Coinbase Fee in the transaction summary before the user confirms a cross-chain bridge, per the official Coinbase Help bridging page."
+    },
+    {
+      "walletId": "exodus",
+      "metricKey": "feeBridge",
+      "path": "product.pricingFeeModel.bridgeFees",
+      "decision": "yes",
+      "citationUrl": "https://www.exodus.com/investors/news-events/press-releases/detail/82/exodus-and-metamask-partner-to-bring-xo-swaps-bridge-functionality-to-millions-of-wallet-users",
+      "explanation": "Exodus XO Swap displays the full quote and fixed rate before the user confirms a cross-chain swap/bridge, so users see the amount received beforehand."
+    },
+    {
+      "walletId": "nufi",
+      "metricKey": "feeBridge",
+      "path": "product.pricingFeeModel.bridgeFees",
+      "decision": "unknown",
+      "citationUrl": "",
+      "explanation": "NuFi supports cross-chain bridging via SwapKit/THORChain but no official source confirms bridge fees are explicitly disclosed before confirmation."
+    },
+    {
+      "walletId": "okx",
+      "metricKey": "feeBridge",
+      "path": "product.pricingFeeModel.bridgeFees",
+      "decision": "yes",
+      "citationUrl": "https://www.okx.com/en-us/learn/what-is-okx-bridge",
+      "explanation": "OKX's official OKX Bridge guide states all costs — bridge fee (0.08–0.2%) and network gas — are displayed before confirming the transaction."
+    },
+    {
+      "walletId": "rabby",
+      "metricKey": "feeBridge",
+      "path": "product.pricingFeeModel.bridgeFees",
+      "decision": "yes",
+      "citationUrl": "https://li.fi/knowledge-hub/rabby-wallet-integrates-li-fi-to-power-bridge-feature",
+      "explanation": "Rabby uses LI.FI bridge aggregation with a 0.25% fee, and its pre-confirmation simulation surfaces the expected fee cost before the user bridges."
+    },
+    {
+      "walletId": "trust-wallet",
+      "metricKey": "feeBridge",
+      "path": "product.pricingFeeModel.bridgeFees",
+      "decision": "yes",
+      "citationUrl": "https://trustwallet.com/blog/guides/how-to-bridge-to-bnb-chain-using-trust-wallet",
+      "explanation": "Trust Wallet's official bridging guide instructs users to review the fees associated with the transaction before confirming."
+    },
+    {
+      "walletId": "daimo",
+      "metricKey": "feeHidden",
+      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
+      "decision": "unknown",
+      "citationUrl": "",
+      "explanation": "Insufficient public information to determine whether Daimo takes undisclosed partner revenue; swap/bridge fees are described as bundled for a clean checkout but no specific kickback arrangement was confirmed."
+    },
+    {
+      "walletId": "elytro",
+      "metricKey": "feeHidden",
+      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
+      "decision": "unknown",
+      "citationUrl": "",
+      "explanation": "No official documentation found addressing Elytro partner revenue or affiliate arrangements; unrated for fee transparency on Walletbeat."
+    },
+    {
+      "walletId": "nufi",
+      "metricKey": "feeHidden",
+      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
+      "decision": "no",
+      "citationUrl": "https://reviewnexa.com/nufi-wallet-review/",
+      "explanation": "NuFi discloses that it earns referral fees from integrated on-ramps and swap aggregators; no evidence of undisclosed/hidden partner revenue was found."
+    },
+    {
+      "walletId": "pillarx",
+      "metricKey": "feeHidden",
+      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
+      "decision": "unknown",
+      "citationUrl": "",
+      "explanation": "PillarX integrates StealthEX (which runs an affiliate program) but no documented evidence confirms whether PillarX takes affiliate revenue or discloses it; treated as unknown rather than asserting an undocumented negative claim."
+    },
+    {
+      "walletId": "trust-wallet",
+      "metricKey": "feeHidden",
+      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
+      "decision": "unknown",
+      "citationUrl": "",
+      "explanation": "Trust Wallet discloses at a high level that it earns affiliate commissions on swaps/staking, but specific partner arrangements are not detailed and no clear evidence of undisclosed kickbacks was found."
+    },
+    {
+      "walletId": "ambire",
+      "metricKey": "feeSpread",
+      "path": "product.pricingFeeModel.spreadDisclosure",
+      "decision": "yes",
+      "citationUrl": "https://blog.ambire.com/swap-bridge-fee-increase/",
+      "explanation": "Ambire publicly discloses a 0.5% swap and bridge fee and states wallet fees are made transparent to the user before confirmation."
+    },
+    {
+      "walletId": "argent",
+      "metricKey": "feeSpread",
+      "path": "product.pricingFeeModel.spreadDisclosure",
+      "decision": "yes",
+      "citationUrl": "https://support.argent.xyz/hc/en-us/articles/360006147378-What-is-the-crypto-to-crypto-exchange-fee-in-Argent-s-Ethereum-account",
+      "explanation": "Argent's official support page discloses a 0.5% exchange fee on swaps, shown in-app before confirming."
+    },
+    {
+      "walletId": "brave-wallet",
+      "metricKey": "feeSpread",
+      "path": "product.pricingFeeModel.spreadDisclosure",
+      "decision": "yes",
+      "citationUrl": "https://support.brave.app/hc/en-us/articles/13397025065357-What-are-Brave-Swaps",
+      "explanation": "Brave's official support docs state swap fees are displayed transparently, with only network gas and the disclosed swap fee applied."
+    },
+    {
+      "walletId": "family",
+      "metricKey": "feeSpread",
+      "path": "product.pricingFeeModel.spreadDisclosure",
+      "decision": "no",
+      "citationUrl": "https://family.co/faqs",
+      "explanation": "Family's FAQ states it charges no additional wallet fees and shows estimated fees before confirmation, but does not disclose any platform spread or markup percentage."
+    },
+    {
+      "walletId": "imtoken",
+      "metricKey": "feeSpread",
+      "path": "product.pricingFeeModel.spreadDisclosure",
+      "decision": "unknown",
+      "citationUrl": "",
+      "explanation": "imToken integrates Tokenlon (0.1–0.15% fees) and shows a swap cost warning, but explicit spread/markup disclosure before confirmation could not be confirmed from official sources."
+    },
+    {
+      "walletId": "nufi",
+      "metricKey": "feeSpread",
+      "path": "product.pricingFeeModel.spreadDisclosure",
+      "decision": "no",
+      "citationUrl": "https://nu.fi/blog/what-is-the-best-crypto-wallet",
+      "explanation": "NuFi states it charges no swap fees (only network fees), routing through aggregators; the underlying aggregator spread is not separately surfaced to the user."
+    },
+    {
+      "walletId": "rabby",
+      "metricKey": "feeSpread",
+      "path": "product.pricingFeeModel.spreadDisclosure",
+      "decision": "yes",
+      "citationUrl": "https://x.com/Rabby_io/status/1809154330622140734",
+      "explanation": "Rabby's official account announced a 0.25% built-in swap fee, and the swap flow previews the expected received amount including fee before confirmation."
+    },
+    {
+      "walletId": "rainbow",
+      "metricKey": "feeSpread",
+      "path": "product.pricingFeeModel.spreadDisclosure",
+      "decision": "yes",
+      "citationUrl": "https://rainbow.me/support/app/bridge-and-swap-tokens",
+      "explanation": "Rainbow's official support page states the Rainbow Fee is always visible on the review page before confirming a swap."
+    },
+    {
+      "walletId": "zerion",
+      "metricKey": "feeSpread",
+      "path": "product.pricingFeeModel.spreadDisclosure",
+      "decision": "yes",
+      "citationUrl": "https://help.zerion.io/en/articles/4813752-understanding-fees-on-zerion",
+      "explanation": "Zerion's official help center discloses a 0.67% service fee on swaps and states there are no hidden fees, with network and exchange fees also disclosed."
+    },
+    {
+      "walletId": "safe",
+      "metricKey": "feeSubscription",
+      "path": "product.pricingFeeModel.subscriptionFeatures",
+      "decision": "no",
+      "citationUrl": "https://milkroad.com/reviews/safe-wallet/",
+      "explanation": "Safe Wallet is free for core functionality (signer management, transaction proposal/execution) and does not charge for wallet use per the reviewed pricing."
+    },
+    {
+      "walletId": "base-app",
+      "metricKey": "feeSwap",
+      "path": "product.pricingFeeModel.swapFees",
+      "decision": "yes",
+      "citationUrl": "https://university.cex.io/coinbase-wallet-base-review/",
+      "explanation": "Base App (formerly Coinbase Wallet) shows swap fees (up to ~1% Coinbase fee) on the confirmation screen before the user confirms the swap."
+    },
+    {
+      "walletId": "firefly",
+      "metricKey": "scamContract",
+      "path": "security.scamAlerts.contractTransactionWarning",
+      "decision": "no",
+      "citationUrl": "https://hackaday.io/project/146319-firefly-hardware-wallet",
+      "explanation": "Firefly is a minimal DIY air-gapped Ethereum signer; its documented feature set (multi-sig, offline signing, recovery) includes no malicious-contract registry or blocklist."
+    },
+    {
+      "walletId": "keystone",
+      "metricKey": "scamContract",
+      "path": "security.scamAlerts.contractTransactionWarning",
+      "decision": "no",
+      "citationUrl": "https://keyst.one/",
+      "explanation": "Keystone's documentation focuses on air-gapped clear-signing and secure elements; no blocklist-based malicious-contract warning is described for the device or companion apps."
+    },
+    {
+      "walletId": "ngrave",
+      "metricKey": "scamContract",
+      "path": "security.scamAlerts.contractTransactionWarning",
+      "decision": "no",
+      "citationUrl": "https://ngrave.io/en/zero",
+      "explanation": "NGRAVE ZERO is fully air-gapped and relies on manual QR-based verification; no malicious-contract registry/blocklist warning is documented."
+    },
+    {
+      "walletId": "firefly",
+      "metricKey": "scamSend",
+      "path": "security.scamAlerts.sendTransactionWarning",
+      "decision": "no",
+      "citationUrl": "https://hackaday.io/project/146319-firefly-hardware-wallet",
+      "explanation": "Firefly's documented features cover multi-sig, offline signing and recovery only; no flagged-address blacklist or address-poisoning detection is described."
+    },
+    {
+      "walletId": "gridplus",
+      "metricKey": "scamSend",
+      "path": "security.scamAlerts.sendTransactionWarning",
+      "decision": "no",
+      "citationUrl": "https://docs.gridplus.io/lattice1/security-features",
+      "explanation": "GridPlus Lattice1 security docs describe clear signing and tamper protection but no blacklisted-address or address-poisoning send warning."
+    },
+    {
+      "walletId": "keystone",
+      "metricKey": "scamSend",
+      "path": "security.scamAlerts.sendTransactionWarning",
+      "decision": "yes",
+      "citationUrl": "https://www.bitget.com/amp/academy/keystone-wallet-safe",
+      "explanation": "Keystone firmware includes address-poisoning detection that flags transactions to addresses resembling previous destinations before signing."
+    },
+    {
+      "walletId": "ngrave",
+      "metricKey": "scamSend",
+      "path": "security.scamAlerts.sendTransactionWarning",
+      "decision": "no",
+      "citationUrl": "https://ngrave.io/en/zero",
+      "explanation": "NGRAVE ZERO documentation describes no blacklisted-address or address-poisoning warning; it relies on manual verification on the secure display before QR signing."
+    },
+    {
+      "walletId": "onekey",
+      "metricKey": "scamSend",
+      "path": "security.scamAlerts.sendTransactionWarning",
+      "decision": "yes",
+      "citationUrl": "https://help.onekey.so/en/articles/12058229-signguard-and-clear-signing-how-they-protect-you-from-web3-phishing-and-scams",
+      "explanation": "OneKey's SignGuard (GoPlus/Blockaid/ScamSniffer) detects hidden malicious addresses and flags suspicious approvals with risk alerts before signing."
+    },
+    {
+      "walletId": "cypherock",
+      "metricKey": "scamUrl",
+      "path": "security.scamAlerts.scamUrlWarning",
+      "decision": "no",
+      "citationUrl": "https://docs.cypherock.com/security-overview/remote-attacks",
+      "explanation": "Cypherock's security docs focus on seedless design and secure elements; no blocklist-based phishing/dApp URL warning is documented for the X1 or cySync app."
+    },
+    {
+      "walletId": "firefly",
+      "metricKey": "scamUrl",
+      "path": "security.scamAlerts.scamUrlWarning",
+      "decision": "no",
+      "citationUrl": "https://hackaday.io/project/146319-firefly-hardware-wallet",
+      "explanation": "Firefly is a bare DIY signer with no network connectivity or companion app implementing URL scanning."
+    },
+    {
+      "walletId": "gridplus",
+      "metricKey": "scamUrl",
+      "path": "security.scamAlerts.scamUrlWarning",
+      "decision": "no",
+      "citationUrl": "https://docs.gridplus.io/lattice1/security-features",
+      "explanation": "GridPlus Lattice1 security docs cover hardware protection and clear signing only; no phishing-URL blocklist or dApp scam warning is described."
+    },
+    {
+      "walletId": "imkey",
+      "metricKey": "scamUrl",
+      "path": "security.scamAlerts.scamUrlWarning",
+      "decision": "yes",
+      "citationUrl": "https://medium.com/imtoken/imtoken-2-9-2-out-now-with-updated-dapp-security-risk-control-and-more-551ca40f86c1",
+      "explanation": "imKey's companion app imToken bans risky dApp URLs and shows DApp access risk reminders for high-risk sites, providing blocklist-based scam URL warnings."
+    },
+    {
+      "walletId": "keystone",
+      "metricKey": "scamUrl",
+      "path": "security.scamAlerts.scamUrlWarning",
+      "decision": "no",
+      "citationUrl": "https://blog.keyst.one/from-evm-to-solana-how-to-avoid-phishing-scams",
+      "explanation": "Keystone's own blog recommends third-party tools like ScamSniffer for phishing protection rather than a built-in URL blocklist in the device or companion apps."
+    },
+    {
+      "walletId": "ngrave",
+      "metricKey": "scamUrl",
+      "path": "security.scamAlerts.scamUrlWarning",
+      "decision": "no",
+      "citationUrl": "https://ngrave.io/en/zero",
+      "explanation": "NGRAVE ZERO is fully air-gapped; neither the device nor the LIQUID companion app documents a blocklist-based phishing/scam URL warning."
+    },
+    {
+      "walletId": "onekey",
+      "metricKey": "scamUrl",
+      "path": "security.scamAlerts.scamUrlWarning",
+      "decision": "yes",
+      "citationUrl": "https://help.onekey.so/en/articles/12058229-signguard-and-clear-signing-how-they-protect-you-from-web3-phishing-and-scams",
+      "explanation": "OneKey's SignGuard integrates GoPlus/Blockaid/ScamSniffer to detect phishing sites and malicious dApps in real time with alerts before signing."
+    },
+    {
+      "walletId": "trezor",
+      "metricKey": "scamUrl",
+      "path": "security.scamAlerts.scamUrlWarning",
+      "decision": "yes",
+      "citationUrl": "https://trezor.io/guides/trezor-suite/wallet-connect-in-trezor-suite",
+      "explanation": "Trezor Suite's WalletConnect integration warns when a dApp is unverified or flagged as dangerous before the user connects/signs."
+    },
+    {
+      "walletId": "firefly",
+      "metricKey": "txSim",
+      "path": "security.transactionLegibility.transactionSimulations",
+      "decision": "no",
+      "citationUrl": "https://github.com/firefly/wallet",
+      "explanation": "The Firefly DIY wallet displays only raw transaction parameters on its OLED screen; no transaction simulation or balance-change preview is documented."
+    },
+    {
+      "walletId": "imkey",
+      "metricKey": "txSim",
+      "path": "security.transactionLegibility.transactionSimulations",
+      "decision": "no",
+      "citationUrl": "https://support.imkey.im/hc/en-001/categories/35745879900057-imKey-Pro-Instructions",
+      "explanation": "imKey Pro shows amount, recipient and fee for manual verification before signing, but no transaction simulation of net effects is documented."
+    },
+    {
+      "walletId": "ngrave",
+      "metricKey": "txSim",
+      "path": "security.transactionLegibility.transactionSimulations",
+      "decision": "no",
+      "citationUrl": "https://support.ngrave.io/hc/en-us/articles/19966506197021-Blind-signing",
+      "explanation": "NGRAVE's own blind-signing article notes smart-contract details cannot always be decoded on ZERO; simulation is not a feature of the device itself."
+    },
+    {
+      "walletId": "cypherock",
+      "metricKey": "duress",
+      "path": "security.duressResistance.duressMode",
+      "decision": "yes",
+      "citationUrl": "https://thebitcoinhole.com/hardware-wallets/cypherock-x1",
+      "explanation": "Cypherock X1's feature spec lists a Dummy/Decoy/Duress wallet enabled via multiple BIP-39 passphrase-derived wallets with separate PINs, for coercion protection."
+    },
+    {
+      "walletId": "firefly",
+      "metricKey": "duress",
+      "path": "security.duressResistance.duressMode",
+      "decision": "no",
+      "citationUrl": "https://github.com/firefly/wallet",
+      "explanation": "Firefly's repository and documentation contain no mention of a duress mode, decoy PIN, or passphrase-derived hidden wallet."
+    },
+    {
+      "walletId": "trezor",
+      "metricKey": "duress",
+      "path": "security.duressResistance.duressMode",
+      "decision": "yes",
+      "citationUrl": "https://blog.trezor.io/passphrase-the-ultimate-protection-for-your-accounts-3a311990925b",
+      "explanation": "SatoshiLabs' official Trezor blog names plausible deniability as a benefit of the passphrase/hidden-wallet feature, describing revealing a decoy wallet under coercion."
+    },
+    {
+      "walletId": "imkey",
+      "metricKey": "passkey",
+      "path": "security.passkeyVerification",
+      "decision": "no",
+      "citationUrl": "https://imkey.im/products/imkey-pro-crypto-hardware-wallet",
+      "explanation": "imKey Pro authenticates via PIN and Bluetooth/USB; no WebAuthn/FIDO2 passkey support is documented for the crypto wallet (the imKey Pass S6 is a separate FIDO2 product)."
+    },
+    {
+      "walletId": "ngrave",
+      "metricKey": "passkey",
+      "path": "security.passkeyVerification",
+      "decision": "no",
+      "citationUrl": "https://ngrave.io/en/zero",
+      "explanation": "NGRAVE ZERO authenticates via an 8-digit PIN and fingerprint; no passkey/WebAuthn/FIDO2 authentication is documented."
     }
   ]
 }

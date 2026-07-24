@@ -1205,7 +1205,17 @@
             ]
           },
           "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
-          "spreadDisclosure": null,
+          "spreadDisclosure": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.argent.xyz/hc/en-us/articles/360006147378-What-is-the-crypto-to-crypto-exchange-fee-in-Argent-s-Ethereum-account",
+                  "explanation": "Argent's official support page discloses a 0.5% exchange fee on swaps, shown in-app before confirming."
+                }
+              }
+            ]
+          },
           "subscriptionFeatures": {
             "$call": "supported",
             "args": [

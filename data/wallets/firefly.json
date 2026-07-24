@@ -123,7 +123,19 @@
         "bugBountyProgram": {
           "$ref": "notSupported"
         },
-        "duressResistance": null,
+        "duressResistance": {
+          "duressMode": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/firefly/wallet",
+                  "explanation": "Firefly's repository and documentation contain no mention of a duress mode, decoy PIN, or passphrase-derived hidden wallet."
+                }
+              }
+            ]
+          }
+        },
         "firmware": null,
         "keysHandling": null,
         "lightClient": {
@@ -155,7 +167,18 @@
           "erc7730": {
             "$ref": "notSupported"
           },
-          "erc8213": null
+          "erc8213": null,
+          "transactionSimulations": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/firefly/wallet",
+                  "explanation": "The Firefly DIY wallet displays only raw transaction parameters on its OLED screen; no transaction simulation or balance-change preview is documented."
+                }
+              }
+            ]
+          }
         },
         "userSafety": null,
         "hardwareWalletSupport": {
@@ -171,6 +194,41 @@
               }
             }
           ]
+        },
+        "scamAlerts": {
+          "contractTransactionWarning": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://hackaday.io/project/146319-firefly-hardware-wallet",
+                  "explanation": "Firefly is a minimal DIY air-gapped Ethereum signer; its documented feature set (multi-sig, offline signing, recovery) includes no malicious-contract registry or blocklist."
+                }
+              }
+            ]
+          },
+          "sendTransactionWarning": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://hackaday.io/project/146319-firefly-hardware-wallet",
+                  "explanation": "Firefly's documented features cover multi-sig, offline signing and recovery only; no flagged-address blacklist or address-poisoning detection is described."
+                }
+              }
+            ]
+          },
+          "scamUrlWarning": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://hackaday.io/project/146319-firefly-hardware-wallet",
+                  "explanation": "Firefly is a bare DIY signer with no network connectivity or companion app implementing URL scanning."
+                }
+              }
+            ]
+          }
         }
       },
       "selfSovereignty": {

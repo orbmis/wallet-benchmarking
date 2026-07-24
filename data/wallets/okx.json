@@ -1602,7 +1602,17 @@
               }
             ]
           },
-          "bridgeFees": null,
+          "bridgeFees": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.okx.com/en-us/learn/what-is-okx-bridge",
+                  "explanation": "OKX's official OKX Bridge guide states all costs — bridge fee (0.08–0.2%) and network gas — are displayed before confirming the transaction."
+                }
+              }
+            ]
+          },
           "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
           "spreadDisclosure": {
             "$ref": "featureSupported"

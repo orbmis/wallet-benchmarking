@@ -231,7 +231,18 @@
           "erc7730": {
             "$ref": "notSupported"
           },
-          "erc8213": null
+          "erc8213": null,
+          "transactionSimulations": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.imkey.im/hc/en-001/categories/35745879900057-imKey-Pro-Instructions",
+                  "explanation": "imKey Pro shows amount, recipient and fee for manual verification before signing, but no transaction simulation of net effects is documented."
+                }
+              }
+            ]
+          }
         },
         "userSafety": null,
         "hardwareWalletSupport": {
@@ -259,7 +270,29 @@
                 }
               }
             ]
+          },
+          "scamUrlWarning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://medium.com/imtoken/imtoken-2-9-2-out-now-with-updated-dapp-security-risk-control-and-more-551ca40f86c1",
+                  "explanation": "imKey's companion app imToken bans risky dApp URLs and shows DApp access risk reminders for high-risk sites, providing blocklist-based scam URL warnings."
+                }
+              }
+            ]
           }
+        },
+        "passkeyVerification": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://imkey.im/products/imkey-pro-crypto-hardware-wallet",
+                "explanation": "imKey Pro authenticates via PIN and Bluetooth/USB; no WebAuthn/FIDO2 passkey support is documented for the crypto wallet (the imKey Pass S6 is a separate FIDO2 product)."
+              }
+            }
+          ]
         }
       },
       "selfSovereignty": {

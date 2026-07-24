@@ -1253,7 +1253,17 @@
               }
             ]
           },
-          "bridgeFees": null,
+          "bridgeFees": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.exodus.com/investors/news-events/press-releases/detail/82/exodus-and-metamask-partner-to-bring-xo-swaps-bridge-functionality-to-millions-of-wallet-users",
+                  "explanation": "Exodus XO Swap displays the full quote and fixed rate before the user confirms a cross-chain swap/bridge, so users see the amount received beforehand."
+                }
+              }
+            ]
+          },
           "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
           "spreadDisclosure": {
             "$ref": "featureSupported"

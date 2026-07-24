@@ -1,6 +1,6 @@
 {
   "generated": true,
-  "gapCount": 808,
+  "gapCount": 768,
   "naCount": 1004,
   "gaps": [
     {
@@ -251,16 +251,6 @@
       "category": "Developer offering",
       "type": "state",
       "path": "product.developerOffering.whiteLabelOffering",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "feeSpread",
-      "label": "Spread disclosure",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.spreadDisclosure",
       "hasUnsourcedRef": false
     },
     {
@@ -624,16 +614,6 @@
       "hasUnsourcedRef": false
     },
     {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "feeSpread",
-      "label": "Spread disclosure",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.spreadDisclosure",
-      "hasUnsourcedRef": false
-    },
-    {
       "walletId": "base-app",
       "walletName": "Base App",
       "metricKey": "defiLending",
@@ -881,16 +861,6 @@
       "category": "Developer offering",
       "type": "state",
       "path": "product.developerOffering.whiteLabelOffering",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "feeSwap",
-      "label": "Swap fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.swapFees",
       "hasUnsourcedRef": false
     },
     {
@@ -1454,16 +1424,6 @@
       "hasUnsourcedRef": false
     },
     {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "feeSpread",
-      "label": "Spread disclosure",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.spreadDisclosure",
-      "hasUnsourcedRef": false
-    },
-    {
       "walletId": "mtpelerin",
       "walletName": "Bridge Wallet",
       "metricKey": "obGuest",
@@ -1844,16 +1804,6 @@
       "hasUnsourcedRef": false
     },
     {
-      "walletId": "coinbase-wallet",
-      "walletName": "Coinbase Wallet",
-      "metricKey": "feeBridge",
-      "label": "Bridge fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.bridgeFees",
-      "hasUnsourcedRef": false
-    },
-    {
       "walletId": "cypherock",
       "walletName": "Cypherock Wallet",
       "metricKey": "eoa",
@@ -1911,26 +1861,6 @@
       "category": "Accounts",
       "type": "state",
       "path": "multiAddress",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "cypherock",
-      "walletName": "Cypherock Wallet",
-      "metricKey": "scamUrl",
-      "label": "Scam URL warnings",
-      "category": "Security",
-      "type": "state",
-      "path": "security.scamAlerts.scamUrlWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "cypherock",
-      "walletName": "Cypherock Wallet",
-      "metricKey": "duress",
-      "label": "Duress / decoy mode",
-      "category": "Security",
-      "type": "state",
-      "path": "security.duressResistance.duressMode",
       "hasUnsourcedRef": false
     },
     {
@@ -2824,16 +2754,6 @@
       "hasUnsourcedRef": false
     },
     {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "feeBridge",
-      "label": "Bridge fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.bridgeFees",
-      "hasUnsourcedRef": false
-    },
-    {
       "walletId": "family",
       "walletName": "Family",
       "metricKey": "pExtension",
@@ -3104,16 +3024,6 @@
       "hasUnsourcedRef": false
     },
     {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "feeSpread",
-      "label": "Spread disclosure",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.spreadDisclosure",
-      "hasUnsourcedRef": false
-    },
-    {
       "walletId": "firefly",
       "walletName": "Firefly Wallet",
       "metricKey": "eoa",
@@ -3176,46 +3086,6 @@
     {
       "walletId": "firefly",
       "walletName": "Firefly Wallet",
-      "metricKey": "scamUrl",
-      "label": "Scam URL warnings",
-      "category": "Security",
-      "type": "state",
-      "path": "security.scamAlerts.scamUrlWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "firefly",
-      "walletName": "Firefly Wallet",
-      "metricKey": "scamSend",
-      "label": "Risky-send warnings",
-      "category": "Security",
-      "type": "state",
-      "path": "security.scamAlerts.sendTransactionWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "firefly",
-      "walletName": "Firefly Wallet",
-      "metricKey": "scamContract",
-      "label": "Malicious-contract warnings",
-      "category": "Security",
-      "type": "state",
-      "path": "security.scamAlerts.contractTransactionWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "firefly",
-      "walletName": "Firefly Wallet",
-      "metricKey": "txSim",
-      "label": "Transaction simulation",
-      "category": "Security",
-      "type": "state",
-      "path": "security.transactionLegibility.transactionSimulations",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "firefly",
-      "walletName": "Firefly Wallet",
       "metricKey": "audits",
       "label": "Public audits",
       "category": "Security",
@@ -3231,16 +3101,6 @@
       "category": "Security",
       "type": "count_low",
       "path": "security.publicSecurityAudits",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "firefly",
-      "walletName": "Firefly Wallet",
-      "metricKey": "duress",
-      "label": "Duress / decoy mode",
-      "category": "Security",
-      "type": "state",
-      "path": "security.duressResistance.duressMode",
       "hasUnsourcedRef": false
     },
     {
@@ -3916,26 +3776,6 @@
     {
       "walletId": "gridplus",
       "walletName": "GridPlus Wallet",
-      "metricKey": "scamUrl",
-      "label": "Scam URL warnings",
-      "category": "Security",
-      "type": "state",
-      "path": "security.scamAlerts.scamUrlWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gridplus",
-      "walletName": "GridPlus Wallet",
-      "metricKey": "scamSend",
-      "label": "Risky-send warnings",
-      "category": "Security",
-      "type": "state",
-      "path": "security.scamAlerts.sendTransactionWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gridplus",
-      "walletName": "GridPlus Wallet",
       "metricKey": "audits",
       "label": "Public audits",
       "category": "Security",
@@ -4026,26 +3866,6 @@
     {
       "walletId": "imkey",
       "walletName": "imKey",
-      "metricKey": "scamUrl",
-      "label": "Scam URL warnings",
-      "category": "Security",
-      "type": "state",
-      "path": "security.scamAlerts.scamUrlWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imkey",
-      "walletName": "imKey",
-      "metricKey": "txSim",
-      "label": "Transaction simulation",
-      "category": "Security",
-      "type": "state",
-      "path": "security.transactionLegibility.transactionSimulations",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imkey",
-      "walletName": "imKey",
       "metricKey": "audits",
       "label": "Public audits",
       "category": "Security",
@@ -4061,16 +3881,6 @@
       "category": "Security",
       "type": "count_low",
       "path": "security.publicSecurityAudits",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imkey",
-      "walletName": "imKey",
-      "metricKey": "passkey",
-      "label": "Passkey verification",
-      "category": "Security",
-      "type": "state",
-      "path": "security.passkeyVerification",
       "hasUnsourcedRef": false
     },
     {
@@ -4566,36 +4376,6 @@
     {
       "walletId": "keystone",
       "walletName": "Keystone Wallet",
-      "metricKey": "scamUrl",
-      "label": "Scam URL warnings",
-      "category": "Security",
-      "type": "state",
-      "path": "security.scamAlerts.scamUrlWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "keystone",
-      "walletName": "Keystone Wallet",
-      "metricKey": "scamSend",
-      "label": "Risky-send warnings",
-      "category": "Security",
-      "type": "state",
-      "path": "security.scamAlerts.sendTransactionWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "keystone",
-      "walletName": "Keystone Wallet",
-      "metricKey": "scamContract",
-      "label": "Malicious-contract warnings",
-      "category": "Security",
-      "type": "state",
-      "path": "security.scamAlerts.contractTransactionWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "keystone",
-      "walletName": "Keystone Wallet",
       "metricKey": "selfBroadcast",
       "label": "Self-broadcast (own node)",
       "category": "Self-sovereignty",
@@ -4896,46 +4676,6 @@
     {
       "walletId": "ngrave",
       "walletName": "NGRAVE Zero",
-      "metricKey": "scamUrl",
-      "label": "Scam URL warnings",
-      "category": "Security",
-      "type": "state",
-      "path": "security.scamAlerts.scamUrlWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ngrave",
-      "walletName": "NGRAVE Zero",
-      "metricKey": "scamSend",
-      "label": "Risky-send warnings",
-      "category": "Security",
-      "type": "state",
-      "path": "security.scamAlerts.sendTransactionWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ngrave",
-      "walletName": "NGRAVE Zero",
-      "metricKey": "scamContract",
-      "label": "Malicious-contract warnings",
-      "category": "Security",
-      "type": "state",
-      "path": "security.scamAlerts.contractTransactionWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ngrave",
-      "walletName": "NGRAVE Zero",
-      "metricKey": "txSim",
-      "label": "Transaction simulation",
-      "category": "Security",
-      "type": "state",
-      "path": "security.transactionLegibility.transactionSimulations",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ngrave",
-      "walletName": "NGRAVE Zero",
       "metricKey": "audits",
       "label": "Public audits",
       "category": "Security",
@@ -4951,16 +4691,6 @@
       "category": "Security",
       "type": "count_low",
       "path": "security.publicSecurityAudits",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ngrave",
-      "walletName": "NGRAVE Zero",
-      "metricKey": "passkey",
-      "label": "Passkey verification",
-      "category": "Security",
-      "type": "state",
-      "path": "security.passkeyVerification",
       "hasUnsourcedRef": false
     },
     {
@@ -5274,26 +5004,6 @@
       "hasUnsourcedRef": false
     },
     {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "feeSpread",
-      "label": "Spread disclosure",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.spreadDisclosure",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "feeHidden",
-      "label": "Hidden partner revenue",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.hiddenPartnerRevenue",
-      "hasUnsourcedRef": false
-    },
-    {
       "walletId": "okx",
       "walletName": "OKX Wallet",
       "metricKey": "pDesktop",
@@ -5474,16 +5184,6 @@
       "hasUnsourcedRef": false
     },
     {
-      "walletId": "okx",
-      "walletName": "OKX Wallet",
-      "metricKey": "feeBridge",
-      "label": "Bridge fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.bridgeFees",
-      "hasUnsourcedRef": false
-    },
-    {
       "walletId": "onekey",
       "walletName": "OneKey Pro",
       "metricKey": "eoa",
@@ -5551,26 +5251,6 @@
       "category": "Privacy",
       "type": "state",
       "path": "privacy.analytics.crashReports",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "onekey",
-      "walletName": "OneKey Pro",
-      "metricKey": "scamUrl",
-      "label": "Scam URL warnings",
-      "category": "Security",
-      "type": "state",
-      "path": "security.scamAlerts.scamUrlWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "onekey",
-      "walletName": "OneKey Pro",
-      "metricKey": "scamSend",
-      "label": "Risky-send warnings",
-      "category": "Security",
-      "type": "state",
-      "path": "security.scamAlerts.sendTransactionWarning",
       "hasUnsourcedRef": false
     },
     {
@@ -6294,26 +5974,6 @@
       "hasUnsourcedRef": false
     },
     {
-      "walletId": "rabby",
-      "walletName": "Rabby",
-      "metricKey": "feeBridge",
-      "label": "Bridge fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.bridgeFees",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rabby",
-      "walletName": "Rabby",
-      "metricKey": "feeSpread",
-      "label": "Spread disclosure",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.spreadDisclosure",
-      "hasUnsourcedRef": false
-    },
-    {
       "walletId": "rainbow",
       "walletName": "Rainbow",
       "metricKey": "ecoSolana",
@@ -6604,16 +6264,6 @@
       "hasUnsourcedRef": false
     },
     {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "feeSpread",
-      "label": "Spread disclosure",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.spreadDisclosure",
-      "hasUnsourcedRef": false
-    },
-    {
       "walletId": "safe",
       "walletName": "Safe",
       "metricKey": "rampGoogle",
@@ -6864,16 +6514,6 @@
       "hasUnsourcedRef": false
     },
     {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "feeSubscription",
-      "label": "Subscription features",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.subscriptionFeatures",
-      "hasUnsourcedRef": false
-    },
-    {
       "walletId": "trezor",
       "walletName": "Trezor Wallet",
       "metricKey": "eoa",
@@ -6936,16 +6576,6 @@
     {
       "walletId": "trezor",
       "walletName": "Trezor Wallet",
-      "metricKey": "scamUrl",
-      "label": "Scam URL warnings",
-      "category": "Security",
-      "type": "state",
-      "path": "security.scamAlerts.scamUrlWarning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trezor",
-      "walletName": "Trezor Wallet",
       "metricKey": "audits",
       "label": "Public audits",
       "category": "Security",
@@ -6961,16 +6591,6 @@
       "category": "Security",
       "type": "count_low",
       "path": "security.publicSecurityAudits",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trezor",
-      "walletName": "Trezor Wallet",
-      "metricKey": "duress",
-      "label": "Duress / decoy mode",
-      "category": "Security",
-      "type": "state",
-      "path": "security.duressResistance.duressMode",
       "hasUnsourcedRef": false
     },
     {
@@ -7211,16 +6831,6 @@
       "category": "Developer offering",
       "type": "state",
       "path": "product.developerOffering.whiteLabelOffering",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
-      "metricKey": "feeBridge",
-      "label": "Bridge fees disclosed",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.bridgeFees",
       "hasUnsourcedRef": false
     },
     {
@@ -7741,16 +7351,6 @@
       "category": "Developer offering",
       "type": "state",
       "path": "product.developerOffering.whiteLabelOffering",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "feeSpread",
-      "label": "Spread disclosure",
-      "category": "Pricing & fees",
-      "type": "state",
-      "path": "product.pricingFeeModel.spreadDisclosure",
       "hasUnsourcedRef": false
     },
     {

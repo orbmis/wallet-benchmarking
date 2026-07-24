@@ -1530,7 +1530,17 @@
             ]
           },
           "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
-          "spreadDisclosure": null,
+          "spreadDisclosure": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.zerion.io/en/articles/4813752-understanding-fees-on-zerion",
+                  "explanation": "Zerion's official help center discloses a 0.67% service fee on swaps and states there are no hidden fees, with network and exchange fees also disclosed."
+                }
+              }
+            ]
+          },
           "subscriptionFeatures": {
             "$call": "supported",
             "args": [

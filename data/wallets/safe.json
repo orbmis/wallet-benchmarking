@@ -1577,7 +1577,17 @@
               }
             ]
           },
-          "subscriptionFeatures": null,
+          "subscriptionFeatures": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://milkroad.com/reviews/safe-wallet/",
+                  "explanation": "Safe Wallet is free for core functionality (signer management, transaction proposal/execution) and does not charge for wallet use per the reviewed pricing."
+                }
+              }
+            ]
+          },
           "cardFees": "Card fees are provider-dependent where card purchase is available.",
           "hiddenPartnerRevenue": {
             "$call": "notSupported",

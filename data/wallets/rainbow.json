@@ -1391,7 +1391,17 @@
             ]
           },
           "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
-          "spreadDisclosure": null,
+          "spreadDisclosure": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbow.me/support/app/bridge-and-swap-tokens",
+                  "explanation": "Rainbow's official support page states the Rainbow Fee is always visible on the review page before confirming a swap."
+                }
+              }
+            ]
+          },
           "subscriptionFeatures": {
             "$call": "notSupported",
             "args": [

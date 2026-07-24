@@ -1237,7 +1237,17 @@
             ]
           },
           "onRampFees": "On-ramp fees are provider-, payment-method-, and region-dependent.",
-          "spreadDisclosure": null,
+          "spreadDisclosure": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.brave.app/hc/en-us/articles/13397025065357-What-are-Brave-Swaps",
+                  "explanation": "Brave's official support docs state swap fees are displayed transparently, with only network gas and the disclosed swap fee applied."
+                }
+              }
+            ]
+          },
           "subscriptionFeatures": {
             "$call": "notSupported",
             "args": [

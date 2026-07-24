@@ -1276,7 +1276,17 @@
             ]
           },
           "onRampFees": null,
-          "spreadDisclosure": null,
+          "spreadDisclosure": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/faqs",
+                  "explanation": "Family's FAQ states it charges no additional wallet fees and shows estimated fees before confirmation, but does not disclose any platform spread or markup percentage."
+                }
+              }
+            ]
+          },
           "subscriptionFeatures": {
             "$call": "notSupported",
             "args": [

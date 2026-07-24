@@ -193,7 +193,19 @@
             }
           ]
         },
-        "duressResistance": null,
+        "duressResistance": {
+          "duressMode": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://thebitcoinhole.com/hardware-wallets/cypherock-x1",
+                  "explanation": "Cypherock X1's feature spec lists a Dummy/Decoy/Duress wallet enabled via multiple BIP-39 passphrase-derived wallets with separate PINs, for coercion protection."
+                }
+              }
+            ]
+          }
+        },
         "firmware": {
           "type": "FirmwareType.PASS",
           "customFirmware": null,
@@ -316,6 +328,17 @@
                 "ref": {
                   "url": "https://coinbureau.com/review/cypherock-review",
                   "explanation": "cySync relies on manual review of permissions on the Vault screen and offers no automated malicious-contract flagging."
+                }
+              }
+            ]
+          },
+          "scamUrlWarning": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.cypherock.com/security-overview/remote-attacks",
+                  "explanation": "Cypherock's security docs focus on seedless design and secure elements; no blocklist-based phishing/dApp URL warning is documented for the X1 or cySync app."
                 }
               }
             ]

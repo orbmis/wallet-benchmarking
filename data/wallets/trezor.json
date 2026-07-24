@@ -205,7 +205,19 @@
             }
           ]
         },
-        "duressResistance": null,
+        "duressResistance": {
+          "duressMode": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.trezor.io/passphrase-the-ultimate-protection-for-your-accounts-3a311990925b",
+                  "explanation": "SatoshiLabs' official Trezor blog names plausible deniability as a benefit of the passphrase/hidden-wallet feature, describing revealing a decoy wallet under coercion."
+                }
+              }
+            ]
+          }
+        },
         "firmware": null,
         "keysHandling": null,
         "lightClient": {
@@ -301,6 +313,17 @@
                 "ref": {
                   "url": "https://trezor.io/support/troubleshooting/coins-tokens/malicious-smart-contracts",
                   "explanation": "Trezor's guidance directs users to external tools like Etherscan's token approval checker and offers no built-in flagged/malicious-contract warning before signing."
+                }
+              }
+            ]
+          },
+          "scamUrlWarning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trezor.io/guides/trezor-suite/wallet-connect-in-trezor-suite",
+                  "explanation": "Trezor Suite's WalletConnect integration warns when a dApp is unverified or flagged as dangerous before the user connects/signs."
                 }
               }
             ]

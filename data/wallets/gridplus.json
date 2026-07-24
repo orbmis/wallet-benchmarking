@@ -358,6 +358,28 @@
                 }
               }
             ]
+          },
+          "sendTransactionWarning": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.gridplus.io/lattice1/security-features",
+                  "explanation": "GridPlus Lattice1 security docs describe clear signing and tamper protection but no blacklisted-address or address-poisoning send warning."
+                }
+              }
+            ]
+          },
+          "scamUrlWarning": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.gridplus.io/lattice1/security-features",
+                  "explanation": "GridPlus Lattice1 security docs cover hardware protection and clear signing only; no phishing-URL blocklist or dApp scam warning is described."
+                }
+              }
+            ]
           }
         },
         "passkeyVerification": {
