@@ -988,7 +988,17 @@
             "explanation": "Base Account docs list gasless transactions where apps can sponsor user transaction fees, one-tap USDC payments, and batch transactions.",
             "url": "https://docs.base.org/mini-apps/features/wallet"
           },
-          "gasCustomization": null,
+          "gasCustomization": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.coinbase.com/en/wallet/sending-and-receiving/adjusting-miner-fees",
+                  "explanation": "Coinbase Wallet (Base App) help confirms users can manually enter max fee, max priority fee, and gas limit by tapping the network fee."
+                }
+              }
+            ]
+          },
           "gasSponsorship": {
             "$call": "supported",
             "args": [
@@ -1011,10 +1021,40 @@
               }
             ]
           },
-          "payGasInStablecoins": null,
+          "payGasInStablecoins": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.coinbase.com/en-gb/developer-platform/discover/launches/paymaster-custom-gas",
+                  "explanation": "Coinbase (Base App) Paymaster supports ERC-20 gas tokens including USDC on Base, enabling stablecoin-based gas payment."
+                }
+              }
+            ]
+          },
           "payGasWithReceivedToken": null,
-          "speedPresets": null,
-          "stuckTransactionRecovery": null
+          "speedPresets": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://coinapult.com/how-to-adjust-miner-fee-on-coinbase-wallet/",
+                  "explanation": "Coinbase Wallet / Base App offers Slow, Normal, and Fast transaction speed presets plus a custom manual option in network fee settings."
+                }
+              }
+            ]
+          },
+          "stuckTransactionRecovery": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.coinbase.com/en/wallet/sending-and-receiving/adjusting-miner-fees",
+                  "explanation": "Coinbase Wallet (Base App) docs describe selecting a pending transaction and tapping a speed-up button to resubmit at a higher gas fee."
+                }
+              }
+            ]
+          }
         },
         "recoveryUx": {
           "ref": {
@@ -1580,7 +1620,17 @@
               }
             ]
           },
-          "desktopMobileSync": null,
+          "desktopMobileSync": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.coinbase.com/blog/coinbase-wallet-is-now-available-as-a-standalone-browser-extension",
+                  "explanation": "Base App (Coinbase Wallet) has both a mobile app and browser extension; Coinbase confirms desktop extension activity stays in sync with the mobile app."
+                }
+              }
+            ]
+          },
           "cloudBackedSync": {
             "$call": "supported",
             "args": [

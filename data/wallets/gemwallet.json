@@ -1345,10 +1345,32 @@
             "explanation": "Gem Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://gemwallet.com"
           },
-          "syncsAccounts": null,
-          "syncsSettings": null,
+          "syncsAccounts": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.gemwallet.com/features/",
+                  "explanation": "Gem Wallet's docs state data is stored locally with nothing saved on its servers; no cross-device account sync is documented."
+                }
+              }
+            ]
+          },
+          "syncsSettings": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.gemwallet.com/features/",
+                  "explanation": "Gem Wallet uses local storage with no server-side data; no settings sync across devices is documented."
+                }
+              }
+            ]
+          },
           "syncsContactsOrAddressBook": null,
-          "desktopMobileSync": null,
+          "desktopMobileSync": {
+            "$ref": "notApplicable"
+          },
           "cloudBackedSync": null,
           "requiresSameSeedImport": {
             "$ref": "featureSupported"

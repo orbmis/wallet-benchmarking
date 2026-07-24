@@ -983,7 +983,17 @@
             "explanation": "OKX Wallet help says X Layer supports gas-free USDT/USDC transfers paid by OKX Wallet, and OKX DEX docs mention swapping to gas when fees are insufficient.",
             "url": "https://web3.okx.com/es-es/help/okx-wallet-x-layer-0-gas"
           },
-          "gasCustomization": null,
+          "gasCustomization": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://web3.okx.com/help/gas-fees-faq",
+                  "explanation": "OKX Web3 Wallet's gas FAQ confirms a Custom option alongside Slow/Average/Fast tiers, letting users input a custom gas price and adjust gas limit."
+                }
+              }
+            ]
+          },
           "gasSponsorship": {
             "$call": "supported",
             "args": [
@@ -1018,8 +1028,28 @@
             ]
           },
           "payGasWithReceivedToken": null,
-          "speedPresets": null,
-          "stuckTransactionRecovery": null
+          "speedPresets": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://web3.okx.com/help/gas-fees-faq",
+                  "explanation": "OKX Wallet offers Rapid, Fast, Standard, and Slow gas price options and allows manual adjustment, confirming multiple speed tiers."
+                }
+              }
+            ]
+          },
+          "stuckTransactionRecovery": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.okx.com/en-us/learn/crypto/crypto-transaction-stuck-troubleshooting",
+                  "explanation": "OKX Wallet help confirms users can locate a pending transaction in History and tap Cancel or Speed up to recover it."
+                }
+              }
+            ]
+          }
         },
         "recoveryUx": {
           "ref": {
@@ -1660,8 +1690,28 @@
           "syncsAccounts": null,
           "syncsSettings": null,
           "syncsContactsOrAddressBook": null,
-          "desktopMobileSync": null,
-          "cloudBackedSync": null,
+          "desktopMobileSync": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://web3.okx.com/download",
+                  "explanation": "OKX Wallet ships on iOS, Android, and as a browser extension, giving access to the same wallet across desktop and mobile."
+                }
+              }
+            ]
+          },
+          "cloudBackedSync": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.okx.com/en-us/help/back-up-wallets-to-icloud-and-google-drive-okx-wallet",
+                  "explanation": "OKX Wallet supports backing up the seed phrase to iCloud, Google Drive, and Huawei Cloud with password encryption."
+                }
+              }
+            ]
+          },
           "requiresSameSeedImport": {
             "$ref": "featureSupported"
           }

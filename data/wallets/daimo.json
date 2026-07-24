@@ -964,7 +964,17 @@
             "explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://daimo.com"
           },
-          "gasCustomization": null,
+          "gasCustomization": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.daimo.com/introduction",
+                  "explanation": "Daimo is an ERC-4337 wallet on Base with gas fully abstracted (sponsored or paid in stablecoins); no user-exposed gas price/limit/nonce controls are documented."
+                }
+              }
+            ]
+          },
           "gasSponsorship": {
             "$call": "supported",
             "args": [
@@ -1547,11 +1557,33 @@
             "explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://daimo.com"
           },
-          "syncsAccounts": null,
+          "syncsAccounts": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://apps.apple.com/ca/app/daimo/id6459700343",
+                  "explanation": "Daimo's ERC-4337 smart accounts let additional devices be added as signing keys on the same on-chain account, so all authorized devices share the account."
+                }
+              }
+            ]
+          },
           "syncsSettings": null,
           "syncsContactsOrAddressBook": null,
-          "desktopMobileSync": null,
-          "cloudBackedSync": null,
+          "desktopMobileSync": {
+            "$ref": "notApplicable"
+          },
+          "cloudBackedSync": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/daimo-eth/daimo",
+                  "explanation": "Daimo uses passkey backups that leverage platform cloud sync (iCloud Keychain on iOS, Google Password Manager on Android) for cross-device account recovery."
+                }
+              }
+            ]
+          },
           "requiresSameSeedImport": null
         }
       }

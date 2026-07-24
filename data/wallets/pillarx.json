@@ -784,7 +784,17 @@
             "url": "https://blog.pillarx.app/pulse-is-live-access-instant-swaps-across-22m-tokens-on-pillarx/"
           },
           "gasCustomization": null,
-          "gasSponsorship": null,
+          "gasSponsorship": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.pillarx.app/account-abstraction-and-chain-abstraction-the-benefits-for-pillarx-users/",
+                  "explanation": "PillarX's account abstraction stack supports gas fees sponsored by third parties such as dApps, described as a live feature for users."
+                }
+              }
+            ]
+          },
           "gasAbstraction": {
             "$call": "supported",
             "args": [
@@ -1271,7 +1281,17 @@
           "syncsAccounts": null,
           "syncsSettings": null,
           "syncsContactsOrAddressBook": null,
-          "desktopMobileSync": null,
+          "desktopMobileSync": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://pillar.fi/blog/why-pillarx-is-the-future-of-pillar-wallet-a-game-changing-upgrade/",
+                  "explanation": "PillarX is available on both mobile (iOS/Android) and desktop web at pillarx.app, providing cross-platform access to the same wallet."
+                }
+              }
+            ]
+          },
           "cloudBackedSync": null,
           "requiresSameSeedImport": {
             "$ref": "featureSupported"

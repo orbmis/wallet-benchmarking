@@ -1641,6 +1641,1022 @@
       "decision": "no",
       "citationUrl": "https://ngrave.io/en/zero",
       "explanation": "NGRAVE ZERO authenticates via an 8-digit PIN and fingerprint; no passkey/WebAuthn/FIDO2 authentication is documented."
+    },
+    {
+      "walletId": "brave-wallet",
+      "metricKey": "gasAbstraction",
+      "path": "product.gasUx.gasAbstraction",
+      "decision": "no",
+      "citationUrl": "https://brave.com/wallet/",
+      "explanation": "Brave Wallet is a traditional EOA wallet; official pages describe standard gas fees with no account abstraction, paymasters, or gasless UX."
+    },
+    {
+      "walletId": "coinbase-wallet",
+      "metricKey": "gasAbstraction",
+      "path": "product.gasUx.gasAbstraction",
+      "decision": "yes",
+      "citationUrl": "https://www.coinbase.com/blog/a-new-era-in-crypto-wallets-smart-wallet-is-here",
+      "explanation": "Coinbase Smart Wallet is a passkey-native ERC-4337 smart account; on Base gas is sponsored by default, abstracting the need to hold a native gas token."
+    },
+    {
+      "walletId": "exodus",
+      "metricKey": "gasAbstraction",
+      "path": "product.gasUx.gasAbstraction",
+      "decision": "no",
+      "citationUrl": "https://www.exodus.com/support/en/articles/8598698-how-do-i-set-ethereum-and-erc20-custom-transaction-fees",
+      "explanation": "Exodus is a traditional EOA wallet; support docs describe manual gas fee management with no account abstraction or gasless UX."
+    },
+    {
+      "walletId": "family",
+      "metricKey": "gasAbstraction",
+      "path": "product.gasUx.gasAbstraction",
+      "decision": "no",
+      "citationUrl": "https://family.co/faqs",
+      "explanation": "Family's FAQ confirms standard network fees apply with no account abstraction, ERC-4337, or gasless UX documented."
+    },
+    {
+      "walletId": "frame",
+      "metricKey": "gasAbstraction",
+      "path": "product.gasUx.gasAbstraction",
+      "decision": "no",
+      "citationUrl": "https://docs.frame.sh/docs/Introduction/",
+      "explanation": "Frame is a desktop EOA wallet; official docs contain no mention of account abstraction, paymasters, or gasless transactions."
+    },
+    {
+      "walletId": "imtoken",
+      "metricKey": "gasAbstraction",
+      "path": "product.gasUx.gasAbstraction",
+      "decision": "yes",
+      "citationUrl": "https://support.token.im/hc/en-us/articles/39943011404441-Announcement-imToken-Web-Beta-is-Live",
+      "explanation": "imToken Web Beta introduced AA accounts with paymaster support, letting users pay gas in ERC-20 tokens like USDC rather than holding the native token."
+    },
+    {
+      "walletId": "metamask",
+      "metricKey": "gasAbstraction",
+      "path": "product.gasUx.gasAbstraction",
+      "decision": "yes",
+      "citationUrl": "https://support.metamask.io/trade/swap/gasless-swaps/",
+      "explanation": "MetaMask's gasless swaps deduct the network fee from the swap source token rather than requiring the user to hold the native gas token."
+    },
+    {
+      "walletId": "nufi",
+      "metricKey": "gasAbstraction",
+      "path": "product.gasUx.gasAbstraction",
+      "decision": "no",
+      "citationUrl": "https://support.nu.fi/support/solutions/articles/80001178239-evm-smart-accounts-in-nufi-wallet",
+      "explanation": "NuFi's EVM smart accounts support transaction batching but official docs make no mention of gas abstraction or paying fees in non-native tokens."
+    },
+    {
+      "walletId": "phantom",
+      "metricKey": "gasAbstraction",
+      "path": "product.gasUx.gasAbstraction",
+      "decision": "yes",
+      "citationUrl": "https://help.phantom.com/hc/en-us/articles/41191481594643-About-gasless-transactions-on-Solana-in-Phantom",
+      "explanation": "Phantom automatically deducts the Solana transaction fee from the token being swapped when the SOL balance is insufficient, abstracting the need to hold SOL for gas."
+    },
+    {
+      "walletId": "trust-wallet",
+      "metricKey": "gasAbstraction",
+      "path": "product.gasUx.gasAbstraction",
+      "decision": "yes",
+      "citationUrl": "https://trustwallet.com/blog/announcements/introducing-trust-wallet-swift",
+      "explanation": "Trust Wallet SWIFT is an ERC-4337 smart account supporting gas fee payment in 200+ tokens, so users need not hold the native chain token."
+    },
+    {
+      "walletId": "zerion",
+      "metricKey": "gasAbstraction",
+      "path": "product.gasUx.gasAbstraction",
+      "decision": "no",
+      "citationUrl": "https://www.cryptotimes.io/2026/05/22/zero-network-shutting-down-as-zerion-pivots-to-wallet-and-api/",
+      "explanation": "Zerion's gasless UX was exclusive to its ZERO Network L2, which shut down in May 2026; Zerion Wallet on other chains has no documented gas abstraction."
+    },
+    {
+      "walletId": "zeus",
+      "metricKey": "gasAbstraction",
+      "path": "product.gasUx.gasAbstraction",
+      "decision": "na",
+      "citationUrl": "",
+      "explanation": "Zeus is a Bitcoin/Lightning wallet; EVM-style gas abstraction does not apply to its architecture."
+    },
+    {
+      "walletId": "ambire",
+      "metricKey": "gasSponsorship",
+      "path": "product.gasUx.gasSponsorship",
+      "decision": "yes",
+      "citationUrl": "https://blog.ambire.com/gas-abstraction-explained/",
+      "explanation": "Ambire sponsors gas on Gnosis Chain for extension users and supports ERC-4337 paymasters enabling dApp-sponsored gasless transactions."
+    },
+    {
+      "walletId": "brave-wallet",
+      "metricKey": "gasSponsorship",
+      "path": "product.gasUx.gasSponsorship",
+      "decision": "no",
+      "citationUrl": "https://brave.com/wallet/",
+      "explanation": "Brave Wallet is a traditional EOA wallet with no account abstraction layer; official sources show no paymaster or dApp gas sponsorship."
+    },
+    {
+      "walletId": "coinbase-wallet",
+      "metricKey": "gasSponsorship",
+      "path": "product.gasUx.gasSponsorship",
+      "decision": "yes",
+      "citationUrl": "https://www.coinbase.com/blog/a-new-era-in-crypto-wallets-smart-wallet-is-here",
+      "explanation": "Coinbase Smart Wallet ships with dApp-sponsored gas via the CDP Paymaster on Base, sponsored by default for smart wallet users."
+    },
+    {
+      "walletId": "exodus",
+      "metricKey": "gasSponsorship",
+      "path": "product.gasUx.gasSponsorship",
+      "decision": "no",
+      "citationUrl": "https://www.exodus.com/support/en/articles/8611278-does-exodus-have-transaction-fees-to-send-or-receive",
+      "explanation": "Exodus support docs confirm users always pay standard network fees; no gas sponsorship or paymaster functionality is documented."
+    },
+    {
+      "walletId": "family",
+      "metricKey": "gasSponsorship",
+      "path": "product.gasUx.gasSponsorship",
+      "decision": "no",
+      "citationUrl": "https://family.co/faqs",
+      "explanation": "Family's FAQ states standard network fees apply with no mention of gas sponsorship, paymasters, or dApp-sponsored transactions."
+    },
+    {
+      "walletId": "frame",
+      "metricKey": "gasSponsorship",
+      "path": "product.gasUx.gasSponsorship",
+      "decision": "no",
+      "citationUrl": "https://docs.frame.sh/docs/Introduction/",
+      "explanation": "Frame's official docs describe a system-level EOA wallet with no account abstraction or gas sponsorship features."
+    },
+    {
+      "walletId": "imtoken",
+      "metricKey": "gasSponsorship",
+      "path": "product.gasUx.gasSponsorship",
+      "decision": "yes",
+      "citationUrl": "https://support.token.im/hc/en-us/articles/39943011404441-Announcement-imToken-Web-Beta-is-Live",
+      "explanation": "imToken Web Beta states projects can sponsor gas fees via imToken Paymaster so users interact without needing any gas token."
+    },
+    {
+      "walletId": "metamask",
+      "metricKey": "gasSponsorship",
+      "path": "product.gasUx.gasSponsorship",
+      "decision": "no",
+      "citationUrl": "https://support.metamask.io/trade/swap/gasless-swaps/",
+      "explanation": "MetaMask's gasless swaps deduct fees from the user's swap token; the main wallet does not sponsor gas (paymaster sponsorship is only in the developer Embedded Wallets SDK)."
+    },
+    {
+      "walletId": "nufi",
+      "metricKey": "gasSponsorship",
+      "path": "product.gasUx.gasSponsorship",
+      "decision": "no",
+      "citationUrl": "https://support.nu.fi/support/solutions/articles/80001178239-evm-smart-accounts-in-nufi-wallet",
+      "explanation": "NuFi smart account documentation covers transaction batching only; no gas sponsorship or paymaster functionality is mentioned for end users."
+    },
+    {
+      "walletId": "phantom",
+      "metricKey": "gasSponsorship",
+      "path": "product.gasUx.gasSponsorship",
+      "decision": "no",
+      "citationUrl": "https://help.phantom.com/hc/en-us/articles/41191481594643-About-gasless-transactions-on-Solana-in-Phantom",
+      "explanation": "Phantom's gasless swaps deduct fees from the token being swapped — the user still pays; no external party sponsors the gas cost."
+    },
+    {
+      "walletId": "pillarx",
+      "metricKey": "gasSponsorship",
+      "path": "product.gasUx.gasSponsorship",
+      "decision": "yes",
+      "citationUrl": "https://blog.pillarx.app/account-abstraction-and-chain-abstraction-the-benefits-for-pillarx-users/",
+      "explanation": "PillarX's account abstraction stack supports gas fees sponsored by third parties such as dApps, described as a live feature for users."
+    },
+    {
+      "walletId": "safe",
+      "metricKey": "gasSponsorship",
+      "path": "product.gasUx.gasSponsorship",
+      "decision": "yes",
+      "citationUrl": "https://docs.safe.global/sdk/relay-kit",
+      "explanation": "Safe's Relay Kit enables dApp-sponsored gas via Gelato relay and ERC-4337 paymasters, letting dApps cover gas so Safe users transact without native tokens."
+    },
+    {
+      "walletId": "trust-wallet",
+      "metricKey": "gasSponsorship",
+      "path": "product.gasUx.gasSponsorship",
+      "decision": "yes",
+      "citationUrl": "https://trustwallet.com/blog/announcements/trust-wallet-now-sponsors-your-gas-fees",
+      "explanation": "Trust Wallet's Gas Sponsorship feature covers Ethereum, BNB Chain, and Solana fees for users with zero native balance (up to 4 sponsored swaps/day)."
+    },
+    {
+      "walletId": "zerion",
+      "metricKey": "gasSponsorship",
+      "path": "product.gasUx.gasSponsorship",
+      "decision": "no",
+      "citationUrl": "https://www.cryptotimes.io/2026/05/22/zero-network-shutting-down-as-zerion-pivots-to-wallet-and-api/",
+      "explanation": "Zerion's gas sponsorship was delivered via ZERO Network's paymaster, which shut down in May 2026; no replacement on other chains is documented."
+    },
+    {
+      "walletId": "zeus",
+      "metricKey": "gasSponsorship",
+      "path": "product.gasUx.gasSponsorship",
+      "decision": "na",
+      "citationUrl": "",
+      "explanation": "Zeus is a Bitcoin/Lightning wallet; EVM-style gas sponsorship/paymasters do not apply to its architecture."
+    },
+    {
+      "walletId": "argent",
+      "metricKey": "gasStables",
+      "path": "product.gasUx.payGasInStablecoins",
+      "decision": "yes",
+      "citationUrl": "https://www.starknet.io/blog/starknet-2025-year-in-review/",
+      "explanation": "Argent's Starknet paymaster lets users pay gas in STRK, USDC, or other ERC-20 tokens, with EVM L2 paymaster integrations extended in 2024-2025."
+    },
+    {
+      "walletId": "base-app",
+      "metricKey": "gasStables",
+      "path": "product.gasUx.payGasInStablecoins",
+      "decision": "yes",
+      "citationUrl": "https://www.coinbase.com/en-gb/developer-platform/discover/launches/paymaster-custom-gas",
+      "explanation": "Coinbase (Base App) Paymaster supports ERC-20 gas tokens including USDC on Base, enabling stablecoin-based gas payment."
+    },
+    {
+      "walletId": "brave-wallet",
+      "metricKey": "gasStables",
+      "path": "product.gasUx.payGasInStablecoins",
+      "decision": "no",
+      "citationUrl": "https://support.brave.app/hc/en-us/articles/15086424245389-Understanding-Gas-and-Fees",
+      "explanation": "Brave Wallet's gas documentation describes only native-token gas payments with no stablecoin gas option."
+    },
+    {
+      "walletId": "coinbase-wallet",
+      "metricKey": "gasStables",
+      "path": "product.gasUx.payGasInStablecoins",
+      "decision": "yes",
+      "citationUrl": "https://www.coinbase.com/en-gb/developer-platform/discover/launches/paymaster-custom-gas",
+      "explanation": "Coinbase Wallet enables ERC-20 gas payments via its Paymaster on Base, supporting USDC as a gas token for smart wallet users."
+    },
+    {
+      "walletId": "exodus",
+      "metricKey": "gasStables",
+      "path": "product.gasUx.payGasInStablecoins",
+      "decision": "no",
+      "citationUrl": "https://www.exodus.com/support/en/articles/8611278-does-exodus-have-transaction-fees-to-send-or-receive",
+      "explanation": "Exodus does not offer stablecoin gas payment in the standard wallet; users pay standard native network fees."
+    },
+    {
+      "walletId": "family",
+      "metricKey": "gasStables",
+      "path": "product.gasUx.payGasInStablecoins",
+      "decision": "no",
+      "citationUrl": "https://family.co/faqs",
+      "explanation": "Family's FAQ states standard network fees apply and documents no stablecoin gas payment feature."
+    },
+    {
+      "walletId": "frame",
+      "metricKey": "gasStables",
+      "path": "product.gasUx.payGasInStablecoins",
+      "decision": "no",
+      "citationUrl": "https://blockspot.io/wallet/frame/",
+      "explanation": "Frame is a desktop EOA wallet; no official documentation indicates stablecoin gas (paymaster) payment support."
+    },
+    {
+      "walletId": "imtoken",
+      "metricKey": "gasStables",
+      "path": "product.gasUx.payGasInStablecoins",
+      "decision": "yes",
+      "citationUrl": "https://support.token.im/hc/en-us/articles/39943011404441-Announcement-imToken-Web-Beta-is-Live",
+      "explanation": "imToken Web Beta's AA accounts with paymaster support let users pay gas in ERC-20 stablecoins like USDC rather than the native token."
+    },
+    {
+      "walletId": "metamask",
+      "metricKey": "gasStables",
+      "path": "product.gasUx.payGasInStablecoins",
+      "decision": "yes",
+      "citationUrl": "https://support.metamask.io/manage-crypto/transactions/metamask-gas-station/",
+      "explanation": "MetaMask Gas Station lets users pay gas fees in USDC, USDT, DAI and other tokens across Ethereum, BSC, Arbitrum, Polygon, Linea, and Base."
+    },
+    {
+      "walletId": "nufi",
+      "metricKey": "gasStables",
+      "path": "product.gasUx.payGasInStablecoins",
+      "decision": "no",
+      "citationUrl": "https://nu.fi/blog/what-are-gas-fees-and-how-they-work",
+      "explanation": "NuFi's gas documentation describes standard native-token gas payments; users can edit fees but not pay them in stablecoins."
+    },
+    {
+      "walletId": "phantom",
+      "metricKey": "gasStables",
+      "path": "product.gasUx.payGasInStablecoins",
+      "decision": "no",
+      "citationUrl": "https://help.phantom.com/hc/en-us/articles/44032849295379-About-network-fees-gas",
+      "explanation": "Phantom's network fees documentation states fees cannot be paid in USDC/stablecoins, only in the network's native token."
+    },
+    {
+      "walletId": "rainbow",
+      "metricKey": "gasStables",
+      "path": "product.gasUx.payGasInStablecoins",
+      "decision": "no",
+      "citationUrl": "https://learn.rainbow.me/gas-fees-explained",
+      "explanation": "Rainbow's gas fees documentation states gas is always paid in ETH and mentions no stablecoin gas payment."
+    },
+    {
+      "walletId": "trust-wallet",
+      "metricKey": "gasStables",
+      "path": "product.gasUx.payGasInStablecoins",
+      "decision": "yes",
+      "citationUrl": "https://trustwallet.com/blog/announcements/flex-gas-pay-for-gas-with-twt-usdt-or-bnb",
+      "explanation": "Trust Wallet FlexGas (EIP-7702) lets users pay gas fees in USDC and USDT on BNB Smart Chain, Ethereum, Arbitrum, Optimism, and Base."
+    },
+    {
+      "walletId": "uniswap-wallet",
+      "metricKey": "gasStables",
+      "path": "product.gasUx.payGasInStablecoins",
+      "decision": "no",
+      "citationUrl": "https://blog.uniswap.org/gasless-swaps",
+      "explanation": "Uniswap Wallet offers gasless swaps via UniswapX (a filler pays gas), which is sponsorship, not user-selectable stablecoin gas payment."
+    },
+    {
+      "walletId": "zerion",
+      "metricKey": "gasStables",
+      "path": "product.gasUx.payGasInStablecoins",
+      "decision": "no",
+      "citationUrl": "https://zerion.io/blog/welcome-to-a-world-without-gas-fees/",
+      "explanation": "Zerion's gas-free UX came via its own ZERO Network paymaster (sponsored); there is no user-facing option to pay gas in USDC/USDT on standard chains."
+    },
+    {
+      "walletId": "zeus",
+      "metricKey": "gasStables",
+      "path": "product.gasUx.payGasInStablecoins",
+      "decision": "na",
+      "citationUrl": "",
+      "explanation": "Zeus is a Bitcoin/Lightning wallet; paying EVM gas in stablecoins does not apply to its architecture."
+    },
+    {
+      "walletId": "ambire",
+      "metricKey": "gasPresets",
+      "path": "product.gasUx.speedPresets",
+      "decision": "yes",
+      "citationUrl": "https://help.ambire.com/en/articles/13752143-web-version-how-can-i-fill-up-the-gas-tank",
+      "explanation": "Ambire's help docs confirm users can choose transaction speed (fast vs slow), with higher fees for faster transactions."
+    },
+    {
+      "walletId": "base-app",
+      "metricKey": "gasPresets",
+      "path": "product.gasUx.speedPresets",
+      "decision": "yes",
+      "citationUrl": "https://coinapult.com/how-to-adjust-miner-fee-on-coinbase-wallet/",
+      "explanation": "Coinbase Wallet / Base App offers Slow, Normal, and Fast transaction speed presets plus a custom manual option in network fee settings."
+    },
+    {
+      "walletId": "okx",
+      "metricKey": "gasPresets",
+      "path": "product.gasUx.speedPresets",
+      "decision": "yes",
+      "citationUrl": "https://web3.okx.com/help/gas-fees-faq",
+      "explanation": "OKX Wallet offers Rapid, Fast, Standard, and Slow gas price options and allows manual adjustment, confirming multiple speed tiers."
+    },
+    {
+      "walletId": "rabby",
+      "metricKey": "gasPresets",
+      "path": "product.gasUx.speedPresets",
+      "decision": "yes",
+      "citationUrl": "https://support.rabby.io/hc/en-us/articles/11495315064847-How-to-speed-up-or-cancel-a-pending-transaction",
+      "explanation": "Rabby offers Normal, Fast, and Instant gas speed presets in the transaction preview, plus a Custom option for manual entry."
+    },
+    {
+      "walletId": "safe",
+      "metricKey": "gasPresets",
+      "path": "product.gasUx.speedPresets",
+      "decision": "no",
+      "citationUrl": "https://github.com/5afe/safe/issues/199",
+      "explanation": "A GitHub issue on the archived Safe repo confirms gas speed presets were never implemented in Safe."
+    },
+    {
+      "walletId": "zeus",
+      "metricKey": "gasPresets",
+      "path": "product.gasUx.speedPresets",
+      "decision": "na",
+      "citationUrl": "",
+      "explanation": "Zeus is a Bitcoin/Lightning wallet; EVM-style gas speed presets do not apply to its architecture."
+    },
+    {
+      "walletId": "argent",
+      "metricKey": "gasCustom",
+      "path": "product.gasUx.gasCustomization",
+      "decision": "no",
+      "citationUrl": "https://www.ready.co/blog/easy-gas-controls",
+      "explanation": "Argent's own blog states it deliberately does not offer full gas customization to avoid stuck transactions; users only pick from preset speed tiers."
+    },
+    {
+      "walletId": "base-app",
+      "metricKey": "gasCustom",
+      "path": "product.gasUx.gasCustomization",
+      "decision": "yes",
+      "citationUrl": "https://help.coinbase.com/en/wallet/sending-and-receiving/adjusting-miner-fees",
+      "explanation": "Coinbase Wallet (Base App) help confirms users can manually enter max fee, max priority fee, and gas limit by tapping the network fee."
+    },
+    {
+      "walletId": "bitget",
+      "metricKey": "gasCustom",
+      "path": "product.gasUx.gasCustomization",
+      "decision": "yes",
+      "citationUrl": "https://web3.bitget.com/en/academy/how-to-set-up-and-use-bitget-wallet",
+      "explanation": "Bitget Wallet offers Slow/Average/Fast/Custom gas tiers and lets users tap the gas fee to adjust it before confirming a transaction."
+    },
+    {
+      "walletId": "daimo",
+      "metricKey": "gasCustom",
+      "path": "product.gasUx.gasCustomization",
+      "decision": "no",
+      "citationUrl": "https://docs.daimo.com/introduction",
+      "explanation": "Daimo is an ERC-4337 wallet on Base with gas fully abstracted (sponsored or paid in stablecoins); no user-exposed gas price/limit/nonce controls are documented."
+    },
+    {
+      "walletId": "okx",
+      "metricKey": "gasCustom",
+      "path": "product.gasUx.gasCustomization",
+      "decision": "yes",
+      "citationUrl": "https://web3.okx.com/help/gas-fees-faq",
+      "explanation": "OKX Web3 Wallet's gas FAQ confirms a Custom option alongside Slow/Average/Fast tiers, letting users input a custom gas price and adjust gas limit."
+    },
+    {
+      "walletId": "rabby",
+      "metricKey": "gasCustom",
+      "path": "product.gasUx.gasCustomization",
+      "decision": "yes",
+      "citationUrl": "https://support.rabby.io/hc/en-us/articles/11495315064847-How-to-speed-up-or-cancel-a-pending-transaction",
+      "explanation": "Rabby supports EIP-1559 with a Max Priority Fee slider, customisable gas limit in Advanced Settings, and a Custom gas price option alongside presets."
+    },
+    {
+      "walletId": "safe",
+      "metricKey": "gasCustom",
+      "path": "product.gasUx.gasCustomization",
+      "decision": "yes",
+      "citationUrl": "https://github.com/5afe/safe-react/issues/838",
+      "explanation": "Safe's UI and GitHub history confirm advanced users can manually set nonce, gas price, and gas limit when initiating a transaction."
+    },
+    {
+      "walletId": "zeus",
+      "metricKey": "gasCustom",
+      "path": "product.gasUx.gasCustomization",
+      "decision": "na",
+      "citationUrl": "",
+      "explanation": "Zeus is a Bitcoin/Lightning wallet with no EVM support; EVM gas customization does not apply."
+    },
+    {
+      "walletId": "argent",
+      "metricKey": "gasStuck",
+      "path": "product.gasUx.stuckTransactionRecovery",
+      "decision": "no",
+      "citationUrl": "https://support.argent.xyz/hc/en-us/articles/360022628632-I-have-not-received-a-transaction-I-was-expecting",
+      "explanation": "Argent avoids gas customization to prevent stuck transactions; its support doc directs users to email support rather than offering in-app speed-up/cancel."
+    },
+    {
+      "walletId": "base-app",
+      "metricKey": "gasStuck",
+      "path": "product.gasUx.stuckTransactionRecovery",
+      "decision": "yes",
+      "citationUrl": "https://help.coinbase.com/en/wallet/sending-and-receiving/adjusting-miner-fees",
+      "explanation": "Coinbase Wallet (Base App) docs describe selecting a pending transaction and tapping a speed-up button to resubmit at a higher gas fee."
+    },
+    {
+      "walletId": "bitget",
+      "metricKey": "gasStuck",
+      "path": "product.gasUx.stuckTransactionRecovery",
+      "decision": "yes",
+      "citationUrl": "https://www.bitget.com/news/detail/12560604558687",
+      "explanation": "Bitget Wallet has a Speed Up button that replaces a stuck tx at a higher fee and a Cancel button that sends a 0-value same-nonce replacement."
+    },
+    {
+      "walletId": "family",
+      "metricKey": "gasStuck",
+      "path": "product.gasUx.stuckTransactionRecovery",
+      "decision": "yes",
+      "citationUrl": "https://family.co/support",
+      "explanation": "Family's support site lists dedicated 'Speed up a transaction' and 'Cancel a transaction' articles, confirming both features."
+    },
+    {
+      "walletId": "mtpelerin",
+      "metricKey": "gasStuck",
+      "path": "product.gasUx.stuckTransactionRecovery",
+      "decision": "yes",
+      "citationUrl": "https://www.mtpelerin.com/blog/how-to-cancel-a-pending-ethereum-transaction",
+      "explanation": "Mt Pelerin's blog describes cancelling a stuck Ethereum transaction in Bridge Wallet via the Advanced menu with a higher gas price and the same nonce."
+    },
+    {
+      "walletId": "okx",
+      "metricKey": "gasStuck",
+      "path": "product.gasUx.stuckTransactionRecovery",
+      "decision": "yes",
+      "citationUrl": "https://www.okx.com/en-us/learn/crypto/crypto-transaction-stuck-troubleshooting",
+      "explanation": "OKX Wallet help confirms users can locate a pending transaction in History and tap Cancel or Speed up to recover it."
+    },
+    {
+      "walletId": "safe",
+      "metricKey": "gasStuck",
+      "path": "product.gasUx.stuckTransactionRecovery",
+      "decision": "yes",
+      "citationUrl": "https://github.com/safe-global/safe-wallet-monorepo/issues/3611",
+      "explanation": "Safe added a speed-up option for pending transactions and supports cancellation via a replacement transaction, per the resolved GitHub issue and help docs."
+    },
+    {
+      "walletId": "uniswap-wallet",
+      "metricKey": "gasStuck",
+      "path": "product.gasUx.stuckTransactionRecovery",
+      "decision": "no",
+      "citationUrl": "https://support.uniswap.org/hc/en-us/articles/11306460803981-My-Uniswap-Wallet-transaction-has-been-pending-for-a-long-time-What-can-I-do",
+      "explanation": "Uniswap Wallet's support article for stuck pending transactions only recommends reinstalling the app, with no in-app speed-up, cancel, or replace-by-fee."
+    },
+    {
+      "walletId": "zerion",
+      "metricKey": "gasStuck",
+      "path": "product.gasUx.stuckTransactionRecovery",
+      "decision": "yes",
+      "citationUrl": "https://help.zerion.io/en/articles/9653365-how-to-speed-up-or-cancel-your-pending-transaction",
+      "explanation": "Zerion's help center describes speed-up and cancel options for pending transactions via the Activity tab in the mobile app."
+    },
+    {
+      "walletId": "zeus",
+      "metricKey": "gasStuck",
+      "path": "product.gasUx.stuckTransactionRecovery",
+      "decision": "na",
+      "citationUrl": "",
+      "explanation": "Zeus is a Bitcoin/Lightning wallet; EVM-style stuck-transaction (replace-by-fee) recovery does not apply to its architecture."
+    },
+    {
+      "walletId": "ambire",
+      "metricKey": "syncCloud",
+      "path": "product.deviceSync.cloudBackedSync",
+      "decision": "yes",
+      "citationUrl": "https://help.ambire.com/en/articles/13752061-web-version-what-is-ambire-cloud",
+      "explanation": "Ambire Cloud stores one of the two private keys for email/password accounts encrypted on Ambire's cloud servers, enabling access without a local backup file."
+    },
+    {
+      "walletId": "argent",
+      "metricKey": "syncCloud",
+      "path": "product.deviceSync.cloudBackedSync",
+      "decision": "yes",
+      "citationUrl": "https://support.argent.xyz/hc/en-us/articles/4410361683601-Saving-Encrypted-Recovery-Kit-for-offchain-recovery",
+      "explanation": "Argent stores an Encrypted Recovery Kit in the user's iCloud or Google Drive, enabling wallet restoration on a new device via cloud-backed encrypted backup."
+    },
+    {
+      "walletId": "bitget",
+      "metricKey": "syncCloud",
+      "path": "product.deviceSync.cloudBackedSync",
+      "decision": "yes",
+      "citationUrl": "https://web3.bitget.com/en/academy/secure-wallet-transfer-new-device",
+      "explanation": "Bitget Wallet's MPC wallet supports cloud backup via iCloud or Google Drive with a double-encryption mechanism; cloud restore invalidates old-device key shares."
+    },
+    {
+      "walletId": "brave-wallet",
+      "metricKey": "syncCloud",
+      "path": "product.deviceSync.cloudBackedSync",
+      "decision": "no",
+      "citationUrl": "https://github.com/brave/brave-browser/issues/51904",
+      "explanation": "Brave Wallet offers no cloud-backed sync or backup; the open GitHub issue confirms cloud backup is a requested but unimplemented feature."
+    },
+    {
+      "walletId": "daimo",
+      "metricKey": "syncCloud",
+      "path": "product.deviceSync.cloudBackedSync",
+      "decision": "yes",
+      "citationUrl": "https://github.com/daimo-eth/daimo",
+      "explanation": "Daimo uses passkey backups that leverage platform cloud sync (iCloud Keychain on iOS, Google Password Manager on Android) for cross-device account recovery."
+    },
+    {
+      "walletId": "elytro",
+      "metricKey": "syncCloud",
+      "path": "product.deviceSync.cloudBackedSync",
+      "decision": "no",
+      "citationUrl": "https://elytro.com/faq",
+      "explanation": "Elytro encrypts keys locally on the user's device with no cloud backup; the FAQ advises keeping a local backup."
+    },
+    {
+      "walletId": "exodus",
+      "metricKey": "syncCloud",
+      "path": "product.deviceSync.cloudBackedSync",
+      "decision": "yes",
+      "citationUrl": "https://www.exodus.com/support/en/articles/8598900-how-do-i-back-up-my-wallet-with-icloud-or-google-drive",
+      "explanation": "Exodus Mobile backs up the secret key encrypted to iCloud or Google Drive, secured by a passkey, enabling restoration on a new device."
+    },
+    {
+      "walletId": "frame",
+      "metricKey": "syncCloud",
+      "path": "product.deviceSync.cloudBackedSync",
+      "decision": "no",
+      "citationUrl": "https://frame.sh/",
+      "explanation": "Frame has no cloud storage by default and keeps data under local user control; no cloud backup is offered."
+    },
+    {
+      "walletId": "imtoken",
+      "metricKey": "syncCloud",
+      "path": "product.deviceSync.cloudBackedSync",
+      "decision": "yes",
+      "citationUrl": "https://support.token.im/hc/en-us/articles/53068264411289-How-to-Keep-Your-Account-Safe",
+      "explanation": "imToken supports Cloud Sync via iCloud Keychain or Google Password Manager; the encrypted key syncs to the user's account and restores the wallet on a new device."
+    },
+    {
+      "walletId": "mtpelerin",
+      "metricKey": "syncCloud",
+      "path": "product.deviceSync.cloudBackedSync",
+      "decision": "no",
+      "citationUrl": "https://www.mtpelerin.com/bridge-wallet",
+      "explanation": "Bridge Wallet is self-custody where the user holds their own secret phrase; no cloud backup feature is documented."
+    },
+    {
+      "walletId": "nufi",
+      "metricKey": "syncCloud",
+      "path": "product.deviceSync.cloudBackedSync",
+      "decision": "no",
+      "citationUrl": "https://support.nu.fi/support/solutions/articles/80000941833-create-a-wallet-backup",
+      "explanation": "NuFi's backup docs describe only a local JSON backup and recovery phrase; cloud backup is a planned future feature, not yet available."
+    },
+    {
+      "walletId": "okx",
+      "metricKey": "syncCloud",
+      "path": "product.deviceSync.cloudBackedSync",
+      "decision": "yes",
+      "citationUrl": "https://www.okx.com/en-us/help/back-up-wallets-to-icloud-and-google-drive-okx-wallet",
+      "explanation": "OKX Wallet supports backing up the seed phrase to iCloud, Google Drive, and Huawei Cloud with password encryption."
+    },
+    {
+      "walletId": "safe",
+      "metricKey": "syncCloud",
+      "path": "product.deviceSync.cloudBackedSync",
+      "decision": "no",
+      "citationUrl": "https://help.safe.global/en/articles/40829-how-signer-keys-are-stored",
+      "explanation": "Safe Mobile stores signer keys encrypted only in the local device database via the Android Keystore; it explicitly provides no cloud syncing or restore."
+    },
+    {
+      "walletId": "trust-wallet",
+      "metricKey": "syncCloud",
+      "path": "product.deviceSync.cloudBackedSync",
+      "decision": "yes",
+      "citationUrl": "https://trustwallet.com/blog/announcements/introducing-qr-sync-import-your-mobile-wallet-to-the-desktop-extension",
+      "explanation": "Trust Wallet supports cloud backup of private keys to iCloud (iOS) and Google Drive (Android) via an encrypted backup file."
+    },
+    {
+      "walletId": "uniswap-wallet",
+      "metricKey": "syncCloud",
+      "path": "product.deviceSync.cloudBackedSync",
+      "decision": "yes",
+      "citationUrl": "https://support.uniswap.org/hc/en-us/articles/11382985633421-How-to-back-up-your-recovery-phrase-on-iCloud-or-Google-Drive",
+      "explanation": "Uniswap Wallet backs up the recovery phrase as a password-encrypted file to iCloud or Google Drive."
+    },
+    {
+      "walletId": "zerion",
+      "metricKey": "syncCloud",
+      "path": "product.deviceSync.cloudBackedSync",
+      "decision": "yes",
+      "citationUrl": "https://zerion.io/blog/zerion-for-ios-mac-and-ipad-with-icloud-sync/",
+      "explanation": "Zerion offers iCloud-backed Device Sync on iOS/macOS/iPad (Google Drive on Android), encrypting wallet data and settings to the cloud."
+    },
+    {
+      "walletId": "zeus",
+      "metricKey": "syncCloud",
+      "path": "product.deviceSync.cloudBackedSync",
+      "decision": "yes",
+      "citationUrl": "https://docs.zeusln.app/for-users/embedded-node/backup-and-recovery/",
+      "explanation": "Zeus automatically backs up Lightning channel disaster-recovery data to OLYMPUS servers, encrypted with the user's 24-word seed phrase."
+    },
+    {
+      "walletId": "ambire",
+      "metricKey": "syncDesktopMobile",
+      "path": "product.deviceSync.desktopMobileSync",
+      "decision": "no",
+      "citationUrl": "https://blog.ambire.com/mobile-app-under-rebuild/",
+      "explanation": "Ambire V1 (mobile) and V2 (extension) accounts are currently incompatible and cannot be synced; the team lists it as a future goal."
+    },
+    {
+      "walletId": "argent",
+      "metricKey": "syncDesktopMobile",
+      "path": "product.deviceSync.desktopMobileSync",
+      "decision": "no",
+      "citationUrl": "https://support.argent.xyz/hc/en-us/articles/8802158124957-Can-I-import-my-mobile-Argent-wallet-into-the-browser-extension",
+      "explanation": "The mobile private key cannot be imported into Argent X; accounts migrate one-way from extension to mobile with no bidirectional sync."
+    },
+    {
+      "walletId": "base-app",
+      "metricKey": "syncDesktopMobile",
+      "path": "product.deviceSync.desktopMobileSync",
+      "decision": "yes",
+      "citationUrl": "https://www.coinbase.com/blog/coinbase-wallet-is-now-available-as-a-standalone-browser-extension",
+      "explanation": "Base App (Coinbase Wallet) has both a mobile app and browser extension; Coinbase confirms desktop extension activity stays in sync with the mobile app."
+    },
+    {
+      "walletId": "bitget",
+      "metricKey": "syncDesktopMobile",
+      "path": "product.deviceSync.desktopMobileSync",
+      "decision": "yes",
+      "citationUrl": "https://www.bitget.com/wiki/how-to-sync-computer-and-phone-bitcoin-wallet",
+      "explanation": "Bitget Wallet offers both a mobile app and browser extension; the same wallet syncs balances and transaction history across desktop and mobile."
+    },
+    {
+      "walletId": "brave-wallet",
+      "metricKey": "syncDesktopMobile",
+      "path": "product.deviceSync.desktopMobileSync",
+      "decision": "no",
+      "citationUrl": "https://github.com/brave/brave-browser/issues/21283",
+      "explanation": "Brave Wallet is excluded from Brave Sync; the 2022 GitHub request for desktop-mobile wallet sync remains open and unimplemented."
+    },
+    {
+      "walletId": "daimo",
+      "metricKey": "syncDesktopMobile",
+      "path": "product.deviceSync.desktopMobileSync",
+      "decision": "na",
+      "citationUrl": "",
+      "explanation": "Daimo is mobile-only (iOS/Android) with desktop 'coming soon', so desktop-mobile sync does not currently apply."
+    },
+    {
+      "walletId": "elytro",
+      "metricKey": "syncDesktopMobile",
+      "path": "product.deviceSync.desktopMobileSync",
+      "decision": "na",
+      "citationUrl": "",
+      "explanation": "Elytro is currently desktop-only (extension); mobile is planned but not yet available, so desktop-mobile sync does not apply."
+    },
+    {
+      "walletId": "family",
+      "metricKey": "syncDesktopMobile",
+      "path": "product.deviceSync.desktopMobileSync",
+      "decision": "na",
+      "citationUrl": "",
+      "explanation": "Family is an iOS-only wallet with no desktop app, so desktop-mobile sync does not apply."
+    },
+    {
+      "walletId": "frame",
+      "metricKey": "syncDesktopMobile",
+      "path": "product.deviceSync.desktopMobileSync",
+      "decision": "na",
+      "citationUrl": "",
+      "explanation": "Frame is a desktop-only wallet with no mobile app, so desktop-mobile sync does not apply."
+    },
+    {
+      "walletId": "gemwallet",
+      "metricKey": "syncDesktopMobile",
+      "path": "product.deviceSync.desktopMobileSync",
+      "decision": "na",
+      "citationUrl": "",
+      "explanation": "Gem Wallet is a mobile-only app (iOS/Android) with no desktop app (confirmed in dataset platform coverage), so desktop-mobile sync does not apply."
+    },
+    {
+      "walletId": "imtoken",
+      "metricKey": "syncDesktopMobile",
+      "path": "product.deviceSync.desktopMobileSync",
+      "decision": "na",
+      "citationUrl": "",
+      "explanation": "imToken is a mobile-only app with no desktop client, so desktop-mobile sync does not apply."
+    },
+    {
+      "walletId": "mtpelerin",
+      "metricKey": "syncDesktopMobile",
+      "path": "product.deviceSync.desktopMobileSync",
+      "decision": "no",
+      "citationUrl": "https://www.mtpelerin.com/bridge-wallet",
+      "explanation": "Bridge Wallet is a mobile app with an auxiliary web interface but no documented sync mechanism between the web interface and mobile."
+    },
+    {
+      "walletId": "nufi",
+      "metricKey": "syncDesktopMobile",
+      "path": "product.deviceSync.desktopMobileSync",
+      "decision": "na",
+      "citationUrl": "",
+      "explanation": "NuFi is a browser-extension/web wallet with no native mobile app, so desktop-mobile sync does not apply."
+    },
+    {
+      "walletId": "okx",
+      "metricKey": "syncDesktopMobile",
+      "path": "product.deviceSync.desktopMobileSync",
+      "decision": "yes",
+      "citationUrl": "https://web3.okx.com/download",
+      "explanation": "OKX Wallet ships on iOS, Android, and as a browser extension, giving access to the same wallet across desktop and mobile."
+    },
+    {
+      "walletId": "pillarx",
+      "metricKey": "syncDesktopMobile",
+      "path": "product.deviceSync.desktopMobileSync",
+      "decision": "yes",
+      "citationUrl": "https://pillar.fi/blog/why-pillarx-is-the-future-of-pillar-wallet-a-game-changing-upgrade/",
+      "explanation": "PillarX is available on both mobile (iOS/Android) and desktop web at pillarx.app, providing cross-platform access to the same wallet."
+    },
+    {
+      "walletId": "trust-wallet",
+      "metricKey": "syncDesktopMobile",
+      "path": "product.deviceSync.desktopMobileSync",
+      "decision": "yes",
+      "citationUrl": "https://trustwallet.com/blog/announcements/introducing-qr-sync-import-your-mobile-wallet-to-the-desktop-extension",
+      "explanation": "Trust Wallet's QR Sync imports the mobile wallet into the browser extension via QR code, keeping the wallet connected across mobile and desktop."
+    },
+    {
+      "walletId": "uniswap-wallet",
+      "metricKey": "syncDesktopMobile",
+      "path": "product.deviceSync.desktopMobileSync",
+      "decision": "yes",
+      "citationUrl": "https://support.uniswap.org/hc/en-us/articles/25751833036045-How-to-import-your-Uniswap-Wallet-to-the-Uniswap-Extension",
+      "explanation": "The Uniswap Extension imports the mobile wallet via QR code scan, giving access to the same wallet across desktop extension and mobile app."
+    },
+    {
+      "walletId": "zerion",
+      "metricKey": "syncDesktopMobile",
+      "path": "product.deviceSync.desktopMobileSync",
+      "decision": "yes",
+      "citationUrl": "https://zerion.io/download",
+      "explanation": "Zerion ships on mobile, macOS, iPad, and as a browser extension; the same wallet syncs assets and history across all platforms."
+    },
+    {
+      "walletId": "zeus",
+      "metricKey": "syncDesktopMobile",
+      "path": "product.deviceSync.desktopMobileSync",
+      "decision": "na",
+      "citationUrl": "",
+      "explanation": "Zeus is a mobile-only Bitcoin/Lightning wallet with no desktop app, so desktop-mobile sync does not apply."
+    },
+    {
+      "walletId": "ambire",
+      "metricKey": "syncAccounts",
+      "path": "product.deviceSync.syncsAccounts",
+      "decision": "no",
+      "citationUrl": "https://help.ambire.com/en/articles/13752061-web-version-what-is-ambire-cloud",
+      "explanation": "Ambire Cloud backs up encrypted private keys but does not sync accounts across devices; a JSON backup import is required to access an account elsewhere."
+    },
+    {
+      "walletId": "argent",
+      "metricKey": "syncAccounts",
+      "path": "product.deviceSync.syncsAccounts",
+      "decision": "no",
+      "citationUrl": "https://support.argent.xyz/hc/en-us/articles/18117728511389-Importing-a-Smart-account-Argent-X-into-your-Argent-mobile-wallet",
+      "explanation": "Argent requires a manual export/QR import to access accounts on a second device; accounts do not automatically sync across devices."
+    },
+    {
+      "walletId": "bitget",
+      "metricKey": "syncAccounts",
+      "path": "product.deviceSync.syncsAccounts",
+      "decision": "no",
+      "citationUrl": "https://www.bitget.com/wiki/how-to-sync-computer-and-phone-bitcoin-wallet",
+      "explanation": "Bitget Wallet requires manually importing the same seed phrase on each device; this is seed-based restoration, not automatic account sync."
+    },
+    {
+      "walletId": "brave-wallet",
+      "metricKey": "syncAccounts",
+      "path": "product.deviceSync.syncsAccounts",
+      "decision": "no",
+      "citationUrl": "https://github.com/brave/brave-browser/issues/21283",
+      "explanation": "Brave Wallet is excluded from Brave Sync (open feature request since 2022); accounts do not sync across devices."
+    },
+    {
+      "walletId": "daimo",
+      "metricKey": "syncAccounts",
+      "path": "product.deviceSync.syncsAccounts",
+      "decision": "yes",
+      "citationUrl": "https://apps.apple.com/ca/app/daimo/id6459700343",
+      "explanation": "Daimo's ERC-4337 smart accounts let additional devices be added as signing keys on the same on-chain account, so all authorized devices share the account."
+    },
+    {
+      "walletId": "frame",
+      "metricKey": "syncAccounts",
+      "path": "product.deviceSync.syncsAccounts",
+      "decision": "no",
+      "citationUrl": "https://docs.frame.sh/docs/Introduction/",
+      "explanation": "Frame is a desktop-only app with local encrypted storage and no cloud sync; accounts must be re-imported on each desktop."
+    },
+    {
+      "walletId": "gemwallet",
+      "metricKey": "syncAccounts",
+      "path": "product.deviceSync.syncsAccounts",
+      "decision": "no",
+      "citationUrl": "https://docs.gemwallet.com/features/",
+      "explanation": "Gem Wallet's docs state data is stored locally with nothing saved on its servers; no cross-device account sync is documented."
+    },
+    {
+      "walletId": "imtoken",
+      "metricKey": "syncAccounts",
+      "path": "product.deviceSync.syncsAccounts",
+      "decision": "yes",
+      "citationUrl": "https://support.token.im/hc/en-us/articles/53068264411289-How-to-Keep-Your-Account-Safe",
+      "explanation": "imToken's passkey accounts sync via iCloud Keychain or Google Password Manager, restoring the wallet on a new device with the same account after biometric verification."
+    },
+    {
+      "walletId": "mtpelerin",
+      "metricKey": "syncAccounts",
+      "path": "product.deviceSync.syncsAccounts",
+      "decision": "no",
+      "citationUrl": "https://www.mtpelerin.com/bridge-wallet",
+      "explanation": "Bridge Wallet is self-custodial and mobile-only, offering only seed-phrase manual export/import with no automatic cross-device account sync."
+    },
+    {
+      "walletId": "nufi",
+      "metricKey": "syncAccounts",
+      "path": "product.deviceSync.syncsAccounts",
+      "decision": "yes",
+      "citationUrl": "https://support.nu.fi/support/solutions/articles/80001016927-changelog",
+      "explanation": "NuFi Release 2.3.0 changelog explicitly states a wallet's accounts (and settings) are now synchronised across devices."
+    },
+    {
+      "walletId": "uniswap-wallet",
+      "metricKey": "syncAccounts",
+      "path": "product.deviceSync.syncsAccounts",
+      "decision": "yes",
+      "citationUrl": "https://blog.uniswap.org/in-app-wallet-and-more-UX-improvements",
+      "explanation": "Uniswap's In-App Wallet (Privy-powered) works across browsers and devices — login on any device grants access to the same wallet."
+    },
+    {
+      "walletId": "zerion",
+      "metricKey": "syncAccounts",
+      "path": "product.deviceSync.syncsAccounts",
+      "decision": "yes",
+      "citationUrl": "https://zerion.io/blog/zerion-for-ios-mac-and-ipad-with-icloud-sync/",
+      "explanation": "Zerion's Device Sync syncs personal and watched wallets across Apple devices via iCloud (Google One on Android)."
+    },
+    {
+      "walletId": "zeus",
+      "metricKey": "syncAccounts",
+      "path": "product.deviceSync.syncsAccounts",
+      "decision": "no",
+      "citationUrl": "https://docs.zeusln.app/",
+      "explanation": "Zeus runs on a single device connected to a Lightning node; node account connections are not synced across devices."
+    },
+    {
+      "walletId": "ambire",
+      "metricKey": "syncSettings",
+      "path": "product.deviceSync.syncsSettings",
+      "decision": "no",
+      "citationUrl": "https://help.ambire.com/en/articles/13752061-web-version-what-is-ambire-cloud",
+      "explanation": "No settings sync is documented for Ambire; Ambire Cloud is strictly an encrypted private-key backup, not a preferences sync."
+    },
+    {
+      "walletId": "brave-wallet",
+      "metricKey": "syncSettings",
+      "path": "product.deviceSync.syncsSettings",
+      "decision": "no",
+      "citationUrl": "https://github.com/brave/brave-browser/issues/21283",
+      "explanation": "Brave Wallet is excluded from Brave Sync (open request since 2022); wallet settings and preferences do not sync across devices."
+    },
+    {
+      "walletId": "exodus",
+      "metricKey": "syncSettings",
+      "path": "product.deviceSync.syncsSettings",
+      "decision": "no",
+      "citationUrl": "https://support.exodus.com/article/1481-how-do-i-sync-my-exodus-wallet-to-a-different-device",
+      "explanation": "Exodus's docs state custom tokens must be re-added after device sync and favorites don't sync to Desktop, so settings sync is not provided."
+    },
+    {
+      "walletId": "frame",
+      "metricKey": "syncSettings",
+      "path": "product.deviceSync.syncsSettings",
+      "decision": "no",
+      "citationUrl": "https://docs.frame.sh/docs/Introduction/",
+      "explanation": "Frame uses local-only storage with no cloud component; settings and preferences are device-local and do not sync."
+    },
+    {
+      "walletId": "gemwallet",
+      "metricKey": "syncSettings",
+      "path": "product.deviceSync.syncsSettings",
+      "decision": "no",
+      "citationUrl": "https://docs.gemwallet.com/features/",
+      "explanation": "Gem Wallet uses local storage with no server-side data; no settings sync across devices is documented."
+    },
+    {
+      "walletId": "metamask",
+      "metricKey": "syncSettings",
+      "path": "product.deviceSync.syncsSettings",
+      "decision": "no",
+      "citationUrl": "https://support.metamask.io/configure/wallet/account-backup-and-sync/",
+      "explanation": "MetaMask's Backup and Sync syncs account names and contacts but explicitly not custom networks, custom tokens, or the address book, so settings sync is absent."
+    },
+    {
+      "walletId": "mtpelerin",
+      "metricKey": "syncSettings",
+      "path": "product.deviceSync.syncsSettings",
+      "decision": "no",
+      "citationUrl": "https://www.mtpelerin.com/bridge-wallet",
+      "explanation": "No settings sync feature is documented for Bridge Wallet; it is self-custodial with local key storage and no cloud sync."
+    },
+    {
+      "walletId": "nufi",
+      "metricKey": "syncSettings",
+      "path": "product.deviceSync.syncsSettings",
+      "decision": "yes",
+      "citationUrl": "https://support.nu.fi/support/solutions/articles/80001016927-changelog",
+      "explanation": "NuFi Release 2.3.0 changelog explicitly states both accounts and settings are synchronised across devices, including custom account names and tokens."
+    },
+    {
+      "walletId": "trust-wallet",
+      "metricKey": "syncSettings",
+      "path": "product.deviceSync.syncsSettings",
+      "decision": "no",
+      "citationUrl": "https://trustwallet.com/blog/announcements/introducing-qr-sync-import-your-mobile-wallet-to-the-desktop-extension",
+      "explanation": "Trust Wallet's QR Sync is a one-time wallet import from mobile to extension, not ongoing sync; settings/preferences are not synchronised."
+    },
+    {
+      "walletId": "zerion",
+      "metricKey": "syncSettings",
+      "path": "product.deviceSync.syncsSettings",
+      "decision": "yes",
+      "citationUrl": "https://help.zerion.io/en/articles/5518337-how-do-i-set-up-icloud-sync",
+      "explanation": "Zerion's Device Sync backs up and syncs watch addresses, favorite dApps, assets, and app settings across devices via iCloud or Google One."
+    },
+    {
+      "walletId": "zeus",
+      "metricKey": "syncSettings",
+      "path": "product.deviceSync.syncsSettings",
+      "decision": "no",
+      "citationUrl": "https://docs.zeusln.app/",
+      "explanation": "Zeus stores settings locally per device and is designed as a single-device node manager; no settings sync across devices is documented."
     }
   ]
 }

@@ -1259,9 +1259,39 @@
               }
             ]
           },
-          "gasSponsorship": null,
-          "gasAbstraction": null,
-          "payGasInStablecoins": null,
+          "gasSponsorship": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.metamask.io/trade/swap/gasless-swaps/",
+                  "explanation": "MetaMask's gasless swaps deduct fees from the user's swap token; the main wallet does not sponsor gas (paymaster sponsorship is only in the developer Embedded Wallets SDK)."
+                }
+              }
+            ]
+          },
+          "gasAbstraction": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.metamask.io/trade/swap/gasless-swaps/",
+                  "explanation": "MetaMask's gasless swaps deduct the network fee from the swap source token rather than requiring the user to hold the native gas token."
+                }
+              }
+            ]
+          },
+          "payGasInStablecoins": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.metamask.io/manage-crypto/transactions/metamask-gas-station/",
+                  "explanation": "MetaMask Gas Station lets users pay gas fees in USDC, USDT, DAI and other tokens across Ethereum, BSC, Arbitrum, Polygon, Linea, and Base."
+                }
+              }
+            ]
+          },
           "payGasWithReceivedToken": null,
           "speedPresets": {
             "$call": "supported",
@@ -1930,7 +1960,17 @@
               }
             ]
           },
-          "syncsSettings": null,
+          "syncsSettings": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.metamask.io/configure/wallet/account-backup-and-sync/",
+                  "explanation": "MetaMask's Backup and Sync syncs account names and contacts but explicitly not custom networks, custom tokens, or the address book, so settings sync is absent."
+                }
+              }
+            ]
+          },
           "syncsContactsOrAddressBook": {
             "$call": "supported",
             "args": [
