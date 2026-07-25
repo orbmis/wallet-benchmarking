@@ -875,9 +875,39 @@
             "explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://daimo.com"
           },
-          "inAppBrowser": null,
-          "curatedDappDirectory": null,
-          "dappSearch": null,
+          "inAppBrowser": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://beta.walletbeat.eth.limo/daimo/",
+                  "explanation": "Daimo is a stablecoin payments app; it is mobile-only with no dApp browser functionality."
+                }
+              }
+            ]
+          },
+          "curatedDappDirectory": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.daimo.com/introduction",
+                  "explanation": "Daimo is focused on stablecoin payments; its documentation describes no dApp browser, directory, or discovery section."
+                }
+              }
+            ]
+          },
+          "dappSearch": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.daimo.com/introduction",
+                  "explanation": "Daimo has no dApp browser or search feature; it is a payment app, not a general-purpose dApp browser."
+                }
+              }
+            ]
+          },
           "walletConnectOnlyMode": {
             "$ref": "notSupported"
           },
@@ -1269,9 +1299,31 @@
               }
             ]
           },
-          "mint": null,
-          "marketplaceIntegration": null,
-          "spamNftHiding": null,
+          "mint": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://daimo.com",
+                  "explanation": "Daimo is a payments-only stablecoin wallet with no NFT minting features documented."
+                }
+              }
+            ]
+          },
+          "marketplaceIntegration": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://daimo.com",
+                  "explanation": "Daimo is a USDC payments wallet focused exclusively on stablecoin transfers; its materials mention no NFT features."
+                }
+              }
+            ]
+          },
+          "spamNftHiding": {
+            "$ref": "notApplicable"
+          },
           "collectionMetadataRefresh": null,
           "royaltiesOrOffers": null
         },

@@ -737,9 +737,39 @@
             "explanation": "Gem Wallet docs say WalletConnect is integrated for DApp access via QR/paste connection.",
             "url": "https://docs.gemwallet.com/features/"
           },
-          "inAppBrowser": null,
-          "curatedDappDirectory": null,
-          "dappSearch": null,
+          "inAppBrowser": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://gemwallet.com/dapp-wallet/",
+                  "explanation": "Gem Wallet connects to external dApps exclusively via WalletConnect QR scanning; there is no built-in in-app dApp browser."
+                }
+              }
+            ]
+          },
+          "curatedDappDirectory": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://gemwallet.com/dapp-wallet/",
+                  "explanation": "Gem Wallet's dApp page describes WalletConnect-based connectivity via QR codes only; no in-app curated dApp directory."
+                }
+              }
+            ]
+          },
+          "dappSearch": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://gemwallet.com/dapp-wallet/",
+                  "explanation": "Gem Wallet uses WalletConnect QR scanning for dApp connections; no in-wallet dApp search function is described."
+                }
+              }
+            ]
+          },
           "walletConnectOnlyMode": {
             "$call": "supported",
             "args": [
@@ -752,7 +782,17 @@
             ]
           },
           "featuredApps": null,
-          "riskRatedDiscovery": null
+          "riskRatedDiscovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://gemwallet.com/dapp-wallet/",
+                  "explanation": "Gem Wallet advises users to verify URLs manually; it shows no risk ratings or security scores for dApps in discovery."
+                }
+              }
+            ]
+          }
         },
         "fiatRamps": {
           "ref": {
@@ -1097,9 +1137,39 @@
               }
             ]
           },
-          "mint": null,
-          "marketplaceIntegration": null,
-          "spamNftHiding": null,
+          "mint": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://gemwallet.com/nft-wallet/",
+                  "explanation": "Gem Wallet's NFT page covers storage, viewing, and connecting to external marketplaces but no NFT minting."
+                }
+              }
+            ]
+          },
+          "marketplaceIntegration": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://gemwallet.com/nft-wallet/",
+                  "explanation": "Gem Wallet's NFT page directs users to external marketplaces like OpenSea rather than offering a built-in in-app marketplace."
+                }
+              }
+            ]
+          },
+          "spamNftHiding": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.gemwallet.com/faq/token-verification/",
+                  "explanation": "Gem Wallet's token verification flags suspicious tokens and allows manual hiding for tokens only; no NFT-specific spam filtering is documented."
+                }
+              }
+            ]
+          },
           "collectionMetadataRefresh": null,
           "royaltiesOrOffers": null
         },

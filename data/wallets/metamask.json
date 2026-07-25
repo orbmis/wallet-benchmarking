@@ -1112,7 +1112,17 @@
               }
             ]
           },
-          "dappSearch": null,
+          "dappSearch": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.metamask.io/configure/wallet/how-to-use-the-metamask-mobile-browser/",
+                  "explanation": "MetaMask Mobile's Explore tab includes a built-in browser with a search bar to find websites and dApps by name."
+                }
+              }
+            ]
+          },
           "walletConnectOnlyMode": {
             "$ref": "notSupported"
           },
@@ -1604,7 +1614,17 @@
               }
             ]
           },
-          "marketplaceIntegration": null,
+          "marketplaceIntegration": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.metamask.io/manage-crypto/nfts/nft-tokens-in-your-metamask-wallet/",
+                  "explanation": "MetaMask provides NFT viewing, autodetection, and sending but has no built-in marketplace for buying or selling."
+                }
+              }
+            ]
+          },
           "spamNftHiding": {
             "$call": "supported",
             "args": [

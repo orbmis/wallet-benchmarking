@@ -888,7 +888,9 @@
               }
             ]
           },
-          "dappSearch": null,
+          "dappSearch": {
+            "$ref": "notApplicable"
+          },
           "walletConnectOnlyMode": {
             "$call": "notSupportedWithRef",
             "args": [
@@ -901,7 +903,9 @@
             ]
           },
           "featuredApps": null,
-          "riskRatedDiscovery": null
+          "riskRatedDiscovery": {
+            "$ref": "notApplicable"
+          }
         },
         "fiatRamps": {
           "ref": {
@@ -1246,11 +1250,21 @@
             "explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://github.com/greekfetacheese/zeus"
           },
-          "display": null,
-          "send": null,
-          "mint": null,
-          "marketplaceIntegration": null,
-          "spamNftHiding": null,
+          "display": {
+            "$ref": "notApplicable"
+          },
+          "send": {
+            "$ref": "notApplicable"
+          },
+          "mint": {
+            "$ref": "notApplicable"
+          },
+          "marketplaceIntegration": {
+            "$ref": "notApplicable"
+          },
+          "spamNftHiding": {
+            "$ref": "notApplicable"
+          },
           "collectionMetadataRefresh": null,
           "royaltiesOrOffers": null
         },

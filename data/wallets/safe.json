@@ -930,7 +930,17 @@
             "explanation": "Safe users page says users can trade, stake, bridge, and lend without leaving Safe and connect anywhere with WalletConnect; mobile help documents WalletConnect dapp connections.",
             "url": "https://safe.global/users"
           },
-          "inAppBrowser": null,
+          "inAppBrowser": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.safe.global/articles/6643739210-how-to-connect-a-safe-to-a-dapp-using-walletconnect",
+                  "explanation": "Safe connects to dApps via WalletConnect and iframe-based Safe Apps rather than a standalone in-app dApp browser."
+                }
+              }
+            ]
+          },
           "curatedDappDirectory": {
             "$call": "supported",
             "args": [
@@ -1349,9 +1359,39 @@
               }
             ]
           },
-          "mint": null,
-          "marketplaceIntegration": null,
-          "spamNftHiding": null,
+          "mint": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.safe.global/en/articles/40825-supported-asset-types",
+                  "explanation": "Safe describes managing and transferring NFTs with no NFT minting capability."
+                }
+              }
+            ]
+          },
+          "marketplaceIntegration": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.safe.global/en/articles/40825-supported-asset-types",
+                  "explanation": "Safe positions itself as secure custody for NFTs (ERC-721 in the Assets tab) rather than a trading platform; no built-in marketplace is documented."
+                }
+              }
+            ]
+          },
+          "spamNftHiding": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.safe.global/en/articles/40825-supported-asset-types",
+                  "explanation": "Safe supports ERC-721 NFTs in the Assets tab but documents no spam NFT detection or hiding capability."
+                }
+              }
+            ]
+          },
           "collectionMetadataRefresh": null,
           "royaltiesOrOffers": null
         },

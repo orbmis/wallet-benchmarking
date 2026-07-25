@@ -735,9 +735,39 @@
             "explanation": "Bridge Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://www.mtpelerin.com/"
           },
-          "inAppBrowser": null,
-          "curatedDappDirectory": null,
-          "dappSearch": null,
+          "inAppBrowser": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/bridge-wallet",
+                  "explanation": "Bridge Wallet connects to dApps exclusively through WalletConnect, with no built-in in-app dApp browser."
+                }
+              }
+            ]
+          },
+          "curatedDappDirectory": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/bridge-wallet",
+                  "explanation": "Bridge Wallet only offers WalletConnect connectivity; the official site describes no curated dApp directory."
+                }
+              }
+            ]
+          },
+          "dappSearch": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/bridge-wallet",
+                  "explanation": "Bridge Wallet uses WalletConnect for dApp connectivity; no in-wallet dApp search function is described."
+                }
+              }
+            ]
+          },
           "walletConnectOnlyMode": {
             "$ref": "notSupported"
           },
@@ -1113,9 +1143,39 @@
               }
             ]
           },
-          "mint": null,
-          "marketplaceIntegration": null,
-          "spamNftHiding": null,
+          "mint": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/bridge-wallet",
+                  "explanation": "Bridge Wallet focuses on fungible crypto asset management with no NFT minting features."
+                }
+              }
+            ]
+          },
+          "marketplaceIntegration": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/bridge-wallet",
+                  "explanation": "Bridge Wallet lists asset management, trading, and DeFi connectivity with no NFT marketplace integration."
+                }
+              }
+            ]
+          },
+          "spamNftHiding": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/bridge-wallet",
+                  "explanation": "Bridge Wallet's documented features include no NFT support, let alone spam NFT filtering."
+                }
+              }
+            ]
+          },
           "collectionMetadataRefresh": null,
           "royaltiesOrOffers": null
         },

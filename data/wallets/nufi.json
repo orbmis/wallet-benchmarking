@@ -773,8 +773,28 @@
             "explanation": "NuFi extension page says the extension connects to all dapps and the web wallet connects to dapps that support WalletConnect.",
             "url": "https://nu.fi/features/extension"
           },
-          "inAppBrowser": null,
-          "curatedDappDirectory": null,
+          "inAppBrowser": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://reviewnexa.com/nufi-wallet-review/",
+                  "explanation": "NuFi's mobile app includes a dApp browser (functional but lacking advanced features like multi-tabs/bookmarks), per a 2026 hands-on review."
+                }
+              }
+            ]
+          },
+          "curatedDappDirectory": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://nu.fi/features/dapps",
+                  "explanation": "NuFi's features page confirms a 'DApp directory inside your wallet' for browsing decentralised applications."
+                }
+              }
+            ]
+          },
           "dappSearch": null,
           "walletConnectOnlyMode": {
             "$call": "notSupportedWithRef",
@@ -788,7 +808,17 @@
             ]
           },
           "featuredApps": null,
-          "riskRatedDiscovery": null
+          "riskRatedDiscovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://reviewnexa.com/nufi-wallet-review/",
+                  "explanation": "NuFi has real-time transaction scanning but the review describes no risk ratings or scores displayed in dApp discovery."
+                }
+              }
+            ]
+          }
         },
         "fiatRamps": {
           "ref": {
@@ -1148,8 +1178,28 @@
               }
             ]
           },
-          "marketplaceIntegration": null,
-          "spamNftHiding": null,
+          "marketplaceIntegration": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://nu.fi/blog/connect-to-nft-marketplaces-de-xes-and-other-d-apps-with-nu-fi-s-new-chrome-extension",
+                  "explanation": "NuFi connects users to external NFT marketplaces via its dApp connector rather than hosting a built-in marketplace."
+                }
+              }
+            ]
+          },
+          "spamNftHiding": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.nu.fi/support/solutions/articles/80001016927-changelog",
+                  "explanation": "NuFi's changelog shows an NFT hide/unhide toggle and multi-chain gallery but no spam NFT auto-detection or filtering."
+                }
+              }
+            ]
+          },
           "collectionMetadataRefresh": null,
           "royaltiesOrOffers": null
         },

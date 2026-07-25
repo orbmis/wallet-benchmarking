@@ -622,8 +622,28 @@
               }
             ]
           },
-          "curatedDappDirectory": null,
-          "dappSearch": null,
+          "curatedDappDirectory": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.exodus.com/article/2838-web3-dapp-browser",
+                  "explanation": "Exodus Mobile's web3 browser includes an Explore tab with a curated list of recommended web3 apps."
+                }
+              }
+            ]
+          },
+          "dappSearch": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.exodus.com/article/2838-web3-dapp-browser",
+                  "explanation": "Exodus's mobile web3 browser and extension include a search bar for finding web3 apps."
+                }
+              }
+            ]
+          },
           "walletConnectOnlyMode": {
             "$call": "notSupportedWithRef",
             "args": [
@@ -636,7 +656,17 @@
             ]
           },
           "featuredApps": null,
-          "riskRatedDiscovery": null
+          "riskRatedDiscovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.exodus.com/support/en/articles/8598986-web3-browser-in-exodus-mobile",
+                  "explanation": "Exodus shows warnings for suspicious connections and simulates risky requests but does not provide risk ratings or scored dApp discovery."
+                }
+              }
+            ]
+          }
         },
         "fiatRamps": {
           "ref": {
@@ -1075,10 +1105,50 @@
               }
             ]
           },
-          "send": null,
-          "mint": null,
-          "marketplaceIntegration": null,
-          "spamNftHiding": null,
+          "send": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.exodus.com/support/en/articles/8598815-what-is-the-nft-gallery-in-exodus",
+                  "explanation": "Exodus's NFT Gallery supports sending/transferring NFTs on Solana and Ethereum from desktop and Web3 Wallet."
+                }
+              }
+            ]
+          },
+          "mint": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.exodus.com/support/en/articles/8598815-what-is-the-nft-gallery-in-exodus",
+                  "explanation": "Exodus's NFT Gallery describes receive, store, display, send, and sell but not in-app NFT minting."
+                }
+              }
+            ]
+          },
+          "marketplaceIntegration": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.exodus.com/investors/news-events/press-releases/detail/32/exodus-launches-nft-marketplace",
+                  "explanation": "Exodus launched a built-in NFT marketplace powered by Magic Eden, letting users browse, buy, and sell Solana NFTs directly within the app."
+                }
+              }
+            ]
+          },
+          "spamNftHiding": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://simplehash.com/blog/exodus-x-simplehash",
+                  "explanation": "Exodus integrates SimpleHash spam scoring to automatically hide spam NFTs in its Web3 Wallet and Mobile app."
+                }
+              }
+            ]
+          },
           "collectionMetadataRefresh": null,
           "royaltiesOrOffers": null
         },

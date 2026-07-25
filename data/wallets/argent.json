@@ -653,7 +653,17 @@
             "explanation": "Argent X support says it connects to Starknet dapps and references Dappland for available apps.",
             "url": "https://support.argent.xyz/hc/en-us/articles/5975462914961-Argent-X"
           },
-          "inAppBrowser": null,
+          "inAppBrowser": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.argent.xyz/blog/doubling-down-on-starknet",
+                  "explanation": "Argent's mobile app features a built-in dApp browser to connect to Starknet dApps on the go."
+                }
+              }
+            ]
+          },
           "curatedDappDirectory": {
             "$call": "supported",
             "args": [
@@ -665,7 +675,17 @@
               }
             ]
           },
-          "dappSearch": null,
+          "dappSearch": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.argent.xyz/hc/en-us/articles/5975462914961-Argent-X",
+                  "explanation": "Argent directs users to external Dappland.com for dApp discovery; no in-wallet dApp search function is documented."
+                }
+              }
+            ]
+          },
           "walletConnectOnlyMode": {
             "$call": "notSupportedWithRef",
             "args": [
@@ -678,7 +698,17 @@
             ]
           },
           "featuredApps": null,
-          "riskRatedDiscovery": null
+          "riskRatedDiscovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.blockaid.io/blog/argent-releases-upgraded-wallet-now-secured-by-blockaid",
+                  "explanation": "Argent's Blockaid integration provides malicious-dApp warnings at connect time but does not expose risk scores in a dApp discovery interface."
+                }
+              }
+            ]
+          }
         },
         "fiatRamps": {
           "ref": {
@@ -1068,8 +1098,28 @@
               }
             ]
           },
-          "mint": null,
-          "marketplaceIntegration": null,
+          "mint": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.ready.co/learn/how-to-buy-nfts-on-starkne",
+                  "explanation": "Argent's NFT guide directs users to external marketplaces for transactions and contains no in-app NFT minting capability."
+                }
+              }
+            ]
+          },
+          "marketplaceIntegration": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://decrypt.co/149493/smart-wallet-provider-argent-launches-nft-marketplace-unframed-starknet",
+                  "explanation": "Argent launched Unframed, a Starknet NFT marketplace with one-click buy/sell enabled by account abstraction, integrated with the Argent wallet ecosystem."
+                }
+              }
+            ]
+          },
           "spamNftHiding": null,
           "collectionMetadataRefresh": null,
           "royaltiesOrOffers": null

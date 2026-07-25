@@ -786,9 +786,39 @@
             "explanation": "Frame docs say Frame supports any browser, command-line, or native app and any dapp through hardware/software signers.",
             "url": "https://docs.frame.sh/"
           },
-          "inAppBrowser": null,
-          "curatedDappDirectory": null,
-          "dappSearch": null,
+          "inAppBrowser": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://frame.sh/",
+                  "explanation": "Frame is a desktop system-wide provider; dApp browsing happens in the host browser via the Frame Companion extension, not a dedicated in-app browser."
+                }
+              }
+            ]
+          },
+          "curatedDappDirectory": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://frame.sh/",
+                  "explanation": "Frame is a desktop system-wide Web3 provider; its docs describe no curated dApp directory or discover section."
+                }
+              }
+            ]
+          },
+          "dappSearch": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.frame.sh/docs/Introduction/",
+                  "explanation": "Frame injects wallet connectivity into the host browser; no in-wallet dApp search feature is described."
+                }
+              }
+            ]
+          },
           "walletConnectOnlyMode": {
             "$call": "notSupportedWithRef",
             "args": [
@@ -801,7 +831,17 @@
             ]
           },
           "featuredApps": null,
-          "riskRatedDiscovery": null
+          "riskRatedDiscovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.frame.sh/docs/Support/Dapp%20Connections/",
+                  "explanation": "Frame's dApp connection docs show only permission prompts and connection management with no risk ratings or scores."
+                }
+              }
+            ]
+          }
         },
         "fiatRamps": {
           "ref": {
@@ -1191,8 +1231,28 @@
               }
             ]
           },
-          "marketplaceIntegration": null,
-          "spamNftHiding": null,
+          "marketplaceIntegration": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://frame.sh/",
+                  "explanation": "Frame is a system-wide desktop Ethereum wallet focused on account/token management with no built-in NFT marketplace."
+                }
+              }
+            ]
+          },
+          "spamNftHiding": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Inventory/",
+                  "explanation": "Frame's Inventory docs describe NFT organization and OpenSea link verification with no spam detection or hiding."
+                }
+              }
+            ]
+          },
           "collectionMetadataRefresh": null,
           "royaltiesOrOffers": null
         },

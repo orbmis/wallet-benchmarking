@@ -4241,6 +4241,902 @@
       "decision": "no",
       "citationUrl": "https://docs.zeusln.app",
       "explanation": "Zeus documentation covers local wallets, remote connections, and self-custody but no guidance for users who have been scammed or lost funds."
+    },
+    {
+      "walletId": "argent",
+      "metricKey": "nftMarket",
+      "path": "product.nftCapabilities.marketplaceIntegration",
+      "decision": "yes",
+      "citationUrl": "https://decrypt.co/149493/smart-wallet-provider-argent-launches-nft-marketplace-unframed-starknet",
+      "explanation": "Argent launched Unframed, a Starknet NFT marketplace with one-click buy/sell enabled by account abstraction, integrated with the Argent wallet ecosystem."
+    },
+    {
+      "walletId": "base-app",
+      "metricKey": "nftMarket",
+      "path": "product.nftCapabilities.marketplaceIntegration",
+      "decision": "yes",
+      "citationUrl": "https://cryptoslate.com/coinbases-new-base-super-app-puts-trading-payments-social-and-ai-under-one-roof/",
+      "explanation": "Base App integrates Zora's token minting/trading directly into the app, letting users publish content, generate tokens, and trade them without leaving the app."
+    },
+    {
+      "walletId": "brave-wallet",
+      "metricKey": "nftMarket",
+      "path": "product.nftCapabilities.marketplaceIntegration",
+      "decision": "yes",
+      "citationUrl": "https://brave.com/blog/nft-gallery/",
+      "explanation": "Brave announced an NFT gallery with a dedicated market tab featuring real-time NFT price feeds and Magic Eden launchpad integration for purchasing NFTs."
+    },
+    {
+      "walletId": "exodus",
+      "metricKey": "nftMarket",
+      "path": "product.nftCapabilities.marketplaceIntegration",
+      "decision": "yes",
+      "citationUrl": "https://www.exodus.com/investors/news-events/press-releases/detail/32/exodus-launches-nft-marketplace",
+      "explanation": "Exodus launched a built-in NFT marketplace powered by Magic Eden, letting users browse, buy, and sell Solana NFTs directly within the app."
+    },
+    {
+      "walletId": "phantom",
+      "metricKey": "nftMarket",
+      "path": "product.nftCapabilities.marketplaceIntegration",
+      "decision": "yes",
+      "citationUrl": "https://phantom.com/learn/blog/introducing-instant-sell",
+      "explanation": "Phantom's built-in Instant Sell aggregates NFT offers from Blur, OpenSea, Magic Eden, and Tensor, letting users sell NFTs at the best price within the wallet."
+    },
+    {
+      "walletId": "ambire",
+      "metricKey": "nftMarket",
+      "path": "product.nftCapabilities.marketplaceIntegration",
+      "decision": "no",
+      "citationUrl": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/",
+      "explanation": "Ambire's blog describes NFT viewing/displaying inside the extension only, with no built-in marketplace for buying or selling."
+    },
+    {
+      "walletId": "daimo",
+      "metricKey": "nftMarket",
+      "path": "product.nftCapabilities.marketplaceIntegration",
+      "decision": "no",
+      "citationUrl": "https://daimo.com",
+      "explanation": "Daimo is a USDC payments wallet focused exclusively on stablecoin transfers; its materials mention no NFT features."
+    },
+    {
+      "walletId": "elytro",
+      "metricKey": "nftMarket",
+      "path": "product.nftCapabilities.marketplaceIntegration",
+      "decision": "no",
+      "citationUrl": "https://elytro.com/faq",
+      "explanation": "Elytro's FAQ describes the wallet as focused on Ethereum account abstraction and agent operations with no NFT marketplace features."
+    },
+    {
+      "walletId": "family",
+      "metricKey": "nftMarket",
+      "path": "product.nftCapabilities.marketplaceIntegration",
+      "decision": "no",
+      "citationUrl": "https://family.co/",
+      "explanation": "Family emphasizes NFT display with rich media but mentions no built-in marketplace for buying or selling."
+    },
+    {
+      "walletId": "frame",
+      "metricKey": "nftMarket",
+      "path": "product.nftCapabilities.marketplaceIntegration",
+      "decision": "no",
+      "citationUrl": "https://frame.sh/",
+      "explanation": "Frame is a system-wide desktop Ethereum wallet focused on account/token management with no built-in NFT marketplace."
+    },
+    {
+      "walletId": "gemwallet",
+      "metricKey": "nftMarket",
+      "path": "product.nftCapabilities.marketplaceIntegration",
+      "decision": "no",
+      "citationUrl": "https://gemwallet.com/nft-wallet/",
+      "explanation": "Gem Wallet's NFT page directs users to external marketplaces like OpenSea rather than offering a built-in in-app marketplace."
+    },
+    {
+      "walletId": "imtoken",
+      "metricKey": "nftMarket",
+      "path": "product.nftCapabilities.marketplaceIntegration",
+      "decision": "no",
+      "citationUrl": "https://support.token.im/hc/en-us/articles/12033924875161-How-to-trade-NFTs-on-OpenSea",
+      "explanation": "imToken's guide has users access OpenSea/tofuNFT via its dApp browser rather than a native built-in marketplace."
+    },
+    {
+      "walletId": "metamask",
+      "metricKey": "nftMarket",
+      "path": "product.nftCapabilities.marketplaceIntegration",
+      "decision": "no",
+      "citationUrl": "https://support.metamask.io/manage-crypto/nfts/nft-tokens-in-your-metamask-wallet/",
+      "explanation": "MetaMask provides NFT viewing, autodetection, and sending but has no built-in marketplace for buying or selling."
+    },
+    {
+      "walletId": "mtpelerin",
+      "metricKey": "nftMarket",
+      "path": "product.nftCapabilities.marketplaceIntegration",
+      "decision": "no",
+      "citationUrl": "https://www.mtpelerin.com/bridge-wallet",
+      "explanation": "Bridge Wallet lists asset management, trading, and DeFi connectivity with no NFT marketplace integration."
+    },
+    {
+      "walletId": "nufi",
+      "metricKey": "nftMarket",
+      "path": "product.nftCapabilities.marketplaceIntegration",
+      "decision": "no",
+      "citationUrl": "https://nu.fi/blog/connect-to-nft-marketplaces-de-xes-and-other-d-apps-with-nu-fi-s-new-chrome-extension",
+      "explanation": "NuFi connects users to external NFT marketplaces via its dApp connector rather than hosting a built-in marketplace."
+    },
+    {
+      "walletId": "pillarx",
+      "metricKey": "nftMarket",
+      "path": "product.nftCapabilities.marketplaceIntegration",
+      "decision": "no",
+      "citationUrl": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+      "explanation": "PillarX's App Store listing covers cross-chain swaps, stablecoin gas, and security with no NFT marketplace integration."
+    },
+    {
+      "walletId": "rabby",
+      "metricKey": "nftMarket",
+      "path": "product.nftCapabilities.marketplaceIntegration",
+      "decision": "no",
+      "citationUrl": "https://bytwork.com/en/wallets/rabby",
+      "explanation": "Rabby displays NFTs from DeBank data and connects to external platforms like OpenSea, but has no built-in in-app NFT marketplace."
+    },
+    {
+      "walletId": "rainbow",
+      "metricKey": "nftMarket",
+      "path": "product.nftCapabilities.marketplaceIntegration",
+      "decision": "no",
+      "citationUrl": "https://rainbow.me/support/app/nft-offers",
+      "explanation": "Rainbow aggregates NFT offers from OpenSea/Blur/Rarible for selling, but users must visit external platforms to browse and buy; there is no native in-app buying marketplace."
+    },
+    {
+      "walletId": "safe",
+      "metricKey": "nftMarket",
+      "path": "product.nftCapabilities.marketplaceIntegration",
+      "decision": "no",
+      "citationUrl": "https://help.safe.global/en/articles/40825-supported-asset-types",
+      "explanation": "Safe positions itself as secure custody for NFTs (ERC-721 in the Assets tab) rather than a trading platform; no built-in marketplace is documented."
+    },
+    {
+      "walletId": "zeus",
+      "metricKey": "nftMarket",
+      "path": "product.nftCapabilities.marketplaceIntegration",
+      "decision": "na",
+      "citationUrl": "",
+      "explanation": "Zeus is a Bitcoin-only Lightning wallet with no NFT support of any kind; NFT marketplace integration categorically does not apply."
+    },
+    {
+      "walletId": "zeus",
+      "metricKey": "nftDisplay",
+      "path": "product.nftCapabilities.display",
+      "decision": "na",
+      "citationUrl": "",
+      "explanation": "Zeus is a Bitcoin-only Lightning wallet with no NFT/token standards support; NFT display categorically does not apply to its architecture."
+    },
+    {
+      "walletId": "phantom",
+      "metricKey": "nftMint",
+      "path": "product.nftCapabilities.mint",
+      "decision": "yes",
+      "citationUrl": "https://nftplazas.com/phantom-camera-mint/",
+      "explanation": "Phantom's Camera Mint feature in the mobile Collectibles tab lets users mint photos or videos as Solana NFTs directly within the wallet."
+    },
+    {
+      "walletId": "argent",
+      "metricKey": "nftMint",
+      "path": "product.nftCapabilities.mint",
+      "decision": "no",
+      "citationUrl": "https://www.ready.co/learn/how-to-buy-nfts-on-starkne",
+      "explanation": "Argent's NFT guide directs users to external marketplaces for transactions and contains no in-app NFT minting capability."
+    },
+    {
+      "walletId": "brave-wallet",
+      "metricKey": "nftMint",
+      "path": "product.nftCapabilities.mint",
+      "decision": "no",
+      "citationUrl": "https://brave.com/blog/nft-gallery/",
+      "explanation": "Brave's NFT announcement covers gallery and market tab features but no in-app NFT minting capability."
+    },
+    {
+      "walletId": "daimo",
+      "metricKey": "nftMint",
+      "path": "product.nftCapabilities.mint",
+      "decision": "no",
+      "citationUrl": "https://daimo.com",
+      "explanation": "Daimo is a payments-only stablecoin wallet with no NFT minting features documented."
+    },
+    {
+      "walletId": "elytro",
+      "metricKey": "nftMint",
+      "path": "product.nftCapabilities.mint",
+      "decision": "no",
+      "citationUrl": "https://elytro.com/faq",
+      "explanation": "Elytro's FAQ describes smart-account operations for DeFi and AI agents with no NFT minting capability."
+    },
+    {
+      "walletId": "exodus",
+      "metricKey": "nftMint",
+      "path": "product.nftCapabilities.mint",
+      "decision": "no",
+      "citationUrl": "https://www.exodus.com/support/en/articles/8598815-what-is-the-nft-gallery-in-exodus",
+      "explanation": "Exodus's NFT Gallery describes receive, store, display, send, and sell but not in-app NFT minting."
+    },
+    {
+      "walletId": "family",
+      "metricKey": "nftMint",
+      "path": "product.nftCapabilities.mint",
+      "decision": "no",
+      "citationUrl": "https://family.co/",
+      "explanation": "Family describes NFT viewing and collectibles management but no NFT minting functionality."
+    },
+    {
+      "walletId": "gemwallet",
+      "metricKey": "nftMint",
+      "path": "product.nftCapabilities.mint",
+      "decision": "no",
+      "citationUrl": "https://gemwallet.com/nft-wallet/",
+      "explanation": "Gem Wallet's NFT page covers storage, viewing, and connecting to external marketplaces but no NFT minting."
+    },
+    {
+      "walletId": "mtpelerin",
+      "metricKey": "nftMint",
+      "path": "product.nftCapabilities.mint",
+      "decision": "no",
+      "citationUrl": "https://www.mtpelerin.com/bridge-wallet",
+      "explanation": "Bridge Wallet focuses on fungible crypto asset management with no NFT minting features."
+    },
+    {
+      "walletId": "pillarx",
+      "metricKey": "nftMint",
+      "path": "product.nftCapabilities.mint",
+      "decision": "no",
+      "citationUrl": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+      "explanation": "PillarX's listing mentions ERC-1155 support but describes no NFT minting; the wallet focuses on DeFi and cross-chain operations."
+    },
+    {
+      "walletId": "safe",
+      "metricKey": "nftMint",
+      "path": "product.nftCapabilities.mint",
+      "decision": "no",
+      "citationUrl": "https://help.safe.global/en/articles/40825-supported-asset-types",
+      "explanation": "Safe describes managing and transferring NFTs with no NFT minting capability."
+    },
+    {
+      "walletId": "trust-wallet",
+      "metricKey": "nftMint",
+      "path": "product.nftCapabilities.mint",
+      "decision": "no",
+      "citationUrl": "https://trustwallet.com/nft",
+      "explanation": "Trust Wallet's NFT page describes the wallet as a gateway to external marketplaces for storage/management only, with no in-app minting."
+    },
+    {
+      "walletId": "zeus",
+      "metricKey": "nftMint",
+      "path": "product.nftCapabilities.mint",
+      "decision": "na",
+      "citationUrl": "",
+      "explanation": "Zeus is a Bitcoin-only Lightning wallet with no NFT support; NFT minting categorically does not apply."
+    },
+    {
+      "walletId": "exodus",
+      "metricKey": "nftSend",
+      "path": "product.nftCapabilities.send",
+      "decision": "yes",
+      "citationUrl": "https://www.exodus.com/support/en/articles/8598815-what-is-the-nft-gallery-in-exodus",
+      "explanation": "Exodus's NFT Gallery supports sending/transferring NFTs on Solana and Ethereum from desktop and Web3 Wallet."
+    },
+    {
+      "walletId": "rainbow",
+      "metricKey": "nftSend",
+      "path": "product.nftCapabilities.send",
+      "decision": "yes",
+      "citationUrl": "https://rainbow.me/support/app/send-an-nft",
+      "explanation": "Rainbow's support page documents a dedicated 'Send an NFT' flow to transfer an NFT to another address."
+    },
+    {
+      "walletId": "trust-wallet",
+      "metricKey": "nftSend",
+      "path": "product.nftCapabilities.send",
+      "decision": "yes",
+      "citationUrl": "https://trustwallet.com/blog/nft/nf-ts-in-trust-wallet-how-to-store-send-and-showcase-digital-collectibles",
+      "explanation": "Trust Wallet's blog documents NFT sending: locate a collectible, tap send, and enter the recipient address on ERC-721/ERC-1155 networks."
+    },
+    {
+      "walletId": "zeus",
+      "metricKey": "nftSend",
+      "path": "product.nftCapabilities.send",
+      "decision": "na",
+      "citationUrl": "",
+      "explanation": "Zeus is a Bitcoin/Lightning wallet with no NFT support, making NFT send categorically inapplicable."
+    },
+    {
+      "walletId": "base-app",
+      "metricKey": "nftSpam",
+      "path": "product.nftCapabilities.spamNftHiding",
+      "decision": "yes",
+      "citationUrl": "https://decrypt.co/120237/coinbase-wallet-adds-safety-features-following-high-profile-nft-scams",
+      "explanation": "Coinbase Wallet (Base app) automatically hides assets flagged as spam from the home screen, with a Settings option to review and unhide them."
+    },
+    {
+      "walletId": "bitget",
+      "metricKey": "nftSpam",
+      "path": "product.nftCapabilities.spamNftHiding",
+      "decision": "yes",
+      "citationUrl": "https://web3.bitget.com/crypto-news/best-nft-management-tools-crypto-wallets-2026-guide",
+      "explanation": "Bitget Wallet's own editorial describes advanced spam filtering as a built-in feature of its NFT management for maintaining a clean gallery."
+    },
+    {
+      "walletId": "brave-wallet",
+      "metricKey": "nftSpam",
+      "path": "product.nftCapabilities.spamNftHiding",
+      "decision": "yes",
+      "citationUrl": "https://github.com/brave/brave-browser/wiki/NFT-Discovery",
+      "explanation": "Brave Wallet uses SimpleHash spam scores via opt-in NFT Discovery, automatically excluding any NFT with a spam score above zero."
+    },
+    {
+      "walletId": "exodus",
+      "metricKey": "nftSpam",
+      "path": "product.nftCapabilities.spamNftHiding",
+      "decision": "yes",
+      "citationUrl": "https://simplehash.com/blog/exodus-x-simplehash",
+      "explanation": "Exodus integrates SimpleHash spam scoring to automatically hide spam NFTs in its Web3 Wallet and Mobile app."
+    },
+    {
+      "walletId": "phantom",
+      "metricKey": "nftSpam",
+      "path": "product.nftCapabilities.spamNftHiding",
+      "decision": "yes",
+      "citationUrl": "https://help.phantom.com/hc/en-us/articles/12983715032083-How-to-report-and-hide-spam-NFTs",
+      "explanation": "Phantom automatically hides NFTs identified as spam via SimpleHash-powered detection and lets users manually report and hide more."
+    },
+    {
+      "walletId": "rainbow",
+      "metricKey": "nftSpam",
+      "path": "product.nftCapabilities.spamNftHiding",
+      "decision": "yes",
+      "citationUrl": "https://rainbow.me/support/app/hide-and-unhide-nfts",
+      "explanation": "Rainbow has a built-in spam filter that automatically hides NFTs detected as spammy, with manual hide and a Hidden tab."
+    },
+    {
+      "walletId": "trust-wallet",
+      "metricKey": "nftSpam",
+      "path": "product.nftCapabilities.spamNftHiding",
+      "decision": "yes",
+      "citationUrl": "https://support.trustwallet.com/support/solutions/articles/67000734374-how-to-handle-spam-or-scam-nfts-in-your-wallet",
+      "explanation": "Trust Wallet has a built-in NFT spam filter enabled by default that hides scam/spam NFTs via a Scam NFT API, plus manual controls."
+    },
+    {
+      "walletId": "uniswap-wallet",
+      "metricKey": "nftSpam",
+      "path": "product.nftCapabilities.spamNftHiding",
+      "decision": "yes",
+      "citationUrl": "https://support.uniswap.org/hc/en-us/articles/30678956427533-How-to-report-an-NFT-as-spam-in-the-Uniswap-Wallet",
+      "explanation": "Uniswap Wallet auto-detects potential spam NFTs and moves them to a hidden section, with a manual report-as-spam control."
+    },
+    {
+      "walletId": "ambire",
+      "metricKey": "nftSpam",
+      "path": "product.nftCapabilities.spamNftHiding",
+      "decision": "no",
+      "citationUrl": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/",
+      "explanation": "Ambire describes NFT viewing within the extension but no spam NFT detection, hiding, or filtering."
+    },
+    {
+      "walletId": "elytro",
+      "metricKey": "nftSpam",
+      "path": "product.nftCapabilities.spamNftHiding",
+      "decision": "no",
+      "citationUrl": "https://elytro.com/faq",
+      "explanation": "Elytro's FAQ describes token/DeFi/agent features only with no NFT support or spam filtering."
+    },
+    {
+      "walletId": "frame",
+      "metricKey": "nftSpam",
+      "path": "product.nftCapabilities.spamNftHiding",
+      "decision": "no",
+      "citationUrl": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Inventory/",
+      "explanation": "Frame's Inventory docs describe NFT organization and OpenSea link verification with no spam detection or hiding."
+    },
+    {
+      "walletId": "gemwallet",
+      "metricKey": "nftSpam",
+      "path": "product.nftCapabilities.spamNftHiding",
+      "decision": "no",
+      "citationUrl": "https://docs.gemwallet.com/faq/token-verification/",
+      "explanation": "Gem Wallet's token verification flags suspicious tokens and allows manual hiding for tokens only; no NFT-specific spam filtering is documented."
+    },
+    {
+      "walletId": "mtpelerin",
+      "metricKey": "nftSpam",
+      "path": "product.nftCapabilities.spamNftHiding",
+      "decision": "no",
+      "citationUrl": "https://www.mtpelerin.com/bridge-wallet",
+      "explanation": "Bridge Wallet's documented features include no NFT support, let alone spam NFT filtering."
+    },
+    {
+      "walletId": "nufi",
+      "metricKey": "nftSpam",
+      "path": "product.nftCapabilities.spamNftHiding",
+      "decision": "no",
+      "citationUrl": "https://support.nu.fi/support/solutions/articles/80001016927-changelog",
+      "explanation": "NuFi's changelog shows an NFT hide/unhide toggle and multi-chain gallery but no spam NFT auto-detection or filtering."
+    },
+    {
+      "walletId": "rabby",
+      "metricKey": "nftSpam",
+      "path": "product.nftCapabilities.spamNftHiding",
+      "decision": "no",
+      "citationUrl": "https://bytwork.com/en/wallets/rabby",
+      "explanation": "Rabby flags scam transactions (incl. NFT airdrops) in history as 'Scam Tx' but does not auto-hide NFTs from the collectibles view."
+    },
+    {
+      "walletId": "safe",
+      "metricKey": "nftSpam",
+      "path": "product.nftCapabilities.spamNftHiding",
+      "decision": "no",
+      "citationUrl": "https://help.safe.global/en/articles/40825-supported-asset-types",
+      "explanation": "Safe supports ERC-721 NFTs in the Assets tab but documents no spam NFT detection or hiding capability."
+    },
+    {
+      "walletId": "daimo",
+      "metricKey": "nftSpam",
+      "path": "product.nftCapabilities.spamNftHiding",
+      "decision": "na",
+      "citationUrl": "",
+      "explanation": "Daimo is a stablecoin payment wallet focused exclusively on USDC transfers with no NFT support, making spam NFT hiding categorically inapplicable."
+    },
+    {
+      "walletId": "zeus",
+      "metricKey": "nftSpam",
+      "path": "product.nftCapabilities.spamNftHiding",
+      "decision": "na",
+      "citationUrl": "",
+      "explanation": "Zeus is a Bitcoin/Lightning-only wallet with no NFT functionality, making spam NFT hiding categorically inapplicable."
+    },
+    {
+      "walletId": "exodus",
+      "metricKey": "dappDirectory",
+      "path": "product.dappExperience.curatedDappDirectory",
+      "decision": "yes",
+      "citationUrl": "https://support.exodus.com/article/2838-web3-dapp-browser",
+      "explanation": "Exodus Mobile's web3 browser includes an Explore tab with a curated list of recommended web3 apps."
+    },
+    {
+      "walletId": "imtoken",
+      "metricKey": "dappDirectory",
+      "path": "product.dappExperience.curatedDappDirectory",
+      "decision": "yes",
+      "citationUrl": "https://medium.com/imtoken/updates-imtoken-2-2-0-released-revamped-dapp-browser-737afd08ca50",
+      "explanation": "imToken's DApp browser has a 'Recommended' section of hand-picked dApps categorized into Finance, Exchanges, Games, Utilities, and Social."
+    },
+    {
+      "walletId": "nufi",
+      "metricKey": "dappDirectory",
+      "path": "product.dappExperience.curatedDappDirectory",
+      "decision": "yes",
+      "citationUrl": "https://nu.fi/features/dapps",
+      "explanation": "NuFi's features page confirms a 'DApp directory inside your wallet' for browsing decentralised applications."
+    },
+    {
+      "walletId": "pillarx",
+      "metricKey": "dappDirectory",
+      "path": "product.dappExperience.curatedDappDirectory",
+      "decision": "yes",
+      "citationUrl": "https://pillar.fi/blog/5-reasons-to-integrate-your-dapp-with-pillarx/",
+      "explanation": "PillarX features a built-in Web3 App Store where curated dApps are listed and discoverable within the wallet."
+    },
+    {
+      "walletId": "rabby",
+      "metricKey": "dappDirectory",
+      "path": "product.dappExperience.curatedDappDirectory",
+      "decision": "yes",
+      "citationUrl": "https://www.coingecko.com/learn/how-to-use-rabby-wallet",
+      "explanation": "Rabby's mobile app has an 'Explore Popular DApps' section listing curated dApps to browse and favourite."
+    },
+    {
+      "walletId": "rainbow",
+      "metricKey": "dappDirectory",
+      "path": "product.dappExperience.curatedDappDirectory",
+      "decision": "yes",
+      "citationUrl": "https://rainbow.me/support/app/the-rainbow-in-app-browser",
+      "explanation": "Rainbow's in-app browser features a trending dApps bar dynamically updated by user activity, serving as a curated discovery list."
+    },
+    {
+      "walletId": "brave-wallet",
+      "metricKey": "dappDirectory",
+      "path": "product.dappExperience.curatedDappDirectory",
+      "decision": "no",
+      "citationUrl": "https://github.com/brave/brave-browser/issues/50897",
+      "explanation": "The DappRadar-powered Web3/Explorer tab was removed in Brave v1.86.x after DappRadar shut down, with no replacement directory shipped."
+    },
+    {
+      "walletId": "daimo",
+      "metricKey": "dappDirectory",
+      "path": "product.dappExperience.curatedDappDirectory",
+      "decision": "no",
+      "citationUrl": "https://docs.daimo.com/introduction",
+      "explanation": "Daimo is focused on stablecoin payments; its documentation describes no dApp browser, directory, or discovery section."
+    },
+    {
+      "walletId": "elytro",
+      "metricKey": "dappDirectory",
+      "path": "product.dappExperience.curatedDappDirectory",
+      "decision": "no",
+      "citationUrl": "https://elytro.com/faq",
+      "explanation": "Elytro is a smart-account wallet for AI agents with CLI-based control; its FAQ describes no curated dApp directory."
+    },
+    {
+      "walletId": "family",
+      "metricKey": "dappDirectory",
+      "path": "product.dappExperience.curatedDappDirectory",
+      "decision": "no",
+      "citationUrl": "https://family.co/support/wallet-browser",
+      "explanation": "Family's wallet browser support page describes connecting to dApps via the in-app browser but no curated dApp directory or catalog."
+    },
+    {
+      "walletId": "frame",
+      "metricKey": "dappDirectory",
+      "path": "product.dappExperience.curatedDappDirectory",
+      "decision": "no",
+      "citationUrl": "https://frame.sh/",
+      "explanation": "Frame is a desktop system-wide Web3 provider; its docs describe no curated dApp directory or discover section."
+    },
+    {
+      "walletId": "gemwallet",
+      "metricKey": "dappDirectory",
+      "path": "product.dappExperience.curatedDappDirectory",
+      "decision": "no",
+      "citationUrl": "https://gemwallet.com/dapp-wallet/",
+      "explanation": "Gem Wallet's dApp page describes WalletConnect-based connectivity via QR codes only; no in-app curated dApp directory."
+    },
+    {
+      "walletId": "mtpelerin",
+      "metricKey": "dappDirectory",
+      "path": "product.dappExperience.curatedDappDirectory",
+      "decision": "no",
+      "citationUrl": "https://www.mtpelerin.com/bridge-wallet",
+      "explanation": "Bridge Wallet only offers WalletConnect connectivity; the official site describes no curated dApp directory."
+    },
+    {
+      "walletId": "ambire",
+      "metricKey": "dappSearch",
+      "path": "product.dappExperience.dappSearch",
+      "decision": "yes",
+      "citationUrl": "https://blog.ambire.com/new-interactive-flow-the-ambire-dapp-catalog-ensures-smooth-web3-sailing/",
+      "explanation": "Ambire has a curated dApp catalog with 20+ whitelisted dApps browsable by category, plus custom dApp add and instant connect."
+    },
+    {
+      "walletId": "exodus",
+      "metricKey": "dappSearch",
+      "path": "product.dappExperience.dappSearch",
+      "decision": "yes",
+      "citationUrl": "https://support.exodus.com/article/2838-web3-dapp-browser",
+      "explanation": "Exodus's mobile web3 browser and extension include a search bar for finding web3 apps."
+    },
+    {
+      "walletId": "imtoken",
+      "metricKey": "dappSearch",
+      "path": "product.dappExperience.dappSearch",
+      "decision": "yes",
+      "citationUrl": "https://medium.com/imtoken/updates-imtoken-2-2-0-released-revamped-dapp-browser-737afd08ca50",
+      "explanation": "imToken's DApp browser introduced a search function to find dApps by name or URL, with 'Hot Search' surfacing popular dApps."
+    },
+    {
+      "walletId": "metamask",
+      "metricKey": "dappSearch",
+      "path": "product.dappExperience.dappSearch",
+      "decision": "yes",
+      "citationUrl": "https://support.metamask.io/configure/wallet/how-to-use-the-metamask-mobile-browser/",
+      "explanation": "MetaMask Mobile's Explore tab includes a built-in browser with a search bar to find websites and dApps by name."
+    },
+    {
+      "walletId": "okx",
+      "metricKey": "dappSearch",
+      "path": "product.dappExperience.dappSearch",
+      "decision": "yes",
+      "citationUrl": "https://www.okx.com/help/what-can-discover-at-okx-wallet-do-for-you",
+      "explanation": "OKX Wallet's Discover section includes a search bar for finding dApps, plus category filtering and curated recommendations."
+    },
+    {
+      "walletId": "phantom",
+      "metricKey": "dappSearch",
+      "path": "product.dappExperience.dappSearch",
+      "decision": "yes",
+      "citationUrl": "https://help.phantom.com/hc/en-us/articles/41523165147667-Use-the-Explore-tab-in-Phantom",
+      "explanation": "Phantom's Explore tab has a Sites section where users enter an app's name or URL to search for and launch dApps."
+    },
+    {
+      "walletId": "rainbow",
+      "metricKey": "dappSearch",
+      "path": "product.dappExperience.dappSearch",
+      "decision": "yes",
+      "citationUrl": "https://rainbow.me/support/app/the-rainbow-in-app-browser",
+      "explanation": "Rainbow's in-app browser includes a search bar to search for specific dApps by name."
+    },
+    {
+      "walletId": "trust-wallet",
+      "metricKey": "dappSearch",
+      "path": "product.dappExperience.dappSearch",
+      "decision": "yes",
+      "citationUrl": "https://trustwallet.com/blog/web3/exploring-the-dapp-browser-your-gateway-to-web3",
+      "explanation": "Trust Wallet's DApp browser includes a search bar to find specific dApps, alongside a curated Discover section."
+    },
+    {
+      "walletId": "zerion",
+      "metricKey": "dappSearch",
+      "path": "product.dappExperience.dappSearch",
+      "decision": "yes",
+      "citationUrl": "https://zerion.io/blog/what-is-dapp-browser/",
+      "explanation": "Zerion Wallet's dApp browser has a navigation bar to enter a dApp name or URL, described as a powerful search feature with a multi-tab browser."
+    },
+    {
+      "walletId": "argent",
+      "metricKey": "dappSearch",
+      "path": "product.dappExperience.dappSearch",
+      "decision": "no",
+      "citationUrl": "https://support.argent.xyz/hc/en-us/articles/5975462914961-Argent-X",
+      "explanation": "Argent directs users to external Dappland.com for dApp discovery; no in-wallet dApp search function is documented."
+    },
+    {
+      "walletId": "brave-wallet",
+      "metricKey": "dappSearch",
+      "path": "product.dappExperience.dappSearch",
+      "decision": "no",
+      "citationUrl": "https://github.com/brave/brave-browser/issues/50897",
+      "explanation": "With the DappRadar-powered Web3/Explorer tab removed, Brave Wallet no longer has an in-wallet dApp search; users navigate via the address bar."
+    },
+    {
+      "walletId": "daimo",
+      "metricKey": "dappSearch",
+      "path": "product.dappExperience.dappSearch",
+      "decision": "no",
+      "citationUrl": "https://docs.daimo.com/introduction",
+      "explanation": "Daimo has no dApp browser or search feature; it is a payment app, not a general-purpose dApp browser."
+    },
+    {
+      "walletId": "elytro",
+      "metricKey": "dappSearch",
+      "path": "product.dappExperience.dappSearch",
+      "decision": "no",
+      "citationUrl": "https://elytro.com/",
+      "explanation": "Elytro's feature set focuses on smart-account infrastructure and agent operations; no dApp search feature is mentioned."
+    },
+    {
+      "walletId": "family",
+      "metricKey": "dappSearch",
+      "path": "product.dappExperience.dappSearch",
+      "decision": "no",
+      "citationUrl": "https://family.co/support/wallet-browser",
+      "explanation": "Family's wallet browser support page mentions no dApp search function; users navigate to dApps directly."
+    },
+    {
+      "walletId": "frame",
+      "metricKey": "dappSearch",
+      "path": "product.dappExperience.dappSearch",
+      "decision": "no",
+      "citationUrl": "https://docs.frame.sh/docs/Introduction/",
+      "explanation": "Frame injects wallet connectivity into the host browser; no in-wallet dApp search feature is described."
+    },
+    {
+      "walletId": "gemwallet",
+      "metricKey": "dappSearch",
+      "path": "product.dappExperience.dappSearch",
+      "decision": "no",
+      "citationUrl": "https://gemwallet.com/dapp-wallet/",
+      "explanation": "Gem Wallet uses WalletConnect QR scanning for dApp connections; no in-wallet dApp search function is described."
+    },
+    {
+      "walletId": "mtpelerin",
+      "metricKey": "dappSearch",
+      "path": "product.dappExperience.dappSearch",
+      "decision": "no",
+      "citationUrl": "https://www.mtpelerin.com/bridge-wallet",
+      "explanation": "Bridge Wallet uses WalletConnect for dApp connectivity; no in-wallet dApp search function is described."
+    },
+    {
+      "walletId": "zeus",
+      "metricKey": "dappSearch",
+      "path": "product.dappExperience.dappSearch",
+      "decision": "na",
+      "citationUrl": "",
+      "explanation": "Zeus is a Bitcoin/Lightning wallet with no Web3 dApp browser or discovery concept; dApp search categorically does not apply."
+    },
+    {
+      "walletId": "ambire",
+      "metricKey": "dappBrowser",
+      "path": "product.dappExperience.inAppBrowser",
+      "decision": "yes",
+      "citationUrl": "https://blog.ambire.com/new-interactive-flow-the-ambire-dapp-catalog-ensures-smooth-web3-sailing/",
+      "explanation": "The Ambire mobile app includes a curated dApp catalog and lets users open and use dApps directly inside the wallet, constituting a built-in dApp browser."
+    },
+    {
+      "walletId": "argent",
+      "metricKey": "dappBrowser",
+      "path": "product.dappExperience.inAppBrowser",
+      "decision": "yes",
+      "citationUrl": "https://www.argent.xyz/blog/doubling-down-on-starknet",
+      "explanation": "Argent's mobile app features a built-in dApp browser to connect to Starknet dApps on the go."
+    },
+    {
+      "walletId": "family",
+      "metricKey": "dappBrowser",
+      "path": "product.dappExperience.inAppBrowser",
+      "decision": "yes",
+      "citationUrl": "https://family.co/faqs",
+      "explanation": "Family's FAQ states the in-app Family browser is the tool for discovering and exploring dApps, with tab management and bookmarks."
+    },
+    {
+      "walletId": "nufi",
+      "metricKey": "dappBrowser",
+      "path": "product.dappExperience.inAppBrowser",
+      "decision": "yes",
+      "citationUrl": "https://reviewnexa.com/nufi-wallet-review/",
+      "explanation": "NuFi's mobile app includes a dApp browser (functional but lacking advanced features like multi-tabs/bookmarks), per a 2026 hands-on review."
+    },
+    {
+      "walletId": "rainbow",
+      "metricKey": "dappBrowser",
+      "path": "product.dappExperience.inAppBrowser",
+      "decision": "yes",
+      "citationUrl": "https://rainbow.me/support/app/the-rainbow-in-app-browser",
+      "explanation": "Rainbow's support page documents a full in-app dApp browser with trending discovery, multi-tab support, bookmarks, and network switching."
+    },
+    {
+      "walletId": "daimo",
+      "metricKey": "dappBrowser",
+      "path": "product.dappExperience.inAppBrowser",
+      "decision": "no",
+      "citationUrl": "https://beta.walletbeat.eth.limo/daimo/",
+      "explanation": "Daimo is a stablecoin payments app; it is mobile-only with no dApp browser functionality."
+    },
+    {
+      "walletId": "elytro",
+      "metricKey": "dappBrowser",
+      "path": "product.dappExperience.inAppBrowser",
+      "decision": "no",
+      "citationUrl": "https://elytro.com/faq",
+      "explanation": "Elytro is currently CLI- and legacy-Chrome-extension-based with no mobile app or dedicated in-app dApp browser."
+    },
+    {
+      "walletId": "frame",
+      "metricKey": "dappBrowser",
+      "path": "product.dappExperience.inAppBrowser",
+      "decision": "no",
+      "citationUrl": "https://frame.sh/",
+      "explanation": "Frame is a desktop system-wide provider; dApp browsing happens in the host browser via the Frame Companion extension, not a dedicated in-app browser."
+    },
+    {
+      "walletId": "gemwallet",
+      "metricKey": "dappBrowser",
+      "path": "product.dappExperience.inAppBrowser",
+      "decision": "no",
+      "citationUrl": "https://gemwallet.com/dapp-wallet/",
+      "explanation": "Gem Wallet connects to external dApps exclusively via WalletConnect QR scanning; there is no built-in in-app dApp browser."
+    },
+    {
+      "walletId": "mtpelerin",
+      "metricKey": "dappBrowser",
+      "path": "product.dappExperience.inAppBrowser",
+      "decision": "no",
+      "citationUrl": "https://www.mtpelerin.com/bridge-wallet",
+      "explanation": "Bridge Wallet connects to dApps exclusively through WalletConnect, with no built-in in-app dApp browser."
+    },
+    {
+      "walletId": "safe",
+      "metricKey": "dappBrowser",
+      "path": "product.dappExperience.inAppBrowser",
+      "decision": "no",
+      "citationUrl": "https://help.safe.global/articles/6643739210-how-to-connect-a-safe-to-a-dapp-using-walletconnect",
+      "explanation": "Safe connects to dApps via WalletConnect and iframe-based Safe Apps rather than a standalone in-app dApp browser."
+    },
+    {
+      "walletId": "imtoken",
+      "metricKey": "dappRisk",
+      "path": "product.dappExperience.riskRatedDiscovery",
+      "decision": "yes",
+      "citationUrl": "https://medium.com/imtoken/imtoken-2-9-2-out-now-with-updated-dapp-security-risk-control-and-more-551ca40f86c1",
+      "explanation": "imToken 2.9.2 added dApp security risk control that shows risk warning banners on suspicious dApps in the browser and blocks high-risk ones, constituting risk-rated discovery."
+    },
+    {
+      "walletId": "argent",
+      "metricKey": "dappRisk",
+      "path": "product.dappExperience.riskRatedDiscovery",
+      "decision": "no",
+      "citationUrl": "https://www.blockaid.io/blog/argent-releases-upgraded-wallet-now-secured-by-blockaid",
+      "explanation": "Argent's Blockaid integration provides malicious-dApp warnings at connect time but does not expose risk scores in a dApp discovery interface."
+    },
+    {
+      "walletId": "brave-wallet",
+      "metricKey": "dappRisk",
+      "path": "product.dappExperience.riskRatedDiscovery",
+      "decision": "no",
+      "citationUrl": "https://cryptoadventure.com/brave-browser-dapp-review-2026-privacy-first-web3-browser-with-built-in-wallet-and-rewards/",
+      "explanation": "Brave provides phishing/tracker protection via the browser but shows no risk ratings or scores for dApps in a discovery interface."
+    },
+    {
+      "walletId": "elytro",
+      "metricKey": "dappRisk",
+      "path": "product.dappExperience.riskRatedDiscovery",
+      "decision": "no",
+      "citationUrl": "https://elytro.com/faq",
+      "explanation": "No evidence of risk-rated dApp discovery in Elytro; the product is CLI/legacy-extension based with no documented dApp risk scoring."
+    },
+    {
+      "walletId": "exodus",
+      "metricKey": "dappRisk",
+      "path": "product.dappExperience.riskRatedDiscovery",
+      "decision": "no",
+      "citationUrl": "https://www.exodus.com/support/en/articles/8598986-web3-browser-in-exodus-mobile",
+      "explanation": "Exodus shows warnings for suspicious connections and simulates risky requests but does not provide risk ratings or scored dApp discovery."
+    },
+    {
+      "walletId": "frame",
+      "metricKey": "dappRisk",
+      "path": "product.dappExperience.riskRatedDiscovery",
+      "decision": "no",
+      "citationUrl": "https://docs.frame.sh/docs/Support/Dapp%20Connections/",
+      "explanation": "Frame's dApp connection docs show only permission prompts and connection management with no risk ratings or scores."
+    },
+    {
+      "walletId": "gemwallet",
+      "metricKey": "dappRisk",
+      "path": "product.dappExperience.riskRatedDiscovery",
+      "decision": "no",
+      "citationUrl": "https://gemwallet.com/dapp-wallet/",
+      "explanation": "Gem Wallet advises users to verify URLs manually; it shows no risk ratings or security scores for dApps in discovery."
+    },
+    {
+      "walletId": "nufi",
+      "metricKey": "dappRisk",
+      "path": "product.dappExperience.riskRatedDiscovery",
+      "decision": "no",
+      "citationUrl": "https://reviewnexa.com/nufi-wallet-review/",
+      "explanation": "NuFi has real-time transaction scanning but the review describes no risk ratings or scores displayed in dApp discovery."
+    },
+    {
+      "walletId": "phantom",
+      "metricKey": "dappRisk",
+      "path": "product.dappExperience.riskRatedDiscovery",
+      "decision": "no",
+      "citationUrl": "https://phantom.com/learn/blog/security-at-phantom",
+      "explanation": "Phantom uses Blowfish for malicious-domain blocking and transaction previews but describes no risk-rated discovery in its Explore browser."
+    },
+    {
+      "walletId": "rainbow",
+      "metricKey": "dappRisk",
+      "path": "product.dappExperience.riskRatedDiscovery",
+      "decision": "no",
+      "citationUrl": "https://www.blockaid.io/blog/rainbow-wallet-mobile-app-and-browser-extension-powered-by-blockaid",
+      "explanation": "Rainbow's Blockaid integration warns before connecting to malicious sites at connect time, but does not show risk ratings/scores in a dApp discovery interface."
+    },
+    {
+      "walletId": "trust-wallet",
+      "metricKey": "dappRisk",
+      "path": "product.dappExperience.riskRatedDiscovery",
+      "decision": "no",
+      "citationUrl": "https://trustwallet.com/blog/security/learn-how-trust-wallet-s-security-scanner-keeps-you-safe-from-the-latest-crypto-traps",
+      "explanation": "Trust Wallet's Security Scanner assigns per-transaction risk ratings but does not display risk scores for dApps in the discovery/browser listing."
+    },
+    {
+      "walletId": "uniswap-wallet",
+      "metricKey": "dappRisk",
+      "path": "product.dappExperience.riskRatedDiscovery",
+      "decision": "no",
+      "citationUrl": "https://support.uniswap.org/hc/en-us/articles/37781087046029-Dapp-Protection-via-WalletConnect-and-Blockaid",
+      "explanation": "Uniswap Wallet uses Blockaid to show connection warnings via WalletConnect but has no dApp discovery browser with risk-rated listings."
+    },
+    {
+      "walletId": "zerion",
+      "metricKey": "dappRisk",
+      "path": "product.dappExperience.riskRatedDiscovery",
+      "decision": "no",
+      "citationUrl": "https://help.zerion.io/en/articles/8361035-how-does-zerion-help-you-stay-protected-from-phishing-websites",
+      "explanation": "Zerion's Blockaid-powered phishing defense warns/blocks malicious dApps at connect time but shows no risk ratings/scores in a dApp discovery interface."
+    },
+    {
+      "walletId": "zeus",
+      "metricKey": "dappRisk",
+      "path": "product.dappExperience.riskRatedDiscovery",
+      "decision": "na",
+      "citationUrl": "",
+      "explanation": "Zeus is a Bitcoin/Lightning wallet with no Web3 dApp browser or discovery; risk-rated dApp discovery categorically does not apply."
     }
   ]
 }

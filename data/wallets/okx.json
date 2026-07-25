@@ -860,7 +860,17 @@
               }
             ]
           },
-          "dappSearch": null,
+          "dappSearch": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.okx.com/help/what-can-discover-at-okx-wallet-do-for-you",
+                  "explanation": "OKX Wallet's Discover section includes a search bar for finding dApps, plus category filtering and curated recommendations."
+                }
+              }
+            ]
+          },
           "walletConnectOnlyMode": {
             "$call": "notSupportedWithRef",
             "args": [

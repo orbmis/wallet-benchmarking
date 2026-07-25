@@ -687,9 +687,39 @@
             "explanation": "Family homepage says WalletConnect is enabled for dapp access through a built-in scanner.",
             "url": "https://family.co/"
           },
-          "inAppBrowser": null,
-          "curatedDappDirectory": null,
-          "dappSearch": null,
+          "inAppBrowser": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/faqs",
+                  "explanation": "Family's FAQ states the in-app Family browser is the tool for discovering and exploring dApps, with tab management and bookmarks."
+                }
+              }
+            ]
+          },
+          "curatedDappDirectory": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/support/wallet-browser",
+                  "explanation": "Family's wallet browser support page describes connecting to dApps via the in-app browser but no curated dApp directory or catalog."
+                }
+              }
+            ]
+          },
+          "dappSearch": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/support/wallet-browser",
+                  "explanation": "Family's wallet browser support page mentions no dApp search function; users navigate to dApps directly."
+                }
+              }
+            ]
+          },
           "walletConnectOnlyMode": {
             "$call": "supported",
             "args": [
@@ -1117,8 +1147,28 @@
               }
             ]
           },
-          "mint": null,
-          "marketplaceIntegration": null,
+          "mint": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/",
+                  "explanation": "Family describes NFT viewing and collectibles management but no NFT minting functionality."
+                }
+              }
+            ]
+          },
+          "marketplaceIntegration": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/",
+                  "explanation": "Family emphasizes NFT display with rich media but mentions no built-in marketplace for buying or selling."
+                }
+              }
+            ]
+          },
           "spamNftHiding": null,
           "collectionMetadataRefresh": null,
           "royaltiesOrOffers": null

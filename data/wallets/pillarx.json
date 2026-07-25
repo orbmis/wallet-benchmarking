@@ -677,7 +677,17 @@
               }
             ]
           },
-          "curatedDappDirectory": null,
+          "curatedDappDirectory": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://pillar.fi/blog/5-reasons-to-integrate-your-dapp-with-pillarx/",
+                  "explanation": "PillarX features a built-in Web3 App Store where curated dApps are listed and discoverable within the wallet."
+                }
+              }
+            ]
+          },
           "dappSearch": null,
           "walletConnectOnlyMode": {
             "$call": "notSupportedWithRef",
@@ -1008,8 +1018,28 @@
               }
             ]
           },
-          "mint": null,
-          "marketplaceIntegration": null,
+          "mint": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+                  "explanation": "PillarX's listing mentions ERC-1155 support but describes no NFT minting; the wallet focuses on DeFi and cross-chain operations."
+                }
+              }
+            ]
+          },
+          "marketplaceIntegration": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+                  "explanation": "PillarX's App Store listing covers cross-chain swaps, stablecoin gas, and security with no NFT marketplace integration."
+                }
+              }
+            ]
+          },
           "spamNftHiding": null,
           "collectionMetadataRefresh": null,
           "royaltiesOrOffers": null

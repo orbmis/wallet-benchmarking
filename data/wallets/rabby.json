@@ -1406,7 +1406,17 @@
               }
             ]
           },
-          "curatedDappDirectory": null,
+          "curatedDappDirectory": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.coingecko.com/learn/how-to-use-rabby-wallet",
+                  "explanation": "Rabby's mobile app has an 'Explore Popular DApps' section listing curated dApps to browse and favourite."
+                }
+              }
+            ]
+          },
           "dappSearch": {
             "$call": "supported",
             "args": [
@@ -1872,8 +1882,28 @@
               }
             ]
           },
-          "marketplaceIntegration": null,
-          "spamNftHiding": null,
+          "marketplaceIntegration": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://bytwork.com/en/wallets/rabby",
+                  "explanation": "Rabby displays NFTs from DeBank data and connects to external platforms like OpenSea, but has no built-in in-app NFT marketplace."
+                }
+              }
+            ]
+          },
+          "spamNftHiding": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://bytwork.com/en/wallets/rabby",
+                  "explanation": "Rabby flags scam transactions (incl. NFT airdrops) in history as 'Scam Tx' but does not auto-hide NFTs from the collectibles view."
+                }
+              }
+            ]
+          },
           "collectionMetadataRefresh": null,
           "royaltiesOrOffers": null
         },

@@ -1,7 +1,7 @@
 {
   "generated": true,
-  "gapCount": 444,
-  "naCount": 1027,
+  "gapCount": 332,
+  "naCount": 1035,
   "gaps": [
     {
       "walletId": "ambire",
@@ -46,51 +46,11 @@
     {
       "walletId": "ambire",
       "walletName": "Ambire",
-      "metricKey": "nftMarket",
-      "label": "Marketplace integration",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.marketplaceIntegration",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "nftSpam",
-      "label": "Spam NFT hiding",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.spamNftHiding",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
       "metricKey": "gasCustom",
       "label": "Gas customization",
       "category": "Gas UX",
       "type": "state",
       "path": "product.gasUx.gasCustomization",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "dappBrowser",
-      "label": "In-app dApp browser",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.inAppBrowser",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "dappSearch",
-      "label": "dApp search",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.dappSearch",
       "hasUnsourcedRef": false
     },
     {
@@ -226,61 +186,11 @@
     {
       "walletId": "argent",
       "walletName": "Argent",
-      "metricKey": "nftMint",
-      "label": "NFT mint",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.mint",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "nftMarket",
-      "label": "Marketplace integration",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.marketplaceIntegration",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
       "metricKey": "nftSpam",
       "label": "Spam NFT hiding",
       "category": "NFTs",
       "type": "state",
       "path": "product.nftCapabilities.spamNftHiding",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "dappBrowser",
-      "label": "In-app dApp browser",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.inAppBrowser",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "dappSearch",
-      "label": "dApp search",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.dappSearch",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "dappRisk",
-      "label": "Risk-rated discovery",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.riskRatedDiscovery",
       "hasUnsourcedRef": false
     },
     {
@@ -411,26 +321,6 @@
       "category": "Staking & earn",
       "type": "state",
       "path": "product.stakingEarn.rewardsClaiming",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "nftMarket",
-      "label": "Marketplace integration",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.marketplaceIntegration",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "nftSpam",
-      "label": "Spam NFT hiding",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.spamNftHiding",
       "hasUnsourcedRef": false
     },
     {
@@ -596,16 +486,6 @@
     {
       "walletId": "bitget",
       "walletName": "Bitget Wallet",
-      "metricKey": "nftSpam",
-      "label": "Spam NFT hiding",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.spamNftHiding",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitget",
-      "walletName": "Bitget Wallet",
       "metricKey": "gasPresets",
       "label": "Speed presets",
       "category": "Gas UX",
@@ -631,66 +511,6 @@
       "category": "Onboarding",
       "type": "state",
       "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "nftMint",
-      "label": "NFT mint",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.mint",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "nftMarket",
-      "label": "Marketplace integration",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.marketplaceIntegration",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "nftSpam",
-      "label": "Spam NFT hiding",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.spamNftHiding",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "dappDirectory",
-      "label": "Curated dApp directory",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.curatedDappDirectory",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "dappSearch",
-      "label": "dApp search",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.dappSearch",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "dappRisk",
-      "label": "Risk-rated discovery",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.riskRatedDiscovery",
       "hasUnsourcedRef": false
     },
     {
@@ -756,36 +576,6 @@
     {
       "walletId": "mtpelerin",
       "walletName": "Bridge Wallet",
-      "metricKey": "nftMint",
-      "label": "NFT mint",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.mint",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "nftMarket",
-      "label": "Marketplace integration",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.marketplaceIntegration",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "nftSpam",
-      "label": "Spam NFT hiding",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.spamNftHiding",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
       "metricKey": "gasPresets",
       "label": "Speed presets",
       "category": "Gas UX",
@@ -801,36 +591,6 @@
       "category": "Gas UX",
       "type": "state",
       "path": "product.gasUx.payGasInStablecoins",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "dappBrowser",
-      "label": "In-app dApp browser",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.inAppBrowser",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "dappDirectory",
-      "label": "Curated dApp directory",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.curatedDappDirectory",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "dappSearch",
-      "label": "dApp search",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.dappSearch",
       "hasUnsourcedRef": false
     },
     {
@@ -1086,71 +846,11 @@
     {
       "walletId": "daimo",
       "walletName": "Daimo",
-      "metricKey": "nftMint",
-      "label": "NFT mint",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.mint",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "nftMarket",
-      "label": "Marketplace integration",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.marketplaceIntegration",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "nftSpam",
-      "label": "Spam NFT hiding",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.spamNftHiding",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
       "metricKey": "gasStuck",
       "label": "Stuck-tx recovery",
       "category": "Gas UX",
       "type": "state",
       "path": "product.gasUx.stuckTransactionRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "dappBrowser",
-      "label": "In-app dApp browser",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.inAppBrowser",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "dappDirectory",
-      "label": "Curated dApp directory",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.curatedDappDirectory",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "dappSearch",
-      "label": "dApp search",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.dappSearch",
       "hasUnsourcedRef": false
     },
     {
@@ -1246,36 +946,6 @@
     {
       "walletId": "elytro",
       "walletName": "Elytro",
-      "metricKey": "nftMint",
-      "label": "NFT mint",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.mint",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "nftMarket",
-      "label": "Marketplace integration",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.marketplaceIntegration",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "nftSpam",
-      "label": "Spam NFT hiding",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.spamNftHiding",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
       "metricKey": "gasCustom",
       "label": "Gas customization",
       "category": "Gas UX",
@@ -1311,46 +981,6 @@
       "category": "Gas UX",
       "type": "state",
       "path": "product.gasUx.stuckTransactionRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "dappBrowser",
-      "label": "In-app dApp browser",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.inAppBrowser",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "dappDirectory",
-      "label": "Curated dApp directory",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.curatedDappDirectory",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "dappSearch",
-      "label": "dApp search",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.dappSearch",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "dappRisk",
-      "label": "Risk-rated discovery",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.riskRatedDiscovery",
       "hasUnsourcedRef": false
     },
     {
@@ -1456,76 +1086,6 @@
     {
       "walletId": "exodus",
       "walletName": "Exodus",
-      "metricKey": "nftSend",
-      "label": "NFT send",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.send",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "nftMint",
-      "label": "NFT mint",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.mint",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "nftMarket",
-      "label": "Marketplace integration",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.marketplaceIntegration",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "nftSpam",
-      "label": "Spam NFT hiding",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.spamNftHiding",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "dappDirectory",
-      "label": "Curated dApp directory",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.curatedDappDirectory",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "dappSearch",
-      "label": "dApp search",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.dappSearch",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
-      "metricKey": "dappRisk",
-      "label": "Risk-rated discovery",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.riskRatedDiscovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
       "metricKey": "notifSecurity",
       "label": "Security alerts",
       "category": "Notifications",
@@ -1606,61 +1166,11 @@
     {
       "walletId": "family",
       "walletName": "Family",
-      "metricKey": "nftMint",
-      "label": "NFT mint",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.mint",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "nftMarket",
-      "label": "Marketplace integration",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.marketplaceIntegration",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
       "metricKey": "nftSpam",
       "label": "Spam NFT hiding",
       "category": "NFTs",
       "type": "state",
       "path": "product.nftCapabilities.spamNftHiding",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "dappBrowser",
-      "label": "In-app dApp browser",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.inAppBrowser",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "dappDirectory",
-      "label": "Curated dApp directory",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.curatedDappDirectory",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "dappSearch",
-      "label": "dApp search",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.dappSearch",
       "hasUnsourcedRef": false
     },
     {
@@ -1826,71 +1336,11 @@
     {
       "walletId": "frame",
       "walletName": "Frame",
-      "metricKey": "nftMarket",
-      "label": "Marketplace integration",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.marketplaceIntegration",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "nftSpam",
-      "label": "Spam NFT hiding",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.spamNftHiding",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
       "metricKey": "gasStuck",
       "label": "Stuck-tx recovery",
       "category": "Gas UX",
       "type": "state",
       "path": "product.gasUx.stuckTransactionRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "dappBrowser",
-      "label": "In-app dApp browser",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.inAppBrowser",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "dappDirectory",
-      "label": "Curated dApp directory",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.curatedDappDirectory",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "dappSearch",
-      "label": "dApp search",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.dappSearch",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "dappRisk",
-      "label": "Risk-rated discovery",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.riskRatedDiscovery",
       "hasUnsourcedRef": false
     },
     {
@@ -1986,36 +1436,6 @@
     {
       "walletId": "gemwallet",
       "walletName": "Gem Wallet",
-      "metricKey": "nftMint",
-      "label": "NFT mint",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.mint",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "nftMarket",
-      "label": "Marketplace integration",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.marketplaceIntegration",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "nftSpam",
-      "label": "Spam NFT hiding",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.spamNftHiding",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
       "metricKey": "gasAbstraction",
       "label": "Gas abstraction",
       "category": "Gas UX",
@@ -2051,46 +1471,6 @@
       "category": "Gas UX",
       "type": "state",
       "path": "product.gasUx.stuckTransactionRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "dappBrowser",
-      "label": "In-app dApp browser",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.inAppBrowser",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "dappDirectory",
-      "label": "Curated dApp directory",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.curatedDappDirectory",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "dappSearch",
-      "label": "dApp search",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.dappSearch",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "dappRisk",
-      "label": "Risk-rated discovery",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.riskRatedDiscovery",
       "hasUnsourcedRef": false
     },
     {
@@ -2396,51 +1776,11 @@
     {
       "walletId": "imtoken",
       "walletName": "imToken",
-      "metricKey": "nftMarket",
-      "label": "Marketplace integration",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.marketplaceIntegration",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
       "metricKey": "nftSpam",
       "label": "Spam NFT hiding",
       "category": "NFTs",
       "type": "state",
       "path": "product.nftCapabilities.spamNftHiding",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "dappDirectory",
-      "label": "Curated dApp directory",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.curatedDappDirectory",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "dappSearch",
-      "label": "dApp search",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.dappSearch",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "dappRisk",
-      "label": "Risk-rated discovery",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.riskRatedDiscovery",
       "hasUnsourcedRef": false
     },
     {
@@ -2756,26 +2096,6 @@
     {
       "walletId": "metamask",
       "walletName": "MetaMask",
-      "metricKey": "nftMarket",
-      "label": "Marketplace integration",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.marketplaceIntegration",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "metamask",
-      "walletName": "MetaMask",
-      "metricKey": "dappSearch",
-      "label": "dApp search",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.dappSearch",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "metamask",
-      "walletName": "MetaMask",
       "metricKey": "notifPrice",
       "label": "Price alerts",
       "category": "Notifications",
@@ -2916,26 +2236,6 @@
     {
       "walletId": "nufi",
       "walletName": "NuFi",
-      "metricKey": "nftMarket",
-      "label": "Marketplace integration",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.marketplaceIntegration",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "nftSpam",
-      "label": "Spam NFT hiding",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.spamNftHiding",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
       "metricKey": "gasStuck",
       "label": "Stuck-tx recovery",
       "category": "Gas UX",
@@ -2946,41 +2246,11 @@
     {
       "walletId": "nufi",
       "walletName": "NuFi",
-      "metricKey": "dappBrowser",
-      "label": "In-app dApp browser",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.inAppBrowser",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "dappDirectory",
-      "label": "Curated dApp directory",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.curatedDappDirectory",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
       "metricKey": "dappSearch",
       "label": "dApp search",
       "category": "dApp experience",
       "type": "state",
       "path": "product.dappExperience.dappSearch",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "dappRisk",
-      "label": "Risk-rated discovery",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.riskRatedDiscovery",
       "hasUnsourcedRef": false
     },
     {
@@ -3071,16 +2341,6 @@
       "category": "Staking & earn",
       "type": "state",
       "path": "product.stakingEarn.validatorChoice",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "okx",
-      "walletName": "OKX Wallet",
-      "metricKey": "dappSearch",
-      "label": "dApp search",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.dappSearch",
       "hasUnsourcedRef": false
     },
     {
@@ -3206,56 +2466,6 @@
     {
       "walletId": "phantom",
       "walletName": "Phantom",
-      "metricKey": "nftMint",
-      "label": "NFT mint",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.mint",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "phantom",
-      "walletName": "Phantom",
-      "metricKey": "nftMarket",
-      "label": "Marketplace integration",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.marketplaceIntegration",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "phantom",
-      "walletName": "Phantom",
-      "metricKey": "nftSpam",
-      "label": "Spam NFT hiding",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.spamNftHiding",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "phantom",
-      "walletName": "Phantom",
-      "metricKey": "dappSearch",
-      "label": "dApp search",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.dappSearch",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "phantom",
-      "walletName": "Phantom",
-      "metricKey": "dappRisk",
-      "label": "Risk-rated discovery",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.riskRatedDiscovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "phantom",
-      "walletName": "Phantom",
       "metricKey": "devEip5792",
       "label": "EIP-5792",
       "category": "Developer offering",
@@ -3336,26 +2546,6 @@
     {
       "walletId": "pillarx",
       "walletName": "PillarX",
-      "metricKey": "nftMint",
-      "label": "NFT mint",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.mint",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "nftMarket",
-      "label": "Marketplace integration",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.marketplaceIntegration",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
       "metricKey": "nftSpam",
       "label": "Spam NFT hiding",
       "category": "NFTs",
@@ -3391,16 +2581,6 @@
       "category": "Gas UX",
       "type": "state",
       "path": "product.gasUx.stuckTransactionRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "dappDirectory",
-      "label": "Curated dApp directory",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.curatedDappDirectory",
       "hasUnsourcedRef": false
     },
     {
@@ -3556,36 +2736,6 @@
     {
       "walletId": "rabby",
       "walletName": "Rabby",
-      "metricKey": "nftMarket",
-      "label": "Marketplace integration",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.marketplaceIntegration",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rabby",
-      "walletName": "Rabby",
-      "metricKey": "nftSpam",
-      "label": "Spam NFT hiding",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.spamNftHiding",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rabby",
-      "walletName": "Rabby",
-      "metricKey": "dappDirectory",
-      "label": "Curated dApp directory",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.curatedDappDirectory",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rabby",
-      "walletName": "Rabby",
       "metricKey": "notifSendRecv",
       "label": "Send/receive alerts",
       "category": "Notifications",
@@ -3726,41 +2876,11 @@
     {
       "walletId": "rainbow",
       "walletName": "Rainbow",
-      "metricKey": "nftSend",
-      "label": "NFT send",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.send",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
       "metricKey": "nftMint",
       "label": "NFT mint",
       "category": "NFTs",
       "type": "state",
       "path": "product.nftCapabilities.mint",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "nftMarket",
-      "label": "Marketplace integration",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.marketplaceIntegration",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "nftSpam",
-      "label": "Spam NFT hiding",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.spamNftHiding",
       "hasUnsourcedRef": false
     },
     {
@@ -3781,46 +2901,6 @@
       "category": "Gas UX",
       "type": "state",
       "path": "product.gasUx.gasSponsorship",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "dappBrowser",
-      "label": "In-app dApp browser",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.inAppBrowser",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "dappDirectory",
-      "label": "Curated dApp directory",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.curatedDappDirectory",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "dappSearch",
-      "label": "dApp search",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.dappSearch",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "dappRisk",
-      "label": "Risk-rated discovery",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.riskRatedDiscovery",
       "hasUnsourcedRef": false
     },
     {
@@ -3866,51 +2946,11 @@
     {
       "walletId": "safe",
       "walletName": "Safe",
-      "metricKey": "nftMint",
-      "label": "NFT mint",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.mint",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "nftMarket",
-      "label": "Marketplace integration",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.marketplaceIntegration",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "nftSpam",
-      "label": "Spam NFT hiding",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.spamNftHiding",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
       "metricKey": "gasStables",
       "label": "Pay gas in stablecoins",
       "category": "Gas UX",
       "type": "state",
       "path": "product.gasUx.payGasInStablecoins",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "dappBrowser",
-      "label": "In-app dApp browser",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.inAppBrowser",
       "hasUnsourcedRef": false
     },
     {
@@ -4086,56 +3126,6 @@
     {
       "walletId": "trust-wallet",
       "walletName": "Trust Wallet",
-      "metricKey": "nftSend",
-      "label": "NFT send",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.send",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
-      "metricKey": "nftMint",
-      "label": "NFT mint",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.mint",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
-      "metricKey": "nftSpam",
-      "label": "Spam NFT hiding",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.spamNftHiding",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
-      "metricKey": "dappSearch",
-      "label": "dApp search",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.dappSearch",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
-      "metricKey": "dappRisk",
-      "label": "Risk-rated discovery",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.riskRatedDiscovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
       "metricKey": "devEip5792",
       "label": "EIP-5792",
       "category": "Developer offering",
@@ -4161,16 +3151,6 @@
       "category": "Onboarding",
       "type": "state",
       "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "nftSpam",
-      "label": "Spam NFT hiding",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.spamNftHiding",
       "hasUnsourcedRef": false
     },
     {
@@ -4211,16 +3191,6 @@
       "category": "dApp experience",
       "type": "state",
       "path": "product.dappExperience.dappSearch",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "dappRisk",
-      "label": "Risk-rated discovery",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.riskRatedDiscovery",
       "hasUnsourcedRef": false
     },
     {
@@ -4276,26 +3246,6 @@
     {
       "walletId": "zerion",
       "walletName": "Zerion",
-      "metricKey": "dappSearch",
-      "label": "dApp search",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.dappSearch",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "dappRisk",
-      "label": "Risk-rated discovery",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.riskRatedDiscovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
       "metricKey": "notifPrice",
       "label": "Price alerts",
       "category": "Notifications",
@@ -4331,76 +3281,6 @@
       "category": "Developer offering",
       "type": "state",
       "path": "product.developerOffering.eip5792",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "nftDisplay",
-      "label": "NFT display",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.display",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "nftSend",
-      "label": "NFT send",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.send",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "nftMint",
-      "label": "NFT mint",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.mint",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "nftMarket",
-      "label": "Marketplace integration",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.marketplaceIntegration",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "nftSpam",
-      "label": "Spam NFT hiding",
-      "category": "NFTs",
-      "type": "state",
-      "path": "product.nftCapabilities.spamNftHiding",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "dappSearch",
-      "label": "dApp search",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.dappSearch",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "dappRisk",
-      "label": "Risk-rated discovery",
-      "category": "dApp experience",
-      "type": "state",
-      "path": "product.dappExperience.riskRatedDiscovery",
       "hasUnsourcedRef": false
     },
     {
