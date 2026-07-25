@@ -1782,9 +1782,39 @@
               "explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://www.ambire.com"
             },
-            "sendReceive": null,
-            "priceAlerts": null,
-            "approvalAlerts": null,
+            "sendReceive": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.bitdegree.org/crypto/tutorials/what-is-ambire-wallet",
+                    "explanation": "Ambire sends a browser notification when funds are received, per user-facing documentation describing a notification when received funds land on the dashboard."
+                  }
+                }
+              ]
+            },
+            "priceAlerts": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.ambire.com/",
+                    "explanation": "Ambire's site and help center list no price alert feature; notifications are limited to pending-transaction banners in the extension."
+                  }
+                }
+              ]
+            },
+            "approvalAlerts": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://beta.walletbeat.eth.limo/ambire/",
+                    "explanation": "Walletbeat notes Ambire does not warn users when granting unlimited token approvals; it batches/avoids approvals rather than alerting on them."
+                  }
+                }
+              ]
+            },
             "bridgeCompletion": null,
             "failedTransaction": null,
             "securityAlerts": {
@@ -3311,11 +3341,31 @@
               "url": "https://www.argent.xyz/"
             },
             "sendReceive": null,
-            "priceAlerts": null,
+            "priceAlerts": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://apps.apple.com/us/app/ready-crypto-card/id1358741926",
+                    "explanation": "Argent (Ready)'s App Store listing shows no price alert feature; a user review explicitly requests threshold notifications as missing."
+                  }
+                }
+              ]
+            },
             "approvalAlerts": null,
             "bridgeCompletion": null,
             "failedTransaction": null,
-            "securityAlerts": null,
+            "securityAlerts": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.argent.xyz/hc/en-us/articles/360025042711-Text-message-and-email-security-notifications",
+                    "explanation": "Argent's support documents SMS and email security notifications that alert users to important wallet events and suspicious activity."
+                  }
+                }
+              ]
+            },
             "marketAlerts": null
           },
           "nftCapabilities": {
@@ -5524,7 +5574,63 @@
         }
       },
       "features": {
-        "accountSupport": null,
+        "accountSupport": {
+          "eoa": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.bitbox.swiss/en_US/ethereum-co/ethereum-derivation-path-bitbox02",
+                  "explanation": "BitBox02 derives Ethereum addresses via BIP-32/44 (coin type 60') and signs their transactions, confirming native EOA account support."
+                }
+              }
+            ]
+          },
+          "mpc": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://bitbox.swiss/bitbox02/",
+                  "explanation": "BitBox02 is a traditional dual-chip hardware wallet using a single secure element; no MPC/threshold-signature architecture is described."
+                }
+              }
+            ]
+          },
+          "rawErc4337": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://bitbox.swiss/bitbox02/",
+                  "explanation": "BitBox02 provides standard BIP-44 EOA accounts and ERC-20 support; it does not natively create ERC-4337 smart accounts."
+                }
+              }
+            ]
+          },
+          "safe": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.bitbox.swiss/en_US/external-wallet-apps/bitbox02-supported-third-party-wallets-compatibility",
+                  "explanation": "BitBox02 is a pure hardware signer compatible with third-party wallets; it does not natively create or provide Safe accounts."
+                }
+              }
+            ]
+          },
+          "eip7702": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/BitBoxSwiss/bitbox02-firmware/blob/master/CHANGELOG.md",
+                  "explanation": "The BitBox02 firmware CHANGELOG contains no mention of EIP-7702, transaction type 4, or Pectra support."
+                }
+              }
+            ]
+          }
+        },
         "appConnectionSupport": {
           "$call": "supported",
           "args": [
@@ -5572,7 +5678,17 @@
             "ventureCapital": null
           }
         },
-        "multiAddress": null,
+        "multiAddress": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://support.bitbox.swiss/en_US/understanding-derivation-paths-bitbox",
+                "explanation": "BitBox docs state the derivation path account field starts at 0 and increments for each additional account, confirming multiple Ethereum accounts."
+              }
+            }
+          ]
+        },
         "privacy": {
           "analytics": {
             "crashReports": {
@@ -8679,12 +8795,52 @@
               "explanation": "Brave Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://brave.com/wallet/"
             },
-            "sendReceive": null,
-            "priceAlerts": null,
-            "approvalAlerts": null,
+            "sendReceive": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://community.brave.app/t/brave-wallet-transaction-notifications/308313",
+                    "explanation": "A Brave community thread confirms no transaction notifications for successful/failed transactions, with a team member filing a GitHub issue to track the request."
+                  }
+                }
+              ]
+            },
+            "priceAlerts": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://brave.com/wallet/",
+                    "explanation": "Brave Wallet's feature page lists CoinGecko market data but no price-alert notification feature."
+                  }
+                }
+              ]
+            },
+            "approvalAlerts": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/brave/brave-browser/wiki/Brave-Wallet",
+                    "explanation": "Brave Wallet shows only basic approval UI with no dedicated alert system for risky or unlimited token approvals."
+                  }
+                }
+              ]
+            },
             "bridgeCompletion": null,
             "failedTransaction": null,
-            "securityAlerts": null,
+            "securityAlerts": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/brave/brave-browser/issues/45872",
+                    "explanation": "An open GitHub issue requests Brave Wallet add transaction simulation and anti-phishing security alerts, confirming they are not yet implemented."
+                  }
+                }
+              ]
+            },
             "marketAlerts": null
           },
           "nftCapabilities": {
@@ -10745,7 +10901,52 @@
         }
       },
       "features": {
-        "accountSupport": null,
+        "accountSupport": {
+          "eoa": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.cypherock.com/coin/wallet/ethereum",
+                  "explanation": "Cypherock X1 supports Ethereum and signs Ethereum transactions using BIP-44-derived keys, constituting standard EOA account support."
+                }
+              }
+            ]
+          },
+          "mpc": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.cypherock.com/design-decisions/using-shamir-secret-sharing-vs.-multi-sig",
+                  "explanation": "Cypherock X1 reconstructs a single private key via Shamir Secret Sharing; its docs explicitly distinguish this from MPC/threshold schemes."
+                }
+              }
+            ]
+          },
+          "rawErc4337": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.cypherock.com/",
+                  "explanation": "Cypherock X1 is a key-sharding hardware device for EOA self-custody; it provides no native ERC-4337 smart account creation."
+                }
+              }
+            ]
+          },
+          "safe": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.cypherock.com/",
+                  "explanation": "Cypherock X1 natively manages EOA keys distributed across cards; no Safe account creation is offered as a native feature."
+                }
+              }
+            ]
+          }
+        },
         "appConnectionSupport": {
           "$call": "supported",
           "args": [
@@ -10790,7 +10991,17 @@
             "ventureCapital": true
           }
         },
-        "multiAddress": null,
+        "multiAddress": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://www.cypherock.com/features/four-wallets",
+                "explanation": "Cypherock X1 supports 4 separate wallet accounts on a single device, each using BIP-44 HD derivation, enabling multiple accounts."
+              }
+            }
+          ]
+        },
         "privacy": {
           "analytics": {
             "crashReports": {
@@ -12382,8 +12593,28 @@
               "url": "https://daimo.com"
             },
             "sendReceive": null,
-            "priceAlerts": null,
-            "approvalAlerts": null,
+            "priceAlerts": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.daimo.com/introduction",
+                    "explanation": "Daimo is a stablecoin payments wallet; its documentation describes no price alert feature."
+                  }
+                }
+              ]
+            },
+            "approvalAlerts": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/daimo-eth/daimo",
+                    "explanation": "Daimo is a USDC stablecoin payments app with no EVM dApp integration or token approval flow."
+                  }
+                }
+              ]
+            },
             "bridgeCompletion": null,
             "failedTransaction": null,
             "securityAlerts": {
@@ -13950,7 +14181,17 @@
               "url": "https://elytro.com"
             },
             "sendReceive": null,
-            "priceAlerts": null,
+            "priceAlerts": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://elytro.com/faq",
+                    "explanation": "Elytro's FAQ covers smart account policies, recovery, and spending caps but no price alert or notification features."
+                  }
+                }
+              ]
+            },
             "approvalAlerts": null,
             "bridgeCompletion": null,
             "failedTransaction": null,
@@ -15402,7 +15643,17 @@
                 }
               ]
             },
-            "approvalAlerts": null,
+            "approvalAlerts": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.exodus.com/support/en/articles/8598873-safety-and-security-for-defi-and-web3",
+                    "explanation": "Exodus shows generic dApp-connection warnings but no documented dedicated alert for risky or unlimited token approvals."
+                  }
+                }
+              ]
+            },
             "bridgeCompletion": {
               "$call": "supported",
               "args": [
@@ -17010,7 +17261,17 @@
                 }
               ]
             },
-            "priceAlerts": null,
+            "priceAlerts": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://family.co/support/wallet-notifications",
+                    "explanation": "Family's support page states notifications cover only wallet activity (receiving, swapping) with no price alert functionality."
+                  }
+                }
+              ]
+            },
             "approvalAlerts": null,
             "bridgeCompletion": null,
             "failedTransaction": null,
@@ -17490,7 +17751,63 @@
         }
       },
       "features": {
-        "accountSupport": null,
+        "accountSupport": {
+          "eoa": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://firefly.city/",
+                  "explanation": "Firefly is an air-gapped signer designed to sign Ethereum transactions from a derived private key, the defining characteristic of EOA account support."
+                }
+              }
+            ]
+          },
+          "mpc": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://firefly.city/",
+                  "explanation": "Firefly is a single-device air-gapped Ethereum signer with no MPC or threshold-signature architecture."
+                }
+              }
+            ]
+          },
+          "rawErc4337": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/firefly/wallet",
+                  "explanation": "Firefly is a DIY air-gapped EOA signer with no native ERC-4337 smart account functionality."
+                }
+              }
+            ]
+          },
+          "safe": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/firefly/wallet",
+                  "explanation": "Firefly is a minimalist EOA signer; it does not natively create or provide Safe accounts."
+                }
+              }
+            ]
+          },
+          "eip7702": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://hackaday.io/project/146319-firefly-hardware-wallet",
+                  "explanation": "Firefly is a minimalist DIY Ethereum signer with no EIP-7702 or advanced transaction type support documented."
+                }
+              }
+            ]
+          }
+        },
         "appConnectionSupport": null,
         "licensing": {
           "walletAppLicense": {
@@ -18938,8 +19255,28 @@
               "explanation": "Frame source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://frame.sh"
             },
-            "sendReceive": null,
-            "priceAlerts": null,
+            "sendReceive": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/floating/frame",
+                    "explanation": "Frame's README and wiki list no push notification features; it is a desktop signing interface with no transaction-monitoring notifications."
+                  }
+                }
+              ]
+            },
+            "priceAlerts": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/floating/frame",
+                    "explanation": "Frame's repository and feature descriptions cover transaction decoding and signer management with no notification system or price alerts."
+                  }
+                }
+              ]
+            },
             "approvalAlerts": {
               "$call": "supported",
               "args": [
@@ -18953,7 +19290,17 @@
             },
             "bridgeCompletion": null,
             "failedTransaction": null,
-            "securityAlerts": null,
+            "securityAlerts": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://beta.walletbeat.eth.limo/frame/",
+                    "explanation": "Walletbeat's Frame evaluation notes it does not implement any scam alerting; Frame's docs mention no security alert notifications."
+                  }
+                }
+              ]
+            },
             "marketAlerts": null
           },
           "nftCapabilities": {
@@ -20472,8 +20819,28 @@
               "explanation": "Gem Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://gemwallet.com"
             },
-            "sendReceive": null,
-            "priceAlerts": null,
+            "sendReceive": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/gemwalletcom/core",
+                    "explanation": "Gem Wallet's open-source core README lists 'Transaction indexing and push notifications' as a core capability of the backend powering its iOS/Android apps."
+                  }
+                }
+              ]
+            },
+            "priceAlerts": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.gemwallet.com/guides/configure-settings/",
+                    "explanation": "Gem Wallet's documentation describes a Price Alerts setting where users enable alerts and select tokens to be notified of significant price changes."
+                  }
+                }
+              ]
+            },
             "approvalAlerts": {
               "$call": "supported",
               "args": [
@@ -21051,7 +21418,17 @@
             "ventureCapital": true
           }
         },
-        "multiAddress": null,
+        "multiAddress": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://docs.gridplus.io/blockchain-basics/wallets",
+                "explanation": "GridPlus docs describe BIP-44 HD derivation with contiguous address sets and SafeCard-based wallet management, confirming multi-address support."
+              }
+            }
+          ]
+        },
         "privacy": {
           "analytics": {
             "crashReports": null,
@@ -21444,7 +21821,52 @@
         }
       },
       "features": {
-        "accountSupport": null,
+        "accountSupport": {
+          "eoa": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://imkey.im/products/imkey-pro-crypto-hardware-wallet",
+                  "explanation": "imKey Pro supports Ethereum and EVM chains, signing standard EOA transactions with keys stored in its secure chip."
+                }
+              }
+            ]
+          },
+          "mpc": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.imkey.im/hc/en-001/articles/52743275148313-imKey-Secure-Chip-Model-Certification-Explanation",
+                  "explanation": "imKey Pro uses a single CC EAL6+ secure chip for offline key generation/storage; no MPC architecture is referenced."
+                }
+              }
+            ]
+          },
+          "rawErc4337": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://imkey.im/",
+                  "explanation": "imKey Pro works with third-party apps for EOA signing; it provides no native ERC-4337 smart account feature."
+                }
+              }
+            ]
+          },
+          "safe": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://imkey.im/",
+                  "explanation": "imKey Pro is a multi-chain hardware signer; no Safe account creation is offered natively by the vendor's product."
+                }
+              }
+            ]
+          }
+        },
         "appConnectionSupport": null,
         "licensing": {
           "type": "LicensingType.SEPARATE_CORE_CODE_LICENSE_VS_WALLET_CODE_LICENSE",
@@ -23442,7 +23864,63 @@
         }
       },
       "features": {
-        "accountSupport": null,
+        "accountSupport": {
+          "eoa": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://keycard.tech/pages/keycard-shell",
+                  "explanation": "Keycard Shell supports Ethereum and all EVM chains as a BIP-32 HD wallet deriving and signing standard Ethereum EOA keys."
+                }
+              }
+            ]
+          },
+          "mpc": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.keycard.tech/en/developers/overview",
+                  "explanation": "Keycard Shell is a BIP-32 HD wallet where the secure element is the signer; a traditional hardware architecture, not MPC."
+                }
+              }
+            ]
+          },
+          "rawErc4337": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://keycard.tech/pages/keycard-shell",
+                  "explanation": "Keycard Shell is an air-gapped hardware signer (ERC-4527 QR) used with third-party wallets; it does not natively provide ERC-4337 accounts."
+                }
+              }
+            ]
+          },
+          "safe": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://keycard.tech/pages/keycard-shell",
+                  "explanation": "Keycard Shell is a pure hardware signing device; Safe accounts would be managed through a connected third-party app, not created natively."
+                }
+              }
+            ]
+          },
+          "eip7702": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/keycard-tech/keycard-shell/releases",
+                  "explanation": "Keycard Shell firmware releases through v1.3.0 (May 2026) contain no mention of EIP-7702; it focuses on ERC-4527 QR signing."
+                }
+              }
+            ]
+          }
+        },
         "appConnectionSupport": {
           "$call": "supported",
           "args": [
@@ -23926,7 +24404,63 @@
         }
       },
       "features": {
-        "accountSupport": null,
+        "accountSupport": {
+          "eoa": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.keyst.one/advanced-features/change-the-derivation-path-of-addresses",
+                  "explanation": "Keystone natively derives Ethereum accounts via BIP-44 (coin type 60') and signs standard EOA transactions."
+                }
+              }
+            ]
+          },
+          "mpc": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://keyst.one/",
+                  "explanation": "Keystone is a traditional air-gapped hardware wallet using BIP-32/39/44 derivation with no MPC architecture described."
+                }
+              }
+            ]
+          },
+          "rawErc4337": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://keyst.one/",
+                  "explanation": "Keystone is an air-gapped signer that connects to third-party wallets; its own product does not natively create ERC-4337 smart accounts."
+                }
+              }
+            ]
+          },
+          "safe": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.keyst.one/3rd-party-wallets/defi-dapp-with-keystone/gnosis-safe",
+                  "explanation": "Keystone acts as a co-signer/owner key in Safe setups created via the Safe web app; the Safe account is provided by Safe's platform, not natively by Keystone."
+                }
+              }
+            ]
+          },
+          "eip7702": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/KeystoneHQ/keystone3-firmware/releases",
+                  "explanation": "Keystone3 firmware release notes (through v3.0.0) contain no mention of EIP-7702 or Type 4 transaction support."
+                }
+              }
+            ]
+          }
+        },
         "appConnectionSupport": {
           "$call": "supported",
           "args": [
@@ -23967,7 +24501,17 @@
             "ventureCapital": null
           }
         },
-        "multiAddress": null,
+        "multiAddress": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://support.keyst.one/basic-features/adding-multiple-addresses",
+                "explanation": "Keystone's support docs describe adding multiple addresses per asset (up to nine at a time), confirming multi-address derivation."
+              }
+            }
+          ]
+        },
         "privacy": {
           "analytics": {
             "crashReports": {
@@ -24349,7 +24893,63 @@
         "$ref": "ledgerWalletMetadata"
       },
       "features": {
-        "accountSupport": null,
+        "accountSupport": {
+          "eoa": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.ledger.com/academy/glossary/externally-owned-account-eoa",
+                  "explanation": "Ledger's own Academy page identifies an EOA as what users create when setting up a wallet with a Ledger signer, confirming EOA account support."
+                }
+              }
+            ]
+          },
+          "mpc": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.ledger.com/academy/glossary/externally-owned-account-eoa",
+                  "explanation": "Ledger derives and stores a single private key on its secure element; no MPC/threshold-signature product is described."
+                }
+              }
+            ]
+          },
+          "rawErc4337": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.ledger.com/academy/topics/ledgersolutions/10-years-of-ledger-secure-self-custody-for-all",
+                  "explanation": "Ledger's hardware + Ledger Live secure EOA private keys; no native ERC-4337 smart account creation is offered as a Ledger product."
+                }
+              }
+            ]
+          },
+          "safe": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.ledger.com/academy/topics/ledgersolutions/10-years-of-ledger-secure-self-custody-for-all",
+                  "explanation": "Ledger can be a signer within a Safe multisig, but Ledger Live does not natively create or provide Safe accounts as its own product."
+                }
+              }
+            ]
+          },
+          "eip7702": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/LedgerHQ/app-ethereum/blob/master/CHANGELOG.md",
+                  "explanation": "Ledger's app-ethereum v1.17.0 (2025-05-05) added EIP-7702 authorization signing and Type 4 transaction signing on Flex, Stax, Nano X, and Nano S Plus."
+                }
+              }
+            ]
+          }
+        },
         "appConnectionSupport": {
           "$call": "supported",
           "args": [
@@ -24394,7 +24994,17 @@
             "ventureCapital": true
           }
         },
-        "multiAddress": null,
+        "multiAddress": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://support.ledger.com/article/4404389645329-zd",
+                "explanation": "Ledger Live lets users add multiple Ethereum accounts, each generating a unique BIP-44-derived address."
+              }
+            }
+          ]
+        },
         "privacy": {
           "analytics": {
             "crashReports": {
@@ -26291,7 +26901,17 @@
                 }
               ]
             },
-            "priceAlerts": null,
+            "priceAlerts": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.metamask.io/configure/wallet/notifications/",
+                    "explanation": "MetaMask's notifications help page lists only transaction-activity alerts (sends, receives, staking, swaps); price alerts are not a documented feature."
+                  }
+                }
+              ]
+            },
             "approvalAlerts": null,
             "bridgeCompletion": {
               "$call": "supported",
@@ -27928,7 +28548,17 @@
               "url": "https://www.mtpelerin.com/"
             },
             "sendReceive": null,
-            "priceAlerts": null,
+            "priceAlerts": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://developers.mtpelerin.com/service-information/user-notifications",
+                    "explanation": "Mt Pelerin's user-notifications docs list only transaction, KYC, and wallet-validation emails — no price alert feature."
+                  }
+                }
+              ]
+            },
             "approvalAlerts": null,
             "bridgeCompletion": null,
             "failedTransaction": null,
@@ -28462,7 +29092,52 @@
         }
       },
       "features": {
-        "accountSupport": null,
+        "accountSupport": {
+          "eoa": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://ngrave.io/en/zero",
+                  "explanation": "NGRAVE ZERO supports Ethereum and integrates with MetaMask/Rabby as a standard EOA signer with its secure chip storing the private key."
+                }
+              }
+            ]
+          },
+          "mpc": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://ngrave.io/en/zero",
+                  "explanation": "NGRAVE ZERO uses an air-gapped single secure chip for offline private key storage; no MPC implementation is described."
+                }
+              }
+            ]
+          },
+          "rawErc4337": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://ngrave.io/en/zero",
+                  "explanation": "NGRAVE ZERO signs via QR and connects to MetaMask/Rabby; it does not natively create ERC-4337 smart accounts."
+                }
+              }
+            ]
+          },
+          "safe": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://ngrave.io/en/zero",
+                  "explanation": "NGRAVE ZERO is built for single-user EOA storage; documentation confirms no native multisig or Safe account support."
+                }
+              }
+            ]
+          }
+        },
         "appConnectionSupport": {
           "$call": "supported",
           "args": [
@@ -28508,7 +29183,17 @@
             "ventureCapital": true
           }
         },
-        "multiAddress": null,
+        "multiAddress": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://ngrave.io/en/zero",
+                "explanation": "NGRAVE ZERO's product page states users can create more than 100 accounts on the device, confirming multiple accounts/addresses."
+              }
+            }
+          ]
+        },
         "privacy": {
           "analytics": {
             "crashReports": {
@@ -29976,9 +30661,39 @@
               "explanation": "NuFi source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://nu.fi"
             },
-            "sendReceive": null,
-            "priceAlerts": null,
-            "approvalAlerts": null,
+            "sendReceive": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.nu.fi/support/solutions/articles/80001016927-changelog",
+                    "explanation": "NuFi's documented notifications are limited to dApp transaction-signing requests; no push notifications for routine send/receive."
+                  }
+                }
+              ]
+            },
+            "priceAlerts": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.nu.fi/support/solutions/articles/80001016927-changelog",
+                    "explanation": "NuFi's changelog shows only transaction-signing and dApp-connection notifications; no price alert feature appears."
+                  }
+                }
+              ]
+            },
+            "approvalAlerts": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.nu.fi/support/solutions/articles/80001016927-changelog",
+                    "explanation": "NuFi's browser notifications cover only dApp signing requests, not proactive alerts about risky or unlimited token approvals."
+                  }
+                }
+              ]
+            },
             "bridgeCompletion": null,
             "failedTransaction": null,
             "securityAlerts": {
@@ -32286,7 +33001,63 @@
         }
       },
       "features": {
-        "accountSupport": null,
+        "accountSupport": {
+          "eoa": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://onekey.so/cryptos/",
+                  "explanation": "OneKey lists Ethereum as a supported asset with send/receive/stake via BIP-44 key derivation, confirming native EOA account support."
+                }
+              }
+            ]
+          },
+          "mpc": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://onekey.so/",
+                  "explanation": "OneKey is a traditional hardware wallet using BIP-39/32/44 single-seed derivation with no MPC architecture referenced."
+                }
+              }
+            ]
+          },
+          "rawErc4337": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://onekey.so/blog/ecosystem/humans-still-matter-agentic-wallets-and-the-next-decade-of-crypto-wallets-20260322113047/",
+                  "explanation": "OneKey positions itself as a hardware signer/custody anchor for EOA keys; no verifiable source shows its own app natively creating ERC-4337 accounts."
+                }
+              }
+            ]
+          },
+          "safe": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://onekey.so/blog/ecosystem/humans-still-matter-agentic-wallets-and-the-next-decade-of-crypto-wallets-20260322113047/",
+                  "explanation": "OneKey functions as a hardware signer used within third-party Safe setups; its own product does not natively create Safe accounts."
+                }
+              }
+            ]
+          },
+          "eip7702": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.onekey.so/en/articles/11461394-firmware-changelog-for-onekey-pro",
+                  "explanation": "OneKey Pro firmware v4.16.0 (2025-08-29) added support for EIP-7702 transaction signing, displayed clearly on the hardware wallet."
+                }
+              }
+            ]
+          }
+        },
         "appConnectionSupport": {
           "$call": "supported",
           "args": [
@@ -32336,7 +33107,17 @@
             "ventureCapital": true
           }
         },
-        "multiAddress": null,
+        "multiAddress": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://help.onekey.so/hc/en-us/articles/10820044450703-What-is-Derivation-Path",
+                "explanation": "OneKey documents BIP-32/44 derivation path support, enabling multiple Ethereum addresses from a master seed."
+              }
+            }
+          ]
+        },
         "privacy": {
           "analytics": {
             "crashReports": null,
@@ -37740,7 +38521,17 @@
               "url": "https://rabby.io"
             },
             "sendReceive": null,
-            "priceAlerts": null,
+            "priceAlerts": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.rabby.io/hc/en-us/articles/11495471837071-What-does-Please-process-the-alert-before-signing-mean",
+                    "explanation": "Rabby's alerts are pre-signing security warnings, not price-target notifications; no price alert feature is documented."
+                  }
+                }
+              ]
+            },
             "approvalAlerts": {
               "$call": "supported",
               "args": [
@@ -39415,8 +40206,28 @@
                 }
               ]
             },
-            "priceAlerts": null,
-            "approvalAlerts": null,
+            "priceAlerts": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://rainbow.me/en/support/app/notifications",
+                    "explanation": "Rainbow's notifications page lists only wallet-activity alerts (sends, receives, swaps, mints, approvals) with no price alert."
+                  }
+                }
+              ]
+            },
+            "approvalAlerts": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://rainbow.me/en-us/support/app/notifications",
+                    "explanation": "Rainbow's notifications support page lists 'Approvals' as an explicit, customizable notification category alongside Sent, Received, and Swapped."
+                  }
+                }
+              ]
+            },
             "bridgeCompletion": {
               "$call": "supported",
               "args": [
@@ -41196,8 +42007,28 @@
               "explanation": "Safe source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://safe.global"
             },
-            "sendReceive": null,
-            "priceAlerts": null,
+            "sendReceive": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://safe.global/mobile",
+                    "explanation": "Safe{Mobile} advertises 'Get notified on transactions — See every approval and transaction as it happens', providing push notifications for executed transactions including sends and receives."
+                  }
+                }
+              ]
+            },
+            "priceAlerts": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://safe.global/",
+                    "explanation": "Safe Wallet notifications focus on pending transaction signatures and multisig execution; no price alert feature is documented."
+                  }
+                }
+              ]
+            },
             "approvalAlerts": null,
             "bridgeCompletion": null,
             "failedTransaction": null,
@@ -41779,7 +42610,63 @@
         }
       },
       "features": {
-        "accountSupport": null,
+        "accountSupport": {
+          "eoa": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trezor.io/learn/advanced/standards-proposals/what-is-bip44",
+                  "explanation": "Trezor documents BIP-44 derivation for Ethereum (coin type 60'), confirming it derives and manages standard Ethereum EOA accounts."
+                }
+              }
+            ]
+          },
+          "mpc": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trezor.io/learn/advanced/standards-proposals/what-is-bip44",
+                  "explanation": "Trezor derives a single private key from a BIP-39 seed stored on the device; no MPC architecture is referenced."
+                }
+              }
+            ]
+          },
+          "rawErc4337": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trezor.io/trezor-suite",
+                  "explanation": "Trezor Suite manages standard EOA accounts; neither Trezor hardware nor Suite natively creates ERC-4337 smart accounts."
+                }
+              }
+            ]
+          },
+          "safe": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trezor.io/trezor-suite",
+                  "explanation": "Trezor is a pure EOA hardware signer; Trezor Suite does not natively create Safe accounts."
+                }
+              }
+            ]
+          },
+          "eip7702": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/trezor/trezor-firmware/blob/main/core/CHANGELOG.md",
+                  "explanation": "Trezor firmware v2.11.0 (2026-03-18) added 'ETH: Add support for EIP-7702', enabling EIP-7702 authorization signing."
+                }
+              }
+            ]
+          }
+        },
         "appConnectionSupport": {
           "$call": "supported",
           "args": [
@@ -41815,7 +42702,17 @@
             "ventureCapital": null
           }
         },
-        "multiAddress": null,
+        "multiAddress": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://trezor.io/learn/a/multiple-accounts-in-trezor-suite",
+                "explanation": "Trezor Suite supports up to 10 accounts per network including Ethereum, each with independent BIP-44-derived addresses."
+              }
+            }
+          ]
+        },
         "privacy": {
           "analytics": {
             "crashReports": {
@@ -45018,7 +45915,17 @@
               "explanation": "Uniswap Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://wallet.uniswap.org/"
             },
-            "sendReceive": null,
+            "sendReceive": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://blog.uniswap.org/uniswap-mobile-wallet-release",
+                    "explanation": "Uniswap's wallet release blog confirms push notifications for any on-chain activity, covering sends and receives."
+                  }
+                }
+              ]
+            },
             "priceAlerts": null,
             "approvalAlerts": {
               "$call": "supported",
@@ -46809,11 +47716,41 @@
                 }
               ]
             },
-            "priceAlerts": null,
-            "approvalAlerts": null,
+            "priceAlerts": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://roadmap.zerion.io/b/features/price-alert/",
+                    "explanation": "Zerion's public roadmap lists price alerts as an open feature request, confirming the feature has not shipped."
+                  }
+                }
+              ]
+            },
+            "approvalAlerts": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.zerion.io/en/articles/4228406-understanding-the-approve-step-in-transactions",
+                    "explanation": "Zerion's approval help recommends external tools like Revoke.cash and describes no built-in alert for risky or unlimited token approvals."
+                  }
+                }
+              ]
+            },
             "bridgeCompletion": null,
             "failedTransaction": null,
-            "securityAlerts": null,
+            "securityAlerts": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.zerion.io/en/articles/8361035-how-does-zerion-help-you-stay-protected-from-phishing-websites",
+                    "explanation": "Zerion's Blockaid integration sends real-time phishing-defense push notifications on mobile and prompts on the extension when a malicious dApp is detected."
+                  }
+                }
+              ]
+            },
             "marketAlerts": {
               "$call": "supported",
               "args": [
@@ -48538,9 +49475,31 @@
               "explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://github.com/greekfetacheese/zeus"
             },
-            "sendReceive": null,
-            "priceAlerts": null,
-            "approvalAlerts": null,
+            "sendReceive": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.zeusln.app/",
+                    "explanation": "Zeus lists 'advanced notifications' as work-in-progress; only channel-expiration push notifications are live, with payment sent/received notifications not yet implemented."
+                  }
+                }
+              ]
+            },
+            "priceAlerts": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.zeusln.app/",
+                    "explanation": "Zeus lists 'advanced notifications' as work-in-progress and mentions no price alerts; it is focused on Bitcoin/Lightning payments."
+                  }
+                }
+              ]
+            },
+            "approvalAlerts": {
+              "$ref": "notApplicable"
+            },
             "bridgeCompletion": null,
             "failedTransaction": null,
             "securityAlerts": {

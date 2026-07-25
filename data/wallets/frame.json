@@ -1175,8 +1175,28 @@
             "explanation": "Frame source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://frame.sh"
           },
-          "sendReceive": null,
-          "priceAlerts": null,
+          "sendReceive": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/floating/frame",
+                  "explanation": "Frame's README and wiki list no push notification features; it is a desktop signing interface with no transaction-monitoring notifications."
+                }
+              }
+            ]
+          },
+          "priceAlerts": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/floating/frame",
+                  "explanation": "Frame's repository and feature descriptions cover transaction decoding and signer management with no notification system or price alerts."
+                }
+              }
+            ]
+          },
           "approvalAlerts": {
             "$call": "supported",
             "args": [
@@ -1190,7 +1210,17 @@
           },
           "bridgeCompletion": null,
           "failedTransaction": null,
-          "securityAlerts": null,
+          "securityAlerts": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://beta.walletbeat.eth.limo/frame/",
+                  "explanation": "Walletbeat's Frame evaluation notes it does not implement any scam alerting; Frame's docs mention no security alert notifications."
+                }
+              }
+            ]
+          },
           "marketAlerts": null
         },
         "nftCapabilities": {

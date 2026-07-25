@@ -1082,8 +1082,28 @@
             "explanation": "Gem Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://gemwallet.com"
           },
-          "sendReceive": null,
-          "priceAlerts": null,
+          "sendReceive": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/gemwalletcom/core",
+                  "explanation": "Gem Wallet's open-source core README lists 'Transaction indexing and push notifications' as a core capability of the backend powering its iOS/Android apps."
+                }
+              }
+            ]
+          },
+          "priceAlerts": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.gemwallet.com/guides/configure-settings/",
+                  "explanation": "Gem Wallet's documentation describes a Price Alerts setting where users enable alerts and select tokens to be notified of significant price changes."
+                }
+              }
+            ]
+          },
           "approvalAlerts": {
             "$call": "supported",
             "args": [

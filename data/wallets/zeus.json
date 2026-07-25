@@ -1227,9 +1227,31 @@
             "explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://github.com/greekfetacheese/zeus"
           },
-          "sendReceive": null,
-          "priceAlerts": null,
-          "approvalAlerts": null,
+          "sendReceive": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.zeusln.app/",
+                  "explanation": "Zeus lists 'advanced notifications' as work-in-progress; only channel-expiration push notifications are live, with payment sent/received notifications not yet implemented."
+                }
+              }
+            ]
+          },
+          "priceAlerts": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.zeusln.app/",
+                  "explanation": "Zeus lists 'advanced notifications' as work-in-progress and mentions no price alerts; it is focused on Bitcoin/Lightning payments."
+                }
+              }
+            ]
+          },
+          "approvalAlerts": {
+            "$ref": "notApplicable"
+          },
           "bridgeCompletion": null,
           "failedTransaction": null,
           "securityAlerts": {

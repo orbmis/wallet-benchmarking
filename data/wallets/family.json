@@ -1103,7 +1103,17 @@
               }
             ]
           },
-          "priceAlerts": null,
+          "priceAlerts": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/support/wallet-notifications",
+                  "explanation": "Family's support page states notifications cover only wallet activity (receiving, swapping) with no price alert functionality."
+                }
+              }
+            ]
+          },
           "approvalAlerts": null,
           "bridgeCompletion": null,
           "failedTransaction": null,

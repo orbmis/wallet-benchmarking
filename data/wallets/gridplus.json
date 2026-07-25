@@ -134,7 +134,17 @@
           "ventureCapital": true
         }
       },
-      "multiAddress": null,
+      "multiAddress": {
+        "$call": "supported",
+        "args": [
+          {
+            "ref": {
+              "url": "https://docs.gridplus.io/blockchain-basics/wallets",
+              "explanation": "GridPlus docs describe BIP-44 HD derivation with contiguous address sets and SafeCard-based wallet management, confirming multi-address support."
+            }
+          }
+        ]
+      },
       "privacy": {
         "analytics": {
           "crashReports": null,

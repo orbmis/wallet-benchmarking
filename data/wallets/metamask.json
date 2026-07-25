@@ -1549,7 +1549,17 @@
               }
             ]
           },
-          "priceAlerts": null,
+          "priceAlerts": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.metamask.io/configure/wallet/notifications/",
+                  "explanation": "MetaMask's notifications help page lists only transaction-activity alerts (sends, receives, staking, swaps); price alerts are not a documented feature."
+                }
+              }
+            ]
+          },
           "approvalAlerts": null,
           "bridgeCompletion": {
             "$call": "supported",

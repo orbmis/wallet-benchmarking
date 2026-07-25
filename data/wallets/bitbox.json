@@ -48,7 +48,63 @@
       }
     },
     "features": {
-      "accountSupport": null,
+      "accountSupport": {
+        "eoa": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://support.bitbox.swiss/en_US/ethereum-co/ethereum-derivation-path-bitbox02",
+                "explanation": "BitBox02 derives Ethereum addresses via BIP-32/44 (coin type 60') and signs their transactions, confirming native EOA account support."
+              }
+            }
+          ]
+        },
+        "mpc": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://bitbox.swiss/bitbox02/",
+                "explanation": "BitBox02 is a traditional dual-chip hardware wallet using a single secure element; no MPC/threshold-signature architecture is described."
+              }
+            }
+          ]
+        },
+        "rawErc4337": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://bitbox.swiss/bitbox02/",
+                "explanation": "BitBox02 provides standard BIP-44 EOA accounts and ERC-20 support; it does not natively create ERC-4337 smart accounts."
+              }
+            }
+          ]
+        },
+        "safe": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://support.bitbox.swiss/en_US/external-wallet-apps/bitbox02-supported-third-party-wallets-compatibility",
+                "explanation": "BitBox02 is a pure hardware signer compatible with third-party wallets; it does not natively create or provide Safe accounts."
+              }
+            }
+          ]
+        },
+        "eip7702": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://github.com/BitBoxSwiss/bitbox02-firmware/blob/master/CHANGELOG.md",
+                "explanation": "The BitBox02 firmware CHANGELOG contains no mention of EIP-7702, transaction type 4, or Pectra support."
+              }
+            }
+          ]
+        }
+      },
       "appConnectionSupport": {
         "$call": "supported",
         "args": [
@@ -96,7 +152,17 @@
           "ventureCapital": null
         }
       },
-      "multiAddress": null,
+      "multiAddress": {
+        "$call": "supported",
+        "args": [
+          {
+            "ref": {
+              "url": "https://support.bitbox.swiss/en_US/understanding-derivation-paths-bitbox",
+              "explanation": "BitBox docs state the derivation path account field starts at 0 and increments for each additional account, confirming multiple Ethereum accounts."
+            }
+          }
+        ]
+      },
       "privacy": {
         "analytics": {
           "crashReports": {

@@ -1239,7 +1239,17 @@
             "explanation": "Uniswap Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://wallet.uniswap.org/"
           },
-          "sendReceive": null,
+          "sendReceive": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.uniswap.org/uniswap-mobile-wallet-release",
+                  "explanation": "Uniswap's wallet release blog confirms push notifications for any on-chain activity, covering sends and receives."
+                }
+              }
+            ]
+          },
           "priceAlerts": null,
           "approvalAlerts": {
             "$call": "supported",

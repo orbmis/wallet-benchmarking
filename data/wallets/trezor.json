@@ -69,7 +69,63 @@
       }
     },
     "features": {
-      "accountSupport": null,
+      "accountSupport": {
+        "eoa": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://trezor.io/learn/advanced/standards-proposals/what-is-bip44",
+                "explanation": "Trezor documents BIP-44 derivation for Ethereum (coin type 60'), confirming it derives and manages standard Ethereum EOA accounts."
+              }
+            }
+          ]
+        },
+        "mpc": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://trezor.io/learn/advanced/standards-proposals/what-is-bip44",
+                "explanation": "Trezor derives a single private key from a BIP-39 seed stored on the device; no MPC architecture is referenced."
+              }
+            }
+          ]
+        },
+        "rawErc4337": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://trezor.io/trezor-suite",
+                "explanation": "Trezor Suite manages standard EOA accounts; neither Trezor hardware nor Suite natively creates ERC-4337 smart accounts."
+              }
+            }
+          ]
+        },
+        "safe": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://trezor.io/trezor-suite",
+                "explanation": "Trezor is a pure EOA hardware signer; Trezor Suite does not natively create Safe accounts."
+              }
+            }
+          ]
+        },
+        "eip7702": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://github.com/trezor/trezor-firmware/blob/main/core/CHANGELOG.md",
+                "explanation": "Trezor firmware v2.11.0 (2026-03-18) added 'ETH: Add support for EIP-7702', enabling EIP-7702 authorization signing."
+              }
+            }
+          ]
+        }
+      },
       "appConnectionSupport": {
         "$call": "supported",
         "args": [
@@ -105,7 +161,17 @@
           "ventureCapital": null
         }
       },
-      "multiAddress": null,
+      "multiAddress": {
+        "$call": "supported",
+        "args": [
+          {
+            "ref": {
+              "url": "https://trezor.io/learn/a/multiple-accounts-in-trezor-suite",
+              "explanation": "Trezor Suite supports up to 10 accounts per network including Ethereum, each with independent BIP-44-derived addresses."
+            }
+          }
+        ]
+      },
       "privacy": {
         "analytics": {
           "crashReports": {

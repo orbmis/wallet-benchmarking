@@ -1064,11 +1064,31 @@
             "url": "https://www.argent.xyz/"
           },
           "sendReceive": null,
-          "priceAlerts": null,
+          "priceAlerts": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://apps.apple.com/us/app/ready-crypto-card/id1358741926",
+                  "explanation": "Argent (Ready)'s App Store listing shows no price alert feature; a user review explicitly requests threshold notifications as missing."
+                }
+              }
+            ]
+          },
           "approvalAlerts": null,
           "bridgeCompletion": null,
           "failedTransaction": null,
-          "securityAlerts": null,
+          "securityAlerts": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.argent.xyz/hc/en-us/articles/360025042711-Text-message-and-email-security-notifications",
+                  "explanation": "Argent's support documents SMS and email security notifications that alert users to important wallet events and suspicious activity."
+                }
+              }
+            ]
+          },
           "marketAlerts": null
         },
         "nftCapabilities": {

@@ -41,7 +41,52 @@
       }
     },
     "features": {
-      "accountSupport": null,
+      "accountSupport": {
+        "eoa": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://ngrave.io/en/zero",
+                "explanation": "NGRAVE ZERO supports Ethereum and integrates with MetaMask/Rabby as a standard EOA signer with its secure chip storing the private key."
+              }
+            }
+          ]
+        },
+        "mpc": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://ngrave.io/en/zero",
+                "explanation": "NGRAVE ZERO uses an air-gapped single secure chip for offline private key storage; no MPC implementation is described."
+              }
+            }
+          ]
+        },
+        "rawErc4337": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://ngrave.io/en/zero",
+                "explanation": "NGRAVE ZERO signs via QR and connects to MetaMask/Rabby; it does not natively create ERC-4337 smart accounts."
+              }
+            }
+          ]
+        },
+        "safe": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://ngrave.io/en/zero",
+                "explanation": "NGRAVE ZERO is built for single-user EOA storage; documentation confirms no native multisig or Safe account support."
+              }
+            }
+          ]
+        }
+      },
       "appConnectionSupport": {
         "$call": "supported",
         "args": [
@@ -87,7 +132,17 @@
           "ventureCapital": true
         }
       },
-      "multiAddress": null,
+      "multiAddress": {
+        "$call": "supported",
+        "args": [
+          {
+            "ref": {
+              "url": "https://ngrave.io/en/zero",
+              "explanation": "NGRAVE ZERO's product page states users can create more than 100 accounts on the device, confirming multiple accounts/addresses."
+            }
+          }
+        ]
+      },
       "privacy": {
         "analytics": {
           "crashReports": {

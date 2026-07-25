@@ -1,7 +1,7 @@
 {
   "generated": true,
-  "gapCount": 332,
-  "naCount": 1035,
+  "gapCount": 241,
+  "naCount": 1036,
   "gaps": [
     {
       "walletId": "ambire",
@@ -51,36 +51,6 @@
       "category": "Gas UX",
       "type": "state",
       "path": "product.gasUx.gasCustomization",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "notifSendRecv",
-      "label": "Send/receive alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.sendReceive",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "notifPrice",
-      "label": "Price alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.priceAlerts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "notifApproval",
-      "label": "Approval alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.approvalAlerts",
       "hasUnsourcedRef": false
     },
     {
@@ -206,26 +176,6 @@
     {
       "walletId": "argent",
       "walletName": "Argent",
-      "metricKey": "notifPrice",
-      "label": "Price alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.priceAlerts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "notifSecurity",
-      "label": "Security alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.securityAlerts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
       "metricKey": "notifApproval",
       "label": "Approval alerts",
       "category": "Notifications",
@@ -346,66 +296,6 @@
     {
       "walletId": "bitbox",
       "walletName": "BitBox",
-      "metricKey": "eoa",
-      "label": "EOA support",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.eoa",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitbox",
-      "walletName": "BitBox",
-      "metricKey": "erc4337",
-      "label": "ERC-4337 smart accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.rawErc4337",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitbox",
-      "walletName": "BitBox",
-      "metricKey": "eip7702",
-      "label": "EIP-7702 upgraded EOAs",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.eip7702",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitbox",
-      "walletName": "BitBox",
-      "metricKey": "safe",
-      "label": "Safe smart accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.safe",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitbox",
-      "walletName": "BitBox",
-      "metricKey": "mpc",
-      "label": "MPC accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.mpc",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitbox",
-      "walletName": "BitBox",
-      "metricKey": "multiAddress",
-      "label": "Multiple accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "multiAddress",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitbox",
-      "walletName": "BitBox",
       "metricKey": "audits",
       "label": "Public audits",
       "category": "Security",
@@ -516,46 +406,6 @@
     {
       "walletId": "brave-wallet",
       "walletName": "Brave Wallet",
-      "metricKey": "notifSendRecv",
-      "label": "Send/receive alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.sendReceive",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "notifPrice",
-      "label": "Price alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.priceAlerts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "notifSecurity",
-      "label": "Security alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.securityAlerts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
-      "metricKey": "notifApproval",
-      "label": "Approval alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.approvalAlerts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
       "metricKey": "devEip5792",
       "label": "EIP-5792",
       "category": "Developer offering",
@@ -601,16 +451,6 @@
       "category": "Notifications",
       "type": "state",
       "path": "product.notifications.sendReceive",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "notifPrice",
-      "label": "Price alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.priceAlerts",
       "hasUnsourcedRef": false
     },
     {
@@ -696,61 +536,11 @@
     {
       "walletId": "cypherock",
       "walletName": "Cypherock Wallet",
-      "metricKey": "eoa",
-      "label": "EOA support",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.eoa",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "cypherock",
-      "walletName": "Cypherock Wallet",
-      "metricKey": "erc4337",
-      "label": "ERC-4337 smart accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.rawErc4337",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "cypherock",
-      "walletName": "Cypherock Wallet",
       "metricKey": "eip7702",
       "label": "EIP-7702 upgraded EOAs",
       "category": "Accounts",
       "type": "state",
       "path": "accountSupport.eip7702",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "cypherock",
-      "walletName": "Cypherock Wallet",
-      "metricKey": "safe",
-      "label": "Safe smart accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.safe",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "cypherock",
-      "walletName": "Cypherock Wallet",
-      "metricKey": "mpc",
-      "label": "MPC accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.mpc",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "cypherock",
-      "walletName": "Cypherock Wallet",
-      "metricKey": "multiAddress",
-      "label": "Multiple accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "multiAddress",
       "hasUnsourcedRef": false
     },
     {
@@ -866,26 +656,6 @@
     {
       "walletId": "daimo",
       "walletName": "Daimo",
-      "metricKey": "notifPrice",
-      "label": "Price alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.priceAlerts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "notifApproval",
-      "label": "Approval alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.approvalAlerts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
       "metricKey": "syncSettings",
       "label": "Syncs settings",
       "category": "Device sync",
@@ -996,16 +766,6 @@
     {
       "walletId": "elytro",
       "walletName": "Elytro",
-      "metricKey": "notifPrice",
-      "label": "Price alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.priceAlerts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
       "metricKey": "notifApproval",
       "label": "Approval alerts",
       "category": "Notifications",
@@ -1096,16 +856,6 @@
     {
       "walletId": "exodus",
       "walletName": "Exodus",
-      "metricKey": "notifApproval",
-      "label": "Approval alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.approvalAlerts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
       "metricKey": "devEip6963",
       "label": "EIP-6963",
       "category": "Developer offering",
@@ -1176,16 +926,6 @@
     {
       "walletId": "family",
       "walletName": "Family",
-      "metricKey": "notifPrice",
-      "label": "Price alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.priceAlerts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
       "metricKey": "notifApproval",
       "label": "Approval alerts",
       "category": "Notifications",
@@ -1211,56 +951,6 @@
       "category": "Developer offering",
       "type": "state",
       "path": "product.developerOffering.whiteLabelOffering",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "firefly",
-      "walletName": "Firefly Wallet",
-      "metricKey": "eoa",
-      "label": "EOA support",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.eoa",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "firefly",
-      "walletName": "Firefly Wallet",
-      "metricKey": "erc4337",
-      "label": "ERC-4337 smart accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.rawErc4337",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "firefly",
-      "walletName": "Firefly Wallet",
-      "metricKey": "eip7702",
-      "label": "EIP-7702 upgraded EOAs",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.eip7702",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "firefly",
-      "walletName": "Firefly Wallet",
-      "metricKey": "safe",
-      "label": "Safe smart accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.safe",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "firefly",
-      "walletName": "Firefly Wallet",
-      "metricKey": "mpc",
-      "label": "MPC accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.mpc",
       "hasUnsourcedRef": false
     },
     {
@@ -1341,36 +1031,6 @@
       "category": "Gas UX",
       "type": "state",
       "path": "product.gasUx.stuckTransactionRecovery",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "notifSendRecv",
-      "label": "Send/receive alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.sendReceive",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "notifPrice",
-      "label": "Price alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.priceAlerts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "frame",
-      "walletName": "Frame",
-      "metricKey": "notifSecurity",
-      "label": "Security alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.securityAlerts",
       "hasUnsourcedRef": false
     },
     {
@@ -1476,26 +1136,6 @@
     {
       "walletId": "gemwallet",
       "walletName": "Gem Wallet",
-      "metricKey": "notifSendRecv",
-      "label": "Send/receive alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.sendReceive",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "notifPrice",
-      "label": "Price alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.priceAlerts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
       "metricKey": "syncCloud",
       "label": "Cloud-backed sync",
       "category": "Device sync",
@@ -1541,16 +1181,6 @@
       "category": "Developer offering",
       "type": "state",
       "path": "product.developerOffering.whiteLabelOffering",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gridplus",
-      "walletName": "GridPlus Wallet",
-      "metricKey": "multiAddress",
-      "label": "Multiple accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "multiAddress",
       "hasUnsourcedRef": false
     },
     {
@@ -1606,51 +1236,11 @@
     {
       "walletId": "imkey",
       "walletName": "imKey",
-      "metricKey": "eoa",
-      "label": "EOA support",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.eoa",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imkey",
-      "walletName": "imKey",
-      "metricKey": "erc4337",
-      "label": "ERC-4337 smart accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.rawErc4337",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imkey",
-      "walletName": "imKey",
       "metricKey": "eip7702",
       "label": "EIP-7702 upgraded EOAs",
       "category": "Accounts",
       "type": "state",
       "path": "accountSupport.eip7702",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imkey",
-      "walletName": "imKey",
-      "metricKey": "safe",
-      "label": "Safe smart accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.safe",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imkey",
-      "walletName": "imKey",
-      "metricKey": "mpc",
-      "label": "MPC accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.mpc",
       "hasUnsourcedRef": false
     },
     {
@@ -1826,56 +1416,6 @@
     {
       "walletId": "keycard-shell",
       "walletName": "Keycard Shell",
-      "metricKey": "eoa",
-      "label": "EOA support",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.eoa",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "keycard-shell",
-      "walletName": "Keycard Shell",
-      "metricKey": "erc4337",
-      "label": "ERC-4337 smart accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.rawErc4337",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "keycard-shell",
-      "walletName": "Keycard Shell",
-      "metricKey": "eip7702",
-      "label": "EIP-7702 upgraded EOAs",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.eip7702",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "keycard-shell",
-      "walletName": "Keycard Shell",
-      "metricKey": "safe",
-      "label": "Safe smart accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.safe",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "keycard-shell",
-      "walletName": "Keycard Shell",
-      "metricKey": "mpc",
-      "label": "MPC accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.mpc",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "keycard-shell",
-      "walletName": "Keycard Shell",
       "metricKey": "defaultTransfer",
       "label": "Default transfer mode",
       "category": "Privacy",
@@ -1916,66 +1456,6 @@
     {
       "walletId": "keystone",
       "walletName": "Keystone Wallet",
-      "metricKey": "eoa",
-      "label": "EOA support",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.eoa",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "keystone",
-      "walletName": "Keystone Wallet",
-      "metricKey": "erc4337",
-      "label": "ERC-4337 smart accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.rawErc4337",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "keystone",
-      "walletName": "Keystone Wallet",
-      "metricKey": "eip7702",
-      "label": "EIP-7702 upgraded EOAs",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.eip7702",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "keystone",
-      "walletName": "Keystone Wallet",
-      "metricKey": "safe",
-      "label": "Safe smart accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.safe",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "keystone",
-      "walletName": "Keystone Wallet",
-      "metricKey": "mpc",
-      "label": "MPC accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.mpc",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "keystone",
-      "walletName": "Keystone Wallet",
-      "metricKey": "multiAddress",
-      "label": "Multiple accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "multiAddress",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "keystone",
-      "walletName": "Keystone Wallet",
       "metricKey": "selfBroadcast",
       "label": "Self-broadcast (own node)",
       "category": "Self-sovereignty",
@@ -1991,66 +1471,6 @@
       "category": "Transparency",
       "type": "state",
       "path": "transparency.releaseTransparency.artifactSigning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ledgerWallet",
-      "walletName": "ledgerWallet",
-      "metricKey": "eoa",
-      "label": "EOA support",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.eoa",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ledgerWallet",
-      "walletName": "ledgerWallet",
-      "metricKey": "erc4337",
-      "label": "ERC-4337 smart accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.rawErc4337",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ledgerWallet",
-      "walletName": "ledgerWallet",
-      "metricKey": "eip7702",
-      "label": "EIP-7702 upgraded EOAs",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.eip7702",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ledgerWallet",
-      "walletName": "ledgerWallet",
-      "metricKey": "safe",
-      "label": "Safe smart accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.safe",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ledgerWallet",
-      "walletName": "ledgerWallet",
-      "metricKey": "mpc",
-      "label": "MPC accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.mpc",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ledgerWallet",
-      "walletName": "ledgerWallet",
-      "metricKey": "multiAddress",
-      "label": "Multiple accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "multiAddress",
       "hasUnsourcedRef": false
     },
     {
@@ -2096,16 +1516,6 @@
     {
       "walletId": "metamask",
       "walletName": "MetaMask",
-      "metricKey": "notifPrice",
-      "label": "Price alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.priceAlerts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "metamask",
-      "walletName": "MetaMask",
       "metricKey": "notifApproval",
       "label": "Approval alerts",
       "category": "Notifications",
@@ -2116,61 +1526,11 @@
     {
       "walletId": "ngrave",
       "walletName": "NGRAVE Zero",
-      "metricKey": "eoa",
-      "label": "EOA support",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.eoa",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ngrave",
-      "walletName": "NGRAVE Zero",
-      "metricKey": "erc4337",
-      "label": "ERC-4337 smart accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.rawErc4337",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ngrave",
-      "walletName": "NGRAVE Zero",
       "metricKey": "eip7702",
       "label": "EIP-7702 upgraded EOAs",
       "category": "Accounts",
       "type": "state",
       "path": "accountSupport.eip7702",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ngrave",
-      "walletName": "NGRAVE Zero",
-      "metricKey": "safe",
-      "label": "Safe smart accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.safe",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ngrave",
-      "walletName": "NGRAVE Zero",
-      "metricKey": "mpc",
-      "label": "MPC accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.mpc",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ngrave",
-      "walletName": "NGRAVE Zero",
-      "metricKey": "multiAddress",
-      "label": "Multiple accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "multiAddress",
       "hasUnsourcedRef": false
     },
     {
@@ -2256,36 +1616,6 @@
     {
       "walletId": "nufi",
       "walletName": "NuFi",
-      "metricKey": "notifSendRecv",
-      "label": "Send/receive alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.sendReceive",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "notifPrice",
-      "label": "Price alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.priceAlerts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "notifApproval",
-      "label": "Approval alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.approvalAlerts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
       "metricKey": "feeBridge",
       "label": "Bridge fees disclosed",
       "category": "Pricing & fees",
@@ -2361,66 +1691,6 @@
       "category": "Device sync",
       "type": "state",
       "path": "product.deviceSync.syncsSettings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "onekey",
-      "walletName": "OneKey Pro",
-      "metricKey": "eoa",
-      "label": "EOA support",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.eoa",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "onekey",
-      "walletName": "OneKey Pro",
-      "metricKey": "erc4337",
-      "label": "ERC-4337 smart accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.rawErc4337",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "onekey",
-      "walletName": "OneKey Pro",
-      "metricKey": "eip7702",
-      "label": "EIP-7702 upgraded EOAs",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.eip7702",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "onekey",
-      "walletName": "OneKey Pro",
-      "metricKey": "safe",
-      "label": "Safe smart accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.safe",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "onekey",
-      "walletName": "OneKey Pro",
-      "metricKey": "mpc",
-      "label": "MPC accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.mpc",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "onekey",
-      "walletName": "OneKey Pro",
-      "metricKey": "multiAddress",
-      "label": "Multiple accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "multiAddress",
       "hasUnsourcedRef": false
     },
     {
@@ -2746,16 +2016,6 @@
     {
       "walletId": "rabby",
       "walletName": "Rabby",
-      "metricKey": "notifPrice",
-      "label": "Price alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.priceAlerts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rabby",
-      "walletName": "Rabby",
       "metricKey": "syncAccounts",
       "label": "Syncs accounts",
       "category": "Device sync",
@@ -2904,26 +2164,6 @@
       "hasUnsourcedRef": false
     },
     {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "notifPrice",
-      "label": "Price alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.priceAlerts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "notifApproval",
-      "label": "Approval alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.approvalAlerts",
-      "hasUnsourcedRef": false
-    },
-    {
       "walletId": "safe",
       "walletName": "Safe",
       "metricKey": "rampGoogle",
@@ -2966,26 +2206,6 @@
     {
       "walletId": "safe",
       "walletName": "Safe",
-      "metricKey": "notifSendRecv",
-      "label": "Send/receive alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.sendReceive",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
-      "metricKey": "notifPrice",
-      "label": "Price alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.priceAlerts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "safe",
-      "walletName": "Safe",
       "metricKey": "notifApproval",
       "label": "Approval alerts",
       "category": "Notifications",
@@ -3001,66 +2221,6 @@
       "category": "Device sync",
       "type": "state",
       "path": "product.deviceSync.syncsSettings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trezor",
-      "walletName": "Trezor Wallet",
-      "metricKey": "eoa",
-      "label": "EOA support",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.eoa",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trezor",
-      "walletName": "Trezor Wallet",
-      "metricKey": "erc4337",
-      "label": "ERC-4337 smart accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.rawErc4337",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trezor",
-      "walletName": "Trezor Wallet",
-      "metricKey": "eip7702",
-      "label": "EIP-7702 upgraded EOAs",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.eip7702",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trezor",
-      "walletName": "Trezor Wallet",
-      "metricKey": "safe",
-      "label": "Safe smart accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.safe",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trezor",
-      "walletName": "Trezor Wallet",
-      "metricKey": "mpc",
-      "label": "MPC accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "accountSupport.mpc",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trezor",
-      "walletName": "Trezor Wallet",
-      "metricKey": "multiAddress",
-      "label": "Multiple accounts",
-      "category": "Accounts",
-      "type": "state",
-      "path": "multiAddress",
       "hasUnsourcedRef": false
     },
     {
@@ -3196,16 +2356,6 @@
     {
       "walletId": "uniswap-wallet",
       "walletName": "Uniswap Wallet",
-      "metricKey": "notifSendRecv",
-      "label": "Send/receive alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.sendReceive",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
       "metricKey": "notifPrice",
       "label": "Price alerts",
       "category": "Notifications",
@@ -3246,71 +2396,11 @@
     {
       "walletId": "zerion",
       "walletName": "Zerion",
-      "metricKey": "notifPrice",
-      "label": "Price alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.priceAlerts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "notifSecurity",
-      "label": "Security alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.securityAlerts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "notifApproval",
-      "label": "Approval alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.approvalAlerts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
       "metricKey": "devEip5792",
       "label": "EIP-5792",
       "category": "Developer offering",
       "type": "state",
       "path": "product.developerOffering.eip5792",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "notifSendRecv",
-      "label": "Send/receive alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.sendReceive",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "notifPrice",
-      "label": "Price alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.priceAlerts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zeus",
-      "walletName": "Zeus",
-      "metricKey": "notifApproval",
-      "label": "Approval alerts",
-      "category": "Notifications",
-      "type": "state",
-      "path": "product.notifications.approvalAlerts",
       "hasUnsourcedRef": false
     },
     {

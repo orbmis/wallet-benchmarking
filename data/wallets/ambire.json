@@ -1781,9 +1781,39 @@
             "explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://www.ambire.com"
           },
-          "sendReceive": null,
-          "priceAlerts": null,
-          "approvalAlerts": null,
+          "sendReceive": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.bitdegree.org/crypto/tutorials/what-is-ambire-wallet",
+                  "explanation": "Ambire sends a browser notification when funds are received, per user-facing documentation describing a notification when received funds land on the dashboard."
+                }
+              }
+            ]
+          },
+          "priceAlerts": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.ambire.com/",
+                  "explanation": "Ambire's site and help center list no price alert feature; notifications are limited to pending-transaction banners in the extension."
+                }
+              }
+            ]
+          },
+          "approvalAlerts": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://beta.walletbeat.eth.limo/ambire/",
+                  "explanation": "Walletbeat notes Ambire does not warn users when granting unlimited token approvals; it batches/avoids approvals rather than alerting on them."
+                }
+              }
+            ]
+          },
           "bridgeCompletion": null,
           "failedTransaction": null,
           "securityAlerts": {

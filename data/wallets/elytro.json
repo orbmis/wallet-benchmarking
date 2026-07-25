@@ -1105,7 +1105,17 @@
             "url": "https://elytro.com"
           },
           "sendReceive": null,
-          "priceAlerts": null,
+          "priceAlerts": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/faq",
+                  "explanation": "Elytro's FAQ covers smart account policies, recovery, and spending caps but no price alert or notification features."
+                }
+              }
+            ]
+          },
           "approvalAlerts": null,
           "bridgeCompletion": null,
           "failedTransaction": null,
