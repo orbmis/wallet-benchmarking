@@ -34,7 +34,63 @@
       }
     },
     "features": {
-      "accountSupport": null,
+      "accountSupport": {
+        "eoa": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://firefly.city/",
+                "explanation": "Firefly is an air-gapped signer designed to sign Ethereum transactions from a derived private key, the defining characteristic of EOA account support."
+              }
+            }
+          ]
+        },
+        "mpc": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://firefly.city/",
+                "explanation": "Firefly is a single-device air-gapped Ethereum signer with no MPC or threshold-signature architecture."
+              }
+            }
+          ]
+        },
+        "rawErc4337": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://github.com/firefly/wallet",
+                "explanation": "Firefly is a DIY air-gapped EOA signer with no native ERC-4337 smart account functionality."
+              }
+            }
+          ]
+        },
+        "safe": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://github.com/firefly/wallet",
+                "explanation": "Firefly is a minimalist EOA signer; it does not natively create or provide Safe accounts."
+              }
+            }
+          ]
+        },
+        "eip7702": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://hackaday.io/project/146319-firefly-hardware-wallet",
+                "explanation": "Firefly is a minimalist DIY Ethereum signer with no EIP-7702 or advanced transaction type support documented."
+              }
+            }
+          ]
+        }
+      },
       "appConnectionSupport": null,
       "licensing": {
         "walletAppLicense": {

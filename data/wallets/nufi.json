@@ -1122,9 +1122,39 @@
             "explanation": "NuFi source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://nu.fi"
           },
-          "sendReceive": null,
-          "priceAlerts": null,
-          "approvalAlerts": null,
+          "sendReceive": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.nu.fi/support/solutions/articles/80001016927-changelog",
+                  "explanation": "NuFi's documented notifications are limited to dApp transaction-signing requests; no push notifications for routine send/receive."
+                }
+              }
+            ]
+          },
+          "priceAlerts": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.nu.fi/support/solutions/articles/80001016927-changelog",
+                  "explanation": "NuFi's changelog shows only transaction-signing and dApp-connection notifications; no price alert feature appears."
+                }
+              }
+            ]
+          },
+          "approvalAlerts": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.nu.fi/support/solutions/articles/80001016927-changelog",
+                  "explanation": "NuFi's browser notifications cover only dApp signing requests, not proactive alerts about risky or unlimited token approvals."
+                }
+              }
+            ]
+          },
           "bridgeCompletion": null,
           "failedTransaction": null,
           "securityAlerts": {

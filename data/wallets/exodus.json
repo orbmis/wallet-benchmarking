@@ -1053,7 +1053,17 @@
               }
             ]
           },
-          "approvalAlerts": null,
+          "approvalAlerts": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.exodus.com/support/en/articles/8598873-safety-and-security-for-defi-and-web3",
+                  "explanation": "Exodus shows generic dApp-connection warnings but no documented dedicated alert for risky or unlimited token approvals."
+                }
+              }
+            ]
+          },
           "bridgeCompletion": {
             "$call": "supported",
             "args": [

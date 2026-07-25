@@ -1255,8 +1255,28 @@
             "url": "https://daimo.com"
           },
           "sendReceive": null,
-          "priceAlerts": null,
-          "approvalAlerts": null,
+          "priceAlerts": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.daimo.com/introduction",
+                  "explanation": "Daimo is a stablecoin payments wallet; its documentation describes no price alert feature."
+                }
+              }
+            ]
+          },
+          "approvalAlerts": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/daimo-eth/daimo",
+                  "explanation": "Daimo is a USDC stablecoin payments app with no EVM dApp integration or token approval flow."
+                }
+              }
+            ]
+          },
           "bridgeCompletion": null,
           "failedTransaction": null,
           "securityAlerts": {

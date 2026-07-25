@@ -1063,12 +1063,52 @@
             "explanation": "Brave Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://brave.com/wallet/"
           },
-          "sendReceive": null,
-          "priceAlerts": null,
-          "approvalAlerts": null,
+          "sendReceive": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://community.brave.app/t/brave-wallet-transaction-notifications/308313",
+                  "explanation": "A Brave community thread confirms no transaction notifications for successful/failed transactions, with a team member filing a GitHub issue to track the request."
+                }
+              }
+            ]
+          },
+          "priceAlerts": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://brave.com/wallet/",
+                  "explanation": "Brave Wallet's feature page lists CoinGecko market data but no price-alert notification feature."
+                }
+              }
+            ]
+          },
+          "approvalAlerts": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/brave/brave-browser/wiki/Brave-Wallet",
+                  "explanation": "Brave Wallet shows only basic approval UI with no dedicated alert system for risky or unlimited token approvals."
+                }
+              }
+            ]
+          },
           "bridgeCompletion": null,
           "failedTransaction": null,
-          "securityAlerts": null,
+          "securityAlerts": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/brave/brave-browser/issues/45872",
+                  "explanation": "An open GitHub issue requests Brave Wallet add transaction simulation and anti-phishing security alerts, confirming they are not yet implemented."
+                }
+              }
+            ]
+          },
           "marketAlerts": null
         },
         "nftCapabilities": {

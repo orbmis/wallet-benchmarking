@@ -1314,8 +1314,28 @@
             "explanation": "Safe source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://safe.global"
           },
-          "sendReceive": null,
-          "priceAlerts": null,
+          "sendReceive": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://safe.global/mobile",
+                  "explanation": "Safe{Mobile} advertises 'Get notified on transactions — See every approval and transaction as it happens', providing push notifications for executed transactions including sends and receives."
+                }
+              }
+            ]
+          },
+          "priceAlerts": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://safe.global/",
+                  "explanation": "Safe Wallet notifications focus on pending transaction signatures and multisig execution; no price alert feature is documented."
+                }
+              }
+            ]
+          },
           "approvalAlerts": null,
           "bridgeCompletion": null,
           "failedTransaction": null,

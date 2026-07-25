@@ -1297,11 +1297,41 @@
               }
             ]
           },
-          "priceAlerts": null,
-          "approvalAlerts": null,
+          "priceAlerts": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://roadmap.zerion.io/b/features/price-alert/",
+                  "explanation": "Zerion's public roadmap lists price alerts as an open feature request, confirming the feature has not shipped."
+                }
+              }
+            ]
+          },
+          "approvalAlerts": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.zerion.io/en/articles/4228406-understanding-the-approve-step-in-transactions",
+                  "explanation": "Zerion's approval help recommends external tools like Revoke.cash and describes no built-in alert for risky or unlimited token approvals."
+                }
+              }
+            ]
+          },
           "bridgeCompletion": null,
           "failedTransaction": null,
-          "securityAlerts": null,
+          "securityAlerts": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.zerion.io/en/articles/8361035-how-does-zerion-help-you-stay-protected-from-phishing-websites",
+                  "explanation": "Zerion's Blockaid integration sends real-time phishing-defense push notifications on mobile and prompts on the extension when a malicious dApp is detected."
+                }
+              }
+            ]
+          },
           "marketAlerts": {
             "$call": "supported",
             "args": [

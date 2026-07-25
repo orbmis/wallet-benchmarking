@@ -47,7 +47,63 @@
       }
     },
     "features": {
-      "accountSupport": null,
+      "accountSupport": {
+        "eoa": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://keycard.tech/pages/keycard-shell",
+                "explanation": "Keycard Shell supports Ethereum and all EVM chains as a BIP-32 HD wallet deriving and signing standard Ethereum EOA keys."
+              }
+            }
+          ]
+        },
+        "mpc": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://docs.keycard.tech/en/developers/overview",
+                "explanation": "Keycard Shell is a BIP-32 HD wallet where the secure element is the signer; a traditional hardware architecture, not MPC."
+              }
+            }
+          ]
+        },
+        "rawErc4337": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://keycard.tech/pages/keycard-shell",
+                "explanation": "Keycard Shell is an air-gapped hardware signer (ERC-4527 QR) used with third-party wallets; it does not natively provide ERC-4337 accounts."
+              }
+            }
+          ]
+        },
+        "safe": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://keycard.tech/pages/keycard-shell",
+                "explanation": "Keycard Shell is a pure hardware signing device; Safe accounts would be managed through a connected third-party app, not created natively."
+              }
+            }
+          ]
+        },
+        "eip7702": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://github.com/keycard-tech/keycard-shell/releases",
+                "explanation": "Keycard Shell firmware releases through v1.3.0 (May 2026) contain no mention of EIP-7702; it focuses on ERC-4527 QR signing."
+              }
+            }
+          ]
+        }
+      },
       "appConnectionSupport": {
         "$call": "supported",
         "args": [

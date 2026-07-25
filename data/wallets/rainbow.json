@@ -1194,8 +1194,28 @@
               }
             ]
           },
-          "priceAlerts": null,
-          "approvalAlerts": null,
+          "priceAlerts": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbow.me/en/support/app/notifications",
+                  "explanation": "Rainbow's notifications page lists only wallet-activity alerts (sends, receives, swaps, mints, approvals) with no price alert."
+                }
+              }
+            ]
+          },
+          "approvalAlerts": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbow.me/en-us/support/app/notifications",
+                  "explanation": "Rainbow's notifications support page lists 'Approvals' as an explicit, customizable notification category alongside Sent, Received, and Swapped."
+                }
+              }
+            ]
+          },
           "bridgeCompletion": {
             "$call": "supported",
             "args": [

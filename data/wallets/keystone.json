@@ -51,7 +51,63 @@
       }
     },
     "features": {
-      "accountSupport": null,
+      "accountSupport": {
+        "eoa": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://support.keyst.one/advanced-features/change-the-derivation-path-of-addresses",
+                "explanation": "Keystone natively derives Ethereum accounts via BIP-44 (coin type 60') and signs standard EOA transactions."
+              }
+            }
+          ]
+        },
+        "mpc": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://keyst.one/",
+                "explanation": "Keystone is a traditional air-gapped hardware wallet using BIP-32/39/44 derivation with no MPC architecture described."
+              }
+            }
+          ]
+        },
+        "rawErc4337": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://keyst.one/",
+                "explanation": "Keystone is an air-gapped signer that connects to third-party wallets; its own product does not natively create ERC-4337 smart accounts."
+              }
+            }
+          ]
+        },
+        "safe": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://support.keyst.one/3rd-party-wallets/defi-dapp-with-keystone/gnosis-safe",
+                "explanation": "Keystone acts as a co-signer/owner key in Safe setups created via the Safe web app; the Safe account is provided by Safe's platform, not natively by Keystone."
+              }
+            }
+          ]
+        },
+        "eip7702": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://github.com/KeystoneHQ/keystone3-firmware/releases",
+                "explanation": "Keystone3 firmware release notes (through v3.0.0) contain no mention of EIP-7702 or Type 4 transaction support."
+              }
+            }
+          ]
+        }
+      },
       "appConnectionSupport": {
         "$call": "supported",
         "args": [
@@ -92,7 +148,17 @@
           "ventureCapital": null
         }
       },
-      "multiAddress": null,
+      "multiAddress": {
+        "$call": "supported",
+        "args": [
+          {
+            "ref": {
+              "url": "https://support.keyst.one/basic-features/adding-multiple-addresses",
+              "explanation": "Keystone's support docs describe adding multiple addresses per asset (up to nine at a time), confirming multi-address derivation."
+            }
+          }
+        ]
+      },
       "privacy": {
         "analytics": {
           "crashReports": {

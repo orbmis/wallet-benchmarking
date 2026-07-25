@@ -47,7 +47,52 @@
       }
     },
     "features": {
-      "accountSupport": null,
+      "accountSupport": {
+        "eoa": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://www.cypherock.com/coin/wallet/ethereum",
+                "explanation": "Cypherock X1 supports Ethereum and signs Ethereum transactions using BIP-44-derived keys, constituting standard EOA account support."
+              }
+            }
+          ]
+        },
+        "mpc": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://docs.cypherock.com/design-decisions/using-shamir-secret-sharing-vs.-multi-sig",
+                "explanation": "Cypherock X1 reconstructs a single private key via Shamir Secret Sharing; its docs explicitly distinguish this from MPC/threshold schemes."
+              }
+            }
+          ]
+        },
+        "rawErc4337": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://www.cypherock.com/",
+                "explanation": "Cypherock X1 is a key-sharding hardware device for EOA self-custody; it provides no native ERC-4337 smart account creation."
+              }
+            }
+          ]
+        },
+        "safe": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://www.cypherock.com/",
+                "explanation": "Cypherock X1 natively manages EOA keys distributed across cards; no Safe account creation is offered as a native feature."
+              }
+            }
+          ]
+        }
+      },
       "appConnectionSupport": {
         "$call": "supported",
         "args": [
@@ -92,7 +137,17 @@
           "ventureCapital": true
         }
       },
-      "multiAddress": null,
+      "multiAddress": {
+        "$call": "supported",
+        "args": [
+          {
+            "ref": {
+              "url": "https://www.cypherock.com/features/four-wallets",
+              "explanation": "Cypherock X1 supports 4 separate wallet accounts on a single device, each using BIP-44 HD derivation, enabling multiple accounts."
+            }
+          }
+        ]
+      },
       "privacy": {
         "analytics": {
           "crashReports": {

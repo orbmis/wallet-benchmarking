@@ -1099,7 +1099,17 @@
             "url": "https://www.mtpelerin.com/"
           },
           "sendReceive": null,
-          "priceAlerts": null,
+          "priceAlerts": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://developers.mtpelerin.com/service-information/user-notifications",
+                  "explanation": "Mt Pelerin's user-notifications docs list only transaction, KYC, and wallet-validation emails — no price alert feature."
+                }
+              }
+            ]
+          },
           "approvalAlerts": null,
           "bridgeCompletion": null,
           "failedTransaction": null,

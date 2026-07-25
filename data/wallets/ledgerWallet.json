@@ -7,7 +7,63 @@
       "$ref": "ledgerWalletMetadata"
     },
     "features": {
-      "accountSupport": null,
+      "accountSupport": {
+        "eoa": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://www.ledger.com/academy/glossary/externally-owned-account-eoa",
+                "explanation": "Ledger's own Academy page identifies an EOA as what users create when setting up a wallet with a Ledger signer, confirming EOA account support."
+              }
+            }
+          ]
+        },
+        "mpc": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://www.ledger.com/academy/glossary/externally-owned-account-eoa",
+                "explanation": "Ledger derives and stores a single private key on its secure element; no MPC/threshold-signature product is described."
+              }
+            }
+          ]
+        },
+        "rawErc4337": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://www.ledger.com/academy/topics/ledgersolutions/10-years-of-ledger-secure-self-custody-for-all",
+                "explanation": "Ledger's hardware + Ledger Live secure EOA private keys; no native ERC-4337 smart account creation is offered as a Ledger product."
+              }
+            }
+          ]
+        },
+        "safe": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://www.ledger.com/academy/topics/ledgersolutions/10-years-of-ledger-secure-self-custody-for-all",
+                "explanation": "Ledger can be a signer within a Safe multisig, but Ledger Live does not natively create or provide Safe accounts as its own product."
+              }
+            }
+          ]
+        },
+        "eip7702": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://github.com/LedgerHQ/app-ethereum/blob/master/CHANGELOG.md",
+                "explanation": "Ledger's app-ethereum v1.17.0 (2025-05-05) added EIP-7702 authorization signing and Type 4 transaction signing on Flex, Stax, Nano X, and Nano S Plus."
+              }
+            }
+          ]
+        }
+      },
       "appConnectionSupport": {
         "$call": "supported",
         "args": [
@@ -52,7 +108,17 @@
           "ventureCapital": true
         }
       },
-      "multiAddress": null,
+      "multiAddress": {
+        "$call": "supported",
+        "args": [
+          {
+            "ref": {
+              "url": "https://support.ledger.com/article/4404389645329-zd",
+              "explanation": "Ledger Live lets users add multiple Ethereum accounts, each generating a unique BIP-44-derived address."
+            }
+          }
+        ]
+      },
       "privacy": {
         "analytics": {
           "crashReports": {

@@ -1817,7 +1817,17 @@
             "url": "https://rabby.io"
           },
           "sendReceive": null,
-          "priceAlerts": null,
+          "priceAlerts": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.rabby.io/hc/en-us/articles/11495471837071-What-does-Please-process-the-alert-before-signing-mean",
+                  "explanation": "Rabby's alerts are pre-signing security warnings, not price-target notifications; no price alert feature is documented."
+                }
+              }
+            ]
+          },
           "approvalAlerts": {
             "$call": "supported",
             "args": [

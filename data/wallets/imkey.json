@@ -34,7 +34,52 @@
       }
     },
     "features": {
-      "accountSupport": null,
+      "accountSupport": {
+        "eoa": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://imkey.im/products/imkey-pro-crypto-hardware-wallet",
+                "explanation": "imKey Pro supports Ethereum and EVM chains, signing standard EOA transactions with keys stored in its secure chip."
+              }
+            }
+          ]
+        },
+        "mpc": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://support.imkey.im/hc/en-001/articles/52743275148313-imKey-Secure-Chip-Model-Certification-Explanation",
+                "explanation": "imKey Pro uses a single CC EAL6+ secure chip for offline key generation/storage; no MPC architecture is referenced."
+              }
+            }
+          ]
+        },
+        "rawErc4337": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://imkey.im/",
+                "explanation": "imKey Pro works with third-party apps for EOA signing; it provides no native ERC-4337 smart account feature."
+              }
+            }
+          ]
+        },
+        "safe": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://imkey.im/",
+                "explanation": "imKey Pro is a multi-chain hardware signer; no Safe account creation is offered natively by the vendor's product."
+              }
+            }
+          ]
+        }
+      },
       "appConnectionSupport": null,
       "licensing": {
         "type": "LicensingType.SEPARATE_CORE_CODE_LICENSE_VS_WALLET_CODE_LICENSE",
