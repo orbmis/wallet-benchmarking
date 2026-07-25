@@ -736,7 +736,17 @@
               }
             ]
           },
-          "solana": null,
+          "solana": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://chromewebstore.google.com/detail/rainbow/opfgelmcmbiajamepnmloijbpoleiama",
+                  "explanation": "Rainbow's Chrome Web Store listing confirms it supports Solana alongside Ethereum, Monad, and Sui."
+                }
+              }
+            ]
+          },
           "bitcoin": {
             "$call": "notSupported",
             "args": [
@@ -771,7 +781,17 @@
             ]
           },
           "starknet": null,
-          "sui": null,
+          "sui": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://chromewebstore.google.com/detail/rainbow/opfgelmcmbiajamepnmloijbpoleiama",
+                  "explanation": "Rainbow's Chrome Web Store listing explicitly lists Sui among supported networks."
+                }
+              }
+            ]
+          },
           "aptos": {
             "$call": "notSupported",
             "args": [
@@ -920,7 +940,17 @@
               }
             ]
           },
-          "googlePay": null,
+          "googlePay": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://learn.rainbow.me/buying-crypto-with-rainbow",
+                  "explanation": "Rainbow's buying-crypto page lists Apple Pay, ACH, debit/credit cards, and Coinbase Pay as supported methods; Google Pay is not listed."
+                }
+              }
+            ]
+          },
           "kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
           "providers": [
             {
@@ -1130,8 +1160,28 @@
               }
             ]
           },
-          "pnl": null,
-          "costBasis": null,
+          "pnl": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbow.me/en-us/",
+                  "explanation": "Rainbow's site and docs do not mention a PnL feature; the wallet focuses on NFT management, transaction history, and multi-wallet organization."
+                }
+              }
+            ]
+          },
+          "costBasis": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbow.me/support/app/expanded-transaction",
+                  "explanation": "Rainbow's transaction/portfolio documentation covers action type, timestamps, token values, and fees but does not mention cost basis tracking."
+                }
+              }
+            ]
+          },
           "tokenCategories": null,
           "nftSupport": {
             "$call": "supported",
@@ -1320,7 +1370,17 @@
               }
             ]
           },
-          "stakingPositions": null,
+          "stakingPositions": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbow.me/support/app/positions-in-rainbow",
+                  "explanation": "Rainbow's Positions page states DeFi positions include staking tokens in smart contracts, surfacing positions from Aave, Compound, Yearn, and Maker."
+                }
+              }
+            ]
+          },
           "lpPositions": {
             "$call": "notSupported",
             "args": [
@@ -1355,7 +1415,17 @@
               }
             ]
           },
-          "liquidationWarnings": null
+          "liquidationWarnings": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbow.me/support/app/defi-positions-in-rainbow",
+                  "explanation": "Rainbow's DeFi positions page lists supported protocols and viewing positions but makes no mention of liquidation warnings or health-factor alerts."
+                }
+              }
+            ]
+          }
         },
         "stakingEarn": {
           "ref": {
@@ -1395,7 +1465,17 @@
               }
             ]
           },
-          "apyDisplay": null,
+          "apyDisplay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbow.me/support/app/staking-rnbw",
+                  "explanation": "Rainbow displays staking yields in-app for RNBW staking with tiered rates shown, and surfaces ETH staking APY."
+                }
+              }
+            ]
+          },
           "rewardsClaiming": null,
           "providerDependency": null,
           "lockupDisclosure": null

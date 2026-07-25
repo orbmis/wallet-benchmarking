@@ -163,7 +163,17 @@
       },
       "privacy": {
         "analytics": {
-          "crashReports": null,
+          "crashReports": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://discuss.privacyguides.net/t/onekey-hardware-wallet-mandatory-telemetry-to-cn-endpoints-persistent-device-fingerprinting-and-contradicting-legal-documentation/37536",
+                  "explanation": "Privacy Guides community traffic-analysis research (corroborated by OneKey's privacy policy) documents mandatory telemetry sent to .cn endpoints on every launch with no opt-out."
+                }
+              }
+            ]
+          },
           "usage": {
             "$call": "supported",
             "args": [
@@ -456,7 +466,17 @@
           },
           "hermeticBuilds": null,
           "repositoryChangeControls": null,
-          "reproducibleBuilds": null
+          "reproducibleBuilds": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.onekey.so/en/articles/11461223-authenticate-the-consistency-of-firmware-files-with-the-open-source-code-released-by-onekey",
+                  "explanation": "OneKey publishes firmware checksum verification using GitHub CI builds so users can reproduce and compare SHA-256 hashes against official releases."
+                }
+              }
+            ]
+          }
         },
         "reputation": null
       },
@@ -486,6 +506,19 @@
               }
             ]
           }
+        }
+      },
+      "addressResolution": {
+        "nonChainSpecificEnsResolution": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://github.com/OneKeyHQ/app-monorepo/releases",
+                "explanation": "OneKey release notes contain no mention of ENS name resolution; its ENS blog post is educational only."
+              }
+            }
+          ]
         }
       }
     },

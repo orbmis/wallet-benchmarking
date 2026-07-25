@@ -1164,8 +1164,28 @@
             "explanation": "Ambire product update describes Ambire Extension as a browser extension; no mobile app was found in the official feature article.",
             "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
           },
-          "desktopApp": null,
-          "mobileApp": null,
+          "desktopApp": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.ambire.com/get-extension",
+                  "explanation": "Ambire's download page lists only browser extensions with no standalone desktop app for macOS/Windows/Linux."
+                }
+              }
+            ]
+          },
+          "mobileApp": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.ambire.com/mobile-app-under-rebuild/",
+                  "explanation": "Ambire removed its mobile app from the app stores during a V2 rebuild; it is not currently available."
+                }
+              }
+            ]
+          },
           "browserExtension": {
             "$call": "supported",
             "args": [
@@ -1930,7 +1950,17 @@
               }
             ]
           },
-          "vaultPositions": null,
+          "vaultPositions": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/",
+                  "explanation": "Ambire's blog confirms Yearn vault integration via an Earn page and that users can track DeFi positions including vault deposits in the extension dashboard."
+                }
+              }
+            ]
+          },
           "perProtocolBalances": {
             "$call": "supported",
             "args": [

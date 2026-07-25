@@ -1988,7 +1988,17 @@
               }
             ]
           },
-          "liquidationWarnings": null
+          "liquidationWarnings": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.dextools.io/tutorials/how-to-use-rabby-wallet-multi-chain-evm-tutorial-2026",
+                  "explanation": "Rabby (powered by DeBank) shows health factors for lending positions in its portfolio dashboard, giving visibility into liquidation risk within the wallet UI."
+                }
+              }
+            ]
+          }
         },
         "stakingEarn": {
           "ref": {

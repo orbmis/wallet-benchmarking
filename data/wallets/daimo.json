@@ -733,10 +733,50 @@
             "explanation": "Daimo docs describe Modal SDK/API integration paths and web-based deposit sessions rather than a consumer wallet app surface.",
             "url": "https://docs.daimo.com/"
           },
-          "desktopApp": null,
-          "mobileApp": null,
-          "browserExtension": null,
-          "browserNative": null,
+          "desktopApp": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/daimo-eth/daimo",
+                  "explanation": "Daimo's repo notes a desktop app is 'coming soon' but has not shipped; the product is currently mobile-only."
+                }
+              }
+            ]
+          },
+          "mobileApp": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://apps.apple.com/ca/app/daimo/id6459700343",
+                  "explanation": "Daimo is available on the Apple App Store (iOS) and Google Play (Android) as a mobile payments wallet."
+                }
+              }
+            ]
+          },
+          "browserExtension": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/daimo-eth/daimo",
+                  "explanation": "The Daimo repo documents only iOS/Android apps plus a web app; no browser extension is mentioned."
+                }
+              }
+            ]
+          },
+          "browserNative": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/daimo-eth/daimo",
+                  "explanation": "Daimo is a mobile-first payments app; it is not built into any web browser natively."
+                }
+              }
+            ]
+          },
           "webApp": {
             "$call": "supported",
             "args": [
@@ -984,7 +1024,17 @@
               }
             ]
           },
-          "googlePay": null,
+          "googlePay": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.daimo.com/",
+                  "explanation": "Daimo's consumer app is archived; its docs state global fiat on-ramp support is 'coming soon' with no Google Pay integration."
+                }
+              }
+            ]
+          },
           "kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
           "providers": [],
           "regionalAvailability": "Daimo lists payment rails by country/fiat corridor for stablecoin apps; many rails are live or TBA."

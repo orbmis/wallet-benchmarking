@@ -1013,13 +1013,33 @@
               }
             ]
           },
-          "passkeySignup": null,
+          "passkeySignup": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/Elytro-eth/soul-wallet-web",
+                  "explanation": "Elytro (formerly Soul Wallet) uses WebAuthn/passkey (P256) as its primary authentication and wallet-creation mechanism."
+                }
+              }
+            ]
+          },
           "emailSignup": null,
           "phoneSignup": null,
           "kycRequiredForWallet": {
             "$ref": "notSupported"
           },
-          "guestMode": null,
+          "guestMode": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/faq",
+                  "explanation": "Elytro requires account creation; no guest or pre-signup exploration mode is mentioned in official docs."
+                }
+              }
+            ]
+          },
           "embeddedWalletMode": {
             "$call": "supported",
             "args": [

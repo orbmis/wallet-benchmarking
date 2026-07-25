@@ -957,12 +957,32 @@
               }
             ]
           },
-          "emailSignup": null,
+          "emailSignup": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trustwallet.com/blog/academy/trust-wallet-faqs",
+                  "explanation": "Trust Wallet uses no email or password; access is controlled by the secret recovery phrase and a local PIN/biometric, with no email-based login."
+                }
+              }
+            ]
+          },
           "phoneSignup": null,
           "kycRequiredForWallet": {
             "$ref": "notSupported"
           },
-          "guestMode": null,
+          "guestMode": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trustwallet.com/blog/guides/beginner-s-guide-to-using-trust-wallet-tools-in-2025",
+                  "explanation": "Trust Wallet requires creating or importing a wallet before accessing any features; no guest mode is documented."
+                }
+              }
+            ]
+          },
           "embeddedWalletMode": {
             "$call": "supported",
             "args": [

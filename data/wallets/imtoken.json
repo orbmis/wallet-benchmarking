@@ -579,7 +579,17 @@
             "explanation": "imToken homepage describes a non-custodial wallet and links Try imToken; app-store platform specifics were not separately captured.",
             "url": "https://token.im/"
           },
-          "desktopApp": null,
+          "desktopApp": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://token.im/download",
+                  "explanation": "imToken's download page offers only iOS/Android apps; there is no standalone desktop client."
+                }
+              }
+            ]
+          },
           "mobileApp": {
             "$call": "supported",
             "args": [
@@ -591,7 +601,17 @@
               }
             ]
           },
-          "browserExtension": null,
+          "browserExtension": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://token.im/download",
+                  "explanation": "imToken's download page lists only iOS/Android apps; the company warns that any browser extension claiming to be imToken is fake."
+                }
+              }
+            ]
+          },
           "browserNative": {
             "$call": "notSupportedWithRef",
             "args": [
@@ -821,8 +841,28 @@
               }
             ]
           },
-          "sellCrypto": null,
-          "bankTransfer": null,
+          "sellCrypto": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/13189736093081-imToken-FAQs-part-3",
+                  "explanation": "imToken's FAQ states the wallet does not support crypto off-ramp; users must transfer to a separate exchange to cash out."
+                }
+              }
+            ]
+          },
+          "bankTransfer": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.moonpay.com/newsroom/imtoken",
+                  "explanation": "imToken has an in-app MoonPay integration for fiat on/off-ramp, and MoonPay supports bank transfers (SEPA/ACH/Faster Payments) in its on-ramp widget."
+                }
+              }
+            ]
+          },
           "card": {
             "$call": "supported",
             "args": [
@@ -1030,7 +1070,17 @@
           "kycRequiredForWallet": {
             "$ref": "notSupported"
           },
-          "guestMode": null,
+          "guestMode": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://imtoken.medium.com/imtokens-exploration-of-the-next-gen-web3-wallet-ux-and-product-framework-7dbf72055f32",
+                  "explanation": "imToken's product-framework article states users can explore the product without backup or even without an account, confirming a guest exploration mode."
+                }
+              }
+            ]
+          },
           "embeddedWalletMode": {
             "$call": "supported",
             "args": [
@@ -1049,7 +1099,17 @@
             "explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://token.im"
           },
-          "netWorth": null,
+          "netWorth": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://imtoken.medium.com/imtokens-exploration-of-the-next-gen-web3-wallet-ux-and-product-framework-7dbf72055f32",
+                  "explanation": "imToken provides a universal portfolio view aggregating all assets, with a home-screen total balance summary in fiat."
+                }
+              }
+            ]
+          },
           "pnl": {
             "$ref": "notSupported"
           },

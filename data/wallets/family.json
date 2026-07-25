@@ -499,7 +499,17 @@
               }
             ]
           },
-          "browserExtension": null,
+          "browserExtension": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/",
+                  "explanation": "Family markets the wallet exclusively as an iOS mobile app with no browser extension listed."
+                }
+              }
+            ]
+          },
           "browserNative": {
             "$call": "notSupportedWithRef",
             "args": [
@@ -782,7 +792,17 @@
               }
             ]
           },
-          "card": null,
+          "card": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://family.co/support/buy-crypto",
+                  "explanation": "Family integrates Stripe for crypto purchases, whose checkout includes credit and debit card payment options."
+                }
+              }
+            ]
+          },
           "applePay": null,
           "googlePay": null,
           "kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",

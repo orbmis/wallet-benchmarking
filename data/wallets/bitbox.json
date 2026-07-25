@@ -524,6 +524,32 @@
               }
             ]
           }
+        },
+        "crossChainBalances": {
+          "globalAccountValue": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://bitbox.swiss/app/",
+                  "explanation": "BitBoxApp does not document a unified cross-chain portfolio balance; it manages per-account balances without a single global total."
+                }
+              }
+            ]
+          }
+        }
+      },
+      "addressResolution": {
+        "nonChainSpecificEnsResolution": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://github.com/BitBoxSwiss/bitbox-wallet-app/blob/master/CHANGELOG.md",
+                "explanation": "BitBoxApp changelog contains no mention of ENS resolution; the send guide instructs users to paste a raw address."
+              }
+            }
+          ]
         }
       }
     },

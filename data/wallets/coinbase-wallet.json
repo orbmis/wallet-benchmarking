@@ -872,7 +872,17 @@
           "kycRequiredForWallet": {
             "$ref": "notSupported"
           },
-          "guestMode": null,
+          "guestMode": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.coinbase.com/en/wallet/getting-started/smart-wallet",
+                  "explanation": "Coinbase Wallet requires account creation or passkey setup; no wallet-free guest exploration mode is documented."
+                }
+              }
+            ]
+          },
           "embeddedWalletMode": {
             "$call": "supported",
             "args": [
@@ -1181,7 +1191,17 @@
               }
             ]
           },
-          "liquidationWarnings": null
+          "liquidationWarnings": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://finance.yahoo.com/news/coinbase-offering-loans-against-bitcoin-200626286.html",
+                  "explanation": "Coinbase surfaces liquidation warnings for users borrowing against crypto via Morpho on Base, notifying them as LTV approaches the 86% liquidation threshold."
+                }
+              }
+            ]
+          }
         },
         "stakingEarn": {
           "ref": {

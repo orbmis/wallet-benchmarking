@@ -1412,11 +1412,51 @@
               }
             ]
           },
-          "lpPositions": null,
-          "vaultPositions": null,
+          "lpPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://cryptoslate.com/crypto-wallets/base-wallet-review/",
+                  "explanation": "No reviewed source mentions an LP position tracking view in the Base App UI; reviews focus on swaps and mini-apps."
+                }
+              }
+            ]
+          },
+          "vaultPositions": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://cryptoslate.com/crypto-wallets/base-wallet-review/",
+                  "explanation": "No reviewed source describes Base App surfacing vault positions as tracked items; its DeFi integration is dApp-browser access rather than native position tracking."
+                }
+              }
+            ]
+          },
           "perProtocolBalances": null,
-          "claimableRewards": null,
-          "liquidationWarnings": null
+          "claimableRewards": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://cryptoslate.com/crypto-wallets/base-wallet-review/",
+                  "explanation": "Reviews describe Base App's DeFi features as swap/bridge-centric with no native multi-protocol claimable-rewards UI."
+                }
+              }
+            ]
+          },
+          "liquidationWarnings": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://cryptoadventure.com/base-app-coinbase-wallet-review-2026-self-custody-with-a-mainstream-ux/",
+                  "explanation": "Base App reviews focus on swap/routing features; no source describes a DeFi liquidation warning surfaced within the wallet UI."
+                }
+              }
+            ]
+          }
         },
         "stakingEarn": {
           "ref": {
@@ -1456,8 +1496,28 @@
               }
             ]
           },
-          "apyDisplay": null,
-          "rewardsClaiming": null,
+          "apyDisplay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.coinbase.com/wallet/dapps-and-defi/eth-staking",
+                  "explanation": "The Base app staking help page confirms the rewards rate (up to ~4% APY for ETH) is shown in-app, with a staking dashboard displaying current APY."
+                }
+              }
+            ]
+          },
+          "rewardsClaiming": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.coinbase.com/wallet/dapps-and-defi/eth-staking",
+                  "explanation": "Coinbase Help confirms that after unstaking, ETH shows as 'Ready to claim' and users click to claim it back into the wallet."
+                }
+              }
+            ]
+          },
           "providerDependency": null,
           "lockupDisclosure": null
         },

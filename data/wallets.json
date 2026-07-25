@@ -1165,8 +1165,28 @@
               "explanation": "Ambire product update describes Ambire Extension as a browser extension; no mobile app was found in the official feature article.",
               "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
             },
-            "desktopApp": null,
-            "mobileApp": null,
+            "desktopApp": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.ambire.com/get-extension",
+                    "explanation": "Ambire's download page lists only browser extensions with no standalone desktop app for macOS/Windows/Linux."
+                  }
+                }
+              ]
+            },
+            "mobileApp": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://blog.ambire.com/mobile-app-under-rebuild/",
+                    "explanation": "Ambire removed its mobile app from the app stores during a V2 rebuild; it is not currently available."
+                  }
+                }
+              ]
+            },
             "browserExtension": {
               "$call": "supported",
               "args": [
@@ -1931,7 +1951,17 @@
                 }
               ]
             },
-            "vaultPositions": null,
+            "vaultPositions": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/",
+                    "explanation": "Ambire's blog confirms Yearn vault integration via an Earn page and that users can track DeFi positions including vault deposits in the extension dashboard."
+                  }
+                }
+              ]
+            },
             "perProtocolBalances": {
               "$call": "supported",
               "args": [
@@ -3003,7 +3033,17 @@
                 }
               ]
             },
-            "sellCrypto": null,
+            "sellCrypto": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://medium.com/@settler96/banxa-a-fiat-to-crypto-on-ramp-for-the-starknet-ecosystem-1aa68510f743",
+                    "explanation": "Argent X integrates Banxa which supports off-ramp; users connect their wallet to Banxa, select crypto to sell, and receive fiat to their bank."
+                  }
+                }
+              ]
+            },
             "bankTransfer": {
               "$call": "supported",
               "args": [
@@ -3229,7 +3269,17 @@
                 }
               ]
             },
-            "passkeySignup": null,
+            "passkeySignup": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://eco.com/support/en/articles/15254043-argent-wallet-deep-dive-2026-starknet-and-account-abstraction",
+                    "explanation": "Argent X on Starknet uses passkey-style biometric signing as a primary account security mechanism, and Argent mobile uses passkeys as a hardware-backed factor."
+                  }
+                }
+              ]
+            },
             "emailSignup": {
               "$call": "supported",
               "args": [
@@ -3263,7 +3313,17 @@
                 }
               ]
             },
-            "guestMode": null,
+            "guestMode": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.argent.xyz/hc/en-us/articles/360022512752-How-to-create-an-Argent-wallet",
+                    "explanation": "Argent's onboarding requires standard wallet creation (email + code) with no guest or wallet-free exploration mode."
+                  }
+                }
+              ]
+            },
             "embeddedWalletMode": {
               "$call": "supported",
               "args": [
@@ -3437,7 +3497,17 @@
                 }
               ]
             },
-            "stakingPositions": null,
+            "stakingPositions": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.ready.co/blog/starknet-digest",
+                    "explanation": "Ready (formerly Argent) has a dedicated DeFi section where staking positions (STRK, BTC native staking) are visible from the home screen."
+                  }
+                }
+              ]
+            },
             "lpPositions": {
               "$call": "supported",
               "args": [
@@ -3472,14 +3542,34 @@
                 }
               ]
             },
-            "liquidationWarnings": null
+            "liquidationWarnings": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.ready.co/blog/vesu-stepby-step-tutorial",
+                    "explanation": "Argent/Ready's Vesu tutorial directs users to Vesu.xyz to view health factor and liquidation price; these appear in Vesu's UI, not the Argent wallet dashboard."
+                  }
+                }
+              ]
+            }
           },
           "stakingEarn": {
             "ref": {
               "explanation": "Argent source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://www.argent.xyz/"
             },
-            "nativeStaking": null,
+            "nativeStaking": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.argent.xyz/blog/strk-staking",
+                    "explanation": "Argent natively integrated STRK staking into Argent X and Mobile and offers in-app ETH staking via Lido, with users staking directly inside the wallet."
+                  }
+                }
+              ]
+            },
             "liquidStaking": {
               "$call": "supported",
               "args": [
@@ -3491,9 +3581,39 @@
                 }
               ]
             },
-            "validatorChoice": null,
-            "apyDisplay": null,
-            "rewardsClaiming": null,
+            "validatorChoice": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://stakely.io/staking/starknet-staking/how-to-stake-strk-with-argent",
+                    "explanation": "When staking STRK via Argent X, users click Select Validator to choose from a list with rewards, fees, and performance metrics."
+                  }
+                }
+              ]
+            },
+            "apyDisplay": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.argent.xyz/blog/introducing-diversified-staking",
+                    "explanation": "Argent states the current APY is always shown in the app, with APR figures (e.g. 3.7% for wstETH) displayed before staking."
+                  }
+                }
+              ]
+            },
+            "rewardsClaiming": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.argent.xyz/blog/strk-staking",
+                    "explanation": "Argent's STRK staking confirms users can claim staking rewards directly in the app at any time."
+                  }
+                }
+              ]
+            },
             "providerDependency": null,
             "lockupDisclosure": null
           },
@@ -5173,11 +5293,51 @@
                 }
               ]
             },
-            "lpPositions": null,
-            "vaultPositions": null,
+            "lpPositions": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://cryptoslate.com/crypto-wallets/base-wallet-review/",
+                    "explanation": "No reviewed source mentions an LP position tracking view in the Base App UI; reviews focus on swaps and mini-apps."
+                  }
+                }
+              ]
+            },
+            "vaultPositions": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://cryptoslate.com/crypto-wallets/base-wallet-review/",
+                    "explanation": "No reviewed source describes Base App surfacing vault positions as tracked items; its DeFi integration is dApp-browser access rather than native position tracking."
+                  }
+                }
+              ]
+            },
             "perProtocolBalances": null,
-            "claimableRewards": null,
-            "liquidationWarnings": null
+            "claimableRewards": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://cryptoslate.com/crypto-wallets/base-wallet-review/",
+                    "explanation": "Reviews describe Base App's DeFi features as swap/bridge-centric with no native multi-protocol claimable-rewards UI."
+                  }
+                }
+              ]
+            },
+            "liquidationWarnings": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://cryptoadventure.com/base-app-coinbase-wallet-review-2026-self-custody-with-a-mainstream-ux/",
+                    "explanation": "Base App reviews focus on swap/routing features; no source describes a DeFi liquidation warning surfaced within the wallet UI."
+                  }
+                }
+              ]
+            }
           },
           "stakingEarn": {
             "ref": {
@@ -5217,8 +5377,28 @@
                 }
               ]
             },
-            "apyDisplay": null,
-            "rewardsClaiming": null,
+            "apyDisplay": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.coinbase.com/wallet/dapps-and-defi/eth-staking",
+                    "explanation": "The Base app staking help page confirms the rewards rate (up to ~4% APY for ETH) is shown in-app, with a staking dashboard displaying current APY."
+                  }
+                }
+              ]
+            },
+            "rewardsClaiming": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.coinbase.com/wallet/dapps-and-defi/eth-staking",
+                    "explanation": "Coinbase Help confirms that after unstaking, ETH shows as 'Ready to claim' and users click to claim it back into the wallet."
+                  }
+                }
+              ]
+            },
             "providerDependency": null,
             "lockupDisclosure": null
           },
@@ -6050,6 +6230,32 @@
                 }
               ]
             }
+          },
+          "crossChainBalances": {
+            "globalAccountValue": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://bitbox.swiss/app/",
+                    "explanation": "BitBoxApp does not document a unified cross-chain portfolio balance; it manages per-account balances without a single global total."
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "addressResolution": {
+          "nonChainSpecificEnsResolution": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/BitBoxSwiss/bitbox-wallet-app/blob/master/CHANGELOG.md",
+                  "explanation": "BitBoxApp changelog contains no mention of ENS resolution; the send guide instructs users to paste a raw address."
+                }
+              }
+            ]
           }
         }
       },
@@ -7089,7 +7295,17 @@
             "seedPhraseRequiredAtSignup": {
               "$ref": "featureSupported"
             },
-            "passkeySignup": null,
+            "passkeySignup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.bitget.com/academy/bitget-passkey-tutorial",
+                    "explanation": "Bitget passkeys are a secondary 2FA login method added after account creation, not a primary signup mechanism."
+                  }
+                }
+              ]
+            },
             "emailSignup": {
               "$call": "supported",
               "args": [
@@ -7105,7 +7321,17 @@
             "kycRequiredForWallet": {
               "$ref": "notSupported"
             },
-            "guestMode": null,
+            "guestMode": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://web3.bitget.com/en/academy/how-to-set-up-and-use-bitget-wallet",
+                    "explanation": "Bitget Wallet setup requires creating a wallet or social login; no guest/browse-without-wallet mode is documented."
+                  }
+                }
+              ]
+            },
             "embeddedWalletMode": {
               "$call": "supported",
               "args": [
@@ -8682,7 +8908,17 @@
             "kycRequiredForWallet": {
               "$ref": "notSupported"
             },
-            "guestMode": null,
+            "guestMode": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.brave.app/hc/en-us/articles/12753544357645-Creating-your-Brave-Wallet",
+                    "explanation": "Brave Wallet requires wallet creation (password + recovery phrase) before use; no guest mode is documented."
+                  }
+                }
+              ]
+            },
             "embeddedWalletMode": {
               "$call": "notSupported",
               "args": [
@@ -10191,7 +10427,17 @@
             "kycRequiredForWallet": {
               "$ref": "notSupported"
             },
-            "guestMode": null,
+            "guestMode": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.coinbase.com/en/wallet/getting-started/smart-wallet",
+                    "explanation": "Coinbase Wallet requires account creation or passkey setup; no wallet-free guest exploration mode is documented."
+                  }
+                }
+              ]
+            },
             "embeddedWalletMode": {
               "$call": "supported",
               "args": [
@@ -10500,7 +10746,17 @@
                 }
               ]
             },
-            "liquidationWarnings": null
+            "liquidationWarnings": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://finance.yahoo.com/news/coinbase-offering-loans-against-bitcoin-200626286.html",
+                    "explanation": "Coinbase surfaces liquidation warnings for users borrowing against crypto via Morpho on Base, notifying them as LTV approaches the 86% liquidation threshold."
+                  }
+                }
+              ]
+            }
           },
           "stakingEarn": {
             "ref": {
@@ -11298,7 +11554,17 @@
             },
             "hermeticBuilds": null,
             "repositoryChangeControls": null,
-            "reproducibleBuilds": null
+            "reproducibleBuilds": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://walletscrutiny.com/hardware/cypherockx1/",
+                    "explanation": "WalletScrutiny certified Cypherock X1 firmware as reproducible; the SHA256 of the Docker-built binary matches the GitHub release artifact."
+                  }
+                }
+              ]
+            }
           },
           "reputation": null
         },
@@ -11328,6 +11594,19 @@
                 }
               ]
             }
+          }
+        },
+        "addressResolution": {
+          "nonChainSpecificEnsResolution": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/Cypherock/cysync-desktop",
+                  "explanation": "The cySync README and Cypherock Ethereum page make no mention of ENS resolution."
+                }
+              }
+            ]
           }
         }
       },
@@ -12071,10 +12350,50 @@
               "explanation": "Daimo docs describe Modal SDK/API integration paths and web-based deposit sessions rather than a consumer wallet app surface.",
               "url": "https://docs.daimo.com/"
             },
-            "desktopApp": null,
-            "mobileApp": null,
-            "browserExtension": null,
-            "browserNative": null,
+            "desktopApp": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/daimo-eth/daimo",
+                    "explanation": "Daimo's repo notes a desktop app is 'coming soon' but has not shipped; the product is currently mobile-only."
+                  }
+                }
+              ]
+            },
+            "mobileApp": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://apps.apple.com/ca/app/daimo/id6459700343",
+                    "explanation": "Daimo is available on the Apple App Store (iOS) and Google Play (Android) as a mobile payments wallet."
+                  }
+                }
+              ]
+            },
+            "browserExtension": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/daimo-eth/daimo",
+                    "explanation": "The Daimo repo documents only iOS/Android apps plus a web app; no browser extension is mentioned."
+                  }
+                }
+              ]
+            },
+            "browserNative": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/daimo-eth/daimo",
+                    "explanation": "Daimo is a mobile-first payments app; it is not built into any web browser natively."
+                  }
+                }
+              ]
+            },
             "webApp": {
               "$call": "supported",
               "args": [
@@ -12322,7 +12641,17 @@
                 }
               ]
             },
-            "googlePay": null,
+            "googlePay": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.daimo.com/",
+                    "explanation": "Daimo's consumer app is archived; its docs state global fiat on-ramp support is 'coming soon' with no Google Pay integration."
+                  }
+                }
+              ]
+            },
             "kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
             "providers": [],
             "regionalAvailability": "Daimo lists payment rails by country/fiat corridor for stablecoin apps; many rails are live or TBA."
@@ -14089,13 +14418,33 @@
                 }
               ]
             },
-            "passkeySignup": null,
+            "passkeySignup": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/Elytro-eth/soul-wallet-web",
+                    "explanation": "Elytro (formerly Soul Wallet) uses WebAuthn/passkey (P256) as its primary authentication and wallet-creation mechanism."
+                  }
+                }
+              ]
+            },
             "emailSignup": null,
             "phoneSignup": null,
             "kycRequiredForWallet": {
               "$ref": "notSupported"
             },
-            "guestMode": null,
+            "guestMode": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://elytro.com/faq",
+                    "explanation": "Elytro requires account creation; no guest or pre-signup exploration mode is mentioned in official docs."
+                  }
+                }
+              ]
+            },
             "embeddedWalletMode": {
               "$call": "supported",
               "args": [
@@ -15139,7 +15488,17 @@
                 }
               ]
             },
-            "ton": null,
+            "ton": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.exodus.com/support/en/articles/8599045-everything-you-need-to-know-about-crypto-addresses",
+                    "explanation": "Exodus's support article on crypto addresses explicitly covers TON network transactions and TON address formats, confirming TON support."
+                  }
+                }
+              ]
+            },
             "starknet": null,
             "sui": {
               "$call": "supported",
@@ -16657,7 +17016,17 @@
                 }
               ]
             },
-            "browserExtension": null,
+            "browserExtension": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://family.co/",
+                    "explanation": "Family markets the wallet exclusively as an iOS mobile app with no browser extension listed."
+                  }
+                }
+              ]
+            },
             "browserNative": {
               "$call": "notSupportedWithRef",
               "args": [
@@ -16940,7 +17309,17 @@
                 }
               ]
             },
-            "card": null,
+            "card": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://family.co/support/buy-crypto",
+                    "explanation": "Family integrates Stripe for crypto purchases, whose checkout includes credit and debit card payment options."
+                  }
+                }
+              ]
+            },
             "applePay": null,
             "googlePay": null,
             "kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
@@ -18005,13 +18384,34 @@
           }
         },
         "selfSovereignty": {
-          "interoperability": null
+          "interoperability": null,
+          "permissionsManagement": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/firefly/wallet",
+                  "explanation": "Firefly is a minimal DIY signing device with no software UI beyond signing; no approval-management feature exists."
+                }
+              }
+            ]
+          }
         },
         "transparency": {
           "maintenance": null,
           "operationFees": null,
           "releaseTransparency": {
-            "artifactSigning": null,
+            "artifactSigning": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/firefly/wallet",
+                    "explanation": "The Firefly DIY signer is an Arduino project with no formal release process or cryptographic artifact signing documented."
+                  }
+                }
+              ]
+            },
             "dependencyLocking": null,
             "dependencyVulnerabilityScanning": null,
             "hasPublicChangelog": {
@@ -18027,7 +18427,17 @@
             },
             "hermeticBuilds": null,
             "repositoryChangeControls": null,
-            "reproducibleBuilds": null
+            "reproducibleBuilds": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/firefly/wallet",
+                    "explanation": "The Firefly DIY ATmega wallet is an early-stage Arduino project with no formal releases and no documented reproducible build process."
+                  }
+                }
+              ]
+            }
           },
           "reputation": null
         },
@@ -20580,8 +20990,28 @@
                 }
               ]
             },
-            "applePay": null,
-            "googlePay": null,
+            "applePay": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://gemwallet.com/buy-monad/",
+                    "explanation": "Gem Wallet's buy-crypto page lists Apple Pay among supported payment methods via its on-ramp partners."
+                  }
+                }
+              ]
+            },
+            "googlePay": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://gemwallet.com/buy-monad/",
+                    "explanation": "Gem Wallet's buy-crypto page lists Google Pay among supported payment methods via its on-ramp partners."
+                  }
+                }
+              ]
+            },
             "kycDependency": "KYCDependency.UNKNOWN",
             "providers": [],
             "regionalAvailability": null
@@ -21041,7 +21471,17 @@
                 }
               ]
             },
-            "apyDisplay": null,
+            "apyDisplay": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.gemwallet.com/defi/stake-sol/",
+                    "explanation": "Gem Wallet's docs confirm the minimum stake amount, current APR, and lock time are shown on the stake screen for each supported asset."
+                  }
+                }
+              ]
+            },
             "rewardsClaiming": {
               "$call": "supported",
               "args": [
@@ -21431,7 +21871,17 @@
         },
         "privacy": {
           "analytics": {
-            "crashReports": null,
+            "crashReports": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.gridplus.io/lattice1/lattice1-introduction",
+                    "explanation": "GridPlus states 'We don't collect any user data on the Lattice Manager', indicating no crash-report or analytics telemetry is sent."
+                  }
+                }
+              ]
+            },
             "usage": {
               "$call": "notSupported",
               "args": [
@@ -21747,7 +22197,17 @@
             },
             "hermeticBuilds": null,
             "repositoryChangeControls": null,
-            "reproducibleBuilds": null
+            "reproducibleBuilds": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://thebitcoinhole.com/hardware-wallets/gridplus-lattice1",
+                    "explanation": "The Bitcoin Hole database lists GridPlus Lattice1 reproducible builds as 'NO'; the firmware is not open source."
+                  }
+                }
+              ]
+            }
           },
           "reputation": null
         },
@@ -21777,6 +22237,19 @@
                 }
               ]
             }
+          }
+        },
+        "addressResolution": {
+          "nonChainSpecificEnsResolution": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.gridplus.io/apps-and-integrations/lattice-manager",
+                  "explanation": "Lattice Manager lists no ENS resolution; GridPlus recommends MetaMask/Frame as companions, so ENS is handled externally."
+                }
+              }
+            ]
           }
         }
       },
@@ -22149,6 +22622,17 @@
                 ]
               }
             }
+          },
+          "permissionsManagement": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/900000420986-Setting-Token-Approvals---Our-Solution",
+                  "explanation": "imKey Pro pairs with imToken, which has a native Revoke feature for viewing and revoking ERC-20 token approvals; imToken docs state imKey users can manage authorization."
+                }
+              }
+            ]
           }
         },
         "transparency": {
@@ -22219,6 +22703,21 @@
                 }
               }
             ]
+          }
+        },
+        "chainAbstraction": {
+          "bridging": {
+            "builtInBridging": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://medium.com/imtoken/imtoken-guide-on-evm-and-layer-2-cross-chain-tools-ca7eb69cadb2",
+                    "explanation": "imToken (imKey Pro's companion) has no native built-in bridge; cross-chain bridging is accessed via the in-app dApp browser connecting to third-party protocols."
+                  }
+                }
+              ]
+            }
           }
         }
       },
@@ -22808,7 +23307,17 @@
               "explanation": "imToken homepage describes a non-custodial wallet and links Try imToken; app-store platform specifics were not separately captured.",
               "url": "https://token.im/"
             },
-            "desktopApp": null,
+            "desktopApp": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://token.im/download",
+                    "explanation": "imToken's download page offers only iOS/Android apps; there is no standalone desktop client."
+                  }
+                }
+              ]
+            },
             "mobileApp": {
               "$call": "supported",
               "args": [
@@ -22820,7 +23329,17 @@
                 }
               ]
             },
-            "browserExtension": null,
+            "browserExtension": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://token.im/download",
+                    "explanation": "imToken's download page lists only iOS/Android apps; the company warns that any browser extension claiming to be imToken is fake."
+                  }
+                }
+              ]
+            },
             "browserNative": {
               "$call": "notSupportedWithRef",
               "args": [
@@ -23050,8 +23569,28 @@
                 }
               ]
             },
-            "sellCrypto": null,
-            "bankTransfer": null,
+            "sellCrypto": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.token.im/hc/en-us/articles/13189736093081-imToken-FAQs-part-3",
+                    "explanation": "imToken's FAQ states the wallet does not support crypto off-ramp; users must transfer to a separate exchange to cash out."
+                  }
+                }
+              ]
+            },
+            "bankTransfer": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.moonpay.com/newsroom/imtoken",
+                    "explanation": "imToken has an in-app MoonPay integration for fiat on/off-ramp, and MoonPay supports bank transfers (SEPA/ACH/Faster Payments) in its on-ramp widget."
+                  }
+                }
+              ]
+            },
             "card": {
               "$call": "supported",
               "args": [
@@ -23259,7 +23798,17 @@
             "kycRequiredForWallet": {
               "$ref": "notSupported"
             },
-            "guestMode": null,
+            "guestMode": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://imtoken.medium.com/imtokens-exploration-of-the-next-gen-web3-wallet-ux-and-product-framework-7dbf72055f32",
+                    "explanation": "imToken's product-framework article states users can explore the product without backup or even without an account, confirming a guest exploration mode."
+                  }
+                }
+              ]
+            },
             "embeddedWalletMode": {
               "$call": "supported",
               "args": [
@@ -23278,7 +23827,17 @@
               "explanation": "imToken source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://token.im"
             },
-            "netWorth": null,
+            "netWorth": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://imtoken.medium.com/imtokens-exploration-of-the-next-gen-web3-wallet-ux-and-product-framework-7dbf72055f32",
+                    "explanation": "imToken provides a universal portfolio view aggregating all assets, with a home-screen total balance summary in fiat."
+                  }
+                }
+              ]
+            },
             "pnl": {
               "$ref": "notSupported"
             },
@@ -24020,7 +24579,8 @@
                   }
                 }
               ]
-            }
+            },
+            "defaultFungibleTokenTransferMode": "PUBLIC"
           }
         },
         "profile": "WalletProfile.GENERIC",
@@ -24343,6 +24903,19 @@
                 }
               ]
             }
+          }
+        },
+        "addressResolution": {
+          "nonChainSpecificEnsResolution": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://keycard.tech/pages/keycard-shell",
+                  "explanation": "Keycard Shell is an air-gapped signer relying on external wallet apps for transaction construction; no ENS resolution is documented for its software."
+                }
+              }
+            ]
           }
         }
       },
@@ -24801,13 +25374,38 @@
                 }
               }
             ]
+          },
+          "transactionSubmission": {
+            "l1": {
+              "selfBroadcastViaSelfHostedNode": {
+                "$call": "supported",
+                "args": [
+                  {
+                    "ref": {
+                      "url": "https://support.keyst.one/3rd-party-wallets/bitcoin-wallets",
+                      "explanation": "Keystone integrates with Sparrow, Specter (full-node focused), and Electrum — all of which let users connect to their own self-hosted node — plus MetaMask with configurable custom RPC."
+                    }
+                  }
+                ]
+              }
+            }
           }
         },
         "transparency": {
           "maintenance": null,
           "operationFees": null,
           "releaseTransparency": {
-            "artifactSigning": null,
+            "artifactSigning": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://keyst.one/usb-upgrade",
+                    "explanation": "Keystone's firmware verification rejects any update not signed with Keystone's private key; only officially signed packages are accepted."
+                  }
+                }
+              ]
+            },
             "dependencyLocking": null,
             "dependencyVulnerabilityScanning": null,
             "hasPublicChangelog": {
@@ -24973,7 +25571,15 @@
             }
           ]
         },
-        "licensing": null,
+        "licensing": {
+          "walletAppLicense": {
+            "license": "FOSSLicense.MIT",
+            "ref": {
+              "url": "https://github.com/LedgerHQ/ledger-live-desktop/blob/develop/LICENSE",
+              "explanation": "The Ledger Live desktop app LICENSE file is the MIT License, copyright Ledger."
+            }
+          }
+        },
         "monetization": {
           "ref": [
             {
@@ -27121,7 +27727,17 @@
                 }
               ]
             },
-            "validatorChoice": null,
+            "validatorChoice": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.metamask.io/manage-crypto/move-crypto/stake/validator-staking/what-is-validator-staking/",
+                    "explanation": "MetaMask's validator staking runs the validator via Consensys Staking; users deposit 32 ETH but do not choose which validator to delegate to."
+                  }
+                }
+              ]
+            },
             "apyDisplay": {
               "$call": "supported",
               "args": [
@@ -28460,7 +29076,17 @@
             "kycRequiredForWallet": {
               "$ref": "notSupported"
             },
-            "guestMode": null,
+            "guestMode": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.mtpelerin.com/bridge-wallet",
+                    "explanation": "Bridge Wallet is fully self-custodial and requires creating or restoring a wallet; no guest mode is mentioned."
+                  }
+                }
+              ]
+            },
             "embeddedWalletMode": {
               "$call": "notSupported",
               "args": [
@@ -30134,7 +30760,17 @@
                 }
               ]
             },
-            "mobileApp": null,
+            "mobileApp": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://nu.fi/",
+                    "explanation": "NuFi offers only a Chrome extension and a web app; no iOS or Android mobile app is offered."
+                  }
+                }
+              ]
+            },
             "browserExtension": {
               "$call": "supported",
               "args": [
@@ -30568,13 +31204,43 @@
             "seedPhraseRequiredAtSignup": {
               "$ref": "featureSupported"
             },
-            "passkeySignup": null,
-            "emailSignup": null,
+            "passkeySignup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.nu.fi/support/solutions/articles/80001070723-create-a-seedless-wallet-using-a-social-account-like-google",
+                    "explanation": "NuFi supports only social OAuth and email OTP for wallet creation; no passkey signup option is documented."
+                  }
+                }
+              ]
+            },
+            "emailSignup": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://adapulse.io/nufi-and-google-wallet-simplifying-the-web3-single-sign-on-experience/",
+                    "explanation": "NuFi lets users choose a social account to log in with or get a one-time code by email, confirming email OTP as a wallet-access method."
+                  }
+                }
+              ]
+            },
             "phoneSignup": null,
             "kycRequiredForWallet": {
               "$ref": "notSupported"
             },
-            "guestMode": null,
+            "guestMode": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://nu.fi/",
+                    "explanation": "NuFi requires social login or email OTP to access the wallet; no guest or pre-login exploration mode is documented."
+                  }
+                }
+              ]
+            },
             "embeddedWalletMode": {
               "$call": "supported",
               "args": [
@@ -31929,7 +32595,17 @@
                 }
               ]
             },
-            "cosmos": null,
+            "cosmos": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.globenewswire.com/news-release/2023/06/28/2695957/0/en/Flash-News-OKX-Wallet-Integrates-Support-for-Eight-Cosmos-dApps-into-its-Discover-Portal-Growing-Web3-Ecosystem-and-Enhancing-User-Access-to-DeFi-Projects.html",
+                    "explanation": "OKX Wallet integrated eight Cosmos dApps into its Discover Portal and supports Cosmos chains including ATOM, Osmosis, Kava, and Sei."
+                  }
+                }
+              ]
+            },
             "ton": {
               "$call": "supported",
               "args": [
@@ -32303,7 +32979,17 @@
             "seedPhraseRequiredAtSignup": {
               "$ref": "featureSupported"
             },
-            "passkeySignup": null,
+            "passkeySignup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.okx.com/en-us/help/how-do-i-create-passkeys-app",
+                    "explanation": "OKX passkeys are a two-factor authentication method added after account creation, not a standalone signup method."
+                  }
+                }
+              ]
+            },
             "emailSignup": {
               "$call": "supported",
               "args": [
@@ -32677,7 +33363,17 @@
                 }
               ]
             },
-            "validatorChoice": null,
+            "validatorChoice": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.okx.com/en-us/learn/how-to-choose-a-solana-validator",
+                    "explanation": "OKX's staking interface lets users select validators from a curated list or enter a validator address manually."
+                  }
+                }
+              ]
+            },
             "apyDisplay": {
               "$call": "supported",
               "args": [
@@ -33120,7 +33816,17 @@
         },
         "privacy": {
           "analytics": {
-            "crashReports": null,
+            "crashReports": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://discuss.privacyguides.net/t/onekey-hardware-wallet-mandatory-telemetry-to-cn-endpoints-persistent-device-fingerprinting-and-contradicting-legal-documentation/37536",
+                    "explanation": "Privacy Guides community traffic-analysis research (corroborated by OneKey's privacy policy) documents mandatory telemetry sent to .cn endpoints on every launch with no opt-out."
+                  }
+                }
+              ]
+            },
             "usage": {
               "$call": "supported",
               "args": [
@@ -33413,7 +34119,17 @@
             },
             "hermeticBuilds": null,
             "repositoryChangeControls": null,
-            "reproducibleBuilds": null
+            "reproducibleBuilds": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.onekey.so/en/articles/11461223-authenticate-the-consistency-of-firmware-files-with-the-open-source-code-released-by-onekey",
+                    "explanation": "OneKey publishes firmware checksum verification using GitHub CI builds so users can reproduce and compare SHA-256 hashes against official releases."
+                  }
+                }
+              ]
+            }
           },
           "reputation": null
         },
@@ -33443,6 +34159,19 @@
                 }
               ]
             }
+          }
+        },
+        "addressResolution": {
+          "nonChainSpecificEnsResolution": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/OneKeyHQ/app-monorepo/releases",
+                  "explanation": "OneKey release notes contain no mention of ENS name resolution; its ENS blog post is educational only."
+                }
+              }
+            ]
           }
         }
       },
@@ -34636,7 +35365,17 @@
                 }
               ]
             },
-            "guestMode": null,
+            "guestMode": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.phantom.com/hc/en-us/articles/41523165147667-How-to-use-the-Explore-tab-in-Phantom",
+                    "explanation": "Phantom's Explore tab allows browsing content, but full app access requires creating a wallet; there is no true wallet-free guest mode."
+                  }
+                }
+              ]
+            },
             "embeddedWalletMode": {
               "$call": "supported",
               "args": [
@@ -35819,7 +36558,17 @@
               "explanation": "Pillar/PillarX sources describe logging in at pillarx.app or launching from Pillar Wallet, and Google Play listing for the mobile wallet.",
               "url": "https://blog.pillarx.app/pulse-is-live-access-instant-swaps-across-22m-tokens-on-pillarx/"
             },
-            "desktopApp": null,
+            "desktopApp": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://pillarx.app/",
+                    "explanation": "PillarX ships as a mobile wallet only; no standalone desktop application is available."
+                  }
+                }
+              ]
+            },
             "mobileApp": {
               "$call": "supported",
               "args": [
@@ -35831,8 +36580,28 @@
                 }
               ]
             },
-            "browserExtension": null,
-            "browserNative": null,
+            "browserExtension": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://pillarx.app/",
+                    "explanation": "No PillarX browser extension exists; the wallet ships as a mobile app (iOS/Android)."
+                  }
+                }
+              ]
+            },
+            "browserNative": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://pillarx.app/",
+                    "explanation": "PillarX is a standalone mobile app; it is not embedded natively into any web browser."
+                  }
+                }
+              ]
+            },
             "webApp": {
               "$call": "supported",
               "args": [
@@ -36180,12 +36949,32 @@
                 }
               ]
             },
-            "emailSignup": null,
+            "emailSignup": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/pillarwallet/x",
+                    "explanation": "PillarX's README states that on the sign-in page a user enters their email and Privy sends a login code, confirming email-based signup."
+                  }
+                }
+              ]
+            },
             "phoneSignup": null,
             "kycRequiredForWallet": {
               "$ref": "notSupported"
             },
-            "guestMode": null,
+            "guestMode": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/pillarwallet/x",
+                    "explanation": "PillarX documentation describes only an email-based login flow via Privy; no guest or wallet-free exploration mode is mentioned."
+                  }
+                }
+              ]
+            },
             "embeddedWalletMode": {
               "$call": "supported",
               "args": [
@@ -38692,7 +39481,17 @@
                 }
               ]
             },
-            "liquidationWarnings": null
+            "liquidationWarnings": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.dextools.io/tutorials/how-to-use-rabby-wallet-multi-chain-evm-tutorial-2026",
+                    "explanation": "Rabby (powered by DeBank) shows health factors for lending positions in its portfolio dashboard, giving visibility into liquidation risk within the wallet UI."
+                  }
+                }
+              ]
+            }
           },
           "stakingEarn": {
             "ref": {
@@ -39748,7 +40547,17 @@
                 }
               ]
             },
-            "solana": null,
+            "solana": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://chromewebstore.google.com/detail/rainbow/opfgelmcmbiajamepnmloijbpoleiama",
+                    "explanation": "Rainbow's Chrome Web Store listing confirms it supports Solana alongside Ethereum, Monad, and Sui."
+                  }
+                }
+              ]
+            },
             "bitcoin": {
               "$call": "notSupported",
               "args": [
@@ -39783,7 +40592,17 @@
               ]
             },
             "starknet": null,
-            "sui": null,
+            "sui": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://chromewebstore.google.com/detail/rainbow/opfgelmcmbiajamepnmloijbpoleiama",
+                    "explanation": "Rainbow's Chrome Web Store listing explicitly lists Sui among supported networks."
+                  }
+                }
+              ]
+            },
             "aptos": {
               "$call": "notSupported",
               "args": [
@@ -39932,7 +40751,17 @@
                 }
               ]
             },
-            "googlePay": null,
+            "googlePay": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://learn.rainbow.me/buying-crypto-with-rainbow",
+                    "explanation": "Rainbow's buying-crypto page lists Apple Pay, ACH, debit/credit cards, and Coinbase Pay as supported methods; Google Pay is not listed."
+                  }
+                }
+              ]
+            },
             "kycDependency": "KYCDependency.REQUIRED_BY_PROVIDER",
             "providers": [
               {
@@ -40142,8 +40971,28 @@
                 }
               ]
             },
-            "pnl": null,
-            "costBasis": null,
+            "pnl": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://rainbow.me/en-us/",
+                    "explanation": "Rainbow's site and docs do not mention a PnL feature; the wallet focuses on NFT management, transaction history, and multi-wallet organization."
+                  }
+                }
+              ]
+            },
+            "costBasis": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://rainbow.me/support/app/expanded-transaction",
+                    "explanation": "Rainbow's transaction/portfolio documentation covers action type, timestamps, token values, and fees but does not mention cost basis tracking."
+                  }
+                }
+              ]
+            },
             "tokenCategories": null,
             "nftSupport": {
               "$call": "supported",
@@ -40332,7 +41181,17 @@
                 }
               ]
             },
-            "stakingPositions": null,
+            "stakingPositions": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://rainbow.me/support/app/positions-in-rainbow",
+                    "explanation": "Rainbow's Positions page states DeFi positions include staking tokens in smart contracts, surfacing positions from Aave, Compound, Yearn, and Maker."
+                  }
+                }
+              ]
+            },
             "lpPositions": {
               "$call": "notSupported",
               "args": [
@@ -40367,7 +41226,17 @@
                 }
               ]
             },
-            "liquidationWarnings": null
+            "liquidationWarnings": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://rainbow.me/support/app/defi-positions-in-rainbow",
+                    "explanation": "Rainbow's DeFi positions page lists supported protocols and viewing positions but makes no mention of liquidation warnings or health-factor alerts."
+                  }
+                }
+              ]
+            }
           },
           "stakingEarn": {
             "ref": {
@@ -40407,7 +41276,17 @@
                 }
               ]
             },
-            "apyDisplay": null,
+            "apyDisplay": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://rainbow.me/support/app/staking-rnbw",
+                    "explanation": "Rainbow displays staking yields in-app for RNBW staking with tiered rates shown, and surfaces ETH staking APY."
+                  }
+                }
+              ]
+            },
             "rewardsClaiming": null,
             "providerDependency": null,
             "lockupDisclosure": null
@@ -42684,7 +43563,15 @@
             }
           ]
         },
-        "licensing": null,
+        "licensing": {
+          "walletAppLicense": {
+            "license": "SourceAvailableNonFOSSLicense.PROPRIETARY_SOURCE_AVAILABLE",
+            "ref": {
+              "url": "https://github.com/trezor/trezor-suite/blob/develop/LICENSE.md",
+              "explanation": "Trezor Suite is licensed under the TREZOR REFERENCE SOURCE LICENSE (T-RSL), a proprietary source-available license permitting reference use only."
+            }
+          }
+        },
         "monetization": {
           "ref": {
             "$ref": "refTodo"
@@ -43047,6 +43934,19 @@
                 }
               ]
             }
+          }
+        },
+        "addressResolution": {
+          "nonChainSpecificEnsResolution": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/trezor/blockbook/issues/1108",
+                  "explanation": "An ENS resolver for Trezor Suite was filed as an open issue in 2024 and remains unshipped; official Suite feature docs do not list ENS resolution."
+                }
+              }
+            ]
           }
         }
       },
@@ -44014,12 +44914,32 @@
                 }
               ]
             },
-            "emailSignup": null,
+            "emailSignup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://trustwallet.com/blog/academy/trust-wallet-faqs",
+                    "explanation": "Trust Wallet uses no email or password; access is controlled by the secret recovery phrase and a local PIN/biometric, with no email-based login."
+                  }
+                }
+              ]
+            },
             "phoneSignup": null,
             "kycRequiredForWallet": {
               "$ref": "notSupported"
             },
-            "guestMode": null,
+            "guestMode": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://trustwallet.com/blog/guides/beginner-s-guide-to-using-trust-wallet-tools-in-2025",
+                    "explanation": "Trust Wallet requires creating or importing a wallet before accessing any features; no guest mode is documented."
+                  }
+                }
+              ]
+            },
             "embeddedWalletMode": {
               "$call": "supported",
               "args": [
@@ -45818,7 +46738,17 @@
             "kycRequiredForWallet": {
               "$ref": "notSupported"
             },
-            "guestMode": null,
+            "guestMode": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.uniswap.org/hc/en-us/articles/21197549275661-What-is-a-view-only-wallet",
+                    "explanation": "Uniswap Wallet's view-only mode requires entering a specific address; this is watch mode, not a wallet-free guest mode."
+                  }
+                }
+              ]
+            },
             "embeddedWalletMode": {
               "$call": "supported",
               "args": [
@@ -47946,7 +48876,17 @@
                 }
               ]
             },
-            "validatorChoice": null,
+            "validatorChoice": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://blockworks.com/news/stakekit-self-custodial-yield-api",
+                    "explanation": "Zerion's Earn section (powered by StakeKit) lets users delegate to any validator of their choice."
+                  }
+                }
+              ]
+            },
             "apyDisplay": {
               "$call": "supported",
               "args": [

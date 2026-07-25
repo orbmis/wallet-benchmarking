@@ -87,7 +87,15 @@
           }
         ]
       },
-      "licensing": null,
+      "licensing": {
+        "walletAppLicense": {
+          "license": "FOSSLicense.MIT",
+          "ref": {
+            "url": "https://github.com/LedgerHQ/ledger-live-desktop/blob/develop/LICENSE",
+            "explanation": "The Ledger Live desktop app LICENSE file is the MIT License, copyright Ledger."
+          }
+        }
+      },
       "monetization": {
         "ref": [
           {

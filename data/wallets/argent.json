@@ -726,7 +726,17 @@
               }
             ]
           },
-          "sellCrypto": null,
+          "sellCrypto": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://medium.com/@settler96/banxa-a-fiat-to-crypto-on-ramp-for-the-starknet-ecosystem-1aa68510f743",
+                  "explanation": "Argent X integrates Banxa which supports off-ramp; users connect their wallet to Banxa, select crypto to sell, and receive fiat to their bank."
+                }
+              }
+            ]
+          },
           "bankTransfer": {
             "$call": "supported",
             "args": [
@@ -952,7 +962,17 @@
               }
             ]
           },
-          "passkeySignup": null,
+          "passkeySignup": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://eco.com/support/en/articles/15254043-argent-wallet-deep-dive-2026-starknet-and-account-abstraction",
+                  "explanation": "Argent X on Starknet uses passkey-style biometric signing as a primary account security mechanism, and Argent mobile uses passkeys as a hardware-backed factor."
+                }
+              }
+            ]
+          },
           "emailSignup": {
             "$call": "supported",
             "args": [
@@ -986,7 +1006,17 @@
               }
             ]
           },
-          "guestMode": null,
+          "guestMode": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.argent.xyz/hc/en-us/articles/360022512752-How-to-create-an-Argent-wallet",
+                  "explanation": "Argent's onboarding requires standard wallet creation (email + code) with no guest or wallet-free exploration mode."
+                }
+              }
+            ]
+          },
           "embeddedWalletMode": {
             "$call": "supported",
             "args": [
@@ -1160,7 +1190,17 @@
               }
             ]
           },
-          "stakingPositions": null,
+          "stakingPositions": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.ready.co/blog/starknet-digest",
+                  "explanation": "Ready (formerly Argent) has a dedicated DeFi section where staking positions (STRK, BTC native staking) are visible from the home screen."
+                }
+              }
+            ]
+          },
           "lpPositions": {
             "$call": "supported",
             "args": [
@@ -1195,14 +1235,34 @@
               }
             ]
           },
-          "liquidationWarnings": null
+          "liquidationWarnings": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.ready.co/blog/vesu-stepby-step-tutorial",
+                  "explanation": "Argent/Ready's Vesu tutorial directs users to Vesu.xyz to view health factor and liquidation price; these appear in Vesu's UI, not the Argent wallet dashboard."
+                }
+              }
+            ]
+          }
         },
         "stakingEarn": {
           "ref": {
             "explanation": "Argent source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://www.argent.xyz/"
           },
-          "nativeStaking": null,
+          "nativeStaking": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.argent.xyz/blog/strk-staking",
+                  "explanation": "Argent natively integrated STRK staking into Argent X and Mobile and offers in-app ETH staking via Lido, with users staking directly inside the wallet."
+                }
+              }
+            ]
+          },
           "liquidStaking": {
             "$call": "supported",
             "args": [
@@ -1214,9 +1274,39 @@
               }
             ]
           },
-          "validatorChoice": null,
-          "apyDisplay": null,
-          "rewardsClaiming": null,
+          "validatorChoice": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://stakely.io/staking/starknet-staking/how-to-stake-strk-with-argent",
+                  "explanation": "When staking STRK via Argent X, users click Select Validator to choose from a list with rewards, fees, and performance metrics."
+                }
+              }
+            ]
+          },
+          "apyDisplay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.argent.xyz/blog/introducing-diversified-staking",
+                  "explanation": "Argent states the current APY is always shown in the app, with APR figures (e.g. 3.7% for wstETH) displayed before staking."
+                }
+              }
+            ]
+          },
+          "rewardsClaiming": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.argent.xyz/blog/strk-staking",
+                  "explanation": "Argent's STRK staking confirms users can claim staking rewards directly in the app at any time."
+                }
+              }
+            ]
+          },
           "providerDependency": null,
           "lockupDisclosure": null
         },

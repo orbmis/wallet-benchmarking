@@ -448,13 +448,38 @@
               }
             }
           ]
+        },
+        "transactionSubmission": {
+          "l1": {
+            "selfBroadcastViaSelfHostedNode": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.keyst.one/3rd-party-wallets/bitcoin-wallets",
+                    "explanation": "Keystone integrates with Sparrow, Specter (full-node focused), and Electrum — all of which let users connect to their own self-hosted node — plus MetaMask with configurable custom RPC."
+                  }
+                }
+              ]
+            }
+          }
         }
       },
       "transparency": {
         "maintenance": null,
         "operationFees": null,
         "releaseTransparency": {
-          "artifactSigning": null,
+          "artifactSigning": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://keyst.one/usb-upgrade",
+                  "explanation": "Keystone's firmware verification rejects any update not signed with Keystone's private key; only officially signed packages are accepted."
+                }
+              }
+            ]
+          },
           "dependencyLocking": null,
           "dependencyVulnerabilityScanning": null,
           "hasPublicChangelog": {

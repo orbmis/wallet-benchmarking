@@ -288,13 +288,34 @@
         }
       },
       "selfSovereignty": {
-        "interoperability": null
+        "interoperability": null,
+        "permissionsManagement": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://github.com/firefly/wallet",
+                "explanation": "Firefly is a minimal DIY signing device with no software UI beyond signing; no approval-management feature exists."
+              }
+            }
+          ]
+        }
       },
       "transparency": {
         "maintenance": null,
         "operationFees": null,
         "releaseTransparency": {
-          "artifactSigning": null,
+          "artifactSigning": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/firefly/wallet",
+                  "explanation": "The Firefly DIY signer is an Arduino project with no formal release process or cryptographic artifact signing documented."
+                }
+              }
+            ]
+          },
           "dependencyLocking": null,
           "dependencyVulnerabilityScanning": null,
           "hasPublicChangelog": {
@@ -310,7 +331,17 @@
           },
           "hermeticBuilds": null,
           "repositoryChangeControls": null,
-          "reproducibleBuilds": null
+          "reproducibleBuilds": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/firefly/wallet",
+                  "explanation": "The Firefly DIY ATmega wallet is an early-stage Arduino project with no formal releases and no documented reproducible build process."
+                }
+              }
+            ]
+          }
         },
         "reputation": null
       },

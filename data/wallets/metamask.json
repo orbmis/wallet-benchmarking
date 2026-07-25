@@ -1769,7 +1769,17 @@
               }
             ]
           },
-          "validatorChoice": null,
+          "validatorChoice": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.metamask.io/manage-crypto/move-crypto/stake/validator-staking/what-is-validator-staking/",
+                  "explanation": "MetaMask's validator staking runs the validator via Consensys Staking; users deposit 32 ETH but do not choose which validator to delegate to."
+                }
+              }
+            ]
+          },
           "apyDisplay": {
             "$call": "supported",
             "args": [

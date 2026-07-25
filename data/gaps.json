@@ -1,38 +1,8 @@
 {
   "generated": true,
-  "gapCount": 241,
+  "gapCount": 149,
   "naCount": 1036,
   "gaps": [
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "pMobile",
-      "label": "Mobile app",
-      "category": "Platforms",
-      "type": "state",
-      "path": "product.platformCoverage.mobileApp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "pDesktop",
-      "label": "Desktop app",
-      "category": "Platforms",
-      "type": "state",
-      "path": "product.platformCoverage.desktopApp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ambire",
-      "walletName": "Ambire",
-      "metricKey": "defiVault",
-      "label": "Vault positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.vaultPositions",
-      "hasUnsourcedRef": false
-    },
     {
       "walletId": "ambire",
       "walletName": "Ambire",
@@ -56,101 +26,11 @@
     {
       "walletId": "argent",
       "walletName": "Argent",
-      "metricKey": "obPasskey",
-      "label": "Passkey signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.passkeySignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "obGuest",
-      "label": "Guest mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "rampSell",
-      "label": "Sell crypto",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.sellCrypto",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
       "metricKey": "pfPnl",
       "label": "Profit & loss",
       "category": "Portfolio",
       "type": "state",
       "path": "product.portfolioManagement.pnl",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "defiStaking",
-      "label": "Staking positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.stakingPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "defiLiq",
-      "label": "Liquidation warnings",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "stakeNative",
-      "label": "Native staking",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.nativeStaking",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "stakeApy",
-      "label": "APY display",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.apyDisplay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "stakeClaim",
-      "label": "Rewards claiming",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.rewardsClaiming",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "argent",
-      "walletName": "Argent",
-      "metricKey": "stakeValidator",
-      "label": "Validator choice",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.validatorChoice",
       "hasUnsourcedRef": false
     },
     {
@@ -216,66 +96,6 @@
     {
       "walletId": "base-app",
       "walletName": "Base App",
-      "metricKey": "defiLp",
-      "label": "LP positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.lpPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "defiVault",
-      "label": "Vault positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.vaultPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "defiRewards",
-      "label": "Claimable rewards",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.claimableRewards",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "defiLiq",
-      "label": "Liquidation warnings",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "stakeApy",
-      "label": "APY display",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.apyDisplay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
-      "metricKey": "stakeClaim",
-      "label": "Rewards claiming",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.rewardsClaiming",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "base-app",
-      "walletName": "Base App",
       "metricKey": "dappSearch",
       "label": "dApp search",
       "category": "dApp experience",
@@ -314,26 +134,6 @@
       "hasUnsourcedRef": false
     },
     {
-      "walletId": "bitbox",
-      "walletName": "BitBox",
-      "metricKey": "globalValue",
-      "label": "Unified balance view",
-      "category": "Chain abstraction",
-      "type": "state",
-      "path": "chainAbstraction.crossChainBalances.globalAccountValue",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitbox",
-      "walletName": "BitBox",
-      "metricKey": "ens",
-      "label": "ENS resolution",
-      "category": "Transparency",
-      "type": "state",
-      "path": "addressResolution.nonChainSpecificEnsResolution",
-      "hasUnsourcedRef": false
-    },
-    {
       "walletId": "bitget",
       "walletName": "Bitget Wallet",
       "metricKey": "pDesktop",
@@ -341,26 +141,6 @@
       "category": "Platforms",
       "type": "state",
       "path": "product.platformCoverage.desktopApp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitget",
-      "walletName": "Bitget Wallet",
-      "metricKey": "obPasskey",
-      "label": "Passkey signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.passkeySignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitget",
-      "walletName": "Bitget Wallet",
-      "metricKey": "obGuest",
-      "label": "Guest mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.guestMode",
       "hasUnsourcedRef": false
     },
     {
@@ -396,31 +176,11 @@
     {
       "walletId": "brave-wallet",
       "walletName": "Brave Wallet",
-      "metricKey": "obGuest",
-      "label": "Guest mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "brave-wallet",
-      "walletName": "Brave Wallet",
       "metricKey": "devEip5792",
       "label": "EIP-5792",
       "category": "Developer offering",
       "type": "state",
       "path": "product.developerOffering.eip5792",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "mtpelerin",
-      "walletName": "Bridge Wallet",
-      "metricKey": "obGuest",
-      "label": "Guest mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.guestMode",
       "hasUnsourcedRef": false
     },
     {
@@ -486,16 +246,6 @@
     {
       "walletId": "coinbase-wallet",
       "walletName": "Coinbase Wallet",
-      "metricKey": "obGuest",
-      "label": "Guest mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "coinbase-wallet",
-      "walletName": "Coinbase Wallet",
       "metricKey": "pfPnl",
       "label": "Profit & loss",
       "category": "Portfolio",
@@ -511,16 +261,6 @@
       "category": "Portfolio",
       "type": "state",
       "path": "product.portfolioManagement.watchOnlyWallets",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "coinbase-wallet",
-      "walletName": "Coinbase Wallet",
-      "metricKey": "defiLiq",
-      "label": "Liquidation warnings",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
       "hasUnsourcedRef": false
     },
     {
@@ -561,76 +301,6 @@
       "category": "Self-sovereignty",
       "type": "state",
       "path": "selfSovereignty.transactionSubmission.l1.selfBroadcastViaSelfHostedNode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "cypherock",
-      "walletName": "Cypherock Wallet",
-      "metricKey": "ens",
-      "label": "ENS resolution",
-      "category": "Transparency",
-      "type": "state",
-      "path": "addressResolution.nonChainSpecificEnsResolution",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "cypherock",
-      "walletName": "Cypherock Wallet",
-      "metricKey": "reproducible",
-      "label": "Reproducible builds",
-      "category": "Transparency",
-      "type": "state",
-      "path": "transparency.releaseTransparency.reproducibleBuilds",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "pMobile",
-      "label": "Mobile app",
-      "category": "Platforms",
-      "type": "state",
-      "path": "product.platformCoverage.mobileApp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "pExtension",
-      "label": "Browser extension",
-      "category": "Platforms",
-      "type": "state",
-      "path": "product.platformCoverage.browserExtension",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "pDesktop",
-      "label": "Desktop app",
-      "category": "Platforms",
-      "type": "state",
-      "path": "product.platformCoverage.desktopApp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "pBrowserNative",
-      "label": "Browser-native",
-      "category": "Platforms",
-      "type": "state",
-      "path": "product.platformCoverage.browserNative",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "daimo",
-      "walletName": "Daimo",
-      "metricKey": "rampGoogle",
-      "label": "Google Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.googlePay",
       "hasUnsourcedRef": false
     },
     {
@@ -686,31 +356,11 @@
     {
       "walletId": "elytro",
       "walletName": "Elytro",
-      "metricKey": "obPasskey",
-      "label": "Passkey signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.passkeySignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
       "metricKey": "obEmail",
       "label": "Email signup",
       "category": "Onboarding",
       "type": "state",
       "path": "product.onboardingFriction.emailSignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "elytro",
-      "walletName": "Elytro",
-      "metricKey": "obGuest",
-      "label": "Guest mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.guestMode",
       "hasUnsourcedRef": false
     },
     {
@@ -836,16 +486,6 @@
     {
       "walletId": "exodus",
       "walletName": "Exodus",
-      "metricKey": "ecoTon",
-      "label": "TON",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.ton",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "exodus",
-      "walletName": "Exodus",
       "metricKey": "notifSecurity",
       "label": "Security alerts",
       "category": "Notifications",
@@ -871,26 +511,6 @@
       "category": "Developer offering",
       "type": "state",
       "path": "product.developerOffering.eip5792",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "pExtension",
-      "label": "Browser extension",
-      "category": "Platforms",
-      "type": "state",
-      "path": "product.platformCoverage.browserExtension",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "family",
-      "walletName": "Family",
-      "metricKey": "rampCard",
-      "label": "Card payments",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.card",
       "hasUnsourcedRef": false
     },
     {
@@ -986,41 +606,11 @@
     {
       "walletId": "firefly",
       "walletName": "Firefly Wallet",
-      "metricKey": "approvals",
-      "label": "Token-approval management",
-      "category": "Self-sovereignty",
-      "type": "support",
-      "path": "selfSovereignty.permissionsManagement",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "firefly",
-      "walletName": "Firefly Wallet",
       "metricKey": "selfBroadcast",
       "label": "Self-broadcast (own node)",
       "category": "Self-sovereignty",
       "type": "state",
       "path": "selfSovereignty.transactionSubmission.l1.selfBroadcastViaSelfHostedNode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "firefly",
-      "walletName": "Firefly Wallet",
-      "metricKey": "signing",
-      "label": "Signed releases",
-      "category": "Transparency",
-      "type": "state",
-      "path": "transparency.releaseTransparency.artifactSigning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "firefly",
-      "walletName": "Firefly Wallet",
-      "metricKey": "reproducible",
-      "label": "Reproducible builds",
-      "category": "Transparency",
-      "type": "state",
-      "path": "transparency.releaseTransparency.reproducibleBuilds",
       "hasUnsourcedRef": false
     },
     {
@@ -1056,41 +646,11 @@
     {
       "walletId": "gemwallet",
       "walletName": "Gem Wallet",
-      "metricKey": "rampApple",
-      "label": "Apple Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.applePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "rampGoogle",
-      "label": "Google Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.googlePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
       "metricKey": "pfNetWorth",
       "label": "Net worth view",
       "category": "Portfolio",
       "type": "state",
       "path": "product.portfolioManagement.netWorth",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gemwallet",
-      "walletName": "Gem Wallet",
-      "metricKey": "stakeApy",
-      "label": "APY display",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.apyDisplay",
       "hasUnsourcedRef": false
     },
     {
@@ -1186,16 +746,6 @@
     {
       "walletId": "gridplus",
       "walletName": "GridPlus Wallet",
-      "metricKey": "crashReports",
-      "label": "Sends crash reports",
-      "category": "Privacy",
-      "type": "state",
-      "path": "privacy.analytics.crashReports",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gridplus",
-      "walletName": "GridPlus Wallet",
       "metricKey": "audits",
       "label": "Public audits",
       "category": "Security",
@@ -1211,26 +761,6 @@
       "category": "Security",
       "type": "count_low",
       "path": "security.publicSecurityAudits",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gridplus",
-      "walletName": "GridPlus Wallet",
-      "metricKey": "ens",
-      "label": "ENS resolution",
-      "category": "Transparency",
-      "type": "state",
-      "path": "addressResolution.nonChainSpecificEnsResolution",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gridplus",
-      "walletName": "GridPlus Wallet",
-      "metricKey": "reproducible",
-      "label": "Reproducible builds",
-      "category": "Transparency",
-      "type": "state",
-      "path": "transparency.releaseTransparency.reproducibleBuilds",
       "hasUnsourcedRef": false
     },
     {
@@ -1266,26 +796,6 @@
     {
       "walletId": "imkey",
       "walletName": "imKey",
-      "metricKey": "approvals",
-      "label": "Token-approval management",
-      "category": "Self-sovereignty",
-      "type": "support",
-      "path": "selfSovereignty.permissionsManagement",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imkey",
-      "walletName": "imKey",
-      "metricKey": "bridging",
-      "label": "Built-in bridging",
-      "category": "Chain abstraction",
-      "type": "state",
-      "path": "chainAbstraction.bridging.builtInBridging",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imkey",
-      "walletName": "imKey",
       "metricKey": "globalValue",
       "label": "Unified balance view",
       "category": "Chain abstraction",
@@ -1301,66 +811,6 @@
       "category": "Transparency",
       "type": "state",
       "path": "transparency.releaseTransparency.artifactSigning",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "pExtension",
-      "label": "Browser extension",
-      "category": "Platforms",
-      "type": "state",
-      "path": "product.platformCoverage.browserExtension",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "pDesktop",
-      "label": "Desktop app",
-      "category": "Platforms",
-      "type": "state",
-      "path": "product.platformCoverage.desktopApp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "obGuest",
-      "label": "Guest mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "rampSell",
-      "label": "Sell crypto",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.sellCrypto",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "rampBank",
-      "label": "Bank transfer",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.bankTransfer",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imtoken",
-      "walletName": "imToken",
-      "metricKey": "pfNetWorth",
-      "label": "Net worth view",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.netWorth",
       "hasUnsourcedRef": false
     },
     {
@@ -1416,16 +866,6 @@
     {
       "walletId": "keycard-shell",
       "walletName": "Keycard Shell",
-      "metricKey": "defaultTransfer",
-      "label": "Default transfer mode",
-      "category": "Privacy",
-      "type": "value",
-      "path": "privacy.transactionPrivacy.defaultFungibleTokenTransferMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "keycard-shell",
-      "walletName": "Keycard Shell",
       "metricKey": "audits",
       "label": "Public audits",
       "category": "Security",
@@ -1441,36 +881,6 @@
       "category": "Security",
       "type": "count_low",
       "path": "security.publicSecurityAudits",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "keycard-shell",
-      "walletName": "Keycard Shell",
-      "metricKey": "ens",
-      "label": "ENS resolution",
-      "category": "Transparency",
-      "type": "state",
-      "path": "addressResolution.nonChainSpecificEnsResolution",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "keystone",
-      "walletName": "Keystone Wallet",
-      "metricKey": "selfBroadcast",
-      "label": "Self-broadcast (own node)",
-      "category": "Self-sovereignty",
-      "type": "state",
-      "path": "selfSovereignty.transactionSubmission.l1.selfBroadcastViaSelfHostedNode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "keystone",
-      "walletName": "Keystone Wallet",
-      "metricKey": "signing",
-      "label": "Signed releases",
-      "category": "Transparency",
-      "type": "state",
-      "path": "transparency.releaseTransparency.artifactSigning",
       "hasUnsourcedRef": false
     },
     {
@@ -1491,26 +901,6 @@
       "category": "Security",
       "type": "count_low",
       "path": "security.publicSecurityAudits",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ledgerWallet",
-      "walletName": "ledgerWallet",
-      "metricKey": "license",
-      "label": "App license",
-      "category": "Transparency",
-      "type": "license",
-      "path": "licensing.walletAppLicense",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "metamask",
-      "walletName": "MetaMask",
-      "metricKey": "stakeValidator",
-      "label": "Validator choice",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.validatorChoice",
       "hasUnsourcedRef": false
     },
     {
@@ -1556,46 +946,6 @@
     {
       "walletId": "nufi",
       "walletName": "NuFi",
-      "metricKey": "pMobile",
-      "label": "Mobile app",
-      "category": "Platforms",
-      "type": "state",
-      "path": "product.platformCoverage.mobileApp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "obPasskey",
-      "label": "Passkey signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.passkeySignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "obEmail",
-      "label": "Email signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.emailSignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
-      "metricKey": "obGuest",
-      "label": "Guest mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "nufi",
-      "walletName": "NuFi",
       "metricKey": "gasStuck",
       "label": "Stuck-tx recovery",
       "category": "Gas UX",
@@ -1636,41 +986,11 @@
     {
       "walletId": "okx",
       "walletName": "OKX Wallet",
-      "metricKey": "ecoCosmos",
-      "label": "Cosmos",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.cosmos",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "okx",
-      "walletName": "OKX Wallet",
-      "metricKey": "obPasskey",
-      "label": "Passkey signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.passkeySignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "okx",
-      "walletName": "OKX Wallet",
       "metricKey": "defiLiq",
       "label": "Liquidation warnings",
       "category": "DeFi positions",
       "type": "state",
       "path": "product.defiPositionAwareness.liquidationWarnings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "okx",
-      "walletName": "OKX Wallet",
-      "metricKey": "stakeValidator",
-      "label": "Validator choice",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.validatorChoice",
       "hasUnsourcedRef": false
     },
     {
@@ -1694,46 +1014,6 @@
       "hasUnsourcedRef": false
     },
     {
-      "walletId": "onekey",
-      "walletName": "OneKey Pro",
-      "metricKey": "crashReports",
-      "label": "Sends crash reports",
-      "category": "Privacy",
-      "type": "state",
-      "path": "privacy.analytics.crashReports",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "onekey",
-      "walletName": "OneKey Pro",
-      "metricKey": "ens",
-      "label": "ENS resolution",
-      "category": "Transparency",
-      "type": "state",
-      "path": "addressResolution.nonChainSpecificEnsResolution",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "onekey",
-      "walletName": "OneKey Pro",
-      "metricKey": "reproducible",
-      "label": "Reproducible builds",
-      "category": "Transparency",
-      "type": "state",
-      "path": "transparency.releaseTransparency.reproducibleBuilds",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "phantom",
-      "walletName": "Phantom",
-      "metricKey": "obGuest",
-      "label": "Guest mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
       "walletId": "phantom",
       "walletName": "Phantom",
       "metricKey": "devEip5792",
@@ -1741,56 +1021,6 @@
       "category": "Developer offering",
       "type": "state",
       "path": "product.developerOffering.eip5792",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "pExtension",
-      "label": "Browser extension",
-      "category": "Platforms",
-      "type": "state",
-      "path": "product.platformCoverage.browserExtension",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "pDesktop",
-      "label": "Desktop app",
-      "category": "Platforms",
-      "type": "state",
-      "path": "product.platformCoverage.desktopApp",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "pBrowserNative",
-      "label": "Browser-native",
-      "category": "Platforms",
-      "type": "state",
-      "path": "product.platformCoverage.browserNative",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "obEmail",
-      "label": "Email signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.emailSignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "pillarx",
-      "walletName": "PillarX",
-      "metricKey": "obGuest",
-      "label": "Guest mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.guestMode",
       "hasUnsourcedRef": false
     },
     {
@@ -1996,16 +1226,6 @@
     {
       "walletId": "rabby",
       "walletName": "Rabby",
-      "metricKey": "defiLiq",
-      "label": "Liquidation warnings",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rabby",
-      "walletName": "Rabby",
       "metricKey": "notifSendRecv",
       "label": "Send/receive alerts",
       "category": "Notifications",
@@ -2041,86 +1261,6 @@
       "category": "Customer support",
       "type": "state",
       "path": "product.customerSupport.inAppHelpCenter",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "ecoSolana",
-      "label": "Solana",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.solana",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "ecoSui",
-      "label": "Sui",
-      "category": "Ecosystems",
-      "type": "state",
-      "path": "product.supportedEcosystems.sui",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "rampGoogle",
-      "label": "Google Pay",
-      "category": "Fiat ramps",
-      "type": "state",
-      "path": "product.fiatRamps.googlePay",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "pfPnl",
-      "label": "Profit & loss",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.pnl",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "pfCostBasis",
-      "label": "Cost basis",
-      "category": "Portfolio",
-      "type": "state",
-      "path": "product.portfolioManagement.costBasis",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "defiStaking",
-      "label": "Staking positions",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.stakingPositions",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "defiLiq",
-      "label": "Liquidation warnings",
-      "category": "DeFi positions",
-      "type": "state",
-      "path": "product.defiPositionAwareness.liquidationWarnings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "rainbow",
-      "walletName": "Rainbow",
-      "metricKey": "stakeApy",
-      "label": "APY display",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.apyDisplay",
       "hasUnsourcedRef": false
     },
     {
@@ -2244,46 +1384,6 @@
       "hasUnsourcedRef": false
     },
     {
-      "walletId": "trezor",
-      "walletName": "Trezor Wallet",
-      "metricKey": "ens",
-      "label": "ENS resolution",
-      "category": "Transparency",
-      "type": "state",
-      "path": "addressResolution.nonChainSpecificEnsResolution",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trezor",
-      "walletName": "Trezor Wallet",
-      "metricKey": "license",
-      "label": "App license",
-      "category": "Transparency",
-      "type": "license",
-      "path": "licensing.walletAppLicense",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
-      "metricKey": "obEmail",
-      "label": "Email signup",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.emailSignup",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "trust-wallet",
-      "walletName": "Trust Wallet",
-      "metricKey": "obGuest",
-      "label": "Guest mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.guestMode",
-      "hasUnsourcedRef": false
-    },
-    {
       "walletId": "trust-wallet",
       "walletName": "Trust Wallet",
       "metricKey": "devEip5792",
@@ -2301,16 +1401,6 @@
       "category": "Pricing & fees",
       "type": "state",
       "path": "product.pricingFeeModel.hiddenPartnerRevenue",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "uniswap-wallet",
-      "walletName": "Uniswap Wallet",
-      "metricKey": "obGuest",
-      "label": "Guest mode",
-      "category": "Onboarding",
-      "type": "state",
-      "path": "product.onboardingFriction.guestMode",
       "hasUnsourcedRef": false
     },
     {
@@ -2371,16 +1461,6 @@
       "category": "Device sync",
       "type": "state",
       "path": "product.deviceSync.syncsSettings",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "zerion",
-      "walletName": "Zerion",
-      "metricKey": "stakeValidator",
-      "label": "Validator choice",
-      "category": "Staking & earn",
-      "type": "state",
-      "path": "product.stakingEarn.validatorChoice",
       "hasUnsourcedRef": false
     },
     {

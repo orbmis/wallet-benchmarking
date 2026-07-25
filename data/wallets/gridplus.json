@@ -147,7 +147,17 @@
       },
       "privacy": {
         "analytics": {
-          "crashReports": null,
+          "crashReports": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.gridplus.io/lattice1/lattice1-introduction",
+                  "explanation": "GridPlus states 'We don't collect any user data on the Lattice Manager', indicating no crash-report or analytics telemetry is sent."
+                }
+              }
+            ]
+          },
           "usage": {
             "$call": "notSupported",
             "args": [
@@ -463,7 +473,17 @@
           },
           "hermeticBuilds": null,
           "repositoryChangeControls": null,
-          "reproducibleBuilds": null
+          "reproducibleBuilds": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://thebitcoinhole.com/hardware-wallets/gridplus-lattice1",
+                  "explanation": "The Bitcoin Hole database lists GridPlus Lattice1 reproducible builds as 'NO'; the firmware is not open source."
+                }
+              }
+            ]
+          }
         },
         "reputation": null
       },
@@ -493,6 +513,19 @@
               }
             ]
           }
+        }
+      },
+      "addressResolution": {
+        "nonChainSpecificEnsResolution": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://docs.gridplus.io/apps-and-integrations/lattice-manager",
+                "explanation": "Lattice Manager lists no ENS resolution; GridPlus recommends MetaMask/Frame as companions, so ENS is handled externally."
+              }
+            }
+          ]
         }
       }
     },

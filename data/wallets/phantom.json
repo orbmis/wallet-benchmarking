@@ -1183,7 +1183,17 @@
               }
             ]
           },
-          "guestMode": null,
+          "guestMode": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.phantom.com/hc/en-us/articles/41523165147667-How-to-use-the-Explore-tab-in-Phantom",
+                  "explanation": "Phantom's Explore tab allows browsing content, but full app access requires creating a wallet; there is no true wallet-free guest mode."
+                }
+              }
+            ]
+          },
           "embeddedWalletMode": {
             "$call": "supported",
             "args": [

@@ -1011,7 +1011,17 @@
           "kycRequiredForWallet": {
             "$ref": "notSupported"
           },
-          "guestMode": null,
+          "guestMode": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.mtpelerin.com/bridge-wallet",
+                  "explanation": "Bridge Wallet is fully self-custodial and requires creating or restoring a wallet; no guest mode is mentioned."
+                }
+              }
+            ]
+          },
           "embeddedWalletMode": {
             "$call": "notSupported",
             "args": [

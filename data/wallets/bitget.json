@@ -1029,7 +1029,17 @@
           "seedPhraseRequiredAtSignup": {
             "$ref": "featureSupported"
           },
-          "passkeySignup": null,
+          "passkeySignup": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.bitget.com/academy/bitget-passkey-tutorial",
+                  "explanation": "Bitget passkeys are a secondary 2FA login method added after account creation, not a primary signup mechanism."
+                }
+              }
+            ]
+          },
           "emailSignup": {
             "$call": "supported",
             "args": [
@@ -1045,7 +1055,17 @@
           "kycRequiredForWallet": {
             "$ref": "notSupported"
           },
-          "guestMode": null,
+          "guestMode": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://web3.bitget.com/en/academy/how-to-set-up-and-use-bitget-wallet",
+                  "explanation": "Bitget Wallet setup requires creating a wallet or social login; no guest/browse-without-wallet mode is documented."
+                }
+              }
+            ]
+          },
           "embeddedWalletMode": {
             "$call": "supported",
             "args": [

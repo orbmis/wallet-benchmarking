@@ -143,7 +143,15 @@
           }
         ]
       },
-      "licensing": null,
+      "licensing": {
+        "walletAppLicense": {
+          "license": "SourceAvailableNonFOSSLicense.PROPRIETARY_SOURCE_AVAILABLE",
+          "ref": {
+            "url": "https://github.com/trezor/trezor-suite/blob/develop/LICENSE.md",
+            "explanation": "Trezor Suite is licensed under the TREZOR REFERENCE SOURCE LICENSE (T-RSL), a proprietary source-available license permitting reference use only."
+          }
+        }
+      },
       "monetization": {
         "ref": {
           "$ref": "refTodo"
@@ -506,6 +514,19 @@
               }
             ]
           }
+        }
+      },
+      "addressResolution": {
+        "nonChainSpecificEnsResolution": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://github.com/trezor/blockbook/issues/1108",
+                "explanation": "An ENS resolver for Trezor Suite was filed as an open issue in 2024 and remains unshipped; official Suite feature docs do not list ENS resolution."
+              }
+            }
+          ]
         }
       }
     },

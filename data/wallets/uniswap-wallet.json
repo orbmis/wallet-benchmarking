@@ -1142,7 +1142,17 @@
           "kycRequiredForWallet": {
             "$ref": "notSupported"
           },
-          "guestMode": null,
+          "guestMode": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.uniswap.org/hc/en-us/articles/21197549275661-What-is-a-view-only-wallet",
+                  "explanation": "Uniswap Wallet's view-only mode requires entering a specific address; this is watch mode, not a wallet-free guest mode."
+                }
+              }
+            ]
+          },
           "embeddedWalletMode": {
             "$call": "supported",
             "args": [
