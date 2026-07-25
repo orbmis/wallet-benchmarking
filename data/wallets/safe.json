@@ -1126,7 +1126,17 @@
               }
             ]
           },
-          "cloudBackup": null,
+          "cloudBackup": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://safe.global/mobile",
+                  "explanation": "Safe is a multisig smart contract wallet where recovery works via signer rotation; no iCloud/Google Drive cloud backup is documented."
+                }
+              }
+            ]
+          },
           "socialRecovery": {
             "$call": "supported",
             "args": [
@@ -1496,7 +1506,17 @@
             "explanation": "Safe source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://safe.global"
           },
-          "liveChat": null,
+          "liveChat": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.safe.global/",
+                  "explanation": "Safe's help center provides a knowledge base and AI chatbot; no live human-agent chat is mentioned."
+                }
+              }
+            ]
+          },
           "emailSupport": {
             "$call": "supported",
             "args": [
@@ -1508,7 +1528,17 @@
               }
             ]
           },
-          "aiSupport": null,
+          "aiSupport": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.safe.global/",
+                  "explanation": "Safe's help center (Pylon-powered) provides an AI chatbot, corroborated by a 2026 third-party review describing it as quick and helpful."
+                }
+              }
+            ]
+          },
           "publishedSla": null,
           "inAppHelpCenter": {
             "$call": "supported",
@@ -1532,7 +1562,17 @@
               }
             ]
           },
-          "scamRecoveryGuidance": null
+          "scamRecoveryGuidance": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.safe.global/en",
+                  "explanation": "Safe's help center covers address poisoning and transaction scanning, but no article specifically guides users who have already been scammed or drained."
+                }
+              }
+            ]
+          }
         },
         "developerOffering": {
           "ref": {

@@ -1051,10 +1051,50 @@
               }
             ]
           },
-          "cloudBackup": null,
-          "socialRecovery": null,
-          "guardianRecovery": null,
-          "passkeyRecovery": null,
+          "cloudBackup": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.uniswap.org/hc/en-us/articles/11382985633421-How-to-back-up-your-recovery-phrase-on-iCloud-or-Google-Drive",
+                  "explanation": "Uniswap Wallet supports encrypted backup of the recovery phrase to iCloud or Google Drive, with a dedicated help article."
+                }
+              }
+            ]
+          },
+          "socialRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.uniswap.org/hc/en-us/sections/11302223905677-Wallet-Security-Recovery-Phrase",
+                  "explanation": "Uniswap Wallet supports seed phrase and encrypted cloud backup only; social recovery via trusted guardians is not offered."
+                }
+              }
+            ]
+          },
+          "guardianRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.uniswap.org/hc/en-us/sections/11302223905677-Wallet-Security-Recovery-Phrase",
+                  "explanation": "Uniswap Wallet recovery is seed-phrase based (manual or encrypted cloud backup); no guardian-based recovery is described."
+                }
+              }
+            ]
+          },
+          "passkeyRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.uniswap.org/hc/en-us/articles/28278904584077-Uniswap-Wallet-Security-Measures",
+                  "explanation": "Uniswap Wallet recovery requires the seed phrase (with iCloud/Google Drive backup); no WebAuthn passkey recovery mechanism is documented."
+                }
+              }
+            ]
+          },
           "emergencyKit": null,
           "recoveryRehearsal": null
         },
@@ -1411,7 +1451,17 @@
             "explanation": "Uniswap Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://wallet.uniswap.org/"
           },
-          "liveChat": null,
+          "liveChat": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.uniswap.org/hc/en-us",
+                  "explanation": "Uniswap support is provided via AI chatbot and help articles; no live chat with human agents is referenced."
+                }
+              }
+            ]
+          },
           "emailSupport": {
             "$call": "supported",
             "args": [
@@ -1423,7 +1473,17 @@
               }
             ]
           },
-          "aiSupport": null,
+          "aiSupport": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.uniswap.org/hc/en-us/articles/30935100859661-Uniswap-Labs-Terms-of-Service",
+                  "explanation": "Uniswap Labs' Terms of Service references an AI-powered 'Support Chatbot' available to assist users with general questions and navigation."
+                }
+              }
+            ]
+          },
           "publishedSla": null,
           "inAppHelpCenter": {
             "$call": "supported",
@@ -1447,7 +1507,17 @@
               }
             ]
           },
-          "scamRecoveryGuidance": null
+          "scamRecoveryGuidance": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.uniswap.org/hc/en-us/categories/32456997609229-Crypto-Security-and-Scams",
+                  "explanation": "Uniswap's security/scams category covers scam types and a 'Reporting scams' article that just directs victims to authorities; no substantive post-scam recovery guidance."
+                }
+              }
+            ]
+          }
         },
         "developerOffering": {
           "ref": {

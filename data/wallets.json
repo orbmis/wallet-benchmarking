@@ -1568,7 +1568,17 @@
                 }
               ]
             },
-            "cloudBackup": null,
+            "cloudBackup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.ambire.com/en/articles/13752061-web-version-what-is-ambire-cloud",
+                    "explanation": "Ambire Cloud is Ambire's own encrypted key storage, not iCloud/Google Drive; the alternative is a JSON file download, not a consumer cloud backup."
+                  }
+                }
+              ]
+            },
             "socialRecovery": {
               "$call": "supported",
               "args": [
@@ -1591,7 +1601,17 @@
                 }
               ]
             },
-            "passkeyRecovery": null,
+            "passkeyRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.ambire.com/en",
+                    "explanation": "Ambire recovery uses email/password sign-up and JSON file backup; no WebAuthn passkey-based recovery is documented."
+                  }
+                }
+              ]
+            },
             "emergencyKit": null,
             "recoveryRehearsal": null
           },
@@ -1934,7 +1954,17 @@
               "explanation": "Ambire source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://www.ambire.com"
             },
-            "liveChat": null,
+            "liveChat": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.ambire.com/en",
+                    "explanation": "Ambire offers ticket-based support and community channels only; no real-time human live chat."
+                  }
+                }
+              ]
+            },
             "emailSupport": {
               "$call": "supported",
               "args": [
@@ -1946,7 +1976,17 @@
                 }
               ]
             },
-            "aiSupport": null,
+            "aiSupport": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.ambire.com/en",
+                    "explanation": "Ambire's help center lists a ticket system, social channels, and self-service articles — no AI chatbot is mentioned."
+                  }
+                }
+              ]
+            },
             "publishedSla": null,
             "inAppHelpCenter": {
               "$call": "supported",
@@ -1970,7 +2010,17 @@
                 }
               ]
             },
-            "scamRecoveryGuidance": null
+            "scamRecoveryGuidance": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.ambire.com/hc/en-us",
+                    "explanation": "Ambire's help center has a Security section (2FA, scam-token detection) but no dedicated article guiding users who have already been scammed or lost funds."
+                  }
+                }
+              ]
+            }
           },
           "developerOffering": {
             "ref": {
@@ -3039,7 +3089,17 @@
                 }
               ]
             },
-            "passkeyRecovery": null,
+            "passkeyRecovery": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/argentlabs/argent-contracts-starknet/blob/main/docs/signers_and_signatures.md",
+                    "explanation": "Argent's contract documentation lists WebAuthn as a supported signer type, allowing passkeys (secure enclave / iCloud Keychain) to control the wallet."
+                  }
+                }
+              ]
+            },
             "emergencyKit": {
               "$call": "supported",
               "args": [
@@ -3302,7 +3362,17 @@
               "explanation": "Argent source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://www.argent.xyz/"
             },
-            "liveChat": null,
+            "liveChat": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://ready.co/faq",
+                    "explanation": "Argent/Ready support is email-based with a help center; no live chat with human agents."
+                  }
+                }
+              ]
+            },
             "emailSupport": {
               "$call": "supported",
               "args": [
@@ -3314,7 +3384,17 @@
                 }
               ]
             },
-            "aiSupport": null,
+            "aiSupport": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://ready.co/faq",
+                    "explanation": "Argent (Ready) directs users to email support and a help center — no AI chatbot is mentioned."
+                  }
+                }
+              ]
+            },
             "publishedSla": null,
             "inAppHelpCenter": {
               "$call": "supported",
@@ -3338,7 +3418,17 @@
                 }
               ]
             },
-            "scamRecoveryGuidance": null
+            "scamRecoveryGuidance": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.argent.xyz/hc/en-us",
+                    "explanation": "Argent's support covers wallet recovery, lost/stolen phone, and unrecognized tokens, but has no dedicated article for users who have been scammed or lost funds."
+                  }
+                }
+              ]
+            }
           },
           "developerOffering": {
             "ref": {
@@ -4614,8 +4704,28 @@
                 }
               ]
             },
-            "socialRecovery": null,
-            "guardianRecovery": null,
+            "socialRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.coinbase.com/en/wallet/getting-started/smart-wallet",
+                    "explanation": "Base App smart wallet recovery relies on passkeys and a seed-phrase backup, not a trusted-guardian social-recovery scheme."
+                  }
+                }
+              ]
+            },
+            "guardianRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.coinbase.com/en/wallet/getting-started/smart-wallet",
+                    "explanation": "Base App (Coinbase) smart wallet recovery uses passkeys and an optional seed phrase; no guardian-designation system is described."
+                  }
+                }
+              ]
+            },
             "passkeyRecovery": {
               "$call": "supported",
               "args": [
@@ -4957,7 +5067,17 @@
               "explanation": "Base App source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://base.app/"
             },
-            "liveChat": null,
+            "liveChat": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.coinbase.com/en/base",
+                    "explanation": "Coinbase/Base app support offers live chat via 'Chat with Us' in the mobile app, reaching human agents after the virtual assistant."
+                  }
+                }
+              ]
+            },
             "emailSupport": {
               "$call": "supported",
               "args": [
@@ -4969,7 +5089,17 @@
                 }
               ]
             },
-            "aiSupport": null,
+            "aiSupport": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.coinbase.com/blog/coinbase-support-evolving-to-meet-your-needs",
+                    "explanation": "Coinbase (which operates the Base app) deployed an AI-powered virtual assistant as the first layer of support chat before escalating to human agents."
+                  }
+                }
+              ]
+            },
             "publishedSla": null,
             "inAppHelpCenter": {
               "$call": "supported",
@@ -4993,7 +5123,17 @@
                 }
               ]
             },
-            "scamRecoveryGuidance": null
+            "scamRecoveryGuidance": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.coinbase.com/en/dapps/getting-started/identifying-and-reporting-scams",
+                    "explanation": "Coinbase's help center states it cannot help recover dapp/Base wallet funds; the scam article covers prevention and reporting but not victim recovery steps."
+                  }
+                }
+              ]
+            }
           },
           "developerOffering": {
             "ref": {
@@ -6679,9 +6819,39 @@
                 }
               ]
             },
-            "socialRecovery": null,
-            "guardianRecovery": null,
-            "passkeyRecovery": null,
+            "socialRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://web3.bitget.com/en/academy/how-to-use-an-mpc-wallet-or-a-mnemonic-wallet",
+                    "explanation": "Bitget's recovery documentation describes MPC cloud backup and seed phrases only; no live social recovery via trusted parties is confirmed."
+                  }
+                }
+              ]
+            },
+            "guardianRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://web3.bitget.com/en/academy/how-to-use-an-mpc-wallet-or-a-mnemonic-wallet",
+                    "explanation": "Bitget Wallet offers MPC wallets backed up to iCloud/Google Drive; no live guardian-designation feature is documented."
+                  }
+                }
+              ]
+            },
+            "passkeyRecovery": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://web3.bitget.com/crypto-news/solana-wallet-login-access-and-authentication-guide",
+                    "explanation": "Bitget Wallet added passkey authentication built on FIDO2/WebAuthn, allowing access and recovery via Face ID, Touch ID, or hardware security keys."
+                  }
+                }
+              ]
+            },
             "emergencyKit": null,
             "recoveryRehearsal": null
           },
@@ -8165,10 +8335,50 @@
                 }
               ]
             },
-            "cloudBackup": null,
-            "socialRecovery": null,
-            "guardianRecovery": null,
-            "passkeyRecovery": null,
+            "cloudBackup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.brave.com/hc/en-us/articles/16291144373261-BIP-39-Recovery-Phrase",
+                    "explanation": "Brave Wallet documentation describes only BIP-39 recovery phrase backup with no iCloud/Google Drive cloud backup."
+                  }
+                }
+              ]
+            },
+            "socialRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.brave.app/hc/en-us/articles/16291144373261-What-is-a-Recovery-Phrase",
+                    "explanation": "Brave Wallet recovery is seed-phrase only; no social recovery via trusted parties is offered."
+                  }
+                }
+              ]
+            },
+            "guardianRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.brave.app/hc/en-us/articles/16291144373261-What-is-a-Recovery-Phrase",
+                    "explanation": "Brave Wallet is a standard BIP-39 EOA wallet; no guardian-based recovery mechanism is documented."
+                  }
+                }
+              ]
+            },
+            "passkeyRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.brave.com/hc/en-us/articles/16291144373261-BIP-39-Recovery-Phrase",
+                    "explanation": "Brave Wallet recovery documentation describes only BIP-39 seed phrase recovery; no passkey/WebAuthn recovery."
+                  }
+                }
+              ]
+            },
             "emergencyKit": null,
             "recoveryRehearsal": null
           },
@@ -8501,7 +8711,17 @@
               "explanation": "Brave Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://brave.com/wallet/"
             },
-            "liveChat": null,
+            "liveChat": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.brave.app/hc/en-us",
+                    "explanation": "The Brave Help Center provides knowledge-base articles for wallet support but no live chat with human agents."
+                  }
+                }
+              ]
+            },
             "emailSupport": {
               "$call": "supported",
               "args": [
@@ -8513,7 +8733,17 @@
                 }
               ]
             },
-            "aiSupport": null,
+            "aiSupport": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.brave.app/hc/en-us/categories/360001062531-Wallet",
+                    "explanation": "Brave Wallet's support is a self-service knowledge base; Brave Leo is a general browser assistant, not a dedicated wallet support chatbot."
+                  }
+                }
+              ]
+            },
             "publishedSla": null,
             "inAppHelpCenter": {
               "$call": "supported",
@@ -8537,7 +8767,17 @@
                 }
               ]
             },
-            "scamRecoveryGuidance": null
+            "scamRecoveryGuidance": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.brave.com/hc/en-us/sections/12678113362701-Crypto-Wallet-Basics",
+                    "explanation": "Brave's wallet support focuses on setup, recovery phrase, and asset management; no article guides users on what to do after being scammed."
+                  }
+                }
+              ]
+            }
           },
           "developerOffering": {
             "ref": {
@@ -9567,7 +9807,17 @@
             "guardianRecovery": {
               "$ref": "notSupported"
             },
-            "passkeyRecovery": null,
+            "passkeyRecovery": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.coinbase.com/en/wallet/getting-started/smart-wallet",
+                    "explanation": "Coinbase Smart Wallet uses a WebAuthn passkey as the primary signer, with cross-device recovery via iCloud Keychain or Google Password Manager sync."
+                  }
+                }
+              ]
+            },
             "emergencyKit": null,
             "recoveryRehearsal": null
           },
@@ -11735,9 +11985,39 @@
               "url": "https://daimo.com"
             },
             "seedOnlyRecovery": null,
-            "cloudBackup": null,
-            "socialRecovery": null,
-            "guardianRecovery": null,
+            "cloudBackup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/daimo-eth/daimo",
+                    "explanation": "Daimo stores keys in the Secure Enclave with passkey backups; it offers no discrete seed/wallet cloud backup to iCloud/Google Drive as a user feature."
+                  }
+                }
+              ]
+            },
+            "socialRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/daimo-eth/daimo",
+                    "explanation": "Daimo relies on device-bound passkeys and multi-device key management; no social recovery scheme with trusted parties is described."
+                  }
+                }
+              ]
+            },
+            "guardianRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/daimo-eth/daimo",
+                    "explanation": "Daimo recovery uses additional device keys and passkey backups, not designated human guardians."
+                  }
+                }
+              ]
+            },
             "passkeyRecovery": {
               "$call": "supported",
               "args": [
@@ -12083,7 +12363,17 @@
               "explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://daimo.com"
             },
-            "liveChat": null,
+            "liveChat": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.daimo.com/introduction",
+                    "explanation": "Daimo offers email-based support only; no real-time live chat with human agents."
+                  }
+                }
+              ]
+            },
             "emailSupport": {
               "$call": "supported",
               "args": [
@@ -12095,7 +12385,17 @@
                 }
               ]
             },
-            "aiSupport": null,
+            "aiSupport": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.daimo.com/introduction",
+                    "explanation": "Daimo's public pages show only email support and a Telegram channel; no AI chatbot is mentioned."
+                  }
+                }
+              ]
+            },
             "publishedSla": null,
             "inAppHelpCenter": {
               "$call": "supported",
@@ -12119,7 +12419,17 @@
                 }
               ]
             },
-            "scamRecoveryGuidance": null
+            "scamRecoveryGuidance": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.daimo.com/introduction",
+                    "explanation": "Daimo's documentation is developer/integration-focused with no content addressing scam recovery or guidance for users who have lost funds."
+                  }
+                }
+              ]
+            }
           },
           "developerOffering": {
             "ref": {
@@ -13213,7 +13523,17 @@
               "url": "https://elytro.com/"
             },
             "seedOnlyRecovery": null,
-            "cloudBackup": null,
+            "cloudBackup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://elytro.com/docs/security",
+                    "explanation": "Elytro's security docs list Email OTP and Social Recovery as recovery options; no iCloud/Google Drive cloud backup is mentioned."
+                  }
+                }
+              ]
+            },
             "socialRecovery": {
               "$call": "supported",
               "args": [
@@ -13236,7 +13556,17 @@
                 }
               ]
             },
-            "passkeyRecovery": null,
+            "passkeyRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://elytro.com/docs/security",
+                    "explanation": "Elytro's security docs list Email OTP and Social Recovery as recovery methods; no passkey/WebAuthn recovery is mentioned."
+                  }
+                }
+              ]
+            },
             "emergencyKit": null,
             "recoveryRehearsal": null
           },
@@ -13539,7 +13869,17 @@
               "explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://elytro.com"
             },
-            "liveChat": null,
+            "liveChat": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://elytro.com/faq",
+                    "explanation": "Elytro relies on community channels and email; no live chat with human agents."
+                  }
+                }
+              ]
+            },
             "emailSupport": {
               "$call": "supported",
               "args": [
@@ -13551,7 +13891,17 @@
                 }
               ]
             },
-            "aiSupport": null,
+            "aiSupport": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://elytro.com/faq",
+                    "explanation": "Elytro's FAQ lists documentation, GitHub, X, and Telegram as support channels; no AI chatbot is present."
+                  }
+                }
+              ]
+            },
             "publishedSla": null,
             "inAppHelpCenter": {
               "$call": "supported",
@@ -13575,7 +13925,17 @@
                 }
               ]
             },
-            "scamRecoveryGuidance": null
+            "scamRecoveryGuidance": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://elytro.com/faq",
+                    "explanation": "Elytro's FAQ covers product features and social recovery setup but no guidance for users who have already been scammed."
+                  }
+                }
+              ]
+            }
           },
           "developerOffering": {
             "ref": {
@@ -14494,9 +14854,39 @@
                 }
               ]
             },
-            "cloudBackup": null,
-            "socialRecovery": null,
-            "guardianRecovery": null,
+            "cloudBackup": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.exodus.com/support/en/articles/8598900-how-do-i-back-up-my-wallet-with-icloud-or-google-drive",
+                    "explanation": "Exodus Mobile supports encrypted wallet backup to iCloud (iOS) or Google Drive (Android) protected by a passkey."
+                  }
+                }
+              ]
+            },
+            "socialRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.exodus.com/article/42-how-do-i-restore-from-my-secret-12-word-phrase",
+                    "explanation": "Exodus recovery is seed-phrase only; social recovery via trusted parties is not a feature."
+                  }
+                }
+              ]
+            },
+            "guardianRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.exodus.com/article/42-how-do-i-restore-from-my-secret-12-word-phrase",
+                    "explanation": "Exodus uses a 12-word BIP-39 recovery phrase; no guardian-based recovery is offered."
+                  }
+                }
+              ]
+            },
             "passkeyRecovery": {
               "$call": "supported",
               "args": [
@@ -14890,7 +15280,17 @@
               "explanation": "Exodus desktop page and getting-started guide reference online help and 24/7 customer support.",
               "url": "https://www.exodus.com/"
             },
-            "liveChat": null,
+            "liveChat": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.exodus.com/support/en/articles/8598657-how-do-i-contact-exodus-support",
+                    "explanation": "Exodus escalates unresolved chatbot queries to email support only; no real-time human live chat."
+                  }
+                }
+              ]
+            },
             "emailSupport": {
               "$call": "supported",
               "args": [
@@ -14902,7 +15302,17 @@
                 }
               ]
             },
-            "aiSupport": null,
+            "aiSupport": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.exodus.com/support/en/articles/8598657-how-do-i-contact-exodus-support",
+                    "explanation": "Exodus AI Support uses natural language models and its Knowledge Base to provide instant guidance in-app and via a website chat icon."
+                  }
+                }
+              ]
+            },
             "publishedSla": null,
             "inAppHelpCenter": {
               "$call": "supported",
@@ -14916,7 +15326,17 @@
               ]
             },
             "transactionTroubleshooting": null,
-            "scamRecoveryGuidance": null
+            "scamRecoveryGuidance": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.exodus.com/article/2491-compromised-wallet",
+                    "explanation": "Exodus publishes a dedicated support article ('Next steps if your crypto is stolen') with explicit victim guidance: move remaining assets, wipe device if malware suspected, contact law enforcement, and email support."
+                  }
+                }
+              ]
+            }
           },
           "developerOffering": {
             "ref": {
@@ -15974,9 +16394,39 @@
                 }
               ]
             },
-            "socialRecovery": null,
-            "guardianRecovery": null,
-            "passkeyRecovery": null,
+            "socialRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://family.co/faqs",
+                    "explanation": "Family recovery relies on seed phrase and cloud backups; no social recovery via trusted parties is documented."
+                  }
+                }
+              ]
+            },
+            "guardianRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://family.co/faqs",
+                    "explanation": "Family's recovery options are Family Backup, iCloud, and manual seed phrase; no guardian designation for recovery is mentioned."
+                  }
+                }
+              ]
+            },
+            "passkeyRecovery": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://family.co/faqs",
+                    "explanation": "Family's FAQs confirm users can create and manage wallets using a passkey, with passkey-based login as the default passwordless option on iOS."
+                  }
+                }
+              ]
+            },
             "emergencyKit": null,
             "recoveryRehearsal": null
           },
@@ -16349,7 +16799,17 @@
               "explanation": "Family source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://family.co"
             },
-            "liveChat": null,
+            "liveChat": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://family.co/support",
+                    "explanation": "Family offers documentation and contact forms only; no real-time live chat with human agents."
+                  }
+                }
+              ]
+            },
             "emailSupport": {
               "$call": "supported",
               "args": [
@@ -16361,7 +16821,17 @@
                 }
               ]
             },
-            "aiSupport": null,
+            "aiSupport": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://family.co/support",
+                    "explanation": "Family's support page shows self-service help articles, a feedback link, and an issue report option; no AI chatbot is present."
+                  }
+                }
+              ]
+            },
             "publishedSla": null,
             "inAppHelpCenter": {
               "$call": "supported",
@@ -16385,7 +16855,17 @@
                 }
               ]
             },
-            "scamRecoveryGuidance": null
+            "scamRecoveryGuidance": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://family.co/support",
+                    "explanation": "Family's support center covers wallet setup, send/receive/swap, and browser categories but no article on scam recovery or stolen funds."
+                  }
+                }
+              ]
+            }
           },
           "developerOffering": {
             "ref": {
@@ -17818,10 +18298,50 @@
                 }
               ]
             },
-            "cloudBackup": null,
-            "socialRecovery": null,
-            "guardianRecovery": null,
-            "passkeyRecovery": null,
+            "cloudBackup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.frame.sh/",
+                    "explanation": "Frame is a desktop wallet using seed phrases for recovery; official docs make no mention of iCloud/Google Drive cloud backup."
+                  }
+                }
+              ]
+            },
+            "socialRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.frame.sh/",
+                    "explanation": "Frame uses seed phrases and hardware signers; no social recovery scheme is described."
+                  }
+                }
+              ]
+            },
+            "guardianRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.frame.sh/",
+                    "explanation": "Frame supports seed phrases, private keys, and hardware signers; no guardian-based recovery is documented."
+                  }
+                }
+              ]
+            },
+            "passkeyRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.frame.sh/",
+                    "explanation": "Frame focuses on seed phrases and hardware wallets; no passkey/WebAuthn recovery feature is documented."
+                  }
+                }
+              ]
+            },
             "emergencyKit": null,
             "recoveryRehearsal": null
           },
@@ -18158,7 +18678,17 @@
               "explanation": "Frame source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://frame.sh"
             },
-            "liveChat": null,
+            "liveChat": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.frame.sh/",
+                    "explanation": "Frame provides support via Discord community and GitHub issues only; no live chat."
+                  }
+                }
+              ]
+            },
             "emailSupport": {
               "$call": "supported",
               "args": [
@@ -18170,7 +18700,17 @@
                 }
               ]
             },
-            "aiSupport": null,
+            "aiSupport": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.frame.sh/",
+                    "explanation": "Frame's support is community-driven via Discord and GitHub; no AI chatbot is offered."
+                  }
+                }
+              ]
+            },
             "publishedSla": null,
             "inAppHelpCenter": {
               "$call": "supported",
@@ -18194,7 +18734,17 @@
                 }
               ]
             },
-            "scamRecoveryGuidance": null
+            "scamRecoveryGuidance": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.frame.sh/docs/Introduction/",
+                    "explanation": "Frame's documentation covers getting started, guides, and support but no content on scam recovery for defrauded users."
+                  }
+                }
+              ]
+            }
           },
           "developerOffering": {
             "ref": {
@@ -19216,10 +19766,50 @@
                 }
               ]
             },
-            "cloudBackup": null,
-            "socialRecovery": null,
-            "guardianRecovery": null,
-            "passkeyRecovery": null,
+            "cloudBackup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.gemwallet.com/guides/backup-wallet/",
+                    "explanation": "Gem Wallet's documentation explicitly warns against cloud storage and supports only offline recovery-phrase backup."
+                  }
+                }
+              ]
+            },
+            "socialRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.gemwallet.com/guides/restore-wallet/",
+                    "explanation": "Gem Wallet uses BIP-39 seed phrase recovery; no social recovery mechanism via trusted parties is described."
+                  }
+                }
+              ]
+            },
+            "guardianRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.gemwallet.com/guides/restore-wallet/",
+                    "explanation": "Gem Wallet (gemwallet.com mobile) restores via a BIP-39 recovery phrase only; no guardian-based recovery is described."
+                  }
+                }
+              ]
+            },
+            "passkeyRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.gemwallet.com/guides/backup-wallet/",
+                    "explanation": "Gem Wallet's documentation describes only offline recovery-phrase backup with no passkey/WebAuthn-based recovery."
+                  }
+                }
+              ]
+            },
             "emergencyKit": null,
             "recoveryRehearsal": null
           },
@@ -19552,7 +20142,17 @@
               "explanation": "Gem Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://gemwallet.com"
             },
-            "liveChat": null,
+            "liveChat": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://gemwallet.com/support/",
+                    "explanation": "Gem Wallet offers Discord community chat and email support only; no real-time live chat with human agents."
+                  }
+                }
+              ]
+            },
             "emailSupport": {
               "$call": "supported",
               "args": [
@@ -19564,7 +20164,17 @@
                 }
               ]
             },
-            "aiSupport": null,
+            "aiSupport": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://gemwallet.com/support/",
+                    "explanation": "Gem Wallet's support lists docs, Discord community, and email; no AI chatbot is mentioned."
+                  }
+                }
+              ]
+            },
             "publishedSla": null,
             "inAppHelpCenter": {
               "$call": "supported",
@@ -19588,7 +20198,17 @@
                 }
               ]
             },
-            "scamRecoveryGuidance": null
+            "scamRecoveryGuidance": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.gemwallet.com/guides/how-to-spot-telegram-scams/",
+                    "explanation": "Gem Wallet (gemwallet.com) publishes prevention-focused scam-awareness articles; none provide post-scam victim recovery guidance."
+                  }
+                }
+              ]
+            }
           },
           "developerOffering": {
             "ref": {
@@ -21554,10 +22174,50 @@
                 }
               ]
             },
-            "cloudBackup": null,
-            "socialRecovery": null,
-            "guardianRecovery": null,
-            "passkeyRecovery": null,
+            "cloudBackup": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.token.im/hc/en-us/articles/50025057613977-Lost-Your-Passkey-Here-s-How-to-Recover-Your-Account",
+                    "explanation": "imToken's passkey accounts sync the encrypted passkey to iCloud Keychain or Google Password Manager, enabling cloud-based wallet recovery across devices."
+                  }
+                }
+              ]
+            },
+            "socialRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.token.im/hc/en-us/articles/360002074233-What-is-mnemonic-phrase-and-how-to-recover-a-wallet-by-importing-mnemonic-phrases",
+                    "explanation": "The core imToken mobile app is a mnemonic wallet with no social recovery; smart-account social recovery exists only in the separate imToken Web beta."
+                  }
+                }
+              ]
+            },
+            "guardianRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.token.im/hc/en-us/articles/360002074233-What-is-mnemonic-phrase-and-how-to-recover-a-wallet-by-importing-mnemonic-phrases",
+                    "explanation": "The main imToken mobile app recovers via mnemonic phrase only; the guardian-key system exists only in the separate imToken Web beta."
+                  }
+                }
+              ]
+            },
+            "passkeyRecovery": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.token.im/hc/en-us/articles/50025057613977-Lost-Your-Passkey-Here-s-How-to-Recover-Your-Account",
+                    "explanation": "imToken offers a passkey-based account mode where wallets are accessed and recovered via FIDO/WebAuthn passkeys, with a dedicated passkey-recovery help article."
+                  }
+                }
+              ]
+            },
             "emergencyKit": null,
             "recoveryRehearsal": null
           },
@@ -21918,7 +22578,17 @@
               "explanation": "imToken homepage provides Discord, feedback email, and Help Center links.",
               "url": "https://token.im/"
             },
-            "liveChat": null,
+            "liveChat": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.token.im/hc/en-us",
+                    "explanation": "imToken provides ticket-based and email support only; no real-time live chat with human agents."
+                  }
+                }
+              ]
+            },
             "emailSupport": {
               "$call": "supported",
               "args": [
@@ -21930,7 +22600,17 @@
                 }
               ]
             },
-            "aiSupport": null,
+            "aiSupport": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.token.im/hc/en-us",
+                    "explanation": "imToken support is via in-app 'Support & Feedback' or email; no AI chatbot is mentioned."
+                  }
+                }
+              ]
+            },
             "publishedSla": null,
             "inAppHelpCenter": {
               "$call": "supported",
@@ -21944,7 +22624,17 @@
               ]
             },
             "transactionTroubleshooting": null,
-            "scamRecoveryGuidance": null
+            "scamRecoveryGuidance": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.token.im/hc/en-us/articles/115002091853-What-should-I-do-if-my-tokens-are-stolen",
+                    "explanation": "imToken publishes a dedicated 'What should I do if my tokens are stolen?' article with explicit victim steps (move remaining tokens, file a police report)."
+                  }
+                }
+              ]
+            }
           },
           "developerOffering": {
             "ref": {
@@ -24825,7 +25515,17 @@
                 }
               ]
             },
-            "passkeyRecovery": null,
+            "passkeyRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.metamask.io/tutorials/use-passkey-as-backup-signer/",
+                    "explanation": "MetaMask's passkey support exists only as a developer SDK tutorial; the standard end-user wallet does not offer passkey-based recovery."
+                  }
+                }
+              ]
+            },
             "emergencyKit": null,
             "recoveryRehearsal": null
           },
@@ -25220,7 +25920,17 @@
               "explanation": "MetaMask source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://metamask.io"
             },
-            "liveChat": null,
+            "liveChat": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.metamask.io/start/how-to-contact-metamask-support/",
+                    "explanation": "After Fin (the AI bot) handles initial queries, MetaMask connects users with live human support agents for unresolved issues."
+                  }
+                }
+              ]
+            },
             "emailSupport": {
               "$call": "supported",
               "args": [
@@ -25232,7 +25942,17 @@
                 }
               ]
             },
-            "aiSupport": null,
+            "aiSupport": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.metamask.io/start/how-to-contact-metamask-support/",
+                    "explanation": "MetaMask's support page confirms 'Fin, our support bot' is the first layer of live chat support before escalating to human agents."
+                  }
+                }
+              ]
+            },
             "publishedSla": null,
             "inAppHelpCenter": {
               "$call": "supported",
@@ -26430,7 +27150,17 @@
                 }
               ]
             },
-            "passkeyRecovery": null,
+            "passkeyRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.mtpelerin.com/support",
+                    "explanation": "Bridge Wallet support describes only password and secret-phrase recovery; no passkey/WebAuthn feature is documented."
+                  }
+                }
+              ]
+            },
             "emergencyKit": null,
             "recoveryRehearsal": null
           },
@@ -26747,7 +27477,17 @@
               "explanation": "Bridge Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://www.mtpelerin.com/"
             },
-            "liveChat": null,
+            "liveChat": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.mtpelerin.com/support",
+                    "explanation": "Mt Pelerin support is limited to FAQ articles and a contact form/email; no live chat with human agents."
+                  }
+                }
+              ]
+            },
             "emailSupport": {
               "$call": "supported",
               "args": [
@@ -26759,7 +27499,17 @@
                 }
               ]
             },
-            "aiSupport": null,
+            "aiSupport": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.mtpelerin.com/support",
+                    "explanation": "Mt Pelerin's support offers an FAQ and email/contact form only; no AI chatbot is present."
+                  }
+                }
+              ]
+            },
             "publishedSla": null,
             "inAppHelpCenter": {
               "$call": "supported",
@@ -26783,7 +27533,17 @@
                 }
               ]
             },
-            "scamRecoveryGuidance": null
+            "scamRecoveryGuidance": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.mtpelerin.com/blog/how-to-stay-safe-in-crypto",
+                    "explanation": "Mt Pelerin's scam article is prevention-focused; it warns against recovery scammers but provides no dedicated victim recovery flow."
+                  }
+                }
+              ]
+            }
           },
           "developerOffering": {
             "ref": {
@@ -28366,10 +29126,50 @@
                 }
               ]
             },
-            "cloudBackup": null,
-            "socialRecovery": null,
-            "guardianRecovery": null,
-            "passkeyRecovery": null,
+            "cloudBackup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.nu.fi/support/solutions/articles/80001148285-back-up-or-restore-your-wallet",
+                    "explanation": "NuFi discourages storing the recovery phrase in the cloud and supports only offline backup or a downloaded backup file."
+                  }
+                }
+              ]
+            },
+            "socialRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.nu.fi/support/solutions/articles/80001148285-back-up-or-restore-your-wallet",
+                    "explanation": "NuFi recovery is seed-phrase only; no social recovery via trusted parties is offered."
+                  }
+                }
+              ]
+            },
+            "guardianRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.nu.fi/support/solutions/articles/80001148285-back-up-or-restore-your-wallet",
+                    "explanation": "NuFi recovery is exclusively via a 24-word recovery phrase; no guardian-based recovery is mentioned."
+                  }
+                }
+              ]
+            },
+            "passkeyRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.nu.fi/support/solutions/articles/80001070723-create-a-seedless-wallet-using-a-social-account-like-google",
+                    "explanation": "NuFi uses Web3Auth social login and a 24-word backup phrase; no WebAuthn passkey recovery mechanism is documented."
+                  }
+                }
+              ]
+            },
             "emergencyKit": null,
             "recoveryRehearsal": null
           },
@@ -28676,7 +29476,17 @@
               "explanation": "NuFi source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://nu.fi"
             },
-            "liveChat": null,
+            "liveChat": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.nu.fi/support/home",
+                    "explanation": "NuFi offers ticket responses and Discord community support; no real-time live chat with human agents."
+                  }
+                }
+              ]
+            },
             "emailSupport": {
               "$call": "supported",
               "args": [
@@ -28688,7 +29498,17 @@
                 }
               ]
             },
-            "aiSupport": null,
+            "aiSupport": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.nu.fi/support/home",
+                    "explanation": "NuFi's support lists Discord, tickets, email, and knowledge base only; no AI chatbot is present."
+                  }
+                }
+              ]
+            },
             "publishedSla": null,
             "inAppHelpCenter": {
               "$call": "supported",
@@ -28712,7 +29532,17 @@
                 }
               ]
             },
-            "scamRecoveryGuidance": null
+            "scamRecoveryGuidance": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://nu.fi/blog/how-to-protect-your-digital-assets-and-secure-your-funds",
+                    "explanation": "NuFi's security content is purely preventive; no article guides users on what to do after funds are stolen or a wallet is compromised."
+                  }
+                }
+              ]
+            }
           },
           "developerOffering": {
             "ref": {
@@ -29982,9 +30812,39 @@
                 }
               ]
             },
-            "socialRecovery": null,
-            "guardianRecovery": null,
-            "passkeyRecovery": null,
+            "socialRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://web3.okx.com/learn/everything-you-need-to-know-about-okx-wallets-smart-account",
+                    "explanation": "OKX Smart Account's social recovery (trusted-person selection) is a planned feature marked 'coming soon' and not currently available."
+                  }
+                }
+              ]
+            },
+            "guardianRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://web3.okx.com/learn/everything-you-need-to-know-about-okx-wallets-smart-account",
+                    "explanation": "OKX Smart Account's guardian-based social recovery is described as 'coming soon' and is not yet live for users."
+                  }
+                }
+              ]
+            },
+            "passkeyRecovery": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.okx.com/en-us/help/cedefi-passkey-faq",
+                    "explanation": "OKX's DEX wallet is secured by passkeys that sync across devices via iCloud or Google accounts, with email-based passkey reset as the recovery path."
+                  }
+                }
+              ]
+            },
             "emergencyKit": null,
             "recoveryRehearsal": null
           },
@@ -32157,9 +33017,39 @@
                 }
               ]
             },
-            "socialRecovery": null,
-            "guardianRecovery": null,
-            "passkeyRecovery": null,
+            "socialRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.phantom.com/hc/en-us/articles/45135465489555-Create-a-new-Phantom-wallet-with-a-recovery-phrase",
+                    "explanation": "Phantom recovery is seed-phrase or social-login + PIN; no social recovery via trusted guardians is offered."
+                  }
+                }
+              ]
+            },
+            "guardianRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.phantom.com/hc/en-us/articles/45135465489555-Create-a-new-Phantom-wallet-with-a-recovery-phrase",
+                    "explanation": "Phantom recovers via 12-word seed phrase; no guardian-based recovery mechanism is documented."
+                  }
+                }
+              ]
+            },
+            "passkeyRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.phantom.com/hc/en-us/articles/48398730321811-Can-I-restore-Phantom-from-iCloud-or-Google-Drive",
+                    "explanation": "Phantom's help docs describe seed phrase and social-login recovery only, not WebAuthn passkeys."
+                  }
+                }
+              ]
+            },
             "emergencyKit": null,
             "recoveryRehearsal": null
           },
@@ -32572,7 +33462,17 @@
               "explanation": "Phantom source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://phantom.com"
             },
-            "liveChat": null,
+            "liveChat": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.phantom.com/hc/en-us/articles/42012633428115-What-to-expect-from-Phantom-Support",
+                    "explanation": "Phantom's support flows through the Sarah chatbot which opens tickets with email follow-up; no synchronous human live chat."
+                  }
+                }
+              ]
+            },
             "emailSupport": {
               "$call": "supported",
               "args": [
@@ -32584,7 +33484,17 @@
                 }
               ]
             },
-            "aiSupport": null,
+            "aiSupport": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.phantom.com/hc/en-us/articles/6953810233619-Get-help-from-Phantom",
+                    "explanation": "Phantom's help page confirms an AI chatbot named Sarah handles support requests on help.phantom.com and in-app."
+                  }
+                }
+              ]
+            },
             "publishedSla": null,
             "inAppHelpCenter": {
               "$call": "supported",
@@ -33969,7 +34879,17 @@
               "explanation": "PillarX source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://pillarx.app"
             },
-            "liveChat": null,
+            "liveChat": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://pillar.fi/",
+                    "explanation": "PillarX provides community support via Discord and email; no dedicated real-time live chat with human agents."
+                  }
+                }
+              ]
+            },
             "emailSupport": {
               "$call": "supported",
               "args": [
@@ -33981,7 +34901,17 @@
                 }
               ]
             },
-            "aiSupport": null,
+            "aiSupport": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://pillar.fi/",
+                    "explanation": "PillarX support is via Discord and email; no AI chatbot is offered."
+                  }
+                }
+              ]
+            },
             "publishedSla": null,
             "inAppHelpCenter": {
               "$call": "supported",
@@ -34005,7 +34935,17 @@
                 }
               ]
             },
-            "scamRecoveryGuidance": null
+            "scamRecoveryGuidance": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://blog.pillarx.app/",
+                    "explanation": "PillarX's public documentation is product blog posts and feature announcements; no scam recovery or victim support content was found."
+                  }
+                }
+              ]
+            }
           },
           "developerOffering": {
             "ref": {
@@ -35810,7 +36750,17 @@
                 }
               ]
             },
-            "passkeyRecovery": null,
+            "passkeyRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/RabbyHub/Rabby/issues/2965",
+                    "explanation": "Rabby recovery relies on seed phrase and encrypted backup files; no passkey/WebAuthn recovery is documented."
+                  }
+                }
+              ]
+            },
             "emergencyKit": null,
             "recoveryRehearsal": null
           },
@@ -36179,7 +37129,17 @@
               "explanation": "Rabby Help Center includes support articles and contact options including email/support request/direct message.",
               "url": "https://support.rabby.io/hc/en-us"
             },
-            "liveChat": null,
+            "liveChat": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.rabby.io/hc/en-us",
+                    "explanation": "Rabby support uses asynchronous DeBank messaging and email; no real-time live chat with human agents."
+                  }
+                }
+              ]
+            },
             "emailSupport": {
               "$call": "supported",
               "args": [
@@ -36191,7 +37151,17 @@
                 }
               ]
             },
-            "aiSupport": null,
+            "aiSupport": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.rabby.io/hc/en-us",
+                    "explanation": "Rabby's help center provides guides and FAQs with contact via DeBank messaging or email; no AI chatbot is mentioned."
+                  }
+                }
+              ]
+            },
             "publishedSla": null,
             "inAppHelpCenter": null,
             "transactionTroubleshooting": {
@@ -37389,9 +38359,39 @@
                 }
               ]
             },
-            "socialRecovery": null,
-            "guardianRecovery": null,
-            "passkeyRecovery": null,
+            "socialRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://rainbow.me/support/safety/protect-your-wallet",
+                    "explanation": "Rainbow recovery relies on an encrypted cloud-backed seed phrase; there is no social recovery via trusted human guardians."
+                  }
+                }
+              ]
+            },
+            "guardianRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://rainbow.me/support/safety/protect-your-wallet",
+                    "explanation": "Rainbow recovery is via iCloud/Google Drive cloud backup or written seed phrase; no guardian designation for recovery is offered."
+                  }
+                }
+              ]
+            },
+            "passkeyRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://rainbow.me/support/app/the-importance-of-backups",
+                    "explanation": "Rainbow's backup documentation describes iCloud/Google Drive seed-phrase backup and manual backup only; no passkey/WebAuthn recovery."
+                  }
+                }
+              ]
+            },
             "emergencyKit": null,
             "recoveryRehearsal": null
           },
@@ -37694,7 +38694,17 @@
               "explanation": "Rainbow source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://rainbow.me"
             },
-            "liveChat": null,
+            "liveChat": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://rainbow.me/support",
+                    "explanation": "Rainbow provides only email and social-media support; no real-time live chat with human agents."
+                  }
+                }
+              ]
+            },
             "emailSupport": {
               "$call": "supported",
               "args": [
@@ -37706,7 +38716,17 @@
                 }
               ]
             },
-            "aiSupport": null,
+            "aiSupport": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://rainbow.me/support",
+                    "explanation": "Rainbow's support offers email and Twitter; no AI chatbot is present."
+                  }
+                }
+              ]
+            },
             "publishedSla": null,
             "inAppHelpCenter": {
               "$call": "supported",
@@ -39076,7 +40096,17 @@
                 }
               ]
             },
-            "cloudBackup": null,
+            "cloudBackup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://safe.global/mobile",
+                    "explanation": "Safe is a multisig smart contract wallet where recovery works via signer rotation; no iCloud/Google Drive cloud backup is documented."
+                  }
+                }
+              ]
+            },
             "socialRecovery": {
               "$call": "supported",
               "args": [
@@ -39446,7 +40476,17 @@
               "explanation": "Safe source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://safe.global"
             },
-            "liveChat": null,
+            "liveChat": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.safe.global/",
+                    "explanation": "Safe's help center provides a knowledge base and AI chatbot; no live human-agent chat is mentioned."
+                  }
+                }
+              ]
+            },
             "emailSupport": {
               "$call": "supported",
               "args": [
@@ -39458,7 +40498,17 @@
                 }
               ]
             },
-            "aiSupport": null,
+            "aiSupport": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.safe.global/",
+                    "explanation": "Safe's help center (Pylon-powered) provides an AI chatbot, corroborated by a 2026 third-party review describing it as quick and helpful."
+                  }
+                }
+              ]
+            },
             "publishedSla": null,
             "inAppHelpCenter": {
               "$call": "supported",
@@ -39482,7 +40532,17 @@
                 }
               ]
             },
-            "scamRecoveryGuidance": null
+            "scamRecoveryGuidance": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.safe.global/en",
+                    "explanation": "Safe's help center covers address poisoning and transaction scanning, but no article specifically guides users who have already been scammed or drained."
+                  }
+                }
+              ]
+            }
           },
           "developerOffering": {
             "ref": {
@@ -41030,9 +42090,39 @@
                 }
               ]
             },
-            "socialRecovery": null,
-            "guardianRecovery": null,
-            "passkeyRecovery": null,
+            "socialRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.trustwallet.com/support/solutions/articles/67000734567-trust-wallet-recovery-process-explained",
+                    "explanation": "Trust Wallet uses seed phrases as the sole recovery mechanism; no social recovery via trusted parties is offered."
+                  }
+                }
+              ]
+            },
+            "guardianRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.trustwallet.com/support/solutions/articles/67000734567-trust-wallet-recovery-process-explained",
+                    "explanation": "Trust Wallet recovery is exclusively a 12-word seed phrase; no guardian-based recovery mechanism is documented."
+                  }
+                }
+              ]
+            },
+            "passkeyRecovery": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://trustwallet.com/blog/announcements/trust-wallet-swift-understanding-passkeys-and-recoverability",
+                    "explanation": "Trust Wallet SWIFT uses a biometric-backed passkey instead of a seed phrase, with passkeys syncing via iCloud or Google Password Manager for recovery."
+                  }
+                }
+              ]
+            },
             "emergencyKit": null,
             "recoveryRehearsal": null
           },
@@ -41425,7 +42515,17 @@
               "explanation": "Trust Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://trustwallet.com/"
             },
-            "liveChat": null,
+            "liveChat": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://kodif.ai/case-studies/trust-wallet/",
+                    "explanation": "Trust Wallet's AI chatbot escalates complex cases to human staff asynchronously via ticket/email; no real-time human live chat is described."
+                  }
+                }
+              ]
+            },
             "emailSupport": {
               "$call": "supported",
               "args": [
@@ -41437,7 +42537,17 @@
                 }
               ]
             },
-            "aiSupport": null,
+            "aiSupport": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://kodif.ai/case-studies/trust-wallet/",
+                    "explanation": "Trust Wallet implemented Kodif's GenAI Autopilot, an AI chatbot that draws from the Help Center and handles ~90% of support tickets before escalating."
+                  }
+                }
+              ]
+            },
             "publishedSla": null,
             "inAppHelpCenter": {
               "$call": "supported",
@@ -42718,10 +43828,50 @@
                 }
               ]
             },
-            "cloudBackup": null,
-            "socialRecovery": null,
-            "guardianRecovery": null,
-            "passkeyRecovery": null,
+            "cloudBackup": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.uniswap.org/hc/en-us/articles/11382985633421-How-to-back-up-your-recovery-phrase-on-iCloud-or-Google-Drive",
+                    "explanation": "Uniswap Wallet supports encrypted backup of the recovery phrase to iCloud or Google Drive, with a dedicated help article."
+                  }
+                }
+              ]
+            },
+            "socialRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.uniswap.org/hc/en-us/sections/11302223905677-Wallet-Security-Recovery-Phrase",
+                    "explanation": "Uniswap Wallet supports seed phrase and encrypted cloud backup only; social recovery via trusted guardians is not offered."
+                  }
+                }
+              ]
+            },
+            "guardianRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.uniswap.org/hc/en-us/sections/11302223905677-Wallet-Security-Recovery-Phrase",
+                    "explanation": "Uniswap Wallet recovery is seed-phrase based (manual or encrypted cloud backup); no guardian-based recovery is described."
+                  }
+                }
+              ]
+            },
+            "passkeyRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.uniswap.org/hc/en-us/articles/28278904584077-Uniswap-Wallet-Security-Measures",
+                    "explanation": "Uniswap Wallet recovery requires the seed phrase (with iCloud/Google Drive backup); no WebAuthn passkey recovery mechanism is documented."
+                  }
+                }
+              ]
+            },
             "emergencyKit": null,
             "recoveryRehearsal": null
           },
@@ -43078,7 +44228,17 @@
               "explanation": "Uniswap Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://wallet.uniswap.org/"
             },
-            "liveChat": null,
+            "liveChat": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.uniswap.org/hc/en-us",
+                    "explanation": "Uniswap support is provided via AI chatbot and help articles; no live chat with human agents is referenced."
+                  }
+                }
+              ]
+            },
             "emailSupport": {
               "$call": "supported",
               "args": [
@@ -43090,7 +44250,17 @@
                 }
               ]
             },
-            "aiSupport": null,
+            "aiSupport": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.uniswap.org/hc/en-us/articles/30935100859661-Uniswap-Labs-Terms-of-Service",
+                    "explanation": "Uniswap Labs' Terms of Service references an AI-powered 'Support Chatbot' available to assist users with general questions and navigation."
+                  }
+                }
+              ]
+            },
             "publishedSla": null,
             "inAppHelpCenter": {
               "$call": "supported",
@@ -43114,7 +44284,17 @@
                 }
               ]
             },
-            "scamRecoveryGuidance": null
+            "scamRecoveryGuidance": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.uniswap.org/hc/en-us/categories/32456997609229-Crypto-Security-and-Scams",
+                    "explanation": "Uniswap's security/scams category covers scam types and a 'Reporting scams' article that just directs victims to authorities; no substantive post-scam recovery guidance."
+                  }
+                }
+              ]
+            }
           },
           "developerOffering": {
             "ref": {
@@ -44372,10 +45552,50 @@
                 }
               ]
             },
-            "cloudBackup": null,
-            "socialRecovery": null,
-            "guardianRecovery": null,
-            "passkeyRecovery": null,
+            "cloudBackup": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.zerion.io/en/articles/8386672-back-up-your-recovery-phrase-to-icloud-or-google-drive",
+                    "explanation": "Zerion's mobile app offers encrypted backup of the recovery phrase to iCloud (iOS) or Google Drive (Android)."
+                  }
+                }
+              ]
+            },
+            "socialRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.zerion.io/en/articles/6251772-keep-your-recovery-phrase-safe-why-it-matters-and-how-to-secure-it",
+                    "explanation": "Zerion recovery is seed-phrase only with no social recovery via trusted parties."
+                  }
+                }
+              ]
+            },
+            "guardianRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.zerion.io/en/articles/6251772-keep-your-recovery-phrase-safe-why-it-matters-and-how-to-secure-it",
+                    "explanation": "Zerion is a self-custodial EOA wallet; recovery is seed-phrase only with no guardian-based recovery."
+                  }
+                }
+              ]
+            },
+            "passkeyRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://zerion.io/security",
+                    "explanation": "Zerion's security docs describe seed phrase and cloud backup recovery only; no passkey/WebAuthn-based recovery."
+                  }
+                }
+              ]
+            },
             "emergencyKit": null,
             "recoveryRehearsal": null
           },
@@ -44778,7 +45998,17 @@
               "explanation": "Zerion source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://zerion.io"
             },
-            "liveChat": null,
+            "liveChat": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.zerion.io/en/articles/4055266-contact-zerion-support",
+                    "explanation": "Zerion's support article instructs users to use the chat widget (web) or Settings > Support & feedback > Chat with us (mobile) to reach human agents."
+                  }
+                }
+              ]
+            },
             "emailSupport": {
               "$call": "supported",
               "args": [
@@ -44790,7 +46020,17 @@
                 }
               ]
             },
-            "aiSupport": null,
+            "aiSupport": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.zerion.io/en/articles/4055266-contact-zerion-support",
+                    "explanation": "Zerion's support contact page names human agents behind the chat widget with no AI chatbot layer mentioned."
+                  }
+                }
+              ]
+            },
             "publishedSla": null,
             "inAppHelpCenter": {
               "$call": "supported",
@@ -44814,7 +46054,17 @@
                 }
               ]
             },
-            "scamRecoveryGuidance": null
+            "scamRecoveryGuidance": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.zerion.io/en/articles/4166284-protect-yourself-against-these-common-defi-scams",
+                    "explanation": "Zerion's scam content is prevention-focused and it states it cannot cancel or refund transactions; no dedicated victim recovery guidance."
+                  }
+                }
+              ]
+            }
           },
           "developerOffering": {
             "ref": {
@@ -46038,10 +47288,50 @@
                 }
               ]
             },
-            "cloudBackup": null,
-            "socialRecovery": null,
-            "guardianRecovery": null,
-            "passkeyRecovery": null,
+            "cloudBackup": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.zeusln.app/for-users/embedded-node/backup-and-recovery/",
+                    "explanation": "Zeus uses an aezeed 24-word seed phrase and LND Static Channel Backup; no native iCloud/Google Drive cloud backup is documented."
+                  }
+                }
+              ]
+            },
+            "socialRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.zeusln.app/for-users/embedded-node/backup-and-recovery/",
+                    "explanation": "Zeus is a Bitcoin/Lightning wallet with aezeed seed phrase recovery only; no social recovery via trusted parties is offered."
+                  }
+                }
+              ]
+            },
+            "guardianRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.zeusln.app/for-users/embedded-node/backup-and-recovery/",
+                    "explanation": "Zeus (Bitcoin/Lightning, LND-based) uses a 24-word aezeed seed phrase; no guardian-based recovery mechanism is described."
+                  }
+                }
+              ]
+            },
+            "passkeyRecovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://zeusln.com/wallet",
+                    "explanation": "Zeus is a Bitcoin/Lightning wallet using aezeed seed phrases; no passkey/WebAuthn recovery feature is documented."
+                  }
+                }
+              ]
+            },
             "emergencyKit": null,
             "recoveryRehearsal": null
           },
@@ -46374,7 +47664,17 @@
               "explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://github.com/greekfetacheese/zeus"
             },
-            "liveChat": null,
+            "liveChat": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.zeusln.app/",
+                    "explanation": "Zeus provides community-only support through Telegram and GitHub; no real-time live chat with human agents."
+                  }
+                }
+              ]
+            },
             "emailSupport": {
               "$call": "supported",
               "args": [
@@ -46386,9 +47686,29 @@
                 }
               ]
             },
-            "aiSupport": null,
+            "aiSupport": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.zeusln.app/",
+                    "explanation": "Zeus lists Telegram, Twitter, developer Slack, and GitHub as support channels; no AI chatbot is offered."
+                  }
+                }
+              ]
+            },
             "publishedSla": null,
-            "inAppHelpCenter": null,
+            "inAppHelpCenter": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.zeusln.app/",
+                    "explanation": "Zeus directs users to external documentation and Telegram; no in-app help center accessible from within the app is mentioned."
+                  }
+                }
+              ]
+            },
             "transactionTroubleshooting": {
               "$call": "supported",
               "args": [
@@ -46400,7 +47720,17 @@
                 }
               ]
             },
-            "scamRecoveryGuidance": null
+            "scamRecoveryGuidance": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.zeusln.app",
+                    "explanation": "Zeus documentation covers local wallets, remote connections, and self-custody but no guidance for users who have been scammed or lost funds."
+                  }
+                }
+              ]
+            }
           },
           "developerOffering": {
             "ref": {

@@ -882,7 +882,17 @@
               }
             ]
           },
-          "passkeyRecovery": null,
+          "passkeyRecovery": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/argentlabs/argent-contracts-starknet/blob/main/docs/signers_and_signatures.md",
+                  "explanation": "Argent's contract documentation lists WebAuthn as a supported signer type, allowing passkeys (secure enclave / iCloud Keychain) to control the wallet."
+                }
+              }
+            ]
+          },
           "emergencyKit": {
             "$call": "supported",
             "args": [
@@ -1145,7 +1155,17 @@
             "explanation": "Argent source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://www.argent.xyz/"
           },
-          "liveChat": null,
+          "liveChat": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://ready.co/faq",
+                  "explanation": "Argent/Ready support is email-based with a help center; no live chat with human agents."
+                }
+              }
+            ]
+          },
           "emailSupport": {
             "$call": "supported",
             "args": [
@@ -1157,7 +1177,17 @@
               }
             ]
           },
-          "aiSupport": null,
+          "aiSupport": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://ready.co/faq",
+                  "explanation": "Argent (Ready) directs users to email support and a help center — no AI chatbot is mentioned."
+                }
+              }
+            ]
+          },
           "publishedSla": null,
           "inAppHelpCenter": {
             "$call": "supported",
@@ -1181,7 +1211,17 @@
               }
             ]
           },
-          "scamRecoveryGuidance": null
+          "scamRecoveryGuidance": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.argent.xyz/hc/en-us",
+                  "explanation": "Argent's support covers wallet recovery, lost/stolen phone, and unrecognized tokens, but has no dedicated article for users who have been scammed or lost funds."
+                }
+              }
+            ]
+          }
         },
         "developerOffering": {
           "ref": {

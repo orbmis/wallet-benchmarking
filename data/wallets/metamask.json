@@ -1365,7 +1365,17 @@
               }
             ]
           },
-          "passkeyRecovery": null,
+          "passkeyRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.metamask.io/tutorials/use-passkey-as-backup-signer/",
+                  "explanation": "MetaMask's passkey support exists only as a developer SDK tutorial; the standard end-user wallet does not offer passkey-based recovery."
+                }
+              }
+            ]
+          },
           "emergencyKit": null,
           "recoveryRehearsal": null
         },
@@ -1760,7 +1770,17 @@
             "explanation": "MetaMask source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://metamask.io"
           },
-          "liveChat": null,
+          "liveChat": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.metamask.io/start/how-to-contact-metamask-support/",
+                  "explanation": "After Fin (the AI bot) handles initial queries, MetaMask connects users with live human support agents for unresolved issues."
+                }
+              }
+            ]
+          },
           "emailSupport": {
             "$call": "supported",
             "args": [
@@ -1772,7 +1792,17 @@
               }
             ]
           },
-          "aiSupport": null,
+          "aiSupport": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.metamask.io/start/how-to-contact-metamask-support/",
+                  "explanation": "MetaMask's support page confirms 'Fin, our support bot' is the first layer of live chat support before escalating to human agents."
+                }
+              }
+            ]
+          },
           "publishedSla": null,
           "inAppHelpCenter": {
             "$call": "supported",

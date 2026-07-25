@@ -919,10 +919,50 @@
               }
             ]
           },
-          "cloudBackup": null,
-          "socialRecovery": null,
-          "guardianRecovery": null,
-          "passkeyRecovery": null,
+          "cloudBackup": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/50025057613977-Lost-Your-Passkey-Here-s-How-to-Recover-Your-Account",
+                  "explanation": "imToken's passkey accounts sync the encrypted passkey to iCloud Keychain or Google Password Manager, enabling cloud-based wallet recovery across devices."
+                }
+              }
+            ]
+          },
+          "socialRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/360002074233-What-is-mnemonic-phrase-and-how-to-recover-a-wallet-by-importing-mnemonic-phrases",
+                  "explanation": "The core imToken mobile app is a mnemonic wallet with no social recovery; smart-account social recovery exists only in the separate imToken Web beta."
+                }
+              }
+            ]
+          },
+          "guardianRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/360002074233-What-is-mnemonic-phrase-and-how-to-recover-a-wallet-by-importing-mnemonic-phrases",
+                  "explanation": "The main imToken mobile app recovers via mnemonic phrase only; the guardian-key system exists only in the separate imToken Web beta."
+                }
+              }
+            ]
+          },
+          "passkeyRecovery": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/50025057613977-Lost-Your-Passkey-Here-s-How-to-Recover-Your-Account",
+                  "explanation": "imToken offers a passkey-based account mode where wallets are accessed and recovered via FIDO/WebAuthn passkeys, with a dedicated passkey-recovery help article."
+                }
+              }
+            ]
+          },
           "emergencyKit": null,
           "recoveryRehearsal": null
         },
@@ -1283,7 +1323,17 @@
             "explanation": "imToken homepage provides Discord, feedback email, and Help Center links.",
             "url": "https://token.im/"
           },
-          "liveChat": null,
+          "liveChat": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us",
+                  "explanation": "imToken provides ticket-based and email support only; no real-time live chat with human agents."
+                }
+              }
+            ]
+          },
           "emailSupport": {
             "$call": "supported",
             "args": [
@@ -1295,7 +1345,17 @@
               }
             ]
           },
-          "aiSupport": null,
+          "aiSupport": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us",
+                  "explanation": "imToken support is via in-app 'Support & Feedback' or email; no AI chatbot is mentioned."
+                }
+              }
+            ]
+          },
           "publishedSla": null,
           "inAppHelpCenter": {
             "$call": "supported",
@@ -1309,7 +1369,17 @@
             ]
           },
           "transactionTroubleshooting": null,
-          "scamRecoveryGuidance": null
+          "scamRecoveryGuidance": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/115002091853-What-should-I-do-if-my-tokens-are-stolen",
+                  "explanation": "imToken publishes a dedicated 'What should I do if my tokens are stolen?' article with explicit victim steps (move remaining tokens, file a police report)."
+                }
+              }
+            ]
+          }
         },
         "developerOffering": {
           "ref": {

@@ -910,7 +910,17 @@
             "url": "https://elytro.com/"
           },
           "seedOnlyRecovery": null,
-          "cloudBackup": null,
+          "cloudBackup": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/docs/security",
+                  "explanation": "Elytro's security docs list Email OTP and Social Recovery as recovery options; no iCloud/Google Drive cloud backup is mentioned."
+                }
+              }
+            ]
+          },
           "socialRecovery": {
             "$call": "supported",
             "args": [
@@ -933,7 +943,17 @@
               }
             ]
           },
-          "passkeyRecovery": null,
+          "passkeyRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/docs/security",
+                  "explanation": "Elytro's security docs list Email OTP and Social Recovery as recovery methods; no passkey/WebAuthn recovery is mentioned."
+                }
+              }
+            ]
+          },
           "emergencyKit": null,
           "recoveryRehearsal": null
         },
@@ -1236,7 +1256,17 @@
             "explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://elytro.com"
           },
-          "liveChat": null,
+          "liveChat": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/faq",
+                  "explanation": "Elytro relies on community channels and email; no live chat with human agents."
+                }
+              }
+            ]
+          },
           "emailSupport": {
             "$call": "supported",
             "args": [
@@ -1248,7 +1278,17 @@
               }
             ]
           },
-          "aiSupport": null,
+          "aiSupport": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/faq",
+                  "explanation": "Elytro's FAQ lists documentation, GitHub, X, and Telegram as support channels; no AI chatbot is present."
+                }
+              }
+            ]
+          },
           "publishedSla": null,
           "inAppHelpCenter": {
             "$call": "supported",
@@ -1272,7 +1312,17 @@
               }
             ]
           },
-          "scamRecoveryGuidance": null
+          "scamRecoveryGuidance": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/faq",
+                  "explanation": "Elytro's FAQ covers product features and social recovery setup but no guidance for users who have already been scammed."
+                }
+              }
+            ]
+          }
         },
         "developerOffering": {
           "ref": {

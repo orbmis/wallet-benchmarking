@@ -944,10 +944,50 @@
               }
             ]
           },
-          "cloudBackup": null,
-          "socialRecovery": null,
-          "guardianRecovery": null,
-          "passkeyRecovery": null,
+          "cloudBackup": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.nu.fi/support/solutions/articles/80001148285-back-up-or-restore-your-wallet",
+                  "explanation": "NuFi discourages storing the recovery phrase in the cloud and supports only offline backup or a downloaded backup file."
+                }
+              }
+            ]
+          },
+          "socialRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.nu.fi/support/solutions/articles/80001148285-back-up-or-restore-your-wallet",
+                  "explanation": "NuFi recovery is seed-phrase only; no social recovery via trusted parties is offered."
+                }
+              }
+            ]
+          },
+          "guardianRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.nu.fi/support/solutions/articles/80001148285-back-up-or-restore-your-wallet",
+                  "explanation": "NuFi recovery is exclusively via a 24-word recovery phrase; no guardian-based recovery is mentioned."
+                }
+              }
+            ]
+          },
+          "passkeyRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.nu.fi/support/solutions/articles/80001070723-create-a-seedless-wallet-using-a-social-account-like-google",
+                  "explanation": "NuFi uses Web3Auth social login and a 24-word backup phrase; no WebAuthn passkey recovery mechanism is documented."
+                }
+              }
+            ]
+          },
           "emergencyKit": null,
           "recoveryRehearsal": null
         },
@@ -1254,7 +1294,17 @@
             "explanation": "NuFi source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://nu.fi"
           },
-          "liveChat": null,
+          "liveChat": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.nu.fi/support/home",
+                  "explanation": "NuFi offers ticket responses and Discord community support; no real-time live chat with human agents."
+                }
+              }
+            ]
+          },
           "emailSupport": {
             "$call": "supported",
             "args": [
@@ -1266,7 +1316,17 @@
               }
             ]
           },
-          "aiSupport": null,
+          "aiSupport": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.nu.fi/support/home",
+                  "explanation": "NuFi's support lists Discord, tickets, email, and knowledge base only; no AI chatbot is present."
+                }
+              }
+            ]
+          },
           "publishedSla": null,
           "inAppHelpCenter": {
             "$call": "supported",
@@ -1290,7 +1350,17 @@
               }
             ]
           },
-          "scamRecoveryGuidance": null
+          "scamRecoveryGuidance": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://nu.fi/blog/how-to-protect-your-digital-assets-and-secure-your-funds",
+                  "explanation": "NuFi's security content is purely preventive; no article guides users on what to do after funds are stolen or a wallet is compromised."
+                }
+              }
+            ]
+          }
         },
         "developerOffering": {
           "ref": {

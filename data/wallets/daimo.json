@@ -1038,9 +1038,39 @@
             "url": "https://daimo.com"
           },
           "seedOnlyRecovery": null,
-          "cloudBackup": null,
-          "socialRecovery": null,
-          "guardianRecovery": null,
+          "cloudBackup": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/daimo-eth/daimo",
+                  "explanation": "Daimo stores keys in the Secure Enclave with passkey backups; it offers no discrete seed/wallet cloud backup to iCloud/Google Drive as a user feature."
+                }
+              }
+            ]
+          },
+          "socialRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/daimo-eth/daimo",
+                  "explanation": "Daimo relies on device-bound passkeys and multi-device key management; no social recovery scheme with trusted parties is described."
+                }
+              }
+            ]
+          },
+          "guardianRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/daimo-eth/daimo",
+                  "explanation": "Daimo recovery uses additional device keys and passkey backups, not designated human guardians."
+                }
+              }
+            ]
+          },
           "passkeyRecovery": {
             "$call": "supported",
             "args": [
@@ -1386,7 +1416,17 @@
             "explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://daimo.com"
           },
-          "liveChat": null,
+          "liveChat": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.daimo.com/introduction",
+                  "explanation": "Daimo offers email-based support only; no real-time live chat with human agents."
+                }
+              }
+            ]
+          },
           "emailSupport": {
             "$call": "supported",
             "args": [
@@ -1398,7 +1438,17 @@
               }
             ]
           },
-          "aiSupport": null,
+          "aiSupport": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.daimo.com/introduction",
+                  "explanation": "Daimo's public pages show only email support and a Telegram channel; no AI chatbot is mentioned."
+                }
+              }
+            ]
+          },
           "publishedSla": null,
           "inAppHelpCenter": {
             "$call": "supported",
@@ -1422,7 +1472,17 @@
               }
             ]
           },
-          "scamRecoveryGuidance": null
+          "scamRecoveryGuidance": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.daimo.com/introduction",
+                  "explanation": "Daimo's documentation is developer/integration-focused with no content addressing scam recovery or guidance for users who have lost funds."
+                }
+              }
+            ]
+          }
         },
         "developerOffering": {
           "ref": {

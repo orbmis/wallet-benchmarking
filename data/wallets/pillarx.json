@@ -1135,7 +1135,17 @@
             "explanation": "PillarX source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://pillarx.app"
           },
-          "liveChat": null,
+          "liveChat": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://pillar.fi/",
+                  "explanation": "PillarX provides community support via Discord and email; no dedicated real-time live chat with human agents."
+                }
+              }
+            ]
+          },
           "emailSupport": {
             "$call": "supported",
             "args": [
@@ -1147,7 +1157,17 @@
               }
             ]
           },
-          "aiSupport": null,
+          "aiSupport": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://pillar.fi/",
+                  "explanation": "PillarX support is via Discord and email; no AI chatbot is offered."
+                }
+              }
+            ]
+          },
           "publishedSla": null,
           "inAppHelpCenter": {
             "$call": "supported",
@@ -1171,7 +1191,17 @@
               }
             ]
           },
-          "scamRecoveryGuidance": null
+          "scamRecoveryGuidance": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.pillarx.app/",
+                  "explanation": "PillarX's public documentation is product blog posts and feature announcements; no scam recovery or victim support content was found."
+                }
+              }
+            ]
+          }
         },
         "developerOffering": {
           "ref": {

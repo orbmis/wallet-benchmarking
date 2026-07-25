@@ -1083,8 +1083,28 @@
               }
             ]
           },
-          "socialRecovery": null,
-          "guardianRecovery": null,
+          "socialRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.coinbase.com/en/wallet/getting-started/smart-wallet",
+                  "explanation": "Base App smart wallet recovery relies on passkeys and a seed-phrase backup, not a trusted-guardian social-recovery scheme."
+                }
+              }
+            ]
+          },
+          "guardianRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.coinbase.com/en/wallet/getting-started/smart-wallet",
+                  "explanation": "Base App (Coinbase) smart wallet recovery uses passkeys and an optional seed phrase; no guardian-designation system is described."
+                }
+              }
+            ]
+          },
           "passkeyRecovery": {
             "$call": "supported",
             "args": [
@@ -1426,7 +1446,17 @@
             "explanation": "Base App source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://base.app/"
           },
-          "liveChat": null,
+          "liveChat": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.coinbase.com/en/base",
+                  "explanation": "Coinbase/Base app support offers live chat via 'Chat with Us' in the mobile app, reaching human agents after the virtual assistant."
+                }
+              }
+            ]
+          },
           "emailSupport": {
             "$call": "supported",
             "args": [
@@ -1438,7 +1468,17 @@
               }
             ]
           },
-          "aiSupport": null,
+          "aiSupport": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.coinbase.com/blog/coinbase-support-evolving-to-meet-your-needs",
+                  "explanation": "Coinbase (which operates the Base app) deployed an AI-powered virtual assistant as the first layer of support chat before escalating to human agents."
+                }
+              }
+            ]
+          },
           "publishedSla": null,
           "inAppHelpCenter": {
             "$call": "supported",
@@ -1462,7 +1502,17 @@
               }
             ]
           },
-          "scamRecoveryGuidance": null
+          "scamRecoveryGuidance": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.coinbase.com/en/dapps/getting-started/identifying-and-reporting-scams",
+                  "explanation": "Coinbase's help center states it cannot help recover dapp/Base wallet funds; the scam article covers prevention and reporting but not victim recovery steps."
+                }
+              }
+            ]
+          }
         },
         "developerOffering": {
           "ref": {

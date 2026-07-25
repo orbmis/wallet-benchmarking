@@ -1062,10 +1062,50 @@
               }
             ]
           },
-          "cloudBackup": null,
-          "socialRecovery": null,
-          "guardianRecovery": null,
-          "passkeyRecovery": null,
+          "cloudBackup": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.zerion.io/en/articles/8386672-back-up-your-recovery-phrase-to-icloud-or-google-drive",
+                  "explanation": "Zerion's mobile app offers encrypted backup of the recovery phrase to iCloud (iOS) or Google Drive (Android)."
+                }
+              }
+            ]
+          },
+          "socialRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.zerion.io/en/articles/6251772-keep-your-recovery-phrase-safe-why-it-matters-and-how-to-secure-it",
+                  "explanation": "Zerion recovery is seed-phrase only with no social recovery via trusted parties."
+                }
+              }
+            ]
+          },
+          "guardianRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.zerion.io/en/articles/6251772-keep-your-recovery-phrase-safe-why-it-matters-and-how-to-secure-it",
+                  "explanation": "Zerion is a self-custodial EOA wallet; recovery is seed-phrase only with no guardian-based recovery."
+                }
+              }
+            ]
+          },
+          "passkeyRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://zerion.io/security",
+                  "explanation": "Zerion's security docs describe seed phrase and cloud backup recovery only; no passkey/WebAuthn-based recovery."
+                }
+              }
+            ]
+          },
           "emergencyKit": null,
           "recoveryRehearsal": null
         },
@@ -1468,7 +1508,17 @@
             "explanation": "Zerion source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://zerion.io"
           },
-          "liveChat": null,
+          "liveChat": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.zerion.io/en/articles/4055266-contact-zerion-support",
+                  "explanation": "Zerion's support article instructs users to use the chat widget (web) or Settings > Support & feedback > Chat with us (mobile) to reach human agents."
+                }
+              }
+            ]
+          },
           "emailSupport": {
             "$call": "supported",
             "args": [
@@ -1480,7 +1530,17 @@
               }
             ]
           },
-          "aiSupport": null,
+          "aiSupport": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.zerion.io/en/articles/4055266-contact-zerion-support",
+                  "explanation": "Zerion's support contact page names human agents behind the chat widget with no AI chatbot layer mentioned."
+                }
+              }
+            ]
+          },
           "publishedSla": null,
           "inAppHelpCenter": {
             "$call": "supported",
@@ -1504,7 +1564,17 @@
               }
             ]
           },
-          "scamRecoveryGuidance": null
+          "scamRecoveryGuidance": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.zerion.io/en/articles/4166284-protect-yourself-against-these-common-defi-scams",
+                  "explanation": "Zerion's scam content is prevention-focused and it states it cannot cancel or refund transactions; no dedicated victim recovery guidance."
+                }
+              }
+            ]
+          }
         },
         "developerOffering": {
           "ref": {

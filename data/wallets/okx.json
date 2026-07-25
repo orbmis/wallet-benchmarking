@@ -1078,9 +1078,39 @@
               }
             ]
           },
-          "socialRecovery": null,
-          "guardianRecovery": null,
-          "passkeyRecovery": null,
+          "socialRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://web3.okx.com/learn/everything-you-need-to-know-about-okx-wallets-smart-account",
+                  "explanation": "OKX Smart Account's social recovery (trusted-person selection) is a planned feature marked 'coming soon' and not currently available."
+                }
+              }
+            ]
+          },
+          "guardianRecovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://web3.okx.com/learn/everything-you-need-to-know-about-okx-wallets-smart-account",
+                  "explanation": "OKX Smart Account's guardian-based social recovery is described as 'coming soon' and is not yet live for users."
+                }
+              }
+            ]
+          },
+          "passkeyRecovery": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.okx.com/en-us/help/cedefi-passkey-faq",
+                  "explanation": "OKX's DEX wallet is secured by passkeys that sync across devices via iCloud or Google accounts, with email-based passkey reset as the recovery path."
+                }
+              }
+            ]
+          },
           "emergencyKit": null,
           "recoveryRehearsal": null
         },
