@@ -20,9 +20,14 @@
   header .sub{color:var(--muted);font-size:12.5px}
   header .navlink{font-size:13px;text-decoration:none;background:var(--accentdim);border:1px solid var(--accent);color:#cfe0ff;border-radius:7px;padding:5px 11px}
   header .navlink:hover{background:#33457f}
-  .controls{display:flex;gap:18px;flex-wrap:wrap;padding:14px 20px;border-bottom:1px solid var(--line);background:var(--panel)}
+  .controls{display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start;padding:14px 20px;border-bottom:1px solid var(--line);background:var(--panel)}
   .ctl{display:flex;flex-direction:column;gap:5px}
   .ctl > label{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+  details.rivalsctl > summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:6px;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+  details.rivalsctl > summary::-webkit-details-marker{display:none}
+  details.rivalsctl > summary .chev{font-size:10px;color:var(--muted);transition:.15s}
+  details.rivalsctl[open] > summary .chev{transform:rotate(90deg)}
+  details.rivalsctl > .chipgroups{margin-top:9px}
   select,input[type=text]{background:var(--panel2);color:var(--txt);border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-size:13px}
   .chipgroups{display:flex;flex-direction:column;gap:9px}
   .chipgroup .grphead{font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:4px}
@@ -69,7 +74,7 @@
   .pill.unknown{background:var(--unknownbg);color:var(--muted)}
   .pill.na{background:transparent;color:#565b6b;border:1px dashed var(--line);font-weight:500}
   .pill.value{background:var(--valuebg);color:var(--valuetxt);font-weight:500}
-  .pill.diff{box-shadow:0 0 0 2px var(--warn)}
+  .pill.diff{box-shadow:0 0 0 1px var(--warn)}
   .legend{display:flex;gap:14px;padding:8px 20px;color:var(--muted);font-size:12px;flex-wrap:wrap;align-items:center;border-bottom:1px solid var(--line)}
   .legend .pill{cursor:default}
 
@@ -96,7 +101,7 @@
   .empty{padding:40px;text-align:center;color:var(--muted)}
 
   /* first-run help */
-  details.help{margin:14px 20px 0;background:var(--panel);border:1px solid var(--line);border-radius:10px}
+  details.help{margin:14px 20px 22px;background:var(--panel);border:1px solid var(--line);border-radius:10px}
   details.help > summary{cursor:pointer;list-style:none;padding:12px 16px;font-weight:600;display:flex;align-items:center;gap:8px}
   details.help > summary::-webkit-details-marker{display:none}
   details.help > summary .chev{color:var(--muted);transition:.15s;font-size:12px}
@@ -185,10 +190,10 @@
     <label>Baseline wallet</label>
     <select id="baseline"></select>
   </div>
-  <div class="ctl" style="flex:1">
-    <label>Wallets to compare</label>
+  <details class="ctl rivalsctl" style="flex:1">
+    <summary><span class="chev">▶</span> Wallets to compare</summary>
     <div class="chipgroups" id="rivalChips"></div>
-  </div>
+  </details>
   <div class="ctl">
     <label>Platform</label>
     <select id="variant">
