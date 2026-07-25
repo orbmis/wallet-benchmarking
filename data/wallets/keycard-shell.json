@@ -203,7 +203,8 @@
                 }
               }
             ]
-          }
+          },
+          "defaultFungibleTokenTransferMode": "PUBLIC"
         }
       },
       "profile": "WalletProfile.GENERIC",
@@ -526,6 +527,19 @@
               }
             ]
           }
+        }
+      },
+      "addressResolution": {
+        "nonChainSpecificEnsResolution": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://keycard.tech/pages/keycard-shell",
+                "explanation": "Keycard Shell is an air-gapped signer relying on external wallet apps for transaction construction; no ENS resolution is documented for its software."
+              }
+            }
+          ]
         }
       }
     },

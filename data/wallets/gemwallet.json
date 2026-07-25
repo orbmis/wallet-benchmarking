@@ -843,8 +843,28 @@
               }
             ]
           },
-          "applePay": null,
-          "googlePay": null,
+          "applePay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://gemwallet.com/buy-monad/",
+                  "explanation": "Gem Wallet's buy-crypto page lists Apple Pay among supported payment methods via its on-ramp partners."
+                }
+              }
+            ]
+          },
+          "googlePay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://gemwallet.com/buy-monad/",
+                  "explanation": "Gem Wallet's buy-crypto page lists Google Pay among supported payment methods via its on-ramp partners."
+                }
+              }
+            ]
+          },
           "kycDependency": "KYCDependency.UNKNOWN",
           "providers": [],
           "regionalAvailability": null
@@ -1304,7 +1324,17 @@
               }
             ]
           },
-          "apyDisplay": null,
+          "apyDisplay": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://docs.gemwallet.com/defi/stake-sol/",
+                  "explanation": "Gem Wallet's docs confirm the minimum stake amount, current APR, and lock time are shown on the stake screen for each supported asset."
+                }
+              }
+            ]
+          },
           "rewardsClaiming": {
             "$call": "supported",
             "args": [

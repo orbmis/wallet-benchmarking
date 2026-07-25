@@ -1527,7 +1527,17 @@
               }
             ]
           },
-          "validatorChoice": null,
+          "validatorChoice": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blockworks.com/news/stakekit-self-custodial-yield-api",
+                  "explanation": "Zerion's Earn section (powered by StakeKit) lets users delegate to any validator of their choice."
+                }
+              }
+            ]
+          },
           "apyDisplay": {
             "$call": "supported",
             "args": [

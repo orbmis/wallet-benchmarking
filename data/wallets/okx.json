@@ -758,7 +758,17 @@
               }
             ]
           },
-          "cosmos": null,
+          "cosmos": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.globenewswire.com/news-release/2023/06/28/2695957/0/en/Flash-News-OKX-Wallet-Integrates-Support-for-Eight-Cosmos-dApps-into-its-Discover-Portal-Growing-Web3-Ecosystem-and-Enhancing-User-Access-to-DeFi-Projects.html",
+                  "explanation": "OKX Wallet integrated eight Cosmos dApps into its Discover Portal and supports Cosmos chains including ATOM, Osmosis, Kava, and Sei."
+                }
+              }
+            ]
+          },
           "ton": {
             "$call": "supported",
             "args": [
@@ -1132,7 +1142,17 @@
           "seedPhraseRequiredAtSignup": {
             "$ref": "featureSupported"
           },
-          "passkeySignup": null,
+          "passkeySignup": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.okx.com/en-us/help/how-do-i-create-passkeys-app",
+                  "explanation": "OKX passkeys are a two-factor authentication method added after account creation, not a standalone signup method."
+                }
+              }
+            ]
+          },
           "emailSignup": {
             "$call": "supported",
             "args": [
@@ -1506,7 +1526,17 @@
               }
             ]
           },
-          "validatorChoice": null,
+          "validatorChoice": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.okx.com/en-us/learn/how-to-choose-a-solana-validator",
+                  "explanation": "OKX's staking interface lets users select validators from a curated list or enter a validator address manually."
+                }
+              }
+            ]
+          },
           "apyDisplay": {
             "$call": "supported",
             "args": [

@@ -444,7 +444,17 @@
           },
           "hermeticBuilds": null,
           "repositoryChangeControls": null,
-          "reproducibleBuilds": null
+          "reproducibleBuilds": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://walletscrutiny.com/hardware/cypherockx1/",
+                  "explanation": "WalletScrutiny certified Cypherock X1 firmware as reproducible; the SHA256 of the Docker-built binary matches the GitHub release artifact."
+                }
+              }
+            ]
+          }
         },
         "reputation": null
       },
@@ -474,6 +484,19 @@
               }
             ]
           }
+        }
+      },
+      "addressResolution": {
+        "nonChainSpecificEnsResolution": {
+          "$call": "notSupported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://github.com/Cypherock/cysync-desktop",
+                "explanation": "The cySync README and Cypherock Ethereum page make no mention of ENS resolution."
+              }
+            }
+          ]
         }
       }
     },

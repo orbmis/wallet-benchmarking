@@ -950,7 +950,17 @@
           "kycRequiredForWallet": {
             "$ref": "notSupported"
           },
-          "guestMode": null,
+          "guestMode": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.brave.app/hc/en-us/articles/12753544357645-Creating-your-Brave-Wallet",
+                  "explanation": "Brave Wallet requires wallet creation (password + recovery phrase) before use; no guest mode is documented."
+                }
+              }
+            ]
+          },
           "embeddedWalletMode": {
             "$call": "notSupported",
             "args": [

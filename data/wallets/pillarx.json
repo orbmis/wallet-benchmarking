@@ -512,7 +512,17 @@
             "explanation": "Pillar/PillarX sources describe logging in at pillarx.app or launching from Pillar Wallet, and Google Play listing for the mobile wallet.",
             "url": "https://blog.pillarx.app/pulse-is-live-access-instant-swaps-across-22m-tokens-on-pillarx/"
           },
-          "desktopApp": null,
+          "desktopApp": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://pillarx.app/",
+                  "explanation": "PillarX ships as a mobile wallet only; no standalone desktop application is available."
+                }
+              }
+            ]
+          },
           "mobileApp": {
             "$call": "supported",
             "args": [
@@ -524,8 +534,28 @@
               }
             ]
           },
-          "browserExtension": null,
-          "browserNative": null,
+          "browserExtension": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://pillarx.app/",
+                  "explanation": "No PillarX browser extension exists; the wallet ships as a mobile app (iOS/Android)."
+                }
+              }
+            ]
+          },
+          "browserNative": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://pillarx.app/",
+                  "explanation": "PillarX is a standalone mobile app; it is not embedded natively into any web browser."
+                }
+              }
+            ]
+          },
           "webApp": {
             "$call": "supported",
             "args": [
@@ -873,12 +903,32 @@
               }
             ]
           },
-          "emailSignup": null,
+          "emailSignup": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/pillarwallet/x",
+                  "explanation": "PillarX's README states that on the sign-in page a user enters their email and Privy sends a login code, confirming email-based signup."
+                }
+              }
+            ]
+          },
           "phoneSignup": null,
           "kycRequiredForWallet": {
             "$ref": "notSupported"
           },
-          "guestMode": null,
+          "guestMode": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/pillarwallet/x",
+                  "explanation": "PillarX documentation describes only an email-based login flow via Privy; no guest or wallet-free exploration mode is mentioned."
+                }
+              }
+            ]
+          },
           "embeddedWalletMode": {
             "$call": "supported",
             "args": [

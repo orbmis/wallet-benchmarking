@@ -549,7 +549,17 @@
               }
             ]
           },
-          "ton": null,
+          "ton": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.exodus.com/support/en/articles/8599045-everything-you-need-to-know-about-crypto-addresses",
+                  "explanation": "Exodus's support article on crypto addresses explicitly covers TON network transactions and TON address formats, confirming TON support."
+                }
+              }
+            ]
+          },
           "starknet": null,
           "sui": {
             "$call": "supported",

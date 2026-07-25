@@ -595,7 +595,17 @@
               }
             ]
           },
-          "mobileApp": null,
+          "mobileApp": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://nu.fi/",
+                  "explanation": "NuFi offers only a Chrome extension and a web app; no iOS or Android mobile app is offered."
+                }
+              }
+            ]
+          },
           "browserExtension": {
             "$call": "supported",
             "args": [
@@ -1029,13 +1039,43 @@
           "seedPhraseRequiredAtSignup": {
             "$ref": "featureSupported"
           },
-          "passkeySignup": null,
-          "emailSignup": null,
+          "passkeySignup": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.nu.fi/support/solutions/articles/80001070723-create-a-seedless-wallet-using-a-social-account-like-google",
+                  "explanation": "NuFi supports only social OAuth and email OTP for wallet creation; no passkey signup option is documented."
+                }
+              }
+            ]
+          },
+          "emailSignup": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://adapulse.io/nufi-and-google-wallet-simplifying-the-web3-single-sign-on-experience/",
+                  "explanation": "NuFi lets users choose a social account to log in with or get a one-time code by email, confirming email OTP as a wallet-access method."
+                }
+              }
+            ]
+          },
           "phoneSignup": null,
           "kycRequiredForWallet": {
             "$ref": "notSupported"
           },
-          "guestMode": null,
+          "guestMode": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://nu.fi/",
+                  "explanation": "NuFi requires social login or email OTP to access the wallet; no guest or pre-login exploration mode is documented."
+                }
+              }
+            ]
+          },
           "embeddedWalletMode": {
             "$call": "supported",
             "args": [

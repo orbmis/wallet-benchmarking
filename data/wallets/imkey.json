@@ -362,6 +362,17 @@
               ]
             }
           }
+        },
+        "permissionsManagement": {
+          "$call": "supported",
+          "args": [
+            {
+              "ref": {
+                "url": "https://support.token.im/hc/en-us/articles/900000420986-Setting-Token-Approvals---Our-Solution",
+                "explanation": "imKey Pro pairs with imToken, which has a native Revoke feature for viewing and revoking ERC-20 token approvals; imToken docs state imKey users can manage authorization."
+              }
+            }
+          ]
         }
       },
       "transparency": {
@@ -432,6 +443,21 @@
               }
             }
           ]
+        }
+      },
+      "chainAbstraction": {
+        "bridging": {
+          "builtInBridging": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://medium.com/imtoken/imtoken-guide-on-evm-and-layer-2-cross-chain-tools-ca7eb69cadb2",
+                  "explanation": "imToken (imKey Pro's companion) has no native built-in bridge; cross-chain bridging is accessed via the in-app dApp browser connecting to third-party protocols."
+                }
+              }
+            ]
+          }
         }
       }
     },
