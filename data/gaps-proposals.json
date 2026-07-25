@@ -6604,6 +6604,116 @@
       "valueString": "PUBLIC",
       "citationUrl": "https://keycard.tech/pages/keycard-shell",
       "explanation": "Keycard Shell is a standard signer for Ethereum, EVM chains, and Bitcoin; all token transfers are standard public on-chain transactions with no shielded mode."
+    },
+    {
+      "walletId": "bitbox",
+      "metricKey": "audits",
+      "path": "security.publicSecurityAudits",
+      "decision": "audits",
+      "audits": [
+        {
+          "ref": {
+            "url": "https://bitbox.swiss/bitbox02/security-features/",
+            "explanation": "BitBox02 firmware audited by Census Labs (plus additional third-party security consulting), per the official BitBox security page."
+          },
+          "auditDate": "2019-01-01",
+          "unpatchedFlaws": "NONE"
+        }
+      ]
+    },
+    {
+      "walletId": "firefly",
+      "metricKey": "audits",
+      "path": "security.publicSecurityAudits",
+      "decision": "audits",
+      "audits": []
+    },
+    {
+      "walletId": "gridplus",
+      "metricKey": "audits",
+      "path": "security.publicSecurityAudits",
+      "decision": "audits",
+      "audits": []
+    },
+    {
+      "walletId": "imkey",
+      "metricKey": "audits",
+      "path": "security.publicSecurityAudits",
+      "decision": "audits",
+      "audits": [
+        {
+          "ref": {
+            "url": "https://sec-certs.org/cc/5deb0179858d78a1/",
+            "explanation": "imKey Pro's Infineon M7893 (SLE78 family) secure element holds CC EAL6+ certification, BSI-DSZ-CC-0879-V4-2020 (BSI Germany)."
+          },
+          "auditDate": "2020-02-12",
+          "unpatchedFlaws": "NONE"
+        }
+      ]
+    },
+    {
+      "walletId": "keycard-shell",
+      "metricKey": "audits",
+      "path": "security.publicSecurityAudits",
+      "decision": "audits",
+      "audits": [
+        {
+          "ref": {
+            "url": "https://sec-certs.org/cc/f29f88756682e034/",
+            "explanation": "Keycard Shell's NXP JCOP4 P71 secure element holds CC EAL6+ certification, NSCIB-CC-180212-CR5 (Dutch CC scheme, valid 2022–2027)."
+          },
+          "auditDate": "2022-09-19",
+          "unpatchedFlaws": "NONE"
+        }
+      ]
+    },
+    {
+      "walletId": "ledgerWallet",
+      "metricKey": "audits",
+      "path": "security.publicSecurityAudits",
+      "decision": "audits",
+      "audits": [
+        {
+          "ref": {
+            "url": "https://www.ledger.com/setting-a-new-standard-ledger-nano-s-becomes-the-first-and-only-certified-hardware-wallet-on-the-market",
+            "explanation": "Ledger Nano S v1.5.1 ANSSI CSPN first-level security certification, ANSSI-CSPN-2019/03."
+          },
+          "auditDate": "2019-02-14",
+          "unpatchedFlaws": "NONE"
+        },
+        {
+          "ref": {
+            "url": "https://messervices.cyber.gouv.fr/visas/ANSSI-CSPN-2023-13-rapport.pdf",
+            "explanation": "Ledger Nano S Plus (SE 1.0.4) ANSSI CSPN certification report, ANSSI-CSPN-2023/13 (evaluated by EDSI)."
+          },
+          "auditDate": "2023-07-21",
+          "unpatchedFlaws": "NONE"
+        },
+        {
+          "ref": {
+            "url": "https://messervices.cyber.gouv.fr/visas/ANSSI-CSPN-2023-17-rapport.pdf",
+            "explanation": "Ledger Nano X (SE 2.1.0) ANSSI CSPN certification report, ANSSI-CSPN-2023/17 (evaluated by EDSI)."
+          },
+          "auditDate": "2023-07-21",
+          "unpatchedFlaws": "NONE"
+        }
+      ]
+    },
+    {
+      "walletId": "ngrave",
+      "metricKey": "audits",
+      "path": "security.publicSecurityAudits",
+      "decision": "audits",
+      "audits": [
+        {
+          "ref": {
+            "url": "https://provenrun.com/provencore-secure-os-achieves-eal7-common-criteria-certification/",
+            "explanation": "NGRAVE ZERO's embedded ProvenCore OS (ProvenRun TEE) achieved Common Criteria EAL7 certification via ANSSI — the first OS to reach EAL7."
+          },
+          "auditDate": "2019-09-17",
+          "unpatchedFlaws": "NONE"
+        }
+      ]
     }
   ]
 }

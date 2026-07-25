@@ -346,7 +346,16 @@
             ]
           }
         },
-        "publicSecurityAudits": null,
+        "publicSecurityAudits": [
+          {
+            "ref": {
+              "url": "https://bitbox.swiss/bitbox02/security-features/",
+              "explanation": "BitBox02 firmware audited by Census Labs (plus additional third-party security consulting), per the official BitBox security page."
+            },
+            "auditDate": "2019-01-01",
+            "unpatchedFlaws": "NONE"
+          }
+        ],
         "secureElement": null,
         "securityBestPractices": null,
         "supplyChainDIY": null,

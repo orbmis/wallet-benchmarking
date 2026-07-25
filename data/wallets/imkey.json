@@ -237,7 +237,16 @@
             ]
           }
         },
-        "publicSecurityAudits": null,
+        "publicSecurityAudits": [
+          {
+            "ref": {
+              "url": "https://sec-certs.org/cc/5deb0179858d78a1/",
+              "explanation": "imKey Pro's Infineon M7893 (SLE78 family) secure element holds CC EAL6+ certification, BSI-DSZ-CC-0879-V4-2020 (BSI Germany)."
+            },
+            "auditDate": "2020-02-12",
+            "unpatchedFlaws": "NONE"
+          }
+        ],
         "secureElement": null,
         "securityBestPractices": null,
         "supplyChainDIY": null,

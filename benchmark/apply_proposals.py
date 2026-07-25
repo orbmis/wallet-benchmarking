@@ -74,6 +74,18 @@ def dsl_for(p):
         if p.get("path", "").endswith("walletAppLicense"):
             return {"license": p["valueString"], "ref": ref_obj(p)}, None
         return p["valueString"], None
+    if d == "audits":
+        # security.publicSecurityAudits holds a LIST of audit objects (see
+        # count_high_audits / count_open_high in build.py). One proposal fills
+        # both the "Public audits" and "Open high-sev flaws" cells. An empty
+        # list is a valid, sourced-optional "no public audits found" state.
+        audits = p.get("audits")
+        if not isinstance(audits, list):
+            return None, "skip: 'audits' without an audits list"
+        for a in audits:
+            if not (isinstance(a, dict) and a.get("ref")):
+                return None, "skip: audit entry missing a ref/source"
+        return audits, None
     return None, f"skip: unknown decision {d!r}"
 
 

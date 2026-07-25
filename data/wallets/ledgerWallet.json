@@ -252,7 +252,32 @@
             ]
           }
         },
-        "publicSecurityAudits": null,
+        "publicSecurityAudits": [
+          {
+            "ref": {
+              "url": "https://www.ledger.com/setting-a-new-standard-ledger-nano-s-becomes-the-first-and-only-certified-hardware-wallet-on-the-market",
+              "explanation": "Ledger Nano S v1.5.1 ANSSI CSPN first-level security certification, ANSSI-CSPN-2019/03."
+            },
+            "auditDate": "2019-02-14",
+            "unpatchedFlaws": "NONE"
+          },
+          {
+            "ref": {
+              "url": "https://messervices.cyber.gouv.fr/visas/ANSSI-CSPN-2023-13-rapport.pdf",
+              "explanation": "Ledger Nano S Plus (SE 1.0.4) ANSSI CSPN certification report, ANSSI-CSPN-2023/13 (evaluated by EDSI)."
+            },
+            "auditDate": "2023-07-21",
+            "unpatchedFlaws": "NONE"
+          },
+          {
+            "ref": {
+              "url": "https://messervices.cyber.gouv.fr/visas/ANSSI-CSPN-2023-17-rapport.pdf",
+              "explanation": "Ledger Nano X (SE 2.1.0) ANSSI CSPN certification report, ANSSI-CSPN-2023/17 (evaluated by EDSI)."
+            },
+            "auditDate": "2023-07-21",
+            "unpatchedFlaws": "NONE"
+          }
+        ],
         "secureElement": {
           "$call": "supported",
           "args": [

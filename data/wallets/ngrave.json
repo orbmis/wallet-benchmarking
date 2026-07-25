@@ -263,7 +263,16 @@
             ]
           }
         },
-        "publicSecurityAudits": null,
+        "publicSecurityAudits": [
+          {
+            "ref": {
+              "url": "https://provenrun.com/provencore-secure-os-achieves-eal7-common-criteria-certification/",
+              "explanation": "NGRAVE ZERO's embedded ProvenCore OS (ProvenRun TEE) achieved Common Criteria EAL7 certification via ANSSI — the first OS to reach EAL7."
+            },
+            "auditDate": "2019-09-17",
+            "unpatchedFlaws": "NONE"
+          }
+        ],
         "secureElement": {
           "$call": "supported",
           "args": [

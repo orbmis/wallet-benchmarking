@@ -288,7 +288,16 @@
             ]
           }
         },
-        "publicSecurityAudits": null,
+        "publicSecurityAudits": [
+          {
+            "ref": {
+              "url": "https://sec-certs.org/cc/f29f88756682e034/",
+              "explanation": "Keycard Shell's NXP JCOP4 P71 secure element holds CC EAL6+ certification, NSCIB-CC-180212-CR5 (Dutch CC scheme, valid 2022–2027)."
+            },
+            "auditDate": "2022-09-19",
+            "unpatchedFlaws": "NONE"
+          }
+        ],
         "secureElement": {
           "$call": "supported",
           "args": [

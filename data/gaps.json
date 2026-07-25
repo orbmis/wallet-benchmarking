@@ -1,6 +1,6 @@
 {
   "generated": true,
-  "gapCount": 149,
+  "gapCount": 135,
   "naCount": 1036,
   "gaps": [
     {
@@ -111,26 +111,6 @@
       "category": "Notifications",
       "type": "state",
       "path": "product.notifications.priceAlerts",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitbox",
-      "walletName": "BitBox",
-      "metricKey": "audits",
-      "label": "Public audits",
-      "category": "Security",
-      "type": "count_high",
-      "path": "security.publicSecurityAudits",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "bitbox",
-      "walletName": "BitBox",
-      "metricKey": "openHigh",
-      "label": "Open high-sev flaws",
-      "category": "Security",
-      "type": "count_low",
-      "path": "security.publicSecurityAudits",
       "hasUnsourcedRef": false
     },
     {
@@ -586,26 +566,6 @@
     {
       "walletId": "firefly",
       "walletName": "Firefly Wallet",
-      "metricKey": "audits",
-      "label": "Public audits",
-      "category": "Security",
-      "type": "count_high",
-      "path": "security.publicSecurityAudits",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "firefly",
-      "walletName": "Firefly Wallet",
-      "metricKey": "openHigh",
-      "label": "Open high-sev flaws",
-      "category": "Security",
-      "type": "count_low",
-      "path": "security.publicSecurityAudits",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "firefly",
-      "walletName": "Firefly Wallet",
       "metricKey": "selfBroadcast",
       "label": "Self-broadcast (own node)",
       "category": "Self-sovereignty",
@@ -744,26 +704,6 @@
       "hasUnsourcedRef": false
     },
     {
-      "walletId": "gridplus",
-      "walletName": "GridPlus Wallet",
-      "metricKey": "audits",
-      "label": "Public audits",
-      "category": "Security",
-      "type": "count_high",
-      "path": "security.publicSecurityAudits",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "gridplus",
-      "walletName": "GridPlus Wallet",
-      "metricKey": "openHigh",
-      "label": "Open high-sev flaws",
-      "category": "Security",
-      "type": "count_low",
-      "path": "security.publicSecurityAudits",
-      "hasUnsourcedRef": false
-    },
-    {
       "walletId": "imkey",
       "walletName": "imKey",
       "metricKey": "eip7702",
@@ -771,26 +711,6 @@
       "category": "Accounts",
       "type": "state",
       "path": "accountSupport.eip7702",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imkey",
-      "walletName": "imKey",
-      "metricKey": "audits",
-      "label": "Public audits",
-      "category": "Security",
-      "type": "count_high",
-      "path": "security.publicSecurityAudits",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "imkey",
-      "walletName": "imKey",
-      "metricKey": "openHigh",
-      "label": "Open high-sev flaws",
-      "category": "Security",
-      "type": "count_low",
-      "path": "security.publicSecurityAudits",
       "hasUnsourcedRef": false
     },
     {
@@ -864,46 +784,6 @@
       "hasUnsourcedRef": false
     },
     {
-      "walletId": "keycard-shell",
-      "walletName": "Keycard Shell",
-      "metricKey": "audits",
-      "label": "Public audits",
-      "category": "Security",
-      "type": "count_high",
-      "path": "security.publicSecurityAudits",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "keycard-shell",
-      "walletName": "Keycard Shell",
-      "metricKey": "openHigh",
-      "label": "Open high-sev flaws",
-      "category": "Security",
-      "type": "count_low",
-      "path": "security.publicSecurityAudits",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ledgerWallet",
-      "walletName": "ledgerWallet",
-      "metricKey": "audits",
-      "label": "Public audits",
-      "category": "Security",
-      "type": "count_high",
-      "path": "security.publicSecurityAudits",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ledgerWallet",
-      "walletName": "ledgerWallet",
-      "metricKey": "openHigh",
-      "label": "Open high-sev flaws",
-      "category": "Security",
-      "type": "count_low",
-      "path": "security.publicSecurityAudits",
-      "hasUnsourcedRef": false
-    },
-    {
       "walletId": "metamask",
       "walletName": "MetaMask",
       "metricKey": "notifApproval",
@@ -921,26 +801,6 @@
       "category": "Accounts",
       "type": "state",
       "path": "accountSupport.eip7702",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ngrave",
-      "walletName": "NGRAVE Zero",
-      "metricKey": "audits",
-      "label": "Public audits",
-      "category": "Security",
-      "type": "count_high",
-      "path": "security.publicSecurityAudits",
-      "hasUnsourcedRef": false
-    },
-    {
-      "walletId": "ngrave",
-      "walletName": "NGRAVE Zero",
-      "metricKey": "openHigh",
-      "label": "Open high-sev flaws",
-      "category": "Security",
-      "type": "count_low",
-      "path": "security.publicSecurityAudits",
       "hasUnsourcedRef": false
     },
     {
