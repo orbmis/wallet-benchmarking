@@ -301,7 +301,7 @@
             ]
           }
         },
-        "publicSecurityAudits": null,
+        "publicSecurityAudits": [],
         "secureElement": {
           "$call": "supported",
           "args": [

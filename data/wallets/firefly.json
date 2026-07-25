@@ -207,7 +207,7 @@
             ]
           }
         },
-        "publicSecurityAudits": null,
+        "publicSecurityAudits": [],
         "secureElement": null,
         "securityBestPractices": null,
         "supplyChainDIY": null,
