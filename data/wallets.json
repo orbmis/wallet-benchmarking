@@ -1357,7 +1357,17 @@
               "explanation": "Ambire says users can connect to any apps easily and has a built-in verified app catalog.",
               "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
             },
-            "inAppBrowser": null,
+            "inAppBrowser": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://blog.ambire.com/new-interactive-flow-the-ambire-dapp-catalog-ensures-smooth-web3-sailing/",
+                    "explanation": "The Ambire mobile app includes a curated dApp catalog and lets users open and use dApps directly inside the wallet, constituting a built-in dApp browser."
+                  }
+                }
+              ]
+            },
             "curatedDappDirectory": {
               "$call": "supported",
               "args": [
@@ -1369,7 +1379,17 @@
                 }
               ]
             },
-            "dappSearch": null,
+            "dappSearch": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://blog.ambire.com/new-interactive-flow-the-ambire-dapp-catalog-ensures-smooth-web3-sailing/",
+                    "explanation": "Ambire has a curated dApp catalog with 20+ whitelisted dApps browsable by category, plus custom dApp add and instant connect."
+                  }
+                }
+              ]
+            },
             "walletConnectOnlyMode": {
               "$call": "notSupportedWithRef",
               "args": [
@@ -1818,8 +1838,28 @@
                 }
               ]
             },
-            "marketplaceIntegration": null,
-            "spamNftHiding": null,
+            "marketplaceIntegration": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/",
+                    "explanation": "Ambire's blog describes NFT viewing/displaying inside the extension only, with no built-in marketplace for buying or selling."
+                  }
+                }
+              ]
+            },
+            "spamNftHiding": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/",
+                    "explanation": "Ambire describes NFT viewing within the extension but no spam NFT detection, hiding, or filtering."
+                  }
+                }
+              ]
+            },
             "collectionMetadataRefresh": null,
             "royaltiesOrOffers": null
           },
@@ -2860,7 +2900,17 @@
               "explanation": "Argent X support says it connects to Starknet dapps and references Dappland for available apps.",
               "url": "https://support.argent.xyz/hc/en-us/articles/5975462914961-Argent-X"
             },
-            "inAppBrowser": null,
+            "inAppBrowser": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.argent.xyz/blog/doubling-down-on-starknet",
+                    "explanation": "Argent's mobile app features a built-in dApp browser to connect to Starknet dApps on the go."
+                  }
+                }
+              ]
+            },
             "curatedDappDirectory": {
               "$call": "supported",
               "args": [
@@ -2872,7 +2922,17 @@
                 }
               ]
             },
-            "dappSearch": null,
+            "dappSearch": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.argent.xyz/hc/en-us/articles/5975462914961-Argent-X",
+                    "explanation": "Argent directs users to external Dappland.com for dApp discovery; no in-wallet dApp search function is documented."
+                  }
+                }
+              ]
+            },
             "walletConnectOnlyMode": {
               "$call": "notSupportedWithRef",
               "args": [
@@ -2885,7 +2945,17 @@
               ]
             },
             "featuredApps": null,
-            "riskRatedDiscovery": null
+            "riskRatedDiscovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.blockaid.io/blog/argent-releases-upgraded-wallet-now-secured-by-blockaid",
+                    "explanation": "Argent's Blockaid integration provides malicious-dApp warnings at connect time but does not expose risk scores in a dApp discovery interface."
+                  }
+                }
+              ]
+            }
           },
           "fiatRamps": {
             "ref": {
@@ -3275,8 +3345,28 @@
                 }
               ]
             },
-            "mint": null,
-            "marketplaceIntegration": null,
+            "mint": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.ready.co/learn/how-to-buy-nfts-on-starkne",
+                    "explanation": "Argent's NFT guide directs users to external marketplaces for transactions and contains no in-app NFT minting capability."
+                  }
+                }
+              ]
+            },
+            "marketplaceIntegration": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://decrypt.co/149493/smart-wallet-provider-argent-launches-nft-marketplace-unframed-starknet",
+                    "explanation": "Argent launched Unframed, a Starknet NFT marketplace with one-click buy/sell enabled by account abstraction, integrated with the Argent wallet ecosystem."
+                  }
+                }
+              ]
+            },
             "spamNftHiding": null,
             "collectionMetadataRefresh": null,
             "royaltiesOrOffers": null
@@ -4991,8 +5081,28 @@
                 }
               ]
             },
-            "marketplaceIntegration": null,
-            "spamNftHiding": null,
+            "marketplaceIntegration": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://cryptoslate.com/coinbases-new-base-super-app-puts-trading-payments-social-and-ai-under-one-roof/",
+                    "explanation": "Base App integrates Zora's token minting/trading directly into the app, letting users publish content, generate tokens, and trade them without leaving the app."
+                  }
+                }
+              ]
+            },
+            "spamNftHiding": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://decrypt.co/120237/coinbase-wallet-adds-safety-features-following-high-profile-nft-scams",
+                    "explanation": "Coinbase Wallet (Base app) automatically hides assets flagged as spam from the home screen, with a Settings option to review and unhide them."
+                  }
+                }
+              ]
+            },
             "collectionMetadataRefresh": null,
             "royaltiesOrOffers": null
           },
@@ -7103,7 +7213,17 @@
                 }
               ]
             },
-            "spamNftHiding": null,
+            "spamNftHiding": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://web3.bitget.com/crypto-news/best-nft-management-tools-crypto-wallets-2026-guide",
+                    "explanation": "Bitget Wallet's own editorial describes advanced spam filtering as a built-in feature of its NFT management for maintaining a clean gallery."
+                  }
+                }
+              ]
+            },
             "collectionMetadataRefresh": null,
             "royaltiesOrOffers": null
           },
@@ -8155,8 +8275,28 @@
                 }
               ]
             },
-            "curatedDappDirectory": null,
-            "dappSearch": null,
+            "curatedDappDirectory": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/brave/brave-browser/issues/50897",
+                    "explanation": "The DappRadar-powered Web3/Explorer tab was removed in Brave v1.86.x after DappRadar shut down, with no replacement directory shipped."
+                  }
+                }
+              ]
+            },
+            "dappSearch": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/brave/brave-browser/issues/50897",
+                    "explanation": "With the DappRadar-powered Web3/Explorer tab removed, Brave Wallet no longer has an in-wallet dApp search; users navigate via the address bar."
+                  }
+                }
+              ]
+            },
             "walletConnectOnlyMode": {
               "$call": "notSupportedWithRef",
               "args": [
@@ -8169,7 +8309,17 @@
               ]
             },
             "featuredApps": null,
-            "riskRatedDiscovery": null
+            "riskRatedDiscovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://cryptoadventure.com/brave-browser-dapp-review-2026-privacy-first-web3-browser-with-built-in-wallet-and-rewards/",
+                    "explanation": "Brave provides phishing/tracker protection via the browser but shows no risk ratings or scores for dApps in a discovery interface."
+                  }
+                }
+              ]
+            }
           },
           "fiatRamps": {
             "ref": {
@@ -8564,9 +8714,39 @@
                 }
               ]
             },
-            "mint": null,
-            "marketplaceIntegration": null,
-            "spamNftHiding": null,
+            "mint": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://brave.com/blog/nft-gallery/",
+                    "explanation": "Brave's NFT announcement covers gallery and market tab features but no in-app NFT minting capability."
+                  }
+                }
+              ]
+            },
+            "marketplaceIntegration": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://brave.com/blog/nft-gallery/",
+                    "explanation": "Brave announced an NFT gallery with a dedicated market tab featuring real-time NFT price feeds and Magic Eden launchpad integration for purchasing NFTs."
+                  }
+                }
+              ]
+            },
+            "spamNftHiding": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://github.com/brave/brave-browser/wiki/NFT-Discovery",
+                    "explanation": "Brave Wallet uses SimpleHash spam scores via opt-in NFT Discovery, automatically excluding any NFT with a spam score above zero."
+                  }
+                }
+              ]
+            },
             "collectionMetadataRefresh": null,
             "royaltiesOrOffers": null
           },
@@ -11822,9 +12002,39 @@
               "explanation": "Daimo source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://daimo.com"
             },
-            "inAppBrowser": null,
-            "curatedDappDirectory": null,
-            "dappSearch": null,
+            "inAppBrowser": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://beta.walletbeat.eth.limo/daimo/",
+                    "explanation": "Daimo is a stablecoin payments app; it is mobile-only with no dApp browser functionality."
+                  }
+                }
+              ]
+            },
+            "curatedDappDirectory": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.daimo.com/introduction",
+                    "explanation": "Daimo is focused on stablecoin payments; its documentation describes no dApp browser, directory, or discovery section."
+                  }
+                }
+              ]
+            },
+            "dappSearch": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.daimo.com/introduction",
+                    "explanation": "Daimo has no dApp browser or search feature; it is a payment app, not a general-purpose dApp browser."
+                  }
+                }
+              ]
+            },
             "walletConnectOnlyMode": {
               "$ref": "notSupported"
             },
@@ -12216,9 +12426,31 @@
                 }
               ]
             },
-            "mint": null,
-            "marketplaceIntegration": null,
-            "spamNftHiding": null,
+            "mint": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://daimo.com",
+                    "explanation": "Daimo is a payments-only stablecoin wallet with no NFT minting features documented."
+                  }
+                }
+              ]
+            },
+            "marketplaceIntegration": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://daimo.com",
+                    "explanation": "Daimo is a USDC payments wallet focused exclusively on stablecoin transfers; its materials mention no NFT features."
+                  }
+                }
+              ]
+            },
+            "spamNftHiding": {
+              "$ref": "notApplicable"
+            },
             "collectionMetadataRefresh": null,
             "royaltiesOrOffers": null
           },
@@ -13400,14 +13632,54 @@
               "explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://elytro.com"
             },
-            "inAppBrowser": null,
-            "curatedDappDirectory": null,
-            "dappSearch": null,
+            "inAppBrowser": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://elytro.com/faq",
+                    "explanation": "Elytro is currently CLI- and legacy-Chrome-extension-based with no mobile app or dedicated in-app dApp browser."
+                  }
+                }
+              ]
+            },
+            "curatedDappDirectory": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://elytro.com/faq",
+                    "explanation": "Elytro is a smart-account wallet for AI agents with CLI-based control; its FAQ describes no curated dApp directory."
+                  }
+                }
+              ]
+            },
+            "dappSearch": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://elytro.com/",
+                    "explanation": "Elytro's feature set focuses on smart-account infrastructure and agent operations; no dApp search feature is mentioned."
+                  }
+                }
+              ]
+            },
             "walletConnectOnlyMode": {
               "$ref": "notSupported"
             },
             "featuredApps": null,
-            "riskRatedDiscovery": null
+            "riskRatedDiscovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://elytro.com/faq",
+                    "explanation": "No evidence of risk-rated dApp discovery in Elytro; the product is CLI/legacy-extension based with no documented dApp risk scoring."
+                  }
+                }
+              ]
+            }
           },
           "fiatRamps": {
             "ref": {
@@ -13722,9 +13994,39 @@
                 }
               ]
             },
-            "mint": null,
-            "marketplaceIntegration": null,
-            "spamNftHiding": null,
+            "mint": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://elytro.com/faq",
+                    "explanation": "Elytro's FAQ describes smart-account operations for DeFi and AI agents with no NFT minting capability."
+                  }
+                }
+              ]
+            },
+            "marketplaceIntegration": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://elytro.com/faq",
+                    "explanation": "Elytro's FAQ describes the wallet as focused on Ethereum account abstraction and agent operations with no NFT marketplace features."
+                  }
+                }
+              ]
+            },
+            "spamNftHiding": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://elytro.com/faq",
+                    "explanation": "Elytro's FAQ describes token/DeFi/agent features only with no NFT support or spam filtering."
+                  }
+                }
+              ]
+            },
             "collectionMetadataRefresh": null,
             "royaltiesOrOffers": null
           },
@@ -14669,8 +14971,28 @@
                 }
               ]
             },
-            "curatedDappDirectory": null,
-            "dappSearch": null,
+            "curatedDappDirectory": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.exodus.com/article/2838-web3-dapp-browser",
+                    "explanation": "Exodus Mobile's web3 browser includes an Explore tab with a curated list of recommended web3 apps."
+                  }
+                }
+              ]
+            },
+            "dappSearch": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.exodus.com/article/2838-web3-dapp-browser",
+                    "explanation": "Exodus's mobile web3 browser and extension include a search bar for finding web3 apps."
+                  }
+                }
+              ]
+            },
             "walletConnectOnlyMode": {
               "$call": "notSupportedWithRef",
               "args": [
@@ -14683,7 +15005,17 @@
               ]
             },
             "featuredApps": null,
-            "riskRatedDiscovery": null
+            "riskRatedDiscovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.exodus.com/support/en/articles/8598986-web3-browser-in-exodus-mobile",
+                    "explanation": "Exodus shows warnings for suspicious connections and simulates risky requests but does not provide risk ratings or scored dApp discovery."
+                  }
+                }
+              ]
+            }
           },
           "fiatRamps": {
             "ref": {
@@ -15122,10 +15454,50 @@
                 }
               ]
             },
-            "send": null,
-            "mint": null,
-            "marketplaceIntegration": null,
-            "spamNftHiding": null,
+            "send": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.exodus.com/support/en/articles/8598815-what-is-the-nft-gallery-in-exodus",
+                    "explanation": "Exodus's NFT Gallery supports sending/transferring NFTs on Solana and Ethereum from desktop and Web3 Wallet."
+                  }
+                }
+              ]
+            },
+            "mint": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.exodus.com/support/en/articles/8598815-what-is-the-nft-gallery-in-exodus",
+                    "explanation": "Exodus's NFT Gallery describes receive, store, display, send, and sell but not in-app NFT minting."
+                  }
+                }
+              ]
+            },
+            "marketplaceIntegration": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.exodus.com/investors/news-events/press-releases/detail/32/exodus-launches-nft-marketplace",
+                    "explanation": "Exodus launched a built-in NFT marketplace powered by Magic Eden, letting users browse, buy, and sell Solana NFTs directly within the app."
+                  }
+                }
+              ]
+            },
+            "spamNftHiding": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://simplehash.com/blog/exodus-x-simplehash",
+                    "explanation": "Exodus integrates SimpleHash spam scoring to automatically hide spam NFTs in its Web3 Wallet and Mobile app."
+                  }
+                }
+              ]
+            },
             "collectionMetadataRefresh": null,
             "royaltiesOrOffers": null
           },
@@ -16222,9 +16594,39 @@
               "explanation": "Family homepage says WalletConnect is enabled for dapp access through a built-in scanner.",
               "url": "https://family.co/"
             },
-            "inAppBrowser": null,
-            "curatedDappDirectory": null,
-            "dappSearch": null,
+            "inAppBrowser": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://family.co/faqs",
+                    "explanation": "Family's FAQ states the in-app Family browser is the tool for discovering and exploring dApps, with tab management and bookmarks."
+                  }
+                }
+              ]
+            },
+            "curatedDappDirectory": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://family.co/support/wallet-browser",
+                    "explanation": "Family's wallet browser support page describes connecting to dApps via the in-app browser but no curated dApp directory or catalog."
+                  }
+                }
+              ]
+            },
+            "dappSearch": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://family.co/support/wallet-browser",
+                    "explanation": "Family's wallet browser support page mentions no dApp search function; users navigate to dApps directly."
+                  }
+                }
+              ]
+            },
             "walletConnectOnlyMode": {
               "$call": "supported",
               "args": [
@@ -16652,8 +17054,28 @@
                 }
               ]
             },
-            "mint": null,
-            "marketplaceIntegration": null,
+            "mint": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://family.co/",
+                    "explanation": "Family describes NFT viewing and collectibles management but no NFT minting functionality."
+                  }
+                }
+              ]
+            },
+            "marketplaceIntegration": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://family.co/",
+                    "explanation": "Family emphasizes NFT display with rich media but mentions no built-in marketplace for buying or selling."
+                  }
+                }
+              ]
+            },
             "spamNftHiding": null,
             "collectionMetadataRefresh": null,
             "royaltiesOrOffers": null
@@ -18127,9 +18549,39 @@
               "explanation": "Frame docs say Frame supports any browser, command-line, or native app and any dapp through hardware/software signers.",
               "url": "https://docs.frame.sh/"
             },
-            "inAppBrowser": null,
-            "curatedDappDirectory": null,
-            "dappSearch": null,
+            "inAppBrowser": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://frame.sh/",
+                    "explanation": "Frame is a desktop system-wide provider; dApp browsing happens in the host browser via the Frame Companion extension, not a dedicated in-app browser."
+                  }
+                }
+              ]
+            },
+            "curatedDappDirectory": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://frame.sh/",
+                    "explanation": "Frame is a desktop system-wide Web3 provider; its docs describe no curated dApp directory or discover section."
+                  }
+                }
+              ]
+            },
+            "dappSearch": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.frame.sh/docs/Introduction/",
+                    "explanation": "Frame injects wallet connectivity into the host browser; no in-wallet dApp search feature is described."
+                  }
+                }
+              ]
+            },
             "walletConnectOnlyMode": {
               "$call": "notSupportedWithRef",
               "args": [
@@ -18142,7 +18594,17 @@
               ]
             },
             "featuredApps": null,
-            "riskRatedDiscovery": null
+            "riskRatedDiscovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.frame.sh/docs/Support/Dapp%20Connections/",
+                    "explanation": "Frame's dApp connection docs show only permission prompts and connection management with no risk ratings or scores."
+                  }
+                }
+              ]
+            }
           },
           "fiatRamps": {
             "ref": {
@@ -18532,8 +18994,28 @@
                 }
               ]
             },
-            "marketplaceIntegration": null,
-            "spamNftHiding": null,
+            "marketplaceIntegration": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://frame.sh/",
+                    "explanation": "Frame is a system-wide desktop Ethereum wallet focused on account/token management with no built-in NFT marketplace."
+                  }
+                }
+              ]
+            },
+            "spamNftHiding": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.frame.sh/docs/Getting%20Started/Account%20Modules/Inventory/",
+                    "explanation": "Frame's Inventory docs describe NFT organization and OpenSea link verification with no spam detection or hiding."
+                  }
+                }
+              ]
+            },
             "collectionMetadataRefresh": null,
             "royaltiesOrOffers": null
           },
@@ -19645,9 +20127,39 @@
               "explanation": "Gem Wallet docs say WalletConnect is integrated for DApp access via QR/paste connection.",
               "url": "https://docs.gemwallet.com/features/"
             },
-            "inAppBrowser": null,
-            "curatedDappDirectory": null,
-            "dappSearch": null,
+            "inAppBrowser": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://gemwallet.com/dapp-wallet/",
+                    "explanation": "Gem Wallet connects to external dApps exclusively via WalletConnect QR scanning; there is no built-in in-app dApp browser."
+                  }
+                }
+              ]
+            },
+            "curatedDappDirectory": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://gemwallet.com/dapp-wallet/",
+                    "explanation": "Gem Wallet's dApp page describes WalletConnect-based connectivity via QR codes only; no in-app curated dApp directory."
+                  }
+                }
+              ]
+            },
+            "dappSearch": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://gemwallet.com/dapp-wallet/",
+                    "explanation": "Gem Wallet uses WalletConnect QR scanning for dApp connections; no in-wallet dApp search function is described."
+                  }
+                }
+              ]
+            },
             "walletConnectOnlyMode": {
               "$call": "supported",
               "args": [
@@ -19660,7 +20172,17 @@
               ]
             },
             "featuredApps": null,
-            "riskRatedDiscovery": null
+            "riskRatedDiscovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://gemwallet.com/dapp-wallet/",
+                    "explanation": "Gem Wallet advises users to verify URLs manually; it shows no risk ratings or security scores for dApps in discovery."
+                  }
+                }
+              ]
+            }
           },
           "fiatRamps": {
             "ref": {
@@ -20005,9 +20527,39 @@
                 }
               ]
             },
-            "mint": null,
-            "marketplaceIntegration": null,
-            "spamNftHiding": null,
+            "mint": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://gemwallet.com/nft-wallet/",
+                    "explanation": "Gem Wallet's NFT page covers storage, viewing, and connecting to external marketplaces but no NFT minting."
+                  }
+                }
+              ]
+            },
+            "marketplaceIntegration": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://gemwallet.com/nft-wallet/",
+                    "explanation": "Gem Wallet's NFT page directs users to external marketplaces like OpenSea rather than offering a built-in in-app marketplace."
+                  }
+                }
+              ]
+            },
+            "spamNftHiding": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://docs.gemwallet.com/faq/token-verification/",
+                    "explanation": "Gem Wallet's token verification flags suspicious tokens and allows manual hiding for tokens only; no NFT-specific spam filtering is documented."
+                  }
+                }
+              ]
+            },
             "collectionMetadataRefresh": null,
             "royaltiesOrOffers": null
           },
@@ -22014,8 +22566,28 @@
                 }
               ]
             },
-            "curatedDappDirectory": null,
-            "dappSearch": null,
+            "curatedDappDirectory": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://medium.com/imtoken/updates-imtoken-2-2-0-released-revamped-dapp-browser-737afd08ca50",
+                    "explanation": "imToken's DApp browser has a 'Recommended' section of hand-picked dApps categorized into Finance, Exchanges, Games, Utilities, and Social."
+                  }
+                }
+              ]
+            },
+            "dappSearch": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://medium.com/imtoken/updates-imtoken-2-2-0-released-revamped-dapp-browser-737afd08ca50",
+                    "explanation": "imToken's DApp browser introduced a search function to find dApps by name or URL, with 'Hot Search' surfacing popular dApps."
+                  }
+                }
+              ]
+            },
             "walletConnectOnlyMode": {
               "$call": "notSupportedWithRef",
               "args": [
@@ -22028,7 +22600,17 @@
               ]
             },
             "featuredApps": null,
-            "riskRatedDiscovery": null
+            "riskRatedDiscovery": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://medium.com/imtoken/imtoken-2-9-2-out-now-with-updated-dapp-security-risk-control-and-more-551ca40f86c1",
+                    "explanation": "imToken 2.9.2 added dApp security risk control that shows risk warning banners on suspicious dApps in the browser and blocks high-risk ones, constituting risk-rated discovery."
+                  }
+                }
+              ]
+            }
           },
           "fiatRamps": {
             "ref": {
@@ -22430,7 +23012,17 @@
                 }
               ]
             },
-            "marketplaceIntegration": null,
+            "marketplaceIntegration": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.token.im/hc/en-us/articles/12033924875161-How-to-trade-NFTs-on-OpenSea",
+                    "explanation": "imToken's guide has users access OpenSea/tofuNFT via its dApp browser rather than a native built-in marketplace."
+                  }
+                }
+              ]
+            },
             "spamNftHiding": null,
             "collectionMetadataRefresh": null,
             "royaltiesOrOffers": null
@@ -25262,7 +25854,17 @@
                 }
               ]
             },
-            "dappSearch": null,
+            "dappSearch": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.metamask.io/configure/wallet/how-to-use-the-metamask-mobile-browser/",
+                    "explanation": "MetaMask Mobile's Explore tab includes a built-in browser with a search bar to find websites and dApps by name."
+                  }
+                }
+              ]
+            },
             "walletConnectOnlyMode": {
               "$ref": "notSupported"
             },
@@ -25754,7 +26356,17 @@
                 }
               ]
             },
-            "marketplaceIntegration": null,
+            "marketplaceIntegration": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.metamask.io/manage-crypto/nfts/nft-tokens-in-your-metamask-wallet/",
+                    "explanation": "MetaMask provides NFT viewing, autodetection, and sending but has no built-in marketplace for buying or selling."
+                  }
+                }
+              ]
+            },
             "spamNftHiding": {
               "$call": "supported",
               "args": [
@@ -26952,9 +27564,39 @@
               "explanation": "Bridge Wallet source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://www.mtpelerin.com/"
             },
-            "inAppBrowser": null,
-            "curatedDappDirectory": null,
-            "dappSearch": null,
+            "inAppBrowser": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.mtpelerin.com/bridge-wallet",
+                    "explanation": "Bridge Wallet connects to dApps exclusively through WalletConnect, with no built-in in-app dApp browser."
+                  }
+                }
+              ]
+            },
+            "curatedDappDirectory": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.mtpelerin.com/bridge-wallet",
+                    "explanation": "Bridge Wallet only offers WalletConnect connectivity; the official site describes no curated dApp directory."
+                  }
+                }
+              ]
+            },
+            "dappSearch": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.mtpelerin.com/bridge-wallet",
+                    "explanation": "Bridge Wallet uses WalletConnect for dApp connectivity; no in-wallet dApp search function is described."
+                  }
+                }
+              ]
+            },
             "walletConnectOnlyMode": {
               "$ref": "notSupported"
             },
@@ -27330,9 +27972,39 @@
                 }
               ]
             },
-            "mint": null,
-            "marketplaceIntegration": null,
-            "spamNftHiding": null,
+            "mint": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.mtpelerin.com/bridge-wallet",
+                    "explanation": "Bridge Wallet focuses on fungible crypto asset management with no NFT minting features."
+                  }
+                }
+              ]
+            },
+            "marketplaceIntegration": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.mtpelerin.com/bridge-wallet",
+                    "explanation": "Bridge Wallet lists asset management, trading, and DeFi connectivity with no NFT marketplace integration."
+                  }
+                }
+              ]
+            },
+            "spamNftHiding": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.mtpelerin.com/bridge-wallet",
+                    "explanation": "Bridge Wallet's documented features include no NFT support, let alone spam NFT filtering."
+                  }
+                }
+              ]
+            },
             "collectionMetadataRefresh": null,
             "royaltiesOrOffers": null
           },
@@ -28955,8 +29627,28 @@
               "explanation": "NuFi extension page says the extension connects to all dapps and the web wallet connects to dapps that support WalletConnect.",
               "url": "https://nu.fi/features/extension"
             },
-            "inAppBrowser": null,
-            "curatedDappDirectory": null,
+            "inAppBrowser": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://reviewnexa.com/nufi-wallet-review/",
+                    "explanation": "NuFi's mobile app includes a dApp browser (functional but lacking advanced features like multi-tabs/bookmarks), per a 2026 hands-on review."
+                  }
+                }
+              ]
+            },
+            "curatedDappDirectory": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://nu.fi/features/dapps",
+                    "explanation": "NuFi's features page confirms a 'DApp directory inside your wallet' for browsing decentralised applications."
+                  }
+                }
+              ]
+            },
             "dappSearch": null,
             "walletConnectOnlyMode": {
               "$call": "notSupportedWithRef",
@@ -28970,7 +29662,17 @@
               ]
             },
             "featuredApps": null,
-            "riskRatedDiscovery": null
+            "riskRatedDiscovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://reviewnexa.com/nufi-wallet-review/",
+                    "explanation": "NuFi has real-time transaction scanning but the review describes no risk ratings or scores displayed in dApp discovery."
+                  }
+                }
+              ]
+            }
           },
           "fiatRamps": {
             "ref": {
@@ -29330,8 +30032,28 @@
                 }
               ]
             },
-            "marketplaceIntegration": null,
-            "spamNftHiding": null,
+            "marketplaceIntegration": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://nu.fi/blog/connect-to-nft-marketplaces-de-xes-and-other-d-apps-with-nu-fi-s-new-chrome-extension",
+                    "explanation": "NuFi connects users to external NFT marketplaces via its dApp connector rather than hosting a built-in marketplace."
+                  }
+                }
+              ]
+            },
+            "spamNftHiding": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.nu.fi/support/solutions/articles/80001016927-changelog",
+                    "explanation": "NuFi's changelog shows an NFT hide/unhide toggle and multi-chain gallery but no spam NFT auto-detection or filtering."
+                  }
+                }
+              ]
+            },
             "collectionMetadataRefresh": null,
             "royaltiesOrOffers": null
           },
@@ -30594,7 +31316,17 @@
                 }
               ]
             },
-            "dappSearch": null,
+            "dappSearch": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.okx.com/help/what-can-discover-at-okx-wallet-do-for-you",
+                    "explanation": "OKX Wallet's Discover section includes a search bar for finding dApps, plus category filtering and curated recommendations."
+                  }
+                }
+              ]
+            },
             "walletConnectOnlyMode": {
               "$call": "notSupportedWithRef",
               "args": [
@@ -32798,7 +33530,17 @@
                 }
               ]
             },
-            "dappSearch": null,
+            "dappSearch": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.phantom.com/hc/en-us/articles/41523165147667-Use-the-Explore-tab-in-Phantom",
+                    "explanation": "Phantom's Explore tab has a Sites section where users enter an app's name or URL to search for and launch dApps."
+                  }
+                }
+              ]
+            },
             "walletConnectOnlyMode": {
               "$call": "notSupportedWithRef",
               "args": [
@@ -32811,7 +33553,17 @@
               ]
             },
             "featuredApps": null,
-            "riskRatedDiscovery": null
+            "riskRatedDiscovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://phantom.com/learn/blog/security-at-phantom",
+                    "explanation": "Phantom uses Blowfish for malicious-domain blocking and transaction previews but describes no risk-rated discovery in its Explore browser."
+                  }
+                }
+              ]
+            }
           },
           "fiatRamps": {
             "ref": {
@@ -33305,9 +34057,39 @@
                 }
               ]
             },
-            "mint": null,
-            "marketplaceIntegration": null,
-            "spamNftHiding": null,
+            "mint": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://nftplazas.com/phantom-camera-mint/",
+                    "explanation": "Phantom's Camera Mint feature in the mobile Collectibles tab lets users mint photos or videos as Solana NFTs directly within the wallet."
+                  }
+                }
+              ]
+            },
+            "marketplaceIntegration": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://phantom.com/learn/blog/introducing-instant-sell",
+                    "explanation": "Phantom's built-in Instant Sell aggregates NFT offers from Blur, OpenSea, Magic Eden, and Tensor, letting users sell NFTs at the best price within the wallet."
+                  }
+                }
+              ]
+            },
+            "spamNftHiding": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.phantom.com/hc/en-us/articles/12983715032083-How-to-report-and-hide-spam-NFTs",
+                    "explanation": "Phantom automatically hides NFTs identified as spam via SimpleHash-powered detection and lets users manually report and hide more."
+                  }
+                }
+              ]
+            },
             "collectionMetadataRefresh": null,
             "royaltiesOrOffers": null
           },
@@ -34421,7 +35203,17 @@
                 }
               ]
             },
-            "curatedDappDirectory": null,
+            "curatedDappDirectory": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://pillar.fi/blog/5-reasons-to-integrate-your-dapp-with-pillarx/",
+                    "explanation": "PillarX features a built-in Web3 App Store where curated dApps are listed and discoverable within the wallet."
+                  }
+                }
+              ]
+            },
             "dappSearch": null,
             "walletConnectOnlyMode": {
               "$call": "notSupportedWithRef",
@@ -34752,8 +35544,28 @@
                 }
               ]
             },
-            "mint": null,
-            "marketplaceIntegration": null,
+            "mint": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+                    "explanation": "PillarX's listing mentions ERC-1155 support but describes no NFT minting; the wallet focuses on DeFi and cross-chain operations."
+                  }
+                }
+              ]
+            },
+            "marketplaceIntegration": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://apps.apple.com/us/app/pillarx-smart-defi-wallet/id1346582238",
+                    "explanation": "PillarX's App Store listing covers cross-chain swaps, stablecoin gas, and security with no NFT marketplace integration."
+                  }
+                }
+              ]
+            },
             "spamNftHiding": null,
             "collectionMetadataRefresh": null,
             "royaltiesOrOffers": null
@@ -36517,7 +37329,17 @@
                 }
               ]
             },
-            "curatedDappDirectory": null,
+            "curatedDappDirectory": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.coingecko.com/learn/how-to-use-rabby-wallet",
+                    "explanation": "Rabby's mobile app has an 'Explore Popular DApps' section listing curated dApps to browse and favourite."
+                  }
+                }
+              ]
+            },
             "dappSearch": {
               "$call": "supported",
               "args": [
@@ -36983,8 +37805,28 @@
                 }
               ]
             },
-            "marketplaceIntegration": null,
-            "spamNftHiding": null,
+            "marketplaceIntegration": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://bytwork.com/en/wallets/rabby",
+                    "explanation": "Rabby displays NFTs from DeBank data and connects to external platforms like OpenSea, but has no built-in in-app NFT marketplace."
+                  }
+                }
+              ]
+            },
+            "spamNftHiding": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://bytwork.com/en/wallets/rabby",
+                    "explanation": "Rabby flags scam transactions (incl. NFT airdrops) in history as 'Scam Tx' but does not auto-hide NFTs from the collectibles view."
+                  }
+                }
+              ]
+            },
             "collectionMetadataRefresh": null,
             "royaltiesOrOffers": null
           },
@@ -38192,12 +39034,52 @@
               "explanation": "Rainbow homepage describes wallet actions including swap, bridge, send, wallet management, watch/impersonate, and NFT management.",
               "url": "https://rainbow.me/"
             },
-            "inAppBrowser": null,
-            "curatedDappDirectory": null,
-            "dappSearch": null,
+            "inAppBrowser": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://rainbow.me/support/app/the-rainbow-in-app-browser",
+                    "explanation": "Rainbow's support page documents a full in-app dApp browser with trending discovery, multi-tab support, bookmarks, and network switching."
+                  }
+                }
+              ]
+            },
+            "curatedDappDirectory": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://rainbow.me/support/app/the-rainbow-in-app-browser",
+                    "explanation": "Rainbow's in-app browser features a trending dApps bar dynamically updated by user activity, serving as a curated discovery list."
+                  }
+                }
+              ]
+            },
+            "dappSearch": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://rainbow.me/support/app/the-rainbow-in-app-browser",
+                    "explanation": "Rainbow's in-app browser includes a search bar to search for specific dApps by name."
+                  }
+                }
+              ]
+            },
             "walletConnectOnlyMode": null,
             "featuredApps": null,
-            "riskRatedDiscovery": null
+            "riskRatedDiscovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://www.blockaid.io/blog/rainbow-wallet-mobile-app-and-browser-extension-powered-by-blockaid",
+                    "explanation": "Rainbow's Blockaid integration warns before connecting to malicious sites at connect time, but does not show risk ratings/scores in a dApp discovery interface."
+                  }
+                }
+              ]
+            }
           },
           "fiatRamps": {
             "ref": {
@@ -38586,10 +39468,40 @@
                 }
               ]
             },
-            "send": null,
+            "send": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://rainbow.me/support/app/send-an-nft",
+                    "explanation": "Rainbow's support page documents a dedicated 'Send an NFT' flow to transfer an NFT to another address."
+                  }
+                }
+              ]
+            },
             "mint": null,
-            "marketplaceIntegration": null,
-            "spamNftHiding": null,
+            "marketplaceIntegration": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://rainbow.me/support/app/nft-offers",
+                    "explanation": "Rainbow aggregates NFT offers from OpenSea/Blur/Rarible for selling, but users must visit external platforms to browse and buy; there is no native in-app buying marketplace."
+                  }
+                }
+              ]
+            },
+            "spamNftHiding": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://rainbow.me/support/app/hide-and-unhide-nfts",
+                    "explanation": "Rainbow has a built-in spam filter that automatically hides NFTs detected as spammy, with manual hide and a Hidden tab."
+                  }
+                }
+              ]
+            },
             "collectionMetadataRefresh": null,
             "royaltiesOrOffers": null
           },
@@ -39900,7 +40812,17 @@
               "explanation": "Safe users page says users can trade, stake, bridge, and lend without leaving Safe and connect anywhere with WalletConnect; mobile help documents WalletConnect dapp connections.",
               "url": "https://safe.global/users"
             },
-            "inAppBrowser": null,
+            "inAppBrowser": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.safe.global/articles/6643739210-how-to-connect-a-safe-to-a-dapp-using-walletconnect",
+                    "explanation": "Safe connects to dApps via WalletConnect and iframe-based Safe Apps rather than a standalone in-app dApp browser."
+                  }
+                }
+              ]
+            },
             "curatedDappDirectory": {
               "$call": "supported",
               "args": [
@@ -40319,9 +41241,39 @@
                 }
               ]
             },
-            "mint": null,
-            "marketplaceIntegration": null,
-            "spamNftHiding": null,
+            "mint": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.safe.global/en/articles/40825-supported-asset-types",
+                    "explanation": "Safe describes managing and transferring NFTs with no NFT minting capability."
+                  }
+                }
+              ]
+            },
+            "marketplaceIntegration": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.safe.global/en/articles/40825-supported-asset-types",
+                    "explanation": "Safe positions itself as secure custody for NFTs (ERC-721 in the Assets tab) rather than a trading platform; no built-in marketplace is documented."
+                  }
+                }
+              ]
+            },
+            "spamNftHiding": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.safe.global/en/articles/40825-supported-asset-types",
+                    "explanation": "Safe supports ERC-721 NFTs in the Assets tab but documents no spam NFT detection or hiding capability."
+                  }
+                }
+              ]
+            },
             "collectionMetadataRefresh": null,
             "royaltiesOrOffers": null
           },
@@ -41900,7 +42852,17 @@
                 }
               ]
             },
-            "dappSearch": null,
+            "dappSearch": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://trustwallet.com/blog/web3/exploring-the-dapp-browser-your-gateway-to-web3",
+                    "explanation": "Trust Wallet's DApp browser includes a search bar to find specific dApps, alongside a curated Discover section."
+                  }
+                }
+              ]
+            },
             "walletConnectOnlyMode": {
               "$call": "notSupportedWithRef",
               "args": [
@@ -41913,7 +42875,17 @@
               ]
             },
             "featuredApps": null,
-            "riskRatedDiscovery": null
+            "riskRatedDiscovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://trustwallet.com/blog/security/learn-how-trust-wallet-s-security-scanner-keeps-you-safe-from-the-latest-crypto-traps",
+                    "explanation": "Trust Wallet's Security Scanner assigns per-transaction risk ratings but does not display risk scores for dApps in the discovery/browser listing."
+                  }
+                }
+              ]
+            }
           },
           "fiatRamps": {
             "ref": {
@@ -42347,8 +43319,28 @@
                 }
               ]
             },
-            "send": null,
-            "mint": null,
+            "send": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://trustwallet.com/blog/nft/nf-ts-in-trust-wallet-how-to-store-send-and-showcase-digital-collectibles",
+                    "explanation": "Trust Wallet's blog documents NFT sending: locate a collectible, tap send, and enter the recipient address on ERC-721/ERC-1155 networks."
+                  }
+                }
+              ]
+            },
+            "mint": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://trustwallet.com/nft",
+                    "explanation": "Trust Wallet's NFT page describes the wallet as a gateway to external marketplaces for storage/management only, with no in-app minting."
+                  }
+                }
+              ]
+            },
             "marketplaceIntegration": {
               "$call": "supported",
               "args": [
@@ -42360,7 +43352,17 @@
                 }
               ]
             },
-            "spamNftHiding": null,
+            "spamNftHiding": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.trustwallet.com/support/solutions/articles/67000734374-how-to-handle-spam-or-scam-nfts-in-your-wallet",
+                    "explanation": "Trust Wallet has a built-in NFT spam filter enabled by default that hides scam/spam NFTs via a Scam NFT API, plus manual controls."
+                  }
+                }
+              ]
+            },
             "collectionMetadataRefresh": null,
             "royaltiesOrOffers": null
           },
@@ -43682,7 +44684,17 @@
               ]
             },
             "featuredApps": null,
-            "riskRatedDiscovery": null
+            "riskRatedDiscovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.uniswap.org/hc/en-us/articles/37781087046029-Dapp-Protection-via-WalletConnect-and-Blockaid",
+                    "explanation": "Uniswap Wallet uses Blockaid to show connection warnings via WalletConnect but has no dApp discovery browser with risk-rated listings."
+                  }
+                }
+              ]
+            }
           },
           "fiatRamps": {
             "ref": {
@@ -44083,7 +45095,17 @@
                 }
               ]
             },
-            "spamNftHiding": null,
+            "spamNftHiding": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://support.uniswap.org/hc/en-us/articles/30678956427533-How-to-report-an-NFT-as-spam-in-the-Uniswap-Wallet",
+                    "explanation": "Uniswap Wallet auto-detects potential spam NFTs and moves them to a hidden section, with a manual report-as-spam control."
+                  }
+                }
+              ]
+            },
             "collectionMetadataRefresh": null,
             "royaltiesOrOffers": null
           },
@@ -45358,7 +46380,17 @@
               ]
             },
             "curatedDappDirectory": null,
-            "dappSearch": null,
+            "dappSearch": {
+              "$call": "supported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://zerion.io/blog/what-is-dapp-browser/",
+                    "explanation": "Zerion Wallet's dApp browser has a navigation bar to enter a dApp name or URL, described as a powerful search feature with a multi-tab browser."
+                  }
+                }
+              ]
+            },
             "walletConnectOnlyMode": {
               "$call": "notSupportedWithRef",
               "args": [
@@ -45371,7 +46403,17 @@
               ]
             },
             "featuredApps": null,
-            "riskRatedDiscovery": null
+            "riskRatedDiscovery": {
+              "$call": "notSupported",
+              "args": [
+                {
+                  "ref": {
+                    "url": "https://help.zerion.io/en/articles/8361035-how-does-zerion-help-you-stay-protected-from-phishing-websites",
+                    "explanation": "Zerion's Blockaid-powered phishing defense warns/blocks malicious dApps at connect time but shows no risk ratings/scores in a dApp discovery interface."
+                  }
+                }
+              ]
+            }
           },
           "fiatRamps": {
             "ref": {
@@ -47157,7 +48199,9 @@
                 }
               ]
             },
-            "dappSearch": null,
+            "dappSearch": {
+              "$ref": "notApplicable"
+            },
             "walletConnectOnlyMode": {
               "$call": "notSupportedWithRef",
               "args": [
@@ -47170,7 +48214,9 @@
               ]
             },
             "featuredApps": null,
-            "riskRatedDiscovery": null
+            "riskRatedDiscovery": {
+              "$ref": "notApplicable"
+            }
           },
           "fiatRamps": {
             "ref": {
@@ -47515,11 +48561,21 @@
               "explanation": "Zeus source review for this category used the linked official wallet, support, app listing, or repository source.",
               "url": "https://github.com/greekfetacheese/zeus"
             },
-            "display": null,
-            "send": null,
-            "mint": null,
-            "marketplaceIntegration": null,
-            "spamNftHiding": null,
+            "display": {
+              "$ref": "notApplicable"
+            },
+            "send": {
+              "$ref": "notApplicable"
+            },
+            "mint": {
+              "$ref": "notApplicable"
+            },
+            "marketplaceIntegration": {
+              "$ref": "notApplicable"
+            },
+            "spamNftHiding": {
+              "$ref": "notApplicable"
+            },
             "collectionMetadataRefresh": null,
             "royaltiesOrOffers": null
           },

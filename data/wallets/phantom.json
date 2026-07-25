@@ -858,7 +858,17 @@
               }
             ]
           },
-          "dappSearch": null,
+          "dappSearch": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.phantom.com/hc/en-us/articles/41523165147667-Use-the-Explore-tab-in-Phantom",
+                  "explanation": "Phantom's Explore tab has a Sites section where users enter an app's name or URL to search for and launch dApps."
+                }
+              }
+            ]
+          },
           "walletConnectOnlyMode": {
             "$call": "notSupportedWithRef",
             "args": [
@@ -871,7 +881,17 @@
             ]
           },
           "featuredApps": null,
-          "riskRatedDiscovery": null
+          "riskRatedDiscovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://phantom.com/learn/blog/security-at-phantom",
+                  "explanation": "Phantom uses Blowfish for malicious-domain blocking and transaction previews but describes no risk-rated discovery in its Explore browser."
+                }
+              }
+            ]
+          }
         },
         "fiatRamps": {
           "ref": {
@@ -1365,9 +1385,39 @@
               }
             ]
           },
-          "mint": null,
-          "marketplaceIntegration": null,
-          "spamNftHiding": null,
+          "mint": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://nftplazas.com/phantom-camera-mint/",
+                  "explanation": "Phantom's Camera Mint feature in the mobile Collectibles tab lets users mint photos or videos as Solana NFTs directly within the wallet."
+                }
+              }
+            ]
+          },
+          "marketplaceIntegration": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://phantom.com/learn/blog/introducing-instant-sell",
+                  "explanation": "Phantom's built-in Instant Sell aggregates NFT offers from Blur, OpenSea, Magic Eden, and Tensor, letting users sell NFTs at the best price within the wallet."
+                }
+              }
+            ]
+          },
+          "spamNftHiding": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.phantom.com/hc/en-us/articles/12983715032083-How-to-report-and-hide-spam-NFTs",
+                  "explanation": "Phantom automatically hides NFTs identified as spam via SimpleHash-powered detection and lets users manually report and hide more."
+                }
+              }
+            ]
+          },
           "collectionMetadataRefresh": null,
           "royaltiesOrOffers": null
         },

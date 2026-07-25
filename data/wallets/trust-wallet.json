@@ -692,7 +692,17 @@
               }
             ]
           },
-          "dappSearch": null,
+          "dappSearch": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trustwallet.com/blog/web3/exploring-the-dapp-browser-your-gateway-to-web3",
+                  "explanation": "Trust Wallet's DApp browser includes a search bar to find specific dApps, alongside a curated Discover section."
+                }
+              }
+            ]
+          },
           "walletConnectOnlyMode": {
             "$call": "notSupportedWithRef",
             "args": [
@@ -705,7 +715,17 @@
             ]
           },
           "featuredApps": null,
-          "riskRatedDiscovery": null
+          "riskRatedDiscovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trustwallet.com/blog/security/learn-how-trust-wallet-s-security-scanner-keeps-you-safe-from-the-latest-crypto-traps",
+                  "explanation": "Trust Wallet's Security Scanner assigns per-transaction risk ratings but does not display risk scores for dApps in the discovery/browser listing."
+                }
+              }
+            ]
+          }
         },
         "fiatRamps": {
           "ref": {
@@ -1139,8 +1159,28 @@
               }
             ]
           },
-          "send": null,
-          "mint": null,
+          "send": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trustwallet.com/blog/nft/nf-ts-in-trust-wallet-how-to-store-send-and-showcase-digital-collectibles",
+                  "explanation": "Trust Wallet's blog documents NFT sending: locate a collectible, tap send, and enter the recipient address on ERC-721/ERC-1155 networks."
+                }
+              }
+            ]
+          },
+          "mint": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://trustwallet.com/nft",
+                  "explanation": "Trust Wallet's NFT page describes the wallet as a gateway to external marketplaces for storage/management only, with no in-app minting."
+                }
+              }
+            ]
+          },
           "marketplaceIntegration": {
             "$call": "supported",
             "args": [
@@ -1152,7 +1192,17 @@
               }
             ]
           },
-          "spamNftHiding": null,
+          "spamNftHiding": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.trustwallet.com/support/solutions/articles/67000734374-how-to-handle-spam-or-scam-nfts-in-your-wallet",
+                  "explanation": "Trust Wallet has a built-in NFT spam filter enabled by default that hides scam/spam NFTs via a Scam NFT API, plus manual controls."
+                }
+              }
+            ]
+          },
           "collectionMetadataRefresh": null,
           "royaltiesOrOffers": null
         },

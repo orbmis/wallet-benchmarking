@@ -659,8 +659,28 @@
               }
             ]
           },
-          "curatedDappDirectory": null,
-          "dappSearch": null,
+          "curatedDappDirectory": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/brave/brave-browser/issues/50897",
+                  "explanation": "The DappRadar-powered Web3/Explorer tab was removed in Brave v1.86.x after DappRadar shut down, with no replacement directory shipped."
+                }
+              }
+            ]
+          },
+          "dappSearch": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/brave/brave-browser/issues/50897",
+                  "explanation": "With the DappRadar-powered Web3/Explorer tab removed, Brave Wallet no longer has an in-wallet dApp search; users navigate via the address bar."
+                }
+              }
+            ]
+          },
           "walletConnectOnlyMode": {
             "$call": "notSupportedWithRef",
             "args": [
@@ -673,7 +693,17 @@
             ]
           },
           "featuredApps": null,
-          "riskRatedDiscovery": null
+          "riskRatedDiscovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://cryptoadventure.com/brave-browser-dapp-review-2026-privacy-first-web3-browser-with-built-in-wallet-and-rewards/",
+                  "explanation": "Brave provides phishing/tracker protection via the browser but shows no risk ratings or scores for dApps in a discovery interface."
+                }
+              }
+            ]
+          }
         },
         "fiatRamps": {
           "ref": {
@@ -1068,9 +1098,39 @@
               }
             ]
           },
-          "mint": null,
-          "marketplaceIntegration": null,
-          "spamNftHiding": null,
+          "mint": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://brave.com/blog/nft-gallery/",
+                  "explanation": "Brave's NFT announcement covers gallery and market tab features but no in-app NFT minting capability."
+                }
+              }
+            ]
+          },
+          "marketplaceIntegration": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://brave.com/blog/nft-gallery/",
+                  "explanation": "Brave announced an NFT gallery with a dedicated market tab featuring real-time NFT price feeds and Magic Eden launchpad integration for purchasing NFTs."
+                }
+              }
+            ]
+          },
+          "spamNftHiding": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://github.com/brave/brave-browser/wiki/NFT-Discovery",
+                  "explanation": "Brave Wallet uses SimpleHash spam scores via opt-in NFT Discovery, automatically excluding any NFT with a spam score above zero."
+                }
+              }
+            ]
+          },
           "collectionMetadataRefresh": null,
           "royaltiesOrOffers": null
         },

@@ -1269,7 +1269,17 @@
               }
             ]
           },
-          "spamNftHiding": null,
+          "spamNftHiding": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://web3.bitget.com/crypto-news/best-nft-management-tools-crypto-wallets-2026-guide",
+                  "explanation": "Bitget Wallet's own editorial describes advanced spam filtering as a built-in feature of its NFT management for maintaining a clean gallery."
+                }
+              }
+            ]
+          },
           "collectionMetadataRefresh": null,
           "royaltiesOrOffers": null
         },

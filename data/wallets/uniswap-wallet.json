@@ -905,7 +905,17 @@
             ]
           },
           "featuredApps": null,
-          "riskRatedDiscovery": null
+          "riskRatedDiscovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.uniswap.org/hc/en-us/articles/37781087046029-Dapp-Protection-via-WalletConnect-and-Blockaid",
+                  "explanation": "Uniswap Wallet uses Blockaid to show connection warnings via WalletConnect but has no dApp discovery browser with risk-rated listings."
+                }
+              }
+            ]
+          }
         },
         "fiatRamps": {
           "ref": {
@@ -1306,7 +1316,17 @@
               }
             ]
           },
-          "spamNftHiding": null,
+          "spamNftHiding": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.uniswap.org/hc/en-us/articles/30678956427533-How-to-report-an-NFT-as-spam-in-the-Uniswap-Wallet",
+                  "explanation": "Uniswap Wallet auto-detects potential spam NFTs and moves them to a hidden section, with a manual report-as-spam control."
+                }
+              }
+            ]
+          },
           "collectionMetadataRefresh": null,
           "royaltiesOrOffers": null
         },

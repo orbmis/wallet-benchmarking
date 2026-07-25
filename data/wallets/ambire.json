@@ -1356,7 +1356,17 @@
             "explanation": "Ambire says users can connect to any apps easily and has a built-in verified app catalog.",
             "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/"
           },
-          "inAppBrowser": null,
+          "inAppBrowser": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.ambire.com/new-interactive-flow-the-ambire-dapp-catalog-ensures-smooth-web3-sailing/",
+                  "explanation": "The Ambire mobile app includes a curated dApp catalog and lets users open and use dApps directly inside the wallet, constituting a built-in dApp browser."
+                }
+              }
+            ]
+          },
           "curatedDappDirectory": {
             "$call": "supported",
             "args": [
@@ -1368,7 +1378,17 @@
               }
             ]
           },
-          "dappSearch": null,
+          "dappSearch": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.ambire.com/new-interactive-flow-the-ambire-dapp-catalog-ensures-smooth-web3-sailing/",
+                  "explanation": "Ambire has a curated dApp catalog with 20+ whitelisted dApps browsable by category, plus custom dApp add and instant connect."
+                }
+              }
+            ]
+          },
           "walletConnectOnlyMode": {
             "$call": "notSupportedWithRef",
             "args": [
@@ -1817,8 +1837,28 @@
               }
             ]
           },
-          "marketplaceIntegration": null,
-          "spamNftHiding": null,
+          "marketplaceIntegration": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/",
+                  "explanation": "Ambire's blog describes NFT viewing/displaying inside the extension only, with no built-in marketplace for buying or selling."
+                }
+              }
+            ]
+          },
+          "spamNftHiding": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://blog.ambire.com/make-the-most-out-of-ambire-wallet/",
+                  "explanation": "Ambire describes NFT viewing within the extension but no spam NFT detection, hiding, or filtering."
+                }
+              }
+            ]
+          },
           "collectionMetadataRefresh": null,
           "royaltiesOrOffers": null
         },

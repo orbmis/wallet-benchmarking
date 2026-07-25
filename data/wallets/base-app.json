@@ -1370,8 +1370,28 @@
               }
             ]
           },
-          "marketplaceIntegration": null,
-          "spamNftHiding": null,
+          "marketplaceIntegration": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://cryptoslate.com/coinbases-new-base-super-app-puts-trading-payments-social-and-ai-under-one-roof/",
+                  "explanation": "Base App integrates Zora's token minting/trading directly into the app, letting users publish content, generate tokens, and trade them without leaving the app."
+                }
+              }
+            ]
+          },
+          "spamNftHiding": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://decrypt.co/120237/coinbase-wallet-adds-safety-features-following-high-profile-nft-scams",
+                  "explanation": "Coinbase Wallet (Base app) automatically hides assets flagged as spam from the home screen, with a Settings option to review and unhide them."
+                }
+              }
+            ]
+          },
           "collectionMetadataRefresh": null,
           "royaltiesOrOffers": null
         },

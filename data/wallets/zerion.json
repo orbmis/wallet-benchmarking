@@ -868,7 +868,17 @@
             ]
           },
           "curatedDappDirectory": null,
-          "dappSearch": null,
+          "dappSearch": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://zerion.io/blog/what-is-dapp-browser/",
+                  "explanation": "Zerion Wallet's dApp browser has a navigation bar to enter a dApp name or URL, described as a powerful search feature with a multi-tab browser."
+                }
+              }
+            ]
+          },
           "walletConnectOnlyMode": {
             "$call": "notSupportedWithRef",
             "args": [
@@ -881,7 +891,17 @@
             ]
           },
           "featuredApps": null,
-          "riskRatedDiscovery": null
+          "riskRatedDiscovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://help.zerion.io/en/articles/8361035-how-does-zerion-help-you-stay-protected-from-phishing-websites",
+                  "explanation": "Zerion's Blockaid-powered phishing defense warns/blocks malicious dApps at connect time but shows no risk ratings/scores in a dApp discovery interface."
+                }
+              }
+            ]
+          }
         },
         "fiatRamps": {
           "ref": {

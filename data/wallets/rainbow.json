@@ -813,12 +813,52 @@
             "explanation": "Rainbow homepage describes wallet actions including swap, bridge, send, wallet management, watch/impersonate, and NFT management.",
             "url": "https://rainbow.me/"
           },
-          "inAppBrowser": null,
-          "curatedDappDirectory": null,
-          "dappSearch": null,
+          "inAppBrowser": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbow.me/support/app/the-rainbow-in-app-browser",
+                  "explanation": "Rainbow's support page documents a full in-app dApp browser with trending discovery, multi-tab support, bookmarks, and network switching."
+                }
+              }
+            ]
+          },
+          "curatedDappDirectory": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbow.me/support/app/the-rainbow-in-app-browser",
+                  "explanation": "Rainbow's in-app browser features a trending dApps bar dynamically updated by user activity, serving as a curated discovery list."
+                }
+              }
+            ]
+          },
+          "dappSearch": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbow.me/support/app/the-rainbow-in-app-browser",
+                  "explanation": "Rainbow's in-app browser includes a search bar to search for specific dApps by name."
+                }
+              }
+            ]
+          },
           "walletConnectOnlyMode": null,
           "featuredApps": null,
-          "riskRatedDiscovery": null
+          "riskRatedDiscovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://www.blockaid.io/blog/rainbow-wallet-mobile-app-and-browser-extension-powered-by-blockaid",
+                  "explanation": "Rainbow's Blockaid integration warns before connecting to malicious sites at connect time, but does not show risk ratings/scores in a dApp discovery interface."
+                }
+              }
+            ]
+          }
         },
         "fiatRamps": {
           "ref": {
@@ -1207,10 +1247,40 @@
               }
             ]
           },
-          "send": null,
+          "send": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbow.me/support/app/send-an-nft",
+                  "explanation": "Rainbow's support page documents a dedicated 'Send an NFT' flow to transfer an NFT to another address."
+                }
+              }
+            ]
+          },
           "mint": null,
-          "marketplaceIntegration": null,
-          "spamNftHiding": null,
+          "marketplaceIntegration": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbow.me/support/app/nft-offers",
+                  "explanation": "Rainbow aggregates NFT offers from OpenSea/Blur/Rarible for selling, but users must visit external platforms to browse and buy; there is no native in-app buying marketplace."
+                }
+              }
+            ]
+          },
+          "spamNftHiding": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://rainbow.me/support/app/hide-and-unhide-nfts",
+                  "explanation": "Rainbow has a built-in spam filter that automatically hides NFTs detected as spammy, with manual hide and a Hidden tab."
+                }
+              }
+            ]
+          },
           "collectionMetadataRefresh": null,
           "royaltiesOrOffers": null
         },

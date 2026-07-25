@@ -759,8 +759,28 @@
               }
             ]
           },
-          "curatedDappDirectory": null,
-          "dappSearch": null,
+          "curatedDappDirectory": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://medium.com/imtoken/updates-imtoken-2-2-0-released-revamped-dapp-browser-737afd08ca50",
+                  "explanation": "imToken's DApp browser has a 'Recommended' section of hand-picked dApps categorized into Finance, Exchanges, Games, Utilities, and Social."
+                }
+              }
+            ]
+          },
+          "dappSearch": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://medium.com/imtoken/updates-imtoken-2-2-0-released-revamped-dapp-browser-737afd08ca50",
+                  "explanation": "imToken's DApp browser introduced a search function to find dApps by name or URL, with 'Hot Search' surfacing popular dApps."
+                }
+              }
+            ]
+          },
           "walletConnectOnlyMode": {
             "$call": "notSupportedWithRef",
             "args": [
@@ -773,7 +793,17 @@
             ]
           },
           "featuredApps": null,
-          "riskRatedDiscovery": null
+          "riskRatedDiscovery": {
+            "$call": "supported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://medium.com/imtoken/imtoken-2-9-2-out-now-with-updated-dapp-security-risk-control-and-more-551ca40f86c1",
+                  "explanation": "imToken 2.9.2 added dApp security risk control that shows risk warning banners on suspicious dApps in the browser and blocks high-risk ones, constituting risk-rated discovery."
+                }
+              }
+            ]
+          }
         },
         "fiatRamps": {
           "ref": {
@@ -1175,7 +1205,17 @@
               }
             ]
           },
-          "marketplaceIntegration": null,
+          "marketplaceIntegration": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://support.token.im/hc/en-us/articles/12033924875161-How-to-trade-NFTs-on-OpenSea",
+                  "explanation": "imToken's guide has users access OpenSea/tofuNFT via its dApp browser rather than a native built-in marketplace."
+                }
+              }
+            ]
+          },
           "spamNftHiding": null,
           "collectionMetadataRefresh": null,
           "royaltiesOrOffers": null

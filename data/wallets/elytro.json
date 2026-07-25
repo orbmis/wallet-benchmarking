@@ -787,14 +787,54 @@
             "explanation": "Elytro source review for this category used the linked official wallet, support, app listing, or repository source.",
             "url": "https://elytro.com"
           },
-          "inAppBrowser": null,
-          "curatedDappDirectory": null,
-          "dappSearch": null,
+          "inAppBrowser": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/faq",
+                  "explanation": "Elytro is currently CLI- and legacy-Chrome-extension-based with no mobile app or dedicated in-app dApp browser."
+                }
+              }
+            ]
+          },
+          "curatedDappDirectory": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/faq",
+                  "explanation": "Elytro is a smart-account wallet for AI agents with CLI-based control; its FAQ describes no curated dApp directory."
+                }
+              }
+            ]
+          },
+          "dappSearch": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/",
+                  "explanation": "Elytro's feature set focuses on smart-account infrastructure and agent operations; no dApp search feature is mentioned."
+                }
+              }
+            ]
+          },
           "walletConnectOnlyMode": {
             "$ref": "notSupported"
           },
           "featuredApps": null,
-          "riskRatedDiscovery": null
+          "riskRatedDiscovery": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/faq",
+                  "explanation": "No evidence of risk-rated dApp discovery in Elytro; the product is CLI/legacy-extension based with no documented dApp risk scoring."
+                }
+              }
+            ]
+          }
         },
         "fiatRamps": {
           "ref": {
@@ -1109,9 +1149,39 @@
               }
             ]
           },
-          "mint": null,
-          "marketplaceIntegration": null,
-          "spamNftHiding": null,
+          "mint": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/faq",
+                  "explanation": "Elytro's FAQ describes smart-account operations for DeFi and AI agents with no NFT minting capability."
+                }
+              }
+            ]
+          },
+          "marketplaceIntegration": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/faq",
+                  "explanation": "Elytro's FAQ describes the wallet as focused on Ethereum account abstraction and agent operations with no NFT marketplace features."
+                }
+              }
+            ]
+          },
+          "spamNftHiding": {
+            "$call": "notSupported",
+            "args": [
+              {
+                "ref": {
+                  "url": "https://elytro.com/faq",
+                  "explanation": "Elytro's FAQ describes token/DeFi/agent features only with no NFT support or spam filtering."
+                }
+              }
+            ]
+          },
           "collectionMetadataRefresh": null,
           "royaltiesOrOffers": null
         },
