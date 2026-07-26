@@ -25,6 +25,7 @@
   .controls{display:flex;gap:18px;flex-wrap:wrap;padding:14px 20px;border-bottom:1px solid var(--line);background:var(--panel)}
   .ctl{display:flex;flex-direction:column;gap:5px}
   .ctl > label{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+  details.help.rivals > .inner{padding-top:14px}
   select,input[type=text]{background:var(--panel2);color:var(--txt);border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-size:13px}
   .chipgroups{display:flex;flex-direction:column;gap:9px}
   .chipgroup .grphead{font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:4px}
@@ -105,7 +106,7 @@
   .nosrc{color:var(--warn);background:var(--warnbg);border:1px solid #4a3a16;border-radius:8px;padding:9px 11px;font-size:12.5px}
 
   /* first-run help */
-  details.help{margin:14px 20px 0;background:var(--panel);border:1px solid var(--line);border-radius:10px}
+  details.help{margin:14px 20px 22px;background:var(--panel);border:1px solid var(--line);border-radius:10px}
   details.help > summary{cursor:pointer;list-style:none;padding:12px 16px;font-weight:600;display:flex;align-items:center;gap:8px}
   details.help > summary::-webkit-details-marker{display:none}
   details.help > summary .chev{color:var(--muted);transition:.15s;font-size:12px}
@@ -127,7 +128,6 @@
   <div class="nav">
     <a class="navlink" href="index.html">← Matrix</a>
     <a class="navlink" href="quadrant.html">Positioning →</a>
-    <a class="navlink" href="privacy.html">Privacy data-flow →</a>
   </div>
 </header>
 
@@ -160,15 +160,19 @@
   </div>
 </details>
 
+<details class="help rivals">
+  <summary><span class="chev">▶</span> Wallets to compare <span class="tagn">— click to expand</span></summary>
+  <div class="inner">
+    <div class="chipgroups" id="rivalChips"></div>
+  </div>
+</details>
+
 <div class="controls">
   <div class="ctl">
     <label>Baseline wallet</label>
     <select id="baseline"></select>
   </div>
-  <div class="ctl" style="flex:1">
-    <label>Wallets to compare</label>
-    <div class="chipgroups" id="rivalChips"></div>
-  </div>
+  <div class="spacer" style="flex:1"></div>
   <div class="ctl">
     <label>Platform</label>
     <select id="variant">

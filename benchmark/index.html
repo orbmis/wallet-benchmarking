@@ -23,6 +23,7 @@
   .controls{display:flex;gap:18px;flex-wrap:wrap;padding:14px 20px;border-bottom:1px solid var(--line);background:var(--panel)}
   .ctl{display:flex;flex-direction:column;gap:5px}
   .ctl > label{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+  details.help.rivals > .inner{padding-top:14px}
   select,input[type=text]{background:var(--panel2);color:var(--txt);border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-size:13px}
   .chipgroups{display:flex;flex-direction:column;gap:9px}
   .chipgroup .grphead{font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:4px}
@@ -69,7 +70,7 @@
   .pill.unknown{background:var(--unknownbg);color:var(--muted)}
   .pill.na{background:transparent;color:#565b6b;border:1px dashed var(--line);font-weight:500}
   .pill.value{background:var(--valuebg);color:var(--valuetxt);font-weight:500}
-  .pill.diff{box-shadow:0 0 0 2px var(--warn)}
+  .pill.diff{box-shadow:0 0 0 1px var(--warn)}
   .legend{display:flex;gap:14px;padding:8px 20px;color:var(--muted);font-size:12px;flex-wrap:wrap;align-items:center;border-bottom:1px solid var(--line)}
   .legend .pill{cursor:default}
 
@@ -96,7 +97,7 @@
   .empty{padding:40px;text-align:center;color:var(--muted)}
 
   /* first-run help */
-  details.help{margin:14px 20px 0;background:var(--panel);border:1px solid var(--line);border-radius:10px}
+  details.help{margin:14px 20px 22px;background:var(--panel);border:1px solid var(--line);border-radius:10px}
   details.help > summary{cursor:pointer;list-style:none;padding:12px 16px;font-weight:600;display:flex;align-items:center;gap:8px}
   details.help > summary::-webkit-details-marker{display:none}
   details.help > summary .chev{color:var(--muted);transition:.15s;font-size:12px}
@@ -125,7 +126,6 @@
   <span style="margin-left:auto;display:flex;gap:8px">
     <a class="navlink" href="gaps.html">Strengths &amp; Gaps →</a>
     <a class="navlink" href="quadrant.html">Positioning →</a>
-    <a class="navlink" href="privacy.html">Privacy data-flow →</a>
   </span>
 </header>
 
@@ -174,9 +174,15 @@
       <li><b>Platform</b> filters to wallets that ship on Browser / Mobile / Desktop, so you compare a fair peer set.</li>
       <li><span class="key">Only differences</span> hides rows where every rival matches you; <span class="key">Hide unknowns</span> declutters un-recorded rows.</li>
       <li><b>Search</b> filters rows by name; category headers collapse; <b>Export CSV</b> dumps the current view for slides/sheets.</li>
-      <li>Need the privacy story? <a href="privacy.html">open the Privacy data-flow view →</a></li>
     </ul>
     <p class="muted">Coverage varies by wallet — an "Unknown" cell means the dataset hasn't recorded that fact yet, not that the answer is "no".</p>
+  </div>
+</details>
+
+<details class="help rivals">
+  <summary><span class="chev">▶</span> Wallets to compare <span class="tagn">— click to expand</span></summary>
+  <div class="inner">
+    <div class="chipgroups" id="rivalChips"></div>
   </div>
 </details>
 
@@ -185,10 +191,7 @@
     <label>Baseline wallet</label>
     <select id="baseline"></select>
   </div>
-  <div class="ctl" style="flex:1">
-    <label>Wallets to compare</label>
-    <div class="chipgroups" id="rivalChips"></div>
-  </div>
+  <div class="spacer" style="flex:1"></div>
   <div class="ctl">
     <label>Platform</label>
     <select id="variant">
