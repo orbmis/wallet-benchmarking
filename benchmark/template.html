@@ -20,14 +20,10 @@
   header .sub{color:var(--muted);font-size:12.5px}
   header .navlink{font-size:13px;text-decoration:none;background:var(--accentdim);border:1px solid var(--accent);color:#cfe0ff;border-radius:7px;padding:5px 11px}
   header .navlink:hover{background:#33457f}
-  .controls{display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start;padding:14px 20px;border-bottom:1px solid var(--line);background:var(--panel)}
+  .controls{display:flex;gap:18px;flex-wrap:wrap;padding:14px 20px;border-bottom:1px solid var(--line);background:var(--panel)}
   .ctl{display:flex;flex-direction:column;gap:5px}
   .ctl > label{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
-  details.rivalsctl > summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:6px;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
-  details.rivalsctl > summary::-webkit-details-marker{display:none}
-  details.rivalsctl > summary .chev{font-size:10px;color:var(--muted);transition:.15s}
-  details.rivalsctl[open] > summary .chev{transform:rotate(90deg)}
-  details.rivalsctl > .chipgroups{margin-top:9px}
+  details.help.rivals > .inner{padding-top:14px}
   select,input[type=text]{background:var(--panel2);color:var(--txt);border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-size:13px}
   .chipgroups{display:flex;flex-direction:column;gap:9px}
   .chipgroup .grphead{font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:4px}
@@ -185,15 +181,19 @@
   </div>
 </details>
 
+<details class="help rivals">
+  <summary><span class="chev">▶</span> Wallets to compare <span class="tagn">— click to expand</span></summary>
+  <div class="inner">
+    <div class="chipgroups" id="rivalChips"></div>
+  </div>
+</details>
+
 <div class="controls">
   <div class="ctl">
     <label>Baseline wallet</label>
     <select id="baseline"></select>
   </div>
-  <details class="ctl rivalsctl" style="flex:1">
-    <summary><span class="chev">▶</span> Wallets to compare</summary>
-    <div class="chipgroups" id="rivalChips"></div>
-  </details>
+  <div class="spacer" style="flex:1"></div>
   <div class="ctl">
     <label>Platform</label>
     <select id="variant">
