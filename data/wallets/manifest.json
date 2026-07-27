@@ -35,6 +35,7 @@
     "trezor.json",
     "trust-wallet.json",
     "uniswap-wallet.json",
+    "x-wallet.json",
     "zerion.json",
     "zeus.json"
   ]

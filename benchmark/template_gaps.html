@@ -225,7 +225,7 @@ const metricByKey = Object.fromEntries(metrics.map(m=>[m.key,m]));
 
 const def = (id)=>byId[id]?id:null;
 let state = {
-  baseline: def('metamask') || wallets[0].id,
+  baseline: def('x-wallet') || def('metamask') || wallets[0].id,
   rivals: ['rabby','rainbow','phantom','okx'].filter(id=>byId[id]),
   variant: '',
 };

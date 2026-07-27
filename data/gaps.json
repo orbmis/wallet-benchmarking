@@ -1,7 +1,7 @@
 {
   "generated": true,
-  "gapCount": 135,
-  "naCount": 1036,
+  "gapCount": 166,
+  "naCount": 1126,
   "gaps": [
     {
       "walletId": "ambire",
@@ -1321,6 +1321,316 @@
       "category": "Device sync",
       "type": "state",
       "path": "product.deviceSync.syncsSettings",
+      "hasUnsourcedRef": false
+    },
+    {
+      "walletId": "x-wallet",
+      "walletName": "X Wallet",
+      "metricKey": "eoa",
+      "label": "EOA support",
+      "category": "Accounts",
+      "type": "state",
+      "path": "accountSupport.eoa",
+      "hasUnsourcedRef": false
+    },
+    {
+      "walletId": "x-wallet",
+      "walletName": "X Wallet",
+      "metricKey": "erc4337",
+      "label": "ERC-4337 smart accounts",
+      "category": "Accounts",
+      "type": "state",
+      "path": "accountSupport.rawErc4337",
+      "hasUnsourcedRef": false
+    },
+    {
+      "walletId": "x-wallet",
+      "walletName": "X Wallet",
+      "metricKey": "eip7702",
+      "label": "EIP-7702 upgraded EOAs",
+      "category": "Accounts",
+      "type": "state",
+      "path": "accountSupport.eip7702",
+      "hasUnsourcedRef": false
+    },
+    {
+      "walletId": "x-wallet",
+      "walletName": "X Wallet",
+      "metricKey": "safe",
+      "label": "Safe smart accounts",
+      "category": "Accounts",
+      "type": "state",
+      "path": "accountSupport.safe",
+      "hasUnsourcedRef": false
+    },
+    {
+      "walletId": "x-wallet",
+      "walletName": "X Wallet",
+      "metricKey": "mpc",
+      "label": "MPC accounts",
+      "category": "Accounts",
+      "type": "state",
+      "path": "accountSupport.mpc",
+      "hasUnsourcedRef": false
+    },
+    {
+      "walletId": "x-wallet",
+      "walletName": "X Wallet",
+      "metricKey": "multiAddress",
+      "label": "Multiple accounts",
+      "category": "Accounts",
+      "type": "state",
+      "path": "multiAddress",
+      "hasUnsourcedRef": false
+    },
+    {
+      "walletId": "x-wallet",
+      "walletName": "X Wallet",
+      "metricKey": "usageAnalytics",
+      "label": "Sends usage analytics",
+      "category": "Privacy",
+      "type": "state",
+      "path": "privacy.analytics.usage",
+      "hasUnsourcedRef": false
+    },
+    {
+      "walletId": "x-wallet",
+      "walletName": "X Wallet",
+      "metricKey": "crashReports",
+      "label": "Sends crash reports",
+      "category": "Privacy",
+      "type": "state",
+      "path": "privacy.analytics.crashReports",
+      "hasUnsourcedRef": false
+    },
+    {
+      "walletId": "x-wallet",
+      "walletName": "X Wallet",
+      "metricKey": "stealth",
+      "label": "Stealth addresses",
+      "category": "Privacy",
+      "type": "state",
+      "path": "privacy.transactionPrivacy.STEALTH_ADDRESSES",
+      "hasUnsourcedRef": false
+    },
+    {
+      "walletId": "x-wallet",
+      "walletName": "X Wallet",
+      "metricKey": "privacyPools",
+      "label": "Privacy Pools",
+      "category": "Privacy",
+      "type": "state",
+      "path": "privacy.transactionPrivacy.PRIVACY_POOLS",
+      "hasUnsourcedRef": false
+    },
+    {
+      "walletId": "x-wallet",
+      "walletName": "X Wallet",
+      "metricKey": "defaultTransfer",
+      "label": "Default transfer mode",
+      "category": "Privacy",
+      "type": "value",
+      "path": "privacy.transactionPrivacy.defaultFungibleTokenTransferMode",
+      "hasUnsourcedRef": false
+    },
+    {
+      "walletId": "x-wallet",
+      "walletName": "X Wallet",
+      "metricKey": "hwSupport",
+      "label": "Hardware wallet support",
+      "category": "Security",
+      "type": "support",
+      "path": "security.hardwareWalletSupport",
+      "hasUnsourcedRef": false
+    },
+    {
+      "walletId": "x-wallet",
+      "walletName": "X Wallet",
+      "metricKey": "scamUrl",
+      "label": "Scam URL warnings",
+      "category": "Security",
+      "type": "state",
+      "path": "security.scamAlerts.scamUrlWarning",
+      "hasUnsourcedRef": false
+    },
+    {
+      "walletId": "x-wallet",
+      "walletName": "X Wallet",
+      "metricKey": "scamSend",
+      "label": "Risky-send warnings",
+      "category": "Security",
+      "type": "state",
+      "path": "security.scamAlerts.sendTransactionWarning",
+      "hasUnsourcedRef": false
+    },
+    {
+      "walletId": "x-wallet",
+      "walletName": "X Wallet",
+      "metricKey": "scamContract",
+      "label": "Malicious-contract warnings",
+      "category": "Security",
+      "type": "state",
+      "path": "security.scamAlerts.contractTransactionWarning",
+      "hasUnsourcedRef": false
+    },
+    {
+      "walletId": "x-wallet",
+      "walletName": "X Wallet",
+      "metricKey": "txSim",
+      "label": "Transaction simulation",
+      "category": "Security",
+      "type": "state",
+      "path": "security.transactionLegibility.transactionSimulations",
+      "hasUnsourcedRef": false
+    },
+    {
+      "walletId": "x-wallet",
+      "walletName": "X Wallet",
+      "metricKey": "bugBounty",
+      "label": "Bug bounty program",
+      "category": "Security",
+      "type": "state",
+      "path": "security.bugBountyProgram",
+      "hasUnsourcedRef": false
+    },
+    {
+      "walletId": "x-wallet",
+      "walletName": "X Wallet",
+      "metricKey": "audits",
+      "label": "Public audits",
+      "category": "Security",
+      "type": "count_high",
+      "path": "security.publicSecurityAudits",
+      "hasUnsourcedRef": false
+    },
+    {
+      "walletId": "x-wallet",
+      "walletName": "X Wallet",
+      "metricKey": "openHigh",
+      "label": "Open high-sev flaws",
+      "category": "Security",
+      "type": "count_low",
+      "path": "security.publicSecurityAudits",
+      "hasUnsourcedRef": false
+    },
+    {
+      "walletId": "x-wallet",
+      "walletName": "X Wallet",
+      "metricKey": "duress",
+      "label": "Duress / decoy mode",
+      "category": "Security",
+      "type": "state",
+      "path": "security.duressResistance.duressMode",
+      "hasUnsourcedRef": false
+    },
+    {
+      "walletId": "x-wallet",
+      "walletName": "X Wallet",
+      "metricKey": "passkey",
+      "label": "Passkey verification",
+      "category": "Security",
+      "type": "state",
+      "path": "security.passkeyVerification",
+      "hasUnsourcedRef": false
+    },
+    {
+      "walletId": "x-wallet",
+      "walletName": "X Wallet",
+      "metricKey": "lightClient",
+      "label": "L1 light client",
+      "category": "Security",
+      "type": "state",
+      "path": "security.lightClient.ethereumL1",
+      "hasUnsourcedRef": false
+    },
+    {
+      "walletId": "x-wallet",
+      "walletName": "X Wallet",
+      "metricKey": "approvals",
+      "label": "Token-approval management",
+      "category": "Self-sovereignty",
+      "type": "support",
+      "path": "selfSovereignty.permissionsManagement",
+      "hasUnsourcedRef": false
+    },
+    {
+      "walletId": "x-wallet",
+      "walletName": "X Wallet",
+      "metricKey": "selfBroadcast",
+      "label": "Self-broadcast (own node)",
+      "category": "Self-sovereignty",
+      "type": "state",
+      "path": "selfSovereignty.transactionSubmission.l1.selfBroadcastViaSelfHostedNode",
+      "hasUnsourcedRef": false
+    },
+    {
+      "walletId": "x-wallet",
+      "walletName": "X Wallet",
+      "metricKey": "bridging",
+      "label": "Built-in bridging",
+      "category": "Chain abstraction",
+      "type": "state",
+      "path": "chainAbstraction.bridging.builtInBridging",
+      "hasUnsourcedRef": false
+    },
+    {
+      "walletId": "x-wallet",
+      "walletName": "X Wallet",
+      "metricKey": "globalValue",
+      "label": "Unified balance view",
+      "category": "Chain abstraction",
+      "type": "state",
+      "path": "chainAbstraction.crossChainBalances.globalAccountValue",
+      "hasUnsourcedRef": false
+    },
+    {
+      "walletId": "x-wallet",
+      "walletName": "X Wallet",
+      "metricKey": "ens",
+      "label": "ENS resolution",
+      "category": "Transparency",
+      "type": "state",
+      "path": "addressResolution.nonChainSpecificEnsResolution",
+      "hasUnsourcedRef": false
+    },
+    {
+      "walletId": "x-wallet",
+      "walletName": "X Wallet",
+      "metricKey": "changelog",
+      "label": "Public changelog",
+      "category": "Transparency",
+      "type": "state",
+      "path": "transparency.releaseTransparency.hasPublicChangelog",
+      "hasUnsourcedRef": false
+    },
+    {
+      "walletId": "x-wallet",
+      "walletName": "X Wallet",
+      "metricKey": "signing",
+      "label": "Signed releases",
+      "category": "Transparency",
+      "type": "state",
+      "path": "transparency.releaseTransparency.artifactSigning",
+      "hasUnsourcedRef": false
+    },
+    {
+      "walletId": "x-wallet",
+      "walletName": "X Wallet",
+      "metricKey": "reproducible",
+      "label": "Reproducible builds",
+      "category": "Transparency",
+      "type": "state",
+      "path": "transparency.releaseTransparency.reproducibleBuilds",
+      "hasUnsourcedRef": false
+    },
+    {
+      "walletId": "x-wallet",
+      "walletName": "X Wallet",
+      "metricKey": "license",
+      "label": "App license",
+      "category": "Transparency",
+      "type": "license",
+      "path": "licensing.walletAppLicense",
       "hasUnsourcedRef": false
     },
     {

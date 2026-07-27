@@ -235,7 +235,7 @@ metrics.forEach(m=>{
 let state = {
   xcat: scoreCats.includes('Privacy') ? 'Privacy' : scoreCats[0],
   ycat: scoreCats.includes('Security') ? 'Security' : scoreCats[Math.min(1,scoreCats.length-1)],
-  baseline: byId['metamask'] ? 'metamask' : wallets[0].id,
+  baseline: byId['x-wallet'] ? 'x-wallet' : (byId['metamask'] ? 'metamask' : wallets[0].id),
   variant: '',
   split: 'median',
   showLabels: true,

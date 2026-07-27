@@ -659,7 +659,7 @@ function syncControls(){
   wallets = payload.wallets; metrics = payload.metrics; cats = payload.cats;
   byId = Object.fromEntries(wallets.map(w=>[w.id,w]));
   // validate persisted selection against the data that actually loaded
-  if(!byId[state.baseline]) state.baseline = byId['metamask'] ? 'metamask' : wallets[0].id;
+  if(!byId[state.baseline]) state.baseline = byId['x-wallet'] ? 'x-wallet' : (byId['metamask'] ? 'metamask' : wallets[0].id);
   state.rivals = (state.rivals||[]).filter(id=>byId[id] && id!==state.baseline);
   if(state.rivals.length===0)
     state.rivals = ['rabby','rainbow','phantom','okx'].filter(id=>byId[id] && id!==state.baseline);

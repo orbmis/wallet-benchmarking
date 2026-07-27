@@ -50932,5 +50932,44 @@
         "DESKTOP": true
       }
     }
+  },
+  {
+    "id": "x-wallet",
+    "source": "software-wallets",
+    "export": "xWallet",
+    "data": {
+      "metadata": {
+        "id": "x-wallet",
+        "displayName": "X Wallet",
+        "tableName": "X Wallet",
+        "blurb": "Placeholder baseline wallet. Data to be added manually.",
+        "contributors": [],
+        "iconExtension": "svg",
+        "lastUpdated": "2026-07-27",
+        "urls": {
+          "websites": []
+        }
+      },
+      "features": {
+        "accountSupport": null,
+        "appConnectionSupport": null,
+        "licensing": null,
+        "monetization": null,
+        "multiAddress": null,
+        "privacy": null,
+        "profile": null,
+        "security": null,
+        "selfSovereignty": null,
+        "transparency": null,
+        "chainAbstraction": null,
+        "addressResolution": null
+      },
+      "variants": {
+        "BROWSER": true,
+        "DESKTOP": true,
+        "MOBILE": true,
+        "HARDWARE": true
+      }
+    }
   }
 ]
